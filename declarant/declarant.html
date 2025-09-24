@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Declarant API - Documentation</title>
+    <link rel="stylesheet" href="mvp.css">
+</head>
+<body>
+
+    <header>
+        <h1>National Declarant API - Documentation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#why-use-the-national-api">Why use the National Declarant API?</a></li>
+            <li><a href="#registration-of-the-national-api-user-organisation">Registration of the National Declarant API user
+                organisation</a></li>
+            <li><a href="#declaring-formalities">Declaring formalities</a></li>
+            <li><a href="#due-times-for-formalities">Due times for formalities</a></li>
+            <li><a href="#formality-main-processes">Formality main processes</a></li>
+            <li><a href="#businesslogic">Businesslogic</a></li>
+            <li><a href="#national-api-endpoints">National Declarant API endpoints</a></li>
+            <li><a href="#terminology-of-formalities">Terminology of formalities</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+
+<main>
+<div id="documentation">
+    <h2 id="introduction">Introduction</h2>
+    <p>National Declarant API is intended for declarants, port authorities and other
+        stakeholders to submit and receive data from the European Maritime
+        Single Window (NEMO) system on organisations ERP System(s) or similar
+        systems. By declarants we mean the organisations that are responsible
+        for submitting formalities to the NEMO system and are such as Agents,
+        Shipping companies, joint liability representatives. Each declarant
+        organisation must have
+        <a href="https://tulli.fi/en/about-e-services/eori">EORI</a>
+        number and have a Finnish customs approval to submit formalities to the NEMO system.
+    </p>
+    <p>The API follows RESTful principles and uses JSON for data exchange.
+        At present, sending attachments through the Declarant API is not supported.
+        Attachment submission will be available in a future version of the API.
+    </p>
+</div>
+<div>
+    <h2 id="why-use-the-national-api">Why use the National Declarant API?</h2>
+    <p>API has been developed for organisations that primarily intend to submit formalities from their own systems
+        for port calls directed to Finland.
+        This also enables customised processes for submitting formalities.
+    </p>
+    <p>
+        Ports that have been delegated the right to submit formalities (e.g. ATA)
+        can use the Declarant API alongside the National Port API to report information
+        for those port calls for which the right has been granted.
+    </p>
+</div>
+<div>
+    <h2 id="registration-of-the-national-api-user-organisation">Registration
+        of the National Declarant API user organisation</h2>
+    <p>In order to take use of the National Declarant API, the organisation must be a
+        valid declarant or port organisation in the Nemo system and must have a valid
+        client ID and client secret. The client ID and client secret are used to
+        authenticate the organisation and to authorize the organisation to
+        access the API.</p>
+    <p>A person in your company with system administrator rights can create an API connection via
+        the NEMO UI as follows: </p>
+    <figure>
+        <img src="how-create-national-api-user.png"
+             alt="Image of the European Maritime Single Window system (NEMO UI)
+        with a numbered guide showing the path to the correct location for creating a national-api connection."/>
+    </figure>
+    <ol>
+        <li>Click on your company name to open the dialog box.</li>
+        <li>Scroll down if necessary and select Company Administration from the settings section.</li>
+        <li>Select the API tab.</li>
+        <li>Click Create connection, after which the interface connection details will appear.</li>
+        <li>Save.</li>
+    </ol>
+    <p>Once the interface connection has been created,
+        administrator can use the API tab to generate a new secret key
+        if needed or to remove the interface connection..</p>
+</div>
+<div>
+    <h2 id="declaring-formalities">Declaring formalities</h2>
+    <p>Formalities are based on European union directive
+        <a href="https://eur-lex.europa.eu/eli/reg_del/2023/205">2023/205</a>
+        and are divided into groups based on the time when they are due (due the
+        nature of still ongoing legislative process, the formalities are subject
+        to change). Finnish customs have published a documentation of ship
+        supple procedures in Finland, which can be found <a
+                href="https://tulli.fi/en/businesses/export/ship-supplies">here</a>.
+        <em><strong>HOX!</strong></em> Customs formalities are not sent to
+        National Declarant API.</p>
+    <p>The National Declarant API provides a way to declare ship formalities to the
+        European Maritime Single Window (NEMO) system. The formalities are
+        declared by sending a JSON object to the National Declarant API. The JSON object
+        contains the data that is required to declare the ship formalities.
+        At the moment, it is not possible to send files via the National Declarant API.
+        Authorities can respond to the submitted formalities with
+        <em>process</em> responses. Each submitted formality will also be
+        validated by EMSW (NEMO) system and if the data is not valid, the
+        National Declarant API will respond with a control message indicating the errors
+        in the submitted data. If no errors are found, the National Declarant API will
+        respond with a array of responses, that contains the status of the
+        submitted formalities and potential return values.</p>
+    <p>In practice, different vessel types (such as cargo ships, passenger
+        ships, tankers, etc.) might be subject to specific reporting
+        requirements by European or national authorities, including different
+        timelines for submitting certain formalities based on their operation,
+        cargo, or passenger capacity. These specifics are usually determined by
+        national legislation or port authority regulations within the framework
+        established by the directive.</p>
+    <p>European Maritime Single Window (NEMO) system will also provide UI
+        for the user/organisation to declare and view/modify the
+        formalities and send files related to formalities.</p>
+    <p>Each port call starts with a VID (Visit ID) formality. VID formality
+        has details of a vessel, its estimated time of arrival (ETA) and port.
+        The VID will create a unique identifier for the port call witch will be
+        used in all other formalities for this port call.</p>
+    <div>
+        <h3 id="due-times-for-formalities">Due times for formalities</h3>
+        <figure>
+            <img src="due-times-for-formalities.png" alt="The image shows when and in what order the formalities must be submitted."/>
+        </figure>
+        <pre class="text"><code>
+Must be submitted 24 hours before arrival*:
+
+Due time = ETA – (minus) 24 hours
+
+NOA, PXA, HZA, CWA, STA, EFF, SEC, MDH, WAS
+*Exception: route traffic where formalities must be submitted immediately upon departure from previous port.
+
+Must be submitted within 2 hours from arrival*:
+
+Due time = ETA/ETD + 2 hours if ETA/ETD is between 08.00–22.00 else 10.00 of the following morning
+
+ATA, ATD
+* Vessel arriving during the night between 22.00–08.00 the formality must be submitted by 10.00 on the next morning. MEKE can in exceptional cases grant permission to deviate from the specified deadline, taking into account the nature of the traffic and local conditions.
+
+Must be submitted before departure:
+
+Due time = ETD
+
+NOD, PXD, HZD, CWD, STD
+
+Must be submitted within 7 days after arrival:
+
+Due time = ATA + 7 days
+
+CGA
+
+Must be submitted within 7 days after departure:
+
+Due time = ATD + 7 days
+
+CGD
+
+Must be submitted within 30 days after departure:
+
+Due time = ATD + 30 days
+
+WAR
+
+Formalities without Due time
+
+VID, COA, SSA</code></pre>
+    </div>
+    <div>
+        <h3 id="formality-main-processes">Formality main processes</h3>
+        <div>
+            <h4>Formalities can be divided into groups based on the time when they
+                are due:</h4>
+            <p><strong>HOX!</strong> The formalities presented here are not definite
+                and are subject to change also this is not complete list of formalities.
+                Check EU directive 2010/65/EU for more details.</p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Arrival formalities (below a few examples of arrival formalities and
+                        their due times)</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>VID (Request for Visit ID)</td>
+                    <td>This is the first formality that must be
+                        submitted for a port call.</td>
+                </tr>
+                <tr>
+                    <td>NOA (Notice of Arrival)</td>
+                    <td>Is due 24 hours before arrival or
+                        immediately upon departure from the previous port if arrival is within
+                        24 hours.</td>
+                </tr>
+                <tr>
+                    <td>ETA (Estimated Time of Arrival)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>SRV (Request for service)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                <tr>
+                    <td>EXP (Expanded Inspection)</td>
+                    <td>Is due 72 hours before arrival (reported to safeseanet).</td>
+                </tr>
+                <tr>
+                    <td>CGA (Cargo declaration at arrival)</td>
+                    <td>Is due within 7 days after arrival.</td>
+                </tr>
+                <tr>
+                    <td>ATA (Actual Time of Arrival)</td>
+                    <td>is due within 2 hours from mooring.</td>
+                </tr>
+                <tr>
+                    <td>COA (Cancel portcall) is due before departure.</td>
+                    <td><strong>HOX!</strong>
+                        This is not possible after ATA has been submitted.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Departure formalities (below a few examples of departure formalities
+                        and their due times)</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>NOD (Notice of Departure)</td>
+                    <td>Is due before departure (unmooring).</td>
+                </tr>
+                <tr>
+                    <td>CGD (Cargo declaration at departure)</td>
+                    <td>Is due within 7 days after departure.</td>
+                </tr>
+                <tr>
+                    <td>ATD (Actual Time of Departure)</td>
+                    <td>Is due within 2 hours from unmooring.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h4>Each group can be further divided into subgroups based on the nature
+                of the formality:</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Cargo vessel formalities (IMO/FAL ja attached formalities)</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>PXA (Passenger List Arrival)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>CWA (Crew List)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>PXD (Passenger List Departure)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                <tr>
+                    <td>CWD (Crew list at departure)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr>
+                    <th>Passenger vessel formalities (IMO/FAL ja attached formalities)</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>PXA (Passenger List Arrival)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>CWA (Crew List)</td>
+                    <td>Is due 24 hours before arrival. <strong>HOX!</strong> This does not affect EU internal traffic.</td>
+                </tr>
+                <tr>
+                    <td>PXD (Passenger List Departure)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                <tr>
+                    <td>CWD (Crew list at departure)</td>
+                    <td>Is due before departure. <strong>HOX!</strong> This does not affect EU internal traffic.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Cruise vessel formalities (IMO/FAL ja attached formalities)</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>PXA (Passenger List Arrival)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>CWA (Crew List)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>PXD (Passenger List Departure)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                <tr>
+                    <td>CWD (Crew list at departure)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Ship waste formalities</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>WAS (Waste Notification)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>WAR (Waste delivery receipt)</td>
+                    <td>Is due within 30 days after departure.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Security formalities</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>SEC (Notification of Security Information)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Hazardous cargo formalities</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>HZA (Notification of hazardous materials (dangerous and polluting goods) on board at arrival)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                <tr>
+                    <td>HZD (Hazardous cargo declaration at departure)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Cargo formalities</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>CGA (Cargo declaration at arrival) is due within 7 days after arrival.</td>
+                    <td>Is due within 7 days after arrival.</td>
+                </tr>
+                <tr>
+                    <td>CGD (Cargo declaration at departure)</td>
+                    <td>is due within 7 days after departure.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Health formalities</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>MDH (Maritime Declaration of Health)</td>
+                    <td>Is due 24 hours before arrival.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Fairway due formalities</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>DUE (Fairway and port dues declaration)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                <tr>
+                    <td>CRT (Ship certificates)</td>
+                    <td>Is due before departure.
+                        <strong>HOX!</strong> Currently, it is not possible to send attachments via the National Declarant API.
+                        Attachments must be submitted through the NEMO UI.</td>
+                </tr>
+                <tr>
+                    <td>SHP (Ship information)</td>
+                    <td>Is due before departure.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <h3 id="businesslogic">Businesslogic</h3>
+        <p>The business logic of the National Declarant API, as described in this
+            document, revolves around providing a platform for declarants and other maritime stakeholders to interact with the
+            European Maritime Single Window (NEMO) system. The core functionalities
+            include:</p>
+        <ul>
+            <li><p><strong>Authentication and Authorization</strong>: Organisations
+                must have a valid client ID and client secret to access the API. These
+                credentials are obtained from the NEMO system and are essential for
+                submitting and receiving data securely.</p></li>
+            <li><p><strong>Data Submission and Retrieval</strong>: The API
+                facilitates the submission of ship formalities as JSON objects and the
+                retrieval of responses from the NEMO system. This includes pre-arrival,
+                arrival, and post-departure formalities, catering to different vessel
+                types and operations.</p></li>
+            <li><p><strong>Compliance with EU Directive 2010/65/EU</strong>: The API
+                supports formalities based on the directive, ensuring compliance with
+                European Union regulations for maritime reporting along with national
+                legislation and port authority regulations.</p></li>
+            <li><p><strong>Localised Processes for Finland</strong>: While the API
+                serves as a bridge to the European system, it also offers customization
+                to meet the specific needs of Finnish maritime operations.</p></li>
+            <li><p><strong>Real-Time Processing and Validation</strong>: Submitted
+                data is validated by the NEMO system, with the API providing immediate
+                feedback on errors or confirmation of successful submissions.</p></li>
+            <li><p><strong>Flexible Submission Timelines</strong>: The API accounts
+                for various due times for formalities, accommodating different
+                requirements for pre-arrival, upon arrival, and post-departure
+                submissions.</p></li>
+        </ul>
+        <p>The National Declarant API’s business logic aims to streamline maritime
+            reporting processes, enhance data security and compliance, and improve
+            operational efficiency for maritime stakeholders in Finland and across
+            Europe.</p>
+    </div>
+</div>
+<div>
+    <h2 id="national-api-endpoints">National Declarant API endpoints</h2>
+    <figure>
+        <img src="context-diagram-declarant-api.png" alt="Context diagram for National Declarant API"/>
+    </figure>
+    <p>You can find more detailed information about the Declarant API endpoints, as well as their requests and responses, <a href="declarant-technical-documentation.html">in the technical documentation</a>.</p>
+</div>
+<div>
+    <h2 id="support">Support</h2>
+    <p>For any questions or assistance, please contact the support team through the Nemo portal. Our team is ready to assist you
+        with registration, API integration, and any operational queries.</p>
+    <p>Thank you for choosing the National API - Declarant API to enhance your
+        declarant and port operations.</p>
+</div>
+</main>
+    <footer class="nemo">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="114" height="24" fill="none" viewBox="0 0 114 24">
+                <path fill="#171717" fill-rule="evenodd" d="M113.528 11.99C113.528 4.8 108.94 0 102.173 0c-6.724 0-11.249 4.8-11.249 11.99 0 7.189 4.525 11.989 11.249 11.989 6.788 0 11.355-4.8 11.355-11.99Zm-4.271 0c0 4.884-2.453 8.182-7.084 8.182-4.207 0-7.04-2.833-7.04-8.183 0-4.884 2.473-8.14 7.04-8.14 4.251 0 7.084 2.79 7.084 8.14ZM4.166.591H0v22.795h4.166V9.389c.951-3.341 3.467-5.54 6.491-5.54 3.024 0 4.716 1.966 4.716 5.624v13.914h4.165V8.416c0-5.35-3.066-8.331-7.633-8.373-3.447 0-6.323 1.881-7.338 4.63h-.401V.593Zm42.1 9.938c0-6.28-4.25-10.487-10.615-10.487-6.682 0-10.996 4.948-11.017 11.968 0 7.275 4.483 11.99 11.356 11.99 5.413 0 9.664-3.066 10.256-7.697H42.08c-.55 2.474-3.024 4.123-6.217 4.123-4.25 0-6.85-2.981-7.041-7.506h17.254c.106-.613.19-1.565.19-2.39Zm-10.7-6.872c3.87 0 6.344 2.559 6.534 6.365H28.927c.317-3.848 2.79-6.365 6.64-6.365ZM51.742.592h4.166V4.8h.401c.952-2.833 3.743-4.715 7.148-4.715 3.615 0 6.174 1.882 7.083 5.18h.635c.867-3.193 3.742-5.18 7.231-5.18 4.44 0 7.464 3.066 7.464 8.33v14.972h-4.165V9.283c0-3.383-1.65-5.456-4.673-5.456-3.024 0-5.308 2.2-6.175 5.54v13.998h-4.165V9.155c0-3.382-1.607-5.307-4.673-5.307-2.982 0-5.308 2.242-6.132 5.583v13.956H51.72V.591h.021Z" clip-rule="evenodd"/>
+            </svg>
+        </div>
+        <div>
+            <ul>
+                <li><a href="https://mnsw-stg.mnsw.fi/home">NEMO UI STG enviroment</a></li>
+                <li><a href="https://www.emsw.fi/en">Finnish Maritime Single Window</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+
+
+
+
+
+
+
+
