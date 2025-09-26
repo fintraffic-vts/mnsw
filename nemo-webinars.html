@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NEMO trainings & webinars</title>
+
+    <!-- NOTE: This page is designed to live under https://fintraffic-vts.github.io/mnsw/ and inherit its CSS/theme. -->
+    <!-- If you preview this file standalone without the site theme, the tiny fallback styles below keep it readable. -->
+    <style>
+        /* Fallback-only styles (kept minimal). The site theme will override these when hosted under /mnsw/. */
+        :root { --gap: 1rem; }
+        body { font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; }
+        header, main { max-width: 1080px; margin: 0 auto; padding: 1.25rem; }
+        .toolbar { display: grid; gap: var(--gap); grid-template-columns: 1fr; align-items: end; }
+        .toolbar .row { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+        @media (min-width: 720px) {
+            .toolbar { grid-template-columns: 1fr auto; }
+            .toolbar .row { grid-template-columns: 1fr 200px 220px; }
+        }
+        .cards { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 0.75rem; }
+        .card { border: 1px solid #e5e7eb; border-radius: 16px; padding: 1rem 1.1rem; background: #fff; }
+        .card h3 { margin: 0.25rem 0 0.25rem; font-size: 1.1rem; }
+        .meta { color: #475569; font-size: 0.9rem; }
+        .badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
+        .badge { font-size: 0.75rem; border: 1px solid #e5e7eb; padding: 0.1rem 0.5rem; border-radius: 999px; }
+        .materials { margin-top: 0.5rem; }
+        .materials a { text-decoration: none; }
+        .sect-title { margin: 1.25rem 0 0.5rem; font-size: 1.15rem; }
+        .empty { color: #64748b; font-style: italic; }
+        .chip { font-size: 0.75rem; border: 1px solid #cbd5e1; padding: 0.15rem 0.5rem; border-radius: 999px; }
+        .muted { color: #64748b; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+        .divider { height: 1px; background: #e2e8f0; margin: 1rem 0; }
+    </style>
+
+    <!-- Site stylesheet: use the official MNSW theme -->
+    <link rel="stylesheet" href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" />
+</head>
+<body>
+<header>
+    <h1>NEMO trainings & webinars</h1>
+    <p class="muted">This page collects <strong>all materials for NEMO trainings and webinars</strong> (recordings, slides, guides). Share this page with stakeholders; it will update as we add new sessions.</p>
+    <p><a href="https://www.emsw.fi/blog/nemo-koulutustilaisuudet" target="_blank" rel="noopener">Rekisteröidy tuleviin NEMO-koulutuksiin</a></p>
+</header>
+
+<main id="app" hidden>
+    <section class="toolbar" aria-label="Filters">
+        <div class="row">
+            <label>
+                <span class="sr-only">Search</span>
+                <input id="q" type="search" placeholder="Search by topic or audience..." style="width:100%; padding: .6rem .7rem; border:1px solid #cbd5e1; border-radius: 12px;" />
+            </label>
+            <label>
+                <span class="sr-only">Year</span>
+                <select id="year" style="width:100%; padding: .6rem .7rem; border:1px solid #cbd5e1; border-radius: 12px;">
+                    <option value="">All years</option>
+                </select>
+            </label>
+            <label>
+                <span class="sr-only">Audience</span>
+                <select id="aud" style="width:100%; padding: .6rem .7rem; border:1px solid #cbd5e1; border-radius: 12px;">
+                    <option value="">All audiences</option>
+                </select>
+            </label>
+        </div>
+        <div style="justify-self:end; display:flex; gap:.5rem;">
+            <button id="clear" type="button" style="padding:.55rem .8rem; border:1px solid #cbd5e1; border-radius: 12px; background:#fff;">Clear</button>
+        </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <section aria-labelledby="upcoming-title">
+        <h2 id="upcoming-title" class="sect-title">Upcoming sessions</h2>
+        <div id="upcoming" class="cards" data-empty="No upcoming sessions."></div>
+    </section>
+
+    <section aria-labelledby="past-title">
+        <h2 id="past-title" class="sect-title">Past sessions</h2>
+        <div id="past" class="cards" data-empty="No past sessions."></div>
+    </section>
+</main>
+
+<noscript>
+    <p style="max-width:1080px;margin:1rem auto;padding:0 1.25rem;">This page requires JavaScript to filter and organise sessions.</p>
+</noscript>
+
+<!-- ===================== DATA LOADER ===================== -->
+<script>
+    // Try to load an external JSON file so we can maintain the list without touching HTML.
+    // Preferred path in this repo: /mnsw/data/webinars.json (same-origin).
+    window.__loadWebinars = (async function loadWebinars() {
+        const candidates = [
+            "/mnsw/data/webinars.json",
+            "./webinars.json",
+            "/webinars.json"
+        ];
+        for (const url of candidates) {
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (res.ok) { return await res.json(); }
+            } catch (_) { /* ignore and try next */ }
+        }
+        return null; // No external file found
+    })();
+</script>
+
+<script>
+    /**
+     * Inline fallback data. Keep this minimal — we'll merge any external JSON
+     * we find on load so you can manage everything via /mnsw/data/webinars.json.
+     *
+     * Schema for each item:
+     * {
+     *   id: string,                   // slug used as anchor id
+     *   title: string,
+     *   date: "YYYY-MM-DD",            // local time (09:00)
+     *   durationMin?: number,
+     *   summary?: string,
+     *   audience?: string[],          // e.g. ["Ports","Agents","Authorities"]
+     *   tags?: string[],              // e.g. ["MLT2","AS4","RIM"]
+     *   materials?: {
+     *     recording?: string,
+     *     slides?: string,
+     *     docs?: { label: string, url: string }[]
+     *   }
+     * }
+     */
+    const webinarsInline = [];
+</script>
+<!-- =================== / DATA LOADER ===================== -->
+
+<script>
+    (async function () {
+        const $app = document.getElementById('app');
+        const $q = document.getElementById('q');
+        const $year = document.getElementById('year');
+        const $aud = document.getElementById('aud');
+        const $clear = document.getElementById('clear');
+        const $upcoming = document.getElementById('upcoming');
+        const $past = document.getElementById('past');
+
+        // Load external JSON (if present) and merge with inline data
+        let webinars = Array.isArray(webinarsInline) ? [...webinarsInline] : [];
+        try {
+            const ext = await window.__loadWebinars; // may be null
+            if (Array.isArray(ext)) {
+                // Merge & dedupe by id (external wins)
+                const byId = new Map();
+                for (const w of webinars) if (w && w.id) byId.set(w.id, w);
+                for (const w of ext) if (w && w.id) byId.set(w.id, w);
+                webinars = Array.from(byId.values());
+            }
+        } catch (_) { /* ignore */ }
+
+        // Helpers
+        function asDate(d) {
+            const [y, m, day] = String(d).split('-').map(Number);
+            return new Date(y, (m - 1), day, 9, 0, 0, 0);
+        }
+
+        // Sort by date desc
+        webinars.sort((a, b) => asDate(b.date) - asDate(a.date));
+
+        // Build filter options (years & audiences)
+        const years = Array.from(new Set(webinars.map(w => asDate(w.date).getFullYear()))).sort((a,b)=>b-a);
+        years.forEach(y => { const o = document.createElement('option'); o.value = String(y); o.textContent = String(y); $year.appendChild(o); });
+        const audiences = Array.from(new Set(webinars.flatMap(w => w.audience || []))).sort();
+        audiences.forEach(a => { const o = document.createElement('option'); o.value = a; o.textContent = a; $aud.appendChild(o); });
+
+        // Render helpers
+        const fmt = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' });
+        const today = new Date(); today.setHours(0,0,0,0);
+
+        function renderList(target, items) {
+            target.innerHTML = '';
+            if (!items.length) {
+                const p = document.createElement('p');
+                p.className = 'empty';
+                p.textContent = target.dataset.empty || 'No content.';
+                target.appendChild(p);
+                return;
+            }
+            for (const w of items) target.appendChild(renderCard(w));
+        }
+
+        function renderCard(w) {
+            const art = document.createElement('article');
+            art.className = 'card';
+            art.id = w.id;
+
+            const d = asDate(w.date);
+            const title = document.createElement('h3');
+            title.textContent = w.title;
+
+            const meta = document.createElement('div');
+            meta.className = 'meta';
+            const time = document.createElement('time');
+            time.dateTime = w.date;
+            time.textContent = fmt.format(d);
+            meta.appendChild(time);
+            if (w.durationMin) {
+                const dot = document.createTextNode(' · ');
+                meta.appendChild(dot);
+                const dur = document.createElement('span');
+                const mins = Number(w.durationMin);
+                dur.textContent = `${mins} min`;
+                meta.appendChild(dur);
+            }
+
+            const p = document.createElement('p');
+            p.textContent = w.summary || '';
+
+            const badges = document.createElement('div');
+            badges.className = 'badges';
+            (w.audience || []).forEach(a => { const b = document.createElement('span'); b.className = 'badge'; b.textContent = a; badges.appendChild(b); });
+            (w.tags || []).forEach(t => { const b = document.createElement('span'); b.className = 'badge'; b.textContent = `#${t}`; badges.appendChild(b); });
+
+            const materials = document.createElement('div');
+            materials.className = 'materials';
+            const ul = document.createElement('ul');
+            ul.style.margin = '0.25rem 0 0';
+            ul.style.paddingLeft = '1rem';
+
+            if (w.materials) {
+                if (w.materials.recording) {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a'); a.href = w.materials.recording; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Recording';
+                    li.appendChild(a); ul.appendChild(li);
+                }
+                if (w.materials.slides) {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a'); a.href = w.materials.slides; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Slides';
+                    li.appendChild(a); ul.appendChild(li);
+                }
+                (w.materials.docs || []).forEach(doc => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a'); a.href = doc.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = doc.label || 'Material';
+                    li.appendChild(a); ul.appendChild(li);
+                });
+            }
+            if (!ul.childElementCount) {
+                const li = document.createElement('li'); li.textContent = 'No shared materials yet.'; ul.appendChild(li);
+            }
+            const cap = document.createElement('div');
+            cap.innerHTML = '<strong>Materials</strong>';
+            materials.appendChild(cap);
+            materials.appendChild(ul);
+
+            art.appendChild(meta);
+            art.appendChild(title);
+            art.appendChild(badges);
+            art.appendChild(p);
+            art.appendChild(materials);
+            return art;
+        }
+
+        function applyFilters() {
+            const text = ($q.value || '').trim().toLowerCase();
+            const year = $year.value;
+            const aud = $aud.value;
+            const filtered = webinars.filter(w => {
+                const d = asDate(w.date);
+                const matchYear = !year || d.getFullYear() === Number(year);
+                const hay = [w.title, w.summary, ...(w.tags||[]), ...(w.audience||[])].join(' ').toLowerCase();
+                const matchText = !text || hay.includes(text);
+                const matchAud = !aud || (w.audience || []).includes(aud);
+                return matchYear && matchText && matchAud;
+            });
+
+            const upcoming = filtered.filter(w => asDate(w.date) >= today);
+            const past = filtered.filter(w => asDate(w.date) < today);
+
+            renderList($upcoming, upcoming);
+            renderList($past, past);
+        }
+
+        function clearFilters() {
+            $q.value = ''; $year.value = ''; $aud.value = ''; applyFilters();
+        }
+
+        $q.addEventListener('input', applyFilters);
+        $year.addEventListener('change', applyFilters);
+        $aud.addEventListener('change', applyFilters);
+        $clear.addEventListener('click', clearFilters);
+
+        // First paint
+        $app.hidden = false;
+        applyFilters();
+    })();
+</script>
+
+<!-- Optional: small snippet to add a card under the "Guides" section pointing to this page
+<div class="card">
+  <h3>NEMO trainings & webinars</h3>
+  <p>All materials on one page: recordings, slides, and guides.</p>
+  <p><a href="/mnsw/guides/webinars.html">Open page</a></p>
+</div> -->
+</body>
+</html>

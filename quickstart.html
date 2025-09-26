@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NEMO / MNSW — S2S Quickstart</title>
+    <link rel="stylesheet" href="/mnsw/nemo-dev.css" />
+    <!-- Mermaid for sequence/flow diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+</head>
+<body>
+<header class="container">
+    <nav class="breadcrumbs">
+        <a href="/mnsw/">EMSWe · NEMO</a>
+        <span class="sep">/</span>
+        <span>Guides</span>
+        <span class="sep">/</span>
+        <strong>S2S Quickstart</strong>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="container">
+            <div>
+                <h1>S2S Quickstart: call the API in 5 minutes</h1>
+                <p class="lead">This guide helps <span class="badge">system‑to‑system</span> integrators authenticate, validate a payload against EMSA MIG, and submit their first formality to Finland’s Maritime Single Window (MNSW/NEMO).</p>
+                <p>You’ll use <strong>OAuth2 client credentials</strong>, the <strong>NEMO Backend API</strong>, and the <strong>MIG 2.0.0.0</strong> schemas.</p>
+                <div class="actions">
+                    <a class="btn primary" href="#steps">Start now</a>
+                    <a class="btn" href="#references">Docs & References</a>
+                </div>
+            </div>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,120 480,0 720,60 C960,120 1200,40 1440,80 L1440,110 L0,110 Z" fill="currentColor" opacity=".06"></path></svg>
+    </section>
+
+    <section id="prerequisites">
+        <div class="section-title"><h2>Prerequisites</h2></div>
+        <ul>
+            <li>Issued <strong>client_id</strong> and <strong>client_secret</strong> (request via <a href="/mnsw/#get-access">Get access</a>), and your <code class="mono">organizationBusinessId</code>.</li>
+            <li>Network egress to the selected environment and token endpoint (provided during onboarding).</li>
+            <li>Tooling: <code class="mono">curl</code> or Postman, and a JSON editor/validator.</li>
+        </ul>
+    </section>
+
+    <section id="environments">
+        <div class="section-title">
+            <h2>Environments</h2>
+            <span class="sub">External users: <strong>STG</strong> and <strong>PRD</strong> only. (<abbr title="Development">DEV</abbr>/<abbr title="Test">TST</abbr> are internal to the MNSW team.)</span>
+        </div>
+        <div class="grid">
+            <div class="envs">
+                <table>
+                    <thead>
+                    <tr><th>Environment</th><th>Base URL</th><th>Auth</th><th>Notes</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>STG</td><td><code class="mono">https://mnsw-stg.mnsw.fi/</code></td><td>OAuth2 (client credentials)</td><td><span class="pill ok">Active</span></td></tr>
+                    <tr><td>PRD</td><td><code class="mono">https://mnsw.mnsw.fi/</code></td><td>OAuth2 (client credentials)</td><td><span class="pill warn">Onboarding required</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card">
+                <div class="eyebrow">Auth</div>
+                <h3>Token endpoint</h3>
+                <p>Exact issuer and token URL are shared during onboarding. Replace <code class="mono">&lt;TOKEN_URL&gt;</code> in examples accordingly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview">
+        <div class="section-title"><h2>Architecture at a glance</h2></div>
+        <pre class="mermaid">
+sequenceDiagram
+  autonumber
+  participant SYS as Your System
+  participant IMS as IMS (Auth)
+  participant NEMO as NEMO Backend API
+  participant MIG as MIG Schema
+
+  SYS->>IMS: Client Credentials (client_id, client_secret)
+  IMS-->>SYS: access_token (JWT)
+  SYS->>NEMO: GET /api/v1/codelists/names (Authorization: Bearer)
+  NEMO-->>SYS: 200 OK (names)
+  SYS->>SYS: Build Form.
+  SYS->>MIG: Validate JSON against MIG 2.0.0.0 schema
+  SYS->>NEMO: POST/PUT formality with MAI header + payload
+  NEMO-->>SYS: 201/200 (+ validation errors if any)
+      </pre>
+    </section>
+
+    <section id="api-cards">
+        <div class="section-title"><h2>API cards: what they are</h2><span class="sub">A quick map for developers</span></div>
+        <div class="grid">
+            <div class="card">
+                <div class="svc"><span class="label label-nemo">NEMO</span></div>
+                <h3>National API — Formalities</h3>
+                <p>Create and update EMSWe formalities (e.g., <span class="mono">NOA</span>, <span class="mono">NOD</span>, <span class="mono">CGA</span>, <span class="mono">CGD</span>, <span class="mono">ATA</span>, <span class="mono">ATD</span>, <span class="mono">CRT</span>). Payloads are validated against EMSA MIG plus national rules. Supports presigned file uploads for attachments. Auth: OAuth2 client credentials + <span class="mono">organizationBusinessId</span> header.</p>
+                <div class="links"><a class="chip" href="/mnsw/nemo-backend/openapi.html">OpenAPI</a><a class="chip" href="#steps">Quickstart</a></div>
+            </div>
+            <div class="card">
+                <div class="svc"><span class="label label-nsd">NSD</span></div>
+                <h3>Vessel Registry (read‑only)</h3>
+                <p>Look up vessel identifiers and metadata (IMO/MMSI/call sign) to enrich your formalities and perform validation. Read-only GET endpoints. Auth: OAuth2 client credentials.</p>
+                <div class="links"><a class="chip" href="/mnsw/nsd/openapi.html">OpenAPI</a></div>
+            </div>
+            <div class="card">
+                <div class="svc"><span class="label label-mlt2">MLT2</span></div>
+                <h3>Maritime Statistics API</h3>
+                <p>Query aggregated traffic and port statistics for analytics and reporting. Not required for submitting formalities but useful for dashboards.</p>
+                <div class="links"><a class="chip" href="/mnsw/mlt2/openapi.html">OpenAPI</a></div>
+            </div>
+            <div class="card">
+                <div class="svc"><span class="label label-as4">AS4</span></div>
+                <h3>AS4 / Domibus (alternative transport)</h3>
+                <p>Send the same MIG payloads over eDelivery AS4 via Domibus/RIM, if mandated by your organization. Error semantics mirror REST responses.</p>
+                <div class="links"><a class="chip" href="#steps">How it maps</a><a class="chip" href="https://docs.edelivery.tech.ec.europa.eu/domibus/5.1.7/" target="_blank" rel="noopener">Docs</a></div>
+            </div>
+            <div class="card">
+                <div class="svc"><span class="label label-ui">UI</span></div>
+                <h3>Web UI</h3>
+                <p>Manual entry and monitoring for human users. Handy for verifying what your S2S integration submits.</p>
+                <div class="links"><a class="chip" href="/mnsw/">Portal</a></div>
+            </div>
+        </div>
+        <p class="muted">If you’re building an S2S integration, start with <strong>NEMO (National API)</strong> for formalities, use <strong>NSD</strong> for lookups, and consider <strong>AS4</strong> only when required by your architecture.</p>
+    </section>
+
+    <section id="steps" class="steps">
+        <div class="section-title"><h2>Step‑by‑step</h2></div>
+
+        <h3>1) Get an access token</h3>
+        <p>We use Keycloak (<code class="mono">realm: nemo</code>) with the OAuth2 <em>Client Credentials</em> grant. Use the client issued for your organization (declarant or port). The flow is identical for both.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="eyebrow">Token endpoints</div>
+                <ul class="list">
+                    <li><strong>STG</strong>: <code class="mono">https://mnsw-stg.mnsw.fi/keycloak/realms/nemo/protocol/openid-connect/token</code></li>
+                    <li><strong>PRD</strong>: <code class="mono">https://mnsw.mnsw.fi/keycloak/realms/nemo/protocol/openid-connect/token</code></li>
+                </ul>
+                <p class="pill warn">Note</p> Only <strong>STG</strong> and <strong>PRD</strong> are supported for external integrators. <abbr title="Development">DEV</abbr>/<abbr title="Test">TST</abbr> are for the MNSW team only.
+            </div>
+            <div class="card">
+                <div class="eyebrow mono">curl</div>
+                <pre class="code-section" data-lang="bash"><code>ENV=stg   # or prd
+case "$ENV" in
+  stg) IDP_HOST=mnsw-stg.mnsw.fi/keycloak ;;
+  prd) IDP_HOST=mnsw.mnsw.fi/keycloak ;;
+  *) echo "Use stg or prd (DEV/TST are internal)"; exit 1 ;;
+esac
+
+TOKEN_URL="https://$IDP_HOST/realms/nemo/protocol/openid-connect/token"
+CLIENT_ID=&lt;client_id&gt;
+CLIENT_SECRET=&lt;secret&gt;
+
+ACCESS_TOKEN=$(curl -sS -X POST "$TOKEN_URL" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials" \
+  -d "client_id=$CLIENT_ID" \
+  -d "client_secret=$CLIENT_SECRET" | jq -r .access_token)
+
+echo "Token prefix:" $(echo "$ACCESS_TOKEN" | cut -c1-20)"…"
+</code></pre>
+            </div>
+        </div>
+        <p>When calling NEMO APIs, include the header <code class="mono">organizationBusinessId: &lt;your_org_id&gt;</code> along with <code class="mono">Authorization: Bearer &lt;token&gt;</code>.</p>
+        <h3>2) Smoke test your token</h3>
+        <p>Call a simple authorized endpoint like codelist names to verify headers and scopes:</p>
+        <pre class="code-section" data-lang="bash"><code>export BASE=https://mnsw-stg.mnsw.fi
+export ACCESS_TOKEN=&lt;paste_token_here&gt;
+export ORG_BID=&lt;your_organizationBusinessId&gt;
+
+curl -i "$BASE/nemo-ui/api/v1/codelists/names" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "organizationBusinessId: $ORG_BID"
+</code></pre>
+
+        <h3>3) Build a minimal formality payload</h3>
+        <p>Start from EMSA MIG JSON Schemas (e.g., <em>NOA</em>, <em>NOD</em>, <em>CGD</em>) and populate required fields. Follow national rules where applicable.</p>
+        <details><summary>Example: skeleton for <code>NOA</code> (arrival notification)</summary>
+            <pre class="code-section" data-lang="json"><code class="language-json">{
+  "MAI": {
+    "msgFunction": "9",  // original
+    "msgId": "&lt;uuid&gt;",
+    "msgSender": "&lt;EORI/BusinessId&gt;",
+    "msgRecipient": "MNSW-FI",
+    "msgType": "NOA",
+    "msgDateTime": "&lt;ISO 8601&gt;"
+  },
+  "NOA": {
+    "voyage": {
+      "imoNumber": "&lt;string&gt;",
+      "vesselName": "&lt;string&gt;",
+      "callSign": "&lt;string&gt;"
+    },
+    "port": {
+      "unLoCode": "FIHEL",
+      "eta": "&lt;ISO 8601&gt;"
+    }
+  }
+}
+</code></pre>
+            <p><span class="pill warn">Rule</span> <strong>MIG‑P33 — Unknown data:</strong> if a value for an <em>optional</em> element is unknown, omit the element. Do not send empty strings, 0 or null.</p>
+        </details>
+
+        <h3>4) Submit the formality</h3>
+        <p>Submit using the National API endpoint for a port call. Use a stable <code class="mono">formalityId</code> (UUID) to enable updates (idempotency):</p>
+        <pre class="code-section" data-lang="bash"><code>export VISIT_ID=&lt;portcall-visitId&gt;
+export FORM_TYPE=NOA  # e.g., NOA, NOD, CGA, CGD, ATA, ATD…
+export FORM_ID=$(uuidgen)  # or your own stable UUID
+
+curl -i -X POST "$BASE/nemo-ui/api/v1/nationalapi/portcalls/$VISIT_ID/formalities/$FORM_TYPE" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "organizationBusinessId: $ORG_BID" \
+  --data-binary @payload.json
+
+# Update the same formality later (PUT):
+curl -i -X PUT "$BASE/nemo-ui/api/v1/nationalapi/portcalls/$VISIT_ID/formalities/$FORM_TYPE/$FORM_ID" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "organizationBusinessId: $ORG_BID" \
+  --data-binary @payload.json
+</code></pre>
+        <p>See the <a href="/mnsw/nemo-backend/openapi.html">NEMO Backend OpenAPI</a> for full parameters and status codes.</p>
+
+        <h3>5) Attach documents (optional)</h3>
+        <ol>
+            <li>Request a presigned upload URL.</li>
+            <li>Upload your file to object storage.</li>
+            <li>Store the attachment reference on the formality.</li>
+        </ol>
+        <details><summary>Sample flow</summary>
+            <pre class="code-section" data-lang="bash"><code># 5.1 Get upload URL
+curl -s "$BASE/nemo-ui/api/v1/files/uploadUrl?filename=myfile.pdf" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "organizationBusinessId: $ORG_BID"
+
+# 5.2 Upload directly to the returned URL (example uses curl)
+curl -T myfile.pdf "&lt;presigned_url&gt;"
+
+# 5.3 Store attachment reference
+curl -X POST "$BASE/nemo-ui/api/v1/nationalapi/portcalls/$VISIT_ID/formalities/$FORM_TYPE/$FORM_ID/attachments" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "organizationBusinessId: $ORG_BID" \
+  --data '{"fileName":"myfile.pdf","url":"&lt;presigned_url&gt;"}'
+</code></pre>
+        </details>
+
+        <h3>6) Validate and troubleshoot</h3>
+        <ul>
+            <li>Validate JSON against MIG 2.0.0.0 schema for the formality type.</li>
+            <li>On 4xx errors, check response body for rule violations (EMSA MIG vs. national).</li>
+            <li>Use <kbd>request‑id</kbd> (if returned in headers/body) when contacting support.</li>
+        </ul>
+
+        <details><summary>Alternative channel: AS4 (RIM/Domibus)</summary>
+            <p>If you integrate via AS4, package the same MIG payload as the business document and send via Domibus/RIM. Error semantics mirror REST responses.</p>
+            <pre class="mermaid">
+flowchart LR
+  A[Your Backoffice] -- AS4 User Msg --> B(Domibus/RIM)
+  B -- AS4 --> C[MNSW Core]
+  C -- Ack / Business Response --> B
+  B -- Status/Errors --> A
+        </pre>
+        </details>
+    </section>
+
+    <section id="faq">
+        <div class="section-title"><h2>FAQ</h2></div>
+        <details>
+            <summary>What scopes/claims are required?</summary>
+            <p>Scopes are provisioned with your client during onboarding. Always include <code class="mono">organizationBusinessId</code> header matching your organization.</p>
+        </details>
+        <details>
+            <summary>How do I find the right schema version?</summary>
+            <p>Use MIG 2.0.0.0 unless instructed otherwise in release notes. For breaking changes, see the <a href="/mnsw/#changelog">Changelog</a>.</p>
+        </details>
+    </section>
+
+    <section id="references">
+        <div class="section-title"><h2>References</h2></div>
+        <ul class="list">
+            <li><a href="/mnsw/nemo-backend/openapi.html">NEMO Backend API — OpenAPI</a></li>
+            <li><a href="https://www.emsa.europa.eu/emsw/emswe-documents/item/5513-emswe-message-implementation-guide-mig.html" target="_blank" rel="noopener">EMSA — EMSWe Message Implementation Guide (MIG)</a></li>
+            <li><a href="https://eur-lex.europa.eu/eli/reg/2019/1239/oj/eng" target="_blank" rel="noopener">Regulation (EU) 2019/1239 — EMSWe</a></li>
+            <li><a href="https://docs.edelivery.tech.ec.europa.eu/domibus/5.1.7/" target="_blank" rel="noopener">Domibus Technical Documentation</a></li>
+            <li><a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener">OAuth 2.0 (RFC 6749)</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="legal">
+            <p>Need help? Email <a href="mailto:nemo.support@siili.com">nemo.support@siili.com</a>. Contributions welcome — open a PR in the <code class="mono">fintraffic-vts/mnsw</code> repo.</p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>

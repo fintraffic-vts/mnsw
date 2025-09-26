@@ -1,0 +1,86 @@
+[
+  {
+    "id": "2025-08-27-satamille-suunnattu-nemo-koulutustilaisuus",
+    "title": "Satamille suunnattu Nemo-koulutustilaisuus",
+    "date": "2025-08-27",
+    "durationMin": 90,
+    "summary": "",
+    "audience": ["Satamat"],
+    "tags": ["Satamat"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  },
+  {
+    "id": "2025-09-24-nemo-koulutustilaisuus-datamalli-ilmoittaminen-ja-rajapinnat",
+    "title": "Nemo-koulutustilaisuus / Datamalli, ilmoittaminen ja rajapinnat",
+    "date": "2025-09-24",
+    "durationMin": 90,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Datamalli", "Ilmoittaminen", "Rajapinnat"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  },
+  {
+    "id": "2025-10-29-nemo-koulutustilaisuus-organisaation-hallinta-ja-kayttooikeudet",
+    "title": "Nemo-koulutustilaisuus / Organisaation hallinta ja käyttöoikeudet",
+    "date": "2025-10-29",
+    "durationMin": 60,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Organisaation hallinta", "Käyttöoikeudet"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  },
+  {
+    "id": "2025-11-26-nemo-koulutustilaisuus-vaylamaksu-toiminnallisuus",
+    "title": "Nemo-koulutustilaisuus / Väylämaksu-toiminnallisuus",
+    "date": "2025-11-26",
+    "durationMin": 80,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Väylämaksu"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  },
+  {
+    "id": "2025-12-17-nemo-koulutustilaisuus-saapumis-ja-lahtoilmoitukset",
+    "title": "Nemo-koulutustilaisuus / Saapumis- ja lähtöilmoitukset",
+    "date": "2025-12-17",
+    "durationMin": 90,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Saapumisilmoitukset", "Lähtöilmoitukset"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  },
+  {
+    "id": "2026-01-21-nemo-koulutustilaisuus-alustietokanta",
+    "title": "Nemo-koulutustilaisuus / Alustietokanta",
+    "date": "2026-01-21",
+    "durationMin": 90,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Alustietokanta"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  },
+  {
+    "id": "2026-02-11-nemo-koulutustilaisuus-kayttoohjeet-ja-tuki",
+    "title": "Nemo-koulutustilaisuus / Käyttöohjeet ja tuki",
+    "date": "2026-02-11",
+    "durationMin": 60,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Käyttöohjeet", "Tuki"],
+    "materials": {
+      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+    }
+  }
+]
