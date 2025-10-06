@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Port API - Documentation</title>
+    <link rel="stylesheet" href="mvp.css">
+</head>
+<body>
+    <header>
+        <h1>National API - Port API Documentation</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction</a>
+                <li><a href="#businessLogic">Business logic</a>
+                <li><a href="#endpoints">National Port API endpoints</a>
+                <li><a href="#terminology-of-formalities">Terminology of formalities</a>
+                <li><a href="#support">Support</a>
+            </ul>
+        </nav>
+    </header>
+<div>
+    <h2 id="introduction">Introduction</h2>
+    <p>Welcome to the documentation for the National API - Port API. This
+        API is designed to streamline operations for Finnish ports, facilitating
+        the efficient management of port calls, formalities, and environmental
+        compliance.</p>
+    <p>The Port API offers a comprehensive suite of services for Finnish port companies, enabling them to post statistical data, access detailed information about port calls and associated formalities and can search and get ship information.
+        This API is tailored to support the dynamic
+        needs of port operations, promoting sustainability and efficiency.</p>
+</div>
+    <div>
+        <h2 id="businessLogic">Business logic</h2>
+        <p>The business logic of the National Port API, as described in this
+            document, revolves around providing a platform for port authorities and other maritime stakeholders.
+            The core functionalities include:</p>
+        <ul>
+            <li><p><strong>Authentication and Authorization</strong>: Organisations
+                must have a valid client ID and client secret to access the API. These
+                credentials are obtained from the NEMO system and are essential for
+                submitting and receiving data securely.</p></li>
+            <li><p><strong>Data Submission and Retrieval</strong>: The API
+                facilitates the submission of port statistic as JSON objects and the
+                retrieval of port data and ship data responses from the NEMO system.</p></li>
+            <li><p><strong>Compliance with EU Directive 2010/65/EU</strong>: The API
+                supports formalities based on the directive, ensuring compliance with
+                European Union regulations for maritime reporting along with national
+                legislation and port authority regulations.</p></li>
+            <li><p><strong>Localised Processes for Finland</strong>: While the API
+                serves as a bridge to the European system, it also offers customization
+                to meet the specific needs of Finnish maritime operations.</p></li>
+            <li><p><strong>Real-Time Processing and Validation</strong>: Submitted
+                data is validated by the NEMO system, with the API providing immediate
+                feedback on errors or confirmation of successful submissions.</p></li>
+        </ul>
+        <p>The National Port API’s business logic aims to streamline maritime
+            reporting processes, enhance data security and compliance, and improve
+            operational efficiency for maritime stakeholders in Finland and across
+            Europe.</p>
+    </div>
+
+    <div>
+        <h2 id="endpoints">National Port API endpoints</h2>
+        <p>You can find more detailed information about the Port API endpoints, as well as their requests and responses, <a href="redoc-static-port.html">in the technical documentation</a>.</p>
+            <div>
+                <figure>
+                    <img src="context-diagram-port-api.png" alt="Context diagram for National Port API"/>
+                    <figcaption aria-hidden="true">Context diagram</figcaption>
+                </figure>
+                <h3>Components used in Port API</h3>
+                <ul>
+                <li><p><strong>Port ERP: </strong>External ERP which makes a JSON call with valid JWT token</p></li>
+                <li><p><strong>Ports: </strong>External REST API interface for port calls and MLT2 statistics provided by Port-api</p></li>
+                <li><p><strong>Ships: </strong>External REST API interface for ships provided by Port-api</p></li>
+                <li><p><strong>National Port API: </strong>National API route for port calls, statistics and ships</p></li>
+                <li><p><strong>PermissionsApi: </strong>Internal interface for checking permissions provided by Nemo Ims</p></li>
+                <li><p><strong>Nemo Ims: </strong>Nemo Identity management system</p></li>
+                <li><p><strong>NationalAPIapi: </strong>Internal API provided by Nemo backend</p></li>
+                <li><p><strong>Nemo Backend: </strong>Nemo core system</p></li>
+                <li><p><strong>ShipAPIapi: </strong>Internal interface by Nemo ESD</p></li>
+                <li><p><strong>Nemo ESD: </strong>Nemo ship database</p></li>
+                    </ul>
+            </div>
+
+    </div>
+
+    <div>
+        <h2 id="terminology-of-formalities">Terminology of formalities</h2>
+        <table>
+            <colgroup>
+                <col style="width: 10%"/>
+                <col style="width: 89%"/>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>Formality</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>VID</td>
+                <td>Request for Visit ID</td>
+            </tr>
+            <tr>
+                <td>NOA</td>
+                <td>Notice of Pre-Arrival</td>
+            </tr>
+            <tr>
+                <td>NOD</td>
+                <td>Notice of Pre-Departure</td>
+            </tr>
+            <tr>
+                <td>NOS</td>
+                <td>Notice of Shift in port</td>
+            </tr>
+            <tr>
+                <td>PXA</td>
+                <td>Passenger List Arrival</td>
+            </tr>
+            <tr>
+                <td>PXD</td>
+                <td>Passenger List Departure</td>
+            </tr>
+            <tr>
+                <td>HZA</td>
+                <td>Notification of hazardous materials (dangerous and polluting goods)
+                    on board at arrival
+                </td>
+            </tr>
+            <tr>
+                <td>HZD</td>
+                <td>Notification of hazardous materials (dangerous and polluting goods)
+                    on board at departure
+                </td>
+            </tr>
+            <tr>
+                <td>BLU</td>
+                <td>Safe loading and unloading of bulk carriers</td>
+            </tr>
+            <tr>
+                <td>EXP</td>
+                <td>Notification of expanded inspection</td>
+            </tr>
+            <tr>
+                <td>MTS</td>
+                <td>Maritime transport statistics</td>
+            </tr>
+            <tr>
+                <td>CWA</td>
+                <td>Crew List</td>
+            </tr>
+            <tr>
+                <td>STA</td>
+                <td>Ship Stores</td>
+            </tr>
+            <tr>
+                <td>WAS</td>
+                <td>Waste Notification</td>
+            </tr>
+            <tr>
+                <td>EFF</td>
+                <td>Crew’s effects declaration</td>
+            </tr>
+            <tr>
+                <td>SEC</td>
+                <td>Notification of Security Information</td>
+            </tr>
+            <tr>
+                <td>MDH</td>
+                <td>Maritime Declaration of Health</td>
+            </tr>
+            <tr>
+                <td>MDD</td>
+                <td>Maritime declaration of health detail</td>
+            </tr>
+            <tr>
+                <td>NAC</td>
+                <td>Notification of arrival to the customs office of first entry</td>
+            </tr>
+            <tr>
+                <td>PRN</td>
+                <td>Presentation notification</td>
+            </tr>
+            <tr>
+                <td>TSD</td>
+                <td>Temporary storage declaration</td>
+            </tr>
+            <tr>
+                <td>CGM</td>
+                <td>Customs goods manifest</td>
+            </tr>
+            <tr>
+                <td>PPA</td>
+                <td>Presentation of the proof (at arrival)</td>
+            </tr>
+            <tr>
+                <td>SDA</td>
+                <td>Supplementary documents at arrival</td>
+            </tr>
+            <tr>
+                <td>SDD</td>
+                <td>Supplementary documents at departure</td>
+            </tr>
+            <tr>
+                <td>CAR</td>
+                <td>CGM amendment request</td>
+            </tr>
+            <tr>
+                <td>TRD</td>
+                <td>Electronic transport documents used for transit at departure</td>
+            </tr>
+            <tr>
+                <td>TRA</td>
+                <td>Electronic transport documents used for transit at arrival</td>
+            </tr>
+            <tr>
+                <td>EXT</td>
+                <td>Exit notification</td>
+            </tr>
+            <tr>
+                <td>EXS</td>
+                <td>Exit summary declaration</td>
+            </tr>
+            <tr>
+                <td>REN</td>
+                <td>Re-export notification</td>
+            </tr>
+            <tr>
+                <td>HZS</td>
+                <td>Notification of hazardous materials (dangerous and polluting goods)
+                    on board during a shift
+                </td>
+            </tr>
+            <tr>
+                <td>BWA</td>
+                <td>Ballast water declaration</td>
+            </tr>
+            <tr>
+                <td>BKA</td>
+                <td>Bunkers at arrival</td>
+            </tr>
+            <tr>
+                <td>BKD</td>
+                <td>Bunkers at departure</td>
+            </tr>
+            <tr>
+                <td>ACT</td>
+                <td>Expected activities notification</td>
+            </tr>
+            <tr>
+                <td>DUE</td>
+                <td>Fairway and port dues declaration</td>
+            </tr>
+            <tr>
+                <td>SRV</td>
+                <td>Request for service</td>
+            </tr>
+            <tr>
+                <td>NAV</td>
+                <td>Navigation report</td>
+            </tr>
+            <tr>
+                <td>CRT</td>
+                <td>Ship certficates</td>
+            </tr>
+            <tr>
+                <td>SHP</td>
+                <td>Ship information</td>
+            </tr>
+            <tr>
+                <td>VIS</td>
+                <td>Ship visitors declaration</td>
+            </tr>
+            <tr>
+                <td>STW</td>
+                <td>Stowaways notification</td>
+            </tr>
+            <tr>
+                <td>ABS</td>
+                <td>Absentee declaration</td>
+            </tr>
+            <tr>
+                <td>HOS</td>
+                <td>Hospitalised crew member declaration</td>
+            </tr>
+            <tr>
+                <td>PBK</td>
+                <td>Passenger booking</td>
+            </tr>
+            <tr>
+                <td>POA</td>
+                <td>Notification of pontoon arrival</td>
+            </tr>
+            <tr>
+                <td>POD</td>
+                <td>Notification of pontoon departure</td>
+            </tr>
+            <tr>
+                <td>SID</td>
+                <td>Ship identification</td>
+            </tr>
+            <tr>
+                <td>ATA</td>
+                <td>Actual Time of Arrival</td>
+            </tr>
+            <tr>
+                <td>ATD</td>
+                <td>Actual Time of Departure</td>
+            </tr>
+            <tr>
+                <td>COA</td>
+                <td>Cancel portcall</td>
+            </tr>
+            <tr>
+                <td>SSA</td>
+                <td>Ship to ship activity declaration</td>
+            </tr>
+            <tr>
+                <td>CWD</td>
+                <td>Crew list at departure</td>
+            </tr>
+            <tr>
+                <td>STD</td>
+                <td>Declaration of stores on board at departure</td>
+            </tr>
+            <tr>
+                <td>CGA</td>
+                <td>Cargo declaration at arrival</td>
+            </tr>
+            <tr>
+                <td>CGD</td>
+                <td>Cargo declaration at departure</td>
+            </tr>
+            <tr>
+                <td>WAR</td>
+                <td>Waste delivery receipt</td>
+            </tr>
+            <tr>
+                <td>HZD</td>
+                <td>Hazardous cargo declaration at departure</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+<div>
+    <h2 id="support">Support</h2>
+    <p>For any questions or assistance, please contact the Port Organization
+        support team through the Nemo portal. Our team is ready to assist you
+        with registration, API integration, and any operational queries.</p>
+    <p>Thank you for choosing the National API - Port API to enhance your
+        port operations.</p>
+</div>
+</body>
+
+
+
+
+

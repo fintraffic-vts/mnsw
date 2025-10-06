@@ -1,0 +1,2223 @@
+{
+  "openapi" : "3.1.0",
+  "info" : {
+    "title" : "National API - Port API",
+    "description" : "PortAPI is a rest full API for Finnish ports to send statistics data over to Nemo for Maritime statistics purpose and to request data for traffic taking place in Finnish ports.\nThe National API now uses MIG 1.0.0.0 and 2.0.0.0 versions.\n\nThe API access and documentation will be shared by Fintraffic and is not publicly available compared to National Declarant API.\n\nEach request to the API must be authenticated with a JWT token. The token must be obtained from the IDP (Identity Provider) using the client credentials flow.<br>\n<strong>How to get JWT token for port organization</strong>\n```bash\ncurl -X POST 'https://<IDP>/realms/nemo/protocol/openid-connect/token' \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -d 'client_id=<client_id>' \\\n  -d 'client_secret=<secret>' \\\n  -d 'grant_type=client_credentials'\n```\n\nIDP - DEV: mnsw-dev.mnsw.fi/keycloak \\\nIDP - TST: mnsw-tst.mnsw.fi/keycloak \\\nIDP - STG: mnsw-stg.mnsw.fi/keycloak \\\nIDP - PRD: mnsw.mnsw.fi/keycloak\n\n<strong>Example request with CURL:</strong>\n```bash\ncurl --request GET 'https://mnsw-dev.mnsw.fi/port-api/v1/ports/data?endDate=2025-08-22&startDate=2025-08-01' \\\n--header 'Authorization: Bearer <access_token>' \n```",
+    "termsOfService" : "terms-of-usage-port.html",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8894",
+    "description" : "Local"
+  }, {
+    "url" : "https://mnsw-dev.mnsw.fi/port-api",
+    "description" : "DEV"
+  }, {
+    "url" : "https://mnsw-tst.mnsw.fi/port-api",
+    "description" : "TST"
+  }, {
+    "url" : "https://mnsw-stg.mnsw.fi/port-api",
+    "description" : "STG"
+  }, {
+    "url" : "https://mnsw.mnsw.fi/port-api",
+    "description" : "PRD"
+  } ],
+  "tags" : [ {
+    "name" : "Ports",
+    "description" : "The national port API will enable ports to send statistics data over to Nemo for Maritime statistics purpose and to request data for traffic taking place in Finnish ports.\nThe API access and documentation will be shared by Fintraffic and is not publicly available compared to national declarant API.\nPorts should have the following formalities available and the data they have: \nATA, ATD, CGA, CGD, COA, CWA, CWD, HZA, HZD, MDH, MTS, NOA, NOD, PXA, PXD, SEC, SRV, VID, WAR and WAS"
+  }, {
+    "name" : "Ships",
+    "description" : "Port authorities can search and get ship information."
+  } ],
+  "paths" : {
+    "/v1/ports/statistics" : {
+      "post" : {
+        "tags" : [ "Ports" ],
+        "summary" : "Post statistics from a port",
+        "description" : "Send statistics data for its own port to Nemo for Maritime statistics purposes.",
+        "operationId" : "postStatistics",
+        "requestBody" : {
+          "description" : "Statistics data",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Mlt2Statistics"
+              },
+              "examples" : {
+                "success_request" : {
+                  "description" : "success_request",
+                  "value" : {
+                    "reportHeaderData" : {
+                      "reporter" : "Oulun Satama Oy",
+                      "type" : "Port",
+                      "timeframeStart" : "2025-06-27T21:15:30+02:00",
+                      "timeframeEnd" : "2025-06-30T10:15:30+02:00"
+                    },
+                    "portCallInformation" : [ {
+                      "shipName" : "ZEUS OF FINLAND",
+                      "esdId" : "ESDID0000005704",
+                      "mmsiNumber" : "212409000"
+                    }, {
+                      "shipName" : "ARABELLA",
+                      "callSign" : "5BXD5"
+                    } ]
+                  }
+                },
+                "error_request" : {
+                  "description" : "error_request",
+                  "value" : {
+                    "reportHeaderData" : {
+                      "reporter" : "Oulun Satama Oy",
+                      "type" : "Port",
+                      "timeframeStart" : "2025-06-27T21:15:30+02:00",
+                      "timeframeEnd" : "2025-06-30T10:15:30+02:00"
+                    },
+                    "portCallInformation" : [ {
+                      "shipName" : "ZEUS OF FINLAND",
+                      "esdId" : "ESDID0000005704",
+                      "mmsiNumber" : "212409000"
+                    }, {
+                      "shipName" : "ARABELLA"
+                    } ]
+                  }
+                }
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Statistics posted successfully",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : {
+                    "eventType" : "MLT2",
+                    "messageStatus" : "Success",
+                    "reportedError" : { }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request, statistics cannot be sent. Check the request body values",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : {
+                    "frmResponse" : {
+                      "eventType" : "MLT2",
+                      "messageStatus" : "Rejected",
+                      "reportedError" : {
+                        "error:1" : {
+                          "description" : "portCallInformation must contain one of the following identifiers: imoNumber, cfrNumber, eniNumber, mmsiNumber, callSign or otherId.",
+                          "specifiedIdentifiedPointer" : [ {
+                            "sequenceNumeric" : 1,
+                            "path" : "/$portCallInformation"
+                          } ]
+                        }
+                      }
+                    },
+                    "errorKey" : "VALIDATION_FAILED",
+                    "errorMessage" : "Validation failed"
+                  }
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Statistics can't be send due to lack of permissions"
+          },
+          "404" : {
+            "description" : "Information not found."
+          },
+          "500" : {
+            "description" : "Internal server error."
+          }
+        }
+      }
+    },
+    "/v1/ships" : {
+      "get" : {
+        "tags" : [ "Ships" ],
+        "summary" : "Get list of all ship data including certificates",
+        "description" : "Get Ship, SID, SHP and certificate data. Search by ship name, IMO number, call sign, cfr number, eni number, MMSI number or other unique ID.",
+        "operationId" : "getShipDetails",
+        "parameters" : [ {
+          "name" : "callSignId",
+          "in" : "query",
+          "description" : "Ships call sign.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "A8PQ9"
+        }, {
+          "name" : "imoId",
+          "in" : "query",
+          "description" : "Ships IMO number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "0000105"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "description" : "Name of the ship.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "Customs test cargo ship 5"
+        }, {
+          "name" : "cfrId",
+          "in" : "query",
+          "description" : "Community Fleet Register Number (EU fishing ships).",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "eniId",
+          "in" : "query",
+          "description" : "European Number of Identification for inland ships.",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "mmsiId",
+          "in" : "query",
+          "description" : "Ships MMSI number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "0000105"
+        }, {
+          "name" : "otherId",
+          "in" : "query",
+          "description" : "Another unique ID if no IMO/MMSI are assigned.",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "A list of ship data (ESD, exemptions, ship certificates).",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExtendedShipData"
+                },
+                "examples" : {
+                  "success" : {
+                    "description" : "success",
+                    "value" : [ {
+                      "activeShipData" : {
+                        "ESDId" : "NEMO_TEST_105",
+                        "logisticsTransportMovement" : {
+                          "usedTransportMeans" : {
+                            "callSignId" : "A8PQ9",
+                            "name" : "Customs test cargo ship 5",
+                            "IMOId" : "0000105",
+                            "MMSIId" : "0000105",
+                            "typeCode" : 1505,
+                            "netWeight" : 400,
+                            "ICEClassCode" : "FS1B",
+                            "registrationCountry" : {
+                              "code" : "FI"
+                            },
+                            "owner" : {
+                              "name" : "Nemo customs test"
+                            }
+                          }
+                        },
+                        "activeExemptions" : [ ]
+                      },
+                      "iceClass" : {
+                        "status" : "CONFIRMED",
+                        "code" : "FS1B",
+                        "validTo" : "3000-01-01"
+                      },
+                      "certificates" : [ ]
+                    } ]
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request, ship data cannot be retrieved"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Ship data can't be get due to lack of permissions"
+          },
+          "500" : {
+            "description" : "Internal server error."
+          }
+        }
+      }
+    },
+    "/v1/ships/identifiers" : {
+      "get" : {
+        "tags" : [ "Ships" ],
+        "summary" : "Get ship identifiers",
+        "description" : "Search by ESD ID, ship name, imo number, mmsi number or call sign",
+        "operationId" : "getShipIdentifiers",
+        "parameters" : [ {
+          "name" : "search",
+          "in" : "query",
+          "description" : "search parameter",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "OJPQ"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Ship identifiers",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ActiveShipData"
+                },
+                "examples" : {
+                  "success" : {
+                    "description" : "success",
+                    "value" : {
+                      "ESDId" : "ESDID0000000018",
+                      "logisticsTransportMovement" : {
+                        "usedTransportMeans" : {
+                          "callSignId" : "OJPQ",
+                          "name" : "VIKING GRACE",
+                          "IMONumberIndicator" : true,
+                          "IMOId" : "9606900",
+                          "MMSIId" : "230629000",
+                          "typeCode" : 1591,
+                          "grossWeight" : 57565.0,
+                          "registrationCountry" : {
+                            "code" : "FI"
+                          },
+                          "specifiedSatelliteIdentification" : [ ],
+                          "vesselCharacteristic" : {
+                            "specifiedMooringWinch" : [ ],
+                            "onboardPropeller" : [ ],
+                            "onboardThruster" : [ ]
+                          },
+                          "onboardMainEngine" : [ ],
+                          "onboardAuxiliaryEngine" : [ ]
+                        }
+                      },
+                      "activeExemptions" : [ {
+                        "exemptionId" : "FIhiHSZfShEw0XuvAGVrMPyklKmb9sGKSWr",
+                        "exemptionDetails" : {
+                          "exemptionType" : "WasteNotification",
+                          "dateFrom" : "2021-12-05",
+                          "dateTo" : "2021-12-05",
+                          "routes" : [ {
+                            "port" : "FITKU"
+                          }, {
+                            "port" : "FILAN"
+                          }, {
+                            "port" : "SESTO"
+                          }, {
+                            "port" : "FIMHQ"
+                          } ],
+                          "exemptedWasteTypes" : [ {
+                            "wasteCode" : "0000"
+                          } ],
+                          "exemptionAppliesTo" : [ {
+                            "port" : "FITKU",
+                            "exemptedPortFacilities" : [ ]
+                          }, {
+                            "port" : "FILAN",
+                            "exemptedPortFacilities" : [ ]
+                          }, {
+                            "port" : "FIMHQ",
+                            "exemptedPortFacilities" : [ ]
+                          } ],
+                          "authority" : {
+                            "country" : "FI",
+                            "authorityType" : "NCA",
+                            "authorityName" : "The Finnish Transport and Communications Agency "
+                          },
+                          "contract247" : {
+                            "contactName" : "Antti Arkima",
+                            "loCode" : "FIHEL",
+                            "phoneNumber" : "+358407077960",
+                            "email" : "antti.arkima@fta.fi"
+                          }
+                        }
+                      }, {
+                        "exemptionId" : "SEIc6wKkX",
+                        "exemptionDetails" : {
+                          "exemptionType" : "WasteDelivery",
+                          "dateFrom" : "2022-07-08",
+                          "dateTo" : "2022-07-08",
+                          "routes" : [ {
+                            "port" : "FITKU"
+                          }, {
+                            "port" : "FILAN"
+                          }, {
+                            "port" : "SESTO"
+                          }, {
+                            "port" : "FIMHQ"
+                          } ],
+                          "exemptedWasteTypes" : [ {
+                            "wasteCode" : "0000",
+                            "wasteDescription" : "All waste"
+                          } ],
+                          "exemptionAppliesTo" : [ {
+                            "port" : "SESTO",
+                            "exemptedPortFacilities" : [ ]
+                          } ],
+                          "authority" : {
+                            "country" : "SE",
+                            "authorityType" : "NCA",
+                            "authorityName" : "Swedish Transport Agency"
+                          },
+                          "contract247" : {
+                            "contactName" : "Stina Paulin",
+                            "loCode" : "SENRK",
+                            "phoneNumber" : "+46771503503",
+                            "email" : "stina.paulin@transportstyrelsen.se"
+                          }
+                        }
+                      }, {
+                        "exemptionId" : "SEA4sOY1wgmHBM",
+                        "exemptionDetails" : {
+                          "exemptionType" : "Security",
+                          "dateFrom" : "2023-01-20",
+                          "dateTo" : "2023-01-20",
+                          "routes" : [ {
+                            "port" : "FITKU"
+                          }, {
+                            "port" : "FILAN"
+                          }, {
+                            "port" : "SESTO"
+                          }, {
+                            "port" : "FIMHQ"
+                          } ],
+                          "exemptedWasteTypes" : [ ],
+                          "exemptionAppliesTo" : [ {
+                            "port" : "SESTO",
+                            "exemptedPortFacilities" : [ {
+                              "portFacilityCode" : "SESTO-0010"
+                            } ]
+                          } ],
+                          "authority" : {
+                            "country" : "SE",
+                            "authorityType" : "NCA",
+                            "authorityName" : "Swedish Transport Agency"
+                          },
+                          "contract247" : {
+                            "loCode" : "SENRK",
+                            "phoneNumber" : "+46771520052",
+                            "email" : "sjofart@transportstyrelsen.se"
+                          }
+                        }
+                      }, {
+                        "exemptionId" : "SES68bqIWi1TYIdn4GbCxzgb",
+                        "exemptionDetails" : {
+                          "exemptionType" : "WasteNotification",
+                          "dateFrom" : "2022-07-08",
+                          "dateTo" : "2022-07-08",
+                          "routes" : [ {
+                            "port" : "FITKU"
+                          }, {
+                            "port" : "FILAN"
+                          }, {
+                            "port" : "SESTO"
+                          }, {
+                            "port" : "FIMHQ"
+                          } ],
+                          "exemptedWasteTypes" : [ {
+                            "wasteCode" : "0000",
+                            "wasteDescription" : "All waste"
+                          } ],
+                          "exemptionAppliesTo" : [ {
+                            "port" : "SESTO",
+                            "exemptedPortFacilities" : [ ]
+                          } ],
+                          "authority" : {
+                            "country" : "SE",
+                            "authorityType" : "NCA",
+                            "authorityName" : "Swedish Transport Agency"
+                          },
+                          "contract247" : {
+                            "contactName" : "Stina Paulin",
+                            "loCode" : "SENRK",
+                            "phoneNumber" : "+46771503503",
+                            "email" : "stina.paulin@transportstyrelsen.se"
+                          }
+                        }
+                      }, {
+                        "exemptionId" : "FIqfNgFv61sc",
+                        "exemptionDetails" : {
+                          "exemptionType" : "Security",
+                          "dateFrom" : "2022-01-07",
+                          "dateTo" : "2022-01-07",
+                          "routes" : [ {
+                            "port" : "FITKU"
+                          }, {
+                            "port" : "FILAN"
+                          }, {
+                            "port" : "SESTO"
+                          }, {
+                            "port" : "FIMHQ"
+                          } ],
+                          "exemptedWasteTypes" : [ ],
+                          "exemptionAppliesTo" : [ {
+                            "port" : "FITKU",
+                            "exemptedPortFacilities" : [ ]
+                          }, {
+                            "port" : "FILAN",
+                            "exemptedPortFacilities" : [ ]
+                          }, {
+                            "port" : "FIMHQ",
+                            "exemptedPortFacilities" : [ ]
+                          } ],
+                          "authority" : {
+                            "country" : "FI",
+                            "authorityType" : "NCA",
+                            "authorityName" : "Finnish Transport Agency"
+                          },
+                          "contract247" : {
+                            "contactName" : "Antti Arkima",
+                            "loCode" : "FIHEL",
+                            "phoneNumber" : "+358407077960",
+                            "email" : "antti.arkima@fta.fi"
+                          }
+                        }
+                      } ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request, ship data cannot be retrieved if the request parameter is missing",
+            "content" : {
+              "*/*" : {
+                "examples" : {
+                  "error 400" : {
+                    "description" : "error 400",
+                    "value" : {
+                      "timestamp" : "2025-05-16T07:09:31.856+00:00",
+                      "status" : 400,
+                      "error" : "Bad Request",
+                      "path" : "/ports/ship/identifiers"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Ship identifiers data can't be get due to lack of permissions"
+          },
+          "500" : {
+            "description" : "Internal server error."
+          }
+        }
+      }
+    },
+    "/v1/ports/data" : {
+      "get" : {
+        "tags" : [ "Ports" ],
+        "summary" : "Get port data",
+        "description" : "Request port formalities data for traffic taking place in Finnish ports.\nIf necessary, data can be queried for the desired period.\n Returns all saved formalities from the following formalities: ATA, ATD, CGA, CGD, COA, CWA, CWD, HZA, HZD, MDH, MTS, NOA, NOD, PXA, PXD, SEC, SRV, VID, WAR and WAS",
+        "operationId" : "getPortData",
+        "parameters" : [ {
+          "name" : "startDate",
+          "in" : "query",
+          "description" : "Searching by eta, where the date starts with the value of startDate. Format in YYYY-MM-DD.",
+          "required" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "examples" : {
+            "success_request" : {
+              "description" : "success_request",
+              "value" : "2025-08-26"
+            },
+            "error_400_request" : {
+              "description" : "error_400_request",
+              "value" : "2025-07-02"
+            }
+          }
+        }, {
+          "name" : "endDate",
+          "in" : "query",
+          "description" : "Searching by eta, where the date ends with the value of endDate. Format in YYYY-MM-DD",
+          "required" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "examples" : {
+            "success_request" : {
+              "description" : "success_request",
+              "value" : "2025-09-18"
+            },
+            "error_400_request" : {
+              "description" : "error_400_request",
+              "value" : "2025-06-12"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Port data retrieved successfully",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/FormalityData"
+                },
+                "examples" : {
+                  "success_request" : {
+                    "description" : "success_request",
+                    "value" : [ {
+                      "formality" : {
+                        "env:Envelope" : {
+                          "mai:MAI" : {
+                            "mai:ExchangedDocument" : {
+                              "ram:ID" : "bc2242f3-7c9b-42d3-bc15-bd57ec24c54e",
+                              "ram:TypeCode" : "VID",
+                              "ram:VersionID" : "2.0.0.0",
+                              "ram:PurposeCode" : "9",
+                              "ram:FirstSignatoryDocumentAuthentication" : {
+                                "ram:FormattedActualDateTime" : "2025-08-23T07:53:03.738356906Z"
+                              }
+                            },
+                            "mai:ExchangedDeclaration" : {
+                              "ram:DeclarantTradeParty" : {
+                                "ram:ID" : "FI0201126-4",
+                                "ram:Name" : "Shipping Company Nova",
+                                "ram:RoleCode" : "CA",
+                                "ram:PostalTradeAddress" : {
+                                  "ram:CityName" : "Helsinki",
+                                  "ram:CountryID" : "FI",
+                                  "ram:StreetName" : "PL 91",
+                                  "ram:PostcodeCode" : "00501"
+                                },
+                                "ram:DefinedTradeContact" : [ {
+                                  "ram:PersonName" : "eva Nemo",
+                                  "ram:EmailURIUniversalCommunication" : {
+                                    "ram:URIID" : "eva.nemo@nemosiili.onmicrosoft.com"
+                                  },
+                                  "ram:TelephoneUniversalCommunication" : {
+                                    "ram:CompleteNumber" : "+358401122334"
+                                  }
+                                } ]
+                              }
+                            },
+                            "mai:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ID" : "512d1c9ced2c41f4891daf3b6a55f1c1"
+                              }
+                            }
+                          },
+                          "vid:VID" : {
+                            "vid:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:OccurrenceLogisticsLocation" : {
+                                  "ram:ID" : "FIKJO"
+                                },
+                                "ram:EstimatedTransportMeansArrivalOccurrenceDateTime" : "2025-09-17T12:53:02Z"
+                              },
+                              "ram:UsedLogisticsTransportMeans" : {
+                                "ram:Name" : "Test No net tonnage cargo",
+                                "ram:IMOID" : "0000013",
+                                "ram:MMSIID" : "000000000",
+                                "ram:CallSignID" : "A8PQ5",
+                                "ram:IMONumberIndicator" : 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "formalityType" : "VID",
+                      "status" : "SUBMITTED"
+                    }, {
+                      "formality" : {
+                        "env:Envelope" : {
+                          "mai:MAI" : {
+                            "mai:ExchangedDocument" : {
+                              "ram:ID" : "aee96166-3276-4ec4-971c-782bab69ea9e",
+                              "ram:TypeCode" : "VID",
+                              "ram:VersionID" : "2.0.0.0",
+                              "ram:PurposeCode" : "9",
+                              "ram:FirstSignatoryDocumentAuthentication" : {
+                                "ram:FormattedActualDateTime" : "2025-08-26T07:00:17.128922626Z"
+                              }
+                            },
+                            "mai:ExchangedDeclaration" : {
+                              "ram:DeclarantTradeParty" : {
+                                "ram:ID" : "FI1979903-5",
+                                "ram:Name" : "Armas Agentuuri",
+                                "ram:RoleCode" : "AG",
+                                "ram:PostalTradeAddress" : {
+                                  "ram:CityName" : "Vantaa",
+                                  "ram:CountryID" : "FI",
+                                  "ram:StreetName" : "Ruoholahdenkatu 22",
+                                  "ram:PostcodeCode" : "00180"
+                                },
+                                "ram:DefinedTradeContact" : [ {
+                                  "ram:PersonName" : "Aina-Ilona Onnenpotkutes",
+                                  "ram:EmailURIUniversalCommunication" : {
+                                    "ram:URIID" : "user1.nemo@nemosiili.onmicrosoft.com"
+                                  },
+                                  "ram:TelephoneUniversalCommunication" : {
+                                    "ram:CompleteNumber" : "+358503464545"
+                                  }
+                                } ]
+                              }
+                            },
+                            "mai:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ID" : "ea749e27b777440cad8e267eee442320"
+                              }
+                            }
+                          },
+                          "vid:VID" : {
+                            "vid:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:OccurrenceLogisticsLocation" : {
+                                  "ram:ID" : "FIKJO"
+                                },
+                                "ram:EstimatedTransportMeansArrivalOccurrenceDateTime" : "2025-08-27T07:00:00Z"
+                              },
+                              "ram:UsedLogisticsTransportMeans" : {
+                                "ram:Name" : "Customs test cargo ship 2",
+                                "ram:IMOID" : "0000102",
+                                "ram:MMSIID" : "000000000",
+                                "ram:CallSignID" : "A8PQ6",
+                                "ram:IMONumberIndicator" : 1
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "formalityType" : "VID",
+                      "status" : "SUBMITTED"
+                    }, {
+                      "formality" : {
+                        "env:Envelope" : {
+                          "mai:MAI" : {
+                            "mai:ExchangedDocument" : {
+                              "ram:ID" : "43acfc56-c5c0-405f-af9d-09171408e4ba",
+                              "ram:TypeCode" : "NOA",
+                              "ram:VersionID" : "2.0.0.0",
+                              "ram:PurposeCode" : "9",
+                              "ram:FirstSignatoryDocumentAuthentication" : {
+                                "ram:FormattedActualDateTime" : "2025-08-26T07:02:11.962086851Z"
+                              }
+                            },
+                            "mai:ExchangedDeclaration" : {
+                              "ram:DeclarantTradeParty" : {
+                                "ram:ID" : "FI1979903-5",
+                                "ram:Name" : "Armas Agentuuri",
+                                "ram:RoleCode" : "AG",
+                                "ram:PostalTradeAddress" : {
+                                  "ram:CityName" : "Vantaa",
+                                  "ram:CountryID" : "FI",
+                                  "ram:StreetName" : "Ruoholahdenkatu 22",
+                                  "ram:PostcodeCode" : "00180"
+                                },
+                                "ram:DefinedTradeContact" : [ {
+                                  "ram:PersonName" : "Aina-Ilona Onnenpotkutes",
+                                  "ram:EmailURIUniversalCommunication" : {
+                                    "ram:URIID" : "user1.nemo@nemosiili.onmicrosoft.com"
+                                  },
+                                  "ram:TelephoneUniversalCommunication" : {
+                                    "ram:CompleteNumber" : "+358503464545"
+                                  }
+                                } ]
+                              }
+                            },
+                            "mai:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ID" : "ea749e27b777440cad8e267eee442320"
+                              }
+                            }
+                          },
+                          "noa:NOA" : {
+                            "noa:SpecifiedLogisticsTransportMovement" : {
+                              "ram:ModeCode" : "1",
+                              "ram:CallPurposeCode" : [ "13" ],
+                              "ram:CallTransportEvent" : {
+                                "ram:EstimatedTransportMeansArrivalOccurrenceDateTime" : "2025-08-27T07:00:00Z",
+                                "ram:EstimatedTransportMeansDepartureOccurrenceDateTime" : "2025-08-28T07:00:00Z"
+                              },
+                              "ram:ArrivalTransportEvent" : {
+                                "ram:OccurrenceLogisticsLocation" : {
+                                  "ram:SubordinateLocation" : {
+                                    "ram:Name" : "FIBRA-MUU-MUU"
+                                  }
+                                }
+                              },
+                              "ram:ItineraryTransportRoute" : {
+                                "ram:ItineraryStopTransportEvent" : [ {
+                                  "ram:SequenceNumeric" : -1,
+                                  "ram:OccurrenceLogisticsLocation" : {
+                                    "ram:ID" : "FIVAA"
+                                  }
+                                } ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "formalityType" : "NOA",
+                      "status" : "SUBMITTED"
+                    }, {
+                      "formality" : {
+                        "env:Envelope" : {
+                          "due:DUE" : {
+                            "due:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ApplicableSpecifiedFairwayPortDues" : { }
+                              }
+                            }
+                          },
+                          "mai:MAI" : {
+                            "mai:ExchangedDocument" : {
+                              "ram:ID" : "34fec9ad-f208-4660-b2f9-09d1bd37adf9",
+                              "ram:TypeCode" : "DUE",
+                              "ram:VersionID" : "2.0.0.0",
+                              "ram:PurposeCode" : "9",
+                              "ram:FirstSignatoryDocumentAuthentication" : {
+                                "ram:FormattedActualDateTime" : "2025-08-26T07:08:43.883542332Z"
+                              }
+                            },
+                            "mai:ExchangedDeclaration" : {
+                              "ram:ID" : "ZILVK0I49843HZ2MWEE29C",
+                              "ram:DeclarantTradeParty" : {
+                                "ram:ID" : "FI1979903-5",
+                                "ram:Name" : "Armas Agentuuri",
+                                "ram:RoleCode" : "AG",
+                                "ram:PostalTradeAddress" : {
+                                  "ram:CityName" : "Vantaa",
+                                  "ram:CountryID" : "FI",
+                                  "ram:StreetName" : "Ruoholahdenkatu 22",
+                                  "ram:PostcodeCode" : "00180"
+                                },
+                                "ram:DefinedTradeContact" : [ {
+                                  "ram:PersonName" : "Aina-Ilona Onnenpotkutes",
+                                  "ram:EmailURIUniversalCommunication" : {
+                                    "ram:URIID" : "user1.nemo@nemosiili.onmicrosoft.com"
+                                  },
+                                  "ram:TelephoneUniversalCommunication" : {
+                                    "ram:CompleteNumber" : "+358503464545"
+                                  }
+                                } ]
+                              }
+                            },
+                            "mai:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ID" : "ea749e27b777440cad8e267eee442320"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "formalityType" : "DUE",
+                      "status" : "SUBMITTED",
+                      "modifiedDate" : null
+                    }, {
+                      "formality" : {
+                        "env:Envelope" : {
+                          "ata:ATA" : {
+                            "ata:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ActualArrivalRelatedDateTime" : "2025-08-26T07:09:00.000Z"
+                              }
+                            }
+                          },
+                          "mai:MAI" : {
+                            "mai:ExchangedDocument" : {
+                              "ram:ID" : "10da6c66-863c-49fe-b04d-d8cb4afb8147",
+                              "ram:TypeCode" : "ATA",
+                              "ram:VersionID" : "2.0.0.0",
+                              "ram:PurposeCode" : "9",
+                              "ram:FirstSignatoryDocumentAuthentication" : {
+                                "ram:FormattedActualDateTime" : "2025-08-26T07:09:19.305443424Z"
+                              }
+                            },
+                            "mai:ExchangedDeclaration" : {
+                              "ram:DeclarantTradeParty" : {
+                                "ram:ID" : "FI1979903-5",
+                                "ram:Name" : "Armas Agentuuri",
+                                "ram:RoleCode" : "AG",
+                                "ram:PostalTradeAddress" : {
+                                  "ram:CityName" : "Vantaa",
+                                  "ram:CountryID" : "FI",
+                                  "ram:StreetName" : "Ruoholahdenkatu 22",
+                                  "ram:PostcodeCode" : "00180"
+                                },
+                                "ram:DefinedTradeContact" : [ {
+                                  "ram:PersonName" : "Aina-Ilona Onnenpotkutes",
+                                  "ram:EmailURIUniversalCommunication" : {
+                                    "ram:URIID" : "user1.nemo@nemosiili.onmicrosoft.com"
+                                  },
+                                  "ram:TelephoneUniversalCommunication" : {
+                                    "ram:CompleteNumber" : "+358503464545"
+                                  }
+                                } ]
+                              }
+                            },
+                            "mai:SpecifiedLogisticsTransportMovement" : {
+                              "ram:CallTransportEvent" : {
+                                "ram:ID" : "ea749e27b777440cad8e267eee442320"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "formalityType" : "ATA",
+                      "status" : "SUBMITTED"
+                    } ]
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request, port data cannot be retrieved",
+            "content" : {
+              "application/json" : {
+                "examples" : {
+                  "error_400_request" : {
+                    "description" : "error_400_request",
+                    "value" : {
+                      "errorKey" : "VALIDATION_FAILED",
+                      "errorMessage" : "End date cannot be before start date"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Port data can't be get due to lack of permissions"
+          },
+          "404" : {
+            "description" : "Information not found. The information you were trying to access could not be found, please try to select some other information"
+          },
+          "500" : {
+            "description" : "Internal server error."
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Mlt2Statistics" : {
+        "type" : "object",
+        "properties" : {
+          "reportHeaderData" : {
+            "$ref" : "#/components/schemas/Mlt2StatisticsReportHeaderData"
+          },
+          "portCallInformation" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Mlt2StatisticsPortCallInformationInner"
+            }
+          }
+        },
+        "required" : [ "portCallInformation", "reportHeaderData" ]
+      },
+      "Mlt2StatisticsPortCallInformationInner" : {
+        "type" : "object",
+        "properties" : {
+          "visitId" : {
+            "type" : "string"
+          },
+          "shipName" : {
+            "type" : "string"
+          },
+          "esdId" : {
+            "type" : "string"
+          },
+          "imoNumber" : {
+            "type" : "string"
+          },
+          "cfrNumber" : {
+            "type" : "string"
+          },
+          "eniNumber" : {
+            "type" : "string"
+          },
+          "mmsiNumber" : {
+            "type" : "string"
+          },
+          "callSign" : {
+            "type" : "string"
+          },
+          "otherId" : {
+            "type" : "string"
+          },
+          "reportingPort" : {
+            "type" : "string"
+          },
+          "portArea" : {
+            "type" : "string"
+          },
+          "dateTimeOfArrival" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "dateTimeOfDeparture" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "lastPortOfCall" : {
+            "type" : "string"
+          },
+          "nextPortOfCall" : {
+            "type" : "string"
+          },
+          "arrivingCruiseShip" : {
+            "type" : "boolean"
+          },
+          "departingCruiseShip" : {
+            "type" : "boolean"
+          },
+          "arrivingInDomesticTraffic" : {
+            "type" : "boolean"
+          },
+          "arrivingInForeignTraffic" : {
+            "type" : "boolean"
+          },
+          "departingInDomesticTraffic" : {
+            "type" : "boolean"
+          },
+          "departingInForeignTraffic" : {
+            "type" : "boolean"
+          },
+          "inwardPassengers" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "outwardPassengers" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "passageThroughSaimaaChannel" : {
+            "$ref" : "#/components/schemas/Mlt2StatisticsPortCallInformationInnerPassageThroughSaimaaChannel"
+          },
+          "vesselInformation" : {
+            "$ref" : "#/components/schemas/Mlt2StatisticsPortCallInformationInnerVesselInformation"
+          },
+          "inwardCargo" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Mlt2StatisticsPortCallInformationInnerInwardCargoInner"
+            }
+          },
+          "outwardCargo" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Mlt2StatisticsPortCallInformationInnerOutwardCargoInner"
+            }
+          }
+        }
+      },
+      "Mlt2StatisticsPortCallInformationInnerInwardCargoInner" : {
+        "type" : "object",
+        "properties" : {
+          "portOfLoading" : {
+            "type" : "string"
+          },
+          "portOfUnloading" : {
+            "type" : "string"
+          },
+          "transito" : {
+            "type" : "boolean"
+          },
+          "typeOfCargo" : {
+            "type" : "string"
+          },
+          "cargoWeightUnloaded" : {
+            "type" : "number"
+          },
+          "cargoUnitQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "itemQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "transportEquipmentId" : {
+            "type" : "string"
+          },
+          "transportEquipmentCategoryCode" : {
+            "type" : "string"
+          },
+          "transportEquipmentSizeAndType" : {
+            "type" : "string"
+          },
+          "transportEquipmentEmpty" : {
+            "type" : "boolean"
+          },
+          "transportEquipmentNonselfPropelledCode" : {
+            "type" : "string"
+          },
+          "grossWeightOfGoods" : {
+            "type" : "number",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "nstCargoCategory" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "nstClassification" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "nstCargoWeightLoaded" : {
+            "type" : "number",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "descriptionOfGoods" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "maritimeCoastalArea" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "numberOfContainersWithoutCargo" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "cruisePassengers" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "passengersExcludingCruise" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "cruisePassengersOnExcursion" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          }
+        }
+      },
+      "Mlt2StatisticsPortCallInformationInnerOutwardCargoInner" : {
+        "type" : "object",
+        "properties" : {
+          "portOfLoading" : {
+            "type" : "string"
+          },
+          "portOfUnloading" : {
+            "type" : "string"
+          },
+          "transito" : {
+            "type" : "boolean"
+          },
+          "typeOfCargo" : {
+            "type" : "string"
+          },
+          "cargoWeightLoaded" : {
+            "type" : "number"
+          },
+          "cargoUnitQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "itemQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "transportEquipmentId" : {
+            "type" : "string"
+          },
+          "transportEquipmentCategoryCode" : {
+            "type" : "string"
+          },
+          "transportEquipmentSizeAndType" : {
+            "type" : "string"
+          },
+          "transportEquipmentEmpty" : {
+            "type" : "boolean"
+          },
+          "transportEquipmentNonselfPropelledCode" : {
+            "type" : "string"
+          },
+          "grossWeightOfGoods" : {
+            "type" : "number",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "nstCargoCategory" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "nstClassification" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "nstCargoWeightLoaded" : {
+            "type" : "number",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "descriptionOfGoods" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "maritimeCoastalArea" : {
+            "type" : "string",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "numberOfContainersWithoutCargo" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "cruisePassengers" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "passengersExcludingCruise" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          },
+          "cruisePassengersOnExcursion" : {
+            "type" : "integer",
+            "format" : "int32",
+            "deprecated" : true,
+            "description" : "This property is deprecated."
+          }
+        }
+      },
+      "Mlt2StatisticsPortCallInformationInnerPassageThroughSaimaaChannel" : {
+        "type" : "object",
+        "properties" : {
+          "dayOfArrivalToChannel" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "dayOfDepartureFromChannel" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "Mlt2StatisticsPortCallInformationInnerVesselInformation" : {
+        "type" : "object",
+        "properties" : {
+          "grossTonnage" : {
+            "type" : "number"
+          },
+          "nationalityOfVessel" : {
+            "type" : "string"
+          },
+          "typeOfVessel" : {
+            "type" : "string",
+            "enum" : [ "10", "20", "31", "32", "33", "34", "35", "36", "41", "42", "43", "49", "XX" ]
+          },
+          "sizeOfVessel" : {
+            "type" : "string",
+            "enum" : [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22" ]
+          }
+        }
+      },
+      "Mlt2StatisticsReportHeaderData" : {
+        "type" : "object",
+        "properties" : {
+          "reporter" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string",
+            "enum" : [ "Channel", "Inland", "Port", "Port call" ]
+          },
+          "timeframeStart" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "timeframeEnd" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "errors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "required" : [ "reporter", "timeframeEnd", "timeframeStart", "type" ]
+      },
+      "ActiveExemptions" : {
+        "type" : "object",
+        "properties" : {
+          "exemptionId" : {
+            "type" : "string"
+          },
+          "exemptionDetails" : {
+            "$ref" : "#/components/schemas/ExemptionDetails"
+          }
+        },
+        "required" : [ "exemptionDetails", "exemptionId" ]
+      },
+      "ActiveShipData" : {
+        "type" : "object",
+        "properties" : {
+          "ESDId" : {
+            "type" : "string"
+          },
+          "logisticsTransportMovement" : {
+            "$ref" : "#/components/schemas/LogisticsTransportMovement"
+          },
+          "activeExemptions" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ActiveExemptions"
+            }
+          }
+        },
+        "required" : [ "ESDId", "activeExemptions", "logisticsTransportMovement" ]
+      },
+      "ApplicableMarineGreenCredential" : {
+        "type" : "object",
+        "properties" : {
+          "sewageSystemTreatmentText" : {
+            "type" : "string"
+          },
+          "exhaustGasCleaningSystemIndicator" : {
+            "type" : "boolean"
+          },
+          "scrubberSystemIndicator" : {
+            "type" : "boolean"
+          },
+          "scrubberSystemTypeCode" : {
+            "type" : "string"
+          },
+          "IGFRegulatoryRequirementIndicator" : {
+            "type" : "boolean"
+          },
+          "NOxReductionSystemDescriptionText" : {
+            "type" : "string"
+          },
+          "wasteIncineratorIndicator" : {
+            "type" : "boolean"
+          },
+          "wasteIncineratorDescriptionText" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ApplicableMembership" : {
+        "type" : "object",
+        "properties" : {
+          "applicableMembershipLegalOrganisation" : {
+            "$ref" : "#/components/schemas/ApplicableMembershipLegalOrganisation"
+          }
+        }
+      },
+      "ApplicableMembershipLegalOrganisation" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ]
+      },
+      "Authority" : {
+        "type" : "object",
+        "properties" : {
+          "country" : {
+            "type" : "string"
+          },
+          "authorityType" : {
+            "type" : "string"
+          },
+          "authorityName" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "authorityName", "authorityType", "country" ]
+      },
+      "CertifyingParty" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "id" ]
+      },
+      "ChartererParty" : {
+        "type" : "object",
+        "properties" : {
+          "typeCode" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "postalAddress" : {
+            "$ref" : "#/components/schemas/PostalAddress"
+          }
+        }
+      },
+      "CommercialManagerParty" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "postalAddress" : {
+            "$ref" : "#/components/schemas/PostalAddress"
+          }
+        }
+      },
+      "ConstructionBuilding" : {
+        "type" : "object",
+        "properties" : {
+          "constructionDate" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "contractDate" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "keelLayingDate" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "Contact247" : {
+        "type" : "object",
+        "properties" : {
+          "contactName" : {
+            "type" : "string"
+          },
+          "loCode" : {
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          }
+        }
+      },
+      "EmailAddress" : {
+        "type" : "object",
+        "properties" : {
+          "uri" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "uri" ]
+      },
+      "ExemptedPortFacilities" : {
+        "type" : "object",
+        "properties" : {
+          "portFacilityCode" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "portFacilityCode" ]
+      },
+      "ExemptedWasteTypes" : {
+        "type" : "object",
+        "properties" : {
+          "wasteCode" : {
+            "type" : "string"
+          },
+          "wasteDescription" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "wasteCode" ]
+      },
+      "ExemptionAppliesTo" : {
+        "type" : "object",
+        "properties" : {
+          "port" : {
+            "type" : "string"
+          },
+          "exemptedPortFacilities" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ExemptedPortFacilities"
+            }
+          }
+        },
+        "required" : [ "exemptedPortFacilities", "port" ]
+      },
+      "ExemptionDetails" : {
+        "type" : "object",
+        "properties" : {
+          "exemptionType" : {
+            "type" : "string"
+          },
+          "dateFrom" : {
+            "type" : "string"
+          },
+          "dateTo" : {
+            "type" : "string"
+          },
+          "routes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Route"
+            }
+          },
+          "exemptedWasteTypes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ExemptedWasteTypes"
+            }
+          },
+          "exemptionAppliesTo" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ExemptionAppliesTo"
+            }
+          },
+          "authority" : {
+            "$ref" : "#/components/schemas/Authority"
+          },
+          "contract247" : {
+            "$ref" : "#/components/schemas/Contact247"
+          }
+        },
+        "required" : [ "authority", "contract247", "dateFrom", "dateTo", "exemptedWasteTypes", "exemptionAppliesTo", "exemptionType", "routes" ]
+      },
+      "ExtendedShipData" : {
+        "type" : "object",
+        "properties" : {
+          "activeShipData" : {
+            "$ref" : "#/components/schemas/ActiveShipData"
+          },
+          "iceClass" : {
+            "$ref" : "#/components/schemas/FinnishIceClass"
+          },
+          "certificates" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ShipCertificate"
+            }
+          }
+        }
+      },
+      "FinnishIceClass" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          },
+          "code" : {
+            "type" : "string"
+          },
+          "entryDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "validTo" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "dateOfIssue" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "requestedAt" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "updatedAt" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "LogisticsTransportMovement" : {
+        "type" : "object",
+        "properties" : {
+          "usedTransportMeans" : {
+            "$ref" : "#/components/schemas/UsedTransportMeans"
+          }
+        },
+        "required" : [ "usedTransportMeans" ]
+      },
+      "ManufacturerParty" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ]
+      },
+      "OccurrenceLocation" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "OnboardAuxiliaryEngine" : {
+        "type" : "object",
+        "properties" : {
+          "sequenceNumber" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "powerMeasure" : {
+            "type" : "number"
+          },
+          "engineTierTypeCode" : {
+            "type" : "string"
+          },
+          "engineIGFIndicator" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "OnboardMainEngine" : {
+        "type" : "object",
+        "properties" : {
+          "typeCode" : {
+            "type" : "string"
+          },
+          "powerMeasure" : {
+            "type" : "number"
+          },
+          "exhaustEmisssionClassCode" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "latestTestDate" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "fullCargoSpeedMeasure" : {
+            "type" : "number"
+          },
+          "inBallastSpeedMeasure" : {
+            "type" : "number"
+          },
+          "engineTierTypeCode" : {
+            "type" : "string"
+          },
+          "engineIGFIndicator" : {
+            "type" : "boolean"
+          },
+          "sequenceNumber" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "manufacturerParty" : {
+            "$ref" : "#/components/schemas/ManufacturerParty"
+          }
+        }
+      },
+      "OnboardPropeller" : {
+        "type" : "object",
+        "properties" : {
+          "typeCode" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "locationCode" : {
+            "type" : "string"
+          },
+          "powerMeasure" : {
+            "type" : "number"
+          },
+          "variablePitchIndicator" : {
+            "type" : "boolean"
+          },
+          "pitchRotationCode" : {
+            "type" : "string"
+          },
+          "driveTypeCode" : {
+            "type" : "string"
+          }
+        }
+      },
+      "OnboardTank" : {
+        "type" : "object",
+        "properties" : {
+          "segregatedBallastTotalVolumeMeasure" : {
+            "type" : "number"
+          },
+          "totalCapacityVolumeMeasure" : {
+            "type" : "number"
+          }
+        }
+      },
+      "OnboardThruster" : {
+        "type" : "object",
+        "properties" : {
+          "bowPowerMeasure" : {
+            "type" : "number"
+          },
+          "sternPowerMeasure" : {
+            "type" : "number"
+          }
+        }
+      },
+      "OnboardVesselRampVesselRamp" : {
+        "type" : "object",
+        "properties" : {
+          "widthMeasure" : {
+            "type" : "number"
+          },
+          "locationCode" : {
+            "type" : "string"
+          },
+          "extentMeasure" : {
+            "type" : "number"
+          }
+        }
+      },
+      "Operator" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ]
+      },
+      "Owner" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "registeredId" : {
+            "type" : "string"
+          },
+          "postalAddress" : {
+            "$ref" : "#/components/schemas/PostalAddress"
+          },
+          "applicableMembership" : {
+            "$ref" : "#/components/schemas/ApplicableMembership"
+          }
+        }
+      },
+      "PostalAddress" : {
+        "type" : "object",
+        "properties" : {
+          "postcode" : {
+            "type" : "string"
+          },
+          "lineOne" : {
+            "type" : "string"
+          },
+          "cityName" : {
+            "type" : "string"
+          },
+          "countryCode" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RegistrationCountry" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "code" ]
+      },
+      "RegistrationEvent" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "actualOccurrenceDate" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "occurrenceLocation" : {
+            "$ref" : "#/components/schemas/OccurrenceLocation"
+          },
+          "certifyingParty" : {
+            "$ref" : "#/components/schemas/CertifyingParty"
+          }
+        }
+      },
+      "Route" : {
+        "type" : "object",
+        "properties" : {
+          "port" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "port" ]
+      },
+      "ShipCertificate" : {
+        "type" : "object",
+        "properties" : {
+          "attachmentId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "attachmentFileName" : {
+            "type" : "string"
+          },
+          "attachmentNameCode" : {
+            "type" : "string"
+          },
+          "certificateTypeCode" : {
+            "type" : "string"
+          },
+          "certificateIssueDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "certificateDateOfExpiry" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "certificateIssuerCode" : {
+            "type" : "string"
+          },
+          "certificateIssuerTypeCode" : {
+            "type" : "string"
+          },
+          "certificateIssuerName" : {
+            "type" : "string"
+          },
+          "certificateIssuerFlagStateCode" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "attachmentFileName", "attachmentId", "attachmentNameCode", "certificateDateOfExpiry", "certificateIssueDate", "certificateIssuerCode", "certificateIssuerFlagStateCode", "certificateIssuerName", "certificateIssuerTypeCode", "certificateTypeCode" ]
+      },
+      "ShipCompanyParty" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "registeredId" : {
+            "type" : "string"
+          },
+          "shipCompanySMDGCode" : {
+            "type" : "string"
+          },
+          "taxId" : {
+            "type" : "string"
+          },
+          "postalAddress" : {
+            "$ref" : "#/components/schemas/PostalAddress"
+          },
+          "telephone" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Telephone"
+            }
+          },
+          "emailAddress" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/EmailAddress"
+            }
+          }
+        }
+      },
+      "SpecifiedMooringWinch" : {
+        "type" : "object",
+        "properties" : {
+          "locationCode" : {
+            "type" : "string"
+          },
+          "descriptionText" : {
+            "type" : "string"
+          },
+          "weightMeasure" : {
+            "type" : "number"
+          }
+        }
+      },
+      "SpecifiedSatelliteIdentification" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "providerCode" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "TechnicalManagerParty" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "postalAddress" : {
+            "$ref" : "#/components/schemas/PostalAddress"
+          }
+        }
+      },
+      "Telephone" : {
+        "type" : "object",
+        "properties" : {
+          "completeNumber" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "completeNumber" ]
+      },
+      "UsedTransportMeans" : {
+        "type" : "object",
+        "properties" : {
+          "callSignId" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "IMONumberIndicator" : {
+            "type" : "boolean"
+          },
+          "IMOId" : {
+            "type" : "string"
+          },
+          "MMSIId" : {
+            "type" : "string"
+          },
+          "ENIId" : {
+            "type" : "string"
+          },
+          "CFRId" : {
+            "type" : "string"
+          },
+          "otherId" : {
+            "type" : "string"
+          },
+          "typeCode" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "grossWeight" : {
+            "type" : "number"
+          },
+          "netWeight" : {
+            "type" : "number"
+          },
+          "relatedTransportMode" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "externalMarkingText" : {
+            "type" : "string"
+          },
+          "widthMeasure" : {
+            "type" : "number"
+          },
+          "ICEClassCode" : {
+            "type" : "string"
+          },
+          "mainEngineAvailabilityIndicator" : {
+            "type" : "boolean"
+          },
+          "deadWeightTonnage" : {
+            "type" : "number"
+          },
+          "summerDraught" : {
+            "type" : "number"
+          },
+          "freshWaterDraught" : {
+            "type" : "number"
+          },
+          "reducedGrossWeight" : {
+            "type" : "number"
+          },
+          "overallLength" : {
+            "type" : "number"
+          },
+          "betweenPerpendicularsLength" : {
+            "type" : "number"
+          },
+          "openWaterSpeedMeasure" : {
+            "type" : "number"
+          },
+          "registrationCountry" : {
+            "$ref" : "#/components/schemas/RegistrationCountry"
+          },
+          "operator" : {
+            "$ref" : "#/components/schemas/Operator"
+          },
+          "owner" : {
+            "$ref" : "#/components/schemas/Owner"
+          },
+          "registrationEvent" : {
+            "$ref" : "#/components/schemas/RegistrationEvent"
+          },
+          "specifiedSatelliteIdentification" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpecifiedSatelliteIdentification"
+            }
+          },
+          "shipCompanyParty" : {
+            "$ref" : "#/components/schemas/ShipCompanyParty"
+          },
+          "chartererParty" : {
+            "$ref" : "#/components/schemas/ChartererParty"
+          },
+          "vesselCharacteristic" : {
+            "$ref" : "#/components/schemas/VesselCharacteristic"
+          },
+          "onboardMainEngine" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnboardMainEngine"
+            }
+          },
+          "onboardAuxiliaryEngine" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnboardAuxiliaryEngine"
+            }
+          },
+          "commercialManagerParty" : {
+            "$ref" : "#/components/schemas/CommercialManagerParty"
+          },
+          "technicalManagerParty" : {
+            "$ref" : "#/components/schemas/TechnicalManagerParty"
+          }
+        }
+      },
+      "VesselCharacteristic" : {
+        "type" : "object",
+        "properties" : {
+          "tankerHullConfigurationCode" : {
+            "type" : "string"
+          },
+          "forwardToManifoldFullyLoadedParallelMeasure" : {
+            "type" : "number"
+          },
+          "forwardToManifoldInBallastParallelMeasure" : {
+            "type" : "number"
+          },
+          "aftToManifoldLoadedParallelMeasure" : {
+            "type" : "number"
+          },
+          "aftToManifoldInBallastParallelMeasure" : {
+            "type" : "number"
+          },
+          "bodyLengthParallelMeasure" : {
+            "type" : "number"
+          },
+          "bowToBridgeMeasure" : {
+            "type" : "number"
+          },
+          "sternToBridgeMeasure" : {
+            "type" : "number"
+          },
+          "rudderSurfaceAreaMeasure" : {
+            "type" : "number"
+          },
+          "windageSurfaceAreaMeasure" : {
+            "type" : "number"
+          },
+          "summerDeadweightTonnage" : {
+            "type" : "number"
+          },
+          "maximumTEUCapacityQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "mastHeightMeasure" : {
+            "type" : "number"
+          },
+          "depthMeasure" : {
+            "type" : "number"
+          },
+          "displacementMeasure" : {
+            "type" : "number"
+          },
+          "keelToMastLengthMeasure" : {
+            "type" : "number"
+          },
+          "segregatedBallastTankQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "tankQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "largestTankVolumeMeasure" : {
+            "type" : "number"
+          },
+          "winchQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "inertGasSystemIndicator" : {
+            "type" : "boolean"
+          },
+          "bulbousBowIndicator" : {
+            "type" : "boolean"
+          },
+          "cargoHandlingGearsDetails" : {
+            "type" : "string"
+          },
+          "onboardShorePowerConnectionIndicator" : {
+            "type" : "boolean"
+          },
+          "thrusterIndicator" : {
+            "type" : "boolean"
+          },
+          "mainEngineQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "auxiliaryEngineQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "propellerQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "bowThrusterQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sternThrusterQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "rudderQuantity" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "constructionBuilding" : {
+            "$ref" : "#/components/schemas/ConstructionBuilding"
+          },
+          "specifiedMooringWinch" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/SpecifiedMooringWinch"
+            }
+          },
+          "onboardPropeller" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnboardPropeller"
+            }
+          },
+          "onboardThruster" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnboardThruster"
+            }
+          },
+          "onboardTank" : {
+            "$ref" : "#/components/schemas/OnboardTank"
+          },
+          "onboardVesselRamp" : {
+            "$ref" : "#/components/schemas/OnboardVesselRampVesselRamp"
+          },
+          "applicableMarineGreenCredential" : {
+            "$ref" : "#/components/schemas/ApplicableMarineGreenCredential"
+          }
+        }
+      },
+      "FormalityData" : {
+        "type" : "object",
+        "properties" : {
+          "formality" : {
+            "$ref" : "#/components/schemas/JsonNode"
+          },
+          "formalityType" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "modifiedDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        },
+        "required" : [ "formality", "formalityType" ]
+      },
+      "JsonNode" : { }
+    },
+    "securitySchemes" : {
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

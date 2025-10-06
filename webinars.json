@@ -8,7 +8,13 @@
     "audience": ["Satamat"],
     "tags": ["Satamat"],
     "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+      "docs": [
+        { "label": "context-diagram-port-api.png", "url": "/mnsw/webinars/27.8-Satamille-suunnattu-Nemo-koulutustilaisuus/context-diagram-port-api.png" },
+        { "label": "port-api-docs.json", "url": "/mnsw/webinars/27.8-Satamille-suunnattu-Nemo-koulutustilaisuus/port-api-docs.json" },
+        { "label": "portApi.json", "url": "/mnsw/webinars/27.8-Satamille-suunnattu-Nemo-koulutustilaisuus/portApi.json" },
+        { "label": "redoc-static-port.html", "url": "/mnsw/webinars/27.8-Satamille-suunnattu-Nemo-koulutustilaisuus/redoc-static-port.html" },
+        { "label": "webinar-20250827_081242UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/27.8%20Satamille%20suunnattu%20Nemo-koulutustilaisuus/Satamille%20suunnattu%20Nemo-koulutustilaisuus-20250827_081242UTC-Meeting%20Recording.mp4" }
+      ]
     }
   },
   {
@@ -20,7 +26,12 @@
     "audience": ["Ilmoittajat"],
     "tags": ["Datamalli", "Ilmoittaminen", "Rajapinnat"],
     "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+      "docs": [
+        { "label": "Interface-documentations.pptx", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/Interface-documentations.pptx" },
+        { "label": "koulutuswebinaari-24092025.pdf", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/koulutuswebinaari-24092025.pdf" },
+        { "label": "koulutuswebinaari-24092025.pptx", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/koulutuswebinaari-24092025.pptx" },
+        { "label": "webinars-20250924_080309UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/24-9-Datamallit-ilmoittaminen-ja-rajapinnat/Nemo-koulutustilaisuus%20%20Datamalli,%20ilmoittaminen%20ja%20rajapinnat-20250924_080309UTC-Meeting%20Recording.mp4" }
+      ]
     }
   },
   {
