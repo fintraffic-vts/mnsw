@@ -22,19 +22,19 @@
 			"default": "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"frm:FRM": {
-					"$ref": "#/$defs/.frm:FRM"
+					"$ref": "#/$defs/frm:FRM"
 				},
 				"res:RES": {
-					"$ref": "#/$defs/.res:RES"
+					"$ref": "#/$defs/res:RES"
 				}
 			},
 			"required": [
@@ -42,10 +42,10 @@
 			],
 			"additionalProperties": false
 		},
-		".frm:FRM": {
+		"frm:FRM": {
 			"$ref": "#/$defs/frm:FRMType_2"
 		},
-		".res:RES": {
+		"res:RES": {
 			"$ref": "#/$defs/res:RESType_2"
 		},
 		"frm:FRMType_2": {

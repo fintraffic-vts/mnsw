@@ -22,22 +22,22 @@
 			"default": "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".cgd:CGD": {
+		"cgd:CGD": {
 			"$ref": "#/$defs/cgd:CGDType_2"
 		},
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"cgd:CGD": {
-					"$ref": "#/$defs/.cgd:CGD"
+					"$ref": "#/$defs/cgd:CGD"
 				},
 				"mai:MAI": {
-					"$ref": "#/$defs/.mai:MAI"
+					"$ref": "#/$defs/mai:MAI"
 				}
 			},
 			"required": [
@@ -45,7 +45,7 @@
 			],
 			"additionalProperties": false
 		},
-		".mai:MAI": {
+		"mai:MAI": {
 			"$ref": "#/$defs/mai:MAIType_2"
 		},
 		"cgd:CGDType_2": {

@@ -22,22 +22,22 @@
 			"default": "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".blr:BLR": {
+		"blr:BLR": {
 			"$ref": "#/$defs/blr:BLRType_2"
 		},
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"blr:BLR": {
-					"$ref": "#/$defs/.blr:BLR"
+					"$ref": "#/$defs/blr:BLR"
 				},
 				"res:RES": {
-					"$ref": "#/$defs/.res:RES"
+					"$ref": "#/$defs/res:RES"
 				}
 			},
 			"required": [
@@ -45,7 +45,7 @@
 			],
 			"additionalProperties": false
 		},
-		".res:RES": {
+		"res:RES": {
 			"$ref": "#/$defs/res:RESType_2"
 		},
 		"blr:BLRType_2": {

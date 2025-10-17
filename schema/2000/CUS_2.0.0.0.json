@@ -22,22 +22,22 @@
 			"default": "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".cus:CUS": {
+		"cus:CUS": {
 			"$ref": "#/$defs/cus:CUSType_2"
 		},
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"cus:CUS": {
-					"$ref": "#/$defs/.cus:CUS"
+					"$ref": "#/$defs/cus:CUS"
 				},
 				"res:RES": {
-					"$ref": "#/$defs/.res:RES"
+					"$ref": "#/$defs/res:RES"
 				}
 			},
 			"required": [
@@ -45,7 +45,7 @@
 			],
 			"additionalProperties": false
 		},
-		".res:RES": {
+		"res:RES": {
 			"$ref": "#/$defs/res:RESType_2"
 		},
 		"cus:CUSType_2": {

@@ -22,19 +22,19 @@
 			"default": "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"mai:MAI": {
-					"$ref": "#/$defs/.mai:MAI"
+					"$ref": "#/$defs/mai:MAI"
 				},
 				"noa:NOA": {
-					"$ref": "#/$defs/.noa:NOA"
+					"$ref": "#/$defs/noa:NOA"
 				}
 			},
 			"required": [
@@ -42,10 +42,10 @@
 			],
 			"additionalProperties": false
 		},
-		".mai:MAI": {
+		"mai:MAI": {
 			"$ref": "#/$defs/mai:MAIType_2"
 		},
-		".noa:NOA": {
+		"noa:NOA": {
 			"$ref": "#/$defs/noa:NOAType_2"
 		},
 		"mai:MAIType_2": {

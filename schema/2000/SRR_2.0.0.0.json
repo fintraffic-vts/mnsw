@@ -22,19 +22,19 @@
 			"default": "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"res:RES": {
-					"$ref": "#/$defs/.res:RES"
+					"$ref": "#/$defs/res:RES"
 				},
 				"srr:SRR": {
-					"$ref": "#/$defs/.srr:SRR"
+					"$ref": "#/$defs/srr:SRR"
 				}
 			},
 			"required": [
@@ -42,10 +42,10 @@
 			],
 			"additionalProperties": false
 		},
-		".res:RES": {
+		"res:RES": {
 			"$ref": "#/$defs/res:RESType_2"
 		},
-		".srr:SRR": {
+		"srr:SRR": {
 			"$ref": "#/$defs/srr:SRRType_2"
 		},
 		"qdt:DocumentStatusCodeContentType_2": {

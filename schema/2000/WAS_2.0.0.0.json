@@ -22,19 +22,19 @@
 			"default": "urn:un:unece:uncefact:data:standard:WAS:MMTPlus"
 		},
 		"env:Envelope": {
-			"$ref": "#/$defs/.env:Envelope"
+			"$ref": "#/$defs/env:Envelope"
 		}
 	},
 	"additionalProperties": false,
 	"$defs": {
-		".env:Envelope": {
+		"env:Envelope": {
 			"type": "object",
 			"properties": {
 				"mai:MAI": {
-					"$ref": "#/$defs/.mai:MAI"
+					"$ref": "#/$defs/mai:MAI"
 				},
 				"was:WAS": {
-					"$ref": "#/$defs/.was:WAS"
+					"$ref": "#/$defs/was:WAS"
 				}
 			},
 			"required": [
@@ -42,10 +42,10 @@
 			],
 			"additionalProperties": false
 		},
-		".mai:MAI": {
+		"mai:MAI": {
 			"$ref": "#/$defs/mai:MAIType_2"
 		},
-		".was:WAS": {
+		"was:WAS": {
 			"$ref": "#/$defs/was:WASType_2"
 		},
 		"mai:MAIType_2": {
