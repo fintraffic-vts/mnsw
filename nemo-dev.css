@@ -226,3 +226,19 @@ pre.mermaid {
     box-shadow: none;
     padding: 0;
 }
+
+.changelogList {
+    list-style-type: none;
+    padding-left: 0;
+}
+.changelogList li::before {
+    content: "\2014\0020"; /* em dash and space */
+}
+
+@media (max-width: 600px) {
+    .changelog-flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}

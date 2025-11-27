@@ -30,7 +30,7 @@
   <div class="container">
     <div class="section-title">
       <h2>Rules, Conditions &amp; Guidelines</h2>
-      <div class="sub" id="stats">361 total · 354 marked for UI · 253 backend-checked</div>
+      <div class="sub" id="stats">368 total · 354 marked for UI · 260 backend-checked</div>
     </div>
 
     <div class="controls">
@@ -4666,6 +4666,19 @@
 </article>
 <article class="card" data-type="Rule" data-source="National" data-backend="yes">
   <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-DUE-665">NR-DUE-665  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>Reject DUE if Ship owner (laivanisäntä) is Liable for the fairway due payment and is located outside EU/ETA area</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>Hylkää DUE, jos laivanisäntä on väylämaksuvelvollinen ja sijaitsee EU/ETA-alueen ulkopuolella.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>Avvisa DUE om fartygsägaren (redaren) är avgiftsskyldig för farledsavgiften och är belägen utanför EU/EES-området.</div>
+  </details>
+</article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
   <h3 id="NR-DUE-666">NR-DUE-666 <span class="label label-ui">UI</span> <span class="label label-backend" title="Checked in backend">BE</span></h3>
   <p>If Declaration Submission Indicator = “no“, then Periodic Declaration Indicator, No Declaration Reason Code and Party Joint Liability Indicator must not be given.</p>
   <details>
@@ -4692,28 +4705,54 @@
 </article>
 <article class="card" data-type="Rule" data-source="National" data-backend="yes">
   <div class="eyebrow">Rule · National</div>
-  <h3 id="NR-NOA-108">NR-NOA-108  <span class="label label-backend" title="Checked in backend">BE</span></h3>
-  <p>Use code &quot;ST-FI-01&quot; for NOA</p>
+  <h3 id="NR-DUE-668">NR-DUE-668  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>MIG specification allows multiple DUE to be submitted, in Finland we support just one submitted DUE</p>
   <details>
     <summary>Finnish (FI)</summary>
-    <div><span class="muted">—</span></div>
+    <div>MIG-määritys sallii useiden DUE-ilmoitusten lähettämisen, mutta Suomessa tuemme vain yhtä lähetettyä DUE:ta.</div>
   </details>
   <details>
     <summary>Swedish (SV)</summary>
-    <div><span class="muted">—</span></div>
+    <div>MIG-specifikationen tillåter att flera DUE lämnas in, men i Finland stöder vi endast en inlämnad DUE.</div>
+  </details>
+</article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-NOA-107">NR-NOA-107  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>Expected First Location&quot; (DE-015-04) in NOA Against Finnish Anchorage/Berth Code List</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>Expected First Location (DE-015-04) NOA:ssa Suomen ankkuri- ja laiturikoodiluetteloa vastaan.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>Expected First Location (DE-015-04) i NOA mot den finska förtöjnings- och ankringskodlistan.</div>
+  </details>
+</article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-NOA-108">NR-NOA-108  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>Use code in DE-003-07 as  &quot;ST-FI-01&quot; for NOA</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>NOA-ilmoituksessa käytetään koodia &quot;ST-FI-01&quot; kentässä DE-003-07.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>I NOA-anmälan används koden &quot;ST-FI-01&quot; i fältet DE-003-07.</div>
   </details>
 </article>
 <article class="card" data-type="Rule" data-source="National" data-backend="yes">
   <div class="eyebrow">Rule · National</div>
   <h3 id="NR-NOD-108">NR-NOD-108  <span class="label label-backend" title="Checked in backend">BE</span></h3>
-  <p>Use code &quot;ST-FI-02&quot; for NOD</p>
+  <p>Use code in DE-003-07 as &quot;ST-FI-02&quot; for NOD</p>
   <details>
     <summary>Finnish (FI)</summary>
-    <div><span class="muted">—</span></div>
+    <div>NOD-ilmoituksessa käytetään koodia &quot;ST-FI-02&quot; kentässä DE-003-07.</div>
   </details>
   <details>
     <summary>Swedish (SV)</summary>
-    <div><span class="muted">—</span></div>
+    <div>I NOD-anmälan används koden &quot;ST-FI-02&quot; i fältet DE-003-07.</div>
   </details>
 </article>
 <article class="card" data-type="Guideline" data-source="National" data-backend="no">
@@ -4742,14 +4781,66 @@
     <div>Bekräftelse på avgångsanmälan ges när alla förhandsuppgifter om avgången har skickats.</div>
   </details>
 </article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-SHP-001">NR-SHP-001  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>Vessel details needs owner information.</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>Omistajan tiedot tarvitaan alustietoihin.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>Fartygets uppgifter behöver ägarinformation.</div>
+  </details>
+</article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-ATA-998">NR-ATA-998  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>If DUE is not given (submitted), then no ATA can be submitted.</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>Jos DUE:ta ei ole annettu (lähetetty), ATA:ta ei voida lähettää.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>Om DUE inte har lämnats in, kan ingen ATA lämnas in.</div>
+  </details>
+</article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-ATA-700">NR-ATA-700  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>If NOA DE-003-07 is not given, then don’t allow ATA be sent</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>Jos NOA DE-003-07:ää ei ole annettu, ATA:ta ei saa lähettää.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>Om NOA DE-003-07 inte har angetts, får ATA inte skickas.</div>
+  </details>
+</article>
+<article class="card" data-type="Rule" data-source="National" data-backend="yes">
+  <div class="eyebrow">Rule · National</div>
+  <h3 id="NR-SEC-001">NR-SEC-001  <span class="label label-backend" title="Checked in backend">BE</span></h3>
+  <p>If Expected first location/berth (NOA.DE-015-04) is provided, it must belong to the same facility as SEC.DE-014-05.</p>
+  <details>
+    <summary>Finnish (FI)</summary>
+    <div>Jos NOA.DE-015-04 (odotettu ensimmäinen sijainti/laituripaikka) on annettu, sen on kuuluttava samaan laitokseen kuin SEC.DE-014-05.</div>
+  </details>
+  <details>
+    <summary>Swedish (SV)</summary>
+    <div>Om NOA.DE-015-04 (förväntad första plats/förtöjningsplats) har angetts, måste den höra till samma anläggning som SEC.DE-014-05.</div>
+  </details>
+</article>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container legal">
-    <div>Generated from Excel. Total rows: 361. UI-marked: 354.</div>
-    <div class="mono">2025-10-17</div>
+    <div>Generated from Excel. Total rows: 368. UI-marked: 354.</div>
+    <div class="mono">2025-10-30</div>
   </div>
 </footer>
 
@@ -4771,7 +4862,7 @@ function update() {
     el.style.display = ok ? "" : "none";
     if (ok) visible++;
   }
-  stat.textContent = visible + " shown / 361 total · 354 marked for UI · 253 backend-checked";
+  stat.textContent = visible + " shown / 368 total · 354 marked for UI · 260 backend-checked";
 }
 q.addEventListener('input', update);
 document.querySelectorAll('input[name="type"], input[name="source"]').forEach(i=>i.addEventListener('change', update));

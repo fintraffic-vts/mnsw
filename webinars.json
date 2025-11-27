@@ -27,9 +27,9 @@
     "tags": ["Datamalli", "Ilmoittaminen", "Rajapinnat"],
     "materials": {
       "docs": [
-        { "label": "Interface-documentations.pptx", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/Interface-documentations.pptx" },
-        { "label": "koulutuswebinaari-24092025.pdf", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/koulutuswebinaari-24092025.pdf" },
-        { "label": "koulutuswebinaari-24092025.pptx", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/koulutuswebinaari-24092025.pptx" },
+        { "label": "Interface-documentations.pptx", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/interface-documentations.pptx" },
+        { "label": "koulutuswebinaari-24092025.pdf", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/datamallit-ilmoittaminen-ja-rajapinnat-koulutuswebinaari-24092025.pdf" },
+        { "label": "koulutuswebinaari-24092025.pptx", "url": "/mnsw/webinars/24.9-Nemo-koulutustilaisuus-Datamalli-ilmoittaminen-ja-rajapinnat/datamallit-ilmoittaminen-ja-rajapinnat-koulutuswebinaari-24092025.pptx" },
         { "label": "webinars-20250924_080309UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/24-9-Datamallit-ilmoittaminen-ja-rajapinnat/Nemo-koulutustilaisuus%20%20Datamalli,%20ilmoittaminen%20ja%20rajapinnat-20250924_080309UTC-Meeting%20Recording.mp4" }
       ]
     }
@@ -43,7 +43,10 @@
     "audience": ["Ilmoittajat"],
     "tags": ["Organisaation hallinta", "Käyttöoikeudet"],
     "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+      "docs": [
+        { "label": "koulutuswebinaari-291025.pdf", "url": "/mnsw/webinars/29.10-Organisaation-hallinta-ja-kaayttooikeudet/organisaation-hallinta-ja-kayttooikeudet-291025.pdf" },
+        { "label": "webinars-20251029_085804UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/29.10%20Organisaation%20hallinta%20ja%20k%C3%A4ytt%C3%B6oikeudet/Nemo-koulutustilaisuus%20%20Organisaation%20hallinta%20ja%20k%C3%A4ytt%C3%B6oikeudet-20251029_085804UTC-Meeting%20Recording.mp4" }
+      ]
     }
   },
   {
@@ -55,7 +58,10 @@
     "audience": ["Ilmoittajat"],
     "tags": ["Väylämaksu"],
     "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+      "docs": [
+        { "label": "koulutuswebinaari-26112025.pdf", "url": "/mnsw/webinars/26.11-Vaylamaksut/vaylamaksut-koulutuswebinaari-26112025.pdf" },
+        { "label": "webinars-20251126_090042UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/26.11%20V%C3%A4yl%C3%A4maksut/Nemo-koulutustilaisuus%20%20V%C3%A4yl%C3%A4maksu%20toiminnallisuus-20251126_090042UTC-Meeting%20Recording.mp4" }
+      ]
     }
   },
   {
