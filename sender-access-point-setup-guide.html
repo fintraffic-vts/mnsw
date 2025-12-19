@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EMSWe RIM Sender Integration – Access Point Setup Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="nemo-dev.css" />
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+  </script>
+</head>
+<body>
+
+
+<main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+  <article class="doc">
+    <header class="section-title">
+      <h1 id="emswe-rim-sender-integration--access-point-setup-guide">EMSWe RIM Sender Integration – Access Point Setup Guide</h1>
+      <div class="sub">Sender-side overview for integrating via AS4 / RIM</div>
+    </header>
+    <blockquote>
+      <p><strong>Reference document</strong><br />
+      This document is a <strong>concise technical overview</strong> for senders.<br />
+      For authoritative requirements, detailed field definitions, validation rules, certificate policies, and legal references, always refer to:<br />
+      <strong><a href="mnsw/Finland EMSWe Domibus Sender Integration Guide.pdf"><em>Finland EMSWe Domibus Sender Integration Guide.pdf</em></a></strong></p>
+    </blockquote>
+    <h2 id="purpose">Purpose</h2>
+    <p>This document provides quick, practical guidance for <strong>senders</strong> integrating with a <strong>Member State backend</strong> through the <strong>Reporting Interface Module (RIM)</strong> using <strong>AS4 (Domibus)</strong> within the <strong>European Maritime Single Window environment (EMSWe)</strong>.</p>
+    <p>It focuses on:</p>
+    <ul>
+    <li>Sender-side architecture and responsibilities</li>
+    <li>AS4 Access Point (C2) setup and ownership</li>
+    <li>Message preparation and metadata expectations</li>
+    <li>Security, certificates, and authentication prerequisites</li>
+    </ul>
+    <p>This guidance applies to both:</p>
+    <ul>
+    <li><strong>Declarants (DECL)</strong></li>
+    <li><strong>Data Service Providers (DSP)</strong></li>
+    </ul>
+    <p>as defined by EMSWe and the RIM architecture.</p>
+    <h2 id="architecture-overview-four-corner-model">Architecture Overview (Four-Corner Model)</h2>
+    <pre class="mermaid">flowchart LR
+        C1["Sender Backend (C1)"]
+        C2["Sender AS4 Access Point – Domibus (C2)"]
+        C3["Member State RIM – Domibus (C3)"]
+        C4["Member State MNSW Backend (C4)"]
+
+        C1 -->|ASiC-E payload| C2
+        C2 -->|AS4 UserMessage| C3
+        C3 -->|Validated payload| C4
+    </pre>
+    <table>
+    <thead>
+    <tr>
+    <th>Corner</th>
+    <th>Role</th>
+    <th>Responsibility</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>C1</td>
+    <td>Sender backend</td>
+    <td>Generates EMSWe formalities and signs ASiC-E</td>
+    </tr>
+    <tr>
+    <td>C2</td>
+    <td>Sender Access Point</td>
+    <td>AS4 messaging, WS-Security, TLS</td>
+    </tr>
+    <tr>
+    <td>C3</td>
+    <td>Member State RIM</td>
+    <td>Authentication, validation, routing</td>
+    </tr>
+    <tr>
+    <td>C4</td>
+    <td>Member State backend</td>
+    <td>Business processing</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>The sender <strong>fully controls C1 and C2 only</strong>.
+    All communication beyond C2 takes place via secure AS4 exchange.</p>
+    <h2 id="as4-access-point-requirement-key-rule">AS4 Access Point Requirement (Key Rule)</h2>
+    <p><strong>There is NO shared or Member State–provided AS4 Access Point.</strong></p>
+    <ul>
+    <li>The Member State does <strong>not</strong> provide an AS4 Access Point for senders</li>
+    <li>All AS4 Access Points (<strong>C2</strong>) are <strong>self-hosted</strong></li>
+    <li>Responsibility for setting up, configuring, and operating C2 lies entirely with the <strong>sender side</strong></li>
+    </ul>
+    <p>The <strong>Domibus AS4 Access Point software</strong> is publicly available and can be downloaded from the <strong>EU DIGIT eDelivery website</strong>.
+    Each sender must install and operate its own Domibus instance and configure communication between:</p>
+    <ul>
+    <li>its backend system (C1), and</li>
+    <li>its AS4 Access Point (C2)</li>
+    </ul>
+    <p>This applies regardless of whether the sender submits messages directly or via a service provider.</p>
+    <h2 id="role-of-data-service-providers-dsp">Role of Data Service Providers (DSP)</h2>
+    <p>A <strong>Data Service Provider (DSP)</strong> can be characterized as a <strong>technical service</strong> that:</p>
+    <ul>
+    <li>Operates an <strong>AS4 Access Point (C2)</strong> on behalf of one or more Declarants (DECL)</li>
+    <li>Provides connectivity, AS4 messaging, and security configuration as a service</li>
+    <li>Integrates multiple Declarant backends (C1) with its own Access Point (C2)</li>
+    </ul>
+    <p>Important clarifications:</p>
+    <ul>
+    <li>DSPs are <strong>not provided by the Member State</strong></li>
+    <li>DSPs are <strong>not central or national shared services</strong></li>
+    <li>Use of a DSP is a <strong>commercial or contractual arrangement</strong> between senders and the DSP</li>
+    </ul>
+    <p>From the RIM and Member State perspective:</p>
+    <ul>
+    <li>Both DECL and DSP are treated as <strong>senders</strong></li>
+    <li>Both must be <strong>registered in URAM</strong></li>
+    <li>Both are responsible (directly or indirectly) for operating a compliant <strong>C2 (AS4 Access Point)</strong></li>
+    </ul>
+    <h2 id="message-preparation-sender-backend--c1">Message Preparation (Sender Backend – C1)</h2>
+    <p>Before transmission, the sender backend must create an <strong>ASiC-E container</strong> that includes:</p>
+    <ul>
+    <li>EMSWe formality XML</li>
+    <li><code>META-INF/signatures.p7b</code> (CAdES signature)</li>
+    <li><code>manifest.xml</code></li>
+    <li><code>mimetype</code> = <code>application/vnd.etsi.asic-e+zip</code></li>
+    <li>Optional signed attachments (PDF, XML, jpg or png)</li>
+    </ul>
+    <p>Signature requirements:</p>
+    <ul>
+    <li>eIDAS <strong>Qualified or Advanced Electronic Signature (QES / AdES)</strong></li>
+    <li>Hash algorithm: <strong>SHA-256</strong></li>
+    </ul>
+    <p>The ASiC-E container is handed over to the Access Point unchanged.</p>
+    <h2 id="as4-message-mapping-access-point--c2">AS4 Message Mapping (Access Point – C2)</h2>
+    <p>The Access Point (Domibus) wraps the ASiC-E container into an <strong>AS4 UserMessage</strong>.</p>
+    <p>Mandatory header metadata includes:</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Field</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Sender</td>
+    <td>Sender Access Point identifier</td>
+    </tr>
+    <tr>
+    <td>Receiver</td>
+    <td>Member State RIM identifier</td>
+    </tr>
+    <tr>
+    <td>Authorization.Identifier</td>
+    <td>Sender EORI</td>
+    </tr>
+    <tr>
+    <td>Authorization.Type</td>
+    <td>DECL or DSP</td>
+    </tr>
+    <tr>
+    <td>Authorization.SubDomain</td>
+    <td>Country code</td>
+    </tr>
+    <tr>
+    <td>originalSender</td>
+    <td>Business identifier of C1</td>
+    </tr>
+    <tr>
+    <td>finalRecipient</td>
+    <td>Member State MNSW</td>
+    </tr>
+    <tr>
+    <td>Service</td>
+    <td><code>rim-messaging-service</code></td>
+    </tr>
+    <tr>
+    <td>Action</td>
+    <td><code>emswe-formality-request</code></td>
+    </tr>
+    <tr>
+    <td>MessageId</td>
+    <td>UUID</td>
+    </tr>
+    <tr>
+    <td>Timestamp</td>
+    <td>ISO 8601</td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong>Critical requirement:</strong>
+    The EORI value must <strong>exactly match</strong> the value registered in URAM, otherwise the message is rejected.</p>
+    <h2 id="certificates-and-security">Certificates and Security</h2>
+    <table>
+    <thead>
+    <tr>
+    <th>Purpose</th>
+    <th>Used by</th>
+    <th>Certificate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>ASiC-E signing</td>
+    <td>C1</td>
+    <td>eIDAS QES / AdES</td>
+    </tr>
+    <tr>
+    <td>AS4 signing &amp; encryption</td>
+    <td>C2</td>
+    <td>X.509 (Domibus keystore)</td>
+    </tr>
+    <tr>
+    <td>TLS transport</td>
+    <td>C2 ↔ C3</td>
+    <td>X.509 TLS</td>
+    </tr>
+    <tr>
+    <td>Trust validation</td>
+    <td>All</td>
+    <td>CA certificates</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>Minimum cryptographic requirements:</p>
+    <ul>
+    <li>RSA ≥ 2048 bits or ECDSA ≥ 256 bits</li>
+    <li>SHA-256</li>
+    </ul>
+    <h2 id="registration-and-authentication-uram">Registration and Authentication (URAM)</h2>
+    <p>Before sending any messages:</p>
+    <ul>
+    <li>The sender must be <strong>registered in URAM</strong> by Member State</li>
+    <li>Registration includes:
+    <ul>
+    <li>EORI</li>
+    <li>Sender type (DECL or DSP)</li>
+    <li>Country subdomain</li>
+    <li>Certificate fingerprint</li>
+    </ul>
+    </li>
+    </ul>
+    <p>The RIM validates <strong>every incoming AS4 message</strong> against URAM.</p>
+    <h2 id="access-point-configuration-and-changes">Access Point Configuration and Changes</h2>
+    <p>A bilateral AS4 agreement between the sender and the Member State defines:</p>
+    <ul>
+    <li>AS4 endpoints</li>
+    <li>Party identifiers</li>
+    <li>Certificates</li>
+    <li>PMode configuration</li>
+    <li>Security policy</li>
+    </ul>
+    <p>Any change (certificate, endpoint, key) requires:</p>
+    <ul>
+    <li>Advance notification</li>
+    <li>Certificate exchange</li>
+    <li>PMode update</li>
+    <li>Staging tests</li>
+    <li>Production activation</li>
+    <li>Versioned documentation</li>
+    </ul>
+  </article>
+</main>
+</body>
+</html>
