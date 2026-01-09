@@ -73,7 +73,10 @@
     "audience": ["Ilmoittajat"],
     "tags": ["Saapumisilmoitukset", "Lähtöilmoitukset"],
     "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
+      "docs": [
+        { "label": "Saapumisen-ja-lähdon-ilmoitukset-koulutuswebinaari-17122025.pdf", "url": "/mnsw/webinars/17.12-Satamakäynnin-saapumis-ja-lähtöilmoitukset/Saapumisen-ja-lähdon-ilmoitukset-koulutuswebinaari-17122025.pdf" },
+        { "label": "webinars-20251217_080010UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/17.12%20Satamak%C3%A4ynnin%20saapumis-%20ja%20l%C3%A4ht%C3%B6ilmoitukset/Nemo-koulutustilaisuus%20%20Satamak%C3%A4ynnin%20saapumis-%20ja%20l%C3%A4ht%C3%B6ilmoitukset-20251217_080010UTC-Meeting%20Recording.mp4" }
+      ]
     }
   },
   {
