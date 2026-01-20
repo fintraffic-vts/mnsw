@@ -78,29 +78,5 @@
         { "label": "webinars-20251217_080010UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/17.12%20Satamak%C3%A4ynnin%20saapumis-%20ja%20l%C3%A4ht%C3%B6ilmoitukset/Nemo-koulutustilaisuus%20%20Satamak%C3%A4ynnin%20saapumis-%20ja%20l%C3%A4ht%C3%B6ilmoitukset-20251217_080010UTC-Meeting%20Recording.mp4" }
       ]
     }
-  },
-  {
-    "id": "2026-01-21-nemo-koulutustilaisuus-alustietokanta",
-    "title": "Nemo-koulutustilaisuus / Alustietokanta",
-    "date": "2026-01-21",
-    "durationMin": 90,
-    "summary": "",
-    "audience": ["Ilmoittajat"],
-    "tags": ["Alustietokanta"],
-    "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
-    }
-  },
-  {
-    "id": "2026-02-11-nemo-koulutustilaisuus-kayttoohjeet-ja-tuki",
-    "title": "Nemo-koulutustilaisuus / Käyttöohjeet ja tuki",
-    "date": "2026-02-11",
-    "durationMin": 60,
-    "summary": "",
-    "audience": ["Ilmoittajat"],
-    "tags": ["Käyttöohjeet", "Tuki"],
-    "materials": {
-      "docs": [ { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" } ]
-    }
   }
 ]
