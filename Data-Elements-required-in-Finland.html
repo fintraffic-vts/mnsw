@@ -29,7 +29,7 @@
   <div class="container">
     <h1>Data Elements required in Finland</h1>
     <div class="meta muted">
-      MIG: <strong>2.0.0</strong> · National: <strong>FI rules</strong> · Generated: <time>2026-01-26T14:12:11.541Z</time>
+      MIG: <strong>2.0.0</strong> · National: <strong>FI rules</strong> · Generated: <time>2026-02-04T09:40:28.746Z</time>
     </div>
   </div>
 </header>
@@ -50,7 +50,7 @@
         <a href="#HZD" title="HZD">HZD - Notification of hazardous materials (dangerous and polluting goods) on board at departure (30)</a>
         <a href="#MDD" title="MDD">MDD - Maritime declaration of health details (20)</a>
         <a href="#MDH" title="MDH">MDH - Maritime declaration of health (24)</a>
-        <a href="#CRT" title="CRT">CRT - Ship certificates (10)</a>
+        <a href="#CRT" title="CRT">CRT - Ship certificates (12)</a>
         <a href="#SHP" title="SHP">SHP - Ship information (8)</a>
         <a href="#SID" title="SID">SID - Ship identifiers notification (5)</a>
         <a href="#SSA" title="SSA">SSA - Ship to ship activity declaration (2)</a>
@@ -6706,7 +6706,7 @@
         </table>
       </details>
       <details id="CRT" open>
-        <summary>CRT - Ship certificates <span class="small">— 10 elements</span></summary>
+        <summary>CRT - Ship certificates <span class="small">— 12 elements</span></summary>
         <div class="search">
           <input type="search" placeholder="Filter CRT - Ship certificates elements… (free text across all columns)"/>
         </div>
@@ -6765,6 +6765,48 @@
                 <td></td>
                 <td>0..1</td>
                 <td>Text / an..256</td>
+                <td></td>
+                <!-- td></td -->
+              </tr>
+              <tr id="crtde-003-05">
+                <td>
+                  <code class="anchor">DE-003-05</code>
+                  <div class="small"><a href="#crtde-003-05">#crtde-003-05</a></div>
+                </td>
+                <td>
+                  Attachment file name
+                  <div class="small">Liitetiedoston nimi</div>
+                </td>
+                <!-- body cell -->
+                <td>
+                  The file name of the attached document.
+                  <div class="small">Liitetyn asiakirjan tiedostonimi.</div>
+                </td>
+                <!-- td><span class="badge "></span></td -->
+                <td></td>
+                <td>0..1</td>
+                <td>Text / an..256</td>
+                <td></td>
+                <!-- td></td -->
+              </tr>
+              <tr id="crtde-003-06">
+                <td>
+                  <code class="anchor">DE-003-06</code>
+                  <div class="small"><a href="#crtde-003-06">#crtde-003-06</a></div>
+                </td>
+                <td>
+                  Attachment MIME type
+                  <div class="small">Liitteen MIME-tyyppi</div>
+                </td>
+                <!-- body cell -->
+                <td>
+                  The MIME type of the attached document
+                  <div class="small">Liitetyn asiakirjan MIME-tyyppi</div>
+                </td>
+                <!-- td><span class="badge "></span></td -->
+                <td></td>
+                <td>0..1</td>
+                <td>Text / an..70</td>
                 <td></td>
                 <!-- td></td -->
               </tr>
