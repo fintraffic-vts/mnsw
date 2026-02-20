@@ -804,7 +804,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "number"
@@ -824,7 +827,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "number"
@@ -1090,7 +1096,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1110,7 +1119,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1130,7 +1142,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1154,7 +1169,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1178,7 +1196,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1198,7 +1219,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1278,7 +1302,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1383,7 +1410,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1529,7 +1559,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1690,7 +1723,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:decimal"
@@ -1713,7 +1749,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:decimal_2"
@@ -1768,7 +1807,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_2"
@@ -1788,7 +1830,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_3"

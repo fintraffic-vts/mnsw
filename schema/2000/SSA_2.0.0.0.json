@@ -630,7 +630,8 @@
 				}
 			},
 			"required": [
-				"@unitCode"
+				"@unitCode",
+				"$"
 			],
 			"additionalProperties": false
 		},
@@ -889,7 +890,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				},
 				"ram:Name": {
@@ -905,7 +907,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -927,7 +932,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				}
 			},
@@ -974,7 +980,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -994,7 +1003,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1014,7 +1026,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1038,7 +1053,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1062,7 +1080,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1082,7 +1103,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1162,7 +1186,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1239,7 +1266,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1357,7 +1387,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1545,7 +1578,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_2"
@@ -1565,7 +1601,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_3"

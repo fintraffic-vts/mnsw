@@ -889,7 +889,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1058,7 +1061,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1078,7 +1084,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1100,7 +1109,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				},
 				"ram:HomeTradeAddress": {
@@ -1120,7 +1130,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1148,7 +1161,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1168,7 +1184,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1269,7 +1288,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1289,7 +1311,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1378,7 +1403,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1398,7 +1426,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1418,7 +1449,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1442,7 +1476,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1462,7 +1499,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1486,7 +1526,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1506,7 +1549,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1600,7 +1646,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1677,7 +1726,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1811,7 +1863,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1831,7 +1886,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1905,7 +1963,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -2073,7 +2134,8 @@
 				}
 			},
 			"required": [
-				"@unitCode"
+				"@unitCode",
+				"$"
 			],
 			"additionalProperties": false
 		},
@@ -2129,7 +2191,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_6"
@@ -2149,7 +2214,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string"
@@ -2174,7 +2242,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_3"
@@ -2199,7 +2270,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_4"
@@ -2219,7 +2293,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_5"

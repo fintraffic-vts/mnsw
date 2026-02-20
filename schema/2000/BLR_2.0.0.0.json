@@ -91,7 +91,8 @@
 				}
 			},
 			"required": [
-				"@unitCode"
+				"@unitCode",
+				"$"
 			],
 			"additionalProperties": false
 		},
@@ -211,7 +212,8 @@
 				}
 			},
 			"required": [
-				"@unitCode"
+				"@unitCode",
+				"$"
 			],
 			"additionalProperties": false
 		},
@@ -408,7 +410,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -552,7 +557,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -602,7 +610,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "number"
@@ -624,7 +635,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -651,7 +665,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				},
 				"ram:OccupancySpecifiedPeriod": {
@@ -709,7 +724,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -732,7 +750,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -755,7 +776,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -778,7 +802,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -801,7 +828,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -868,7 +898,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -893,7 +926,10 @@
 									]
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "integer"
@@ -915,7 +951,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				},
 				"ram:MaximumAllowedSpeedMeasure": {
@@ -936,7 +973,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "number"
@@ -958,7 +998,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				},
 				"ram:WarningDescription": {
@@ -976,7 +1017,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -1113,7 +1157,8 @@
 					},
 					"additionalProperties": false,
 					"required": [
-						"@unitCode"
+						"@unitCode",
+						"$"
 					]
 				},
 				"ram:TypeDescription": {
@@ -1131,7 +1176,10 @@
 										"type": "string"
 									}
 								},
-								"additionalProperties": false
+								"additionalProperties": false,
+								"required": [
+									"$"
+								]
 							},
 							{
 								"type": "string"
@@ -1156,7 +1204,10 @@
 									]
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "integer"
@@ -1207,7 +1258,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1252,7 +1306,10 @@
 									"type": "string"
 								}
 							},
-							"additionalProperties": false
+							"additionalProperties": false,
+							"required": [
+								"$"
+							]
 						},
 						{
 							"type": "string"
@@ -1459,7 +1516,8 @@
 				}
 			},
 			"required": [
-				"@unitCode"
+				"@unitCode",
+				"$"
 			],
 			"additionalProperties": false
 		},
@@ -1480,7 +1538,8 @@
 				}
 			},
 			"required": [
-				"@unitCode"
+				"@unitCode",
+				"$"
 			],
 			"additionalProperties": false
 		},
@@ -1507,7 +1566,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:integer"
@@ -1527,7 +1589,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:integer_2"
@@ -1572,7 +1637,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string"
@@ -1597,7 +1665,10 @@
 							"type": "string"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": false,
+					"required": [
+						"$"
+					]
 				},
 				{
 					"$ref": "#/$defs/udt:string_3"
