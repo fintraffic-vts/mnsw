@@ -29,7 +29,7 @@
   <div class="container">
     <h1>Data Elements required in Finland</h1>
     <div class="meta muted">
-      MIG: <strong>2.0.0</strong> · National: <strong>FI rules</strong> · Generated: <time>2026-03-05T06:55:37.272Z</time>
+      MIG: <strong>2.0.0</strong> · National: <strong>FI rules</strong> · Generated: <time>2026-03-06T08:58:55.807Z</time>
     </div>
   </div>
 </header>
@@ -51,7 +51,7 @@
         <a href="#MDD" title="MDD">MDD - Maritime declaration of health details (21)</a>
         <a href="#MDH" title="MDH">MDH - Maritime declaration of health (25)</a>
         <a href="#CRT" title="CRT">CRT - Ship certificates (12)</a>
-        <a href="#SHP" title="SHP">SHP - Ship information (8)</a>
+        <a href="#SHP" title="SHP">SHP - Ship information (9)</a>
         <a href="#SID" title="SID">SID - Ship identifiers notification (6)</a>
         <a href="#SSA" title="SSA">SSA - Ship to ship activity declaration (2)</a>
         <a href="#STA" title="STA">STA - Declaration of stores on board at arrival (6)</a>
@@ -7037,7 +7037,7 @@
         </table>
       </details>
       <details id="SHP" open>
-        <summary>SHP - Ship information <span class="small">— 8 elements</span></summary>
+        <summary>SHP - Ship information <span class="small">— 9 elements</span></summary>
         <div class="search">
           <input type="search" placeholder="Filter SHP - Ship information elements… (free text across all columns)"/>
         </div>
@@ -7057,6 +7057,29 @@
             </tr>
           </thead>
           <tbody>
+              <tr id="shpde-001-02">
+                <td>
+                  <code class="anchor">DE-001-02</code>
+                  <div class="small"><a href="#shpde-001-02">#shpde-001-02</a></div>
+                </td>
+                <td>
+                  Sequence number
+                  <div class="small">Järjestysnumero</div>
+                </td>
+                <!-- body cell -->
+                <td>
+                  A sequence number given to an element in a list
+                  <div class="small">Järjestysnumero</div>
+                </td>
+                <!-- td><span class="badge "></span></td -->
+                <td>R-GENERAL-002
+      R-GENERAL-021
+      G-GENERAL-002</td>
+                <td>0..1</td>
+                <td>Integer / n..5</td>
+                <td></td>
+                <!-- td></td -->
+              </tr>
               <tr id="shpde-007-10">
                 <td>
                   <code class="anchor">DE-007-10</code>
@@ -7069,7 +7092,7 @@
                 <!-- body cell -->
                 <td>
                   The name of the ship's registered owner.
-                  <div class="small">Aluksen rekisteröidyn omistajan nimi.</div>
+                  <div class="small">Rekisteröidyn omistajan nimi</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td></td>
@@ -7090,7 +7113,7 @@
                 <!-- body cell -->
                 <td>
                   The name of lessee of the ship if operating under a lease.
-                  <div class="small">Vuokralleottajan nimi, jos alus liikennöi vuokrasopimuksella.</div>
+                  <div class="small">Vuokralleottajan nimi</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td></td>
@@ -7106,12 +7129,12 @@
                 </td>
                 <td>
                   ICE class, coded
-                  <div class="small">Jääluokka, koodattu</div>
+                  <div class="small">Jääluokka</div>
                 </td>
                 <!-- body cell -->
                 <td>
                   A code representing the ICE class according to the Finnish-Swedish notation which applies to vessels intended for service in icy waters with everything from light ice conditions to ice breaking and ramming.
-                  <div class="small">Koodi, joka kertoo jääluokan Suomen ja Ruotsin merkintätavan mukaisesti. Jääluokat koskevat aluksia, joiden on tarkoitettu liikennöivän jäisillä vesillä, ja ne kattavat kaiken kevyestä jäästä jäänmurtoon ja puskemiseen.</div>
+                  <div class="small">Jääluokka</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td></td>
@@ -7132,7 +7155,7 @@
                 <!-- body cell -->
                 <td>
                   The date of the building of the ship.
-                  <div class="small">Laivan rakennuspäivämäärä.</div>
+                  <div class="small">Rakennuspäivä</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td>R-GENERAL-006</td>
@@ -7153,7 +7176,7 @@
                 <!-- body cell -->
                 <td>
                   The keel laying date of the ship.
-                  <div class="small">Aluksen kölinlaskupäivä.</div>
+                  <div class="small">Kölinlaskun päivä</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td>R-GENERAL-006</td>
@@ -7169,12 +7192,12 @@
                 </td>
                 <td>
                   Inert gas system indicator
-                  <div class="small">Suojakaasujärjestelmän ilmaisin</div>
+                  <div class="small">Alukseen on asennettu suojakaasujärjestelmä</div>
                 </td>
                 <!-- body cell -->
                 <td>
                   A yes/no indicator whether the ship is fitted with an inert gas system.
-                  <div class="small">Kyllä/ei-ilmaisin, joka kertoo, onko alukseen asennettu suojakaasujärjestelmä.</div>
+                  <div class="small">Alukseen on asennettu suojakaasujärjestelmä</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td></td>
@@ -7195,7 +7218,7 @@
                 <!-- body cell -->
                 <td>
                   The main engine's power in kilowatt.
-                  <div class="small">Päämoottorin teho kilowatteina.</div>
+                  <div class="small">Päämoottorin teho</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td>R-GENERAL-002
@@ -7217,7 +7240,7 @@
                 <!-- body cell -->
                 <td>
                   The operational service speed of the ship in knots.
-                  <div class="small">Aluksen matkanopeus solmuina.</div>
+                  <div class="small">Aluksen toimintanopeus</div>
                 </td>
                 <!-- td><span class="badge "></span></td -->
                 <td>R-GENERAL-002
