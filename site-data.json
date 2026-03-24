@@ -1,0 +1,74 @@
+{
+  "schemaLinks": [
+    {"code": "ATA", "href": "/mnsw/schema/2000/ATA_2.0.0.0.json"},
+    {"code": "ATD", "href": "/mnsw/schema/2000/ATD_2.0.0.0.json"},
+    {"code": "CGA", "href": "/mnsw/schema/2000/CGA_2.0.0.0.json"},
+    {"code": "CGD", "href": "/mnsw/schema/2000/CGD_2.0.0.0.json"},
+    {"code": "COA", "href": "/mnsw/schema/2000/COA_2.0.0.0.json"},
+    {"code": "CRT", "href": "/mnsw/schema/2000/CRT_2.0.0.0.json"},
+    {"code": "CWA", "href": "/mnsw/schema/2000/CWA_2.0.0.0.json"},
+    {"code": "CWD", "href": "/mnsw/schema/2000/CWD_2.0.0.0.json"},
+    {"code": "DUE", "href": "/mnsw/schema/2000/DUE_2.0.0.0.json"},
+    {"code": "FRM", "href": "/mnsw/schema/2000/FRM_2.0.0.0.json"},
+    {"code": "HZA", "href": "/mnsw/schema/2000/HZA_2.0.0.0.json"},
+    {"code": "HZD", "href": "/mnsw/schema/2000/HZD_2.0.0.0.json"},
+    {"code": "MDD", "href": "/mnsw/schema/2000/MDD_2.0.0.0.json"},
+    {"code": "MDH", "href": "/mnsw/schema/2000/MDH_2.0.0.0.json"},
+    {"code": "NOA", "href": "/mnsw/schema/2000/NOA_2.0.0.0.json"},
+    {"code": "NOD", "href": "/mnsw/schema/2000/NOD_2.0.0.0.json"},
+    {"code": "PXA", "href": "/mnsw/schema/2000/PXA_2.0.0.0.json"},
+    {"code": "PXD", "href": "/mnsw/schema/2000/PXD_2.0.0.0.json"},
+    {"code": "SEC", "href": "/mnsw/schema/2000/SEC_2.0.0.0.json"},
+    {"code": "SHP", "href": "/mnsw/schema/2000/SHP_2.0.0.0.json"},
+    {"code": "SID", "href": "/mnsw/schema/2000/SID_2.0.0.0.json"},
+    {"code": "SRV", "href": "/mnsw/schema/2000/SRV_2.0.0.0.json"},
+    {"code": "VID", "href": "/mnsw/schema/2000/VID_2.0.0.0.json"},
+    {"code": "WAS", "href": "/mnsw/schema/2000/WAS_2.0.0.0.json"},
+    {"code": "WAR", "href": "/mnsw/schema/2000/WAR_2.0.0.0.json"},
+    {"code": "MTS", "href": "/mnsw/schema/2000/MTS_2.0.0.0.json"},
+    {"code": "PBK", "href": "/mnsw/schema/2000/PBK_2.0.0.0.json"}
+  ],
+  "environments": [
+    {
+      "name": "STG",
+      "baseUrl": "https://mnsw-stg.mnsw.fi/",
+      "auth": "OAuth2 (client credentials)",
+      "statusI18n": "envs.status.limited",
+      "notesI18n": "envs.stg.notes"
+    },
+    {
+      "name": "PRD",
+      "baseUrl": "https://mnsw.mnsw.fi/",
+      "auth": "OAuth2 (client credentials)",
+      "statusI18n": "envs.status.limited",
+      "notesI18n": "envs.prd.notes"
+    }
+  ],
+  "changelog": [
+    {"date": "2025-10-02", "textI18n": "changelog.item.2025-10-02"},
+    {"date": "2025-10-06", "textI18n": "changelog.item.2025-10-06"},
+    {"date": "2025-10-08", "textI18n": "changelog.item.2025-10-08"},
+    {"date": "2025-10-09", "textI18n": "changelog.item.2025-10-09"},
+    {"date": "2025-10-17", "textI18n": "changelog.item.2025-10-17"},
+    {"date": "2025-11-04", "textI18n": "changelog.item.2025-11-04"},
+    {
+      "date": "2025-11-27",
+      "itemsI18n": [
+        "changelog.item.2025-11-27.1",
+        "changelog.item.2025-11-27.2",
+        "changelog.item.2025-11-27.3",
+        "changelog.item.2025-11-27.4"
+      ]
+    },
+    {"date": "2025-12-16", "textI18n": "changelog.item.2025-12-16"},
+    {"date": "2025-12-19", "textI18n": "changelog.item.2025-12-19"},
+    {"date": "2026-01-09", "textI18n": "changelog.item.2026-01-09"},
+    {"date": "2026-02-04", "textI18n": "changelog.item.2026-02-04"},
+    {"date": "2026-02-20", "textI18n": "changelog.item.2026-02-20"},
+    {"date": "2026-03-02", "textI18n": "changelog.item.2026-03-02"},
+    {"date": "2026-03-05", "textI18n": "changelog.item.2026-03-05"},
+    {"date": "2026-03-06", "textI18n": "changelog.item.2026-03-06"},
+    {"date": "2026-03-23", "textI18n": "changelog.item.2026-03-23"},
+    {"date": "2026-03-24", "textI18n": "changelog.item.2026-03-24"}
+  ]
+}
