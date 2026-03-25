@@ -588,14 +588,54 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 4,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999,
+					"minimum": -9999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999.9,
+					"minimum": -999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99.99,
+					"minimum": -99.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:decimal_2": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 5,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999,
+					"minimum": -99999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999.9,
+					"minimum": -9999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999.99,
+					"minimum": -999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:decimal_3": {
 			"exclusiveMinimum": 0,
@@ -603,7 +643,33 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 14,
 				"x-fractionDigits": 3
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999999999999,
+					"minimum": -99999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999999.9,
+					"minimum": -9999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999.99,
+					"minimum": -999999999999.99,
+					"multipleOf": 0.01
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999.999,
+					"minimum": -99999999999.999,
+					"multipleOf": 0.001
+				}
+			]
 		},
 		"qdt:decimal_4": {
 			"exclusiveMinimum": 0,
@@ -611,7 +677,27 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 5,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999,
+					"minimum": -99999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999.9,
+					"minimum": -9999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999.99,
+					"minimum": -999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:EnergyTypeCodeContentType": {
 			"enum": [
@@ -4220,7 +4306,27 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 4,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999,
+					"minimum": -9999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999.9,
+					"minimum": -999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99.99,
+					"minimum": -99.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:IDType": {
 			"type": "string"
