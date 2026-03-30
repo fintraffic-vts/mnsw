@@ -1,0 +1,929 @@
+{
+  "summary": {
+    "labelsInConfig": 102,
+    "existingByCodeListLabelOverrides": 0,
+    "suggestedByCodeListLabel": 83,
+    "needsManualReview": 19
+  },
+  "suggestedByCodeListLabel": {
+    "Code as defined in IMDG: \"I\", \"II\" and \"III\"": "imdg_i_ii_and_iii",
+    "GEONOM Code": "geonom",
+    "ISO 6346 size and type code list (4-characters)": "iso6346_size_and_type",
+    "Refer to Directive 2009/42/EC, Annex II, 1-digit code": "directive_2009_42_ec_annex_ii_1",
+    "Refer to Directive 2009/42/EC, Annex III": "directive_2009_42_ec_annex_iii",
+    "Refer to Directive 2009/42/EC, Annex IV": "directive_2009_42_ec_annex_iv",
+    "Refer to NST 2007 as adopted by UNECE": "nst_2007_as_adopted_by_unece",
+    "Refer to UN/EDIFACT Codes 7075": "un_edifact_7075",
+    "Refer to code list \"Pilotage exemption type\"": "pilotage_exemption_type",
+    "Refer to code list Attachment type": "attachment_type",
+    "Refer to code list Bunker product type": "bunker_product_type",
+    "Refer to code list Bunker provision type": "bunker_provision_type",
+    "Refer to code list Cargo boarding status": "cargo_boarding_status",
+    "Refer to code list Cargo handling instructions": "cargo_handling_instructions",
+    "Refer to code list Cargo operation": "cargo_operation",
+    "Refer to code list Certificate issuer": "certificate_issuer",
+    "Refer to code list Certificate status": "certificate_status",
+    "Refer to code list Certificate type": "certificate_type",
+    "Refer to code list Charterer type": "charterer_type",
+    "Refer to code list Class 7 category": "class_7_category",
+    "Refer to code list Crew effect": "crew_effects",
+    "Refer to code list Energy type": "energy_type",
+    "Refer to code list Flashpoint description": "flashpoint_description",
+    "Refer to code list Formality type": "formality_type",
+    "Refer to code list Goods type": "goods_type",
+    "Refer to code list HNS group": "hns_group",
+    "Refer to code list ICE class": "ice_class",
+    "Refer to code list IMSBC group": "imsbc_group",
+    "Refer to code list INF ship class": "inf_ship_class",
+    "Refer to code list ISSC type": "issc_type",
+    "Refer to code list Main engine type": "main_engine_type",
+    "Refer to code list Main exhaust emission class": "main_exhaust_emission_class",
+    "Refer to code list Manifest type": "manifest_type",
+    "Refer to code list Message subtype": "message_subtype",
+    "Refer to code list Mooring type": "mooring_type",
+    "Refer to code list NOx emission standard": "nox_emission_standard",
+    "Refer to code list No fairway dues declaration reason": "no_fairway_dues_declaration",
+    "Refer to code list Passenger accreditation type": "passenger_accreditation_type",
+    "Refer to code list Person movement type": "person_movement_type",
+    "Refer to code list Pilot exemption certificate type": "pilot_exemption_certificate",
+    "Refer to code list Pilotage type": "pilotage_type",
+    "Refer to code list Pitch propeller rotation indicator": "pitch_propeller_rotation",
+    "Refer to code list Planning type": "planning_type",
+    "Refer to code list Port due type": "port_due_type",
+    "Refer to code list Propeller type": "propeller_type",
+    "Refer to code list Scrubber system type": "scrubber_system_type",
+    "Refer to code list Service Type": "service_type",
+    "Refer to code list Ship defect type": "ship_defect_type",
+    "Refer to code list Ship drive type": "ship_drive_type",
+    "Refer to code list Ship movement type": "ship_movement_type",
+    "Refer to code list Ship side": "ship_side",
+    "Refer to code list Ship stores article": "ship_stores_article",
+    "Refer to code list Shipping area": "shipping_area",
+    "Refer to code list Statement type": "statement_type",
+    "Refer to code list Stream direction": "stream_direction",
+    "Refer to code list Tank status": "tank_status",
+    "Refer to code list Transhipped or export indicator": "transhipped_or_export_indicator",
+    "Refer to code list Type of navigation": "type_of_navigation",
+    "Refer to code list Vehicle type": "vehicle_type",
+    "Refer to code list Voyage type": "voyage_type",
+    "Refer to code list Waste collection agreement type": "waste_collection_agreement_type",
+    "Refer to code list Waste collection ship side": "waste_collection_ship_side",
+    "Refer to code list Waste delivery plan": "waste_delivery_plan",
+    "Refer to code list Waste type": "waste_type",
+    "Refer to the UNDG Code": "undg",
+    "SMDG Liner code list": "smdg_liner",
+    "Two-letter alphabetic code of annex V of UNECE Recommendation 21, UN/EDIFACT codes (7065)": "un_edifact_7065",
+    "UN/CEFACT codes (6145)": "un_edifact_6145",
+    "UN/ECE Recommendation 19 (1: Maritime transport, 8: Inland water transport)": "un_ece_recommendation_19",
+    "UN/ECE Recommendation 28": "un_ece_recommendation_28",
+    "UN/EDIFACT Code (8155)": "un_edifact_8155",
+    "UN/EDIFACT code 8273": "un_edifact_8273",
+    "UN/EDIFACT codes (1001)": "un_edifact_1001",
+    "UN/EDIFACT codes (3035)": "un_edifact_3035",
+    "UN/EDIFACT codes (3499)": "un_edifact_3499",
+    "UN/EDIFACT codes (7273)": "un_edifact_7273",
+    "UN/EDIFACT codes (8025)": "un_edifact_8025",
+    "UN/EDIFACT codes (8053)": "un_edifact_8053",
+    "UN/EDIFACT codes (8067)": "un_edifact_8067",
+    "UN/EDIFACT codes (8169)": "un_edifact_8169",
+    "UN/EDIFACT codes (8249)": "un_edifact_8249",
+    "UN/EDIFACT codes 1225": "un_edifact_1225",
+    "UN/EDIFACT codes 4233": "un_edifact_4233"
+  },
+  "needsManualReview": {
+    "Always set to 1 (Maritime Transport)": {
+      "normalized": "always_set_to_1",
+      "topCandidates": [
+        {
+          "listName": "waste_type",
+          "score": 0.48
+        },
+        {
+          "listName": "data_amendment_action",
+          "score": 0.444
+        },
+        {
+          "listName": "no_fairway_dues_declaration",
+          "score": 0.429
+        },
+        {
+          "listName": "attachment_type",
+          "score": 0.4
+        },
+        {
+          "listName": "ship_defect_type",
+          "score": 0.387
+        }
+      ],
+      "de": [
+        "DE-014-03"
+      ],
+      "formality": [
+        "NOA"
+      ]
+    },
+    "ISO 3166-1 alpha-2 code (UN/EDIFACT codes 3207)": {
+      "normalized": "iso_3166_1_alpha_2",
+      "topCandidates": [
+        {
+          "listName": "iso3166_1_alpha_3_iso_3166_3",
+          "score": 0.696
+        },
+        {
+          "listName": "iso3166_1_alpha_2_unedifact3207",
+          "score": 0.694
+        },
+        {
+          "listName": "iso3166_1_alpha_3_iso_iec_7501",
+          "score": 0.667
+        },
+        {
+          "listName": "iso6346_size_and_type",
+          "score": 0.462
+        },
+        {
+          "listName": "imdg_i_ii_and_iii",
+          "score": 0.343
+        }
+      ],
+      "de": [
+        "DE-005-09",
+        "DE-006-07",
+        "DE-007-06",
+        "DE-007-14",
+        "DE-007-21",
+        "DE-007-26",
+        "DE-007-32",
+        "DE-029-13",
+        "DE-030-04",
+        "DE-035-18",
+        "DE-035-39",
+        "DE-039-04",
+        "DE-039-05",
+        "DE-039-11",
+        "DE-047-24",
+        "DE-047-26",
+        "DE-054-06",
+        "DE-065-13",
+        "DE-065-19",
+        "DE-077-20",
+        "DE-079-08"
+      ],
+      "formality": [
+        "CGA",
+        "CGD",
+        "CRT",
+        "CWA",
+        "CWD",
+        "DUE",
+        "HZA",
+        "NOA",
+        "NOD",
+        "PXA",
+        "PXD",
+        "SEC",
+        "SHP",
+        "SRV"
+      ]
+    },
+    "ISO 3166-1 alpha-3 codes including user-defined codes from ISO/IEC 7501-1 (for special machine-readable passports) meant for persons without a defined nationality, such as XXA, XXB, XXC and XXX": {
+      "normalized": "iso_3166_1_alpha_3_including_user_defined_from_iso_iec_7501_1_meant_for_persons_without_a_defined_nationality_such_as_xxa_xxb_xxc_and_xxx",
+      "topCandidates": [
+        {
+          "listName": "iso3166_1_alpha_3_iso_iec_7501",
+          "score": 0.359
+        },
+        {
+          "listName": "iso3166_1_alpha_2_unedifact3207",
+          "score": 0.286
+        },
+        {
+          "listName": "iso3166_1_alpha_3_iso_3166_3",
+          "score": 0.279
+        },
+        {
+          "listName": "cargo_handling_instructions",
+          "score": 0.232
+        },
+        {
+          "listName": "passenger_accreditation_type",
+          "score": 0.206
+        }
+      ],
+      "de": [
+        "DE-035-04"
+      ],
+      "formality": [
+        "CWA",
+        "CWD",
+        "MDD",
+        "PXA",
+        "PXD"
+      ]
+    },
+    "ISO 3166-1 alpha-3 codes, and ISO 3166-3 alpha-4 codes for formerly used names of countries": {
+      "normalized": "iso_3166_1_alpha_3_and_iso_3166_3_alpha_4_for_formerly_used_names_of_countries",
+      "topCandidates": [
+        {
+          "listName": "iso3166_1_alpha_3_iso_3166_3",
+          "score": 0.528
+        },
+        {
+          "listName": "iso3166_1_alpha_3_iso_iec_7501",
+          "score": 0.444
+        },
+        {
+          "listName": "iso3166_1_alpha_2_unedifact3207",
+          "score": 0.422
+        },
+        {
+          "listName": "iso6346_size_and_type",
+          "score": 0.263
+        },
+        {
+          "listName": "cargo_handling_instructions",
+          "score": 0.248
+        }
+      ],
+      "de": [
+        "DE-035-07"
+      ],
+      "formality": [
+        "CWA",
+        "CWD",
+        "PXA",
+        "PXD"
+      ]
+    },
+    "Refer to Annex V to Directive 2009/42/EC": {
+      "normalized": "refer_to_annex_v_to_directive_2009_42_ec",
+      "topCandidates": [
+        {
+          "listName": "annex_v_of_2009_42_ec",
+          "score": 0.656
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_iv",
+          "score": 0.58
+        },
+        {
+          "listName": "directive_2009_42_ec_category6",
+          "score": 0.571
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_iii",
+          "score": 0.571
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_ii_2",
+          "score": 0.563
+        }
+      ],
+      "de": [
+        "DE-005-10"
+      ],
+      "formality": [
+        "NOA",
+        "NOD"
+      ]
+    },
+    "Refer to Directive 2009/42/EC, Annex II": {
+      "normalized": "refer_to_directive_2009_42_ec_annex_ii",
+      "topCandidates": [
+        {
+          "listName": "directive_2009_42_ec_annex_iii",
+          "score": 0.853
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_ii_2",
+          "score": 0.841
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_ii_1",
+          "score": 0.841
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_iv",
+          "score": 0.836
+        },
+        {
+          "listName": "directive_2009_42_ec_category6",
+          "score": 0.676
+        }
+      ],
+      "de": [
+        "DE-045-17"
+      ],
+      "formality": [
+        "CGA",
+        "CGD",
+        "MTS"
+      ]
+    },
+    "Refer to Directive 2009/42/EC, Annex II - category 6": {
+      "normalized": "refer_to_directive_2009_42_ec_annex_ii_category_6",
+      "topCandidates": [
+        {
+          "listName": "directive_2009_42_ec_category6",
+          "score": 0.759
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_ii_2",
+          "score": 0.75
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_ii_1",
+          "score": 0.75
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_iii",
+          "score": 0.734
+        },
+        {
+          "listName": "directive_2009_42_ec_annex_iv",
+          "score": 0.718
+        }
+      ],
+      "de": [
+        "DE-045-32"
+      ],
+      "formality": [
+        "CGA",
+        "CGD"
+      ]
+    },
+    "Refer to IMDG Code, Chapter 7.2.5.2": {
+      "normalized": "refer_to_imdg_chapter_7_2_5_2",
+      "topCandidates": [
+        {
+          "listName": "certificate_status",
+          "score": 0.383
+        },
+        {
+          "listName": "directive_2009_42_ec_category6",
+          "score": 0.373
+        },
+        {
+          "listName": "propeller_type",
+          "score": 0.372
+        },
+        {
+          "listName": "charterer_type",
+          "score": 0.372
+        },
+        {
+          "listName": "energy_type",
+          "score": 0.35
+        }
+      ],
+      "de": [
+        "DE-049-33"
+      ],
+      "formality": [
+        "HZA",
+        "HZD"
+      ]
+    },
+    "Refer to IMO Compendium": {
+      "normalized": "refer_to_imo_compendium",
+      "topCandidates": [
+        {
+          "listName": "imo_compendium_imo0596",
+          "score": 0.622
+        },
+        {
+          "listName": "imo_compendium_imo0314",
+          "score": 0.622
+        },
+        {
+          "listName": "imo_compendium_imo0274",
+          "score": 0.622
+        },
+        {
+          "listName": "imo_compendium_imo0224",
+          "score": 0.622
+        },
+        {
+          "listName": "imo_compendium_imo0223",
+          "score": 0.622
+        }
+      ],
+      "de": [
+        "DE-005-18",
+        "DE-005-20",
+        "DE-006-06",
+        "DE-023-03",
+        "DE-023-06",
+        "DE-028-09",
+        "DE-030-03",
+        "DE-031-02",
+        "DE-032-18",
+        "DE-035-14",
+        "DE-037-04",
+        "DE-037-05",
+        "DE-049-02",
+        "DE-049-08",
+        "DE-049-14",
+        "DE-050-03",
+        "DE-050-04"
+      ],
+      "formality": [
+        "CRT",
+        "CWA",
+        "CWD",
+        "EFF",
+        "HZA",
+        "HZD",
+        "MDD",
+        "MDH",
+        "SEC",
+        "SHP"
+      ]
+    },
+    "Refer to code list Ship ballast status": {
+      "normalized": "ship_ballast_status",
+      "topCandidates": [
+        {
+          "listName": "ship_flag_state",
+          "score": 0.706
+        },
+        {
+          "listName": "inf_ship_class",
+          "score": 0.545
+        },
+        {
+          "listName": "certificate_status",
+          "score": 0.541
+        },
+        {
+          "listName": "tank_status",
+          "score": 0.533
+        },
+        {
+          "listName": "cargo_boarding_status",
+          "score": 0.5
+        }
+      ],
+      "de": [
+        "DE-080-03"
+      ],
+      "formality": [
+        "SRV"
+      ]
+    },
+    "The codes can be found in the TARIC database": {
+      "normalized": "the_can_be_found_in_the_taric_database",
+      "topCandidates": [
+        {
+          "listName": "cargo_boarding_status",
+          "score": 0.441
+        },
+        {
+          "listName": "transhipped_or_export_indicator",
+          "score": 0.377
+        },
+        {
+          "listName": "cargo_handling_instructions",
+          "score": 0.369
+        },
+        {
+          "listName": "transit_interlined_travel_type",
+          "score": 0.353
+        },
+        {
+          "listName": "stowaway_taken_on_board_reason",
+          "score": 0.353
+        }
+      ],
+      "de": [
+        "DE-056-03"
+      ],
+      "formality": [
+        "CGA",
+        "CGD"
+      ]
+    },
+    "The international commodity code": {
+      "normalized": "the_international_commodity",
+      "topCandidates": [
+        {
+          "listName": "identification_type",
+          "score": 0.478
+        },
+        {
+          "listName": "transit_interlined_travel_type",
+          "score": 0.456
+        },
+        {
+          "listName": "additional_information",
+          "score": 0.449
+        },
+        {
+          "listName": "pilotage_exemption_type",
+          "score": 0.44
+        },
+        {
+          "listName": "passenger_accreditation_type",
+          "score": 0.436
+        }
+      ],
+      "de": [
+        "DE-048-05"
+      ],
+      "formality": [
+        "CGA",
+        "CGD"
+      ]
+    },
+    "UN/ECE Recommendation 21 Annex VI (UN/EDIFACT Codes 7065)": {
+      "normalized": "un_ece_recommendation_21_annex_vi",
+      "topCandidates": [
+        {
+          "listName": "un_ece_recommendation_28",
+          "score": 0.807
+        },
+        {
+          "listName": "un_ece_recommendation_19",
+          "score": 0.807
+        },
+        {
+          "listName": "taxud_specification_on_ie590",
+          "score": 0.426
+        },
+        {
+          "listName": "passenger_accreditation_type",
+          "score": 0.426
+        },
+        {
+          "listName": "pitch_propeller_rotation",
+          "score": 0.386
+        }
+      ],
+      "de": [
+        "DE-049-16"
+      ],
+      "formality": [
+        "HZA",
+        "HZD"
+      ]
+    },
+    "UN/EDIFACT code list 4461": {
+      "normalized": "un_edifact_4461",
+      "topCandidates": [
+        {
+          "listName": "un_edifact_6145",
+          "score": 0.867
+        },
+        {
+          "listName": "un_edifact_list_4461",
+          "score": 0.857
+        },
+        {
+          "listName": "un_edifact_8249",
+          "score": 0.8
+        },
+        {
+          "listName": "un_edifact_8169",
+          "score": 0.8
+        },
+        {
+          "listName": "un_edifact_8155",
+          "score": 0.8
+        }
+      ],
+      "de": [
+        "DE-077-22"
+      ],
+      "formality": [
+        "DUE"
+      ]
+    },
+    "UN/LOCODE": {
+      "normalized": "un_locode",
+      "topCandidates": [
+        {
+          "listName": "customs_saimaa_locode",
+          "score": 0.533
+        },
+        {
+          "listName": "customs_tax_code",
+          "score": 0.48
+        },
+        {
+          "listName": "undg",
+          "score": 0.462
+        },
+        {
+          "listName": "location_type",
+          "score": 0.455
+        },
+        {
+          "listName": "bunker_product_type",
+          "score": 0.429
+        }
+      ],
+      "de": [
+        "DE-005-12",
+        "DE-006-13",
+        "DE-014-04",
+        "DE-022-11",
+        "DE-022-12",
+        "DE-023-01",
+        "DE-025-01",
+        "DE-028-04",
+        "DE-032-02",
+        "DE-033-02",
+        "DE-035-09",
+        "DE-035-11",
+        "DE-037-06",
+        "DE-039-06",
+        "DE-042-04",
+        "DE-046-06",
+        "DE-047-01",
+        "DE-047-04",
+        "DE-068-01",
+        "DE-068-02",
+        "DE-070-05",
+        "DE-071-06",
+        "DE-077-09",
+        "DE-083-04",
+        "DE-083-08"
+      ],
+      "formality": [
+        "CGA",
+        "CGD",
+        "CRT",
+        "CWA",
+        "CWD",
+        "DUE",
+        "HZA",
+        "HZD",
+        "MDD",
+        "MDH",
+        "MTS",
+        "NOA",
+        "NOD",
+        "PXA",
+        "PXD",
+        "SEC",
+        "VID",
+        "WAS"
+      ]
+    },
+    "UN/LOCODE\nUN/LOCODE": {
+      "normalized": "un_locode_un_locode",
+      "topCandidates": [
+        {
+          "listName": "location_type",
+          "score": 0.438
+        },
+        {
+          "listName": "supporting_document_reference",
+          "score": 0.417
+        },
+        {
+          "listName": "customs_saimaa_locode",
+          "score": 0.4
+        },
+        {
+          "listName": "bunker_provision_type",
+          "score": 0.4
+        },
+        {
+          "listName": "nst_2007_as_adopted_by_unece",
+          "score": 0.383
+        }
+      ],
+      "de": [
+        "DE-022-08\nDE-024-01"
+      ],
+      "formality": [
+        "NOD"
+      ]
+    },
+    "UN/LOCODE\nUN/LOCODE\nUN/LOCODE\nUN/LOCODE": {
+      "normalized": "un_locode_un_locode_un_locode_un_locode",
+      "topCandidates": [
+        {
+          "listName": "supporting_document_reference",
+          "score": 0.294
+        },
+        {
+          "listName": "location_type",
+          "score": 0.269
+        },
+        {
+          "listName": "nst_2007_as_adopted_by_unece",
+          "score": 0.269
+        },
+        {
+          "listName": "customs_saimaa_locode",
+          "score": 0.267
+        },
+        {
+          "listName": "bunker_provision_type",
+          "score": 0.267
+        }
+      ],
+      "de": [
+        "DE-022-06\nDE-022-08\nDE-023-01\nDE-024-01"
+      ],
+      "formality": [
+        "NOA"
+      ]
+    },
+    "UN/LOCODE - facility identifier (e.g. NLRTM-0406)": {
+      "normalized": "un_locode_facility_identifier",
+      "topCandidates": [
+        {
+          "listName": "un_edifact_list_4461",
+          "score": 0.449
+        },
+        {
+          "listName": "no_fairway_dues_declaration",
+          "score": 0.429
+        },
+        {
+          "listName": "un_edifact_8273",
+          "score": 0.409
+        },
+        {
+          "listName": "un_edifact_8249",
+          "score": 0.409
+        },
+        {
+          "listName": "un_edifact_8169",
+          "score": 0.409
+        }
+      ],
+      "de": [
+        "DE-014-05",
+        "DE-023-02"
+      ],
+      "formality": [
+        "SEC"
+      ]
+    },
+    "yes/no indicator (1=yes, 0=no)": {
+      "normalized": "yes_no_indicator",
+      "topCandidates": [
+        {
+          "listName": "transhipped_or_export_indicator",
+          "score": 0.553
+        },
+        {
+          "listName": "class_7_category",
+          "score": 0.5
+        },
+        {
+          "listName": "type_of_navigation",
+          "score": 0.471
+        },
+        {
+          "listName": "identification_type",
+          "score": 0.457
+        },
+        {
+          "listName": "purpose_of_departure",
+          "score": 0.444
+        }
+      ],
+      "de": [
+        "DE-005-02",
+        "DE-005-17",
+        "DE-005-24",
+        "DE-006-02",
+        "DE-009-17",
+        "DE-009-19",
+        "DE-010-01",
+        "DE-010-15",
+        "DE-010-17",
+        "DE-010-25",
+        "DE-011-02",
+        "DE-011-03",
+        "DE-011-05",
+        "DE-011-07",
+        "DE-011-09",
+        "DE-013-01",
+        "DE-014-09",
+        "DE-014-11",
+        "DE-014-15",
+        "DE-014-20",
+        "DE-014-23",
+        "DE-014-25",
+        "DE-014-28",
+        "DE-014-29",
+        "DE-014-33",
+        "DE-014-39",
+        "DE-014-40",
+        "DE-014-41",
+        "DE-014-42",
+        "DE-014-45",
+        "DE-014-46",
+        "DE-014-50",
+        "DE-014-52",
+        "DE-016-09",
+        "DE-020-01",
+        "DE-020-02",
+        "DE-020-05",
+        "DE-027-01",
+        "DE-030-01",
+        "DE-032-01",
+        "DE-032-04",
+        "DE-032-05",
+        "DE-032-06",
+        "DE-032-07",
+        "DE-032-08",
+        "DE-032-09",
+        "DE-032-10",
+        "DE-032-11",
+        "DE-033-01",
+        "DE-033-04",
+        "DE-034-04",
+        "DE-035-13",
+        "DE-035-41",
+        "DE-037-03",
+        "DE-039-01",
+        "DE-039-08",
+        "DE-046-02",
+        "DE-046-08",
+        "DE-046-09",
+        "DE-046-13",
+        "DE-047-19",
+        "DE-047-29",
+        "DE-047-30",
+        "DE-047-31",
+        "DE-047-33",
+        "DE-047-37",
+        "DE-047-40",
+        "DE-047-44",
+        "DE-049-18",
+        "DE-049-19",
+        "DE-049-30",
+        "DE-052-05",
+        "DE-052-06",
+        "DE-053-01",
+        "DE-053-07",
+        "DE-053-08",
+        "DE-053-09",
+        "DE-053-13",
+        "DE-053-14",
+        "DE-054-01",
+        "DE-065-10",
+        "DE-069-08",
+        "DE-069-09",
+        "DE-070-01",
+        "DE-077-01",
+        "DE-077-03",
+        "DE-077-04",
+        "DE-077-21",
+        "DE-078-04",
+        "DE-078-18",
+        "DE-078-19",
+        "DE-079-01",
+        "DE-081-03",
+        "DE-082-03",
+        "DE-082-04",
+        "DE-082-05",
+        "DE-082-06",
+        "DE-082-07",
+        "DE-082-08",
+        "DE-082-09",
+        "DE-082-11",
+        "DE-082-13",
+        "DE-083-01",
+        "DE-083-03",
+        "DE-085-01",
+        "DE-089-05",
+        "DE-090-01",
+        "DE-090-02",
+        "DE-090-05",
+        "DE-090-06",
+        "DE-092-03"
+      ],
+      "formality": [
+        "ATA",
+        "CGA",
+        "CGD",
+        "CRT",
+        "CWA",
+        "CWD",
+        "DUE",
+        "HZA",
+        "HZD",
+        "MDD",
+        "MDH",
+        "NOA",
+        "NOD",
+        "PXA",
+        "PXD",
+        "SEC",
+        "SHP",
+        "SID",
+        "SRV",
+        "VID",
+        "WAS"
+      ]
+    }
+  }
+}

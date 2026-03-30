@@ -624,27 +624,7 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 5,
 				"x-fractionDigits": 2
-			},
-			"anyOf": [
-				{
-					"type": "number",
-					"maximum": 99999,
-					"minimum": -99999,
-					"multipleOf": 1
-				},
-				{
-					"type": "number",
-					"maximum": 9999.9,
-					"minimum": -9999.9,
-					"multipleOf": 0.1
-				},
-				{
-					"type": "number",
-					"maximum": 999.99,
-					"minimum": -999.99,
-					"multipleOf": 0.01
-				}
-			]
+			}
 		},
 		"qdt:decimal_2": {
 			"type": "number",

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Schema Tree Viewer</title>
+    <link rel="stylesheet" href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" />
+    <style>
+        :root {
+            --ui-bg: #f4f7fb;
+            --panel-bg: #ffffff;
+            --panel-border: #d3dce8;
+            --text-main: #1f2937;
+            --text-muted: #475569;
+            --accent: #0b5d8b;
+            --accent-soft: #e7f1fb;
+            --row-alt: #f7fbff;
+        }
+
+        body,
+        input,
+        select,
+        button,
+        textarea {
+            font-size: 1rem;
+        }
+
+        body {
+            color: var(--text-main);
+            background: var(--ui-bg);
+        }
+
+        .hero {
+            padding: 0.2rem 0.4rem;
+            margin-bottom: 0.25rem;
+        }
+
+        main.container {
+            width: min(98vw, 1800px);
+            max-width: min(98vw, 1800px);
+        }
+
+        .schema-hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        #app-title,
+        #app-subtitle,
+        .schema-interesting-title,
+        .schema-modal-title,
+        .schema-guide-text,
+        .schema-nav-button,
+        .schema-map-open,
+        .schema-interesting-table th,
+        .schema-interesting-table td,
+        .schema-tree-node-line,
+        .schema-row-tech-name,
+        .schema-map-item-label,
+        .schema-map-item-meta,
+        .schema-data-element-name,
+        .schema-data-element-id,
+        .schema-pill,
+        .schema-pill-repeatable {
+            font-size: 1rem;
+        }
+
+        .schema-language-top {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            min-width: 11rem;
+        }
+
+        .schema-layout {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .schema-quick-guide {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .schema-display-mode {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            white-space: nowrap;
+        }
+
+        .schema-compliance-note {
+            border: 1px solid #fde68a;
+            background: #fffbeb;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .schema-compliance-note p {
+            margin: 0;
+            font-size: 0.84rem;
+            color: #78350f;
+        }
+
+        .schema-compliance-note button {
+            white-space: nowrap;
+        }
+
+        .schema-compliance-note.is-hidden {
+            display: none !important;
+        }
+
+        .schema-guide-text {
+            margin: 0;
+            color: var(--text-main);
+            font-size: 0.88rem;
+        }
+
+        .schema-nav-slot {
+            position: relative;
+            min-height: 3.35rem;
+        }
+
+        .schema-nav {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.45rem;
+            padding: 0.5rem;
+            height: 3.35rem;
+            border: 1px solid var(--panel-border);
+            border-radius: 0.5rem;
+            background: var(--panel-bg);
+            box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
+            transition: box-shadow 0.2s ease;
+            overflow: visible;
+            position: absolute;
+            inset: 0 0 auto 0;
+            z-index: 5;
+        }
+
+        .schema-nav:hover:not(.is-force-collapsed),
+        .schema-nav:focus-within:not(.is-force-collapsed) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            height: auto;
+            overflow: visible;
+            box-shadow: 0 10px 24px rgba(2, 6, 23, 0.12);
+            z-index: 30;
+        }
+
+        .schema-nav:not(:hover):not(:focus-within) {
+            overflow: visible;
+        }
+
+        .schema-nav .schema-nav-button:not(.is-active) {
+            display: none;
+        }
+
+        .schema-nav:hover:not(.is-force-collapsed) .schema-nav-button,
+        .schema-nav:focus-within:not(.is-force-collapsed) .schema-nav-button {
+            display: block;
+        }
+
+        .schema-nav.is-force-collapsed .schema-nav-button.is-active::after,
+        .schema-nav:not(:hover):not(:focus-within) .schema-nav-button.is-active::after {
+            content: "  ▼";
+            color: #64748b;
+            font-size: 0.85em;
+        }
+
+        .schema-nav-button {
+            border: 1px solid #cfdae8;
+            background: #f3f7fc;
+            border-radius: 0.5rem;
+            padding: 0.42rem 0.52rem;
+            line-height: 1.35;
+            min-height: 2.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+
+        .schema-nav-button:hover {
+            background: #e6eff9;
+        }
+
+        .schema-nav-button.is-active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .schema-interesting {
+            padding: 0.7rem;
+            border: 1px solid var(--panel-border);
+            border-radius: 0.5rem;
+            background: var(--panel-bg);
+            box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
+        }
+
+        .schema-interesting-title {
+            margin: 0 0 0.6rem 0;
+            font-size: 1.15rem;
+            color: #0f172a;
+        }
+
+        .schema-interesting-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.4rem;
+        }
+
+        .schema-interesting-header-actions {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .schema-map-open {
+            border: 1px solid #cfd8e3;
+            border-radius: 0.4rem;
+            background: #f8fafc;
+            padding: 0.28rem 0.55rem;
+            font-size: 0.82rem;
+            cursor: pointer;
+        }
+
+        .schema-map-open:hover {
+            background: #eef5fb;
+        }
+
+        .schema-interesting-filter {
+            width: 100%;
+            margin-bottom: 0.6rem;
+        }
+
+        .schema-interesting-controls {
+            display: grid;
+            grid-template-columns: 1fr 16rem auto auto auto auto;
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .schema-required-only {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        .schema-control-button {
+            border: 1px solid #cfd8e3;
+            border-radius: 0.35rem;
+            background: #eef4fb;
+            padding: 0.22rem 0.5rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .schema-control-button:hover {
+            background: #e2edf9;
+        }
+
+        .schema-group-filter {
+            width: 100%;
+        }
+
+        .schema-filter-help {
+            margin: -0.15rem 0 0.6rem;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        .schema-interesting-table-wrap {
+            overflow-x: auto;
+        }
+
+        .schema-interesting-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 980px;
+        }
+
+        .schema-interesting-table th,
+        .schema-interesting-table td {
+            text-align: left;
+            vertical-align: top;
+            border-top: none;
+            padding: 0.4rem;
+        }
+
+        .schema-description-cell .schema-description-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            line-height: 1.35;
+            max-height: 2.7em;
+        }
+
+        .schema-condition-cell .schema-condition-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            line-height: 1.35;
+            max-height: 2.7em;
+        }
+
+        .schema-description-cell.is-collapsible {
+            cursor: pointer;
+        }
+
+        .schema-condition-cell.is-collapsible {
+            cursor: pointer;
+        }
+
+        .schema-description-cell.is-collapsible:not(.is-expanded) .schema-description-text {
+            position: relative;
+        }
+
+        .schema-description-cell.is-expanded .schema-description-text {
+            display: block;
+            -webkit-line-clamp: unset;
+            max-height: none;
+            overflow: visible;
+        }
+
+        .schema-condition-cell.is-expanded .schema-condition-text {
+            display: block;
+            -webkit-line-clamp: unset;
+            max-height: none;
+            overflow: visible;
+        }
+
+        #schema-interesting-body.is-all-text-expanded .schema-description-cell.is-collapsible .schema-description-text,
+        #schema-interesting-body.is-all-text-expanded .schema-condition-cell.is-collapsible .schema-condition-text {
+            display: block;
+            -webkit-line-clamp: unset;
+            max-height: none;
+            overflow: visible;
+        }
+
+        .schema-interesting-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background: #edf3fa;
+            color: #1e3a5f;
+        }
+
+        .schema-interesting-table tbody tr:nth-child(odd):not(.schema-interesting-tree-root-row) {
+            background: #ffffff;
+        }
+
+        .schema-interesting-table tbody tr:nth-child(even):not(.schema-interesting-tree-root-row) {
+            background: var(--row-alt);
+        }
+
+        .schema-interesting-tree-root-row td {
+            background: #eef5fb;
+            border-top: none;
+        }
+
+        .schema-row-repeatable {
+            background-image: linear-gradient(to right, rgba(14, 116, 144, 0.09), rgba(14, 116, 144, 0));
+        }
+
+        .schema-tree-cell {
+            --level: 0;
+            position: relative;
+        }
+
+        .schema-tree-cell::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: calc(var(--level, 0) * 1rem);
+            background-image: repeating-linear-gradient(
+                to right,
+                transparent 0,
+                transparent calc(1rem - 1px),
+                #c7d3e1 calc(1rem - 1px),
+                #c7d3e1 1rem
+            );
+            pointer-events: none;
+        }
+
+        .schema-tree-node-line {
+            position: relative;
+            display: flex;
+            gap: 0.35rem;
+            align-items: baseline;
+            padding-left: calc(var(--level, 0) * 1rem);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.86rem;
+            color: #1f2937;
+            line-height: 1.35;
+        }
+
+        .schema-tree-node-root {
+            font-weight: 700;
+            color: #0b5d8b;
+        }
+
+        .schema-tree-glyph {
+            position: relative;
+            width: 0.95rem;
+            min-width: 0.95rem;
+            height: 0.95rem;
+            margin-top: 0.06rem;
+            display: inline-block;
+            opacity: 0.95;
+        }
+
+        .schema-tree-glyph::before {
+            content: "";
+            position: absolute;
+            left: 0.45rem;
+            top: -0.55rem;
+            bottom: 0;
+            border-left: 1px solid #9fb2c8;
+        }
+
+        .schema-tree-glyph::after {
+            content: "";
+            position: absolute;
+            left: 0.45rem;
+            right: 0.05rem;
+            top: 0.47rem;
+            border-top: 1px solid #9fb2c8;
+        }
+
+        .schema-tree-glyph-root {
+            width: 0.55rem;
+            min-width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 999px;
+            background: #8ba3bd;
+            margin-top: 0.35rem;
+        }
+
+        .schema-tree-glyph-root::before,
+        .schema-tree-glyph-root::after {
+            display: none;
+        }
+
+        .schema-tree-chain-label {
+            word-break: break-word;
+        }
+
+        .schema-data-element {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            padding: 0.2rem 0;
+            line-height: 1.2;
+        }
+
+        .schema-data-element-id {
+            display: inline-block;
+            width: fit-content;
+            padding: 0.1rem 0.4rem;
+            border-radius: 999px;
+            border: 1px solid #bfdbfe;
+            background: #eff6ff;
+            color: #1e3a5f;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .schema-data-element-name {
+            color: #334155;
+            font-size: 0.8rem;
+            max-width: 28rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .schema-row-tech-name {
+            margin-top: 0.12rem;
+            margin-left: calc((var(--level, 0) * 1rem) + 1.3rem);
+            font-size: 0.75rem;
+            color: #475569;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            line-height: 1.25;
+        }
+
+        .schema-interesting-empty {
+            margin: 0;
+            color: var(--text-muted);
+            opacity: 0.92;
+        }
+
+        .schema-code-list-open {
+            margin-left: 0.35rem;
+            border: 1px solid #cfd8e3;
+            border-radius: 0.35rem;
+            background: #eef4fb;
+            font-size: 0.78rem;
+            padding: 0.1rem 0.35rem;
+            cursor: pointer;
+        }
+
+        .schema-code-list-open:hover {
+            background: #e2edf9;
+        }
+
+        .schema-rules-open {
+            margin-left: 0.35rem;
+            border: 1px solid #cfd8e3;
+            border-radius: 0.35rem;
+            background: #eef4fb;
+            font-size: 0.78rem;
+            padding: 0.1rem 0.35rem;
+            cursor: pointer;
+        }
+
+        .schema-rules-open:hover {
+            background: #e2edf9;
+        }
+
+        .schema-modal {
+            width: min(42rem, 92vw);
+            max-height: 90vh;
+            border: 1px solid #cfd8e3;
+            border-radius: 0.5rem;
+            padding: 0;
+            box-shadow: 0 16px 42px rgba(15, 23, 42, 0.22);
+        }
+
+        .schema-modal.schema-modal-wide {
+            width: min(96vw, 120rem);
+            max-width: min(96vw, 120rem);
+            height: min(94vh, 72rem);
+        }
+
+        .schema-modal::backdrop {
+            background: rgba(15, 23, 42, 0.45);
+        }
+
+        .schema-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #d8dee9;
+        }
+
+        .schema-modal-header > div {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .schema-modal-title {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .schema-modal-body {
+            padding: 0.8rem 1rem 1rem;
+            max-height: 60vh;
+            overflow: auto;
+        }
+
+        .schema-modal.schema-modal-wide .schema-modal-body {
+            max-height: calc(94vh - 5rem);
+        }
+
+        .schema-modal-values {
+            margin: 0;
+            padding-left: 1.2rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.86rem;
+        }
+
+        .schema-modal-value-description {
+            margin-top: 0.15rem;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.82rem;
+            color: #334155;
+        }
+
+        .schema-modal-value-source {
+            margin-top: 0.2rem;
+            font-size: 0.76rem;
+            color: #64748b;
+        }
+
+        .schema-modal-external {
+            min-height: 58vh;
+        }
+
+        .schema-modal-external-link {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.82rem;
+            word-break: break-all;
+        }
+
+        .schema-modal-external iframe {
+            display: block;
+            width: 100%;
+            min-height: calc(58vh - 2rem);
+            border: 1px solid #d8dee9;
+            border-radius: 0.35rem;
+            background: #fff;
+        }
+
+        .schema-rule-card {
+            border: 1px solid #d8dee9;
+            border-radius: 0.4rem;
+            padding: 0.55rem 0.7rem;
+            margin-bottom: 0.55rem;
+            background: #fff;
+        }
+
+        .schema-rule-card h4 {
+            margin: 0 0 0.35rem 0;
+            font-size: 0.95rem;
+        }
+
+        .schema-rule-card p {
+            margin: 0 0 0.35rem 0;
+        }
+
+        .schema-rule-meta {
+            font-size: 0.8rem;
+            color: #334155;
+        }
+
+        .schema-rule-notes {
+            margin-top: 0.3rem;
+            font-size: 0.82rem;
+            color: #1f2937;
+        }
+
+        .schema-map-modal {
+            width: min(92vw, 62rem);
+            max-height: 90vh;
+            border: 1px solid #cfd8e3;
+            border-radius: 0.55rem;
+            padding: 0;
+        }
+
+        .schema-map-toolbar {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .schema-map-body {
+            padding: 0.6rem 1rem 1rem;
+            max-height: 70vh;
+            overflow: auto;
+        }
+
+        .schema-map-list {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        .schema-map-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.4rem;
+            background: #fff;
+            padding: 0.32rem 0.5rem;
+            cursor: pointer;
+        }
+
+        .schema-map-item:hover {
+            border-color: #bfdbfe;
+            background: #f8fbff;
+        }
+
+        .schema-map-item-label {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.83rem;
+            color: #334155;
+            padding-left: calc(var(--level, 0) * 0.95rem);
+        }
+
+        .schema-map-item-meta {
+            font-size: 0.74rem;
+            color: #64748b;
+            white-space: nowrap;
+        }
+
+        .schema-pill {
+            display: inline-block;
+            padding: 0.1rem 0.45rem;
+            border-radius: 999px;
+            border: 1px solid #cfd8e3;
+            font-size: 0.85rem;
+            background: #f8fafc;
+        }
+
+        .schema-pill-name-kind {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #334155;
+        }
+
+        .schema-pill-repeatable {
+            background: #ecfeff;
+            border-color: #99f6e4;
+            color: #115e59;
+            font-size: 0.74rem;
+        }
+
+        .schema-muted {
+            opacity: 0.9;
+            color: #334155;
+        }
+
+        @media (max-width: 1200px) {
+            .schema-interesting-controls {
+                grid-template-columns: 1fr 1fr auto auto;
+            }
+
+            .schema-required-only {
+                grid-column: 1 / -1;
+            }
+
+            .schema-interesting-table {
+                min-width: 860px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .schema-nav-slot {
+                min-height: 0;
+            }
+
+            .schema-nav {
+                height: auto;
+                overflow: visible;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                position: static;
+            }
+
+            .schema-nav .schema-nav-button:not(.is-active) {
+                display: block;
+            }
+
+            .schema-interesting-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .schema-map-toolbar {
+                grid-template-columns: 1fr;
+            }
+
+            .schema-display-mode {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .schema-hero-top {
+                flex-direction: column;
+            }
+
+            .schema-language-top {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .schema-compliance-note {
+                flex-direction: column;
+            }
+
+            .schema-interesting-header-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .schema-nav {
+                gap: 0.4rem;
+                padding: 0.6rem;
+            }
+
+            .schema-nav-button {
+                min-height: 2rem;
+                padding: 0.35rem 0.62rem;
+            }
+
+            .schema-interesting-table {
+                min-width: 760px;
+            }
+
+            main.container {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .schema-modal.schema-modal-wide {
+                width: 98vw;
+                max-width: 98vw;
+                height: 92vh;
+            }
+
+            .schema-map-modal {
+                width: 96vw;
+            }
+
+            .schema-modal-external {
+                min-height: 52vh;
+            }
+
+            .schema-modal-external iframe {
+                min-height: calc(52vh - 2rem);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .schema-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .schema-language-top,
+            .schema-display-mode {
+                width: 100%;
+            }
+
+            .schema-interesting {
+                padding: 0.75rem;
+            }
+
+            .schema-interesting-table {
+                min-width: 640px;
+            }
+
+            .schema-interesting-table th,
+            .schema-interesting-table td {
+                padding: 0.42rem;
+                font-size: 0.82rem;
+            }
+
+            .schema-data-element-name {
+                max-width: 16rem;
+            }
+
+            .schema-compliance-note {
+                padding: 0.55rem 0.65rem;
+            }
+
+            .schema-modal-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.55rem;
+            }
+
+            .schema-modal.schema-modal-wide {
+                width: 100vw;
+                max-width: 100vw;
+                height: 95vh;
+                border-radius: 0;
+            }
+
+            .schema-map-item {
+                grid-template-columns: 1fr;
+                gap: 0.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+    <section class="hero">
+        <div class="schema-hero-top">
+            <div>
+                <h1 id="app-title">JSON Schema Tree Viewer</h1>
+                <p id="app-subtitle" class="schema-muted">
+                    Static viewer for JSON Schemas stored in the <code>schemas</code> folder.
+                </p>
+            </div>
+            <label class="schema-language-top">
+                <span id="label-language">Language</span>
+                <select id="ui-language">
+                    <option value="fi" selected>Suomi</option>
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </label>
+        </div>
+    </section>
+
+    <section class="schema-layout">
+        <section class="schema-quick-guide" aria-label="Reporting overview">
+            <p id="schema-guide-text" class="schema-guide-text"></p>
+            <div id="schema-compliance-note" class="schema-compliance-note" role="note">
+                <p id="schema-compliance-text"></p>
+                <button id="schema-compliance-dismiss" type="button"></button>
+            </div>
+        </section>
+
+        <div class="schema-nav-slot">
+            <nav id="schema-nav" class="schema-nav" aria-label="Formalities"></nav>
+        </div>
+
+        <section class="schema-interesting">
+            <div class="schema-interesting-header">
+                <h2 id="schema-interesting-title" class="schema-interesting-title">Interesting elements</h2>
+                <div class="schema-interesting-header-actions">
+                    <button id="schema-open-map" class="schema-map-open" type="button">Structure map</button>
+                </div>
+            </div>
+            <div class="schema-interesting-controls">
+                <input
+                    id="schema-interesting-filter"
+                    class="schema-interesting-filter"
+                    type="search"
+                    aria-label="Filter interesting elements"
+                    placeholder="Filter interesting elements..."
+                />
+                <select id="schema-group-filter" class="schema-group-filter" aria-label="Filter by data group">
+                    <option value="">All data groups</option>
+                </select>
+                <label class="schema-display-mode">
+                    <span id="label-display-mode">Sis&auml;lt&ouml;laajuus</span>
+                    <select id="display-mode">
+                        <option value="narrow" selected>Suppeat (FI)</option>
+                        <option value="all">Laaja</option>
+                    </select>
+                </label>
+                <label class="schema-required-only">
+                    <span id="label-required-only">Requirement status</span>
+                    <select id="schema-required-only">
+                        <option value="all">Kaikki</option>
+                        <option value="required">Pakolliset</option>
+                        <option value="optional">Valinnaiset</option>
+                    </select>
+                </label>
+                <button id="schema-expand-all-text" class="schema-control-button" type="button">Expand all text</button>
+                <button id="schema-collapse-all-text" class="schema-control-button" type="button">Collapse all text</button>
+            </div>
+            <p id="schema-filter-help" class="schema-filter-help">Sis&auml;lt&ouml;laajuus valitsee datan m&auml;&auml;r&auml;n. Vaatimusstatus suodattaa n&auml;ytett&auml;v&auml;&auml; listaa.</p>
+            <div class="schema-interesting-table-wrap">
+                <table class="schema-interesting-table">
+                    <thead>
+                    <tr>
+                        <th id="th-name-tree">Name / Tree</th>
+                        <th id="th-data-group">Data group</th>
+                        <th id="th-data-element">Data element</th>
+                        <th id="th-description">Description</th>
+                        <th id="th-condition">Condition</th>
+                        <th id="th-code-list">Code list</th>
+                        <th id="th-rules">Rules / Guidance</th>
+                    </tr>
+                    </thead>
+                    <tbody id="schema-interesting-body"></tbody>
+                </table>
+            </div>
+            <p id="schema-interesting-empty" class="schema-interesting-empty" hidden>No matching elements.</p>
+        </section>
+
+    </section>
+</main>
+
+<dialog id="schema-map-modal" class="schema-map-modal">
+    <div class="schema-modal-header">
+        <h3 id="schema-map-title" class="schema-modal-title">Structure map</h3>
+        <div>
+            <button id="schema-map-close" type="button">Close</button>
+        </div>
+    </div>
+    <div class="schema-map-toolbar">
+        <input id="schema-map-filter" type="search" aria-label="Filter structure map" placeholder="Filter map..." />
+        <button id="schema-map-reset" type="button">Reset</button>
+    </div>
+    <div class="schema-map-body">
+        <div id="schema-map-list" class="schema-map-list"></div>
+    </div>
+</dialog>
+
+
+<dialog id="code-list-modal" class="schema-modal schema-modal-wide">
+    <div class="schema-modal-header">
+        <h3 id="code-list-modal-title" class="schema-modal-title">Code list values</h3>
+        <div>
+            <a
+                id="code-list-modal-emsa-link"
+                href="https://emsa.europa.eu/emswe-mig/Codes/ca1.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+            >EMSA code lists</a>
+            <button id="code-list-modal-close" type="button">Close</button>
+        </div>
+    </div>
+    <div class="schema-modal-body">
+        <ol id="code-list-modal-values" class="schema-modal-values"></ol>
+        <div id="code-list-modal-external" class="schema-modal-external" hidden>
+            <p class="schema-modal-external-link">
+                <a id="code-list-modal-external-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </p>
+            <iframe
+                id="code-list-modal-iframe"
+                title="Code list external browser"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+            ></iframe>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="rules-modal" class="schema-modal">
+    <div class="schema-modal-header">
+        <h3 id="rules-modal-title" class="schema-modal-title">Rules and guidance</h3>
+        <div>
+            <button id="rules-modal-close" type="button">Close</button>
+        </div>
+    </div>
+    <div id="rules-modal-body" class="schema-modal-body"></div>
+</dialog>
+
+<script src="./app.js" type="module"></script>
+</body>
+</html>

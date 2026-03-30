@@ -1,0 +1,114 @@
+{
+  "title": "MIG JSON Schema Viewer",
+  "defaultFile": "VID_2.0.0.0.json",
+  "schemas": [
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/ATA_2.0.0.0.json",
+      "label": "ATA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/ATD_2.0.0.0.json",
+      "label": "ATD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/CGA_2.0.0.0.json",
+      "label": "CGA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/CGD_2.0.0.0.json",
+      "label": "CGD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/COA_2.0.0.0.json",
+      "label": "COA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/CRT_2.0.0.0.json",
+      "label": "CRT 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/CWA_2.0.0.0.json",
+      "label": "CWA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/CWD_2.0.0.0.json",
+      "label": "CWD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/DUE_2.0.0.0.json",
+      "label": "DUE 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/FRM_2.0.0.0.json",
+      "label": "FRM 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/HZA_2.0.0.0.json",
+      "label": "HZA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/HZD_2.0.0.0.json",
+      "label": "HZD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/MDD_2.0.0.0.json",
+      "label": "MDD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/MDH_2.0.0.0.json",
+      "label": "MDH 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/VID_2.0.0.0.json",
+      "label": "VID 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/NOA_2.0.0.0.json",
+      "label": "NOA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/NOD_2.0.0.0.json",
+      "label": "NOD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/PXA_2.0.0.0.json",
+      "label": "PXA 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/PXD_2.0.0.0.json",
+      "label": "PXD 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/SEC_2.0.0.0.json",
+      "label": "SEC 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/SHP_2.0.0.0.json",
+      "label": "SHP 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/SID_2.0.0.0.json",
+      "label": "SID 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/SRV_2.0.0.0.json",
+      "label": "SRV 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/WAS_2.0.0.0.json",
+      "label": "WAS 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/WAR_2.0.0.0.json",
+      "label": "WAR 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/MTS_2.0.0.0.json",
+      "label": "MTS 2.0.0.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2000/PBK_2.0.0.0.json",
+      "label": "PBK 2.0.0.0"
+    }
+  ]
+}
