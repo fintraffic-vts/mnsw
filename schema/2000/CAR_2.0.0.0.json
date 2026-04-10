@@ -629,14 +629,102 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 6
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999999.999,
+					"minimum": -9999999999999.999,
+					"multipleOf": 0.001
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999.9999,
+					"minimum": -999999999999.9999,
+					"multipleOf": 0.0001
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999.99999,
+					"minimum": -99999999999.99999,
+					"multipleOf": 0.00001
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999.999999,
+					"minimum": -9999999999.999999,
+					"multipleOf": 0.000001
+				}
+			]
 		},
 		"qdt:decimal_2": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 6
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999999.999,
+					"minimum": -9999999999999.999,
+					"multipleOf": 0.001
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999.9999,
+					"minimum": -999999999999.9999,
+					"multipleOf": 0.0001
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999.99999,
+					"minimum": -99999999999.99999,
+					"multipleOf": 0.00001
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999.999999,
+					"minimum": -9999999999.999999,
+					"multipleOf": 0.000001
+				}
+			]
 		},
 		"qdt:FormalityTypesCodeContentType_2": {
 			"maxLength": 3,

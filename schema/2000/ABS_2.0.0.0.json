@@ -2056,7 +2056,27 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 3,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 999,
+					"minimum": -999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 99.9,
+					"minimum": -99.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 9.99,
+					"minimum": -9.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:IDType": {
 			"type": "string"

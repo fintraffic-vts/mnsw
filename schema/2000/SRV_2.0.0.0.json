@@ -717,42 +717,210 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 4,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999,
+					"minimum": -9999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999.9,
+					"minimum": -999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99.99,
+					"minimum": -99.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:decimal_2": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 5,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999,
+					"minimum": -99999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999.9,
+					"minimum": -9999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999.99,
+					"minimum": -999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:decimal_3": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:decimal_4": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 6
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999999.999,
+					"minimum": -9999999999999.999,
+					"multipleOf": 0.001
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999.9999,
+					"minimum": -999999999999.9999,
+					"multipleOf": 0.0001
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999.99999,
+					"minimum": -99999999999.99999,
+					"multipleOf": 0.00001
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999.999999,
+					"minimum": -9999999999.999999,
+					"multipleOf": 0.000001
+				}
+			]
 		},
 		"qdt:decimal_5": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 8,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999999,
+					"minimum": -99999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999999.9,
+					"minimum": -9999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999999.99,
+					"minimum": -999999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"qdt:decimal_6": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 6
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999999.999,
+					"minimum": -9999999999999.999,
+					"multipleOf": 0.001
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999.9999,
+					"minimum": -999999999999.9999,
+					"multipleOf": 0.0001
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999.99999,
+					"minimum": -99999999999.99999,
+					"multipleOf": 0.00001
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999.999999,
+					"minimum": -9999999999.999999,
+					"multipleOf": 0.000001
+				}
+			]
 		},
 		"qdt:decimal_7": {
 			"type": "number",
@@ -4643,35 +4811,159 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 4,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999,
+					"minimum": -9999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999.9,
+					"minimum": -999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99.99,
+					"minimum": -99.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:decimal_2": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 5,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999,
+					"minimum": -99999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999.9,
+					"minimum": -9999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999.99,
+					"minimum": -999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:decimal_3": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:decimal_4": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 16,
 				"x-fractionDigits": 6
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999999999999999,
+					"minimum": -9999999999999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999999.9,
+					"minimum": -999999999999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999999.99,
+					"minimum": -99999999999999.99,
+					"multipleOf": 0.01
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999999.999,
+					"minimum": -9999999999999.999,
+					"multipleOf": 0.001
+				},
+				{
+					"type": "number",
+					"maximum": 999999999999.9999,
+					"minimum": -999999999999.9999,
+					"multipleOf": 0.0001
+				},
+				{
+					"type": "number",
+					"maximum": 99999999999.99999,
+					"minimum": -99999999999.99999,
+					"multipleOf": 0.00001
+				},
+				{
+					"type": "number",
+					"maximum": 9999999999.999999,
+					"minimum": -9999999999.999999,
+					"multipleOf": 0.000001
+				}
+			]
 		},
 		"udt:decimal_5": {
 			"type": "number",
 			"x-xsd-restrictions": {
 				"x-totalDigits": 8,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 99999999,
+					"minimum": -99999999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 9999999.9,
+					"minimum": -9999999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 999999.99,
+					"minimum": -999999.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:IDType": {
 			"type": "string"
@@ -4886,7 +5178,27 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 4,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999,
+					"minimum": -9999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999.9,
+					"minimum": -999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99.99,
+					"minimum": -99.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:PercentType_2": {
 			"description": "Percent. Type",
@@ -4894,7 +5206,27 @@
 			"x-xsd-restrictions": {
 				"x-totalDigits": 4,
 				"x-fractionDigits": 2
-			}
+			},
+			"anyOf": [
+				{
+					"type": "number",
+					"maximum": 9999,
+					"minimum": -9999,
+					"multipleOf": 1
+				},
+				{
+					"type": "number",
+					"maximum": 999.9,
+					"minimum": -999.9,
+					"multipleOf": 0.1
+				},
+				{
+					"type": "number",
+					"maximum": 99.99,
+					"minimum": -99.99,
+					"multipleOf": 0.01
+				}
+			]
 		},
 		"udt:QuantityType": {
 			"description": "Quantity Unit. Code",

@@ -904,6 +904,11 @@ function buildCodeListNameOverrides(payload) {
 function resolveMappedListNameForElement(node, formalityCode, codeListLabel = "") {
     const deId = String(node?.dataElementId || "").trim().toUpperCase();
     const formality = String(formalityCode || "").trim().toUpperCase();
+    // National addition: for certain DEs override the code list to UN/LOCODE
+    // (DE requested mapping for DE-015-01 and DE-015-04).
+    if (deId === "DE-015-01" || deId === "DE-015-04") {
+        return "UN/LOCODE";
+    }
     if (deId) {
         const byFormality = codeListNameOverrides?.byFormalityDe?.[formality] || {};
         if (byFormality[deId]) return byFormality[deId];
@@ -1011,6 +1016,19 @@ function markFinlandWanted(node, schemaCode, lineage = [node.name]) {
         node.configRuleRefs = Array.isArray(entry?.ruleRefs) ? entry.ruleRefs : [];
         node.configCodeList = String(entry?.codeList || entry?.raw?.["Code list"] || "").trim();
         node.configOccurrence = String(entry?.occurrence || entry?.raw?.Occurrence || "").trim();
+    }
+
+    // National override: always include sequence-related fields in the "suppeat tiedot" (narrow) view
+    // Some sequence elements (e.g. sequenceNumeric) are structural but should still appear in the
+    // filtered narrow view. Match by element name and by data element name.
+    try {
+        const nameLower = String(node.name || "").toLowerCase();
+        const deNameLower = String(node.dataElementName || "").toLowerCase();
+        if (/sequence/.test(nameLower) || /sequence/.test(deNameLower)) {
+            node.finlandWanted = true;
+        }
+    } catch (e) {
+        // ignore any unexpected values
     }
 
     node.children.forEach((child) => {
@@ -1433,7 +1451,8 @@ function collectInterestingRows(node, rows = [], lineage = [], state = { order: 
             const mappedListName = resolveMappedListNameForElement(child, currentSchemaCode, codeList);
             const codeListValues = buildCodeListModalValues(child, codeList || mappedListName);
             const codeListLabel = codeList || mappedListName;
-            const codeListExternalUrl = resolveCodeListExternalUrl(codeList);
+            // Resolve external URL based on the effective label (original or mapped).
+            const codeListExternalUrl = resolveCodeListExternalUrl(codeListLabel);
             const codeListNameHints = deriveCodeListNameHints(codeListLabel);
             const relatedRules = getRulesForElement(child, currentSchemaCode, child.dataElementId);
             const relatedRulesSummary = relatedRules.length > 0
