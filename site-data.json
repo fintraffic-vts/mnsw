@@ -69,6 +69,7 @@
     {"date": "2026-03-05", "textI18n": "changelog.item.2026-03-05"},
     {"date": "2026-03-06", "textI18n": "changelog.item.2026-03-06"},
     {"date": "2026-03-23", "textI18n": "changelog.item.2026-03-23"},
-    {"date": "2026-03-24", "textI18n": "changelog.item.2026-03-24"}
+    {"date": "2026-03-24", "textI18n": "changelog.item.2026-03-24"},
+    {"date": "2026-04-10", "textI18n": "changelog.item.2026-04-10"}
   ]
 }
