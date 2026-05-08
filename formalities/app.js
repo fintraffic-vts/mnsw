@@ -998,6 +998,30 @@ function isRepeatableOccurrence(occurrence) {
     return Number.isFinite(upperNum) && upperNum > 1;
 }
 
+function getRawConfigValue(raw, keys = []) {
+    if (!raw || typeof raw !== "object") return "";
+
+    for (const key of keys) {
+        if (raw[key] !== undefined && raw[key] !== null) {
+            return String(raw[key]).trim();
+        }
+    }
+
+    const byLower = Object.entries(raw).reduce((acc, [key, value]) => {
+        acc[String(key).trim().toLowerCase()] = value;
+        return acc;
+    }, {});
+
+    for (const key of keys) {
+        const value = byLower[String(key).trim().toLowerCase()];
+        if (value !== undefined && value !== null) {
+            return String(value).trim();
+        }
+    }
+
+    return "";
+}
+
 function markFinlandWanted(node, schemaCode, lineage = [node.name]) {
     const idx = formalityConfigIndex[String(schemaCode || "").toUpperCase()];
     if (!idx) {
@@ -1016,6 +1040,8 @@ function markFinlandWanted(node, schemaCode, lineage = [node.name]) {
         node.configRuleRefs = Array.isArray(entry?.ruleRefs) ? entry.ruleRefs : [];
         node.configCodeList = String(entry?.codeList || entry?.raw?.["Code list"] || "").trim();
         node.configOccurrence = String(entry?.occurrence || entry?.raw?.Occurrence || "").trim();
+        node.configType = String(entry?.type || getRawConfigValue(entry?.raw, ["Type", "Data type", "Datatype"]) || "").trim();
+        node.configFormat = String(entry?.format || getRawConfigValue(entry?.raw, ["Format", "Data format"]) || "").trim();
     }
 
     // National override: always include sequence-related fields in the "suppeat tiedot" (narrow) view
@@ -1093,14 +1119,66 @@ function collectConstraints(schemaNode) {
         "exclusiveMaximum",
         "minItems",
         "maxItems",
+        "multipleOf",
         "pattern",
         "format",
         "default"
     ];
 
-    return keys
+    const out = keys
         .filter((key) => schemaNode[key] !== undefined)
         .map((key) => ({ key, value: schemaNode[key] }));
+
+    const xsdRestrictions = schemaNode?.["x-xsd-restrictions"];
+    if (xsdRestrictions && typeof xsdRestrictions === "object") {
+        Object.entries(xsdRestrictions).forEach(([key, value]) => {
+            if (value === undefined || value === null) return;
+            out.push({ key: String(key), value });
+        });
+    }
+
+    return out;
+}
+
+function collectXsdRestrictionSummary(node) {
+    const ownRestrictions = node?.constraints
+        ?.filter((constraint) => /^x-(totaldigits|fractiondigits)$/i.test(String(constraint?.key || ""))) || [];
+
+    // Measure values are often represented in a dedicated value child (for example "$"),
+    // so fall back to that child when the parent does not carry x-xsd-restrictions itself.
+    const valueChild = (node?.children || []).find((child) => String(child?.name || "") === "$");
+    const childRestrictions = valueChild?.constraints
+        ?.filter((constraint) => /^x-(totaldigits|fractiondigits)$/i.test(String(constraint?.key || ""))) || [];
+
+    const restrictions = ownRestrictions.length > 0 ? ownRestrictions : childRestrictions;
+
+    if (!restrictions.length) return "";
+
+    const byKey = restrictions.reduce((acc, item) => {
+        acc[String(item.key).toLowerCase()] = String(item.value);
+        return acc;
+    }, {});
+
+    const total = byKey["x-totaldigits"] || "";
+    const fraction = byKey["x-fractiondigits"] || "";
+
+    if (!total && !fraction) return "";
+
+    if (currentLanguage === "fi") {
+        if (total && fraction) return `enintaan ${total} numeroa, joista enintaan ${fraction} desimaalia`;
+        if (total) return `enintaan ${total} numeroa`;
+        return `enintaan ${fraction} desimaalia`;
+    }
+
+    if (currentLanguage === "sv") {
+        if (total && fraction) return `hogst ${total} siffror, varav hogst ${fraction} decimaler`;
+        if (total) return `hogst ${total} siffror`;
+        return `hogst ${fraction} decimaler`;
+    }
+
+    if (total && fraction) return `up to ${total} digits, with up to ${fraction} decimals`;
+    if (total) return `up to ${total} digits`;
+    return `up to ${fraction} decimals`;
 }
 
 function resolveRef(ref, defs) {
@@ -1262,6 +1340,52 @@ function formatConstraintSummary(node) {
         .filter((constraint) => constraint.key !== "default")
         .map((constraint) => `${constraint.key}=${String(constraint.value)}`)
         .join(", ");
+}
+
+function isMeasurementLikeNode(node, inherited = false) {
+    if (inherited) return true;
+
+    const measurementText = [
+        node?.configType,
+        node?.name,
+        node?.displayName,
+        node?.dataElementName,
+        node?.description,
+        node?.ref
+    ].filter(Boolean).join(" ");
+
+    if (/\bmeasurement\b/i.test(measurementText)) return true;
+
+    // EMSWe schemas typically use names ending with "Measure" instead of "Measurement".
+    if (/\bmeasure\b/i.test(measurementText) || /measure$/i.test(String(node?.name || ""))) return true;
+
+    // A value + unitCode pattern is a strong indicator of measure structures.
+    const childNames = new Set((node?.children || []).map((child) => String(child?.name || "").toLowerCase()));
+    if (childNames.has("$") && childNames.has("@unitcode")) return true;
+
+    return false;
+}
+
+function formatMeasurementConditionDetails(node, constraintSummary = "", inheritedFormat = "", inheritedMeasurement = false) {
+    if (!isMeasurementLikeNode(node, inheritedMeasurement)) return "";
+
+    const configFormat = String(node?.configFormat || inheritedFormat || "").trim();
+    const out = [];
+
+    if (configFormat && !/\bformat\s*=\s*/i.test(String(constraintSummary || ""))) {
+        const formatLabel = currentLanguage === "fi"
+            ? "Muoto"
+            : (currentLanguage === "sv" ? "Format" : "Format");
+        out.push(`${formatLabel} ${configFormat}`);
+    }
+
+    const xsdSummary = collectXsdRestrictionSummary(node);
+    if (xsdSummary) {
+        const existing = `${constraintSummary}; ${out.join("; ")}`.toLowerCase();
+        if (!existing.includes(xsdSummary.toLowerCase())) out.push(xsdSummary);
+    }
+
+    return out.join("; ");
 }
 
 function isBooleanIndicatorNode(node) {
@@ -1431,18 +1555,28 @@ function buildCodeListModalValues(node, codeListLabel = "") {
     return [];
 }
 
-function collectInterestingRows(node, rows = [], lineage = [], state = { order: 0 }) {
+function collectInterestingRows(node, rows = [], lineage = [], state = { order: 0 }, context = { isMeasurement: false, measurementFormat: "" }) {
     for (const child of node.children) {
         const childLineage = [...lineage, child.name];
         const depth = Math.max(0, childLineage.length - 1);
         const isStructural = /^(oneOf|anyOf|allOf)\[(\d+)]$/.test(child.name);
         const isLeaf = child.children.length === 0;
         const hasDetail = !!child.description || !!child.dataElementId || child.constraints.length > 0 || child.enumValues.length > 0;
+        const childIsMeasurement = isMeasurementLikeNode(child, context.isMeasurement);
+        const childMeasurementFormat = String(child.configFormat || context.measurementFormat || "").trim();
 
         if (child.includeInInteresting && !isStructural && (isLeaf || hasDetail)) {
             const conditionParts = [child.required ? t("required") : t("optional")];
             const constraintSummary = formatConstraintSummary(child);
             if (constraintSummary) conditionParts.push(constraintSummary);
+
+            const measurementConditionDetails = formatMeasurementConditionDetails(
+                child,
+                constraintSummary,
+                childMeasurementFormat,
+                childIsMeasurement
+            );
+            if (measurementConditionDetails) conditionParts.push(measurementConditionDetails);
 
             const booleanHint = getBooleanIndicatorHint(child);
             if (booleanHint) conditionParts.push(booleanHint);
@@ -1502,7 +1636,16 @@ function collectInterestingRows(node, rows = [], lineage = [], state = { order: 
             rows.push(row);
         }
 
-        collectInterestingRows(child, rows, childLineage, state);
+        collectInterestingRows(
+            child,
+            rows,
+            childLineage,
+            state,
+            {
+                isMeasurement: childIsMeasurement,
+                measurementFormat: childMeasurementFormat
+            }
+        );
     }
 
     return rows;
