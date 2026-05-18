@@ -19,8 +19,8 @@
 | FRM | [Section](#formality-frm) | 0 | 0 | 0 | 0 |
 | HZA | [Section](#formality-hza) | 177 | 41 | 47 | 129 |
 | HZD | [Section](#formality-hzd) | 148 | 39 | 42 | 105 |
-| MDD | [Section](#formality-mdd) | 31 | 21 | 13 | 17 |
-| MDH | [Section](#formality-mdh) | 47 | 26 | 34 | 12 |
+| MDD | [Section](#formality-mdd) | 31 | 20 | 13 | 17 |
+| MDH | [Section](#formality-mdh) | 47 | 25 | 34 | 12 |
 | MTS | [Section](#formality-mts) | 41 | 16 | 13 | 27 |
 | NOA | [Section](#formality-noa) | 219 | 58 | 52 | 166 |
 | NOD | [Section](#formality-nod) | 138 | 36 | 35 | 102 |
@@ -135,7 +135,7 @@
 ## MDD
 
 - All elements: 31
-- Narrow (Suppeat): 21
+- Narrow (Suppeat): 20
 - Required: 13
 - Optional: 17
 
@@ -143,7 +143,7 @@
 ## MDH
 
 - All elements: 47
-- Narrow (Suppeat): 26
+- Narrow (Suppeat): 25
 - Required: 34
 - Optional: 12
 

@@ -60,5 +60,5 @@ This markdown catalog mirrors the formalities viewer content in text-first forma
 
 ## Generation metadata
 
-- Generated at: 2026-03-26T19:09:14.626Z
+- Generated at: 2026-05-18T10:28:03.338Z
 - Generator: tools/formalities/scripts/generate_markdown_catalog.mjs

@@ -29,4 +29,3 @@ Source reference:
 3. Omit optional elements when value is unknown.
 4. Never send empty strings (`""`).
 5. Keep code values case exact and treat identifiers as case insensitive.
-
