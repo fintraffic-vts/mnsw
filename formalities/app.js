@@ -1026,6 +1026,7 @@ function markFinlandWanted(node, schemaCode, lineage = [node.name]) {
     const idx = formalityConfigIndex[String(schemaCode || "").toUpperCase()];
     if (!idx) {
         node.finlandWanted = true;
+        node.narrowInfo = true;
     } else {
         const xsdPath = lineageToXsdPath(lineage);
         const byPath = idx.byPath[xsdPath];
@@ -1035,6 +1036,7 @@ function markFinlandWanted(node, schemaCode, lineage = [node.name]) {
         const entry = byPath || byDeEntry || null;
 
         node.finlandWanted = byPath ? !!byPath.finlandWanted : byDe;
+        node.narrowInfo = byPath ? !!byPath.flags?.narrowInfoFilter : false;
         node.localizedLabel = pickLocalizedValue(entry?.labels, "");
         node.localizedDescription = pickLocalizedValue(entry?.descriptions, "");
         node.configRuleRefs = Array.isArray(entry?.ruleRefs) ? entry.ruleRefs : [];
@@ -1052,6 +1054,7 @@ function markFinlandWanted(node, schemaCode, lineage = [node.name]) {
         const deNameLower = String(node.dataElementName || "").toLowerCase();
         if (/sequence/.test(nameLower) || /sequence/.test(deNameLower)) {
             node.finlandWanted = true;
+            node.narrowInfo = true;
         }
     } catch (e) {
         // ignore any unexpected values
@@ -1071,7 +1074,7 @@ function filterTreeByDisplayMode(node, mode) {
         .map((child) => filterTreeByDisplayMode(child, mode))
         .filter(Boolean);
 
-    const keepSelf = !!node.finlandWanted || filteredChildren.length > 0;
+    const keepSelf = !!node.narrowInfo || filteredChildren.length > 0;
     if (!keepSelf) {
         return null;
     }
