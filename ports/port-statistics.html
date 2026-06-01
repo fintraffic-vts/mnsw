@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Statistics Submission</title>
+    <link rel="stylesheet" href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css">
+</head>
+<body>
+<main class="container">
+    <section class="hero">
+        <h1>Port Statistics Data Submission</h1>
+        <p>
+            This page explains what data is expected from ports and how the data can be
+            submitted in two ways: with an Excel file or via the National Port API.
+        </p>
+    </section>
+
+    <section>
+        <h2>What Data Is Expected from Ports</h2>
+        <p>
+            The sections below summarize the minimum data expected from ports. Excel and API submissions
+            have separate technical formats and validation rules.
+        </p>
+        <h3>1) Report Header Data (Required)</h3>
+        <ul>
+            <li><strong>reporter</strong>: name of the reporting organization.</li>
+            <li><strong>type</strong>: report type (for example, Port).</li>
+            <li><strong>timeframeStart</strong>: start date and time of the reporting period.</li>
+            <li><strong>timeframeEnd</strong>: end date and time of the reporting period.</li>
+        </ul>
+
+        <h3>2) Port Call Rows (At Least 1 Row)</h3>
+        <ul>
+            <li>Each port call row must include a vessel identifier.</li>
+            <li>
+                A valid identifier can be one of the following:
+                <strong>imoNumber</strong>, <strong>cfrNumber</strong>, <strong>eniNumber</strong>,
+                <strong>mmsiNumber</strong>, <strong>callSign</strong> or <strong>otherId</strong>.
+            </li>
+            <li>Additional details may include arrival and departure times, passenger data, and cargo data.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Option 1: Excel File (Non-Technical User)</h2>
+        <p>
+            If you are not using a technical integration, complete the Excel data according to
+            the format documentation. This is the recommended option for non-technical users.
+        </p>
+        <p>
+            Use this template documentation:
+            <strong>MLT2-Port-Excel-File-Format-Documentation-v1.0.1.pdf</strong>
+        </p>
+        <p>
+            <a href="./MLT2-Port-Excel-File-Format-Documentation-v1.0.1.pdf" download>
+                Download Excel Format Documentation (PDF)
+            </a>.
+        </p>
+        <p>
+            <a href="./Satamaraportti_v1.0.1.xlsx" download>
+                Download Empty Excel Template File v1.0.1 (XLSX)
+            </a>.
+        </p>
+        <figure>
+            <img src="./example_empty_excel_v1.0.1.png" alt="Preview of the empty Excel template used for port statistics reporting" style="max-width: 100%; height: auto;" />
+            <figcaption>Preview of the empty Excel template (for quick reference before download).</figcaption>
+        </figure>
+        <ul>
+            <li>First fill in the report header data (reporter + reporting period).</li>
+            <li>Add one row for each port call.</li>
+            <li>Make sure each row contains at least one vessel identifier.</li>
+            <li>Save the file in the required format and submit it according to the agreed process.</li>
+        </ul>
+
+        <h3>Excel Required Fields (from MLT2 format)</h3>
+        <p>These fields must be available in the Excel content for successful processing:</p>
+        <ul>
+            <li><strong>Basic section</strong>: MLT-011 (must be "Port"), MLT-015 (version), MLT-010 (reporter), MLT-120 (reporting port/UN-LOCODE).</li>
+            <li><strong>Port call section</strong>: MLT-100 (visit ID), MLT-130 (arrival date-time), MLT-131 (departure date-time), MLT-113 (ship name).</li>
+            <li><strong>Vessel identification</strong>: at least one of MLT-110 (IMO), MLT-111 (MMSI), MLT-112 (call sign), MLT-114 (other identifier).</li>
+            <li><strong>Traffic direction</strong>: MLT-191 (arrives in domestic/foreign), MLT-192 (departs in domestic/foreign).</li>
+            <li><strong>Cargo rows</strong>: if inward/outward cargo rows are provided, all cargo fields in that row are required.</li>
+        </ul>
+
+        <h3>Excel File Rules and Validation Notes</h3>
+        <ul>
+            <li>File format must be <strong>.xlsx</strong>; maximum file size is <strong>10 MB</strong>.</li>
+            <li>Main data must be in the <strong>first sheet</strong>.</li>
+            <li>
+                In the human-fillable Excel template, support sheets for cargo groups and unit types are included
+                as hidden sheets named <strong>Tavararyhmä</strong> and <strong>Kuljetusyksikkötyyppi</strong>.
+            </li>
+            <li>
+                For automatically generated Excel files, the support sheets are not required by the parser.
+                The first sheet must still contain the main port call and cargo data.
+            </li>
+            <li>
+                Date-time values should be valid Excel date/time values displayed as
+                <strong>yyyy-mm-dd hh:mm</strong>, or ISO 8601 strings if generated as text.
+            </li>
+            <li>Rows starting with <strong>Yhteensä</strong> in cargo tables are ignored by the parser.</li>
+            <li>If required fields are missing, the file is rejected with field-level validation errors.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Option 2: National Port API (Technical User)</h2>
+        <p>
+            If your port has integration capability, submit the data as a JSON message
+            directly to the API endpoint.
+        </p>
+        <p>
+            The statistics submission endpoint is
+            <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics" target="_blank" rel="noopener noreferrer">
+                postStatistics (Ports)
+            </a>
+        </p>
+        <ul>
+            <li>HTTP method: <strong>POST</strong></li>
+            <li>Content-Type: <strong>application/json</strong></li>
+            <li>Authentication: <strong>Bearer JWT</strong></li>
+            <li>Always submit reportHeaderData and at least one portCallInformation row.</li>
+            <li>Make sure each portCallInformation row has at least one valid identifier.</li>
+        </ul>
+
+        <h3>Minimum JSON Example</h3>
+        <pre><code>{
+  "reportHeaderData": {
+    "reporter": "Example Port Ltd",
+    "type": "Port",
+    "timeframeStart": "2026-05-01T00:00:00+03:00",
+    "timeframeEnd": "2026-05-31T23:59:59+03:00"
+  },
+  "portCallInformation": [
+    {
+      "shipName": "EXAMPLE VESSEL",
+      "mmsiNumber": "230123456"
+    }
+  ]
+}</code></pre>
+
+        <h3>Excel to JSON Mapping (Most Important Fields)</h3>
+        <ul>
+            <li>MLT-010 (Reporter) -&gt; <strong>reportHeaderData.reporter</strong></li>
+            <li>MLT-011 (Report type "Port") -&gt; <strong>reportHeaderData.type</strong></li>
+            <li>MLT-130 / MLT-131 -&gt; <strong>portCallInformation[].dateTimeOfArrival</strong> / <strong>dateTimeOfDeparture</strong></li>
+            <li>MLT-113 (Ship name) -&gt; <strong>portCallInformation[].shipName</strong></li>
+            <li>MLT-110 / 111 / 112 / 114 -&gt; <strong>portCallInformation[].imoNumber / mmsiNumber / callSign / otherId</strong></li>
+            <li>MLT-410...450 and MLT-510...550 -&gt; <strong>portCallInformation[].inwardCargo[]</strong> and <strong>outwardCargo[]</strong></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How to Choose the Submission Method</h2>
+        <ul>
+            <li>Choose <strong>Excel</strong> if data is filled in manually or no integration is available.</li>
+            <li>Choose <strong>API/JSON</strong> if data is produced automatically from port systems.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Official Definitions (Single Source of Truth)</h2>
+        <ul>
+            <li>
+                Excel documentation: <a href="./MLT2-Port-Excel-File-Format-Documentation-v1.0.1.pdf" download>
+                MLT2-Port-Excel-File-Format-Documentation-v1.0.1.pdf
+            </a>
+            </li>
+            <li>
+                Excel template (empty example): <a href="./Satamaraportti_v1.0.1.xlsx" download>
+                Satamaraportti_v1.0.1.xlsx
+            </a>
+            </li>
+            <li>
+                API documentation: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics" target="_blank" rel="noopener noreferrer">
+                Port API / postStatistics
+            </a>
+            </li>
+        </ul>
+    </section>
+</main>
+</body>
+</html>

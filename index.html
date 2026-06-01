@@ -146,7 +146,21 @@
             </article>
 
             <article class="card">
-                <div class="eyebrow" data-i18n="model.ops.eyebrow">4. Operate</div>
+                <div class="eyebrow" data-i18n="model.portstats.eyebrow">4. Port statistics submission</div>
+                <h3 data-i18n="model.portstats.title">How Finnish ports submit statistics data</h3>
+                <p data-i18n="model.portstats.body" data-i18n-html>
+                    Finnish ports can submit statistics either through the National Port API
+                    (<code>postStatistics</code>) or by using the Excel-based template process.
+                    Both options are documented with required fields, validation rules, and examples.
+                </p>
+                <div class="links">
+                    <a class="chip" href="/mnsw/ports/port-statistics.html" data-i18n="model.portstats.linkGuide">Port statistics guide</a>
+                    <a class="chip" href="/mnsw/port/openapi.html#tag/Ports/operation/postStatistics" data-i18n="model.portstats.linkApi">Port API postStatistics</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="eyebrow" data-i18n="model.ops.eyebrow">5. Operate</div>
                 <h3 data-i18n="model.ops.title">Move from testing to production</h3>
                 <p data-i18n="model.ops.body">Check environment endpoints, authenticate with OAuth2 client credentials, and contact support for onboarding, production access, and operational questions.</p>
                 <div class="links">
