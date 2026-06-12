@@ -17,11 +17,11 @@ function escapeHtml(value) {
 }
 
 function renderSchemaLinks() {
-    const container = document.getElementById("schema-links");
+    const container = document.getElementById("schema-links-2.0.1.0");
     if (!container) return;
     container.innerHTML = "";
 
-    (SITE_DATA.schemaLinks || []).forEach((entry) => {
+    (SITE_DATA.schemaLinks2 || []).forEach((entry) => {
         const link = document.createElement("a");
         link.className = "chip";
         link.href = entry.href;
