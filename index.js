@@ -17,7 +17,7 @@ function escapeHtml(value) {
 }
 
 function renderSchemaLinks() {
-    const container = document.getElementById("schema-links-2.0.1.0");
+    const container = document.getElementById("schema-links_2.0.1.0");
     if (!container) return;
     container.innerHTML = "";
 
