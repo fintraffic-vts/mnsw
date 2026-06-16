@@ -51,6 +51,8 @@
     {"code": "SHP", "href": "/mnsw/schema/2010/SHP_2.0.1.0.json"},
     {"code": "SID", "href": "/mnsw/schema/2010/SID_2.0.1.0.json"},
     {"code": "SRV", "href": "/mnsw/schema/2010/SRV_2.0.1.0.json"},
+    {"code": "STA", "href": "/mnsw/schema/2010/STA_2.0.1.0.json"},
+    {"code": "STD", "href": "/mnsw/schema/2010/STD_2.0.1.0.json"},
     {"code": "VID", "href": "/mnsw/schema/2010/VID_2.0.1.0.json"},
     {"code": "WAS", "href": "/mnsw/schema/2010/WAS_2.0.1.0.json"},
     {"code": "WAR", "href": "/mnsw/schema/2010/WAR_2.0.1.0.json"},

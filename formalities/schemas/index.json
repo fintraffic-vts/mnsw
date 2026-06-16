@@ -99,6 +99,14 @@
       "label": "SRV 2.0.1.0"
     },
     {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2010/STA_2.0.1.0.json",
+      "label": "STA 2.0.1.0"
+    },
+    {
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2010/STD_2.0.1.0.json",
+      "label": "STD 2.0.1.0"
+    },
+    {
       "file": "https://fintraffic-vts.github.io/mnsw/schema/2010/WAS_2.0.1.0.json",
       "label": "WAS 2.0.1.0"
     },
