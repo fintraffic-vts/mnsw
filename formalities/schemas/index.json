@@ -95,8 +95,8 @@
       "label": "SID 2.0.1.0"
     },
     {
-      "file": "https://fintraffic-vts.github.io/mnsw/schema/2010/SRV_2.0.1.0.json",
-      "label": "SRV 2.0.1.0"
+      "file": "https://fintraffic-vts.github.io/mnsw/schema/2010/EFF_2.0.1.0.json",
+      "label": "EFF 2.0.1.0"
     },
     {
       "file": "https://fintraffic-vts.github.io/mnsw/schema/2010/STA_2.0.1.0.json",
