@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Practical guide for configuring the sender-side Domibus PMode for EMSWe RIM / AS4 messaging." />
+  <title>EMSWe RIM Sender Integration – Domibus PMode Configuration</title>
+  <link rel="stylesheet" href="nemo-dev.css" />
+  <style>
+    /* Page-specific additions. Base styling comes from nemo-dev.css. */
+    .doc { max-width: 1000px; margin: 0 auto; color: var(--muted); }
+    .doc h1, .doc h2, .doc h3 { color: var(--text); }
+    .doc h2 { margin-top: 2.5rem; scroll-margin-top: 1rem; }
+    .doc h3 { margin-top: 1.75rem; }
+    .doc a { color: var(--primary-brand); text-decoration: underline; text-underline-offset: 2px; }
+    .doc a:hover { color: var(--secondary-hover); }
+    .doc blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.2rem;
+      border-left: 4px solid var(--primary-brand);
+      background: var(--background-brand10);
+      color: var(--foreground);
+    }
+    .doc code { background: var(--code-inline-bg); padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
+    .toc { margin: 1.5rem 0; }
+    .toc ol { columns: 2; column-gap: 2rem; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--background-gray40); border-radius: var(--border-radius); }
+    .table-wrap table { margin: 0; }
+    .callout {
+      margin: 1rem 0;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--background-gray40);
+      border-radius: var(--border-radius);
+      background: var(--surface);
+    }
+    .callout.warning { border-left: 5px solid var(--warn); background: var(--feedback-attention); }
+    .callout.success { border-left: 5px solid var(--ok); background: var(--feedback-success10); }
+    .code-panel { margin: 1rem 0 2rem; border: 1px solid var(--code-border); border-radius: var(--border-radius); overflow: hidden; background: var(--surface); }
+    .code-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.7rem 0.9rem; background: var(--background-gray20); border-bottom: 1px solid var(--code-border); }
+    .code-toolbar strong { color: var(--text); }
+    .copy-button { border: 1px solid var(--primary-brand); border-radius: var(--border-radius); background: var(--surface); color: var(--primary-brand); padding: 0.4rem 0.75rem; font-weight: 700; cursor: pointer; }
+    .copy-button:hover { background: var(--background-brand10); }
+    pre.xml { margin: 0; padding: 1rem; overflow: auto; max-height: 70vh; background: var(--code-bg); color: var(--foreground); line-height: 1.45; tab-size: 4; }
+    pre.xml code { padding: 0; background: transparent; white-space: pre; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { position: relative; padding-left: 1.8rem; margin: 0.55rem 0; }
+    .checklist li::before { content: "□"; position: absolute; left: 0; color: var(--primary-brand); font-weight: 800; }
+    .back-link { display: inline-flex; margin-bottom: 1.25rem; font-weight: 700; }
+    @media (max-width: 760px) { .toc ol { columns: 1; } }
+  </style>
+</head>
+<body>
+  <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <article class="doc">
+      <nav class="guide-nav" aria-label="Sender Access Point documentation" style="display:flex; flex-wrap:wrap; gap:.65rem; margin:0 0 1.25rem; padding:.8rem 1rem; border:1px solid var(--background-gray40); border-radius:var(--border-radius); background:var(--surface);">
+        <a href="sender-access-point-setup-guide.html">Setup Guide</a>
+        <span aria-hidden="true">|</span>
+        <a href="domibus-pmode-configuration-guide.html" aria-current="page" style="text-decoration:none; color:var(--text);">PMode Configuration Guide</a>
+      </nav>
+
+      <header class="section-title">
+        <div>
+          <h1>Domibus PMode Configuration for EMSWe RIM / AS4 Messaging</h1>
+          <div class="sub">Sender-side (C2) example and configuration checklist</div>
+        </div>
+      </header>
+
+      <blockquote>
+        <p><strong>Implementation example</strong><br />
+        This page explains the main parts of a sender-side Domibus <code>pmode.xml</code> used for EMSWe RIM / AS4 messaging. The example is a template, not a production-ready bilateral agreement. Replace all sender-, receiver-, endpoint-, certificate-, retention-, and environment-specific values with the values agreed during onboarding.</p>
+      </blockquote>
+
+      <nav class="card toc" aria-label="On this page">
+        <h2 style="margin-top: 0;">On this page</h2>
+        <ol>
+          <li><a href="#scope">Scope and message directions</a></li>
+          <li><a href="#before-import">Before importing the PMode</a></li>
+          <li><a href="#finland-c3">Finland C3 environments</a></li>
+          <li><a href="#configuration-map">Configuration map</a></li>
+          <li><a href="#example">Complete C2 example</a></li>
+          <li><a href="#values-to-replace">Values that must be replaced</a></li>
+          <li><a href="#import-and-test">Import and test</a></li>
+          <li><a href="#checklist">Readiness checklist</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="scope">1. Scope and message directions</h2>
+      <p>The PMode configures the sender's Domibus Access Point, the <strong>C2 corner</strong> in the four-corner model. It defines who can communicate, which service and actions are accepted, which security and reliability policies are used, and how payloads are represented.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="eyebrow">Request</div>
+          <h3>C2 → C3</h3>
+          <p><code>emswe-formality-request</code></p>
+          <p>The sender Access Point transmits an EMSWe formality to the Member State RIM.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Response</div>
+          <h3>C3 → C2</h3>
+          <p><code>emswe-formality-response</code></p>
+          <p>The Member State RIM sends the corresponding technical or business response back to the sender Access Point.</p>
+        </div>
+      </div>
+
+      <div class="callout warning">
+        <strong>Do not copy environment values blindly.</strong> Party identifiers, endpoints, certificates and security policy aliases must match the bilateral configuration agreed with the receiving Member State.
+      </div>
+
+      <h2 id="before-import">2. Before importing the PMode</h2>
+      <p>Prepare and verify the following information before creating the final file:</p>
+      <ul>
+        <li>Sender Access Point party identifier and public AS4 endpoint.</li>
+        <li>Member State RIM party identifier and AS4 endpoint for the target environment.</li>
+        <li>Party identifier type agreed for the connection.</li>
+        <li>Sender private key and certificate in the Domibus keystore.</li>
+        <li>Receiver certificate and issuing CA chain in the Domibus truststore.</li>
+        <li>Domibus security policy alias that implements the agreed AS4 signing and encryption profile.</li>
+        <li>Message retention requirements suitable for the environment and operational support model.</li>
+      </ul>
+
+
+      <h2 id="finland-c3">3. Finland (C3) environment configuration</h2>
+      <p>The Finnish Maritime National Single Window (MNSW) RIM Access Point uses a different C3 party name, party identifier and endpoint in each environment. Configure the C3 party using exactly one row from the table below.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Environment</th><th>Party name and Party ID</th><th>AS4 MSH endpoint</th></tr></thead>
+          <tbody>
+            <tr><td>Development (DEV)</td><td><code>mnsw-dev.mnsw.fi</code></td><td><code>https://rim.mnsw-dev.mnsw.fi/domibus/services/msh</code></td></tr>
+            <tr><td>Staging (STG)</td><td><code>mnsw-stg.mnsw.fi</code></td><td><code>https://rim.mnsw-stg.mnsw.fi/domibus/services/msh</code></td></tr>
+            <tr><td>Production (PRD)</td><td><code>mnsw.mnsw.fi</code></td><td><code>https://rim.mnsw.mnsw.fi/domibus/services/msh</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warning">
+        <strong>Use matching values.</strong> The <code>party name</code>, nested <code>partyId</code> and endpoint must all belong to the same environment. Do not mix DEV, STG and PRD values in one party definition.
+      </div>
+
+      <h3>Development example</h3>
+      <div class="code-panel">
+        <div class="code-toolbar"><strong>DEV C3 party</strong><button class="copy-button" type="button" data-copy-target="finland-dev-party">Copy XML</button></div>
+        <pre class="xml"><code id="finland-dev-party">&lt;party name="mnsw-dev.mnsw.fi"
+       endpoint="https://rim.mnsw-dev.mnsw.fi/domibus/services/msh"&gt;
+    &lt;identifier partyId="mnsw-dev.mnsw.fi" partyIdType="rimParty"/&gt;
+&lt;/party&gt;</code></pre>
+      </div>
+
+      <h3>Staging example</h3>
+      <div class="code-panel">
+        <div class="code-toolbar"><strong>STG C3 party</strong><button class="copy-button" type="button" data-copy-target="finland-stg-party">Copy XML</button></div>
+        <pre class="xml"><code id="finland-stg-party">&lt;party name="mnsw-stg.mnsw.fi"
+       endpoint="https://rim.mnsw-stg.mnsw.fi/domibus/services/msh"&gt;
+    &lt;identifier partyId="mnsw-stg.mnsw.fi" partyIdType="rimParty"/&gt;
+&lt;/party&gt;</code></pre>
+      </div>
+
+      <h3>Production example</h3>
+      <div class="code-panel">
+        <div class="code-toolbar"><strong>PRD C3 party</strong><button class="copy-button" type="button" data-copy-target="finland-prd-party">Copy XML</button></div>
+        <pre class="xml"><code id="finland-prd-party">&lt;party name="mnsw.mnsw.fi"
+       endpoint="https://rim.mnsw.mnsw.fi/domibus/services/msh"&gt;
+    &lt;identifier partyId="mnsw.mnsw.fi" partyIdType="rimParty"/&gt;
+&lt;/party&gt;</code></pre>
+      </div>
+
+      <h2 id="configuration-map">4. Configuration map</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Section</th><th>Purpose</th><th>RIM-specific consideration</th></tr></thead>
+          <tbody>
+            <tr><td><code>roles</code></td><td>Defines ebMS initiator and responder roles.</td><td>Use the standard ebMS 3.0 initiator and responder URI values.</td></tr>
+            <tr><td><code>parties</code></td><td>Defines C2 and C3 party identifiers and endpoints.</td><td>Both parties are listed because the same process supports request and response directions.</td></tr>
+            <tr><td><code>meps</code></td><td>Defines the message exchange pattern and binding.</td><td>The example uses one-way push legs for each direction.</td></tr>
+            <tr><td><code>properties</code></td><td>Defines required ebMS message properties.</td><td><code>originalSender</code> and <code>finalRecipient</code> are required by the eDelivery-style property set.</td></tr>
+            <tr><td><code>payloadProfiles</code></td><td>Constrains payload parts, MIME types and total size.</td><td>Confirm the payload MIME type and maximum size against the actual RIM integration contract.</td></tr>
+            <tr><td><code>securities</code></td><td>Selects the Domibus WS-Security policy.</td><td>The alias must exist in the installed Domibus configuration and match the bilateral certificate setup.</td></tr>
+            <tr><td><code>services</code></td><td>Defines the EMSWe RIM messaging service.</td><td>Use <code>rim-messaging-service</code> and the agreed service type.</td></tr>
+            <tr><td><code>actions</code></td><td>Defines request and response message actions.</td><td>Request: <code>emswe-formality-request</code>; response: <code>emswe-formality-response</code>.</td></tr>
+            <tr><td><code>legConfigurations</code></td><td>Binds service, action, security, reliability, MPC and error handling.</td><td>One leg is defined for each direction.</td></tr>
+            <tr><td><code>process</code></td><td>Combines parties, roles, MEP, binding and legs.</td><td>C2 and C3 appear as both possible initiators and responders so that both directional legs can be resolved.</td></tr>
+            <tr><td><code>mpcs</code></td><td>Controls the message partition channel and retention.</td><td>Retention values are operational settings and must be reviewed before production use.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="example">5. Complete sender-side (C2) example</h2>
+      <p>The following example uses <code>senderap</code> as the sender C2 party and the Finnish MNSW <strong>development</strong> RIM as the receiver C3 party. Replace the sender values with the values assigned to your Access Point. For STG or PRD, replace all three C3 environment values consistently using the table above.</p>
+
+      <div class="code-panel">
+        <div class="code-toolbar">
+          <strong>pmode.xml</strong>
+          <button class="copy-button" type="button" data-copy-target="pmode-example">Copy XML</button>
+        </div>
+        <pre class="xml"><code id="pmode-example">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;ns2:configuration xmlns:ns2="http://domibus.eu/configuration" party="senderap"&gt;
+    &lt;businessProcesses&gt;
+        &lt;roles&gt;
+            &lt;role name="senderRole" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator"/&gt;
+            &lt;role name="recipientRole" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder"/&gt;
+        &lt;/roles&gt;
+        &lt;parties&gt;
+            &lt;partyIdTypes&gt;
+                &lt;partyIdType name="rimParty" value="urn:oasis:names:tc:ebcore:partyid-type:unregistered"/&gt;
+            &lt;/partyIdTypes&gt;
+
+            &lt;party name="senderap" endpoint="https://localhost:8444/domibus/services/msh"&gt;
+                &lt;identifier partyId="senderap" partyIdType="rimParty"/&gt;
+            &lt;/party&gt;
+            &lt;party name="mnsw-dev.mnsw.fi" endpoint="https://rim.mnsw-dev.mnsw.fi/domibus/services/msh"&gt;
+                &lt;identifier partyId="mnsw-dev.mnsw.fi" partyIdType="rimParty"/&gt;
+            &lt;/party&gt;
+        &lt;/parties&gt;
+        &lt;meps&gt;
+            &lt;mep name="oneway" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay" legs="0"/&gt;
+            &lt;binding name="push" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push"/&gt;
+        &lt;/meps&gt;
+        &lt;properties&gt;
+            &lt;property name="originalSenderProperty" key="originalSender" datatype="string" required="true"/&gt;
+            &lt;property name="finalRecipientProperty" key="finalRecipient" datatype="string" required="true"/&gt;
+            &lt;propertySet name="eDeliveryPropertySet"&gt;
+                &lt;propertyRef property="finalRecipientProperty"/&gt;
+                &lt;propertyRef property="originalSenderProperty"/&gt;
+            &lt;/propertySet&gt;
+        &lt;/properties&gt;
+        &lt;payloadProfiles&gt;
+            &lt;payload name="businessContentPayload" cid="cid:message" mimeType="text/xml" maxSize="0" required="true" inBody="false"/&gt;
+            &lt;payload name="businessContentAttachment" cid="cid:attachment" mimeType="application/octet-stream" maxSize="0" required="false" inBody="false"/&gt;
+            &lt;payloadProfile name="rimProfile" maxSize="40894464"&gt;
+                &lt;attachment name="businessContentPayload"/&gt;
+                &lt;attachment name="businessContentAttachment"/&gt;
+            &lt;/payloadProfile&gt;
+        &lt;/payloadProfiles&gt;
+        &lt;securities&gt;
+            &lt;security name="eDeliveryAS4Policy_BST_PKIP_RIM" profile="rsa"/&gt;
+        &lt;/securities&gt;
+        &lt;errorHandlings&gt;
+            &lt;errorHandling name="defaultErrorHandling" default="true" errorAsResponse="true" businessErrorNotifyProducer="true" businessErrorNotifyConsumer="true" deliveryFailureNotifyProducer="true"/&gt;
+        &lt;/errorHandlings&gt;
+        &lt;agreements&gt;
+            &lt;agreement name="agreementEmpty" value="" type=""/&gt;
+        &lt;/agreements&gt;
+        &lt;services&gt;
+            &lt;service name="rim-service" value="rim-messaging-service" type="rim-process-schema"/&gt;
+        &lt;/services&gt;
+        &lt;actions&gt;
+            &lt;action name="b2sw-action" value="emswe-formality-request"/&gt;
+            &lt;action name="sw2b-action" value="emswe-formality-response"/&gt;
+        &lt;/actions&gt;
+        &lt;as4&gt;
+            &lt;receptionAwareness name="receptionAwareness" retry="5;5;CONSTANT" duplicateDetection="true"/&gt;
+            &lt;reliability name="noReliability" replyPattern="response" nonRepudiation="true"/&gt;
+        &lt;/as4&gt;
+        &lt;legConfigurations&gt;
+            &lt;legConfiguration name="rim-leg1" reliability="noReliability" security="eDeliveryAS4Policy_BST_PKIP_RIM" receptionAwareness="receptionAwareness" service="rim-service" action="b2sw-action" defaultMpc="defaultMpc" errorHandling="defaultErrorHandling" compressPayloads="false"/&gt;
+            &lt;legConfiguration name="rim-leg2" reliability="noReliability" security="eDeliveryAS4Policy_BST_PKIP_RIM" receptionAwareness="receptionAwareness" service="rim-service" action="sw2b-action" defaultMpc="defaultMpc" errorHandling="defaultErrorHandling" compressPayloads="false"/&gt;
+        &lt;/legConfigurations&gt;
+        &lt;process name="rim-process" initiatorRole="senderRole" responderRole="recipientRole" agreement="agreementEmpty" mep="oneway" binding="push"&gt;
+            &lt;initiatorParties&gt;
+                &lt;initiatorParty name="senderap"/&gt;
+                &lt;initiatorParty name="mnsw-dev.mnsw.fi"/&gt;
+            &lt;/initiatorParties&gt;
+            &lt;responderParties&gt;
+                &lt;responderParty name="senderap"/&gt;
+                &lt;responderParty name="mnsw-dev.mnsw.fi"/&gt;
+            &lt;/responderParties&gt;
+            &lt;legs&gt;
+                &lt;leg name="rim-leg1"/&gt;
+                &lt;leg name="rim-leg2"/&gt;
+            &lt;/legs&gt;
+        &lt;/process&gt;
+    &lt;/businessProcesses&gt;
+    &lt;mpcs&gt;
+        &lt;mpc name="defaultMpc" retention_downloaded="10" retention_undownloaded="240" retention_sent_success="10" retention_sent_failure="10" delete_message_metadata="false" max_batch_delete="-1" default="true" enabled="true" qualifiedName="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC"/&gt;
+    &lt;/mpcs&gt;
+&lt;/ns2:configuration&gt;</code></pre>
+      </div>
+
+      <h2 id="values-to-replace">6. Values that must be replaced</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Example value</th><th>Replace with</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td><code>party="senderap"</code></td><td>The local Domibus party name.</td><td>Identifies which configured party represents this Domibus instance.</td></tr>
+            <tr><td><code>senderap</code></td><td>The agreed C2 party ID and matching internal party name.</td><td>Must match the identifier used in outbound and inbound AS4 headers.</td></tr>
+            <tr><td><code>mnsw-dev.mnsw.fi</code></td><td>The Finnish C3 party name and Party ID for the selected environment.</td><td>Use the DEV, STG or PRD value consistently in the party definition and process party references.</td></tr>
+            <tr><td><code>https://localhost:8444/...</code></td><td>The externally reachable sender AS4 MSH endpoint.</td><td>The receiver must be able to deliver response messages to C2.</td></tr>
+            <tr><td><code>https://rim.mnsw-dev.mnsw.fi/...</code></td><td>The Finnish C3 endpoint for DEV, STG or PRD.</td><td>Each environment has a distinct hostname and trust setup.</td></tr>
+            <tr><td><code>rimParty</code> / unregistered URI</td><td>The bilateral party ID type, when different.</td><td>The type forms part of the ebMS party identity.</td></tr>
+            <tr><td><code>eDeliveryAS4Policy_BST_PKIP_RIM</code></td><td>The installed Domibus security policy alias.</td><td>The alias must resolve to a policy supported by both Access Points.</td></tr>
+            <tr><td><code>40894464</code></td><td>The approved maximum message size.</td><td>Oversized messages are rejected before business processing.</td></tr>
+            <tr><td>Retention values</td><td>Values approved for operations, audit and storage capacity.</td><td>Very short retention can hinder incident investigation; excessive retention consumes storage.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Values normally kept unchanged</h3>
+      <ul>
+        <li>Standard ebMS role, one-way MEP, push binding and default MPC URIs.</li>
+        <li>Service value <code>rim-messaging-service</code>, unless a newer bilateral specification explicitly replaces it.</li>
+        <li>Actions <code>emswe-formality-request</code> and <code>emswe-formality-response</code>, unless a newer RIM profile explicitly replaces them.</li>
+        <li>Required message property keys <code>originalSender</code> and <code>finalRecipient</code>.</li>
+      </ul>
+
+      <h2 id="import-and-test">7. Import and test</h2>
+      <ol>
+        <li>Back up the current Domibus PMode and certificate stores.</li>
+        <li>Validate that every referenced party, leg, service, action, MPC and security alias is internally consistent.</li>
+        <li>Import the XML through the supported Domibus administration mechanism for the installed version.</li>
+        <li>Verify that the PMode becomes active and inspect the Domibus log for schema or reference errors.</li>
+        <li>Send a controlled request in the staging environment.</li>
+        <li>Confirm successful AS4 receipt/non-repudiation evidence and the expected RIM response action.</li>
+        <li>Test negative cases, including an unknown party, invalid certificate, invalid action and duplicate message.</li>
+        <li>Promote the reviewed environment-specific configuration to production using change control.</li>
+      </ol>
+
+      <div class="callout success">
+        <strong>Expected result:</strong> Domibus resolves the outbound request to <code>rim-leg1</code>, signs and encrypts it with the configured policy, sends it to the C3 endpoint, and resolves the inbound <code>emswe-formality-response</code> to <code>rim-leg2</code>.
+      </div>
+
+      <h2 id="checklist">8. Production readiness checklist</h2>
+      <ul class="checklist">
+        <li>C2 and C3 party IDs and party ID types match the bilateral agreement.</li>
+        <li>STG and PRD endpoints are not mixed.</li>
+        <li>The sender MSH endpoint is reachable from the receiver network.</li>
+        <li>The private key alias, certificate and security policy are aligned.</li>
+        <li>The complete receiver CA chain is trusted.</li>
+        <li>The receiver trusts the sender certificate and CA chain.</li>
+        <li>Certificate validity dates, fingerprints and planned renewal dates are recorded.</li>
+        <li>Request and response actions have been tested end to end.</li>
+        <li><code>originalSender</code> and <code>finalRecipient</code> are populated by the C1-to-C2 integration.</li>
+        <li>Payload MIME types and maximum size match the actual submitted ASiC-E packaging contract.</li>
+        <li>Duplicate detection, retry behaviour and error notifications have been exercised.</li>
+        <li>Retention and backup settings support incident investigation and audit needs.</li>
+        <li>Monitoring covers failed messages, certificate expiry, queue growth and endpoint availability.</li>
+        <li>The final PMode is version-controlled without private keys, passwords or other secrets.</li>
+      </ul>
+
+      <h2>Related documentation</h2>
+      <ul>
+        <li><a href="sender-access-point-setup-guide.html">EMSWe RIM Sender Integration – Access Point Setup Guide</a></li>
+        <li><a href="FinlandEMSWeDomibusSenderIntegrationGuide.pdf">Finland EMSWe Domibus Sender Integration Guide (PDF)</a></li>
+        <li><a href="https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus" target="_blank" rel="noopener noreferrer">European Commission Domibus documentation</a></li>
+        <li><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html" target="_blank" rel="noopener noreferrer">OASIS ebMS 3.0 Core Specification</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <script>
+    document.querySelectorAll('[data-copy-target]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const target = document.getElementById(button.dataset.copyTarget);
+        if (!target) return;
+        try {
+          await navigator.clipboard.writeText(target.textContent);
+          const oldText = button.textContent;
+          button.textContent = 'Copied';
+          window.setTimeout(() => { button.textContent = oldText; }, 1600);
+        } catch (error) {
+          button.textContent = 'Copy failed';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

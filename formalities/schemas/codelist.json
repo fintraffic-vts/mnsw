@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T13:39:34.252Z",
+  "generatedAt": "2026-07-01T10:51:01.246Z",
   "sourceFile": "tools/code list/Code lists v2.0.0.xlsx",
   "listNames": [
     "absence_type",
@@ -138,7 +138,7 @@
     "waste_delivery_plan",
     "waste_type"
   ],
-  "codeCount": 10661,
+  "codeCount": 10710,
   "byCode": {
     "0": [
       {
@@ -4254,7 +4254,7 @@
           "CWA/D",
           "PWA/D etc."
         ],
-        "source": "EMSA"
+        "source": "National"
       },
       {
         "listName": "un_edifact_7273",
@@ -5376,25 +5376,25 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Ensure the performance of all security duties",
-          "fi": "Varmistavat kaikkien vakuusmaksujen suorittaminen",
+          "fi": "Kaikkien turvatehtävien suorittamisen varmistaminen",
           "sv": "Säkerställ att alla säkerhetsuppgifter utförs"
         },
         "formality": [
           "SEC"
         ],
-        "source": "EMSA"
+        "source": "National"
       },
       {
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Ensure the performance of all security duties",
-          "fi": "Kaikkien turvallisuuteen liittyvien tehtävien suorittamisen varmistaminen",
+          "fi": "Kaikkien turvatehtävien suorittamisen varmistaminen",
           "sv": "Säkerställande av att alla säkerhetsrelaterade uppgifter utförs"
         },
         "formality": [
           "SEC"
         ],
-        "source": "EMSA"
+        "source": "National"
       },
       {
         "listName": "un_edifact_1001",
@@ -5434,7 +5434,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Monitor restricted areas to ensure that only authorized personnel have access",
-          "fi": "Valvovat rajoitettuja alueita varmistaaksesi, että vain valtuutetulla henkilöstöllä on niihin pääsy",
+          "fi": "Rajoitettujen alueiden valvonta sen varmistamiseksi, että pääsy on vain valtuutetulla henkilöstöllä",
           "sv": "Övervaka begränsade områden för att säkerställa att endast auktoriserad personal har åtkomst"
         },
         "formality": [],
@@ -5444,7 +5444,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Monitor restricted areas to ensure that only authorized personnel have access",
-          "fi": "Rajoitetuille alueille pääsyn varmistaminen vain kulkuvallisille henkilöille",
+          "fi": "Rajoitettujen alueiden valvonta sen varmistamiseksi, että pääsy on vain valtuutetulla henkilöstöllä",
           "sv": "Säkerställande av att endast behöriga personer får tillträde till begränsade områden"
         },
         "formality": [],
@@ -5476,7 +5476,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Control access to port facility and ships",
-          "fi": "Valvovat pääsyä satamatilaan ja aluksiin",
+          "fi": "Satamarakenteeseen ja aluksiin pääsyn valvonta",
           "sv": "Kontrollera tillträde till hamnanläggningar och fartyg"
         },
         "formality": [],
@@ -5486,7 +5486,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Control access to port facility and ships",
-          "fi": "Satama-alueelle ja aluksiin pääsyn kontrollointi",
+          "fi": "Satamarakenteeseen ja aluksiin pääsyn valvonta",
           "sv": "Kontroll av tillträde till hamnområdet och till fartyg"
         },
         "formality": [],
@@ -5518,7 +5518,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Monitor the port facility, including berthing areas and areas surrounding the ship",
-          "fi": "Valvovat satamatilaa, mukaan lukien kiinnityspaikat ja alusta ympäröivät alueet",
+          "fi": "Satamarakenteen valvonta, mukaan lukien kiinnityspaikat ja alusta ympäröivät alueet",
           "sv": "Övervaka hamnanläggningen, inklusive förtöjningsplatser och områden som omger fartyget"
         },
         "formality": [],
@@ -5528,7 +5528,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Monitor the port facility, including berthing areas and areas surrounding the ship",
-          "fi": "Satama-alueen valvonta, mukaan lukien alusten kiinnityspaikat ja alusta ympäröivät alueet",
+          "fi": "Satamarakenteen valvonta, mukaan lukien kiinnityspaikat ja alusta ympäröivät alueet",
           "sv": "Övervakning av hamnområdet, inklusive fartygens förtöjningsplatser och områdena runt fartygen"
         },
         "formality": [],
@@ -5560,7 +5560,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Handle cargo and unaccompanied baggage",
-          "fi": "Käsittelevät lastia ja erillisiä matkatavaroita",
+          "fi": "Lastin ja ilman saattajaa kulkevien matkatavaroiden käsittely",
           "sv": "Hantera last och obeledsagat bagage"
         },
         "formality": [],
@@ -5570,7 +5570,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Handle cargo and unaccompanied baggage",
-          "fi": "Lastin ja ilman omistajaa olevien matkatavaroiden käsittely",
+          "fi": "Lastin ja ilman saattajaa kulkevien matkatavaroiden käsittely",
           "sv": "Hantering av last och herrelöst bagage"
         },
         "formality": [],
@@ -5592,7 +5592,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Monitor the delivery of ships stores",
-          "fi": "Valvovat aluksen tarvikkeiden toimitusta",
+          "fi": "Aluksen tarviketoimitusten valvonta",
           "sv": "Övervaka leveranser av furneringar"
         },
         "formality": [],
@@ -5602,7 +5602,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Monitor the delivery of ships stores",
-          "fi": "Aluksen tarvikkeiden toimitusten valvonta",
+          "fi": "Aluksen tarviketoimitusten valvonta",
           "sv": "Kontroll av leveranser av fartygsproviant och förnödenheter"
         },
         "formality": [],
@@ -5614,7 +5614,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Control the embarkation of persons and their effects",
-          "fi": "Hallitsee henkilöiden nousemista omaisuuksineen",
+          "fi": "Alukseen nousevien henkilöiden ja heidän mukanaan olevien tavaroiden valvonta",
           "sv": "Kontrollera ombordstigningen av personer och deras tillhörigheter"
         },
         "formality": [],
@@ -5624,7 +5624,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Control the embarkation of persons and their effects",
-          "fi": "Alukseen nousevien henkilöiden ja heidän mukanaan tuomien tavaroiden valvonta",
+          "fi": "Alukseen nousevien henkilöiden ja heidän mukanaan olevien tavaroiden valvonta",
           "sv": "Kontroll av personer som går ombord och deras medförda föremål"
         },
         "formality": [],
@@ -5636,7 +5636,7 @@
         "listName": "imo_compendium_IMO0133",
         "labels": {
           "en": "Ensure that security communications are readily available between the ship and the port facility",
-          "fi": "Varmistavat, että aluksen ja satamatilan välillä on helposti käytettävä turvayhteys.",
+          "fi": "Aluksen ja satamarakenteen välisen turvaviestinnän saatavuuden varmistaminen",
           "sv": "Se till att det finns lättillgänglig säkerhetskommunikation mellan fartyget och hamnanläggningen"
         },
         "formality": [],
@@ -5646,7 +5646,7 @@
         "listName": "imo_compendium_IMO0150",
         "labels": {
           "en": "Ensure that security communications are readily available between the ship and the port facility",
-          "fi": "Aluksen ja sataman välillä olevan turvayhteyden olemassaolon varmistaminen",
+          "fi": "Aluksen ja satamarakenteen välisen turvaviestinnän saatavuuden varmistaminen",
           "sv": "Säkerställande av att en säkerhetslänk mellan fartyget och hamnanläggningen upprätthålls"
         },
         "formality": [],
@@ -5664,7 +5664,7 @@
         "formality": [
           "NOA/D"
         ],
-        "source": "EMSA"
+        "source": "National"
       }
     ],
     "151": [
@@ -6224,7 +6224,7 @@
         "listName": "un_edifact_1001",
         "labels": {
           "en": "Seaman’s book",
-          "fi": "Merimieskirja",
+          "fi": "Merimiespassi",
           "sv": "Sjöfartsbok"
         },
         "formality": [],
@@ -6344,7 +6344,7 @@
         "listName": "un_ece_recommendation_28",
         "labels": {
           "en": "Freight barge",
-          "fi": "Rahtiproomu",
+          "fi": "Proomu",
           "sv": "Fraktpråm"
         },
         "formality": [],
@@ -6356,7 +6356,7 @@
         "listName": "un_ece_recommendation_28",
         "labels": {
           "en": "Tank barge",
-          "fi": "Tankkiproomu",
+          "fi": "Säiliöproomu",
           "sv": "Tankpråm"
         },
         "formality": [],
@@ -6428,7 +6428,7 @@
         "listName": "un_ece_recommendation_28",
         "labels": {
           "en": "Pushboat, single",
-          "fi": "Työntöalus, yksittäinen",
+          "fi": "Puskija",
           "sv": "Enskild skjutbåt"
         },
         "formality": [],
@@ -36083,11 +36083,10 @@
         "labels": {
           "en": "Captain / Master",
           "fi": "Kapteeni / päällikkö",
-          "sv": "Kapten/Befälhavare"
+          "sv": "Kapten / befälhavare"
         },
         "formality": [
           "CWA/D",
-          "BWA",
           "MDD",
           "EFF"
         ],
@@ -36111,8 +36110,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Captain / Master on ships above 3000 GT",
-          "fi": "Kapteeni / päällikkö yli 3 000 GT:n aluksilla",
-          "sv": "Kapten/Befälhavare på fartyg med en bruttodräktighet över 3000"
+          "fi": "Kapteeni / päällikkö aluksilla, joiden bruttovetoisuus yli 3000 GT",
+          "sv": "Kapten / befälhavare på fartyg över 3 000 GT"
         },
         "formality": [
           "SEC"
@@ -36135,8 +36134,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Captain / Master on ships up to 3000 GT",
-          "fi": "Kapteeni / päällikkö enintään 3 000 GT:n aluksilla",
-          "sv": "Kapten/Befälhavare på fartyg med en bruttodräktighet upp till 3000"
+          "fi": "Kapteeni / päällikkö aluksilla, joiden bruttovetoisuus enintään 3000 GT",
+          "sv": "Kapten / befälhavare på fartyg upp till 3 000 GT"
         },
         "formality": [],
         "source": "EMSA"
@@ -36157,8 +36156,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Captain / Master near coastal voyages on ships up to 500 GT",
-          "fi": "Kapteeni / päällikkö rannikkomatkoilla enintään 500 GT:n aluksilla",
-          "sv": "Kapten/Befälhavare i närtrafik på fartyg med en bruttodräktighet upp till 500"
+          "fi": "Kapteeni / päällikkö rannikkoliikenteessä aluksilla, joiden bruttovetoisuus enintään 500 GT",
+          "sv": "Kapten / befälhavare på kustfartyg upp till 500 GT"
         },
         "formality": [],
         "source": "EMSA"
@@ -36179,8 +36178,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Staff Captain on Cruise Ships",
-          "fi": "Apulaiskapteeni (risteilyaluksilla)",
-          "sv": "Stabsbefälhavare på kryssningsfartyg"
+          "fi": "Yliperämies risteilyaluksilla",
+          "sv": "Stabs­kapten på kryssningsfartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -36200,9 +36199,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Captain / Master including Offshore, MODUs or MOPUs",
-          "fi": "Kapteeni / päällikkö, mukaan lukien offshore-, MODU- tai MOPU-yksiköt",
-          "sv": "Kapten/Befälhavare inklusive offshore, flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "en": "Captain / Master including Offshore MODUs or MOPUs",
+          "fi": "Kapteeni / päällikkö mukaan lukien offshore MODU- tai MOPU-alukset",
+          "sv": "Kapten / befälhavare inklusive offshore-MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36222,9 +36221,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Captain / Master on vessels up to 3000 GT including Offshore, MODUs & MOPUs",
-          "fi": "Kapteeni / päällikkö enintään 3 000 GT:n aluksilla, mukaan lukien offshore-alukset, MODU:t ja MOPU:t",
-          "sv": "Kapten/befälhavare på fartyg med upp till 3000 bruttodräktighet, inklusive offshore, flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "en": "Captain / Master on vessels up to 3000 GT including Offshore MODUs & MOPUs",
+          "fi": "Kapteeni / päällikkö aluksilla enintään 3000 GT, mukaan lukien offshore MODU- ja MOPU-alukset",
+          "sv": "Kapten / befälhavare på fartyg upp till 3 000 GT inklusive offshore-MODU- och MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36245,8 +36244,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Skipper on fishing vessels of 24 metres in length and over",
-          "fi": "Laivuri vähintään 24 metrin pituisilla kalastusaluksilla",
-          "sv": "Skeppare på fiskefartyg med en längd på minst 24 meter"
+          "fi": "Kalastusaluksen päällikkö aluksilla, joiden pituus 24 m tai yli",
+          "sv": "Skeppare på fiskefartyg 24 meter och däröver"
         },
         "formality": [],
         "source": "EMSA"
@@ -36267,8 +36266,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Skipper on fishing vessels under 24 metres in length",
-          "fi": "Laivuri alle 24 metrin pituisilla kalastusaluksilla",
-          "sv": "Skeppare på fiskefartyg med en längd under 24 meter"
+          "fi": "Kalastusaluksen päällikkö aluksilla, joiden pituus alle 24 m",
+          "sv": "Skeppare på fiskefartyg under 24 meter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36288,9 +36287,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Mate, Chief Officer or First Officer, First Mate",
-          "fi": "Yliperämies",
-          "sv": "Överstyrman"
+          "en": "Chief Mate Chief Officer or First Officer First Mate",
+          "fi": "Yliperämies / ensimmäinen perämies",
+          "sv": "Förste styrman / överstyrman"
         },
         "formality": [],
         "source": "EMSA"
@@ -36310,9 +36309,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Mate on ships above 3,000 GT",
-          "fi": "Yliperämies yli 3 000 GT:n aluksilla",
-          "sv": "Överstyrman på fartyg med en bruttodräktighet över 3000"
+          "en": "Chief Mate on ships above 3 000 GT",
+          "fi": "Yliperämies aluksilla, joiden bruttovetoisuus yli 3000 GT",
+          "sv": "Förste styrman på fartyg över 3 000 GT"
         },
         "formality": [],
         "source": "EMSA"
@@ -36332,9 +36331,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Mate on ships up to 3,000 GT",
-          "fi": "Yliperämies enintään 3 000 GT:n aluksilla",
-          "sv": "Överstyrman på fartyg med en bruttodräktighet upp till 3000"
+          "en": "Chief Mate on ships up to 3 000 GT",
+          "fi": "Yliperämies aluksilla, joiden bruttovetoisuus enintään 3000 GT",
+          "sv": "Förste styrman på fartyg upp till 3 000 GT"
         },
         "formality": [],
         "source": "EMSA"
@@ -36354,9 +36353,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Mate including Offshore, MODUs or MOPUs",
-          "fi": "Yliperämies, mukaan lukien offshore-, MODU- tai MOPU-yksiköt",
-          "sv": "Överstyrman inklusive offshore, flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "en": "Chief Mate including Offshore MODUs or MOPUs",
+          "fi": "Yliperämies mukaan lukien offshore MODU- tai MOPU-alukset",
+          "sv": "Förste styrman inklusive offshore-MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36377,8 +36376,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Mate on fishing vessels 24 metres in length and over",
-          "fi": "Yliperämies vähintään 24 metrin pituisilla kalastusaluksilla",
-          "sv": "Överstyrman på fiskefartyg med en längd på minst 24 meter"
+          "fi": "Yliperämies kalastusaluksilla, joiden pituus 24 m tai yli",
+          "sv": "Förste styrman på fiskefartyg 24 meter och däröver"
         },
         "formality": [],
         "source": "EMSA"
@@ -36399,8 +36398,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Mate on fishing vessels under 24 metres in length",
-          "fi": "Yliperämies alle 24 metrin pituisilla kalastusaluksilla",
-          "sv": "Överstyrman på fiskefartyg med en längd under 24 meter"
+          "fi": "Yliperämies kalastusaluksilla, joiden pituus alle 24 m",
+          "sv": "Förste styrman på fiskefartyg under 24 meter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36421,8 +36420,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of a Navigational Watch",
-          "fi": "Vahtipäällikkö",
-          "sv": "Vakthavande befäl"
+          "fi": "Vahdinpitäjä – navigointivastuu",
+          "sv": "Vaktgående däcksofficer (navigationsvakt)"
         },
         "formality": [],
         "source": "EMSA"
@@ -36443,8 +36442,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of a Navigational Watch as Second Mate / Officer",
-          "fi": "Vahtipäällikkö, 2. perämies",
-          "sv": "Vakthavande befäl som andre styrman"
+          "fi": "Vahdinpitäjä – toimii toisena perämiehenä / upseerina",
+          "sv": "Vaktgående däcksofficer som andre styrman / officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -36465,8 +36464,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of a Navigational Watch as Third Mate / Officer",
-          "fi": "Vahtipäällikkö, 3. perämies",
-          "sv": "Vakthavande befäl som tredje styrman"
+          "fi": "Vahdinpitäjä – toimii kolmantena perämiehenä / upseerina",
+          "sv": "Vaktgående däcksofficer som tredje styrman / officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -36487,8 +36486,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of a Navigational Watch as Fourth Mate / Officer",
-          "fi": "Vahtipäällikkö, 4. perämies",
-          "sv": "Vakthavande befäl som fjärde styrman"
+          "fi": "Vahdinpitäjä – toimii neljäntenä perämiehenä / upseerina",
+          "sv": "Vaktgående däcksofficer som fjärde styrman / officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -36509,8 +36508,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of a Navigational Watch on ships up to 500 GT (Near Coastal)",
-          "fi": "Vahtipäällikkö, enintään 500 GT:n aluksilla (lähiliikenne)",
-          "sv": "Vakthavande befäl på fartyg med bruttodräktighet upp till 500 (närtrafik)"
+          "fi": "Vahdinpitäjä aluksilla enintään 500 GT (rannikkoliikenne)",
+          "sv": "Vaktgående däcksofficer på fartyg upp till 500 GT (kustfart)"
         },
         "formality": [],
         "source": "EMSA"
@@ -36531,8 +36530,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of a Navigational Watch including MODUs or MOPUs",
-          "fi": "Vahtipäällikkö, mukaan lukien MODU- tai MOPU-yksiköt",
-          "sv": "Vakthavande befäl, inklusive flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "fi": "Vahdinpitäjä mukaan lukien MODU- tai MOPU-alukset",
+          "sv": "Vaktgående däcksofficer inklusive MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36553,8 +36552,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in charge of a navigational watch on fishing vessels of 24 metres in length and over",
-          "fi": "Vahtipäällikkö vähintään 24 metrin pituisilla kalastusaluksilla",
-          "sv": "Vakthavande befäl på fiskefartyg med en längd på minst 24 meter"
+          "fi": "Vahdinpitäjä kalastusaluksilla, joiden pituus 24 m tai yli",
+          "sv": "Vaktgående däcksofficer på fiskefartyg 24 meter och däröver"
         },
         "formality": [],
         "source": "EMSA"
@@ -36575,8 +36574,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in charge of a navigational watch on fishing vessels under 24 metres in length",
-          "fi": "Vahtipäällikkö alle 24 metrin pituisilla kalastusaluksilla",
-          "sv": "Vakthavande befäl på fiskefartyg med en längd under 24 meter"
+          "fi": "Vahdinpitäjä kalastusaluksilla, joiden pituus alle 24 m",
+          "sv": "Vaktgående däcksofficer på fiskefartyg under 24 meter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36597,8 +36596,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Radio officer/radio operator",
-          "fi": "Radiosähköttäjä/radisti",
-          "sv": "Radiooperatör"
+          "fi": "Radio-upseeri / radio-operaattori",
+          "sv": "Radioofficer / radiooperatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -36619,8 +36618,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Radio officer/radio operator ROC",
-          "fi": "Radiosähköttäjä/radisti ROC",
-          "sv": "Radiooperatör ROC"
+          "fi": "Radio-upseeri / radio-operaattori ROC",
+          "sv": "Radioofficer / radiooperatör ROC"
         },
         "formality": [],
         "source": "EMSA"
@@ -36641,8 +36640,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Radio officer/radio operator GOC",
-          "fi": "Radiosähköttäjä/radisti GOC",
-          "sv": "Radiooperatör GOC"
+          "fi": "Radio-upseeri / radio-operaattori GOC",
+          "sv": "Radioofficer / radiooperatör GOC"
         },
         "formality": [],
         "source": "EMSA"
@@ -36663,8 +36662,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Radio officer/ Radio Operator on fishing vessels",
-          "fi": "Radiosähköttäjä/radisti kalastusaluksilla",
-          "sv": "Radiooperatör på fiskefartyg"
+          "fi": "Radio-upseeri / radio-operaattori kalastusaluksilla",
+          "sv": "Radioofficer / radiooperatör på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -36685,8 +36684,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deck Cadet / Apprentice",
-          "fi": "Perämiesharjoittelija",
-          "sv": "Styrmanspraktikant"
+          "fi": "Kansiharjoittelija / oppilas",
+          "sv": "Däckskadett / elev"
         },
         "formality": [],
         "source": "EMSA"
@@ -36707,8 +36706,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deck cadet on fishing vessels",
-          "fi": "Perämiesharjoittelija kalastusaluksilla",
-          "sv": "Styrmanspraktikant på fiskefartyg"
+          "fi": "Kansiharjoittelija kalastusaluksilla",
+          "sv": "Däckskadett på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -36728,9 +36727,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Engineer, Chief Engineer Officer",
-          "fi": "Konepäällikkö",
-          "sv": "Maskinchef"
+          "en": "Chief Engineer Chief Engineer Officer",
+          "fi": "Ylikonemestari / pääkonemestari",
+          "sv": "Maskinchef / övermaskinist"
         },
         "formality": [],
         "source": "EMSA"
@@ -36750,9 +36749,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Engineer Officer on vessels above 3,000 kW propulsion power",
-          "fi": "Konepäällikkö yli 3 000 kW:n konetehon aluksilla",
-          "sv": "Maskinchef på fartyg med över 3 000 kW maskineffekt"
+          "en": "Chief Engineer Officer on vessels above 3 000 kW propulsion power",
+          "fi": "Ylikonemestari aluksilla, joiden pääkoneen teho yli 3000 kW",
+          "sv": "Maskinchef på fartyg med huvudmaskineri över 3 000 kW"
         },
         "formality": [],
         "source": "EMSA"
@@ -36772,9 +36771,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Chief Engineer Officer on vessels with up to 3,000 kW propulsion power",
-          "fi": "Konepäällikkö enintään 3 000 kW:n konetehon aluksilla",
-          "sv": "Maskinchef på fartyg med upp till 3 000 kW maskineffekt"
+          "en": "Chief Engineer Officer on vessels with up to 3 000 kW propulsion power",
+          "fi": "Ylikonemestari aluksilla, joiden pääkoneen teho enintään 3000 kW",
+          "sv": "Maskinchef på fartyg med huvudmaskineri upp till 3 000 kW"
         },
         "formality": [],
         "source": "EMSA"
@@ -36795,8 +36794,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Staff Chief Engineer",
-          "fi": "Apulaiskonepäällikkö / vanhempi konemestari",
-          "sv": "Stabsövermaskinmästare"
+          "fi": "Apulaisylikonemestari",
+          "sv": "Stabs-maskinchef"
         },
         "formality": [],
         "source": "EMSA"
@@ -36817,8 +36816,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Engineer including MODUs or MOPUs",
-          "fi": "Konepäällikkö, mukaan lukien offshore-, MODU- tai MOPU-yksiköt",
-          "sv": "Maskinchef, inklusive flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "fi": "Ylikonemestari mukaan lukien MODU- tai MOPU-alukset",
+          "sv": "Maskinchef inklusive MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36839,8 +36838,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief engineer officer of fishing vessels powered by main propulsion machinery of 750 kW propulsion power or more",
-          "fi": "Konepäällikkö kalastusaluksilla, joiden pääkoneiden teho on vähintään 750 kW",
-          "sv": "Maskinchef på fiskefartyg med ett framdrivningsmaskineri med en effekt av 750 kW eller mer"
+          "fi": "Ylikonemestari kalastusaluksilla, joiden pääkoneen teho 750 kW tai enemmän",
+          "sv": "Maskinchef på fiskefartyg med huvudmaskineri 750 kW eller mer"
         },
         "formality": [],
         "source": "EMSA"
@@ -36861,8 +36860,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief engineer officer of fishing vessels powered by main propulsion machinery with up to 750 kW propulsion power",
-          "fi": "Konepäällikkö kalastusaluksilla, joiden pääkoneiden teho on enintään 750 kW",
-          "sv": "Maskinchef på fiskefartyg med ett framdrivningsmaskineri med upp till 750 kW maskineffekt"
+          "fi": "Ylikonemestari kalastusaluksilla, joiden pääkoneen teho enintään 750 kW",
+          "sv": "Maskinchef på fiskefartyg med huvudmaskineri upp till 750 kW"
         },
         "formality": [],
         "source": "EMSA"
@@ -36883,8 +36882,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "First Engineer",
-          "fi": "1. konemestari",
-          "sv": "Förste maskinmästare"
+          "fi": "Ensimmäinen konemestari",
+          "sv": "Förste maskinist"
         },
         "formality": [],
         "source": "EMSA"
@@ -36905,8 +36904,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "First Engineer including MODUs or MOPUs",
-          "fi": "1. konemestari, mukaan lukien offshore-, MODU- tai MOPU-yksiköt",
-          "sv": "Förste maskinmästare, inklusive flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "fi": "Ensimmäinen konemestari mukaan lukien MODU- tai MOPU-alukset",
+          "sv": "Förste maskinist inklusive MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -36927,8 +36926,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "First Engineer on fishing vessels",
-          "fi": "1. konemestari kalastusaluksilla",
-          "sv": "Förste maskinmästare på fiskefartyg"
+          "fi": "Ensimmäinen konemestari kalastusaluksilla",
+          "sv": "Förste maskinist på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -36948,9 +36947,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Second Engineer, Second Engineer Officer",
-          "fi": "2. konemestari",
-          "sv": "Maskinmästare"
+          "en": "Second Engineer Second Engineer Officer",
+          "fi": "Toinen konemestari / toinen koneupseeri",
+          "sv": "Andre maskinist / andre maskin­officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -36970,9 +36969,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Second Engineer, Second Engineer Officer on vessels above 3,000 kW propulsion power",
-          "fi": "2. konemestari yli 3 000 kW:n konetehon aluksilla",
-          "sv": "Maskinmästare på fartyg med över 3 000 kW motoreffekt"
+          "en": "Second Engineer Second Engineer Officer on vessels above 3 000 kW propulsion power",
+          "fi": "Toinen konemestari / toinen koneupseeri aluksilla, joiden pääkoneen teho yli 3000 kW",
+          "sv": "Andre maskinist / andre maskin­officer på fartyg med huvudmaskineri över 3 000 kW"
         },
         "formality": [],
         "source": "EMSA"
@@ -36992,9 +36991,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Second Engineer, Second Engineer Officer on vessels up to 3,000 kW propulsion power",
-          "fi": "2. konemestari enintään 3 000 kW:n konetehon aluksilla",
-          "sv": "Maskinmästare på fartyg med över 3 000 kW motoreffekt"
+          "en": "Second Engineer Second Engineer Officer on vessels up to 3 000 kW propulsion power",
+          "fi": "Toinen konemestari / toinen koneupseeri aluksilla, joiden pääkoneen teho enintään 3000 kW",
+          "sv": "Andre maskinist / andre maskin­officer på fartyg med huvudmaskineri upp till 3 000 kW"
         },
         "formality": [],
         "source": "EMSA"
@@ -37015,8 +37014,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Second Engineer including MODUs or MOPUs",
-          "fi": "2. konemestari, mukaan lukien offshore-, MODU- tai MOPU-yksiköt",
-          "sv": "Maskinmästare, inklusive flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "fi": "Toinen konemestari mukaan lukien MODU- tai MOPU-alukset",
+          "sv": "Andre maskinist inklusive MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -37037,8 +37036,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Second engineer on fishing vessels powered by main propulsion machinery of 750 kW propulsion power or more",
-          "fi": "2. konemestari kalastusaluksilla, joiden pääkoneiden teho on vähintään 750 kW",
-          "sv": "Maskinmästare på fiskefartyg med ett framdrivningsmaskineri med en effekt av 750 kW eller mer"
+          "fi": "Toinen konemestari kalastusaluksilla, joiden pääkoneen teho 750 kW tai enemmän",
+          "sv": "Andre maskinist på fiskefartyg med huvudmaskineri 750 kW eller mer"
         },
         "formality": [],
         "source": "EMSA"
@@ -37059,8 +37058,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of an engineering Watch as Third Engineer",
-          "fi": "Konevahtipäällikkö, 3. konemestari",
-          "sv": "Vakthavande maskinbefäl"
+          "fi": "Vahdinpitäjä – konevahti / kolmas konemestari",
+          "sv": "Vaktgående maskin­officer som tredje maskinist"
         },
         "formality": [],
         "source": "EMSA"
@@ -37081,8 +37080,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Third Engineer including MODUs or MOPUs",
-          "fi": "3. konemestari, mukaan lukien offshore-, MODU- tai MOPU-yksiköt",
-          "sv": "Tredjemaskinist, inklusive flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "fi": "Kolmas konemestari mukaan lukien MODU- tai MOPU-alukset",
+          "sv": "Tredje maskinist inklusive MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -37103,8 +37102,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Third Engineer on fishing vessels",
-          "fi": "3. konemestari kalastusaluksilla",
-          "sv": "Tredjemaskinist på fiskefartyg"
+          "fi": "Kolmas konemestari kalastusaluksilla",
+          "sv": "Tredje maskinist på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -37125,8 +37124,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Officer in Charge of an engineering Watch as Fourth Engineer",
-          "fi": "Konevahtipäällikkö, 4. konemestari",
-          "sv": "Vakthavande maskinbefäl, fjärdemaskinist"
+          "fi": "Vahdinpitäjä – konevahti / neljäs konemestari",
+          "sv": "Vaktgående maskin­officer som fjärde maskinist"
         },
         "formality": [],
         "source": "EMSA"
@@ -37147,8 +37146,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "LNG Systems Engineer",
-          "fi": "Nesteytetyn maakaasun järjestelmäinsinööri",
-          "sv": "LNG-systemingenjör"
+          "fi": "LNG-järjestelmäinsinööri",
+          "sv": "LNG-systemsingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -37169,8 +37168,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "(Liquefied) Gas Engineer",
-          "fi": "Nesteytetyn kaasun insinööri",
-          "sv": "Ingenjör för flytande gas"
+          "fi": "(Liquefied) kaasuinsinööri",
+          "sv": "(Liquefied) gasingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -37191,8 +37190,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Reefer Engineer",
-          "fi": "Kylmäteknikko / kylmälaitemestari",
-          "sv": "Kylingenjör"
+          "fi": "Jäähdytysinsinööri",
+          "sv": "Kylteknisk ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -37213,8 +37212,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Engineer Cadet / Apprentice / Assistant Engineer",
-          "fi": "Konemestariharjoittelija",
-          "sv": "Maskinpraktikant"
+          "fi": "Koneharjoittelija / oppilas / apulaiskonemestari",
+          "sv": "Maskinkadett / lärling / assistentmaskinist"
         },
         "formality": [],
         "source": "EMSA"
@@ -37235,8 +37234,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Engineer Cadet / Apprentice / Assistant Engineer",
-          "fi": "Konemestariharjoittelija",
-          "sv": "Maskinpraktikant"
+          "fi": "Koneharjoittelija / oppilas / apulaiskonemestari",
+          "sv": "Maskinkadett / lärling / assistentmaskinist"
         },
         "formality": [],
         "source": "EMSA"
@@ -37257,8 +37256,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Electro-Technical Officer/Chief Electrician",
-          "fi": "Sähkömestari",
-          "sv": "Elmästare"
+          "fi": "Sähköpäällikkö / ylikelectricisti",
+          "sv": "Chefs elteknisk officer / chefs­elektriker"
         },
         "formality": [],
         "source": "EMSA"
@@ -37279,8 +37278,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "First Electro-Technical Officer / First Electrician",
-          "fi": "1. laivasähkömestari",
-          "sv": "Förste elmästare"
+          "fi": "Ensimmäinen sähköupseeri / ensimmäinen sähkömestari",
+          "sv": "Förste elteknisk officer / förste elektriker"
         },
         "formality": [],
         "source": "EMSA"
@@ -37291,7 +37290,7 @@
         "listName": "crew_role",
         "labels": {
           "en": "Electro-Technical Officer (ETO)",
-          "fi": "Sähköupseeri (ETO)",
+          "fi": "Sähkömestari (ETO)",
           "sv": "Elteknisk officer (ETO)"
         },
         "formality": [],
@@ -37302,7 +37301,7 @@
         "labels": {
           "en": "Electro-Technical Officer (ETO)",
           "fi": "Sähkömestari (ETO)",
-          "sv": "Elmästare (ETO)"
+          "sv": "Elteknisk officer (ETO)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37322,9 +37321,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Electro-Technical Officer (ETO) including Offshore, MODUs and MOPUs",
-          "fi": "Sähkömestari (ETO) mukaan lukien offshore-, MODU- ja MOPU-yksiköt",
-          "sv": "Elmästare inklusive offshore, flyttbar oljeplattform till sjöss eller flyttbar produktionsenhet till sjöss"
+          "en": "Electro-Technical Officer (ETO) including Offshore MODUs and MOPUs",
+          "fi": "Sähköupseeri (ETO) mukaan lukien offshore MODU- ja MOPU-alukset",
+          "sv": "Elteknisk officer (ETO) inklusive offshore-MODU- och MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -37345,8 +37344,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Second Electro-Technical Officer (2nd ETO)",
-          "fi": "2. sähkömestari (2. ETO)",
-          "sv": "Andre elmästare"
+          "fi": "Toinen sähköupseeri (2. ETO)",
+          "sv": "Andre elteknisk officer (2:e ETO)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37367,8 +37366,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Electrician",
-          "fi": "Laivasähköasentaja",
-          "sv": "Fartygselektriker"
+          "fi": "Yläsähkömestari",
+          "sv": "Chefs­elektriker"
         },
         "formality": [],
         "source": "EMSA"
@@ -37389,8 +37388,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ship's Electrician/Electro-technical Rating (E.T.R.)",
-          "fi": "Laivasähköasentaja (E.T.R.)",
-          "sv": "Fartygselektriker (ETR)"
+          "fi": "Aluksen sähkömestari / sähköasentaja (E.T.R.)",
+          "sv": "Fartygselektriker / elteknisk manskap (E.T.R.)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37411,8 +37410,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant Ship's Electrician",
-          "fi": "Avustava laivasähköasentaja",
-          "sv": "Biträdande fartygselektriker"
+          "fi": "Sähköasentajan apulainen",
+          "sv": "Assistent­elektriker"
         },
         "formality": [],
         "source": "EMSA"
@@ -37434,7 +37433,7 @@
         "labels": {
           "en": "Trainee Electrician",
           "fi": "Sähköasentajaharjoittelija",
-          "sv": "Elektrikerpraktikant"
+          "sv": "Lärlingselektriker"
         },
         "formality": [],
         "source": "EMSA"
@@ -37445,7 +37444,7 @@
         "listName": "crew_role",
         "labels": {
           "en": "Boatswain (Bosun)",
-          "fi": "Bosun / kansimies (boatswain)",
+          "fi": "Pursimies / kansimies (boatswain)",
           "sv": "Båtsman (bosun)"
         },
         "formality": [],
@@ -37455,8 +37454,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Boatswain (Bosun)",
-          "fi": "Pursimies",
-          "sv": "Båtsman"
+          "fi": "Pursimies / kansimies (boatswain)",
+          "sv": "Båtsman (bosun)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37477,8 +37476,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Boatswain (Chief Bosun)",
-          "fi": "Ylipursimies",
-          "sv": "Chefsbåtsman"
+          "fi": "Ylibosun / pääkansimies",
+          "sv": "Överbåtsman / chefsbåtsman"
         },
         "formality": [],
         "source": "EMSA"
@@ -37499,7 +37498,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd Boatswain (2nd Bosun)",
-          "fi": "2. pursimies",
+          "fi": "Toinen bosun",
           "sv": "Andre båtsman"
         },
         "formality": [],
@@ -37521,7 +37520,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Boatswain's Assistant (Bosun's Assistant)",
-          "fi": "Pursimiehen assistentti",
+          "fi": "Bosunin apulainen",
           "sv": "Båtsmansassistent"
         },
         "formality": [],
@@ -37543,8 +37542,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Dual-Purpose Rating (DP Rating) (Both Deck & Engine Departments)",
-          "fi": "Yleistoimipätevyys (sekä kansi- että koneosasto)",
-          "sv": "Allmän tjänst (Både däcks- och maskinavdelningarna)"
+          "fi": "Kaksoispätevyyden omaava miehistö (sekä kansi että koneosasto)",
+          "sv": "Dualkompetent manskap (däck och maskin)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37555,7 +37554,7 @@
         "listName": "crew_role",
         "labels": {
           "en": "Able Bodied Seafarer (AB Deck)",
-          "fi": "Pätevöity kansimies (AB Deck)",
+          "fi": "Matruusi (AB Deck)",
           "sv": "Matros (AB Deck)"
         },
         "formality": [],
@@ -37565,8 +37564,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Able Bodied Seafarer (AB Deck)",
-          "fi": "Matruusi",
-          "sv": "Matros"
+          "fi": "Matruusi (AB Deck)",
+          "sv": "Matros (AB Deck)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37587,8 +37586,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Quartermaster (designated helmsman)",
-          "fi": "Ruorimies (quartermaster)",
-          "sv": "Kvartermästare (rorsman)"
+          "fi": "Perämies / ruorimies",
+          "sv": "Rorsman / kvartermästare"
         },
         "formality": [],
         "source": "EMSA"
@@ -37609,7 +37608,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Sailmaker",
-          "fi": "Purjeneuloja",
+          "fi": "Purjemestari",
           "sv": "Segelmakare"
         },
         "formality": [],
@@ -37621,7 +37620,7 @@
         "listName": "crew_role",
         "labels": {
           "en": "Ordinary Seafarer (OS Deck) / Rating Forming Part of a Navigational Watch",
-          "fi": "Miehistön jäsen (Ordinary Seafarer, OS Deck) / vahdinpitäjä (navigointivahdissa)",
+          "fi": "Vahtimies / kansi (Ordinary Seafarer, OS Deck)",
           "sv": "Jungman (OS Deck) / däcksmanskap med vaktgående navigationsuppgifter"
         },
         "formality": [],
@@ -37631,8 +37630,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ordinary Seafarer (OS Deck) / Rating Forming Part of a Navigational Watch",
-          "fi": "Vahtimies, kansi",
-          "sv": "Vaktman, däck"
+          "fi": "Vahtimies / kansi (Ordinary Seafarer, OS Deck)",
+          "sv": "Jungman (OS Deck) / däcksmanskap med vaktgående navigationsuppgifter"
         },
         "formality": [],
         "source": "EMSA"
@@ -37652,9 +37651,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Deckhand, Deck Utility (uncertified rating)",
-          "fi": "Kansimies (ei pätevyyskirjaa)",
-          "sv": "Däcksman (ocertifierad)"
+          "en": "Deckhand Deck Utility (uncertified rating)",
+          "fi": "Kansimies / yleiskansimies (ilman pätevyyttä)",
+          "sv": "Däcksarbetare / däckshjälp (utan certifikat)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37675,8 +37674,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Efficient Deckhand (EDH)",
-          "fi": "Pätevä kansimies (EDH)",
-          "sv": "Efficient Deckhand (EDH), däcksman"
+          "fi": "Pätevä kansimies (Efficient Deckhand, EDH)",
+          "sv": "Effektiv däcksarbetare (EDH)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37697,8 +37696,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deck Trainee",
-          "fi": "Vahtimiesharjoittelija, kansi",
-          "sv": "Vaktmanspraktikant, däck"
+          "fi": "Kansiharjoittelija",
+          "sv": "Däckskadett"
         },
         "formality": [],
         "source": "EMSA"
@@ -37719,7 +37718,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Pumpman",
-          "fi": "Pumppumies",
+          "fi": "Pumpunhoitaja",
           "sv": "Pumpman"
         },
         "formality": [],
@@ -37741,7 +37740,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ship's Carpenter",
-          "fi": "Timpuri",
+          "fi": "Laivan puuseppä",
           "sv": "Fartygssnickare"
         },
         "formality": [],
@@ -37763,7 +37762,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Second Ship's Carpenter (Passenger ships)",
-          "fi": "2. timpuri (matkustaja-alukset)",
+          "fi": "Toinen laivan puuseppä (matkustaja-aluksilla)",
           "sv": "Andre fartygssnickare (passagerarfartyg)"
         },
         "formality": [],
@@ -37785,8 +37784,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Fitter",
-          "fi": "Korjausmies",
-          "sv": "Reparatör"
+          "fi": "Metallimies / koneasentaja",
+          "sv": "Passare / smed"
         },
         "formality": [],
         "source": "EMSA"
@@ -37807,8 +37806,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Donkeyman (Historical vessels)",
-          "fi": "Donkey-mies (historialliset alukset)",
-          "sv": "Donkeyman (historiska fartyg)"
+          "fi": "Donkeyman (höyrykonealusten apukonemestari – historiallinen nimike)",
+          "sv": "Donkeyman (historisk titel – hjälpmaskinist på ångfartyg)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37829,8 +37828,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Storekeeper",
-          "fi": "Varastopäällikkö",
-          "sv": "Butiksinnehavare"
+          "fi": "Varastonhoitaja",
+          "sv": "Förrådsförvaltare / magasinmästare"
         },
         "formality": [],
         "source": "EMSA"
@@ -37851,7 +37850,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Maintenance & Workshop Technician",
-          "fi": "Huolto- ja korjaamoteknikko",
+          "fi": "Huolto- ja korjaamotöiden teknikko",
           "sv": "Underhålls- och verkstadstekniker"
         },
         "formality": [],
@@ -37873,8 +37872,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Mechanic/Turner or Welder",
-          "fi": "Mekaanikko/sorvaaja tai hitsaaja",
-          "sv": "Mekaniker/svarvare eller svetsare"
+          "fi": "Mekaanikko / sorvari tai hitsaaja",
+          "sv": "Mekaniker / svarvare eller svetsare"
         },
         "formality": [],
         "source": "EMSA"
@@ -37894,9 +37893,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "A.B. Engine, Motorman",
-          "fi": "Koneosaston matruusi (A.B. Engine)",
-          "sv": "Motorman (maskinavdelning) (A.B. Engine)"
+          "en": "A.B. Engine Motorman",
+          "fi": "Mekaanikko (A.B. Engine Motorman)",
+          "sv": "Maskinmanskap (A.B. Engine Motorman)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37916,9 +37915,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Oiler, qualified as an A.B. Engine",
-          "fi": "Öljymies, pätevä koneosaston matruusiksi (A.B. Engine)",
-          "sv": "Oljare, kvalificerad som motorman"
+          "en": "Oiler qualified as an A.B. Engine",
+          "fi": "Öljynhoitaja (oiler) pätevöityneenä konemiehenä",
+          "sv": "Smörjare (Oiler) kvalificerad som A.B. Engine"
         },
         "formality": [],
         "source": "EMSA"
@@ -37939,8 +37938,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Wiper",
-          "fi": "Koneapulainen",
-          "sv": "Maskinassistent / Wiper"
+          "fi": "Konehuoneen siivooja / wiper",
+          "sv": "Maskinrumsstädare / Wiper"
         },
         "formality": [],
         "source": "EMSA"
@@ -37961,8 +37960,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Rating Forming Part of a Watch in a Manned Engine-Room (OS Engine)",
-          "fi": "Vahtimies, kone",
-          "sv": "Vaktman, maskin"
+          "fi": "Vahdinpitäjä konehuoneessa (OS Engine)",
+          "sv": "Vaktgående maskinmanskap (OS Engine)"
         },
         "formality": [],
         "source": "EMSA"
@@ -37983,8 +37982,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Engine-Room Trainee",
-          "fi": "Vahtimiesharjoittelija, kone",
-          "sv": "Vaktmanpraktikant, maskin"
+          "fi": "Koneharjoittelija",
+          "sv": "Maskinrumskadett"
         },
         "formality": [],
         "source": "EMSA"
@@ -38005,8 +38004,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Fireman/stoker",
-          "fi": "Lämmittäjä",
-          "sv": "Eldare"
+          "fi": "Tulimies / lämmittäjä",
+          "sv": "Eldare / fyrbötare"
         },
         "formality": [],
         "source": "EMSA"
@@ -38027,8 +38026,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Trimmer",
-          "fi": "Trimmaaja",
-          "sv": "Trimmare"
+          "fi": "Trimmari (hiilen siirtäjä)",
+          "sv": "Trimmare (koltrimmare)"
         },
         "formality": [],
         "source": "EMSA"
@@ -38049,8 +38048,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ship's Doctor (Surgeon)",
-          "fi": "Aluksen lääkäri",
-          "sv": "Fartygsläkare"
+          "fi": "Laivalääkäri (kirurgi)",
+          "sv": "Fartygsläkare (kirurg)"
         },
         "formality": [],
         "source": "EMSA"
@@ -38071,7 +38070,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd Ship's Doctor (2nd Surgeon)",
-          "fi": "2. aluksen lääkäri",
+          "fi": "Toinen laivalääkäri",
           "sv": "Andre fartygsläkare"
         },
         "formality": [],
@@ -38093,8 +38092,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "1st Ship's Nurse/ Medical Orderly",
-          "fi": "1. aluksen sairaanhoitaja",
-          "sv": "Fartygets första sjukskötare / Medikalvaktmästare"
+          "fi": "Ensimmäinen sairaanhoitaja / lääkintäaliupseeri",
+          "sv": "Förste sjuksköterska / sjukvårdsbiträde"
         },
         "formality": [],
         "source": "EMSA"
@@ -38115,8 +38114,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd Ship's Nurse/ Medical Orderly",
-          "fi": "2. aluksen sairaanhoitaja",
-          "sv": "Fartygets andra sjukskötare / Medikalvaktmästare"
+          "fi": "Toinen sairaanhoitaja / lääkintäaliupseeri",
+          "sv": "Andre sjuksköterska / sjukvårdsbiträde"
         },
         "formality": [],
         "source": "EMSA"
@@ -38137,8 +38136,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Hospital Secretary/Assistant",
-          "fi": "Sairaalan sihteeri/avustaja",
-          "sv": "Sjukhussekreterare/assistent"
+          "fi": "Sairaala-apulainen / sihteeri",
+          "sv": "Sjukvårdsassistent / sekreterare"
         },
         "formality": [],
         "source": "EMSA"
@@ -38181,8 +38180,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Physiotherapeutic Assistant",
-          "fi": "Fysioterapeutin assistentti",
-          "sv": "Fysioterapeutisk assistent"
+          "fi": "Fysioterapeutin apulainen",
+          "sv": "Fysioterapeutassistent"
         },
         "formality": [],
         "source": "EMSA"
@@ -38203,8 +38202,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Cook",
-          "fi": "Keittiömestari",
-          "sv": "Köksmästare"
+          "fi": "Pääkokki",
+          "sv": "Hovmästarkock / kökschef"
         },
         "formality": [],
         "source": "EMSA"
@@ -38269,8 +38268,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Baker on merchant ships which regularly carry up to 12 passengers",
-          "fi": "Leipuri kauppa-aluksilla, joilla kuljetetaan säännöllisesti enintään 12 matkustajaa",
-          "sv": "Bagare på handelsfartyg som regelbundet har upp till 12 passagerare"
+          "fi": "Leipuri kauppa-aluksilla, joilla kuljetetaan enintään 12 matkustajaa",
+          "sv": "Bagare på handelsfartyg som regelbundet transporterar upp till 12 passagerare"
         },
         "formality": [],
         "source": "EMSA"
@@ -38291,8 +38290,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Kitchen Management staff",
-          "fi": "Keittiön johtohenkilöstö",
-          "sv": "Köksledningspersonal"
+          "fi": "Keittiöpäällikkö",
+          "sv": "Köksledning"
         },
         "formality": [],
         "source": "EMSA"
@@ -38313,8 +38312,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Executive Chef / Chef de Cuisine",
-          "fi": "Keittiömestari / Chef de Cuisine",
-          "sv": "Kökschef / Chef de Cuisine"
+          "fi": "Keittiömestari / Executive Chef",
+          "sv": "Chefskock / köksmästare"
         },
         "formality": [],
         "source": "EMSA"
@@ -38335,8 +38334,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Food & Beverage Manager",
-          "fi": "Ruoka- ja juomajohtaja",
-          "sv": "Mat- och dryckesmästare"
+          "fi": "Ravintolapäällikkö / Food & Beverage Manager",
+          "sv": "Restaurangchef / Food & Beverage Manager"
         },
         "formality": [],
         "source": "EMSA"
@@ -38357,8 +38356,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Provisions Master",
-          "fi": "Tarvikevastaava",
-          "sv": "Proviantmästare"
+          "fi": "Varustemestari (Provisions Master)",
+          "sv": "Förrådsmästare / Provisions Master"
         },
         "formality": [],
         "source": "EMSA"
@@ -38379,8 +38378,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deputy Head Chef / Sous Chef",
-          "fi": "2. pääkokki / Sous Chef",
-          "sv": "Andrekock / Sous Chef"
+          "fi": "Apulaiskeittiömestari / Sous Chef",
+          "sv": "Souschef / biträdande köksmästare"
         },
         "formality": [],
         "source": "EMSA"
@@ -38401,7 +38400,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Station Chef / Chef de Partie",
-          "fi": "Osastokokki / Chef de Partie",
+          "fi": "Osakeittiömestari / Chef de Partie",
           "sv": "Avdelningskock / Chef de Partie"
         },
         "formality": [],
@@ -38423,8 +38422,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Swing Chef / Tournant",
-          "fi": "Kiertävä kokki / Tournant",
-          "sv": "Tournantkock / Förstekock (tournant)"
+          "fi": "Vaihtokokki / Tournant",
+          "sv": "Roterande kock / Tournant"
         },
         "formality": [],
         "source": "EMSA"
@@ -38446,7 +38445,7 @@
         "labels": {
           "en": "Vegetable Chef / Entremetier",
           "fi": "Kasviskokki / Entremetier",
-          "sv": "Grönsakskock/Entremetier"
+          "sv": "Grönsakskock / Entremetier"
         },
         "formality": [],
         "source": "EMSA"
@@ -38468,7 +38467,7 @@
         "labels": {
           "en": "Fry Chef / Friturier",
           "fi": "Paistokokki / Friturier",
-          "sv": "Frityrkock/Friturier"
+          "sv": "Fritöskock / Friturier"
         },
         "formality": [],
         "source": "EMSA"
@@ -38489,8 +38488,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Pantry Chef / Garde manger",
-          "fi": "Kylmäkkökokki / Garde manger",
-          "sv": "Kallskänka / Garde manger"
+          "fi": "Kylmäkokki / Garde-manger",
+          "sv": "Kallskänka / Garde-manger"
         },
         "formality": [],
         "source": "EMSA"
@@ -38510,9 +38509,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Pastry Chef",
-          "fi": "Leivonnaiskokki",
-          "sv": "Konditor/Pâtissier"
+          "en": "Pastry Chef / Pâtissier",
+          "fi": "Jälkiruokakokki / Pâtissier",
+          "sv": "Dessertkock / konditor / Pâtissier"
         },
         "formality": [],
         "source": "EMSA"
@@ -38534,7 +38533,7 @@
         "labels": {
           "en": "Fish Chef / Poissonnier",
           "fi": "Kalakokki / Poissonnier",
-          "sv": "Fiskkock/Poissonnier"
+          "sv": "Fiskkock / Poissonnier"
         },
         "formality": [],
         "source": "EMSA"
@@ -38554,9 +38553,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Meat or Roast Chef",
-          "fi": "Liha- tai grillikokki",
-          "sv": "Köttkock/Rotisseur"
+          "en": "Meat or Roast Chef / Rôtisseur",
+          "fi": "Lihakokki / Rôtisseur",
+          "sv": "Kött- eller stekkock / Rôtisseur"
         },
         "formality": [],
         "source": "EMSA"
@@ -38578,7 +38577,7 @@
         "labels": {
           "en": "Sauce Chef / Saucier",
           "fi": "Kastikekokki / Saucier",
-          "sv": "Sautékock/Saucier"
+          "sv": "Såskock / Saucier"
         },
         "formality": [],
         "source": "EMSA"
@@ -38599,8 +38598,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant or Junior Chef / Commis Chef",
-          "fi": "Apulaiskokki tai nuorempi kokki / Commis Chef",
-          "sv": "Kocklärling / Commis Chef"
+          "fi": "Apukokki / Commis Chef",
+          "sv": "Biträdande kock / Commis Chef"
         },
         "formality": [],
         "source": "EMSA"
@@ -38621,8 +38620,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Galley Chef for the passenger ship's crew",
-          "fi": "Miehistökokki (matkustaja-aluksilla) / Galley Chef",
-          "sv": "Manskapskock på passagerarfartyg"
+          "fi": "Miehistön keittiön kokki (Galley Chef for crew)",
+          "sv": "Manskapets kock (galley chef for crew)"
         },
         "formality": [],
         "source": "EMSA"
@@ -38643,8 +38642,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Butcher / Boucher",
-          "fi": "Teurastaja / Boucher",
-          "sv": "Slaktare/Boucher"
+          "fi": "Lihaleikkaaja / teurastaja (Butcher / Boucher)",
+          "sv": "Slaktare / styckare (Butcher / Boucher)"
         },
         "formality": [],
         "source": "EMSA"
@@ -38665,8 +38664,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Galley/Kitchen Staff",
-          "fi": "Keittiötyöntekijä",
-          "sv": "Kabyss-/Kökspersonal"
+          "fi": "Keittiö- / laitoskeittiöhenkilöstö",
+          "sv": "Köks- / galleypersonal"
         },
         "formality": [],
         "source": "EMSA"
@@ -38687,8 +38686,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Purser",
-          "fi": "Pääpurseri",
-          "sv": "Chefspurser"
+          "fi": "Pääkassanhoitaja / purseri",
+          "sv": "Chefspurs­er"
         },
         "formality": [],
         "source": "EMSA"
@@ -38709,8 +38708,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd Purser",
-          "fi": "2. purseri",
-          "sv": "Purser"
+          "fi": "Toinen purseri",
+          "sv": "Andre purser"
         },
         "formality": [],
         "source": "EMSA"
@@ -38731,8 +38730,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "3rd Purser",
-          "fi": "3. purseri",
-          "sv": "Purserbiträde"
+          "fi": "Kolmas purseri",
+          "sv": "Tredje purser"
         },
         "formality": [],
         "source": "EMSA"
@@ -38753,8 +38752,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Steward/Stewardess",
-          "fi": "Ylitalousesimies / Chief Steward",
-          "sv": "Överintendent / Chief Steward"
+          "fi": "Ylipalvelija / ylistuertti / pääpalvelija",
+          "sv": "Huvud­stuert / över­stuert / chief steward"
         },
         "formality": [],
         "source": "EMSA"
@@ -38775,8 +38774,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Steward/Stewardess",
-          "fi": "Stuertti (Steward)",
-          "sv": "Steward / Intendent"
+          "fi": "Palvelija / stuertti / stuerdess",
+          "sv": "Stu­ert / stuertessa"
         },
         "formality": [],
         "source": "EMSA"
@@ -38797,8 +38796,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Messman or Pantryman-woman",
-          "fi": "Messipoika / messityttö",
-          "sv": "Messpojke / messflicka"
+          "fi": "Messipalvelija / pantry-palvelija",
+          "sv": "Mässman / pantrypersonal"
         },
         "formality": [],
         "source": "EMSA"
@@ -38819,8 +38818,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Laundryman only on ships which regularly carry up to 12 passengers",
-          "fi": "Pyykkityöntekijä kauppa-aluksilla, joilla kuljetetaan säännöllisesti enintään 12 matkustajaa",
-          "sv": "Tvättman på fartyg som regelbundet har upp till 12 passagerare"
+          "fi": "Pyykkäri aluksilla, joilla kuljetetaan enintään 12 matkustajaa",
+          "sv": "Tvättpersonal på fartyg som regelbundet transporterar upp till 12 passagerare"
         },
         "formality": [],
         "source": "EMSA"
@@ -38841,7 +38840,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Dining Room staff",
-          "fi": "Tarjoiluhenkilöstö",
+          "fi": "Ruokasalin henkilökunta",
           "sv": "Matsalspersonal"
         },
         "formality": [],
@@ -38862,9 +38861,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Dining Room manager",
-          "fi": "Tarjoiluesimies",
-          "sv": "Hovmästare"
+          "en": "Dining Room manager / Maître d'hotel",
+          "fi": "Ruokasalin päällikkö / hovimestari (Maître d’hôtel)",
+          "sv": "Matsalschef / hovmästare (Maître d’hôtel)"
         },
         "formality": [],
         "source": "EMSA"
@@ -38885,8 +38884,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Dining Room Head Waiter/Waitress",
-          "fi": "Päätarjoilija",
-          "sv": "Matsalens huvudservitör/huvudservitris"
+          "fi": "Ruokasalin ylipalvelija",
+          "sv": "Förste servitör / huvudservitris"
         },
         "formality": [],
         "source": "EMSA"
@@ -38907,8 +38906,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "1st Wine Steward/Stewardess / Sommelier",
-          "fi": "1. viinimestari / sommelier",
-          "sv": "Sommelier"
+          "fi": "Ensimmäinen sommelier / viinimestari",
+          "sv": "Förste sommelier / vin­stuert"
         },
         "formality": [],
         "source": "EMSA"
@@ -38929,8 +38928,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd Wine Steward/Stewardess / 2. Sommelier",
-          "fi": "2. viinimestari / 2. sommelier",
-          "sv": "Andre sommelier"
+          "fi": "Toinen sommelier / viiniapulainen",
+          "sv": "Andre sommelier / vin­assistent"
         },
         "formality": [],
         "source": "EMSA"
@@ -38951,8 +38950,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Dining Room Waiter/Waitress",
-          "fi": "Tarjoilija",
-          "sv": "Matsalsservitör/-servitris"
+          "fi": "Tarjoilija (ruokasali)",
+          "sv": "Servitör / servitris (matsal)"
         },
         "formality": [],
         "source": "EMSA"
@@ -38973,7 +38972,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Bar staff",
-          "fi": "Baarityöntekijä",
+          "fi": "Baarin henkilökunta",
           "sv": "Barpersonal"
         },
         "formality": [],
@@ -38995,7 +38994,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Bar Manager",
-          "fi": "Baarin johtaja",
+          "fi": "Baaripäällikkö",
           "sv": "Barchef"
         },
         "formality": [],
@@ -39017,8 +39016,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Bartender / Barkeeper / Barmaid",
-          "fi": "Baarimestari",
-          "sv": "Barmästare"
+          "fi": "Baarimikko / barkeeper / baaritar",
+          "sv": "Bartender / barkeeper / barmaid"
         },
         "formality": [],
         "source": "EMSA"
@@ -39039,8 +39038,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Cocktail Server",
-          "fi": "Cocktailtarjoilija",
-          "sv": "Cocktailservitör"
+          "fi": "Cocktail-tarjoilija",
+          "sv": "Cocktail­servitör / servitris"
         },
         "formality": [],
         "source": "EMSA"
@@ -39061,7 +39060,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Buffet staff",
-          "fi": "Buffet-henkilöstö",
+          "fi": "Buffet-henkilökunta",
           "sv": "Buffépersonal"
         },
         "formality": [],
@@ -39083,8 +39082,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Head Buffet Server",
-          "fi": "Buffet-päätarjoilija",
-          "sv": "Bufféservitör"
+          "fi": "Buffetpäällikkö",
+          "sv": "Bufféchef"
         },
         "formality": [],
         "source": "EMSA"
@@ -39106,7 +39105,7 @@
         "labels": {
           "en": "Buffer Servers",
           "fi": "Buffet-tarjoilijat",
-          "sv": "Bufféservitörer"
+          "sv": "Buffé­servitörer"
         },
         "formality": [],
         "source": "EMSA"
@@ -39127,7 +39126,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Hotel staff",
-          "fi": "Hotellihenkilöstö",
+          "fi": "Hotellipalveluhenkilöstö",
           "sv": "Hotellpersonal"
         },
         "formality": [],
@@ -39149,8 +39148,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Hotel Director",
-          "fi": "Hotellin johtaja",
-          "sv": "Hotellchef"
+          "fi": "Hotellijohtaja",
+          "sv": "Hotell­direktör"
         },
         "formality": [],
         "source": "EMSA"
@@ -39172,7 +39171,7 @@
         "labels": {
           "en": "Accountant",
           "fi": "Kirjanpitäjä",
-          "sv": "Revisor"
+          "sv": "Bokhållare / ekonomiansvarig"
         },
         "formality": [],
         "source": "EMSA"
@@ -39194,7 +39193,7 @@
         "labels": {
           "en": "Front Desk - Concierge",
           "fi": "Vastaanottovirkailija / concierge",
-          "sv": "Receptionist/Concierge"
+          "sv": "Reception / concierge"
         },
         "formality": [],
         "source": "EMSA"
@@ -39238,7 +39237,7 @@
         "labels": {
           "en": "Programme Coordinator",
           "fi": "Ohjelmakoordinaattori",
-          "sv": "Programkoordinator"
+          "sv": "Program­koordinator"
         },
         "formality": [],
         "source": "EMSA"
@@ -39259,8 +39258,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Cabin Steward/Stewardess",
-          "fi": "Pääkabiinihyttipalvelija",
-          "sv": "Huvudkabinuppassare"
+          "fi": "Hyttipalvelun päällikkö",
+          "sv": "Hytt­stuertchef"
         },
         "formality": [],
         "source": "EMSA"
@@ -39281,8 +39280,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "1st Cabin Steward/Stewardess",
-          "fi": "1. hyttipalvelija",
-          "sv": "1:e hyttuppassare"
+          "fi": "Ensimmäinen hyttipalvelija",
+          "sv": "Förste hyttstuert / stuertessa"
         },
         "formality": [],
         "source": "EMSA"
@@ -39303,8 +39302,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd Cabin Steward/Stewardess",
-          "fi": "2. hyttipalvelija",
-          "sv": "2:e hyttuppassare"
+          "fi": "Toinen hyttipalvelija",
+          "sv": "Andre hyttstuert / stuertessa"
         },
         "formality": [],
         "source": "EMSA"
@@ -39325,8 +39324,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Cabin Steward/Stewardess",
-          "fi": "Hyttipalvelija",
-          "sv": "Hyttuppassare"
+          "fi": "Hyttipalvelija / stuerdess",
+          "sv": "Hyttstuert / stuertessa"
         },
         "formality": [],
         "source": "EMSA"
@@ -39347,8 +39346,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Butler / Page",
-          "fi": "Hovimestari / paasi",
-          "sv": "Butler/Page"
+          "fi": "Butler / hovimestari / pikkolopalvelija",
+          "sv": "Butler / page / betjänt"
         },
         "formality": [],
         "source": "EMSA"
@@ -39369,8 +39368,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Lift Attendant / Porter",
-          "fi": "Hissinkuljettaja / portieeri",
-          "sv": "Hissförare/Portier"
+          "fi": "Hissipoika / kantaja",
+          "sv": "Hissvakt / portier"
         },
         "formality": [],
         "source": "EMSA"
@@ -39392,7 +39391,7 @@
         "labels": {
           "en": "Chief Housekeeper",
           "fi": "Siivouspäällikkö",
-          "sv": "Städchef"
+          "sv": "Städchef / housekeeper"
         },
         "formality": [],
         "source": "EMSA"
@@ -39413,8 +39412,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant Housekeeper",
-          "fi": "Apulaissiivouspäällikkö",
-          "sv": "Biträdande städchef"
+          "fi": "Apulais­siivouspäällikkö",
+          "sv": "Biträdande städchef / assistant housekeeper"
         },
         "formality": [],
         "source": "EMSA"
@@ -39435,8 +39434,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Cabin Cleaning Staff",
-          "fi": "Matkustamon siivoushenkilöstö",
-          "sv": "Kabinrengöringspersonal"
+          "fi": "Hyttien siivoushenkilöstö",
+          "sv": "Hyttstädpersonal"
         },
         "formality": [],
         "source": "EMSA"
@@ -39457,7 +39456,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "General Cleaning Staff",
-          "fi": "Yleisten tilojen siivoushenkilöstö",
+          "fi": "Yleissiivoushenkilöstö",
           "sv": "Allmän städpersonal"
         },
         "formality": [],
@@ -39479,8 +39478,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Laundry Manager",
-          "fi": "Pyykkivastaava",
-          "sv": "Tvättchef"
+          "fi": "Pesulan päällikkö",
+          "sv": "Tvättchef / laundry manager"
         },
         "formality": [],
         "source": "EMSA"
@@ -39501,8 +39500,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Laundry Staff",
-          "fi": "Pyykkihenkilöstö",
-          "sv": "Tvättpersonal"
+          "fi": "Pesulahenkilöstö",
+          "sv": "Tvättpersonal / laundry staff"
         },
         "formality": [],
         "source": "EMSA"
@@ -39523,7 +39522,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Commercial service staff",
-          "fi": "Kaupallisten palveluiden henkilöstö",
+          "fi": "Kaupallisen palvelun henkilöstö",
           "sv": "Kommersiell servicepersonal"
         },
         "formality": [],
@@ -39545,8 +39544,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Gift Shop Manager",
-          "fi": "Lahjamyymäläpäällikkö",
-          "sv": "Presentbutikschef"
+          "fi": "Lahjatavarakaupan päällikkö",
+          "sv": "Butikschef (gåvo-/presentbutik)"
         },
         "formality": [],
         "source": "EMSA"
@@ -39567,8 +39566,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Gift Shop Sales Assistant",
-          "fi": "Lahjamyymälän avustaja",
-          "sv": "Presentbutikens försäljningsassistent"
+          "fi": "Lahjatavarakaupan myyjä / myyntiavustaja",
+          "sv": "Butiksbiträde / försäljningsassistent (gåvo-/presentbutik)"
         },
         "formality": [],
         "source": "EMSA"
@@ -39589,8 +39588,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Hairdresser",
-          "fi": "Kampaaja",
-          "sv": "Hårfrisör"
+          "fi": "Kampaaja / parturi",
+          "sv": "Frisör / barberare"
         },
         "formality": [],
         "source": "EMSA"
@@ -39655,8 +39654,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Physiotherapeutic Assistant",
-          "fi": "Fysioterapeutin assistentti",
-          "sv": "Fysioterapeutisk assistent"
+          "fi": "Fysioterapeutin apulainen",
+          "sv": "Fysioterapeutassistent"
         },
         "formality": [],
         "source": "EMSA"
@@ -39677,8 +39676,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Sauna-Attendant",
-          "fi": "Saunatyöntekijä",
-          "sv": "Bastuskötare"
+          "fi": "Saunavalvoja",
+          "sv": "Bastu­värd / spa­värd"
         },
         "formality": [],
         "source": "EMSA"
@@ -39699,8 +39698,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Fitness-Trainer",
-          "fi": "Kuntovalmentaja",
-          "sv": "Konditionstränare"
+          "fi": "Kuntosaliohjaaja / personal trainer",
+          "sv": "Fitness­instruktör / personlig tränare"
         },
         "formality": [],
         "source": "EMSA"
@@ -39721,8 +39720,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Pool-Attendant",
-          "fi": "Allastyöntekijä",
-          "sv": "Poolskötare"
+          "fi": "Uima-altaan valvoja / poolipalvelija",
+          "sv": "Pool­värd / badvakt"
         },
         "formality": [],
         "source": "EMSA"
@@ -39765,8 +39764,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Casino Manager",
-          "fi": "Kasinopäällikkö",
-          "sv": "Kasinochef"
+          "fi": "Kasino­päällikkö",
+          "sv": "Kasino­chef"
         },
         "formality": [],
         "source": "EMSA"
@@ -39787,8 +39786,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Croupier",
-          "fi": "Croupier",
-          "sv": "Croupier"
+          "fi": "Croupier / jakaja",
+          "sv": "Croupier / kortgivare"
         },
         "formality": [],
         "source": "EMSA"
@@ -39809,8 +39808,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Casino Staff",
-          "fi": "Kasinohenkilöstö",
-          "sv": "Kasinopersonal"
+          "fi": "Kasinon henkilökunta",
+          "sv": "Kasino­personal"
         },
         "formality": [],
         "source": "EMSA"
@@ -39875,8 +39874,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Entertainer",
-          "fi": "Viihdyttäjä",
-          "sv": "Underhållare"
+          "fi": "Viihdyttäjä / esiintyjä",
+          "sv": "Underhållare / entertainer"
         },
         "formality": [],
         "source": "EMSA"
@@ -39898,7 +39897,7 @@
         "labels": {
           "en": "Soloist Musician",
           "fi": "Soolomuusikko",
-          "sv": "Solomusiker"
+          "sv": "Solistmusiker"
         },
         "formality": [],
         "source": "EMSA"
@@ -39942,7 +39941,7 @@
         "labels": {
           "en": "Singer",
           "fi": "Laulaja",
-          "sv": "Sångare"
+          "sv": "Sångare / sångerska"
         },
         "formality": [],
         "source": "EMSA"
@@ -39963,7 +39962,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Children Entertainers / Storytellers",
-          "fi": "Lasten­viihdyttäjä / satukertoja",
+          "fi": "Lastenviihdyttäjä / tarinankertoja",
           "sv": "Barnunderhållare / sagoberättare"
         },
         "formality": [],
@@ -39986,7 +39985,7 @@
         "labels": {
           "en": "Event Manager",
           "fi": "Tapahtumapäällikkö",
-          "sv": "Evenemangschef"
+          "sv": "Evenemangs­chef"
         },
         "formality": [],
         "source": "EMSA"
@@ -40007,8 +40006,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Event/Excursion Expert or Guide",
-          "fi": "Tapahtuma-/retkiasiantuntija tai opas",
-          "sv": "Evenemangs-/utflyktsexpert eller guide"
+          "fi": "Tapahtuma- / retkiasiantuntija tai opas",
+          "sv": "Evenemangs- / utflykts­expert eller guide"
         },
         "formality": [],
         "source": "EMSA"
@@ -40073,8 +40072,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Exhaust Gas Cleaning Systems Engineer (EGCS)",
-          "fi": "Pakokaasujen puhdistusjärjestelmien insinööri (EGCS)",
-          "sv": "Avgasreningssystemsingenjör (EGCS)"
+          "fi": "Savukaasujen puhdistusjärjestelmien insinööri (EGCS)",
+          "sv": "Ingenjör för rökgasreningssystem (EGCS)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40095,8 +40094,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Environmental Officer",
-          "fi": "Ympäristövastaava",
-          "sv": "Miljöansvarig"
+          "fi": "Ympäristöupseeri",
+          "sv": "Miljöofficer"
         },
         "formality": [],
         "source": "EMSA"
@@ -40117,8 +40116,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Recycling Operations Officer",
-          "fi": "Kierrätysvastaava",
-          "sv": "Återvinningsansvarig"
+          "fi": "Kierrätysoperaatioiden upseeri",
+          "sv": "Återvinnings­operatör / miljöoperatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -40139,8 +40138,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Junior Environmental Officer",
-          "fi": "Nuorempi ympäristövastaava",
-          "sv": "Junior miljöansvarig"
+          "fi": "Ympäristöupseerin apulainen",
+          "sv": "Biträdande miljöofficer"
         },
         "formality": [],
         "source": "EMSA"
@@ -40161,8 +40160,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Process Engineer (Rating)",
-          "fi": "Prosessi-insinööri (miehistöasemassa)",
-          "sv": "Processingenjör (manskap)"
+          "fi": "Prosessi-insinööri (miehistötaso)",
+          "sv": "Process­ingenjör (manskap)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40183,8 +40182,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Waste Water Plant Assistant",
-          "fi": "Vedenpuhdistamon avustaja",
-          "sv": "Assistent på avloppsvattenanläggning"
+          "fi": "Jätevedenpuhdistamon apulainen",
+          "sv": "Avlopps­reningsassistent"
         },
         "formality": [],
         "source": "EMSA"
@@ -40227,8 +40226,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Facility Manager (Rating)",
-          "fi": "Laitosvastaava (miehistöasemassa)",
-          "sv": "Anläggningsansvarig (manskap)"
+          "fi": "Tilojenhoitopäällikkö (miehistötaso)",
+          "sv": "Anläggnings­förvaltare (manskap)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40249,8 +40248,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Facility Crewmember",
-          "fi": "Laitosmiehistön jäsen",
-          "sv": "Anläggningens besättningsmedlem"
+          "fi": "Tilahuoltohenkilöstö",
+          "sv": "Anläggnings­personal"
         },
         "formality": [],
         "source": "EMSA"
@@ -40271,8 +40270,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Entertainment Electronics Officer",
-          "fi": "Viihde-elektroniikkavastaava",
-          "sv": "Underhållningselektronikansvarig"
+          "fi": "Viihde-elektroniikka­upseeri",
+          "sv": "Underhållsingenjör för nöjes­elektronik"
         },
         "formality": [],
         "source": "EMSA"
@@ -40293,8 +40292,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "IT-Communications Officer",
-          "fi": "IT-viestintävastaava",
-          "sv": "IT-kommunikationsansvarig"
+          "fi": "IT-viestintäupseeri",
+          "sv": "IT- och kommunikations­officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -40337,7 +40336,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant IT-Technician",
-          "fi": "Avustava IT-teknikko",
+          "fi": "IT-teknikon apulainen",
           "sv": "Biträdande IT-tekniker"
         },
         "formality": [],
@@ -40359,8 +40358,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "HVAC Engineer (Rating) {Air Conditioning etc}",
-          "fi": "LVI-insinööri (miehistöasemassa) {ilmastointi jne.}",
-          "sv": "VVS-ingenjör (manskap) {luftkonditionering osv.}"
+          "fi": "LVI-insinööri (ilmanvaihto, jäähdytys jne.)",
+          "sv": "VVS-ingenjör (värme, ventilation, kyla m.m.)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40381,8 +40380,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "1st. HVAC Technician & Refrigeration Assistant",
-          "fi": "1. LVI-teknikko ja jäähdytyslaiteavustaja",
-          "sv": "Första VVS-tekniker & kylassistent"
+          "fi": "Ensimmäinen LVI-teknikko / kylmäkoneasentaja",
+          "sv": "Förste VVS-tekniker / kyltekniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -40403,8 +40402,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "2nd. HVAC Technician & Refrigeration Assistant",
-          "fi": "2. LVI-teknikko ja jäähdytyslaiteavustaja",
-          "sv": "Andra VVS-tekniker & kylassistent"
+          "fi": "Toinen LVI-teknikko / kylmäkoneasentaja",
+          "sv": "Andre VVS-tekniker / kyltekniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -40425,8 +40424,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "QMED (Qualified Member of the Engine Department)",
-          "fi": "Pätevä koneosaston miehistön jäsen (QMED)",
-          "sv": "QMED (Qualified Member of the Engine Department)"
+          "fi": "Koneosaston pätevöity jäsen (QMED)",
+          "sv": "Kvalificerad medlem av maskinavdelningen (QMED)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40448,7 +40447,7 @@
         "labels": {
           "en": "Safety staff",
           "fi": "Turvallisuushenkilöstö",
-          "sv": "Säkerhetspersonal"
+          "sv": "Säkerhets­personal"
         },
         "formality": [],
         "source": "EMSA"
@@ -40469,8 +40468,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ship Safety Officer",
-          "fi": "Aluksen turvapäällikkö",
-          "sv": "Fartygets säkerhetsansvarig"
+          "fi": "Laivan turvallisuusupseeri",
+          "sv": "Fartygssäkerhets­officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -40490,9 +40489,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Safety Officer, Life Saving Appliances (LSA)",
-          "fi": "Turvallisuusvastaava, hengenpelastuslaitteet (LSA)",
-          "sv": "Säkerhetsanvarig, livräddningsutrustning (LSA)"
+          "en": "Safety Officer Life Saving Appliances (LSA)",
+          "fi": "Pelastautumisvälineistä vastaava turvallisuusupseeri (LSA)",
+          "sv": "Säkerhets­officer för livräddnings­utrustning (LSA)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40512,9 +40511,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Safety Officer, Fire-Fighting (FF)",
-          "fi": "Turvallisuusvastaava, palontorjunta (FF)",
-          "sv": "Säkerhetsansvarig, brandbekämpning (FF)"
+          "en": "Safety Officer Fire-Fighting (FF)",
+          "fi": "Palontorjunnasta vastaava turvallisuusupseeri (FF)",
+          "sv": "Säkerhets­officer för brandbekämpning (FF)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40535,8 +40534,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Safety A.B. Rating for Life Saving Appliances (LSA)",
-          "fi": "Hengenpelastuslaitteiden pätevä kansimies (LSA)",
-          "sv": "Säkerhetsmatros för LSA (LSA)"
+          "fi": "Pelastautumisvälineisiin (LSA) pätevöity kansimies",
+          "sv": "Säkerhets­certifierad matros för livräddnings­utrustning (LSA)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40557,8 +40556,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deck Clerk",
-          "fi": "Kansikonttoristi / kansisihteeri",
-          "sv": "Däckskontorist"
+          "fi": "Kansivirkailija / deck clerk",
+          "sv": "Däckskontorist / deck clerk"
         },
         "formality": [],
         "source": "EMSA"
@@ -40579,8 +40578,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Fire-Fighter (Chief Fireman)",
-          "fi": "Palopäällikkö",
-          "sv": "Brandmästare"
+          "fi": "Pääpalomies",
+          "sv": "Huvud­brandman"
         },
         "formality": [],
         "source": "EMSA"
@@ -40601,7 +40600,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Fire-Fighter/Fireman",
-          "fi": "Palomies",
+          "fi": "Palomies / palontorjuntahenkilöstö",
           "sv": "Brandman"
         },
         "formality": [],
@@ -40623,8 +40622,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ship Security Officer on Cruise ships",
-          "fi": "Turvapäällikkö risteilyaluksilla",
-          "sv": "Skyddschef på kryssningsfartyg"
+          "fi": "Risteilyaluksen turvallisuusupseeri (SSO)",
+          "sv": "Fartygssäkerhets­officer på kryssningsfartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -40645,8 +40644,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant Security Officer",
-          "fi": "Apulaisturvallisuuspäällikkö",
-          "sv": "Biträdande skyddschef"
+          "fi": "Apulais­turvallisuusupseeri",
+          "sv": "Biträdande säkerhets­officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -40667,8 +40666,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Security Guard",
-          "fi": "Vartija",
-          "sv": "Säkerhetsvakt"
+          "fi": "Turvamies / vartija",
+          "sv": "Säkerhets­vakt / ordningsvakt"
         },
         "formality": [],
         "source": "EMSA"
@@ -40710,9 +40709,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Fish-Worker, Fish-Processor (on board)",
-          "fi": "Kalatyöntekijä, kalanjalostaja (aluksella)",
-          "sv": "Fiskarbetare, fiskprocessor (ombord)"
+          "en": "Fish-Worker Fish-Processor (on board)",
+          "fi": "Kalatyöntekijä / kalanjalostaja (aluksella)",
+          "sv": "Fiskarbetare / fiskförädlare (ombord)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40733,8 +40732,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Factory Foreman on board Fishing Vessels",
-          "fi": "Tehtaan työnjohtaja kalastusaluksilla",
-          "sv": "Fabriksförman ombord på fiskefartyg"
+          "fi": "Tehtaan työnjohtaja kalastusaluksella",
+          "sv": "Fabriksmästare på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -40755,8 +40754,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Boat Handler",
-          "fi": "Veneenkäsittelijä",
-          "sv": "Båthanterare"
+          "fi": "Veneen käsittelijä",
+          "sv": "Båtförare / båt­hanterare"
         },
         "formality": [],
         "source": "EMSA"
@@ -40777,8 +40776,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Diver (Fishing Industry)",
-          "fi": "Sukeltaja (kalastusteollisuus)",
-          "sv": "Dykare (fiskeindustri)"
+          "fi": "Sukeltaja (kalastusala)",
+          "sv": "Dykare (fiskeindustrin)"
         },
         "formality": [],
         "source": "EMSA"
@@ -40799,7 +40798,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Netmaker",
-          "fi": "Verkonvalmistaja",
+          "fi": "Verkonkutoja",
           "sv": "Nätmakare"
         },
         "formality": [],
@@ -40821,8 +40820,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Spotter",
-          "fi": "Tarkkailija",
-          "sv": "Observatör"
+          "fi": "Tähystäjä",
+          "sv": "Observatör / spanare"
         },
         "formality": [],
         "source": "EMSA"
@@ -40843,7 +40842,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Harpooner",
-          "fi": "Harppuunankäyttäjä",
+          "fi": "Harppuunakalastaja",
           "sv": "Harpunerare"
         },
         "formality": [],
@@ -40865,8 +40864,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Winchman",
-          "fi": "Vinssinkäyttäjä",
-          "sv": "Vinschman"
+          "fi": "Vinssimies",
+          "sv": "Vinsch­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -40887,8 +40886,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Efficient Deckhand Fishing Vessels",
-          "fi": "Pätevä kansimies (EDH), kalastusalukset",
-          "sv": "Efficient Deckhand på fiskefartyg"
+          "fi": "Pätevä kansimies kalastusaluksilla",
+          "sv": "Kvalificerad däcks­arbetare på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -40910,7 +40909,7 @@
         "labels": {
           "en": "Deck Hand on Fishing Vessels",
           "fi": "Kansimies kalastusaluksilla",
-          "sv": "Däcksman på fiskefartyg"
+          "sv": "Däcks­arbetare på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -40931,8 +40930,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Marine Biologist on Fishery Research Vessels",
-          "fi": "Meribiologi kalakantojen tutkimusaluksilla",
-          "sv": "Marinbiolog på fiskefartyg"
+          "fi": "Meribiologi kalatutkimusaluksilla",
+          "sv": "Marinbiolog på fiskeri­forskningsfartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -40953,8 +40952,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Refrigeration Engineer on fishing vessels",
-          "fi": "Kylmälaitemestari kalastusaluksilla",
-          "sv": "Kylingenjör på fiskefartyg"
+          "fi": "Jäähdytysinsinööri kalastusaluksilla",
+          "sv": "Kyl­teknisk ingenjör på fiskefartyg"
         },
         "formality": [],
         "source": "EMSA"
@@ -40975,8 +40974,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Maintenance Technician / Installation Technician",
-          "fi": "Huoltoteknikko / asennusteknikko",
-          "sv": "Underhållstekniker/installationstekniker"
+          "fi": "Huoltoasentaja / asennusteknikko",
+          "sv": "Underhålls­tekniker / installations­tekniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -40997,8 +40996,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Marine Refrigeration Technician",
-          "fi": "Merikylmälaiteteknikko",
-          "sv": "Marin kyltekniker"
+          "fi": "Merijäähdytys­teknikko",
+          "sv": "Marin kyl­tekniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -41019,8 +41018,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "(Maritime) Barge Supervisor (with or without STCW Certificate Qualifications)",
-          "fi": "Proomupäällikkö (merialus), (STCW-todistuksella tai ilman)",
-          "sv": "Pråmövervakare (maritim), med eller utan STCW-behörighet"
+          "fi": "(alus-) proomupäällikkö (STCW-pätevyydellä tai ilman)",
+          "sv": "Bargesupervisor (med eller utan STCW-certifikat)"
         },
         "formality": [],
         "source": "EMSA"
@@ -41041,8 +41040,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deputy Platform Manager with Master Mariner Certification",
-          "fi": "Apulaistoimintapäällikkö (öljynporauslautta), Master Mariner -pätevyys",
-          "sv": "Biträdande oljeplattformschef med sjökaptenscertifiering"
+          "fi": "Apulais­porauslautan päällikkö (Master Mariner -pätevyydellä)",
+          "sv": "Biträdande plattforms­chef (med sjökaptensexamen)"
         },
         "formality": [],
         "source": "EMSA"
@@ -41063,8 +41062,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Stability Supervisor on MODUs or MOPUs",
-          "fi": "Vakavuusvastaava, MODU- tai MOPU-yksiköt",
-          "sv": "Stabilitetsansvarig för flyttbara oljeplattformar till sjöss eller flyttbara produktionsenheter till sjöss"
+          "fi": "Stabiliteettivalvoja MODU- tai MOPU-aluksilla",
+          "sv": "Stabilitets­övervakare på MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -41085,8 +41084,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Ballast Control Technician",
-          "fi": "Painolastin ohjausteknikko",
-          "sv": "Ballastkontrolltekniker"
+          "fi": "Ballastijärjestelmien teknikko",
+          "sv": "Ballast­tekniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -41106,9 +41105,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Ballast Controlman on Offshore, MODUs or MOPUs",
-          "fi": "Painolastinvalvoja / ballastivalvoja (offshore, MODU/MOPU)",
-          "sv": "Ballaskontrollör offshore, på flyttbara oljeplattformar till sjöss eller flyttbara produktionsenheter till sjöss"
+          "en": "Ballast Controlman on Offshore MODUs or MOPUs",
+          "fi": "Ballastivalvoja offshore MODU- tai MOPU-aluksilla",
+          "sv": "Ballast­operatör på offshore-MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -41129,8 +41128,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Mudstrainer Operator",
-          "fi": "Sedimenttisuodattimen käyttäjä",
-          "sv": "Slamfilteroperatör"
+          "fi": "Mudan­suodatusoperaattori",
+          "sv": "Mudsil­filter­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41150,9 +41149,9 @@
       {
         "listName": "imo_compendium_IMO0043",
         "labels": {
-          "en": "Dynamic Positioning Officer (DPO) on Offshore, MODUs or MOPUs",
-          "fi": "Dynaamisen paikannuksen päällystö (DPO), offshore-/MODU-/MOPU-yksiköt",
-          "sv": "Dynamisk positioneringsansvarig offshore, på flyttbara oljeplattformar till sjöss eller flyttbara produktionsenheter till sjöss"
+          "en": "Dynamic Positioning Officer (DPO) on Offshore MODUs or MOPUs",
+          "fi": "Dynaamisen paikannuksen upseeri (DPO) offshore MODU- tai MOPU-aluksilla",
+          "sv": "DP-officer (DPO) på offshore-MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -41174,7 +41173,7 @@
         "labels": {
           "en": "Seismic Navigator",
           "fi": "Seisminen navigaattori",
-          "sv": "Seismisk navigator"
+          "sv": "Seismisk navigatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41195,8 +41194,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Seismic Surveyor",
-          "fi": "Seismisen tutkimuksen mittaaja / kartoittaja",
-          "sv": "Seismisk inspektör"
+          "fi": "Seismologi / seismisen tutkimuksen asiantuntija",
+          "sv": "Seismisk undersöknings­specialist"
         },
         "formality": [],
         "source": "EMSA"
@@ -41217,8 +41216,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Cartographer & Draughtsman",
-          "fi": "Kartografi ja syväystyöntekijä",
-          "sv": "Kartograf & konstruktör"
+          "fi": "Kartografi / piirtäjä",
+          "sv": "Kartograf / ritare"
         },
         "formality": [],
         "source": "EMSA"
@@ -41239,8 +41238,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Platform Manager / Rig Manager",
-          "fi": "Porauslautan päällikkö / yksikön päällikkö",
-          "sv": "Oljeplattformschef"
+          "fi": "Porauslautan päällikkö / Rig Manager",
+          "sv": "Plattforms­chef / riggchef"
         },
         "formality": [],
         "source": "EMSA"
@@ -41261,8 +41260,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Barge Engineer with STCW Certification on MODUs or MOPUs",
-          "fi": "Proomuinsinööri (STCW-pätevyys), MODU-/MOPU-yksiköillä",
-          "sv": "Pråmingenjör med STCW-certifiering på flyttbar oljeplattform till sjöss eller mobil produktionsenhet till sjöss"
+          "fi": "Barge Engineer STCW-pätevyydellä MODU- tai MOPU-aluksilla",
+          "sv": "Bargeingenjör med STCW-certifikat på MODU- eller MOPU-enheter"
         },
         "formality": [],
         "source": "EMSA"
@@ -41284,7 +41283,7 @@
         "labels": {
           "en": "Civil Engineer",
           "fi": "Rakennusinsinööri",
-          "sv": "Byggnadsingenjör"
+          "sv": "Byggnads­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41305,8 +41304,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Drilling Engineer",
-          "fi": "Porateknikko",
-          "sv": "Borrningsingenjör"
+          "fi": "Porausinsinööri",
+          "sv": "Borr­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41327,8 +41326,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Hydraulic Engineer",
-          "fi": "Hydrauliteknikko",
-          "sv": "Hydrotekniker"
+          "fi": "Hydrauliikka-insinööri",
+          "sv": "Hydraulik­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41349,8 +41348,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Instrumentation Engineer",
-          "fi": "Mittariteknikko",
-          "sv": "Instrumenteringstekniker"
+          "fi": "Instrumentointi-insinööri",
+          "sv": "Instrumenterings­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41372,7 +41371,7 @@
         "labels": {
           "en": "Operation Engineer",
           "fi": "Käyttöinsinööri",
-          "sv": "Driftingenjör"
+          "sv": "Drifts­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41393,8 +41392,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Structural Engineer",
-          "fi": "Rakenneinsinööri",
-          "sv": "Konstruktionsingenjör"
+          "fi": "Rakenne-insinööri",
+          "sv": "Konstruktions­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41415,8 +41414,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Subsea Engineer",
-          "fi": "Vedenalaisjärjestelmien insinööri",
-          "sv": "Undervattenssystemsingenjör / Subsea-ingenjör"
+          "fi": "Vedenalais­tekninen insinööri (Subsea Engineer)",
+          "sv": "Undervattens­ingenjör (Subsea Engineer)"
         },
         "formality": [],
         "source": "EMSA"
@@ -41438,7 +41437,7 @@
         "labels": {
           "en": "Environmental Engineer",
           "fi": "Ympäristöinsinööri",
-          "sv": "Miljöingenjör"
+          "sv": "Miljö­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41460,7 +41459,7 @@
         "labels": {
           "en": "Geotechnical Engineer",
           "fi": "Geotekninen insinööri",
-          "sv": "Geotekniker"
+          "sv": "Geoteknisk ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41526,7 +41525,7 @@
         "labels": {
           "en": "Laboratory Technician",
           "fi": "Laboratorioteknikko",
-          "sv": "Laboratorietekniker"
+          "sv": "Laboratorie­tekniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -41547,8 +41546,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Refinery Supervisor",
-          "fi": "Jalostamon valvoja",
-          "sv": "Raffinaderiansvarig"
+          "fi": "Jalostamon työnjohtaja",
+          "sv": "Raffinaderi­förman"
         },
         "formality": [],
         "source": "EMSA"
@@ -41569,7 +41568,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Cargo Technician",
-          "fi": "Kuormateknikko",
+          "fi": "Lastinkäsittelyteknikko",
           "sv": "Lasttekniker"
         },
         "formality": [],
@@ -41591,8 +41590,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Process Operator",
-          "fi": "Prosessityöntekijä",
-          "sv": "Processoperatör"
+          "fi": "Prosessioperaattori",
+          "sv": "Process­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41613,8 +41612,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Gas-Plant-Operator",
-          "fi": "Kaasulaitoksen työntekijä",
-          "sv": "Gasanläggningsoperatör"
+          "fi": "Kaasulaitosoperaattori",
+          "sv": "Gas­anläggnings­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41635,8 +41634,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Production Supervisor",
-          "fi": "Tuotannon esihenkilö",
-          "sv": "Produktionsansvarig"
+          "fi": "Tuotannon työnjohtaja",
+          "sv": "Produktions­förman"
         },
         "formality": [],
         "source": "EMSA"
@@ -41657,8 +41656,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Maintenance Supervisor",
-          "fi": "Huollon esihenkilö",
-          "sv": "Underhållsansvarig"
+          "fi": "Huoltotöiden työnjohtaja",
+          "sv": "Underhålls­förman"
         },
         "formality": [],
         "source": "EMSA"
@@ -41679,8 +41678,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Deck Supervisor",
-          "fi": "Kansihenkilöstön esihenkilö",
-          "sv": "Däcksansvarig"
+          "fi": "Kansiosaston työnjohtaja",
+          "sv": "Däcksförman"
         },
         "formality": [],
         "source": "EMSA"
@@ -41701,8 +41700,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Safety Supervisor",
-          "fi": "Turvallisuusesihenkilö",
-          "sv": "Säkerhetsansvarig"
+          "fi": "Turvallisuusvalvoja",
+          "sv": "Säkerhets­övervakare"
         },
         "formality": [],
         "source": "EMSA"
@@ -41723,8 +41722,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Section Supervisor",
-          "fi": "Osaston esihenkilö",
-          "sv": "Avdelningsansvarig"
+          "fi": "Osastopäällikkö",
+          "sv": "Avdelnings­chef"
         },
         "formality": [],
         "source": "EMSA"
@@ -41745,8 +41744,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant Section Supervisor",
-          "fi": "Avustava osaston esihenkilö",
-          "sv": "Biträdande avdelningsansvarig"
+          "fi": "Apulaisosastopäällikkö",
+          "sv": "Biträdande avdelnings­chef"
         },
         "formality": [],
         "source": "EMSA"
@@ -41767,8 +41766,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Crane Supervisor",
-          "fi": "Nosturihenkilöstön esihenkilö",
-          "sv": "Kranansvarig"
+          "fi": "Nosturivalvoja",
+          "sv": "Kran­övervakare"
         },
         "formality": [],
         "source": "EMSA"
@@ -41789,8 +41788,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Winching Supervisor",
-          "fi": "Vinssihenkilöstön esihenkilö",
-          "sv": "Vinschansvarig"
+          "fi": "Vinssausvalvoja",
+          "sv": "Vinsch­övervakare"
         },
         "formality": [],
         "source": "EMSA"
@@ -41811,8 +41810,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Diving Supervisor",
-          "fi": "Sukellusvalvoja",
-          "sv": "Dykansvarig"
+          "fi": "Sukellustoiminnan valvoja",
+          "sv": "Dyk­övervakare"
         },
         "formality": [],
         "source": "EMSA"
@@ -41833,8 +41832,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Technical Supervisor",
-          "fi": "Tekninen esihenkilö",
-          "sv": "Teknikansvarig"
+          "fi": "Tekninen valvoja",
+          "sv": "Teknisk övervakare"
         },
         "formality": [],
         "source": "EMSA"
@@ -41855,8 +41854,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Control-room Operator",
-          "fi": "Prosessinohjaaja",
-          "sv": "Kontrollrumsoperatör"
+          "fi": "Valvomo-operaattori",
+          "sv": "Kontrollrums­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41877,8 +41876,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Engine-room Operator",
-          "fi": "Konehuoneenhoitaja",
-          "sv": "Maskinrumsoperatör"
+          "fi": "Konehuoneen operaattori",
+          "sv": "Maskinrums­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41899,8 +41898,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Electronics Engineer",
-          "fi": "Elektroniikkainsinööri",
-          "sv": "Elektronikingenjör"
+          "fi": "Elektroniikka-insinööri",
+          "sv": "Elektronik­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -41921,8 +41920,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Rig Electrician",
-          "fi": "Offshore-sähköasentaja",
-          "sv": "Riggelektriker"
+          "fi": "Porauslautan sähkömestari",
+          "sv": "Rig­elektriker"
         },
         "formality": [],
         "source": "EMSA"
@@ -41943,8 +41942,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "ROV Technical Pilot",
-          "fi": "ROV-ohjaaja",
-          "sv": "Teknisk pilot för fjärrstyrd undervattensfarkost (ROV)"
+          "fi": "ROV-tekninen lentäjä (kauko-ohjattava vedenalaislaite)",
+          "sv": "ROV-teknisk pilot (fjärrstyrt undervattensfartyg)"
         },
         "formality": [],
         "source": "EMSA"
@@ -41965,8 +41964,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Drilling Superintendent",
-          "fi": "Poraustarkastaja",
-          "sv": "Borrningsledare"
+          "fi": "Porausinsinööri (superintendentti)",
+          "sv": "Borr­superintendent"
         },
         "formality": [],
         "source": "EMSA"
@@ -41987,8 +41986,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Drilling Foreman",
-          "fi": "Poratyönjohtaja",
-          "sv": "Borrförman"
+          "fi": "Porausmestari / työnjohtaja",
+          "sv": "Borr­förman"
         },
         "formality": [],
         "source": "EMSA"
@@ -42009,8 +42008,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Directional Driller",
-          "fi": "Suuntaporaaja",
-          "sv": "Riktningsborrare"
+          "fi": "Suuntaporausinsinööri",
+          "sv": "Riktborr­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -42031,8 +42030,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Driller",
-          "fi": "Poraaja",
-          "sv": "Borrare"
+          "fi": "Porausoperaattori / driller",
+          "sv": "Borr­operatör / driller"
         },
         "formality": [],
         "source": "EMSA"
@@ -42053,8 +42052,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Assistant Driller",
-          "fi": "Apulaisporaaja",
-          "sv": "Assistentborrare"
+          "fi": "Apulaisporausoperaattori / assistant driller",
+          "sv": "Biträdande borr­operatör / assistant driller"
         },
         "formality": [],
         "source": "EMSA"
@@ -42075,8 +42074,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Drilling and Maintenance Operator (DMO)",
-          "fi": "Poraus- ja huoltotyöntekijä (DMO)",
-          "sv": "Borr- och underhållsoperatör (DMO)"
+          "fi": "Poraus- ja huolto-operaattori (DMO)",
+          "sv": "Drifts- och underhålls­operatör (DMO)"
         },
         "formality": [],
         "source": "EMSA"
@@ -42097,8 +42096,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Operation and Maintenance Operator (OMO)",
-          "fi": "Käyttö- ja huoltotyöntekijä (OMO)",
-          "sv": "Drifts- och underhållsoperatör (OMO)"
+          "fi": "Käyttö- ja huolto-operaattori (OMO)",
+          "sv": "Drifts- och service­operatör (OMO)"
         },
         "formality": [],
         "source": "EMSA"
@@ -42119,8 +42118,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Derrickman",
-          "fi": "Porausmastonhoitaja",
-          "sv": "Borrman"
+          "fi": "Derrickman (poraustornityöntekijä)",
+          "sv": "Derrickman (borrtorns­arbetare)"
         },
         "formality": [],
         "source": "EMSA"
@@ -42141,8 +42140,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Floorhand",
-          "fi": "Tukityöntekijä",
-          "sv": "Floorhand"
+          "fi": "Lattiamies / Floorhand",
+          "sv": "Golvarbetare / Floorhand"
         },
         "formality": [],
         "source": "EMSA"
@@ -42163,8 +42162,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Rig-Mover Roughneck / Rigger",
-          "fi": "Tukityöntekijä porauslautalla",
-          "sv": "Roughneck / Rigger"
+          "fi": "Siirto- / Rigging-työntekijä (Roughneck / Rigger)",
+          "sv": "Riggarbetare / Roughneck / Rigger"
         },
         "formality": [],
         "source": "EMSA"
@@ -42185,8 +42184,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Heavy-Machinery Operator",
-          "fi": "Raskaiden laitteiden käyttäjä",
-          "sv": "Anläggningsmaskinsoperatör"
+          "fi": "Raskaskoneenkuljettaja",
+          "sv": "Maskin­operatör (tung utrustning)"
         },
         "formality": [],
         "source": "EMSA"
@@ -42207,8 +42206,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Crane Operator",
-          "fi": "Nosturinkäyttäjä",
-          "sv": "Kranoperatör"
+          "fi": "Nosturinkuljettaja",
+          "sv": "Kran­operatör"
         },
         "formality": [],
         "source": "EMSA"
@@ -42251,8 +42250,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Diving Supporter (Signalman & Diver's Assistant)",
-          "fi": "Sukellusten tukityöntekijä (Signalman & Diver's Assistant)",
-          "sv": "Dykarassistent (teckengivare)"
+          "fi": "Sukellustukihenkilö (signaalimies / sukeltajan avustaja)",
+          "sv": "Dyk­assistent / signalman"
         },
         "formality": [],
         "source": "EMSA"
@@ -42273,8 +42272,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Welding Superintendent",
-          "fi": "Hitsausylitarkastaja",
-          "sv": "Svetsningschef"
+          "fi": "Hitsauspäällikkö",
+          "sv": "Svets­superintendent"
         },
         "formality": [],
         "source": "EMSA"
@@ -42295,8 +42294,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Toolpusher",
-          "fi": "Porausmestari / työmaapäällikkö (porauksen vastuuhenkilö)",
-          "sv": "Toolpusher"
+          "fi": "Porauslaitoksen työnjohtaja (Toolpusher)",
+          "sv": "Verkstads­chef / Toolpusher"
         },
         "formality": [],
         "source": "EMSA"
@@ -42317,7 +42316,7 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Rig Welder",
-          "fi": "Hitsaaja porauslautalla",
+          "fi": "Hitsaaja (Rig Welder)",
           "sv": "Riggsvetsare"
         },
         "formality": [],
@@ -42339,8 +42338,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Rigger",
-          "fi": "Porauslauttatyöntekijä",
-          "sv": "Rigger"
+          "fi": "Rigger / nostotyöntekijä",
+          "sv": "Riggare / lyftarbetare"
         },
         "formality": [],
         "source": "EMSA"
@@ -42361,8 +42360,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Maintenance Roustabout",
-          "fi": "Huollon tukityöntekijä",
-          "sv": "Underhållsroustabout"
+          "fi": "Huoltotyöntekijä (Roustabout)",
+          "sv": "Underhålls­arbetare / roustabout"
         },
         "formality": [],
         "source": "EMSA"
@@ -42383,8 +42382,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Scaffolder",
-          "fi": "Telinetyöntekijä",
-          "sv": "Ställningsbyggare"
+          "fi": "Telineasentaja (Scaffolder)",
+          "sv": "Ställnings­montör / scaffolder"
         },
         "formality": [],
         "source": "EMSA"
@@ -42405,8 +42404,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Industrial Worker on Offshore Installations",
-          "fi": "Teollisuustyöntekijä merilaitoksissa",
-          "sv": "Industriarbetare på offshoreanläggningar"
+          "fi": "Teollisuustyöntekijä offshore-asennuksilla",
+          "sv": "Industr­iarbetare på offshore­installationer"
         },
         "formality": [],
         "source": "EMSA"
@@ -42427,8 +42426,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Executive Officer",
-          "fi": "Toimitusjohtaja",
-          "sv": "Sekond"
+          "fi": "Johtava upseeri / Executive Officer",
+          "sv": "Förste officer / Executive Officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -42449,8 +42448,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Audit Manager and Risk Management",
-          "fi": "Tarkastuspäällikkö ja riskienhallinta",
-          "sv": "Revisionschef och riskhantering"
+          "fi": "Tarkastus- ja riskienhallintapäällikkö",
+          "sv": "Revisions- och riskhanterings­chef"
         },
         "formality": [],
         "source": "EMSA"
@@ -42471,8 +42470,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Environmental Safety and Training Officer",
-          "fi": "Ympäristöturvallisuus- ja koulutusvastaava",
-          "sv": "Miljösäkerhets- och utbildningsansvarig"
+          "fi": "Ympäristö-, turvallisuus- ja koulutusupseeri",
+          "sv": "Miljö-, säkerhets- och utbildnings­officer"
         },
         "formality": [],
         "source": "EMSA"
@@ -42493,8 +42492,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Safety Training Engineer",
-          "fi": "Turvallisuuskoulutusteknikko",
-          "sv": "Säkerhetsutbildningsingenjör"
+          "fi": "Turvallisuuskoulutusinsinööri",
+          "sv": "Säkerhets­utbildnings­ingenjör"
         },
         "formality": [],
         "source": "EMSA"
@@ -42515,8 +42514,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Safety Training Representative",
-          "fi": "Turvallisuuskoulutusedustaja",
-          "sv": "Representant för säkerhetsutbildning"
+          "fi": "Turvallisuuskoulutusvastaava",
+          "sv": "Säkerhets­utbildnings­representant"
         },
         "formality": [],
         "source": "EMSA"
@@ -42537,8 +42536,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Emergency Response or Paramedic",
-          "fi": "Hätäpelastaja tai ensihoitaja",
-          "sv": "Akutinsats eller akutvårdspersonal"
+          "fi": "Ensihoitaja / pelastustoiminnan henkilöstö",
+          "sv": "Räddnings­personal / sjukvårdare"
         },
         "formality": [],
         "source": "EMSA"
@@ -42559,8 +42558,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Chief Rig Fire-Fighter",
-          "fi": "Pelastuspäällikkö porauslautalla",
-          "sv": "Brandmästare på oljeplattform"
+          "fi": "Porauslaitoksen pääpalomies",
+          "sv": "Riggens huvud­brandman"
         },
         "formality": [],
         "source": "EMSA"
@@ -42581,8 +42580,8 @@
         "listName": "imo_compendium_IMO0043",
         "labels": {
           "en": "Truck Mechanic",
-          "fi": "Trukkimekaanikko",
-          "sv": "Lastbilsmekaniker"
+          "fi": "Kuorma-automekaanikko",
+          "sv": "Lastbils­mekaniker"
         },
         "formality": [],
         "source": "EMSA"
@@ -103639,7 +103638,7 @@
         "listName": "attachment_type",
         "labels": {
           "en": "Holds security status certification",
-          "fi": "Ruumien turvallisuustaso todistus",
+          "fi": "Ruumien turvatason todistus",
           "sv": "Intyg om lastrums säkerhetsstatus"
         },
         "formality": [],
@@ -107180,7 +107179,7 @@
           "sv": "Påhängsvagn"
         },
         "formality": [],
-        "source": "EMSA"
+        "source": "National"
       }
     ],
     "SMAN": [
@@ -107202,6 +107201,16 @@
           "en": "International Sewage Pollution Prevention certificate",
           "fi": "Kansainvälinen jäteveden pilaantumisen ehkäisemistä koskeva todistus",
           "sv": "Internationellt intyg om förebyggande av föroreningar från avloppsvatten"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Identified special pallet",
+          "fi": "Yksilöity erikoislava",
+          "sv": "Identifierad specialpall"
         },
         "formality": [],
         "source": "EMSA"
@@ -112174,7 +112183,7 @@
         "listName": "formality_type",
         "labels": {
           "en": "Notification of actual departure",
-          "fi": "Ilmoitus tosiasiallisesta lähtemisestä",
+          "fi": "Ilmoitus tosiasiallisesta lähdöstä",
           "sv": "Deklaration om faktisk avgång"
         },
         "formality": [],
@@ -112326,7 +112335,7 @@
         "listName": "formality_type",
         "labels": {
           "en": "Maritime declaration of health details",
-          "fi": "Meriterveysilmoituksen lisätiedot",
+          "fi": "Aluksen terveysilmoituksen lisätiedot",
           "sv": "Tilläggsuppgifter till hälsodeklarationen för sjöfart"
         },
         "formality": [],
@@ -112338,7 +112347,7 @@
         "listName": "formality_type",
         "labels": {
           "en": "Maritime declaration of health",
-          "fi": "Meriterveysilmoitus",
+          "fi": "Aluksen terveysilmoitus",
           "sv": "Hälsodeklaration för sjöfart"
         },
         "formality": [],
@@ -112613,6 +112622,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Temperature recorder",
+          "fi": "Automaattinen lämpötilapiirturi",
+          "sv": "Registrerande temperaturmätare"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AE": [
@@ -112648,6 +112667,16 @@
         "formality": [
           "HZA/D"
         ],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Body trailer",
+          "fi": "Koriperävaunu",
+          "sv": "Karosserisläp"
+        },
+        "formality": [],
         "source": "EMSA"
       }
     ],
@@ -112729,6 +112758,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Slipsheet",
+          "fi": "Suoja-alusta",
+          "sv": "Glidark"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AI": [
@@ -112767,12 +112806,14 @@
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Cargo hold",
-          "fi": "Lastiruuma",
-          "sv": "Lastrum"
+          "en": "Vessel hold",
+          "fi": "Aluksen ruuma",
+          "sv": "Fartygets lastrum"
         },
-        "formality": [],
-        "source": "EMSA"
+        "formality": [
+          "CGA/D"
+        ],
+        "source": "National"
       }
     ],
     "AL": [
@@ -112804,6 +112845,16 @@
           "en": "Ball",
           "fi": "Ball",
           "sv": "Ball"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Medical device",
+          "fi": "Lääkinnällinen laite",
+          "sv": "Medicinteknisk produkt"
         },
         "formality": [],
         "source": "EMSA"
@@ -112841,6 +112892,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Refrigerated container",
+          "fi": "Jäähdytetty kontti",
+          "sv": "Kylcontainer"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AN": [
@@ -112850,6 +112911,16 @@
           "en": "Netherlands Antilles",
           "fi": "Alankomaiden Antillit",
           "sv": "Nederländska Antillerna"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Synthetic pallet 80*120cm",
+          "fi": "Synteettinen lava 80*120 cm",
+          "sv": "Syntetisk lastpall 80 × 120 cm"
         },
         "formality": [],
         "source": "EMSA"
@@ -112878,6 +112949,16 @@
           "CWA/D"
         ],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Synthetic pallet 100*120cm",
+          "fi": "Synteettinen lava 100*120 cm",
+          "sv": "Syntetisk lastpall 100 × 120 cm"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AQ": [
@@ -112902,6 +112983,16 @@
           "PXA/D",
           "CWA/D"
         ],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Road/rail trailer",
+          "fi": "Maantie-/rautatievaunu",
+          "sv": "Väg-/järnvägssläpvagn"
+        },
+        "formality": [],
         "source": "EMSA"
       }
     ],
@@ -112983,6 +113074,16 @@
           "en": "Atomizer",
           "fi": "Atomizer",
           "sv": "Atomizer"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Overhang wagon",
+          "fi": "Vaunu, jonka lasti tulee reunan yli",
+          "sv": "Vagn med utskjutande last"
         },
         "formality": [],
         "source": "EMSA"
@@ -113123,6 +113224,16 @@
           "en": "Bobbin",
           "fi": "Bobbin",
           "sv": "Bobbin"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Un-containerized cargo (breakbulk)",
+          "fi": "Ei-konttitavara (kappaletavara)",
+          "sv": "Okontaineriserat gods (styckegods)"
         },
         "formality": [],
         "source": "EMSA"
@@ -113890,6 +114001,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Chassis",
+          "fi": "Runko",
+          "sv": "Chassi"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "CI": [
@@ -114022,12 +114143,14 @@
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Other container",
-          "fi": "Muu kontti",
-          "sv": "Övrig container"
+          "en": "Container",
+          "fi": "Kontti",
+          "sv": "Container"
         },
-        "formality": [],
-        "source": "EMSA"
+        "formality": [
+          "HZA/D"
+        ],
+        "source": "National"
       }
     ],
     "CO": [
@@ -115354,6 +115477,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Lidded stackable rigid tray (CEN TS 14482:2002)",
+          "fi": "Kannellinen pinottava jäykkä alusta (CEN TS 14482:2002)",
+          "sv": "Bricka, styv, med lock, stapelbar (CEN TS 14482:2002)"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "IN": [
@@ -115983,6 +116116,16 @@
           "en": "Lug",
           "fi": "Lug",
           "sv": "Lug"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Load/unload device on equipment",
+          "fi": "Lastaus-/purkulaite laitteessa",
+          "sv": "Lastnings-/lossningsanordning på utrustning"
         },
         "formality": [],
         "source": "EMSA"
@@ -116884,6 +117027,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet",
+          "fi": "Lava",
+          "sv": "Lastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "PE": [
@@ -117080,9 +117233,9 @@
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Ferry wagon",
-          "fi": "Lauttavaunu",
-          "sv": "Färjevagn"
+          "en": "Platform",
+          "fi": "Alusta",
+          "sv": "Plattform"
         },
         "formality": [],
         "source": "EMSA"
@@ -117309,6 +117462,16 @@
           "en": "Roll",
           "fi": "Roll",
           "sv": "Roll"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Rope",
+          "fi": "Köysi",
+          "sv": "Rep"
         },
         "formality": [],
         "source": "EMSA"
@@ -118091,6 +118254,16 @@
           "en": "Tin",
           "fi": "Tin",
           "sv": "Tin"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Tank container",
+          "fi": "Säiliökontti",
+          "sv": "Tankcontainer"
         },
         "formality": [],
         "source": "EMSA"
@@ -127501,13 +127674,13 @@
         "listName": "imo_compendium_IMO0137",
         "labels": {
           "en": "Security level 1",
-          "fi": "Turvallisuustaso 1",
+          "fi": "Turvataso 1",
           "sv": "Säkerhetsnivå 1"
         },
         "formality": [
           "SEC"
         ],
-        "source": "EMSA"
+        "source": "National"
       },
       {
         "listName": "imo_compendium_IMO0149",
@@ -127527,7 +127700,7 @@
         "listName": "imo_compendium_IMO0137",
         "labels": {
           "en": "Security level 2",
-          "fi": "Turvallisuustaso 2",
+          "fi": "Turvataso 2",
           "sv": "Säkerhetsnivå 2"
         },
         "formality": [],
@@ -127549,7 +127722,7 @@
         "listName": "imo_compendium_IMO0137",
         "labels": {
           "en": "Security level 3",
-          "fi": "Turvallisuustaso 3",
+          "fi": "Turvataso 3",
           "sv": "Säkerhetsnivå 3"
         },
         "formality": [],
@@ -127990,6 +128163,16 @@
           "en": "Bale, compressed",
           "fi": "Bale, compressed",
           "sv": "Bale, compressed"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Blocks",
+          "fi": "Lohkot",
+          "sv": "Blocks"
         },
         "formality": [],
         "source": "EMSA"
@@ -135523,14 +135706,14 @@
         "listName": "mooring_type",
         "labels": {
           "en": "Anchorage",
-          "fi": "Kiinnitys",
+          "fi": "Ankkurissa",
           "sv": "Ankring"
         },
         "formality": [
           "NOA",
           "NOS"
         ],
-        "source": "EMSA"
+        "source": "National"
       }
     ],
     "BERTH": [
@@ -135538,7 +135721,7 @@
         "listName": "mooring_type",
         "labels": {
           "en": "Berth",
-          "fi": "Kiinnityspaikka",
+          "fi": "Laituri",
           "sv": "Kajplats"
         },
         "formality": [],
@@ -135562,7 +135745,7 @@
         "listName": "mooring_type",
         "labels": {
           "en": "Coupled",
-          "fi": "Kytketty",
+          "fi": "Rinnakkaiskiinnitys",
           "sv": "Kopplad"
         },
         "formality": [],
@@ -136873,6 +137056,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Tarpaulin",
+          "fi": "Tavarapeite",
+          "sv": "Presenning"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "TS": [
@@ -136892,6 +137085,16 @@
           "en": "Truss",
           "fi": "Truss",
           "sv": "Truss"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Tackles",
+          "fi": "Taljat",
+          "sv": "Taljor"
         },
         "formality": [],
         "source": "EMSA"
@@ -139020,6 +139223,16 @@
           "en": "Evergreen Marine Hong Kong",
           "fi": "Evergreen Marine Hong Kong",
           "sv": "Evergreen Marine Hong Kong"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Trolley",
+          "fi": "Vaunu",
+          "sv": "Kärra"
         },
         "formality": [],
         "source": "EMSA"
@@ -146445,6 +146658,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Boxcar",
+          "fi": "Rautatievaunu",
+          "sv": "Sluten vagn"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "CQ": [
@@ -146793,6 +147016,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Ground equipment",
+          "fi": "Maalaitteisto",
+          "sv": "Markutrustning"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AB": [
@@ -146802,6 +147035,16 @@
           "en": "Receptacle, fibre",
           "fi": "Receptacle, fibre",
           "sv": "Receptacle, fibre"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Chain",
+          "fi": "Ketju",
+          "sv": "Kedja"
         },
         "formality": [],
         "source": "EMSA"
@@ -146829,6 +147072,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "No special equipment needed",
+          "fi": "Erikoisvälineitä ei tarvita",
+          "sv": "Ingen särskild utrustning behövs"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AJ": [
@@ -146841,6 +147094,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Flat rack",
+          "fi": "Lava-alustainen kontti",
+          "sv": "Flakcontainer"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "AP": [
@@ -146850,6 +147113,16 @@
           "en": "Ampoule, protected",
           "fi": "Ampoule, protected",
           "sv": "Ampoule, protected"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Clothing hanger rack",
+          "fi": "Vaateteline",
+          "sv": "Klädställning"
         },
         "formality": [],
         "source": "EMSA"
@@ -148399,6 +148672,16 @@
         },
         "formality": [],
         "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Reefer generator",
+          "fi": "Kylmäkontin generaattori",
+          "sv": "Kylcontainergenerator"
+        },
+        "formality": [],
+        "source": "EMSA"
       }
     ],
     "RJ": [
@@ -148502,6 +148785,16 @@
           "en": "Shrinkwrapped",
           "fi": "Shrinkwrapped",
           "sv": "Shrinkwrapped"
+        },
+        "formality": [],
+        "source": "EMSA"
+      },
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Swap body",
+          "fi": "Vaihtokori",
+          "sv": "Växelflak"
         },
         "formality": [],
         "source": "EMSA"
@@ -149477,149 +149770,25 @@
         "source": "EMSA"
       }
     ],
-    "CN 22P1": [
+    "VD": [
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "20' flat rack container",
-          "fi": "20' Flat Rack -kontti",
-          "sv": "20' flatrackcontainer"
-        },
-        "formality": [
-          "HZA/D"
-        ],
-        "source": "National"
-      }
-    ],
-    "CN 22R1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "20' reefer container",
-          "fi": "20' Reefer-kontti",
-          "sv": "20' kylcontainer"
-        },
-        "formality": [
-          "CGA/D"
-        ],
-        "source": "National"
-      }
-    ],
-    "CN 22G1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "20' general-purpose container",
-          "fi": "20' Yleiskontti",
-          "sv": "20' standardcontainer"
+          "en": "Vessel deck",
+          "fi": "Aluskansi",
+          "sv": "Fartygsdäck"
         },
         "formality": [],
         "source": "EMSA"
       }
     ],
-    "CN 22T1": [
+    "VT": [
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "20' tank container",
-          "fi": "20' Säiliökontti",
-          "sv": "20' tankcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN 42U1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "40' open-top container",
-          "fi": "40' Avokontti",
-          "sv": "40' open-top-container"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN 42P1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "40' flat rack container",
-          "fi": "40' Flat Rack -kontti",
-          "sv": "40' flatrackcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN 45G1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "40' High Cube general-purpose container",
-          "fi": "40' High Cube -yleiskontti",
-          "sv": "40' High Cube-standardcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN 45R1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "40' reefer container",
-          "fi": "40' Reefer-kontti",
-          "sv": "40' kylcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN 4EG1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "40' general-purpose container",
-          "fi": "40' Yleiskontti",
-          "sv": "40' standardcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN LEG1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "45' High Cube general-purpose container",
-          "fi": "45' High Cube -yleiskontti",
-          "sv": "45' High Cube-standardcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "CN 52G1": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "45' general-purpose container",
-          "fi": "45' Yleiskontti",
-          "sv": "45' standardcontainer"
-        },
-        "formality": [],
-        "source": "EMSA"
-      }
-    ],
-    "BPX": [
-      {
-        "listName": "un_edifact_8053",
-        "labels": {
-          "en": "Swap body",
-          "fi": "Vaihtokori",
-          "sv": "Växelflak"
+          "en": "Vessel tank",
+          "fi": "Alussäiliö",
+          "sv": "Fartygstank"
         },
         "formality": [],
         "source": "EMSA"
@@ -149629,9 +149798,9 @@
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Truck",
-          "fi": "Kuorma-auto",
-          "sv": "Lastbil"
+          "en": "Truck being transported",
+          "fi": "Kuljetettava kuorma-auto",
+          "sv": "Lastbil som transporteras"
         },
         "formality": [],
         "source": "EMSA"
@@ -149641,9 +149810,9 @@
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Vehicle combination",
-          "fi": "Ajoneuvoyhdistelmä",
-          "sv": "Fordonskombination"
+          "en": "Truck and trailer combination being transported",
+          "fi": "Kuljetettava kuorma-auto- ja perävaunuyhdistelmä",
+          "sv": "Lastbils- och släpvagnskombination som transporteras"
         },
         "formality": [],
         "source": "EMSA"
@@ -149653,21 +149822,729 @@
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Railway wagon",
-          "fi": "Junanvaunu",
+          "en": "Rail car",
+          "fi": "Rautatievaunu",
           "sv": "Järnvägsvagn"
         },
         "formality": [],
         "source": "EMSA"
       }
     ],
-    "VD": [
+    "BPX": [
       {
         "listName": "un_edifact_8053",
         "labels": {
-          "en": "Vessel deck",
-          "fi": "Aluksen kansi",
-          "sv": "Fartygsdäck"
+          "en": "Container non-compliant with the Customs Convention on Containers",
+          "fi": "Kontti, joka ei ole tulliyleissopimuksen mukainen",
+          "sv": "Container som inte överensstämmer med tullkonventionen rörande containrar"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "AK": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Aircraft",
+          "fi": "Ilma-alus",
+          "sv": "Luftfartyg"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPN": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Box pallet non-exchangeable",
+          "fi": "Laatikkolavaa, ei-vaihdettava",
+          "sv": "Icke-utbytbar pallbox"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPQ": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Tractor and trailer being transported",
+          "fi": "Kuljetettava vetoauto ja perävaunu",
+          "sv": "Dragbil och släpvagn som transporteras"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPR": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Postal bag",
+          "fi": "Postipussi",
+          "sv": "Postväska"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPS": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Letter Tray",
+          "fi": "Kirjelokero",
+          "sv": "Brevfack"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPT": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Roller Cage",
+          "fi": "Rullakehikko",
+          "sv": "Rullbur"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPU": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Flats Tray",
+          "fi": "Litteän ei-kirjepostin lokero",
+          "sv": "Bricka för oadresserad post"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPV": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Out of bag parcel",
+          "fi": "Pussin ulkopuolinen paketti",
+          "sv": "Löst paket"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPW": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Wheeled Platform",
+          "fi": "Pyörälava",
+          "sv": "Hjulplattform"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPY": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Box pallet EUR Y non exchangeable",
+          "fi": "Laatikkolava EUR Y, ei-vaihdettava",
+          "sv": "Pallbox EUR Y icke-utbytbar"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "BPZ": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Roll Pallet 1",
+          "fi": "Rullalava 1",
+          "sv": "Rullpall 1"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPA": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Deadlight (panel)",
+          "fi": "Ikkuna (paneeli)",
+          "sv": "Fönsterlucka (panel)"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPB": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Roll Pallet 2",
+          "fi": "Rullalava 2",
+          "sv": "Rullpall 2"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPC": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Container gantry crane",
+          "fi": "Kontin pukkinosturi",
+          "sv": "Portalkran"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPD": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Mobile crane",
+          "fi": "Liikkuva nosturi",
+          "sv": "Mobilkran"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPE": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Floating crane",
+          "fi": "Uiva nosturi",
+          "sv": "Flytande kran"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPF": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Ship's equipment crane",
+          "fi": "Laivan laitenosturi",
+          "sv": "Fartygskran"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPG": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Conveyor belt",
+          "fi": "Kuljetinhihna",
+          "sv": "Transportband"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPH": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Forklift",
+          "fi": "Haarukkatrukki",
+          "sv": "Gaffeltruck"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPI": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Stacking equipment",
+          "fi": "Pinoamislaitteet",
+          "sv": "Staplingsutrustning"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPJ": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Taillift",
+          "fi": "Takalautanostin",
+          "sv": "Bakgavellyft"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPK": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet ISO 0 - 1/2 EURO Pallet",
+          "fi": "Lava ISO 0 - 1/2 EURO-lava",
+          "sv": "Lastpall ISO 0–1/2 EUR-lastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPL": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "On-board equipment",
+          "fi": "Aluksella olevat laitteet",
+          "sv": "Utrustning ombord"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPM": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet ISO 1 - 1/1 EURO Pallet (GS1 Temporary Code)",
+          "fi": "Lava ISO 1 - 1/1 EURO-lava (tilapäinen GS1-koodi)",
+          "sv": "Lastpall ISO 1 – 1/1 EUR-lastpall (tillfällig GS1-kod)"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPN": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet ISO 2",
+          "fi": "Lava ISO 2",
+          "sv": "Lastpall ISO 2"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "DPO": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "1/4 EURO Pallet",
+          "fi": "1/4 EURO-lava",
+          "sv": "1/4 EUR-pall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFP": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Exchangeable EUR flat pallet",
+          "fi": "Vaihdettava EUR-lava",
+          "sv": "Utbytbar EUR-lastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFQ": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "1/8 EURO Pallet",
+          "fi": "1/8 EURO-lava",
+          "sv": "1/8 EUR-lastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFR": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Wholesaler pallet",
+          "fi": "Myymälälava",
+          "sv": "Partihandelslastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFS": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet 80 X 100 cm",
+          "fi": "Lava 80 x 100 cm",
+          "sv": "Lastpall 80 × 100 cm"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFT": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet 60 X 100 cm",
+          "fi": "Lava 60 x 100 cm",
+          "sv": "Lastpall 60 × 100 cm"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFU": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Oneway pallet",
+          "fi": "Yksisuuntainen lava",
+          "sv": "Envägspall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFV": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Returnable pallet",
+          "fi": "Palautettava lava",
+          "sv": "Returpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFW": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Bottlecrate",
+          "fi": "Pullolaatikko",
+          "sv": "Flaskback"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFX": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Bottle, non-protected, cylindrical",
+          "fi": "Pullo, suojaamaton, lieriömäinen",
+          "sv": "Flaska, oskyddad, cylindrisk"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFY": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Box",
+          "fi": "Laatikko",
+          "sv": "Box"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EFZ": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "CHEP Eurobox",
+          "fi": "CHEP Eurobox",
+          "sv": "CHEP Eurobox"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGA": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Case",
+          "fi": "Kotelo",
+          "sv": "Låda"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGB": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Display package",
+          "fi": "Esittelypaketti",
+          "sv": "Displayförpackning"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGC": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Isothermic case",
+          "fi": "Isoterminen kotelo",
+          "sv": "Isotermisk låda"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGD": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet modular collars 80*100",
+          "fi": "Lava, moduulikaulukset 80*100",
+          "sv": "Pallmodulens krage 80*100"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGE": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Pallet modular collars 80*120",
+          "fi": "Lava, moduulikaulukset 80*120",
+          "sv": "Pallmodulens krage 80*120"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGF": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Tray",
+          "fi": "Kaukalo",
+          "sv": "Bricka"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGG": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Roll cage",
+          "fi": "Rullahäkki",
+          "sv": "Rullbur"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EGI": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Landside power generator",
+          "fi": "Maasähkögeneraattori",
+          "sv": "Elgenerator landsida"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "EYP": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Exchangeable EUR Y box pallet",
+          "fi": "Vaihdettava EUR Y -laatikkolava",
+          "sv": "Utbytbar EUR Y-boxpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "FPN": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Flat pallet EUR non exchangeable",
+          "fi": "Tasolava EUR, ei-vaihdettava",
+          "sv": "Icke-utbytbar EUR-lastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "FPR": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Flat pallet (railway property) non-exchangeable",
+          "fi": "Tasolava (rautatieyhtiön ominaisuutta), ei-vaihdettava",
+          "sv": "Lastpall (järnvägens egendom) icke-utbytbar"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "LAR": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Lashing rope",
+          "fi": "Kiinnitysköysi",
+          "sv": "Surrningslina"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "MPA": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Movable panel",
+          "fi": "Liikutettava paneeli",
+          "sv": "Flyttbar skiljevägg"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "PBP": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Identified private box pallet",
+          "fi": "Yksilöity yksityinen laatikkolava",
+          "sv": "Identifierad privat pallbox"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "PFP": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Identified private flat pallet",
+          "fi": "Yksilöity yksityinen tasolava",
+          "sv": "Identifierad privat lastpall"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "PPA": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Protecting panel",
+          "fi": "Suojapaneeli",
+          "sv": "Skyddspanel"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "PST": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Portable stove",
+          "fi": "Kannettava liesi",
+          "sv": "Campingkök"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "RF": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Flat car",
+          "fi": "Tasovaunu",
+          "sv": "Plattformsvagn / flatvagn"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "RGF": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Ground facility",
+          "fi": "Maalaite",
+          "sv": "Markanläggning"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "STR": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Strap",
+          "fi": "Hihna",
+          "sv": "Rem"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "TSU": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "Tarpaulin support",
+          "fi": "Tavarapeitteen tuki",
+          "sv": "Presenningsstöd"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "UL": [
+      {
+        "listName": "un_edifact_8053",
+        "labels": {
+          "en": "ULD (Unit load device)",
+          "fi": "Yksikkökuormalaitteisto / yksikkökuormalava (ULD)",
+          "sv": "Enhetslastanordning / enhetslastenhet (ULD)"
         },
         "formality": [],
         "source": "EMSA"

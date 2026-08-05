@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T11:08:11.302775+00:00",
+  "generatedAt": "2026-07-01T10:50:01.537465+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -19431,15 +19431,15 @@
           "nationalBusinessRuleRefs": [],
           "finlandWanted": false,
           "flags": {
-            "partAB": true,
+            "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
-            "hiddenData": true,
+            "narrowInfoFilter": false,
+            "hiddenData": false,
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "Traficom 17.06.2026 told that Specified Cargo section should be removed from CGD. It is only needed in CGA and related to arrival.\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9675\n\nOriginal message:\nFrom: Lahtinen Netta <Netta.Lahtinen@traficom.fi>\u00a0\nDate: Wednesday, 17. June 2026 at 16.54\u00a0\nTo: Sonia Juutilainen <sonia.juutilainen@siili.com>\u00a0\nCc: Emma Halmekoski <emma.halmekoski@siili.com>; Vuorenmaa-Lindholm Niina <Niina.Vuorenmaa-Lindholm@fintraffic.fi>; Skog Sami <Sami.Skog@traficom.fi>; Paimander Aleksi <Aleksi.Paimander@traficom.fi>\u00a0\nSubject: CGD ohjeeseen p\u00e4ivitys",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -19456,9 +19456,7 @@
             "sv": "Last",
             "Status": "O",
             "Occurrence": "0..1",
-            "Part A/B": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Tiedon piilotus": "x",
+            "Kommentit": "Traficom 17.06.2026 told that Specified Cargo section should be removed from CGD. It is only needed in CGA and related to arrival.\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9675\n\nOriginal message:\nFrom: Lahtinen Netta <Netta.Lahtinen@traficom.fi>\u00a0\nDate: Wednesday, 17. June 2026 at 16.54\u00a0\nTo: Sonia Juutilainen <sonia.juutilainen@siili.com>\u00a0\nCc: Emma Halmekoski <emma.halmekoski@siili.com>; Vuorenmaa-Lindholm Niina <Niina.Vuorenmaa-Lindholm@fintraffic.fi>; Skog Sami <Sami.Skog@traficom.fi>; Paimander Aleksi <Aleksi.Paimander@traficom.fi>\u00a0\nSubject: CGD ohjeeseen p\u00e4ivitys",
             "XSD path": "/env:Envelope/cgd:CGD/cgd:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:OnboardPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo"
           }
         },
@@ -19493,11 +19491,11 @@
           "nationalBusinessRuleRefs": [],
           "finlandWanted": false,
           "flags": {
-            "partAB": true,
+            "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
-            "hiddenData": true,
+            "narrowInfoFilter": false,
+            "hiddenData": false,
             "msSpecificReq": false
           },
           "comments": {
@@ -19517,10 +19515,6 @@
             "sv": "Last som stannar ombord",
             "Status": "M",
             "Occurrence": "1..n",
-            "Part A/B": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Tiedon piilotus": "x",
-            "Taulukko": "x",
             "XSD path": "/env:Envelope/cgd:CGD/cgd:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:OnboardPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo"
           }
         },
@@ -19553,12 +19547,12 @@
           "rulesConditionsGuidelinesRaw": "",
           "ruleRefs": [],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": true,
+          "finlandWanted": false,
           "flags": {
-            "partAB": true,
+            "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
+            "narrowInfoFilter": false,
             "hiddenData": false,
             "msSpecificReq": true
           },
@@ -19588,9 +19582,6 @@
             "Code list": "Refer to Directive 2009/42/EC, Annex II",
             "Status": "M",
             "Occurrence": "1..1",
-            "Part A/B": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Taulukon sarake": "x",
             "Record of changes in MIG v2.0.0 compared with MIG v1.0.0": "Yhdistys Bulgariaan (BG), Ranskaan (FR) ja Italiaan (IT) on lis\u00e4tty tietoelementtiin DE-045-17 (Lastin tyyppi).",
             "MS specific req": "BG, FR, IT",
             "XSD path": "/env:Envelope/cgd:CGD/cgd:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:OnboardPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo/ram:TypeCode"
@@ -19765,12 +19756,12 @@
           "rulesConditionsGuidelinesRaw": "",
           "ruleRefs": [],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": true,
+          "finlandWanted": false,
           "flags": {
             "partAB": false,
-            "fiPartC": true,
+            "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
+            "narrowInfoFilter": false,
             "hiddenData": false,
             "msSpecificReq": true
           },
@@ -19800,9 +19791,6 @@
             "Format": "n..8",
             "Status": "O",
             "Occurrence": "0..1",
-            "FI part-C": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Taulukon sarake": "x",
             "MS specific req": "FR, IT",
             "XSD path": "/env:Envelope/cgd:CGD/cgd:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:OnboardPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo/ram:InTransitUnitQuantity"
           }
@@ -19839,12 +19827,12 @@
             "R-GENERAL-008"
           ],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": true,
+          "finlandWanted": false,
           "flags": {
             "partAB": false,
-            "fiPartC": true,
+            "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
+            "narrowInfoFilter": false,
             "hiddenData": false,
             "msSpecificReq": true
           },
@@ -19875,9 +19863,6 @@
             "Status": "O",
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-008",
-            "FI part-C": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Taulukon sarake": "x",
             "MS specific req": "FR, IT",
             "XSD path": "/env:Envelope/cgd:CGD/cgd:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:OnboardPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo/ram:InTransitWeightMeasure"
           }
@@ -35516,7 +35501,7 @@
           },
           "descriptions": {
             "en": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun Miehist\u00f6n j\u00e4senen etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Miehist\u00f6n j\u00e4senen etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "base": "Given name or first name of the referenced person as in the passport or valid identification document."
           },
@@ -35557,7 +35542,7 @@
             "sv": "Personens f\u00f6rnamn",
             "Description": "Given name or first name of the referenced person as in the passport or valid identification document.",
             "en description": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun Miehist\u00f6n j\u00e4senen etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Miehist\u00f6n j\u00e4senen etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -35586,7 +35571,7 @@
           },
           "descriptions": {
             "en": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun Miehist\u00f6n j\u00e4senen sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Miehist\u00f6n j\u00e4senen sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "base": "Family name or surname of the referenced person as in the passport or valid identification document."
           },
@@ -35627,7 +35612,7 @@
             "sv": "Personens efternamn",
             "Description": "Family name or surname of the referenced person as in the passport or valid identification document.",
             "en description": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun Miehist\u00f6n j\u00e4senen sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Miehist\u00f6n j\u00e4senen sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -35943,7 +35928,7 @@
           },
           "descriptions": {
             "en": "A description of the type of the referenced crew's effects.",
-            "fi": "Kuvaus viitatun miehist\u00f6n j\u00e4senen omaisuuden tyypist\u00e4.",
+            "fi": "Kuvaus miehist\u00f6n j\u00e4senen omaisuuden tyypist\u00e4.",
             "sv": "En beskrivning av den ber\u00f6rda bes\u00e4ttningsmedlemmens typ av tillh\u00f6righeter.",
             "base": "A description of the type of the referenced crew's effects."
           },
@@ -35986,7 +35971,7 @@
             "sv": "Beskrivning av bes\u00e4ttningens tillh\u00f6righeter",
             "Description": "A description of the type of the referenced crew's effects.",
             "en description": "A description of the type of the referenced crew's effects.",
-            "fi description": "Kuvaus viitatun miehist\u00f6n j\u00e4senen omaisuuden tyypist\u00e4.",
+            "fi description": "Kuvaus miehist\u00f6n j\u00e4senen omaisuuden tyypist\u00e4.",
             "sv description": "En beskrivning av den ber\u00f6rda bes\u00e4ttningsmedlemmens typ av tillh\u00f6righeter.",
             "Type": "Text",
             "Format": "an..256",
@@ -36019,7 +36004,7 @@
           },
           "descriptions": {
             "en": "The quantity or count of the type of the referenced crew's effects.",
-            "fi": "Viitatun miehist\u00f6n omaisuuden m\u00e4\u00e4r\u00e4 tai lukum\u00e4\u00e4r\u00e4.",
+            "fi": "Miehist\u00f6n j\u00e4senen omaisuuden m\u00e4\u00e4r\u00e4 tai lukum\u00e4\u00e4r\u00e4.",
             "sv": "Den m\u00e4ngd tillh\u00f6righeter som den ber\u00f6rda bes\u00e4ttningsmedlemmen har ombord.",
             "base": "The quantity or count of the type of the referenced crew's effects."
           },
@@ -36064,7 +36049,7 @@
             "sv": "M\u00e4ngd tillh\u00f6righeter ombord",
             "Description": "The quantity or count of the type of the referenced crew's effects.",
             "en description": "The quantity or count of the type of the referenced crew's effects.",
-            "fi description": "Viitatun miehist\u00f6n omaisuuden m\u00e4\u00e4r\u00e4 tai lukum\u00e4\u00e4r\u00e4.",
+            "fi description": "Miehist\u00f6n j\u00e4senen omaisuuden m\u00e4\u00e4r\u00e4 tai lukum\u00e4\u00e4r\u00e4.",
             "sv description": "Den m\u00e4ngd tillh\u00f6righeter som den ber\u00f6rda bes\u00e4ttningsmedlemmen har ombord.",
             "Type": "Measure",
             "Format": "n..16,6",
@@ -46691,7 +46676,6 @@
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "G-HZA-003",
             "L\u00f6ytyy k\u00e4ytt\u00f6tapaus, ei s\u00e4\u00e4d\u00f6sperustaa": "x",
-            "Kommentit k\u00e4ytt\u00f6ohjeeseen": "24.6. Sonia / Lis\u00e4tt\u00e4v\u00e4 ohjeeseen.",
             "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedLogisticsTransportEquipment/ram:EmptyTankResidueDangerousGoods"
           }
         },
@@ -46762,7 +46746,7 @@
             "Occurrence": "0..1",
             "L\u00f6ytyy k\u00e4ytt\u00f6tapaus, ei s\u00e4\u00e4d\u00f6sperustaa": "x",
             "Kommentit": "Korostetaan ohjeessa ett\u00e4 tyhj\u00e4 puhdistettu s\u00e4ili\u00f6 ei ole VAK lastia (ei ilmoiteta) MUTTA tyhj\u00e4 puhdistamaton s\u00e4ili\u00f6 on VAK lastia (vaaratekij\u00f6it\u00e4 ei ole poistettu kun on viel\u00e4 j\u00e4\u00e4mi\u00e4) ja ilmoitetaan t\u00e4ss\u00e4 normaalit VAK tiedot\n\nJonna // Tyhj\u00e4 puhdistettu s\u00e4ili\u00f6 ei ole VAK lastia. Tyhj\u00e4 puhdistamaton s\u00e4ili\u00f6 on VAK lastia (vaaratekij\u00f6it\u00e4 ei ole poistettu kun on viel\u00e4 j\u00e4\u00e4mi) ja t\u00e4st\u00e4 tulee antaa normaalit VAK tiedot. Eli suomessa ei tarvetta t\u00e4ytt\u00e4\u00e4 EMPTY TANK Residue tietoja. Ohjeessa voidaan korostaa t\u00e4t\u00e4 toimintamallia",
-            "Kommentit k\u00e4ytt\u00f6ohjeeseen": "24.6. Sonia / Lis\u00e4tt\u00e4v\u00e4 ohjeeseen.",
+            "Kommentit k\u00e4ytt\u00f6ohjeeseen": "26.6.2026 Sonia / Poistettu ohjeesta osio: \nTyhj\u00e4t puhdistamattomat kuljetusv\u00e4lineet \n\nT\u00e4yt\u00e4 tiedot tyhjist\u00e4, puhdistamattomista kuljetusv\u00e4lineist\u00e4. Jokainen kuljetusv\u00e4line ilmoitetaan omana taulukkorivin\u00e4\u00e4n. \n\n \n\nKuljetusv\u00e4line katsotaan puhdistamattomaksi, vaikka se on tyhj\u00e4, jos siin\u00e4 on edelleen vaarallisen tai ymp\u00e4rist\u00f6\u00e4 pilaavan aineen j\u00e4\u00e4mi\u00e4 tai h\u00f6yryj\u00e4. \n\nJos kyseess\u00e4 on tyhj\u00e4 puhdistamaton kuljetusv\u00e4line, ilmoita aineen bruttomassa tai tilavuus mahdollisimman l\u00e4hell\u00e4 nollaa olevalla arvolla, esimerkiksi 0.001 kg tai 0.001 l.",
             "MS specific req": "FR, NL",
             "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedLogisticsTransportEquipment/ram:EmptyTankResidueDangerousGoods/ram:UNDGIdentificationCode"
           }
@@ -56194,8 +56178,8 @@
             "sv": "T\u00f6mma ej rengjorda transportutrustning",
             "Status": "O",
             "Occurrence": "0..n",
-            "Taulukko": "x",
             "Kommentit": "Vesa 15.05.2026 Koko kuljetusv\u00e4line lohko pois suppeista tiedoista",
+            "Kommentit k\u00e4ytt\u00f6ohjeeseen": "26.6.2026 Sonia / Poistettu ohjeesta osio: \nTyhj\u00e4t puhdistamattomat kuljetusv\u00e4lineet \n\nT\u00e4yt\u00e4 tiedot tyhjist\u00e4, puhdistamattomista kuljetusv\u00e4lineist\u00e4. Jokainen kuljetusv\u00e4line ilmoitetaan omana taulukkorivin\u00e4\u00e4n. \n\n \n\nKuljetusv\u00e4line katsotaan puhdistamattomaksi, vaikka se on tyhj\u00e4, jos siin\u00e4 on edelleen vaarallisen tai ymp\u00e4rist\u00f6\u00e4 pilaavan aineen j\u00e4\u00e4mi\u00e4 tai h\u00f6yryj\u00e4. \n\nJos kyseess\u00e4 on tyhj\u00e4 puhdistamaton kuljetusv\u00e4line, ilmoita aineen bruttomassa tai tilavuus mahdollisimman l\u00e4hell\u00e4 nollaa olevalla arvolla, esimerkiksi 0.001 kg tai 0.001 l.",
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedLogisticsTransportEquipment"
           }
         },
@@ -56266,7 +56250,6 @@
             "Status": "M",
             "Occurrence": "1..1",
             "Rules, Conditions, Guidelines": "R-HZA-007",
-            "Taulukon sarake": "x",
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedLogisticsTransportEquipment/ram:CategoryCode"
           }
         },
@@ -56338,7 +56321,6 @@
             "Status": "O",
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "C-HZA-009",
-            "Taulukon sarake": "x",
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedLogisticsTransportEquipment/ram:ID"
           }
         },
@@ -56625,7 +56607,6 @@
             "Status": "M",
             "Occurrence": "1..1",
             "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-021\nG-GENERAL-002",
-            "Taulukon sarake": "x",
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedLogisticsTransportEquipment/ram:SequenceNumeric"
           }
         },
@@ -61338,7 +61319,7 @@
           },
           "descriptions": {
             "en": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "base": "Given name or first name of the referenced person as in the passport or valid identification document."
           },
@@ -61379,7 +61360,7 @@
             "sv": "Personens f\u00f6rnamn",
             "Description": "Given name or first name of the referenced person as in the passport or valid identification document.",
             "en description": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -61407,7 +61388,7 @@
           },
           "descriptions": {
             "en": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "base": "Family name or surname of the referenced person as in the passport or valid identification document."
           },
@@ -61448,7 +61429,7 @@
             "sv": "Personens efternamn",
             "Description": "Family name or surname of the referenced person as in the passport or valid identification document.",
             "en description": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -61626,7 +61607,7 @@
           },
           "descriptions": {
             "en": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "base": "The referenced person's date of birth as shown on the person's identity document."
           },
@@ -61670,7 +61651,7 @@
             "sv": "Personens f\u00f6delsedatum",
             "Description": "The referenced person's date of birth as shown on the person's identity document.",
             "en description": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "Type": "Date",
             "Format": "an..35",
@@ -61761,7 +61742,7 @@
           },
           "descriptions": {
             "en": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusvaltio.",
+            "fi": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusvaltio.",
             "sv": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "base": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document."
           },
@@ -61803,7 +61784,7 @@
             "sv": "Personens nationalitet",
             "Description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
             "en description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusvaltio.",
+            "fi description": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusvaltio.",
             "sv description": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "Type": "Code",
             "Format": "a3",
@@ -61894,7 +61875,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person embarked the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "base": "A code representing the port from which the referenced person embarked the ship."
           },
@@ -61935,7 +61916,7 @@
             "sv": "Hamn d\u00e4r personen steg ombord p\u00e5 fartyget.",
             "Description": "A code representing the port from which the referenced person embarked the ship.",
             "en description": "The port from which the referenced person embarked the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi description": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -64216,7 +64197,7 @@
           },
           "descriptions": {
             "en": "The port at which the referenced stowaway boarded the ship.",
-            "fi": "Satama, jossa viitattu salamatkustaja nousi alukseen.",
+            "fi": "Satama, jossa salamatkustaja nousi alukseen.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda fripassageraren steg ombord p\u00e5 fartyget.",
             "base": "A code identifying the port at which the referenced stowaway boarded the ship."
           },
@@ -64259,7 +64240,7 @@
             "sv": "Hamn d\u00e4r fripassageraren steg ombord",
             "Description": "A code identifying the port at which the referenced stowaway boarded the ship.",
             "en description": "The port at which the referenced stowaway boarded the ship.",
-            "fi description": "Satama, jossa viitattu salamatkustaja nousi alukseen.",
+            "fi description": "Satama, jossa salamatkustaja nousi alukseen.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda fripassageraren steg ombord p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -93264,7 +93245,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"Passenger type can be removed from list summary view. There is no need for it for Border control (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -93294,6 +93275,7 @@
             "Rules, Conditions, Guidelines": "R-PXA-002",
             "Part A/B": "x",
             "Suppeat tiedot -suodatus": "x",
+            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"Passenger type can be removed from list summary view. There is no need for it for Border control (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "XSD path": "/env:Envelope/pxa:PXA/pxa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:CategoryCode"
           }
         },
@@ -93551,7 +93533,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -93580,7 +93562,7 @@
             "Rules, Conditions, Guidelines": "G-PXA-001\nG-PXA-004",
             "Part A/B": "?",
             "Suppeat tiedot -suodatus": "x",
-            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "Muutokset v2.0 draft:sta 2.0. final draft:iin": "Ohje G-PXA-001 on muotoiltu uudelleen selkeyden parantamiseksi:\n\nOhje G-PXA-001 (\u201cTulisi ilmoittaa, jos [Vaihdetut asiakirjat].[Alatyyppikoodi] = 'SUB-01' (Rajatarkastukset henkil\u00f6ille)\u201d) on poistettu luokasta [Matkustusviisumitiedot], koska viisumitiedot tulee ilmoittaa vain silloin, kun se on sovellettavaa Schengenin rajas\u00e4\u00e4nn\u00f6st\u00f6n mukaan.",
             "XSD path": "/env:Envelope/pxa:PXA/pxa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthCountryID"
           }
@@ -93627,7 +93609,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -93655,7 +93637,7 @@
             "Rules, Conditions, Guidelines": "G-PXA-001\nG-PXA-004",
             "Part A/B": "?",
             "Suppeat tiedot -suodatus": "x",
-            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "Muutokset v2.0 draft:sta 2.0. final draft:iin": "Ehto C-GENERAL-003 on poistettu tietoelementist\u00e4 DE-035-06 (Henkil\u00f6n syntym\u00e4paikan nimi), koska se ei ole sovellettavissa.\n\n\nOhje G-PXA-001 on muotoiltu uudelleen selkeyden parantamiseksi:\n\nOhje G-PXA-001 (\u201cTulisi ilmoittaa, jos [Vaihdetut asiakirjat].[Alatyyppikoodi] = 'SUB-01' (Rajatarkastukset henkil\u00f6ille)\u201d) on poistettu luokasta [Matkustusviisumitiedot], koska viisumitiedot tulee ilmoittaa vain silloin, kun se on sovellettavaa Schengenin rajas\u00e4\u00e4nn\u00f6st\u00f6n mukaan.",
             "XSD path": "/env:Envelope/pxa:PXA/pxa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthplaceName"
           }
@@ -95684,7 +95666,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "We need field DE-035-18 (Person identity or travel document issuing nation, coded) added to essential fields. Place it above DE-035-17 (Person identity or travel document number). Must have for release (UI) . Optional (NBR) \n\nNEMO-9401\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -95711,6 +95693,7 @@
             "Status": "M",
             "Occurrence": "1..1",
             "Suppeat tiedot -suodatus": "x",
+            "Toimijoiden kommentit": "We need field DE-035-18 (Person identity or travel document issuing nation, coded) added to essential fields. Place it above DE-035-17 (Person identity or travel document number). Must have for release (UI) . Optional (NBR) \n\nNEMO-9401\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi",
             "XSD path": "/env:Envelope/pxa:PXA/pxa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:TravelIdentityReferencedDocument/ram:IssueLogisticsLocation/ram:CountryID"
           }
         },
@@ -98158,7 +98141,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"Passenger type can be removed from list summary view. There is no need for it for Border control (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -98188,6 +98171,7 @@
             "Rules, Conditions, Guidelines": "R-PXA-002",
             "Part A/B": "x",
             "Suppeat tiedot -suodatus": "x",
+            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"Passenger type can be removed from list summary view. There is no need for it for Border control (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "XSD path": "/env:Envelope/pxd:PXD/pxd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:CategoryCode"
           }
         },
@@ -98445,7 +98429,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -98474,7 +98458,7 @@
             "Rules, Conditions, Guidelines": "G-PXA-001\nG-PXA-004",
             "Part A/B": "?",
             "Suppeat tiedot -suodatus": "x",
-            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "Muutokset v2.0 draft:sta 2.0. final draft:iin": "Ohje G-PXA-001 on muotoiltu uudelleen selkeyden parantamiseksi:\n\nOhje G-PXA-001 (\u201cTulisi ilmoittaa, jos [Vaihdetut asiakirjat].[Alatyyppikoodi] = 'SUB-01' (Rajatarkastukset henkil\u00f6ille)\u201d) on poistettu luokasta [Matkustusviisumitiedot], koska viisumitiedot tulee ilmoittaa vain silloin, kun se on sovellettavaa Schengenin rajas\u00e4\u00e4nn\u00f6st\u00f6n mukaan.",
             "XSD path": "/env:Envelope/pxd:PXD/pxd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthCountryID"
           }
@@ -98521,7 +98505,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "comments": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -98549,7 +98533,7 @@
             "Rules, Conditions, Guidelines": "G-PXA-001\nG-PXA-004",
             "Part A/B": "?",
             "Suppeat tiedot -suodatus": "x",
-            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT",
+            "Toimijoiden kommentit": "Rajalle kysymys: kumpi, vai molemmat? AP: FT\n\n25.6.2025 -\"- Country of Birth can be removed from the list summary view (UI)\"\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi\n\nhttps://fintraffic-siili.atlassian.net/browse/NEMO-9671",
             "Muutokset v2.0 draft:sta 2.0. final draft:iin": "Ehto C-GENERAL-003 on poistettu tietoelementist\u00e4 DE-035-06 (Henkil\u00f6n syntym\u00e4paikan nimi), koska se ei ole sovellettavissa.\n\n\nOhje G-PXA-001 on muotoiltu uudelleen selkeyden parantamiseksi:\n\nOhje G-PXA-001 (\u201cTulisi ilmoittaa, jos [Vaihdetut asiakirjat].[Alatyyppikoodi] = 'SUB-01' (Rajatarkastukset henkil\u00f6ille)\u201d) on poistettu luokasta [Matkustusviisumitiedot], koska viisumitiedot tulee ilmoittaa vain silloin, kun se on sovellettavaa Schengenin rajas\u00e4\u00e4nn\u00f6st\u00f6n mukaan.",
             "XSD path": "/env:Envelope/pxd:PXD/pxd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthplaceName"
           }
@@ -100240,7 +100224,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "We need field DE-035-18 (Person identity or travel document issuing nation, coded) added to essential fields. Place it above DE-035-17 (Person identity or travel document number). Must have for release (UI) . Optional (NBR) \n\nNEMO-9401\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -100267,6 +100251,7 @@
             "Status": "M",
             "Occurrence": "1..1",
             "Suppeat tiedot -suodatus": "x",
+            "Toimijoiden kommentit": "We need field DE-035-18 (Person identity or travel document issuing nation, coded) added to essential fields. Place it above DE-035-17 (Person identity or travel document number). Must have for release (UI) . Optional (NBR) \n\nNEMO-9401\n\np\u00e4\u00e4t\u00f6s tehty 18.5.25 H\u00e4kkinen Seppo RVL RVLE\" seppo.hakkinen@raja.fi; \"Vesa Lindfors\" vesa.lindfors@siili.com; \"Lahtinen Netta\" netta.lahtinen@traficom.fi; \"Vuorenmaa-Lindholm Niina\" niina.vuorenmaa-lindholm@fintraffic.fi; \"Rastas Samuli  RVL RVLE\" samuli.rastas@raja.fi",
             "XSD path": "/env:Envelope/pxd:PXD/pxd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:TravelIdentityReferencedDocument/ram:IssueLogisticsLocation/ram:CountryID"
           }
         },
@@ -105367,12 +105352,12 @@
           "name": "Previous port of call, coded",
           "labels": {
             "en": "Previous port of call",
-            "fi": "Edellinen satamarakenne",
+            "fi": "Edellinen satama",
             "sv": "F\u00f6reg\u00e5ende anl\u00f6pshamn"
           },
           "descriptions": {
             "en": "A previous port of call.",
-            "fi": "Edellinen satamarakenne.",
+            "fi": "Edellinen satama.",
             "sv": "En f\u00f6reg\u00e5ende anl\u00f6pshamn.",
             "base": "A code representing a previous port of call."
           },
@@ -105409,11 +105394,11 @@
             "IMO Compendium": "IMO0127",
             "EMSWe name": "Previous port of call, coded",
             "en": "Previous port of call",
-            "fi": "Edellinen satamarakenne",
+            "fi": "Edellinen satama",
             "sv": "F\u00f6reg\u00e5ende anl\u00f6pshamn",
             "Description": "A code representing a previous port of call.",
             "en description": "A previous port of call.",
-            "fi description": "Edellinen satamarakenne.",
+            "fi description": "Edellinen satama.",
             "sv description": "En f\u00f6reg\u00e5ende anl\u00f6pshamn.",
             "Type": "Code",
             "Format": "an5",
