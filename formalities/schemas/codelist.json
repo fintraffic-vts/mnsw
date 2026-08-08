@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T10:51:01.246Z",
+  "generatedAt": "2026-08-08T07:06:12.630Z",
   "sourceFile": "tools/code list/Code lists v2.0.0.xlsx",
   "listNames": [
     "absence_type",
@@ -138,7 +138,7 @@
     "waste_delivery_plan",
     "waste_type"
   ],
-  "codeCount": 10710,
+  "codeCount": 10711,
   "byCode": {
     "0": [
       {
@@ -106512,7 +106512,7 @@
       {
         "listName": "certificate_type",
         "labels": {
-          "en": "International Ballast Water Managment Certificate",
+          "en": "International Ballast Water Management Certificate",
           "fi": "Kansainvälinen painolastiveden käsittelytodistus",
           "sv": "Internationellt certifikat för hantering av barlastvatten"
         },
@@ -111529,6 +111529,18 @@
           "en": "UNKNOWN NV",
           "fi": "Tuntematon NV",
           "sv": "Okänd NV"
+        },
+        "formality": [],
+        "source": "EMSA"
+      }
+    ],
+    "6X": [
+      {
+        "listName": "directive_2009_42_ec_category6",
+        "labels": {
+          "en": "Mobile non-self-propelled units",
+          "fi": "Liikkuvat, ilman omaa käyttövoimaa olevat yksiköt",
+          "sv": "Mobila enheter utan egen framdrivning"
         },
         "formality": [],
         "source": "EMSA"

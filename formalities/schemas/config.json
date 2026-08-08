@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T10:50:01.537465+00:00",
+  "generatedAt": "2026-08-08T07:05:59.048145+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -26253,7 +26253,7 @@
           },
           "descriptions": {
             "en": "The referenced crew member's rank or rating on the ship.",
-            "fi": "Viitatun miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
+            "fi": "Miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
             "sv": "Den ber\u00f6rda bes\u00e4ttningsmedlemmens rang eller beh\u00f6righet p\u00e5 fartyget.",
             "base": "A code representing the referenced crew member's rank or rating on the ship."
           },
@@ -26296,7 +26296,7 @@
             "sv": "Bes\u00e4ttningsmedlemmars rang eller beh\u00f6righet",
             "Description": "A code representing the referenced crew member's rank or rating on the ship.",
             "en description": "The referenced crew member's rank or rating on the ship.",
-            "fi description": "Viitatun miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
+            "fi description": "Miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
             "sv description": "Den ber\u00f6rda bes\u00e4ttningsmedlemmens rang eller beh\u00f6righet p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an..5",
@@ -26327,7 +26327,7 @@
           },
           "descriptions": {
             "en": "The gender of the referenced person.",
-            "fi": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi": "Henkil\u00f6n sukupuoli",
             "sv": "Den ber\u00f6rda personens k\u00f6n.",
             "base": "A code representing the gender of the referenced person."
           },
@@ -26369,7 +26369,7 @@
             "sv": "Personens k\u00f6n",
             "Description": "A code representing the gender of the referenced person.",
             "en description": "The gender of the referenced person.",
-            "fi description": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi description": "Henkil\u00f6n sukupuoli",
             "sv description": "Den ber\u00f6rda personens k\u00f6n.",
             "Type": "Code",
             "Format": "n..3",
@@ -26398,7 +26398,7 @@
           },
           "descriptions": {
             "en": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "base": "Given name or first name of the referenced person as in the passport or valid identification document."
           },
@@ -26439,7 +26439,7 @@
             "sv": "Personens f\u00f6rnamn",
             "Description": "Given name or first name of the referenced person as in the passport or valid identification document.",
             "en description": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -26468,7 +26468,7 @@
           },
           "descriptions": {
             "en": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "base": "Family name or surname of the referenced person as in the passport or valid identification document."
           },
@@ -26509,7 +26509,7 @@
             "sv": "Personens efternamn",
             "Description": "Family name or surname of the referenced person as in the passport or valid identification document.",
             "en description": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -26539,7 +26539,7 @@
           },
           "descriptions": {
             "en": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "base": "The code representing the referenced person's country of birth as shown on the person's identity document."
           },
@@ -26583,7 +26583,7 @@
             "sv": "Personens f\u00f6delseland",
             "Description": "The code representing the referenced person's country of birth as shown on the person's identity document.",
             "en description": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "Type": "Code",
             "Format": "a..4",
@@ -26615,7 +26615,7 @@
           },
           "descriptions": {
             "en": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "base": "The name of the referenced person's place of birth as shown on the person's identity or travel document."
           },
@@ -26659,7 +26659,7 @@
             "sv": "Personens f\u00f6delseort",
             "Description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
             "en description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv description": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "Type": "Text",
             "Format": "an..35",
@@ -26829,7 +26829,7 @@
           },
           "descriptions": {
             "en": "The referenced person has a licence to be ashore.",
-            "fi": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "base": "A yes/no indicator whether the referenced person has a licence to be ashore."
           },
@@ -26870,7 +26870,7 @@
             "sv": "Tillst\u00e5nd att g\u00e5 i land",
             "Description": "A yes/no indicator whether the referenced person has a licence to be ashore.",
             "en description": "The referenced person has a licence to be ashore.",
-            "fi description": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi description": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv description": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "Type": "Indicator",
             "Format": "n1",
@@ -27110,7 +27110,7 @@
           },
           "descriptions": {
             "en": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "base": "The referenced person's date of birth as shown on the person's identity document."
           },
@@ -27154,7 +27154,7 @@
             "sv": "Personens f\u00f6delsedatum",
             "Description": "The referenced person's date of birth as shown on the person's identity document.",
             "en description": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "Type": "Date",
             "Format": "an..35",
@@ -27319,7 +27319,7 @@
           },
           "descriptions": {
             "en": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "base": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document."
           },
@@ -27361,7 +27361,7 @@
             "sv": "Personens nationalitet",
             "Description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
             "en description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv description": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "Type": "Code",
             "Format": "a3",
@@ -27452,7 +27452,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person embarked the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "base": "A code representing the port from which the referenced person embarked the ship."
           },
@@ -27493,7 +27493,7 @@
             "sv": "Personens ombordstigningshamn",
             "Description": "A code representing the port from which the referenced person embarked the ship.",
             "en description": "The port from which the referenced person embarked the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi description": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -27580,7 +27580,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person plans to disembark the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "base": "A code representing the port from which the referenced person plans to disembark the ship."
           },
@@ -27621,7 +27621,7 @@
             "sv": "Personens avstigningshamn",
             "Description": "A code representing the port from which the referenced person plans to disembark the ship.",
             "en description": "The port from which the referenced person plans to disembark the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi description": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -27713,7 +27713,7 @@
           },
           "descriptions": {
             "en": "The type of the referenced person's presented identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the type of the referenced person's presented identity or travel document."
           },
@@ -27756,7 +27756,7 @@
             "sv": "Typ av identitetshandling eller resedokument",
             "Description": "A code representing the type of the referenced person's presented identity or travel document.",
             "en description": "The type of the referenced person's presented identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi description": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv description": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "an..3",
@@ -27786,7 +27786,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "base": "The number assigned to the referenced person's identity or travel document by the issuing nation."
           },
@@ -27827,7 +27827,7 @@
             "sv": "Nummer p\u00e5 identitetshandling eller resedokument",
             "Description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
             "en description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv description": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -27855,7 +27855,7 @@
           },
           "descriptions": {
             "en": "The issue date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The issue date shown on the referenced person's identity or travel document."
           },
@@ -27899,7 +27899,7 @@
             "sv": "Datum f\u00f6r utf\u00e4rdande av identitetshandling eller resedokument",
             "Description": "The issue date shown on the referenced person's identity or travel document.",
             "en description": "The issue date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv description": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -27989,7 +27989,7 @@
           },
           "descriptions": {
             "en": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The expiry date shown on the referenced person's identity or travel document."
           },
@@ -28033,7 +28033,7 @@
             "sv": "Sista giltighetsdag f\u00f6r identitetshandling eller resedokument",
             "Description": "The expiry date shown on the referenced person's identity or travel document.",
             "en description": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv description": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -28121,7 +28121,7 @@
           },
           "descriptions": {
             "en": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "base": "The name of the entity that issued the referenced person's identity or travel document."
           },
@@ -28161,7 +28161,7 @@
             "sv": "Namn p\u00e5 utf\u00e4rdare av identitetshandling eller resedokument",
             "Description": "The name of the entity that issued the referenced person's identity or travel document.",
             "en description": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv description": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "Type": "Text",
             "Format": "an..70",
@@ -28250,7 +28250,7 @@
           },
           "descriptions": {
             "en": "The nation issuing the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the nation issuing the referenced person's identity or travel document."
           },
@@ -28291,7 +28291,7 @@
             "sv": "Typ av identitetshandling eller resedokument, utf\u00e4rdande nation",
             "Description": "A code representing the nation issuing the referenced person's identity or travel document.",
             "en description": "The nation issuing the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv description": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "a2",
@@ -28385,7 +28385,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "base": "The number assigned to the referenced person's visa by the issuing nation."
           },
@@ -28426,7 +28426,7 @@
             "sv": "Personens viseringsnummer",
             "Description": "The number assigned to the referenced person's visa by the issuing nation.",
             "en description": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv description": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -28513,7 +28513,7 @@
           },
           "descriptions": {
             "en": "The country that issued the referenced person's visa.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "base": "A code identifying the country that issued the referenced person's visa."
           },
@@ -28553,7 +28553,7 @@
             "sv": "Land som utf\u00e4rdat personens visering",
             "Description": "A code identifying the country that issued the referenced person's visa.",
             "en description": "The country that issued the referenced person's visa.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv description": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "Type": "Code",
             "Format": "a2",
@@ -28644,7 +28644,7 @@
           },
           "descriptions": {
             "en": "The number of the referenced person's residence permit",
-            "fi": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi": "Henkil\u00f6n oleskeluluvan numero",
             "sv": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "base": "The number of the referenced person's residence permit"
           },
@@ -28684,7 +28684,7 @@
             "sv": "Nummer p\u00e5 uppeh\u00e5llstillst\u00e5nd",
             "Description": "The number of the referenced person's residence permit",
             "en description": "The number of the referenced person's residence permit",
-            "fi description": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi description": "Henkil\u00f6n oleskeluluvan numero",
             "sv description": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -28899,7 +28899,7 @@
           },
           "descriptions": {
             "en": "The number of the access control card for the referenced crew member.",
-            "fi": "Viitatun miehist\u00f6n j\u00e4senen kulkukortin numero.",
+            "fi": "Miehist\u00f6n j\u00e4senen kulkukortin numero.",
             "sv": "Numret p\u00e5 bes\u00e4ttningsmedlemmens tilltr\u00e4deskort.",
             "base": "The number of the access control card for the referenced crew member."
           },
@@ -28939,7 +28939,7 @@
             "sv": "Tilltr\u00e4deskortets nummer",
             "Description": "The number of the access control card for the referenced crew member.",
             "en description": "The number of the access control card for the referenced crew member.",
-            "fi description": "Viitatun miehist\u00f6n j\u00e4senen kulkukortin numero.",
+            "fi description": "Miehist\u00f6n j\u00e4senen kulkukortin numero.",
             "sv description": "Numret p\u00e5 bes\u00e4ttningsmedlemmens tilltr\u00e4deskort.",
             "Type": "Identifier",
             "Format": "an..35",
@@ -29665,7 +29665,7 @@
           },
           "descriptions": {
             "en": "The referenced crew member's rank or rating on the ship.",
-            "fi": "Viitatun miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
+            "fi": "Miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
             "sv": "Den ber\u00f6rda bes\u00e4ttningsmedlemmens rang eller beh\u00f6righet p\u00e5 fartyget.",
             "base": "A code representing the referenced crew member's rank or rating on the ship."
           },
@@ -29708,7 +29708,7 @@
             "sv": "Bes\u00e4ttningsmedlemmars rang eller beh\u00f6righet",
             "Description": "A code representing the referenced crew member's rank or rating on the ship.",
             "en description": "The referenced crew member's rank or rating on the ship.",
-            "fi description": "Viitatun miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
+            "fi description": "Miehist\u00f6nj\u00e4senen asema tai p\u00e4tevyys aluksella.",
             "sv description": "Den ber\u00f6rda bes\u00e4ttningsmedlemmens rang eller beh\u00f6righet p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an..5",
@@ -29739,7 +29739,7 @@
           },
           "descriptions": {
             "en": "The gender of the referenced person.",
-            "fi": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi": "Henkil\u00f6n sukupuoli.",
             "sv": "Den ber\u00f6rda personens k\u00f6n.",
             "base": "A code representing the gender of the referenced person."
           },
@@ -29781,7 +29781,7 @@
             "sv": "Personens k\u00f6n",
             "Description": "A code representing the gender of the referenced person.",
             "en description": "The gender of the referenced person.",
-            "fi description": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi description": "Henkil\u00f6n sukupuoli.",
             "sv description": "Den ber\u00f6rda personens k\u00f6n.",
             "Type": "Code",
             "Format": "n..3",
@@ -29810,7 +29810,7 @@
           },
           "descriptions": {
             "en": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "base": "Given name or first name of the referenced person as in the passport or valid identification document."
           },
@@ -29851,7 +29851,7 @@
             "sv": "Personens f\u00f6rnamn",
             "Description": "Given name or first name of the referenced person as in the passport or valid identification document.",
             "en description": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -29880,7 +29880,7 @@
           },
           "descriptions": {
             "en": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "base": "Family name or surname of the referenced person as in the passport or valid identification document."
           },
@@ -29921,7 +29921,7 @@
             "sv": "Personens efternamn",
             "Description": "Family name or surname of the referenced person as in the passport or valid identification document.",
             "en description": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -29951,7 +29951,7 @@
           },
           "descriptions": {
             "en": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "base": "The code representing the referenced person's country of birth as shown on the person's identity document."
           },
@@ -29995,7 +29995,7 @@
             "sv": "Personens f\u00f6delseland",
             "Description": "The code representing the referenced person's country of birth as shown on the person's identity document.",
             "en description": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "Type": "Code",
             "Format": "a..4",
@@ -30027,7 +30027,7 @@
           },
           "descriptions": {
             "en": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "base": "The name of the referenced person's place of birth as shown on the person's identity or travel document."
           },
@@ -30071,7 +30071,7 @@
             "sv": "Personens f\u00f6delseort",
             "Description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
             "en description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv description": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "Type": "Text",
             "Format": "an..35",
@@ -30241,7 +30241,7 @@
           },
           "descriptions": {
             "en": "The referenced person has a licence to be ashore.",
-            "fi": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "base": "A yes/no indicator whether the referenced person has a licence to be ashore."
           },
@@ -30282,7 +30282,7 @@
             "sv": "Tillst\u00e5nd att g\u00e5 i land",
             "Description": "A yes/no indicator whether the referenced person has a licence to be ashore.",
             "en description": "The referenced person has a licence to be ashore.",
-            "fi description": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi description": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv description": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "Type": "Indicator",
             "Format": "n1",
@@ -30522,7 +30522,7 @@
           },
           "descriptions": {
             "en": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "base": "The referenced person's date of birth as shown on the person's identity document."
           },
@@ -30566,7 +30566,7 @@
             "sv": "Personens f\u00f6delsedatum",
             "Description": "The referenced person's date of birth as shown on the person's identity document.",
             "en description": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "Type": "Date",
             "Format": "an..35",
@@ -30730,7 +30730,7 @@
           },
           "descriptions": {
             "en": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "base": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document."
           },
@@ -30772,7 +30772,7 @@
             "sv": "Personens nationalitet",
             "Description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
             "en description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv description": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "Type": "Code",
             "Format": "a3",
@@ -30860,7 +30860,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person embarked the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "base": "A code representing the port from which the referenced person embarked the ship."
           },
@@ -30901,7 +30901,7 @@
             "sv": "Personens ombordstigningshamn",
             "Description": "A code representing the port from which the referenced person embarked the ship.",
             "en description": "The port from which the referenced person embarked the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi description": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -30988,7 +30988,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person plans to disembark the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "base": "A code representing the port from which the referenced person plans to disembark the ship."
           },
@@ -31029,7 +31029,7 @@
             "sv": "Personens avstigningshamn",
             "Description": "A code representing the port from which the referenced person plans to disembark the ship.",
             "en description": "The port from which the referenced person plans to disembark the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi description": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -31121,7 +31121,7 @@
           },
           "descriptions": {
             "en": "The type of the referenced person's presented identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the type of the referenced person's presented identity or travel document."
           },
@@ -31164,7 +31164,7 @@
             "sv": "Typ av identitetshandling eller resedokument",
             "Description": "A code representing the type of the referenced person's presented identity or travel document.",
             "en description": "The type of the referenced person's presented identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi description": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv description": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "an..3",
@@ -31194,7 +31194,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "base": "The number assigned to the referenced person's identity or travel document by the issuing nation."
           },
@@ -31235,7 +31235,7 @@
             "sv": "Nummer p\u00e5 identitetshandling eller resedokument",
             "Description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
             "en description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv description": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -31263,7 +31263,7 @@
           },
           "descriptions": {
             "en": "The issue date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The issue date shown on the referenced person's identity or travel document."
           },
@@ -31307,7 +31307,7 @@
             "sv": "Datum f\u00f6r utf\u00e4rdande av identitetshandling eller resedokument",
             "Description": "The issue date shown on the referenced person's identity or travel document.",
             "en description": "The issue date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv description": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -31397,7 +31397,7 @@
           },
           "descriptions": {
             "en": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The expiry date shown on the referenced person's identity or travel document."
           },
@@ -31441,7 +31441,7 @@
             "sv": "Sista giltighetsdag f\u00f6r identitetshandling eller resedokument",
             "Description": "The expiry date shown on the referenced person's identity or travel document.",
             "en description": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv description": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -31529,7 +31529,7 @@
           },
           "descriptions": {
             "en": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "base": "The name of the entity that issued the referenced person's identity or travel document."
           },
@@ -31569,7 +31569,7 @@
             "sv": "Namn p\u00e5 utf\u00e4rdare av identitetshandling eller resedokument",
             "Description": "The name of the entity that issued the referenced person's identity or travel document.",
             "en description": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv description": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "Type": "Text",
             "Format": "an..70",
@@ -31658,7 +31658,7 @@
           },
           "descriptions": {
             "en": "The nation issuing the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the nation issuing the referenced person's identity or travel document."
           },
@@ -31699,7 +31699,7 @@
             "sv": "Typ av identitetshandling eller resedokument, utf\u00e4rdande nation",
             "Description": "A code representing the nation issuing the referenced person's identity or travel document.",
             "en description": "The nation issuing the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv description": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "a2",
@@ -31792,7 +31792,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "base": "The number assigned to the referenced person's visa by the issuing nation."
           },
@@ -31833,7 +31833,7 @@
             "sv": "Personens viseringsnummer",
             "Description": "The number assigned to the referenced person's visa by the issuing nation.",
             "en description": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv description": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -31920,7 +31920,7 @@
           },
           "descriptions": {
             "en": "The country that issued the referenced person's visa.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "base": "A code identifying the country that issued the referenced person's visa."
           },
@@ -31960,7 +31960,7 @@
             "sv": "Land som utf\u00e4rdat personens visering",
             "Description": "A code identifying the country that issued the referenced person's visa.",
             "en description": "The country that issued the referenced person's visa.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv description": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "Type": "Code",
             "Format": "a2",
@@ -32051,7 +32051,7 @@
           },
           "descriptions": {
             "en": "The number of the referenced person's residence permit",
-            "fi": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi": "Henkil\u00f6n oleskeluluvan numero",
             "sv": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "base": "The number of the referenced person's residence permit"
           },
@@ -32091,7 +32091,7 @@
             "sv": "Nummer p\u00e5 uppeh\u00e5llstillst\u00e5nd",
             "Description": "The number of the referenced person's residence permit",
             "en description": "The number of the referenced person's residence permit",
-            "fi description": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi description": "Henkil\u00f6n oleskeluluvan numero",
             "sv description": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -32306,7 +32306,7 @@
           },
           "descriptions": {
             "en": "The number of the access control card for the referenced crew member.",
-            "fi": "Viitatun miehist\u00f6n j\u00e4senen kulkukortin numero.",
+            "fi": "Miehist\u00f6n j\u00e4senen kulkukortin numero.",
             "sv": "Numret p\u00e5 bes\u00e4ttningsmedlemmens tilltr\u00e4deskort.",
             "base": "The number of the access control card for the referenced crew member."
           },
@@ -32346,7 +32346,7 @@
             "sv": "Tilltr\u00e4deskortets nummer",
             "Description": "The number of the access control card for the referenced crew member.",
             "en description": "The number of the access control card for the referenced crew member.",
-            "fi description": "Viitatun miehist\u00f6n j\u00e4senen kulkukortin numero.",
+            "fi description": "Miehist\u00f6n j\u00e4senen kulkukortin numero.",
             "sv description": "Numret p\u00e5 bes\u00e4ttningsmedlemmens tilltr\u00e4deskort.",
             "Type": "Identifier",
             "Format": "an..35",
@@ -69357,14 +69357,14 @@
           "imoCompendiumId": "",
           "name": "Declarant statement, coded",
           "labels": {
-            "en": "Declarant statement",
-            "fi": "Ilmoittajan lausunto",
-            "sv": "Deklarantens redog\u00f6relse"
+            "en": "Confirm arrival notification",
+            "fi": "Vahvista saapumisilmoitus",
+            "sv": "Bekr\u00e4fta ankomstmeddelande"
           },
           "descriptions": {
-            "en": "A specific statement from the declarant.",
-            "fi": "Ilmoittajan antama lausunto.",
-            "sv": "Deklarantens l\u00e4mnade uttalande.",
+            "en": "The declarant's official confirmation of the pre-arrival information.",
+            "fi": "Ilmoittajan virallinen vahvistus saapumisen ennakkotiedoista.",
+            "sv": "Deklarantens officiella bekr\u00e4ftelse av f\u00f6rhandsuppgifterna om ankomsten.",
             "base": "A code indicating a specific statement from the declarant."
           },
           "type": "Code",
@@ -69404,13 +69404,13 @@
             "CR type": "ADD",
             "EMSWe ID": "DE-003-07",
             "EMSWe name": "Declarant statement, coded",
-            "en": "Declarant statement",
-            "fi": "Ilmoittajan lausunto",
-            "sv": "Deklarantens redog\u00f6relse",
+            "en": "Confirm arrival notification",
+            "fi": "Vahvista saapumisilmoitus",
+            "sv": "Bekr\u00e4fta ankomstmeddelande",
             "Description": "A code indicating a specific statement from the declarant.",
-            "en description": "A specific statement from the declarant.",
-            "fi description": "Ilmoittajan antama lausunto.",
-            "sv description": "Deklarantens l\u00e4mnade uttalande.",
+            "en description": "The declarant's official confirmation of the pre-arrival information.",
+            "fi description": "Ilmoittajan virallinen vahvistus saapumisen ennakkotiedoista.",
+            "sv description": "Deklarantens officiella bekr\u00e4ftelse av f\u00f6rhandsuppgifterna om ankomsten.",
             "Type": "Code",
             "Format": "an8",
             "Code list": "Refer to code list Statement type",
@@ -84164,14 +84164,14 @@
           "imoCompendiumId": "",
           "name": "Declarant statement, coded",
           "labels": {
-            "en": "Declarant statement",
-            "fi": "Ilmoittajan lausunto",
-            "sv": "Deklarantens redog\u00f6relse"
+            "en": "Confirm departure notification",
+            "fi": "Vahvista l\u00e4ht\u00f6ilmoitus",
+            "sv": "Bekr\u00e4fta avg\u00e5ngsmeddelande"
           },
           "descriptions": {
-            "en": "A specific statement from the declarant.",
-            "fi": "Ilmoittajan antama lausunto.",
-            "sv": "En specifik redog\u00f6relse som deklaraten l\u00e4mnat.",
+            "en": "The declarant's official confirmation of the pre-departure information.",
+            "fi": "Ilmoittajan virallinen vahvistus l\u00e4hd\u00f6n ennakkotiedoista.",
+            "sv": "Deklarantens officiella bekr\u00e4ftelse av f\u00f6rhandsuppgifterna om avg\u00e5ngen.",
             "base": "A code indicating a specific statement from the declarant."
           },
           "type": "Code",
@@ -84211,13 +84211,13 @@
             "CR type": "ADD",
             "EMSWe ID": "DE-003-07",
             "EMSWe name": "Declarant statement, coded",
-            "en": "Declarant statement",
-            "fi": "Ilmoittajan lausunto",
-            "sv": "Deklarantens redog\u00f6relse",
+            "en": "Confirm departure notification",
+            "fi": "Vahvista l\u00e4ht\u00f6ilmoitus",
+            "sv": "Bekr\u00e4fta avg\u00e5ngsmeddelande",
             "Description": "A code indicating a specific statement from the declarant.",
-            "en description": "A specific statement from the declarant.",
-            "fi description": "Ilmoittajan antama lausunto.",
-            "sv description": "En specifik redog\u00f6relse som deklaraten l\u00e4mnat.",
+            "en description": "The declarant's official confirmation of the pre-departure information.",
+            "fi description": "Ilmoittajan virallinen vahvistus l\u00e4hd\u00f6n ennakkotiedoista.",
+            "sv description": "Deklarantens officiella bekr\u00e4ftelse av f\u00f6rhandsuppgifterna om avg\u00e5ngen.",
             "Type": "Code",
             "Format": "an8",
             "Code list": "Refer to code list Statement type",
@@ -93296,7 +93296,7 @@
           },
           "descriptions": {
             "en": "The gender of the referenced person.",
-            "fi": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi": "Henkil\u00f6n sukupuoli.",
             "sv": "Den ber\u00f6rda personens k\u00f6n.",
             "base": "A code representing the gender of the referenced person."
           },
@@ -93338,7 +93338,7 @@
             "sv": "Personens k\u00f6n",
             "Description": "A code representing the gender of the referenced person.",
             "en description": "The gender of the referenced person.",
-            "fi description": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi description": "Henkil\u00f6n sukupuoli.",
             "sv description": "Den ber\u00f6rda personens k\u00f6n.",
             "Type": "Code",
             "Format": "n..3",
@@ -93367,7 +93367,7 @@
           },
           "descriptions": {
             "en": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "base": "Given name or first name of the referenced person as in the passport or valid identification document."
           },
@@ -93408,7 +93408,7 @@
             "sv": "Personens f\u00f6rnamn",
             "Description": "Given name or first name of the referenced person as in the passport or valid identification document.",
             "en description": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -93437,7 +93437,7 @@
           },
           "descriptions": {
             "en": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "base": "Family name or surname of the referenced person as in the passport or valid identification document."
           },
@@ -93478,7 +93478,7 @@
             "sv": "Personens efternamn",
             "Description": "Family name or surname of the referenced person as in the passport or valid identification document.",
             "en description": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -93508,7 +93508,7 @@
           },
           "descriptions": {
             "en": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "base": "The code representing the referenced person's country of birth as shown on the person's identity document."
           },
@@ -93552,7 +93552,7 @@
             "sv": "Personens f\u00f6delseland",
             "Description": "The code representing the referenced person's country of birth as shown on the person's identity document.",
             "en description": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "Type": "Code",
             "Format": "a..4",
@@ -93584,7 +93584,7 @@
           },
           "descriptions": {
             "en": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "base": "The name of the referenced person's place of birth as shown on the person's identity or travel document."
           },
@@ -93628,7 +93628,7 @@
             "sv": "Personens f\u00f6delseort",
             "Description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
             "en description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv description": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "Type": "Text",
             "Format": "an..35",
@@ -93659,7 +93659,7 @@
           },
           "descriptions": {
             "en": "The referenced person is in transit to a foreign country.",
-            "fi": "Viitattu henkil\u00f6 on matkalla ulkomaahan.",
+            "fi": "Henkil\u00f6 on matkalla toiseen maahan.",
             "sv": "Den ber\u00f6rda personen befinner sig i transit till ett annat land.",
             "base": "A yes/no indicator whether the referenced person is in transit to a foreign country."
           },
@@ -93702,7 +93702,7 @@
             "sv": "Person i transit",
             "Description": "A yes/no indicator whether the referenced person is in transit to a foreign country.",
             "en description": "The referenced person is in transit to a foreign country.",
-            "fi description": "Viitattu henkil\u00f6 on matkalla ulkomaahan.",
+            "fi description": "Henkil\u00f6 on matkalla toiseen maahan.",
             "sv description": "Den ber\u00f6rda personen befinner sig i transit till ett annat land.",
             "Type": "Indicator",
             "Format": "n1",
@@ -93874,7 +93874,7 @@
           },
           "descriptions": {
             "en": "The referenced person has a licence to be ashore.",
-            "fi": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "base": "A yes/no indicator whether the referenced person has a licence to be ashore."
           },
@@ -93915,7 +93915,7 @@
             "sv": "Tillst\u00e5nd att g\u00e5 i land",
             "Description": "A yes/no indicator whether the referenced person has a licence to be ashore.",
             "en description": "The referenced person has a licence to be ashore.",
-            "fi description": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi description": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv description": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "Type": "Indicator",
             "Format": "n1",
@@ -94011,7 +94011,7 @@
           },
           "descriptions": {
             "en": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments.",
-            "fi": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i viitatun matkustajan tai kuljettajan.",
+            "fi": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i matkustajan tai kuljettajan.",
             "sv": "En teknisk identifierare som unikt identifierar en passagerare/f\u00f6rare och inte \u00e4ndras vid boknings\u00e4ndringar.",
             "base": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments."
           },
@@ -94052,7 +94052,7 @@
             "sv": "Unik teknisk identifierare av passageraren",
             "Description": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments.",
             "en description": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments.",
-            "fi description": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i viitatun matkustajan tai kuljettajan.",
+            "fi description": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i matkustajan tai kuljettajan.",
             "sv description": "En teknisk identifierare som unikt identifierar en passagerare/f\u00f6rare och inte \u00e4ndras vid boknings\u00e4ndringar.",
             "Type": "Identifier",
             "Format": "an..30",
@@ -94079,7 +94079,7 @@
           },
           "descriptions": {
             "en": "The referenced passenger is a cruise passenger making a short visit to a port-related tourist attraction while retaining their cabin on board the cruise ship.",
-            "fi": "Viitattu matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
+            "fi": "Matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
             "sv": "Den ber\u00f6rda passageraren \u00e4r en kryssningspassagerare som g\u00f6r ett kort bes\u00f6k vid en hamnrelaterad turistattraktion och samtidigt beh\u00e5ller sin hytt ombord p\u00e5 kryssningsfartyget.",
             "base": "A yes/no indicator whether the referenced passenger is a cruise passenger on a short visit to a tourist attraction associated with the port while retaining a cabin on board the cruise ship."
           },
@@ -94120,7 +94120,7 @@
             "sv": "Personen \u00e4r en kryssningspassagerare",
             "Description": "A yes/no indicator whether the referenced passenger is a cruise passenger on a short visit to a tourist attraction associated with the port while retaining a cabin on board the cruise ship.",
             "en description": "The referenced passenger is a cruise passenger making a short visit to a port-related tourist attraction while retaining their cabin on board the cruise ship.",
-            "fi description": "Viitattu matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
+            "fi description": "Matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
             "sv description": "Den ber\u00f6rda passageraren \u00e4r en kryssningspassagerare som g\u00f6r ett kort bes\u00f6k vid en hamnrelaterad turistattraktion och samtidigt beh\u00e5ller sin hytt ombord p\u00e5 kryssningsfartyget.",
             "Type": "Indicator",
             "Format": "n1",
@@ -94226,7 +94226,7 @@
           },
           "descriptions": {
             "en": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "base": "The referenced person's date of birth as shown on the person's identity document."
           },
@@ -94270,7 +94270,7 @@
             "sv": "Personens f\u00f6delsedatum",
             "Description": "The referenced person's date of birth as shown on the person's identity document.",
             "en description": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "Type": "Date",
             "Format": "an..35",
@@ -94373,7 +94373,7 @@
           },
           "descriptions": {
             "en": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person.",
-            "fi": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota viitattu henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
+            "fi": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
             "sv": "Beskrivning av s\u00e4rskild v\u00e5rd eller hj\u00e4lp som den ber\u00f6rda personen beh\u00f6ver i h\u00e4ndelse av n\u00f6dsituationer, om personen sj\u00e4lv uppgett detta.",
             "base": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person."
           },
@@ -94414,7 +94414,7 @@
             "sv": "Beskrivning av s\u00e4rskild v\u00e5rd eller hj\u00e4lp f\u00f6r personen",
             "Description": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person.",
             "en description": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person.",
-            "fi description": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota viitattu henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
+            "fi description": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
             "sv description": "Beskrivning av s\u00e4rskild v\u00e5rd eller hj\u00e4lp som den ber\u00f6rda personen beh\u00f6ver i h\u00e4ndelse av n\u00f6dsituationer, om personen sj\u00e4lv uppgett detta.",
             "Type": "Text",
             "Format": "an..256",
@@ -94507,7 +94507,7 @@
           },
           "descriptions": {
             "en": "Contact number in case of an emergency with the referenced person, when volunteered by the person.",
-            "fi": "Viitatun henkil\u00f6n yhteyshenkil\u00f6n puhelinnumero, johon soitetaan h\u00e4t\u00e4tilanteessa kyseisen henkil\u00f6n puolesta, jos henkil\u00f6 on antanut tiedon vapaaehtoisesti.",
+            "fi": "Henkil\u00f6n yhteyshenkil\u00f6n puhelinnumero, johon soitetaan h\u00e4t\u00e4tilanteessa kyseisen henkil\u00f6n puolesta, jos henkil\u00f6 on antanut tiedon vapaaehtoisesti.",
             "sv": "Telefonnummer som kan anv\u00e4ndas i h\u00e4ndelse av en n\u00f6dsituation som drabbat den ber\u00f6rda personen, om personen sj\u00e4lv uppgett detta.",
             "base": "Contact number in case of an emergency with the referenced person, when volunteered by the person."
           },
@@ -94547,7 +94547,7 @@
             "sv": "Personens telefonnummer f\u00f6r n\u00f6dsituationer",
             "Description": "Contact number in case of an emergency with the referenced person, when volunteered by the person.",
             "en description": "Contact number in case of an emergency with the referenced person, when volunteered by the person.",
-            "fi description": "Viitatun henkil\u00f6n yhteyshenkil\u00f6n puhelinnumero, johon soitetaan h\u00e4t\u00e4tilanteessa kyseisen henkil\u00f6n puolesta, jos henkil\u00f6 on antanut tiedon vapaaehtoisesti.",
+            "fi description": "Henkil\u00f6n yhteyshenkil\u00f6n puhelinnumero, johon soitetaan h\u00e4t\u00e4tilanteessa kyseisen henkil\u00f6n puolesta, jos henkil\u00f6 on antanut tiedon vapaaehtoisesti.",
             "sv description": "Telefonnummer som kan anv\u00e4ndas i h\u00e4ndelse av en n\u00f6dsituation som drabbat den ber\u00f6rda personen, om personen sj\u00e4lv uppgett detta.",
             "Type": "Text",
             "Format": "an..256",
@@ -94636,7 +94636,7 @@
           },
           "descriptions": {
             "en": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "base": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document."
           },
@@ -94678,7 +94678,7 @@
             "sv": "Personens nationalitet",
             "Description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
             "en description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv description": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "Type": "Code",
             "Format": "a3",
@@ -94767,7 +94767,7 @@
           },
           "descriptions": {
             "en": "The type of the accreditation of the referenced passenger.",
-            "fi": "Viitatun matkustajan akkreditoinnin tyyppi.",
+            "fi": "Matkustajan akkreditoinnin tyyppi.",
             "sv": "Typen av ackreditering f\u00f6r den ber\u00f6rda passageraren.",
             "base": "A code representing the type of the accreditation of the referenced passenger."
           },
@@ -94807,7 +94807,7 @@
             "sv": "Passagerarens ackrediteringstyp",
             "Description": "A code representing the type of the accreditation of the referenced passenger.",
             "en description": "The type of the accreditation of the referenced passenger.",
-            "fi description": "Viitatun matkustajan akkreditoinnin tyyppi.",
+            "fi description": "Matkustajan akkreditoinnin tyyppi.",
             "sv description": "Typen av ackreditering f\u00f6r den ber\u00f6rda passageraren.",
             "Type": "Code",
             "Format": "an2",
@@ -94901,7 +94901,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person embarked the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "base": "A code representing the port from which the referenced person embarked the ship."
           },
@@ -94942,7 +94942,7 @@
             "sv": "Personens ombordstigningshamn",
             "Description": "A code representing the port from which the referenced person embarked the ship.",
             "en description": "The port from which the referenced person embarked the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi description": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -95037,7 +95037,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person plans to disembark the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "base": "A code representing the port from which the referenced person plans to disembark the ship."
           },
@@ -95078,7 +95078,7 @@
             "sv": "Personens avstigningshamn",
             "Description": "A code representing the port from which the referenced person plans to disembark the ship.",
             "en description": "The port from which the referenced person plans to disembark the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi description": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -95169,7 +95169,7 @@
           },
           "descriptions": {
             "en": "The place of first border crossing of the referenced person when leaving the country of disembarkation.",
-            "fi": "Viitatun henkil\u00f6n ensimm\u00e4inen rajanylityspaikka h\u00e4nen poistuessaan aluksesta.",
+            "fi": "Henkil\u00f6n ensimm\u00e4inen rajanylityspaikka h\u00e4nen poistuessaan aluksesta.",
             "sv": "Platsen f\u00f6r den ber\u00f6rda personens f\u00f6rsta gr\u00e4nspassage n\u00e4r hen l\u00e4mnar landstigningslandet.",
             "base": "A code identifying the place of first border crossing of the referenced person when leaving the country of disembarkation."
           },
@@ -95209,7 +95209,7 @@
             "sv": "Avstigning vid f\u00f6rsta gr\u00e4nspassagen",
             "Description": "A code identifying the place of first border crossing of the referenced person when leaving the country of disembarkation.",
             "en description": "The place of first border crossing of the referenced person when leaving the country of disembarkation.",
-            "fi description": "Viitatun henkil\u00f6n ensimm\u00e4inen rajanylityspaikka h\u00e4nen poistuessaan aluksesta.",
+            "fi description": "Henkil\u00f6n ensimm\u00e4inen rajanylityspaikka h\u00e4nen poistuessaan aluksesta.",
             "sv description": "Platsen f\u00f6r den ber\u00f6rda personens f\u00f6rsta gr\u00e4nspassage n\u00e4r hen l\u00e4mnar landstigningslandet.",
             "Type": "Code",
             "Format": "an5",
@@ -95237,7 +95237,7 @@
           },
           "descriptions": {
             "en": "The mode of transport of the referenced person from the disembarkation to the first border crossing.",
-            "fi": "Viitatun henkil\u00f6n kuljetusmuoto h\u00e4nen poistuessaan aluksesta ensimm\u00e4iselle rajanylityspaikalle.",
+            "fi": "Henkil\u00f6n kuljetusmuoto h\u00e4nen poistuessaan aluksesta ensimm\u00e4iselle rajanylityspaikalle.",
             "sv": "Den ber\u00f6rda personens transports\u00e4tt fr\u00e5n landstigning till den f\u00f6rsta gr\u00e4nspassagen.",
             "base": "A code representing the mode of transport of the referenced person from the disembarkation to the first border crossing."
           },
@@ -95278,7 +95278,7 @@
             "sv": "Avstigning till f\u00f6rsta gr\u00e4ns\u00f6verg\u00e5ngstransportmedel",
             "Description": "A code representing the mode of transport of the referenced person from the disembarkation to the first border crossing.",
             "en description": "The mode of transport of the referenced person from the disembarkation to the first border crossing.",
-            "fi description": "Viitatun henkil\u00f6n kuljetusmuoto h\u00e4nen poistuessaan aluksesta ensimm\u00e4iselle rajanylityspaikalle.",
+            "fi description": "Henkil\u00f6n kuljetusmuoto h\u00e4nen poistuessaan aluksesta ensimm\u00e4iselle rajanylityspaikalle.",
             "sv description": "Den ber\u00f6rda personens transports\u00e4tt fr\u00e5n landstigning till den f\u00f6rsta gr\u00e4nspassagen.",
             "Type": "Code",
             "Format": "an..12",
@@ -95306,7 +95306,7 @@
           },
           "descriptions": {
             "en": "The immediate next country where the referenced person will travel to after disembarkation.",
-            "fi": "V\u00e4litt\u00f6m\u00e4sti seuraava maa, johon viitattu henkil\u00f6 matkustaa aluksesta poistumisen j\u00e4lkeen.",
+            "fi": "V\u00e4litt\u00f6m\u00e4sti seuraava maa, johon henkil\u00f6 matkustaa aluksesta poistumisen j\u00e4lkeen.",
             "sv": "Det n\u00e4rmaste land som den ber\u00f6rda personen kommer att resa till efter landstigning.",
             "base": "A code identifying the immediate next country where the referenced person will travel to after disembarkation."
           },
@@ -95347,7 +95347,7 @@
             "sv": "Destinationsland omedelbart efter landstigning",
             "Description": "A code identifying the immediate next country where the referenced person will travel to after disembarkation.",
             "en description": "The immediate next country where the referenced person will travel to after disembarkation.",
-            "fi description": "V\u00e4litt\u00f6m\u00e4sti seuraava maa, johon viitattu henkil\u00f6 matkustaa aluksesta poistumisen j\u00e4lkeen.",
+            "fi description": "V\u00e4litt\u00f6m\u00e4sti seuraava maa, johon henkil\u00f6 matkustaa aluksesta poistumisen j\u00e4lkeen.",
             "sv description": "Det n\u00e4rmaste land som den ber\u00f6rda personen kommer att resa till efter landstigning.",
             "Type": "Code",
             "Format": "a2",
@@ -95376,7 +95376,7 @@
           },
           "descriptions": {
             "en": "The referenced person is exempted from mandatory travel insurance.",
-            "fi": "Viitattu henkil\u00f6 on vapautettu pakollisesta matkavakuutuksesta.",
+            "fi": "Henkil\u00f6 on vapautettu pakollisesta matkavakuutuksesta.",
             "sv": "Personen \u00e4r undantagen fr\u00e5n obligatorisk resef\u00f6rs\u00e4kring.",
             "base": "A yes/no indicator whether the referenced person is exempted from mandatory travel insurance."
           },
@@ -95417,7 +95417,7 @@
             "sv": "Undantag fr\u00e5n resef\u00f6rs\u00e4kring",
             "Description": "A yes/no indicator whether the referenced person is exempted from mandatory travel insurance.",
             "en description": "The referenced person is exempted from mandatory travel insurance.",
-            "fi description": "Viitattu henkil\u00f6 on vapautettu pakollisesta matkavakuutuksesta.",
+            "fi description": "Henkil\u00f6 on vapautettu pakollisesta matkavakuutuksesta.",
             "sv description": "Personen \u00e4r undantagen fr\u00e5n obligatorisk resef\u00f6rs\u00e4kring.",
             "Type": "Indicator",
             "Format": "n1",
@@ -95510,7 +95510,7 @@
           },
           "descriptions": {
             "en": "The type of the referenced person's presented identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the type of the referenced person's presented identity or travel document."
           },
@@ -95553,7 +95553,7 @@
             "sv": "Typ av identitetshandling eller resedokument",
             "Description": "A code representing the type of the referenced person's presented identity or travel document.",
             "en description": "The type of the referenced person's presented identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi description": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv description": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "an..3",
@@ -95644,7 +95644,7 @@
           },
           "descriptions": {
             "en": "The nation issuing the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the nation issuing the referenced person's identity or travel document."
           },
@@ -95685,7 +95685,7 @@
             "sv": "Typ av identitetshandling eller resedokument, utf\u00e4rdande nation",
             "Description": "A code representing the nation issuing the referenced person's identity or travel document.",
             "en description": "The nation issuing the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv description": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "a2",
@@ -95714,7 +95714,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "base": "The number assigned to the referenced person's identity or travel document by the issuing nation."
           },
@@ -95755,7 +95755,7 @@
             "sv": "Nummer p\u00e5 identitetshandling eller resedokument",
             "Description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
             "en description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv description": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -95783,7 +95783,7 @@
           },
           "descriptions": {
             "en": "The issue date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The issue date shown on the referenced person's identity or travel document."
           },
@@ -95827,7 +95827,7 @@
             "sv": "Datum f\u00f6r utf\u00e4rdande av identitetshandling eller resedokument",
             "Description": "The issue date shown on the referenced person's identity or travel document.",
             "en description": "The issue date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv description": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -95917,7 +95917,7 @@
           },
           "descriptions": {
             "en": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The expiry date shown on the referenced person's identity or travel document."
           },
@@ -95961,7 +95961,7 @@
             "sv": "Sista giltighetsdag f\u00f6r identitetshandling eller resedokument",
             "Description": "The expiry date shown on the referenced person's identity or travel document.",
             "en description": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv description": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -96049,7 +96049,7 @@
           },
           "descriptions": {
             "en": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "base": "The name of the entity that issued the referenced person's identity or travel document."
           },
@@ -96089,7 +96089,7 @@
             "sv": "Namn p\u00e5 utf\u00e4rdare av identitetshandling eller resedokument",
             "Description": "The name of the entity that issued the referenced person's identity or travel document.",
             "en description": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv description": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "Type": "Text",
             "Format": "an..70",
@@ -96178,7 +96178,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "base": "The number assigned to the referenced person's visa by the issuing nation."
           },
@@ -96219,7 +96219,7 @@
             "sv": "Personens viseringsnummer",
             "Description": "The number assigned to the referenced person's visa by the issuing nation.",
             "en description": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv description": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -96306,7 +96306,7 @@
           },
           "descriptions": {
             "en": "The country that issued the referenced person's visa.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "base": "A code identifying the country that issued the referenced person's visa."
           },
@@ -96346,7 +96346,7 @@
             "sv": "Land som utf\u00e4rdat personens visering",
             "Description": "A code identifying the country that issued the referenced person's visa.",
             "en description": "The country that issued the referenced person's visa.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv description": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "Type": "Code",
             "Format": "a2",
@@ -96433,7 +96433,7 @@
           },
           "descriptions": {
             "en": "The phone contact number of the referenced person",
-            "fi": "Viitatun henkil\u00f6n puhelinnumero.",
+            "fi": "Henkil\u00f6n puhelinnumero.",
             "sv": "Telefonnumret till den ber\u00f6rda personen.",
             "base": "The phone contact number of the referenced person"
           },
@@ -96474,7 +96474,7 @@
             "sv": "Personens telefonnummer",
             "Description": "The phone contact number of the referenced person",
             "en description": "The phone contact number of the referenced person",
-            "fi description": "Viitatun henkil\u00f6n puhelinnumero.",
+            "fi description": "Henkil\u00f6n puhelinnumero.",
             "sv description": "Telefonnumret till den ber\u00f6rda personen.",
             "Type": "Text",
             "Format": "an..35",
@@ -96561,7 +96561,7 @@
           },
           "descriptions": {
             "en": "The email address for the referenced person",
-            "fi": "Viitatun henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
+            "fi": "Henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
             "sv": "E-postadressen till den ber\u00f6rda personen.",
             "base": "The email address for the referenced person"
           },
@@ -96602,7 +96602,7 @@
             "sv": "Personens e-postadress",
             "Description": "The email address for the referenced person",
             "en description": "The email address for the referenced person",
-            "fi description": "Viitatun henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
+            "fi description": "Henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
             "sv description": "E-postadressen till den ber\u00f6rda personen.",
             "Type": "Text",
             "Format": "an..256",
@@ -96689,7 +96689,7 @@
           },
           "descriptions": {
             "en": "The postal code of the referenced person's home address.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen postinumero.",
+            "fi": "Henkil\u00f6n kotiosoitteen postinumero.",
             "sv": "Postnumret i den ber\u00f6rda personens hemadress.",
             "base": "The postal code of the referenced person's home address."
           },
@@ -96730,7 +96730,7 @@
             "sv": "Personens postnummer",
             "Description": "The postal code of the referenced person's home address.",
             "en description": "The postal code of the referenced person's home address.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen postinumero.",
+            "fi description": "Henkil\u00f6n kotiosoitteen postinumero.",
             "sv description": "Postnumret i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..17",
@@ -96757,7 +96757,7 @@
           },
           "descriptions": {
             "en": "The post office box number of the referenced person's home address.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen postilokeron numero.",
+            "fi": "Henkil\u00f6n kotiosoitteen postilokeron numero.",
             "sv": "Postboxnumret i den ber\u00f6rda personens hemadress.",
             "base": "The post office box number of the referenced person's home address."
           },
@@ -96798,7 +96798,7 @@
             "sv": "Personens postboxadress",
             "Description": "The post office box number of the referenced person's home address.",
             "en description": "The post office box number of the referenced person's home address.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen postilokeron numero.",
+            "fi description": "Henkil\u00f6n kotiosoitteen postilokeron numero.",
             "sv description": "Postboxnumret i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..70",
@@ -96825,7 +96825,7 @@
           },
           "descriptions": {
             "en": "The street name of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen kadunnimi.",
+            "fi": "Henkil\u00f6n kotiosoitteen kadunnimi.",
             "sv": "Gatuadressen i den ber\u00f6rda personens hemadress.",
             "base": "The street name of the referenced person's home address"
           },
@@ -96866,7 +96866,7 @@
             "sv": "Gatuadress i personens hemadress",
             "Description": "The street name of the referenced person's home address",
             "en description": "The street name of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen kadunnimi.",
+            "fi description": "Henkil\u00f6n kotiosoitteen kadunnimi.",
             "sv description": "Gatuadressen i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..70",
@@ -96893,7 +96893,7 @@
           },
           "descriptions": {
             "en": "The city name of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
+            "fi": "Henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
             "sv": "Postorten i den ber\u00f6rda personens hemadress.",
             "base": "The city name of the referenced person's home address"
           },
@@ -96934,7 +96934,7 @@
             "sv": "Postort i personens hemadress",
             "Description": "The city name of the referenced person's home address",
             "en description": "The city name of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
+            "fi description": "Henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
             "sv description": "Postorten i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..35",
@@ -96961,7 +96961,7 @@
           },
           "descriptions": {
             "en": "The country of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen maa.",
+            "fi": "Henkil\u00f6n kotiosoitteen maa.",
             "sv": "Det land som anges i den ber\u00f6rda personens hemadress.",
             "base": "A code representing the country of the referenced person's home address"
           },
@@ -97002,7 +97002,7 @@
             "sv": "Land i personens hemadress",
             "Description": "A code representing the country of the referenced person's home address",
             "en description": "The country of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen maa.",
+            "fi description": "Henkil\u00f6n kotiosoitteen maa.",
             "sv description": "Det land som anges i den ber\u00f6rda personens hemadress.",
             "Type": "Code",
             "Format": "a2",
@@ -97030,7 +97030,7 @@
           },
           "descriptions": {
             "en": "The country sub-division of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen maan pienalue.",
+            "fi": "Henkil\u00f6n kotiosoitteen maan pienalue.",
             "sv": "Underuppdelning av det land som anges i den ber\u00f6rda personens hemadress.",
             "base": "The country sub-division of the referenced person's home address"
           },
@@ -97071,7 +97071,7 @@
             "sv": "Land i personens hemadress, underuppdelning",
             "Description": "The country sub-division of the referenced person's home address",
             "en description": "The country sub-division of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen maan pienalue.",
+            "fi description": "Henkil\u00f6n kotiosoitteen maan pienalue.",
             "sv description": "Underuppdelning av det land som anges i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..35",
@@ -97098,7 +97098,7 @@
           },
           "descriptions": {
             "en": "The house number of the referenced person's home address.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen talon numero.",
+            "fi": "Henkil\u00f6n kotiosoitteen talon numero.",
             "sv": "Husnumret i den ber\u00f6rda personens hemadress.",
             "base": "The house number of the referenced person's home address."
           },
@@ -97139,7 +97139,7 @@
             "sv": "Gatunummer i personens hemadress",
             "Description": "The house number of the referenced person's home address.",
             "en description": "The house number of the referenced person's home address.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen talon numero.",
+            "fi description": "Henkil\u00f6n kotiosoitteen talon numero.",
             "sv description": "Husnumret i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..35",
@@ -97166,7 +97166,7 @@
           },
           "descriptions": {
             "en": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
+            "fi": "Henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
             "sv": "Forts\u00e4ttning p\u00e5 namnet p\u00e5 gatan i den ber\u00f6rda personens hemadress n\u00e4r gatunamnet inte f\u00e5r plats under \u201dGatuadress i personens hemadress\u201d.",
             "base": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019."
           },
@@ -97207,7 +97207,7 @@
             "sv": "Extra rad i personens hemadress",
             "Description": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019.",
             "en description": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
+            "fi description": "Henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
             "sv description": "Forts\u00e4ttning p\u00e5 namnet p\u00e5 gatan i den ber\u00f6rda personens hemadress n\u00e4r gatunamnet inte f\u00e5r plats under \u201dGatuadress i personens hemadress\u201d.",
             "Type": "Text",
             "Format": "an..70",
@@ -97297,7 +97297,7 @@
           },
           "descriptions": {
             "en": "The number of the referenced person's residence permit",
-            "fi": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi": "Henkil\u00f6n oleskeluluvan numero",
             "sv": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "base": "The number of the referenced person's residence permit"
           },
@@ -97337,7 +97337,7 @@
             "sv": "Nummer p\u00e5 uppeh\u00e5llstillst\u00e5nd",
             "Description": "The number of the referenced person's residence permit",
             "en description": "The number of the referenced person's residence permit",
-            "fi description": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi description": "Henkil\u00f6n oleskeluluvan numero",
             "sv description": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -97552,7 +97552,7 @@
           },
           "descriptions": {
             "en": "The ticket or reservation number of the referenced passenger.",
-            "fi": "Viitatun matkustajan lippu- tai varausnumero.",
+            "fi": "Matkustajan lippu- tai varausnumero.",
             "sv": "Den ber\u00f6rda passagerarens biljett- eller bokningsnummer.",
             "base": "The ticket or reservation number of the referenced passenger."
           },
@@ -97593,7 +97593,7 @@
             "sv": "Passagerens biljettnummer / Passagerarbiljettnummer",
             "Description": "The ticket or reservation number of the referenced passenger.",
             "en description": "The ticket or reservation number of the referenced passenger.",
-            "fi description": "Viitatun matkustajan lippu- tai varausnumero.",
+            "fi description": "Matkustajan lippu- tai varausnumero.",
             "sv description": "Den ber\u00f6rda passagerarens biljett- eller bokningsnummer.",
             "Type": "Identifier",
             "Format": "an..16",
@@ -98192,7 +98192,7 @@
           },
           "descriptions": {
             "en": "The gender of the referenced person.",
-            "fi": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi": "Henkil\u00f6n sukupuoli.",
             "sv": "Den ber\u00f6rda personens k\u00f6n.",
             "base": "A code representing the gender of the referenced person."
           },
@@ -98234,7 +98234,7 @@
             "sv": "Personens k\u00f6n",
             "Description": "A code representing the gender of the referenced person.",
             "en description": "The gender of the referenced person.",
-            "fi description": "Viitatun henkil\u00f6n sukupuoli.",
+            "fi description": "Henkil\u00f6n sukupuoli.",
             "sv description": "Den ber\u00f6rda personens k\u00f6n.",
             "Type": "Code",
             "Format": "n..3",
@@ -98263,7 +98263,7 @@
           },
           "descriptions": {
             "en": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "base": "Given name or first name of the referenced person as in the passport or valid identification document."
           },
@@ -98304,7 +98304,7 @@
             "sv": "Personens f\u00f6rnamn",
             "Description": "Given name or first name of the referenced person as in the passport or valid identification document.",
             "en description": "Given name or first name of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n etunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6rnamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -98333,7 +98333,7 @@
           },
           "descriptions": {
             "en": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "base": "Family name or surname of the referenced person as in the passport or valid identification document."
           },
@@ -98374,7 +98374,7 @@
             "sv": "Personens efternamn",
             "Description": "Family name or surname of the referenced person as in the passport or valid identification document.",
             "en description": "Family name or surname of the referenced person as in the passport or valid identification document.",
-            "fi description": "Viitatun henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
+            "fi description": "Henkil\u00f6n sukunimi passissa tai voimassa olevan henkil\u00f6llisyystodistuksen muodossa.",
             "sv description": "Den ber\u00f6rda personens efternamn enligt pass eller giltig identitetshandling.",
             "Type": "Text",
             "Format": "an..70",
@@ -98404,7 +98404,7 @@
           },
           "descriptions": {
             "en": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "base": "The code representing the referenced person's country of birth as shown on the person's identity document."
           },
@@ -98448,7 +98448,7 @@
             "sv": "Personens f\u00f6delseland",
             "Description": "The code representing the referenced person's country of birth as shown on the person's identity document.",
             "en description": "The referenced person's country of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4maa henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4maa henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delseland enligt identitetshandlingen.",
             "Type": "Code",
             "Format": "a..4",
@@ -98480,7 +98480,7 @@
           },
           "descriptions": {
             "en": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "base": "The name of the referenced person's place of birth as shown on the person's identity or travel document."
           },
@@ -98524,7 +98524,7 @@
             "sv": "Personens f\u00f6delseort",
             "Description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
             "en description": "The name of the referenced person's place of birth as shown on the person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4paikka henkil\u00f6n henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4paikka henkil\u00f6- tai matkustusasiakirjan mukaisessa muodossa.",
             "sv description": "Namnet p\u00e5 den ber\u00f6rda personens f\u00f6delseort enligt personens identitetshandling eller resedokument.",
             "Type": "Text",
             "Format": "an..35",
@@ -98555,7 +98555,7 @@
           },
           "descriptions": {
             "en": "The referenced person is in transit to a foreign country.",
-            "fi": "Viitattu henkil\u00f6 on matkalla ulkomaahan.",
+            "fi": "Henkil\u00f6 on matkalla toiseen maahan.",
             "sv": "Den ber\u00f6rda personen befinner sig i transit till ett annat land.",
             "base": "A yes/no indicator whether the referenced person is in transit to a foreign country."
           },
@@ -98598,7 +98598,7 @@
             "sv": "Person i transit",
             "Description": "A yes/no indicator whether the referenced person is in transit to a foreign country.",
             "en description": "The referenced person is in transit to a foreign country.",
-            "fi description": "Viitattu henkil\u00f6 on matkalla ulkomaahan.",
+            "fi description": "Henkil\u00f6 on matkalla toiseen maahan.",
             "sv description": "Den ber\u00f6rda personen befinner sig i transit till ett annat land.",
             "Type": "Indicator",
             "Format": "n1",
@@ -98768,7 +98768,7 @@
           },
           "descriptions": {
             "en": "The referenced person has a licence to be ashore.",
-            "fi": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "base": "A yes/no indicator whether the referenced person has a licence to be ashore."
           },
@@ -98809,7 +98809,7 @@
             "sv": "Tillst\u00e5nd att g\u00e5 i land",
             "Description": "A yes/no indicator whether the referenced person has a licence to be ashore.",
             "en description": "The referenced person has a licence to be ashore.",
-            "fi description": "Viitatulla henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
+            "fi description": "Henkil\u00f6ll\u00e4 on lupa k\u00e4yd\u00e4 maissa.",
             "sv description": "Den ber\u00f6rda personen har tillst\u00e5nd att g\u00e5 i land.",
             "Type": "Indicator",
             "Format": "n1",
@@ -98905,7 +98905,7 @@
           },
           "descriptions": {
             "en": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments.",
-            "fi": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i viitatun matkustajan tai kuljettajan.",
+            "fi": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i matkustajan tai kuljettajan.",
             "sv": "En teknisk identifierare som unikt identifierar en passagerare/f\u00f6rare och inte \u00e4ndras vid boknings\u00e4ndringar.",
             "base": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments."
           },
@@ -98946,7 +98946,7 @@
             "sv": "Unik teknisk identifierare av passageraren",
             "Description": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments.",
             "en description": "A technical identifier which uniquely identifies the referenced passenger or driver and doesn't change upon booking amendments.",
-            "fi description": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i viitatun matkustajan tai kuljettajan.",
+            "fi description": "Tekninen ja varausmuutosten yhteydess\u00e4 pysyv\u00e4 tunniste, joka yksil\u00f6i matkustajan tai kuljettajan.",
             "sv description": "En teknisk identifierare som unikt identifierar en passagerare/f\u00f6rare och inte \u00e4ndras vid boknings\u00e4ndringar.",
             "Type": "Identifier",
             "Format": "an..30",
@@ -98973,7 +98973,7 @@
           },
           "descriptions": {
             "en": "The referenced passenger is a cruise passenger making a short visit to a port-related tourist attraction while retaining their cabin on board the cruise ship.",
-            "fi": "Viitattu matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
+            "fi": "Matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
             "sv": "Den ber\u00f6rda passageraren \u00e4r en kryssningspassagerare som g\u00f6r ett kort bes\u00f6k vid en hamnrelaterad turistattraktion och samtidigt beh\u00e5ller sin hytt ombord p\u00e5 kryssningsfartyget.",
             "base": "A yes/no indicator whether the referenced passenger is a cruise passenger on a short visit to a tourist attraction associated with the port while retaining a cabin on board the cruise ship."
           },
@@ -99014,7 +99014,7 @@
             "sv": "Personen \u00e4r en kryssningspassagerare",
             "Description": "A yes/no indicator whether the referenced passenger is a cruise passenger on a short visit to a tourist attraction associated with the port while retaining a cabin on board the cruise ship.",
             "en description": "The referenced passenger is a cruise passenger making a short visit to a port-related tourist attraction while retaining their cabin on board the cruise ship.",
-            "fi description": "Viitattu matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
+            "fi description": "Matkustaja on risteilymatkustaja, joka tekee lyhyen k\u00e4ynnin satamaan liittyv\u00e4\u00e4n matkailukohteeseen s\u00e4ilytt\u00e4en samalla risteilyaluksen hytin.",
             "sv description": "Den ber\u00f6rda passageraren \u00e4r en kryssningspassagerare som g\u00f6r ett kort bes\u00f6k vid en hamnrelaterad turistattraktion och samtidigt beh\u00e5ller sin hytt ombord p\u00e5 kryssningsfartyget.",
             "Type": "Indicator",
             "Format": "n1",
@@ -99120,7 +99120,7 @@
           },
           "descriptions": {
             "en": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "base": "The referenced person's date of birth as shown on the person's identity document."
           },
@@ -99164,7 +99164,7 @@
             "sv": "Personens f\u00f6delsedatum",
             "Description": "The referenced person's date of birth as shown on the person's identity document.",
             "en description": "The referenced person's date of birth as shown on the person's identity document.",
-            "fi description": "Viitatun henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
+            "fi description": "Henkil\u00f6n syntym\u00e4aika henkil\u00f6n henkil\u00f6asiakirjan mukaisessa muodossa.",
             "sv description": "Den ber\u00f6rda personens f\u00f6delsedatum enligt identitetshandlingen.",
             "Type": "Date",
             "Format": "an..35",
@@ -99266,7 +99266,7 @@
           },
           "descriptions": {
             "en": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person.",
-            "fi": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota viitattu henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
+            "fi": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
             "sv": "Beskrivning av s\u00e4rskild v\u00e5rd eller hj\u00e4lp som den ber\u00f6rda personen beh\u00f6ver i h\u00e4ndelse av n\u00f6dsituationer, om personen sj\u00e4lv uppgett detta.",
             "base": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person."
           },
@@ -99307,7 +99307,7 @@
             "sv": "Beskrivning av s\u00e4rskild v\u00e5rd eller hj\u00e4lp f\u00f6r personen",
             "Description": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person.",
             "en description": "Description of special care or assistance that the referenced person needs in case of emergency, when volunteered by the person.",
-            "fi description": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota viitattu henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
+            "fi description": "Kuvaus erityisest\u00e4 huolenpidosta tai avusta, jota henkil\u00f6 tarvitsee kertomansa mukaan h\u00e4t\u00e4tilanteessa.",
             "sv description": "Beskrivning av s\u00e4rskild v\u00e5rd eller hj\u00e4lp som den ber\u00f6rda personen beh\u00f6ver i h\u00e4ndelse av n\u00f6dsituationer, om personen sj\u00e4lv uppgett detta.",
             "Type": "Text",
             "Format": "an..256",
@@ -99400,7 +99400,7 @@
           },
           "descriptions": {
             "en": "Contact number in case of an emergency with the referenced person, when volunteered by the person.",
-            "fi": "Viitatun henkil\u00f6n h\u00e4t\u00e4yhteystiedon puhelinnumero, jos vapaaehtoisesti annettu.",
+            "fi": "Henkil\u00f6n h\u00e4t\u00e4yhteystiedon puhelinnumero, jos vapaaehtoisesti annettu.",
             "sv": "Telefonnummer som kan anv\u00e4ndas i h\u00e4ndelse av en n\u00f6dsituation som drabbat den ber\u00f6rda personen, om personen sj\u00e4lv uppgett detta.",
             "base": "Contact number in case of an emergency with the referenced person, when volunteered by the person."
           },
@@ -99440,7 +99440,7 @@
             "sv": "Personens telefonnummer f\u00f6r n\u00f6dsituationer",
             "Description": "Contact number in case of an emergency with the referenced person, when volunteered by the person.",
             "en description": "Contact number in case of an emergency with the referenced person, when volunteered by the person.",
-            "fi description": "Viitatun henkil\u00f6n h\u00e4t\u00e4yhteystiedon puhelinnumero, jos vapaaehtoisesti annettu.",
+            "fi description": "Henkil\u00f6n h\u00e4t\u00e4yhteystiedon puhelinnumero, jos vapaaehtoisesti annettu.",
             "sv description": "Telefonnummer som kan anv\u00e4ndas i h\u00e4ndelse av en n\u00f6dsituation som drabbat den ber\u00f6rda personen, om personen sj\u00e4lv uppgett detta.",
             "Type": "Text",
             "Format": "an..256",
@@ -99530,7 +99530,7 @@
           },
           "descriptions": {
             "en": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "base": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document."
           },
@@ -99572,7 +99572,7 @@
             "sv": "Personens nationalitet",
             "Description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
             "en description": "The stated or factual country of citizenship shown on the referenced person\u2019s identification document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6asiakirjassa ilmoitettu tai tosiasiallinen kansalaisuusmaa.",
             "sv description": "Uppgett eller faktiskt medborgarskap enligt den ber\u00f6rda personens identitetshandling.",
             "Type": "Code",
             "Format": "a3",
@@ -99661,7 +99661,7 @@
           },
           "descriptions": {
             "en": "The type of the accreditation of the referenced passenger.",
-            "fi": "Viitatun matkustajan akkreditoinnin tyyppi.",
+            "fi": "Matkustajan akkreditoinnin tyyppi.",
             "sv": "Typen av ackreditering f\u00f6r den ber\u00f6rda passageraren.",
             "base": "A code representing the type of the accreditation of the referenced passenger."
           },
@@ -99701,7 +99701,7 @@
             "sv": "Passagerarens ackrediteringstyp",
             "Description": "A code representing the type of the accreditation of the referenced passenger.",
             "en description": "The type of the accreditation of the referenced passenger.",
-            "fi description": "Viitatun matkustajan akkreditoinnin tyyppi.",
+            "fi description": "Matkustajan akkreditoinnin tyyppi.",
             "sv description": "Typen av ackreditering f\u00f6r den ber\u00f6rda passageraren.",
             "Type": "Code",
             "Format": "an2",
@@ -99795,7 +99795,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person embarked the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "base": "A code representing the port from which the referenced person embarked the ship."
           },
@@ -99836,7 +99836,7 @@
             "sv": "Personens ombordstigningshamn",
             "Description": "A code representing the port from which the referenced person embarked the ship.",
             "en description": "The port from which the referenced person embarked the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 nousi alukseen.",
+            "fi description": "Satama, jossa henkil\u00f6 nousi alukseen.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen steg ombord p\u00e5 fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -99932,7 +99932,7 @@
           },
           "descriptions": {
             "en": "The port from which the referenced person plans to disembark the ship.",
-            "fi": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "base": "A code representing the port from which the referenced person plans to disembark the ship."
           },
@@ -99973,7 +99973,7 @@
             "sv": "Personens avstigningshamn",
             "Description": "A code representing the port from which the referenced person plans to disembark the ship.",
             "en description": "The port from which the referenced person plans to disembark the ship.",
-            "fi description": "Satama, jossa viitattu henkil\u00f6 aikoo poistua alukselta.",
+            "fi description": "Satama, jossa henkil\u00f6 aikoo poistua alukselta.",
             "sv description": "Den hamn d\u00e4r den ber\u00f6rda personen planerar att l\u00e4mna fartyget.",
             "Type": "Code",
             "Format": "an5",
@@ -100068,7 +100068,7 @@
           },
           "descriptions": {
             "en": "The type of the referenced person's presented identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the type of the referenced person's presented identity or travel document."
           },
@@ -100111,7 +100111,7 @@
             "sv": "Typ av identitetshandling eller resedokument",
             "Description": "A code representing the type of the referenced person's presented identity or travel document.",
             "en description": "The type of the referenced person's presented identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
+            "fi description": "Henkil\u00f6n esitt\u00e4m\u00e4 henkil\u00f6llisyys- tai matkustusasiakirjan tyyppi.",
             "sv description": "Den typ av identitetshandling eller resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "an..3",
@@ -100202,7 +100202,7 @@
           },
           "descriptions": {
             "en": "The nation issuing the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "base": "A code representing the nation issuing the referenced person's identity or travel document."
           },
@@ -100243,7 +100243,7 @@
             "sv": "Typ av identitetshandling eller resedokument, utf\u00e4rdande nation",
             "Description": "A code representing the nation issuing the referenced person's identity or travel document.",
             "en description": "The nation issuing the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4nyt maa.",
             "sv description": "Den nation som har utf\u00e4rdat den identitetshandling eller det resedokument som den ber\u00f6rda personen uppvisar.",
             "Type": "Code",
             "Format": "a2",
@@ -100272,7 +100272,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "base": "The number assigned to the referenced person's identity or travel document by the issuing nation."
           },
@@ -100313,7 +100313,7 @@
             "sv": "Nummer p\u00e5 identitetshandling eller resedokument",
             "Description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
             "en description": "The number assigned to the referenced person's identity or travel document by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen maan antama numero.",
             "sv description": "Det unika kontrollnummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens identitetshandling eller resedokument.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -100341,7 +100341,7 @@
           },
           "descriptions": {
             "en": "The issue date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The issue date shown on the referenced person's identity or travel document."
           },
@@ -100385,7 +100385,7 @@
             "sv": "Datum f\u00f6r utf\u00e4rdande av identitetshandling eller resedokument",
             "Description": "The issue date shown on the referenced person's identity or travel document.",
             "en description": "The issue date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty my\u00f6nt\u00e4misp\u00e4iv\u00e4.",
             "sv description": "Det utf\u00e4rdandedatum som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -100475,7 +100475,7 @@
           },
           "descriptions": {
             "en": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "base": "The expiry date shown on the referenced person's identity or travel document."
           },
@@ -100519,7 +100519,7 @@
             "sv": "Sista giltighetsdag f\u00f6r identitetshandling eller resedokument",
             "Description": "The expiry date shown on the referenced person's identity or travel document.",
             "en description": "The expiry date shown on the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjaan merkitty viimeinen voimassaolop\u00e4iv\u00e4.",
             "sv description": "Den sista giltighetsdag som anges i den ber\u00f6rda personens identitetshandling.",
             "Type": "Date",
             "Format": "an..35",
@@ -100607,7 +100607,7 @@
           },
           "descriptions": {
             "en": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "base": "The name of the entity that issued the referenced person's identity or travel document."
           },
@@ -100647,7 +100647,7 @@
             "sv": "Namn p\u00e5 utf\u00e4rdare av identitetshandling eller resedokument",
             "Description": "The name of the entity that issued the referenced person's identity or travel document.",
             "en description": "The name of the entity that issued the referenced person's identity or travel document.",
-            "fi description": "Viitatun henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
+            "fi description": "Henkil\u00f6n henkil\u00f6llisyys- tai matkustusasiakirjan my\u00f6nt\u00e4neen tahon nimi.",
             "sv description": "Namnet p\u00e5 den enhet som har utf\u00e4rdat identitetshandlingen eller resedokumentet.",
             "Type": "Text",
             "Format": "an..70",
@@ -100736,7 +100736,7 @@
           },
           "descriptions": {
             "en": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "base": "The number assigned to the referenced person's visa by the issuing nation."
           },
@@ -100777,7 +100777,7 @@
             "sv": "Personens viseringsnummer",
             "Description": "The number assigned to the referenced person's visa by the issuing nation.",
             "en description": "The number assigned to the referenced person's visa by the issuing nation.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4neen maan antama viisuminumero.",
             "sv description": "Det unika nummer som den utf\u00e4rdande nationen har anvisat den ber\u00f6rda personens visering.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -100864,7 +100864,7 @@
           },
           "descriptions": {
             "en": "The country that issued the referenced person's visa.",
-            "fi": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "base": "A code identifying the country that issued the referenced person's visa."
           },
@@ -100904,7 +100904,7 @@
             "sv": "Land som utf\u00e4rdat personens visering",
             "Description": "A code identifying the country that issued the referenced person's visa.",
             "en description": "The country that issued the referenced person's visa.",
-            "fi description": "Viitatun henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
+            "fi description": "Henkil\u00f6n viisumin my\u00f6nt\u00e4nyt maa.",
             "sv description": "Det land som utf\u00e4rdat den ber\u00f6rda personens visering.",
             "Type": "Code",
             "Format": "a2",
@@ -100991,7 +100991,7 @@
           },
           "descriptions": {
             "en": "The phone contact number of the referenced person",
-            "fi": "Viitatun henkil\u00f6n puhelinnumero.",
+            "fi": "Henkil\u00f6n puhelinnumero.",
             "sv": "Telefonnumret till den ber\u00f6rda personen.",
             "base": "The phone contact number of the referenced person"
           },
@@ -101032,7 +101032,7 @@
             "sv": "Personens telefonnummer",
             "Description": "The phone contact number of the referenced person",
             "en description": "The phone contact number of the referenced person",
-            "fi description": "Viitatun henkil\u00f6n puhelinnumero.",
+            "fi description": "Henkil\u00f6n puhelinnumero.",
             "sv description": "Telefonnumret till den ber\u00f6rda personen.",
             "Type": "Text",
             "Format": "an..35",
@@ -101119,7 +101119,7 @@
           },
           "descriptions": {
             "en": "The email address for the referenced person",
-            "fi": "Viitatun henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
+            "fi": "Henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
             "sv": "E-postadressen till den ber\u00f6rda personen.",
             "base": "The email address for the referenced person"
           },
@@ -101160,7 +101160,7 @@
             "sv": "Personens e-postadress",
             "Description": "The email address for the referenced person",
             "en description": "The email address for the referenced person",
-            "fi description": "Viitatun henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
+            "fi description": "Henkil\u00f6n s\u00e4hk\u00f6postiosoite.",
             "sv description": "E-postadressen till den ber\u00f6rda personen.",
             "Type": "Text",
             "Format": "an..256",
@@ -101247,7 +101247,7 @@
           },
           "descriptions": {
             "en": "The postal code of the referenced person's home address.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen postinumero.",
+            "fi": "Henkil\u00f6n kotiosoitteen postinumero.",
             "sv": "Postnumret i den ber\u00f6rda personens hemadress.",
             "base": "The postal code of the referenced person's home address."
           },
@@ -101288,7 +101288,7 @@
             "sv": "Personens postnummer",
             "Description": "The postal code of the referenced person's home address.",
             "en description": "The postal code of the referenced person's home address.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen postinumero.",
+            "fi description": "Henkil\u00f6n kotiosoitteen postinumero.",
             "sv description": "Postnumret i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..17",
@@ -101315,7 +101315,7 @@
           },
           "descriptions": {
             "en": "The post office box number of the referenced person's home address.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen postilokeron numero.",
+            "fi": "Henkil\u00f6n kotiosoitteen postilokeron numero.",
             "sv": "Postboxnumret i den ber\u00f6rda personens hemadress.",
             "base": "The post office box number of the referenced person's home address."
           },
@@ -101356,7 +101356,7 @@
             "sv": "Personens postboxadress",
             "Description": "The post office box number of the referenced person's home address.",
             "en description": "The post office box number of the referenced person's home address.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen postilokeron numero.",
+            "fi description": "Henkil\u00f6n kotiosoitteen postilokeron numero.",
             "sv description": "Postboxnumret i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..70",
@@ -101383,7 +101383,7 @@
           },
           "descriptions": {
             "en": "The street name of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen kadunnimi.",
+            "fi": "Henkil\u00f6n kotiosoitteen kadunnimi.",
             "sv": "Gatuadressen i den ber\u00f6rda personens hemadress.",
             "base": "The street name of the referenced person's home address"
           },
@@ -101424,7 +101424,7 @@
             "sv": "Gatuadress i personens hemadress",
             "Description": "The street name of the referenced person's home address",
             "en description": "The street name of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen kadunnimi.",
+            "fi description": "Henkil\u00f6n kotiosoitteen kadunnimi.",
             "sv description": "Gatuadressen i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..70",
@@ -101451,7 +101451,7 @@
           },
           "descriptions": {
             "en": "The city name of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
+            "fi": "Henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
             "sv": "Postorten i den ber\u00f6rda personens hemadress.",
             "base": "The city name of the referenced person's home address"
           },
@@ -101492,7 +101492,7 @@
             "sv": "Postort i personens hemadress",
             "Description": "The city name of the referenced person's home address",
             "en description": "The city name of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
+            "fi description": "Henkil\u00f6n kotiosoitteen postitoimipaikan nimi.",
             "sv description": "Postorten i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..35",
@@ -101519,7 +101519,7 @@
           },
           "descriptions": {
             "en": "The country of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen maa.",
+            "fi": "Henkil\u00f6n kotiosoitteen maa.",
             "sv": "Det land som anges i den ber\u00f6rda personens hemadress.",
             "base": "A code representing the country of the referenced person's home address"
           },
@@ -101560,7 +101560,7 @@
             "sv": "Land i personens hemadress",
             "Description": "A code representing the country of the referenced person's home address",
             "en description": "The country of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen maa.",
+            "fi description": "Henkil\u00f6n kotiosoitteen maa.",
             "sv description": "Det land som anges i den ber\u00f6rda personens hemadress.",
             "Type": "Code",
             "Format": "a2",
@@ -101588,7 +101588,7 @@
           },
           "descriptions": {
             "en": "The country sub-division of the referenced person's home address",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen maan pienalue.",
+            "fi": "Henkil\u00f6n kotiosoitteen maan pienalue.",
             "sv": "Underuppdelning av det land som anges i den ber\u00f6rda personens hemadress.",
             "base": "The country sub-division of the referenced person's home address"
           },
@@ -101629,7 +101629,7 @@
             "sv": "Land i personens hemadress, underuppdelning",
             "Description": "The country sub-division of the referenced person's home address",
             "en description": "The country sub-division of the referenced person's home address",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen maan pienalue.",
+            "fi description": "Henkil\u00f6n kotiosoitteen maan pienalue.",
             "sv description": "Underuppdelning av det land som anges i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..35",
@@ -101656,7 +101656,7 @@
           },
           "descriptions": {
             "en": "The house number of the referenced person's home address.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen talon numero.",
+            "fi": "Henkil\u00f6n kotiosoitteen talon numero.",
             "sv": "Husnumret i den ber\u00f6rda personens hemadress.",
             "base": "The house number of the referenced person's home address."
           },
@@ -101697,7 +101697,7 @@
             "sv": "Gatunummer i personens hemadress",
             "Description": "The house number of the referenced person's home address.",
             "en description": "The house number of the referenced person's home address.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen talon numero.",
+            "fi description": "Henkil\u00f6n kotiosoitteen talon numero.",
             "sv description": "Husnumret i den ber\u00f6rda personens hemadress.",
             "Type": "Text",
             "Format": "an..35",
@@ -101724,7 +101724,7 @@
           },
           "descriptions": {
             "en": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019.",
-            "fi": "Viitatun henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
+            "fi": "Henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
             "sv": "Forts\u00e4ttning p\u00e5 namnet p\u00e5 gatan i den ber\u00f6rda personens hemadress n\u00e4r gatunamnet inte f\u00e5r plats under \u201dGatuadress i personens hemadress\u201d.",
             "base": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019."
           },
@@ -101765,7 +101765,7 @@
             "sv": "Extra rad i personens hemadress",
             "Description": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019.",
             "en description": "Continuation of the street name of the referenced person's home address when the street name exceeds the capacity of \u2018Person home address street\u2019.",
-            "fi description": "Viitatun henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
+            "fi description": "Henkil\u00f6n kotiosoitteen kadunnimen jatkamisrivi, kun kadunnimi ei mahdu \u201dHenkil\u00f6n kotiosoitteen kadunnimi\u201d -kentt\u00e4\u00e4n.",
             "sv description": "Forts\u00e4ttning p\u00e5 namnet p\u00e5 gatan i den ber\u00f6rda personens hemadress n\u00e4r gatunamnet inte f\u00e5r plats under \u201dGatuadress i personens hemadress\u201d.",
             "Type": "Text",
             "Format": "an..70",
@@ -101855,7 +101855,7 @@
           },
           "descriptions": {
             "en": "The number of the referenced person's residence permit",
-            "fi": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi": "Henkil\u00f6n oleskeluluvan numero",
             "sv": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "base": "The number of the referenced person's residence permit"
           },
@@ -101895,7 +101895,7 @@
             "sv": "Nummer p\u00e5 uppeh\u00e5llstillst\u00e5nd",
             "Description": "The number of the referenced person's residence permit",
             "en description": "The number of the referenced person's residence permit",
-            "fi description": "Viitatun henkil\u00f6n oleskeluluvan numero",
+            "fi description": "Henkil\u00f6n oleskeluluvan numero",
             "sv description": "Numret p\u00e5 den ber\u00f6rda personens uppeh\u00e5llstillst\u00e5nd.",
             "Type": "Identifier",
             "Format": "an..70",
@@ -102110,7 +102110,7 @@
           },
           "descriptions": {
             "en": "The ticket or reservation number of the referenced passenger.",
-            "fi": "Viitatun matkustajan lippu- tai varausnumero.",
+            "fi": "Matkustajan lippu- tai varausnumero.",
             "sv": "Den ber\u00f6rda passagerarens biljett- eller bokningsnummer.",
             "base": "The ticket or reservation number of the referenced passenger."
           },
@@ -102151,7 +102151,7 @@
             "sv": "Passagerens biljettnummer / Passagerarbiljettnummer",
             "Description": "The ticket or reservation number of the referenced passenger.",
             "en description": "The ticket or reservation number of the referenced passenger.",
-            "fi description": "Viitatun matkustajan lippu- tai varausnumero.",
+            "fi description": "Matkustajan lippu- tai varausnumero.",
             "sv description": "Den ber\u00f6rda passagerarens biljett- eller bokningsnummer.",
             "Type": "Identifier",
             "Format": "an..16",
