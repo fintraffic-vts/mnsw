@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T07:05:59.048145+00:00",
+  "generatedAt": "2026-08-10T08:46:55.355743+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -68349,7 +68349,7 @@
             "partAB": true,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
+            "narrowInfoFilter": true,
             "hiddenData": false,
             "msSpecificReq": false
           },
@@ -68380,6 +68380,8 @@
             "Status": "O",
             "Occurrence": "0..1",
             "Part A/B": "x",
+            "Suppeat tiedot -suodatus": "x",
+            "Kommentteja": "KS: 8.8.26: https://fintraffic-siili.atlassian.net/browse/NEMO-9732",
             "XSD path": "/env:Envelope/mts:MTS/mts:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:LoadingPortOperationsPortOperationEvent/ram:CruisePassengerPersonQuantity"
           }
         },
