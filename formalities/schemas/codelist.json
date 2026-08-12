@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T08:59:05.278Z",
+  "generatedAt": "2026-08-12T13:23:57.415Z",
   "sourceFile": "tools/code list/Code lists v2.0.0.xlsx",
   "listNames": [
     "absence_type",
@@ -2217,10 +2217,7 @@
           "fi": "Nesteytetty kaasu",
           "sv": "Flytande gas"
         },
-        "formality": [
-          "CGA/D",
-          "MTS"
-        ],
+        "formality": [],
         "source": "EMSA"
       },
       {
@@ -4685,7 +4682,10 @@
           "fi": "Henkilöautot, moottoripyörät ja niihin kuuluvat perävaunut/asuntovaunut",
           "sv": "Personbilar, motorcyklar och tillhörande släpvagnar/husvagnar"
         },
-        "formality": [],
+        "formality": [
+          "CGA/D",
+          "MTS"
+        ],
         "source": "EMSA"
       },
       {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T08:46:55.355743+00:00",
+  "generatedAt": "2026-08-12T13:23:46.702736+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -41504,17 +41504,17 @@
             "R-GENERAL-036"
           ],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
+          "finlandWanted": true,
           "flags": {
             "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
+            "narrowInfoFilter": true,
             "hiddenData": false,
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen",
+            "comments": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen KS: https://fintraffic-siili.atlassian.net/browse/NEMO-9794",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -41540,7 +41540,8 @@
             "Status": "O",
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
-            "Kommentit": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen",
+            "Suppeat tiedot -suodatus": "x",
+            "Kommentit": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen KS: https://fintraffic-siili.atlassian.net/browse/NEMO-9794",
             "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure"
           }
         },
@@ -52202,17 +52203,17 @@
             "R-GENERAL-036"
           ],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
+          "finlandWanted": true,
           "flags": {
             "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
+            "narrowInfoFilter": true,
             "hiddenData": false,
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "https://fintraffic-siili.atlassian.net/browse/NEMO-9795",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -52238,6 +52239,8 @@
             "Status": "O",
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
+            "Suppeat tiedot -suodatus": "x",
+            "Kommentit": "https://fintraffic-siili.atlassian.net/browse/NEMO-9795",
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure"
           }
         },
