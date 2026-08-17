@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T13:23:46.702736+00:00",
+  "generatedAt": "2026-08-17T05:24:50.013017+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -40813,6 +40813,80 @@
             "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:GrossWeightMeasure"
           }
         },
+        "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure": {
+          "formality": "HZA",
+          "path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure",
+          "mmtPath": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
+          "level": "4",
+          "objectType": "BBIE",
+          "baseName": "Net Weight",
+          "emsweDataElementId": "DE-049-10",
+          "imoCompendiumId": "IMO0052",
+          "name": "Dangerous goods net mass",
+          "labels": {
+            "en": "Dangerous goods net mass",
+            "fi": "Vaarallisen aineen nettomassa",
+            "sv": "Nettovikt av farligt gods"
+          },
+          "descriptions": {
+            "en": "The net mass of the referenced dangerous goods.",
+            "fi": "Viitatun vaarallisen aineen nettomassa.",
+            "sv": "Nettovikten av det ber\u00f6rda farliga godset.",
+            "base": "The net mass of the referenced dangerous goods."
+          },
+          "type": "Measure",
+          "format": "n..16,6",
+          "codeList": "",
+          "status": "O",
+          "occurrence": "0..1",
+          "rulesConditionsGuidelinesRaw": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
+          "ruleRefs": [
+            "C-HZA-004",
+            "R-GENERAL-002",
+            "R-GENERAL-036"
+          ],
+          "nationalBusinessRuleRefs": [],
+          "finlandWanted": true,
+          "flags": {
+            "partAB": false,
+            "fiPartC": false,
+            "useCaseNoLegalBasis": false,
+            "narrowInfoFilter": true,
+            "hiddenData": false,
+            "msSpecificReq": false
+          },
+          "comments": {
+            "comments": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen KS: https://fintraffic-siili.atlassian.net/browse/NEMO-9794",
+            "usageGuidanceComments": "",
+            "migChangeNotes": "",
+            "msSpecificReq": ""
+          },
+          "raw": {
+            "MMT path": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
+            "Level": "4",
+            "Object type": "BBIE",
+            "Formality type": "HZA",
+            "MMT base": "Net Weight",
+            "EMSWe ID": "DE-049-10",
+            "IMO Compendium": "IMO0052",
+            "EMSWe name": "Dangerous goods net mass",
+            "en": "Dangerous goods net mass",
+            "fi": "Vaarallisen aineen nettomassa",
+            "sv": "Nettovikt av farligt gods",
+            "Description": "The net mass of the referenced dangerous goods.",
+            "en description": "The net mass of the referenced dangerous goods.",
+            "fi description": "Viitatun vaarallisen aineen nettomassa.",
+            "sv description": "Nettovikten av det ber\u00f6rda farliga godset.",
+            "Type": "Measure",
+            "Format": "n..16,6",
+            "Status": "O",
+            "Occurrence": "0..1",
+            "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
+            "Suppeat tiedot -suodatus": "x",
+            "Kommentit": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen KS: https://fintraffic-siili.atlassian.net/browse/NEMO-9794",
+            "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure"
+          }
+        },
         "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:GrossVolumeMeasure": {
           "formality": "HZA",
           "path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:GrossVolumeMeasure",
@@ -41469,80 +41543,6 @@
             "Occurrence": "0..5",
             "Rules, Conditions, Guidelines": "C-HZA-002",
             "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:AdditionalHazardClassificationID"
-          }
-        },
-        "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure": {
-          "formality": "HZA",
-          "path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure",
-          "mmtPath": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
-          "level": "4",
-          "objectType": "BBIE",
-          "baseName": "Net Weight",
-          "emsweDataElementId": "DE-049-10",
-          "imoCompendiumId": "IMO0052",
-          "name": "Dangerous goods net mass",
-          "labels": {
-            "en": "Dangerous goods net mass",
-            "fi": "Vaarallisen aineen nettomassa",
-            "sv": "Nettovikt av farligt gods"
-          },
-          "descriptions": {
-            "en": "The net mass of the referenced dangerous goods.",
-            "fi": "Viitatun vaarallisen aineen nettomassa.",
-            "sv": "Nettovikten av det ber\u00f6rda farliga godset.",
-            "base": "The net mass of the referenced dangerous goods."
-          },
-          "type": "Measure",
-          "format": "n..16,6",
-          "codeList": "",
-          "status": "O",
-          "occurrence": "0..1",
-          "rulesConditionsGuidelinesRaw": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
-          "ruleRefs": [
-            "C-HZA-004",
-            "R-GENERAL-002",
-            "R-GENERAL-036"
-          ],
-          "nationalBusinessRuleRefs": [],
-          "finlandWanted": true,
-          "flags": {
-            "partAB": false,
-            "fiPartC": false,
-            "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
-            "hiddenData": false,
-            "msSpecificReq": false
-          },
-          "comments": {
-            "comments": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen KS: https://fintraffic-siili.atlassian.net/browse/NEMO-9794",
-            "usageGuidanceComments": "",
-            "migChangeNotes": "",
-            "msSpecificReq": ""
-          },
-          "raw": {
-            "MMT path": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
-            "Level": "4",
-            "Object type": "BBIE",
-            "Formality type": "HZA",
-            "MMT base": "Net Weight",
-            "EMSWe ID": "DE-049-10",
-            "IMO Compendium": "IMO0052",
-            "EMSWe name": "Dangerous goods net mass",
-            "en": "Dangerous goods net mass",
-            "fi": "Vaarallisen aineen nettomassa",
-            "sv": "Nettovikt av farligt gods",
-            "Description": "The net mass of the referenced dangerous goods.",
-            "en description": "The net mass of the referenced dangerous goods.",
-            "fi description": "Viitatun vaarallisen aineen nettomassa.",
-            "sv description": "Nettovikten av det ber\u00f6rda farliga godset.",
-            "Type": "Measure",
-            "Format": "n..16,6",
-            "Status": "O",
-            "Occurrence": "0..1",
-            "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
-            "Suppeat tiedot -suodatus": "x",
-            "Kommentit": "Jonna // T\u00e4m\u00e4 tarvitaan erikseen KS: https://fintraffic-siili.atlassian.net/browse/NEMO-9794",
-            "XSD path": "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure"
           }
         },
         "/env:Envelope/hza:HZA/hza:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:ExplosiveCargoNetWeightMeasure": {
@@ -51521,6 +51521,80 @@
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:GrossWeightMeasure"
           }
         },
+        "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure": {
+          "formality": "HZD",
+          "path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure",
+          "mmtPath": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
+          "level": "4",
+          "objectType": "BBIE",
+          "baseName": "Net Weight",
+          "emsweDataElementId": "DE-049-10",
+          "imoCompendiumId": "IMO0052",
+          "name": "Dangerous goods net mass",
+          "labels": {
+            "en": "Dangerous goods net mass",
+            "fi": "Vaarallisen aineen nettomassa",
+            "sv": "Nettovikt av farligt gods"
+          },
+          "descriptions": {
+            "en": "The net mass of the referenced dangerous goods.",
+            "fi": "Viitatun vaarallisen aineen nettomassa.",
+            "sv": "Nettovikten av det ber\u00f6rda farliga godset.",
+            "base": "The net mass of the referenced dangerous goods."
+          },
+          "type": "Measure",
+          "format": "n..16,6",
+          "codeList": "",
+          "status": "O",
+          "occurrence": "0..1",
+          "rulesConditionsGuidelinesRaw": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
+          "ruleRefs": [
+            "C-HZA-004",
+            "R-GENERAL-002",
+            "R-GENERAL-036"
+          ],
+          "nationalBusinessRuleRefs": [],
+          "finlandWanted": true,
+          "flags": {
+            "partAB": false,
+            "fiPartC": false,
+            "useCaseNoLegalBasis": false,
+            "narrowInfoFilter": true,
+            "hiddenData": false,
+            "msSpecificReq": false
+          },
+          "comments": {
+            "comments": "https://fintraffic-siili.atlassian.net/browse/NEMO-9795",
+            "usageGuidanceComments": "",
+            "migChangeNotes": "",
+            "msSpecificReq": ""
+          },
+          "raw": {
+            "MMT path": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
+            "Level": "4",
+            "Object type": "BBIE",
+            "Formality type": "HZD",
+            "MMT base": "Net Weight",
+            "EMSWe ID": "DE-049-10",
+            "IMO Compendium": "IMO0052",
+            "EMSWe name": "Dangerous goods net mass",
+            "en": "Dangerous goods net mass",
+            "fi": "Vaarallisen aineen nettomassa",
+            "sv": "Nettovikt av farligt gods",
+            "Description": "The net mass of the referenced dangerous goods.",
+            "en description": "The net mass of the referenced dangerous goods.",
+            "fi description": "Viitatun vaarallisen aineen nettomassa.",
+            "sv description": "Nettovikten av det ber\u00f6rda farliga godset.",
+            "Type": "Measure",
+            "Format": "n..16,6",
+            "Status": "O",
+            "Occurrence": "0..1",
+            "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
+            "Suppeat tiedot -suodatus": "x",
+            "Kommentit": "https://fintraffic-siili.atlassian.net/browse/NEMO-9795",
+            "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure"
+          }
+        },
         "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:GrossVolumeMeasure": {
           "formality": "HZD",
           "path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:GrossVolumeMeasure",
@@ -52168,80 +52242,6 @@
             "Occurrence": "0..5",
             "Rules, Conditions, Guidelines": "C-HZA-002",
             "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:AdditionalHazardClassificationID"
-          }
-        },
-        "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure": {
-          "formality": "HZD",
-          "path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure",
-          "mmtPath": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
-          "level": "4",
-          "objectType": "BBIE",
-          "baseName": "Net Weight",
-          "emsweDataElementId": "DE-049-10",
-          "imoCompendiumId": "IMO0052",
-          "name": "Dangerous goods net mass",
-          "labels": {
-            "en": "Dangerous goods net mass",
-            "fi": "Vaarallisen aineen nettomassa",
-            "sv": "Nettovikt av farligt gods"
-          },
-          "descriptions": {
-            "en": "The net mass of the referenced dangerous goods.",
-            "fi": "Viitatun vaarallisen aineen nettomassa.",
-            "sv": "Nettovikten av det ber\u00f6rda farliga godset.",
-            "base": "The net mass of the referenced dangerous goods."
-          },
-          "type": "Measure",
-          "format": "n..16,6",
-          "codeList": "",
-          "status": "O",
-          "occurrence": "0..1",
-          "rulesConditionsGuidelinesRaw": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
-          "ruleRefs": [
-            "C-HZA-004",
-            "R-GENERAL-002",
-            "R-GENERAL-036"
-          ],
-          "nationalBusinessRuleRefs": [],
-          "finlandWanted": true,
-          "flags": {
-            "partAB": false,
-            "fiPartC": false,
-            "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
-            "hiddenData": false,
-            "msSpecificReq": false
-          },
-          "comments": {
-            "comments": "https://fintraffic-siili.atlassian.net/browse/NEMO-9795",
-            "usageGuidanceComments": "",
-            "migChangeNotes": "",
-            "msSpecificReq": ""
-          },
-          "raw": {
-            "MMT path": "BSP Master. Details/BSP Master. Specified. Supply Chain_ Consignment/Supply Chain_ Consignment. Included. Supply Chain_ Consignment Item/Supply Chain_ Consignment Item. Applicable. Transport_ Dangerous Goods/Transport_ Dangerous Goods. Net Weight. Measure",
-            "Level": "4",
-            "Object type": "BBIE",
-            "Formality type": "HZD",
-            "MMT base": "Net Weight",
-            "EMSWe ID": "DE-049-10",
-            "IMO Compendium": "IMO0052",
-            "EMSWe name": "Dangerous goods net mass",
-            "en": "Dangerous goods net mass",
-            "fi": "Vaarallisen aineen nettomassa",
-            "sv": "Nettovikt av farligt gods",
-            "Description": "The net mass of the referenced dangerous goods.",
-            "en description": "The net mass of the referenced dangerous goods.",
-            "fi description": "Viitatun vaarallisen aineen nettomassa.",
-            "sv description": "Nettovikten av det ber\u00f6rda farliga godset.",
-            "Type": "Measure",
-            "Format": "n..16,6",
-            "Status": "O",
-            "Occurrence": "0..1",
-            "Rules, Conditions, Guidelines": "R-GENERAL-002\nR-GENERAL-036\nC-HZA-004",
-            "Suppeat tiedot -suodatus": "x",
-            "Kommentit": "https://fintraffic-siili.atlassian.net/browse/NEMO-9795",
-            "XSD path": "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:NetWeightMeasure"
           }
         },
         "/env:Envelope/hzd:HZD/hzd:SpecifiedSupplyChainConsignment/ram:IncludedSupplyChainConsignmentItem/ram:ApplicableTransportDangerousGoods/ram:ExplosiveCargoNetWeightMeasure": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T13:23:57.415Z",
+  "generatedAt": "2026-08-17T05:22:57.446Z",
   "sourceFile": "tools/code list/Code lists v2.0.0.xlsx",
   "listNames": [
     "absence_type",
@@ -839,7 +839,7 @@
         "listName": "imo_compendium_IMO0049",
         "labels": {
           "en": "Flammable liquids",
-          "fi": "Syttyvät nesteet",
+          "fi": "Palavat nesteet",
           "sv": "Brandfarliga vätskor"
         },
         "formality": [],
@@ -112107,7 +112107,7 @@
         "listName": "flashpoint_description",
         "labels": {
           "en": "Not flammable",
-          "fi": "Ei syttyvä",
+          "fi": "Ei palava",
           "sv": "Inte brandfarligt"
         },
         "formality": [],
