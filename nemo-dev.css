@@ -198,6 +198,34 @@ header {
 
 .wave { position: absolute; inset: auto 0 -1px 0; height: 110px; }
 
+/* --- Hot Topics --- */
+.hot-topics {
+    padding-top: 2rem;
+    --hot-topics-accent: #f1c27d;
+    --hot-topics-intro-bg: #fff8eb;
+    --hot-topics-card-bg: #fffcf5;
+    --hot-topics-text: #6b3f00;
+    --hot-topics-heading: #7a4a00;
+}
+
+.hot-topics-intro {
+    margin: 0 0 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--hot-topics-accent);
+    border-radius: var(--border-radius);
+    background: var(--hot-topics-intro-bg);
+    color: var(--hot-topics-text);
+}
+
+.hot-topic-card {
+    border-color: var(--hot-topics-accent);
+    background: var(--hot-topics-card-bg);
+}
+
+.hot-topic-card h3 {
+    color: var(--hot-topics-heading);
+}
+
 /* --- Sections --- */
 section { padding: 3rem 0; }
 .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
