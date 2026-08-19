@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T05:24:50.013017+00:00",
+  "generatedAt": "2026-08-19T13:14:16.952919+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -66753,12 +66753,12 @@
             "R-GENERAL-014"
           ],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": true,
+          "finlandWanted": false,
           "flags": {
             "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
+            "narrowInfoFilter": false,
             "hiddenData": false,
             "msSpecificReq": false
           },
@@ -66789,8 +66789,7 @@
             "Status": "O",
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "R-GENERAL-014\nC-MTS-001",
-            "Suppeat tiedot -suodatus": "x",
-            "Kommentteja": "VLi: 23.06.2026: T\u00e4ytyy olla suppeissa tiedoisaa, koska C-MTS-001",
+            "Kommentteja": "VLi: 23.06.2026: T\u00e4ytyy olla suppeissa tiedoisaa, koska C-MTS-001 VLi: 19.08 otetaan pois kuitenkin",
             "XSD path": "/env:Envelope/mts:MTS/mts:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:UnloadingPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo/ram:WeightMeasure"
           }
         },
@@ -66906,7 +66905,7 @@
             "partAB": true,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
+            "narrowInfoFilter": false,
             "hiddenData": false,
             "msSpecificReq": false
           },
@@ -66938,8 +66937,7 @@
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "C-MTS-003",
             "Part A/B": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Kommentteja": "Tyhjien kuljetusv\u00e4lineiden kpl m\u00e4\u00e4r\u00e4t. Siirretty CGA/D:lle! VLi: j23.06.2026. koska s\u00e4\u00e4nt\u00f6 vaatii t\u00e4m\u00e4n",
+            "Kommentteja": "Tyhjien kuljetusv\u00e4lineiden kpl m\u00e4\u00e4r\u00e4t. Siirretty CGA/D:lle! VLi: j23.06.2026. koska s\u00e4\u00e4nt\u00f6 vaatii t\u00e4m\u00e4n VLi: 19.08.26 laajoihin kuitenkin",
             "XSD path": "/env:Envelope/mts:MTS/mts:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:UnloadingPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo/ram:EmptyUnitQuantity"
           }
         },
@@ -68154,7 +68152,7 @@
             "partAB": true,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": true,
+            "narrowInfoFilter": false,
             "hiddenData": false,
             "msSpecificReq": false
           },
@@ -68186,8 +68184,7 @@
             "Occurrence": "0..1",
             "Rules, Conditions, Guidelines": "C-MTS-003",
             "Part A/B": "x",
-            "Suppeat tiedot -suodatus": "x",
-            "Kommentteja": "VLi: 23.06.2026: T\u00e4ytyy olla suppeissa tiedoisaa, koska  s\u00e4\u00e4nt\u00f6 vaatii t\u00e4m\u00e4n",
+            "Kommentteja": "VLi: 23.06.2026: T\u00e4ytyy olla suppeissa tiedoisaa, koska  s\u00e4\u00e4nt\u00f6 vaatii t\u00e4m\u00e4n VLi: 19.08.26 laajoihin kuitenkin",
             "Simulointi case 1 a) Tukholma - Ahvenanmaa - Turku": "2 (per\u00e4vaunua)",
             "XSD path": "/env:Envelope/mts:MTS/mts:SpecifiedLogisticsTransportMovement/ram:CallTransportEvent/ram:LoadingPortOperationsPortOperationEvent/ram:SpecifiedTransportCargo/ram:AssociatedCommodityCargo/ram:EmptyUnitQuantity"
           }
