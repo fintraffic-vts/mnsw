@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T13:14:16.952919+00:00",
+  "generatedAt": "2026-08-25T10:16:49.578361+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -63391,7 +63391,7 @@
           },
           "descriptions": {
             "en": "Re-inspection is required.",
-            "fi": "Uudelleenlastaus tarvitaan.",
+            "fi": "Uudelleentarkistus tarvitaan.",
             "sv": "En f\u00f6rnyad inspektion kr\u00e4vs.",
             "base": "A yes/no indicator whether re-inspection is required."
           },
@@ -63415,7 +63415,7 @@
             "msSpecificReq": false
           },
           "comments": {
-            "comments": "",
+            "comments": "Muutetu teksti\u00e4 https://fintraffic-siili.atlassian.net/browse/NEMO-9864",
             "usageGuidanceComments": "",
             "migChangeNotes": "",
             "msSpecificReq": ""
@@ -63434,7 +63434,7 @@
             "sv": "F\u00f6rnyad inspektion kr\u00e4vs",
             "Description": "A yes/no indicator whether re-inspection is required.",
             "en description": "Re-inspection is required.",
-            "fi description": "Uudelleenlastaus tarvitaan.",
+            "fi description": "Uudelleentarkistus tarvitaan.",
             "sv description": "En f\u00f6rnyad inspektion kr\u00e4vs.",
             "Type": "Indicator",
             "Format": "n1",
@@ -63444,6 +63444,7 @@
             "Rules, Conditions, Guidelines": "C-MDH-001",
             "Part A/B": "x",
             "Suppeat tiedot -suodatus": "x",
+            "Kommentit": "Muutetu teksti\u00e4 https://fintraffic-siili.atlassian.net/browse/NEMO-9864",
             "XSD path": "/env:Envelope/mdh:MDH/mdh:SpecifiedLogisticsTransportMovement/ram:UsedLogisticsTransportMeans/ram:SanitationControlReInspectionRequiredIndicator"
           }
         },
