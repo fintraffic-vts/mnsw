@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T10:16:49.578361+00:00",
+  "generatedAt": "2026-08-28T13:26:14.475824+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -23450,14 +23450,18 @@
         "O": "en_description",
         "P": "fi_description",
         "Q": "sv_description",
-        "R": "type",
-        "S": "format",
-        "T": "code_list",
-        "U": "status",
-        "V": "occurrence",
-        "W": "rules_conditions_guidelines",
-        "X": "ms_specific_req",
-        "Y": "xsd_path"
+        "R": "suppeat_tiedot_suodatus",
+        "S": "tiedon_piilotus",
+        "T": "taulukko",
+        "U": "taulukon_sarake",
+        "V": "type",
+        "W": "format",
+        "X": "code_list",
+        "Y": "status",
+        "Z": "occurrence",
+        "AA": "rules_conditions_guidelines",
+        "AB": "ms_specific_req",
+        "AC": "xsd_path"
       },
       "elements": {
         "BSP Master. Details": {
@@ -23494,8 +23498,8 @@
             "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
-            "hiddenData": false,
+            "narrowInfoFilter": true,
+            "hiddenData": true,
             "msSpecificReq": false
           },
           "comments": {
@@ -23512,7 +23516,9 @@
             "MMT base": "COA - Cancellation of port call",
             "en": "COA - Cancellation of port call",
             "fi": "COA - Satamak\u00e4ynnin peruminen",
-            "sv": "COA - Annullering av hamnanl\u00f6p"
+            "sv": "COA - Annullering av hamnanl\u00f6p",
+            "Suppeat tiedot -suodatus": "x",
+            "Tiedon piilotus": "x"
           }
         },
         "/env:Envelope/coa:COA/coa:ExchangedDocument": {
@@ -23549,8 +23555,8 @@
             "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
-            "hiddenData": false,
+            "narrowInfoFilter": true,
+            "hiddenData": true,
             "msSpecificReq": false
           },
           "comments": {
@@ -23568,6 +23574,8 @@
             "en": "Exchanged Document",
             "fi": "Ilmoitus",
             "sv": "Formalitet",
+            "Suppeat tiedot -suodatus": "x",
+            "Tiedon piilotus": "x",
             "Status": "O",
             "Occurrence": "0..1",
             "XSD path": "/env:Envelope/coa:COA/coa:ExchangedDocument"
@@ -23602,12 +23610,12 @@
           "rulesConditionsGuidelinesRaw": "",
           "ruleRefs": [],
           "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
+          "finlandWanted": true,
           "flags": {
             "partAB": false,
             "fiPartC": false,
             "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
+            "narrowInfoFilter": true,
             "hiddenData": false,
             "msSpecificReq": false
           },
@@ -23633,6 +23641,7 @@
             "en description": "A description of any other information relevant to the ship arrival, stay or departure.",
             "fi description": "Kuvaus muista aluksen saapumisen, oleskelun tai l\u00e4hd\u00f6n kannalta merkityksellisist\u00e4 tiedoista.",
             "sv description": "En beskrivning av andra uppgifter som \u00e4r relevanta f\u00f6r fartygets ankomst, uppeh\u00e5ll och avg\u00e5ng.",
+            "Suppeat tiedot -suodatus": "x",
             "Type": "Text",
             "Format": "an..512",
             "Status": "M",

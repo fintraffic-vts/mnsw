@@ -21,6 +21,19 @@ const UN_LOCODE_BROWSER_URL = "https://fintraffic-vts.github.io/mnsw/location/in
 
 const DE_ID_PATTERN = /\bDE-\d{3}-\d{2}\b/gi;
 const COMPLIANCE_NOTE_DISMISSED_KEY = "formalities-compliance-note-dismissed-v1";
+const SUPPRESSED_RULE_REFS_BY_FORMALITY = {
+    SEC: new Set(["R-GENERAL-040"]),
+    HZA: new Set(["R-HZA-008"]),
+    HZD: new Set(["R-HZA-008"])
+};
+
+function isSuppressedRuleReference(formalityCode, ruleId) {
+    const formality = String(formalityCode || "").toUpperCase();
+    const normalizedRuleId = String(ruleId || "").toUpperCase();
+    if (!formality || !normalizedRuleId) return false;
+
+    return !!SUPPRESSED_RULE_REFS_BY_FORMALITY[formality]?.has(normalizedRuleId);
+}
 
 function getComplianceDismissed() {
     try {
@@ -1471,14 +1484,15 @@ function buildRulesIndex(rules) {
 }
 
 function getRulesForElement(node, formalityCode, deId) {
+    const formality = String(formalityCode || "").toUpperCase();
     const refs = (node?.configRuleRefs || [])
         .map((ref) => String(ref || "").toUpperCase())
-        .filter(Boolean);
+        .filter((ref) => ref && !isSuppressedRuleReference(formality, ref));
 
     if (refs.length > 0) {
         const fromRefs = refs
             .map((ref) => rulesById[ref])
-            .filter(Boolean);
+            .filter((rule) => rule && !isSuppressedRuleReference(formality, rule.id));
 
         if (fromRefs.length > 0) {
             return fromRefs;
@@ -1487,7 +1501,6 @@ function getRulesForElement(node, formalityCode, deId) {
 
     if (!deId) return [];
 
-    const formality = String(formalityCode || "").toUpperCase();
     const key = deId.toUpperCase();
     const specific = rulesByFormality[formality]?.[key] || [];
     const general = rulesByFormality.GENERAL?.[key] || [];
@@ -1495,6 +1508,7 @@ function getRulesForElement(node, formalityCode, deId) {
     const merged = [...specific, ...general];
     const seen = new Set();
     return merged.filter((item) => {
+        if (isSuppressedRuleReference(formality, item?.id)) return false;
         if (!item?.id || seen.has(item.id)) return false;
         seen.add(item.id);
         return true;
