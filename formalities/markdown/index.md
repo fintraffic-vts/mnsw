@@ -24,41 +24,44 @@ This markdown catalog mirrors the formalities viewer content in text-first forma
 
 ## Default schema
 
-- VID_2.0.0.0.json
+- VID_2.0.1.0.json
 
 ## Formalities quick list
 
 | Code | Version | Page |
 | --- | --- | --- |
-| ATA | 2.0.0.0 | [Open](./ata-2-0-0-0.md) |
-| ATD | 2.0.0.0 | [Open](./atd-2-0-0-0.md) |
-| CGA | 2.0.0.0 | [Open](./cga-2-0-0-0.md) |
-| CGD | 2.0.0.0 | [Open](./cgd-2-0-0-0.md) |
-| COA | 2.0.0.0 | [Open](./coa-2-0-0-0.md) |
-| CRT | 2.0.0.0 | [Open](./crt-2-0-0-0.md) |
-| CWA | 2.0.0.0 | [Open](./cwa-2-0-0-0.md) |
-| CWD | 2.0.0.0 | [Open](./cwd-2-0-0-0.md) |
-| DUE | 2.0.0.0 | [Open](./due-2-0-0-0.md) |
-| FRM | 2.0.0.0 | [Open](./frm-2-0-0-0.md) |
-| HZA | 2.0.0.0 | [Open](./hza-2-0-0-0.md) |
-| HZD | 2.0.0.0 | [Open](./hzd-2-0-0-0.md) |
-| MDD | 2.0.0.0 | [Open](./mdd-2-0-0-0.md) |
-| MDH | 2.0.0.0 | [Open](./mdh-2-0-0-0.md) |
-| MTS | 2.0.0.0 | [Open](./mts-2-0-0-0.md) |
-| NOA | 2.0.0.0 | [Open](./noa-2-0-0-0.md) |
-| NOD | 2.0.0.0 | [Open](./nod-2-0-0-0.md) |
-| PBK | 2.0.0.0 | [Open](./pbk-2-0-0-0.md) |
-| PXA | 2.0.0.0 | [Open](./pxa-2-0-0-0.md) |
-| PXD | 2.0.0.0 | [Open](./pxd-2-0-0-0.md) |
-| SEC | 2.0.0.0 | [Open](./sec-2-0-0-0.md) |
-| SHP | 2.0.0.0 | [Open](./shp-2-0-0-0.md) |
-| SID | 2.0.0.0 | [Open](./sid-2-0-0-0.md) |
-| SRV | 2.0.0.0 | [Open](./srv-2-0-0-0.md) |
-| VID | 2.0.0.0 | [Open](./vid-2-0-0-0.md) |
-| WAR | 2.0.0.0 | [Open](./war-2-0-0-0.md) |
-| WAS | 2.0.0.0 | [Open](./was-2-0-0-0.md) |
+| ATA | 2.0.1.0 | [Open](./formalities/ata-2-0-1-0.md) |
+| ATD | 2.0.1.0 | [Open](./formalities/atd-2-0-1-0.md) |
+| CGA | 2.0.1.0 | [Open](./formalities/cga-2-0-1-0.md) |
+| CGD | 2.0.1.0 | [Open](./formalities/cgd-2-0-1-0.md) |
+| COA | 2.0.1.0 | [Open](./formalities/coa-2-0-1-0.md) |
+| CRT | 2.0.1.0 | [Open](./formalities/crt-2-0-1-0.md) |
+| CWA | 2.0.1.0 | [Open](./formalities/cwa-2-0-1-0.md) |
+| CWD | 2.0.1.0 | [Open](./formalities/cwd-2-0-1-0.md) |
+| DUE | 2.0.1.0 | [Open](./formalities/due-2-0-1-0.md) |
+| EFF | 2.0.1.0 | [Open](./formalities/eff-2-0-1-0.md) |
+| FRM | 2.0.1.0 | [Open](./formalities/frm-2-0-1-0.md) |
+| HZA | 2.0.1.0 | [Open](./formalities/hza-2-0-1-0.md) |
+| HZD | 2.0.1.0 | [Open](./formalities/hzd-2-0-1-0.md) |
+| MDD | 2.0.1.0 | [Open](./formalities/mdd-2-0-1-0.md) |
+| MDH | 2.0.1.0 | [Open](./formalities/mdh-2-0-1-0.md) |
+| MTS | 2.0.1.0 | [Open](./formalities/mts-2-0-1-0.md) |
+| NOA | 2.0.1.0 | [Open](./formalities/noa-2-0-1-0.md) |
+| NOD | 2.0.1.0 | [Open](./formalities/nod-2-0-1-0.md) |
+| PBK | 2.0.1.0 | [Open](./formalities/pbk-2-0-1-0.md) |
+| PXA | 2.0.1.0 | [Open](./formalities/pxa-2-0-1-0.md) |
+| PXD | 2.0.1.0 | [Open](./formalities/pxd-2-0-1-0.md) |
+| SEC | 2.0.1.0 | [Open](./formalities/sec-2-0-1-0.md) |
+| SHP | 2.0.1.0 | [Open](./formalities/shp-2-0-1-0.md) |
+| SID | 2.0.1.0 | [Open](./formalities/sid-2-0-1-0.md) |
+| SSA | 2.0.1.0 | [Open](./formalities/ssa-2-0-1-0.md) |
+| STA | 2.0.1.0 | [Open](./formalities/sta-2-0-1-0.md) |
+| STD | 2.0.1.0 | [Open](./formalities/std-2-0-1-0.md) |
+| VID | 2.0.1.0 | [Open](./formalities/vid-2-0-1-0.md) |
+| WAR | 2.0.1.0 | [Open](./formalities/war-2-0-1-0.md) |
+| WAS | 2.0.1.0 | [Open](./formalities/was-2-0-1-0.md) |
 
 ## Generation metadata
 
-- Generated at: 2026-05-18T10:28:03.338Z
+- Generated at: 2026-09-24T06:40:56.716Z
 - Generator: tools/formalities/scripts/generate_markdown_catalog.mjs

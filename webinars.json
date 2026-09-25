@@ -78,5 +78,92 @@
         { "label": "webinars-20251217_080010UTC-Meeting-Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/17.12%20Satamak%C3%A4ynnin%20saapumis-%20ja%20l%C3%A4ht%C3%B6ilmoitukset/Nemo-koulutustilaisuus%20%20Satamak%C3%A4ynnin%20saapumis-%20ja%20l%C3%A4ht%C3%B6ilmoitukset-20251217_080010UTC-Meeting%20Recording.mp4" }
       ]
     }
+  },
+  {
+    "id": "2026-08-19-nemo-satamien-koulutustilaisuus",
+    "title": "Nemo satamien koulutustilaisuus",
+    "date": "2026-08-19",
+    "durationMin": 60,
+    "summary": "",
+    "audience": ["Satamat"],
+    "tags": ["Meriliikennetilastot", "Ilmoitukset", "Satamat"],
+    "materials": {
+      "docs": [
+        { "label": "Satamien_koulutustilaisuus_19082026.pdf", "url": "/mnsw/webinars/19.08.2026-Satamien-koulutustilaisuus/Satamien_koulutustilaisuus_19082026.pdf" },
+        { "label": "Satamille suunnattu koulutustilaisuus-20260819_065733UTC-Meeting Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/19.8.2026%20Satamien%20koulutustilaisuus/Satamille%20suunnattu%20koulutustilaisuus-20260819_065733UTC-Meeting%20Recording.mp4" }
+      ]
+    }
+  },
+  {
+    "id": "2026-03-31-nemo-satamien-koulutustilaisuus",
+    "title": "Nemo Kohti käyttöönottoa webinaari",
+    "date": "2026-03-31",
+    "durationMin": 60,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Tuotanto", "Ilmoittaminen"],
+    "materials": {
+      "docs": [
+        { "label": "webinaari-31032026.pdf", "url": "/mnsw/webinars/31.3.2026-Kohti-kayttoonottoa-webinaari/webinaari-31032926.pdf" },
+        { "label": "Nemo webinaari - kohti käyttöönottoa-20260331_070011UTC-Meeting Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/31.3%20Kohti%20k%C3%A4ytt%C3%B6%C3%B6nottoa%20webinaari/Nemo%20webinaari%20-%20kohti%20k%C3%A4ytt%C3%B6%C3%B6nottoa-20260331_070011UTC-Meeting%20Recording.mp4" }
+      ]
+    }
+  },
+  {
+    "id": "2026-09-09-nemo-satamakayntien-ilmoittaminen-ja-alustietokanta",
+    "title": "Nemo Satamakäyntien ilmoittaminen ja alustietokanta",
+    "date": "2026-09-09",
+    "durationMin": 120,
+    "summary": "",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Tuotanto", "Ilmoittaminen", "Alustietokanta"],
+    "materials": {
+      "docs": [
+        { "label": "nemo_ilmoitukset_alustietokanta.pdf", "url": "/mnsw/webinars/09.09.2026-Satamakaynnin-ilmoittaminen-ja-alustietokanta/nemo_ilmoitukset_alustietokanta.pdf" },
+        { "label": "Satamakäyntien ilmoitukset ja alustietokanta-20260909_070107UTC-Meeting Recording.mp4", "url": "https://ansfinland.sharepoint.com/:v:/r/sites/VTS-vtsnemoyhteistyokanava/Jaetut%20asiakirjat/General/NEMO%20koulutukset/9.9.2026%20Satamak%C3%A4ynnin%20ilmoitukset%20ja%20alustietokanta/Satamak%C3%A4ynnin%20ilmoitukset%20ja%20alustietokanta-20260909_070107UTC-Meeting%20Recording.mp4" }
+      ]
+    }
+  },
+  {
+    "id": "2026-09-24-nemo-rahti-ja-vaarallisten-aineiden-ilmoittaminen",
+    "title": "Syventävä koulutus rahti- ja vaarallisten aineiden ilmoittamisesta",
+    "date": "2026-09-24",
+    "durationMin": 120,
+    "summary": "Koulutus keskittyy rahti- ja vaarallisten aineiden ilmoittamiseen NEMOssa.",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Rahti", "Vaaralliset aineet", "HZA", "HZD"],
+    "materials": {
+      "docs": [
+        { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" }
+      ]
+    }
+  },
+  {
+    "id": "2026-10-14-nemo-agentinvaihto-ja-delegointi",
+    "title": "Nemo-koulutustilaisuus / Agentinvaihto ja delegointi",
+    "date": "2026-10-14",
+    "durationMin": 60,
+    "summary": "Koulutus käsittelee agentinvaihdon ja delegoinnin käytännöt NEMOssa.",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Agentinvaihto", "Delegointi"],
+    "materials": {
+      "docs": [
+        { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" }
+      ]
+    }
+  },
+  {
+    "id": "2026-11-11-nemo-varajarjestelma",
+    "title": "Nemo-koulutustilaisuus / Varajärjestelmä",
+    "date": "2026-11-11",
+    "durationMin": 60,
+    "summary": "Koulutus käy läpi varajärjestelmän käytön ja siihen liittyvät toimintatavat.",
+    "audience": ["Ilmoittajat"],
+    "tags": ["Varajärjestelmä"],
+    "materials": {
+      "docs": [
+        { "label": "Rekisteröidy", "url": "https://www.emsw.fi/blog/nemo-koulutustilaisuudet" }
+      ]
+    }
   }
 ]

@@ -110,6 +110,7 @@
         "changelog.item.2026-05-26.1"
       ]
     },
-    {"date": "2026-08-19", "textI18n": "changelog.item.2026-08-19"}
+    {"date": "2026-08-19", "textI18n": "changelog.item.2026-08-19"},
+    {"date": "2026-09-24", "textI18n": "changelog.item.2026-09-24"}
   ]
 }

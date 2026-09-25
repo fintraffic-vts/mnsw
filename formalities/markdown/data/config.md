@@ -9,29 +9,32 @@
 | --- | --- | --- | --- | --- | --- |
 | ATA | [Section](#formality-ata) | 12 | 3 | 6 | 5 |
 | ATD | [Section](#formality-atd) | 11 | 2 | 6 | 4 |
-| CGA | [Section](#formality-cga) | 180 | 19 | 31 | 148 |
-| CGD | [Section](#formality-cgd) | 148 | 21 | 31 | 116 |
-| COA | [Section](#formality-coa) | 3 | 0 | 1 | 1 |
+| CGA | [Section](#formality-cga) | 180 | 18 | 31 | 148 |
+| CGD | [Section](#formality-cgd) | 148 | 18 | 31 | 116 |
+| COA | [Section](#formality-coa) | 3 | 1 | 1 | 1 |
 | CRT | [Section](#formality-crt) | 31 | 12 | 7 | 23 |
 | CWA | [Section](#formality-cwa) | 50 | 16 | 27 | 22 |
 | CWD | [Section](#formality-cwd) | 50 | 17 | 27 | 22 |
 | DUE | [Section](#formality-due) | 35 | 15 | 7 | 27 |
+| EFF | [Section](#formality-eff) | 14 | 7 | 9 | 4 |
 | FRM | [Section](#formality-frm) | 0 | 0 | 0 | 0 |
-| HZA | [Section](#formality-hza) | 177 | 41 | 47 | 129 |
-| HZD | [Section](#formality-hzd) | 148 | 39 | 42 | 105 |
+| HZA | [Section](#formality-hza) | 177 | 36 | 47 | 129 |
+| HZD | [Section](#formality-hzd) | 148 | 32 | 42 | 105 |
 | MDD | [Section](#formality-mdd) | 31 | 20 | 13 | 17 |
 | MDH | [Section](#formality-mdh) | 47 | 25 | 34 | 12 |
 | MTS | [Section](#formality-mts) | 41 | 16 | 13 | 27 |
 | NOA | [Section](#formality-noa) | 219 | 58 | 52 | 166 |
 | NOD | [Section](#formality-nod) | 138 | 36 | 35 | 102 |
 | PBK | [Section](#formality-pbk) | 0 | 0 | 0 | 0 |
-| PXA | [Section](#formality-pxa) | 72 | 22 | 29 | 42 |
+| PXA | [Section](#formality-pxa) | 72 | 23 | 29 | 42 |
 | PXD | [Section](#formality-pxd) | 67 | 23 | 25 | 41 |
 | SEC | [Section](#formality-sec) | 73 | 40 | 40 | 32 |
 | SHP | [Section](#formality-shp) | 124 | 9 | 9 | 114 |
 | SID | [Section](#formality-sid) | 12 | 6 | 3 | 8 |
-| SRV | [Section](#formality-srv) | 145 | 34 | 25 | 119 |
-| VID | [Section](#formality-vid) | 18 | 9 | 8 | 9 |
+| SSA | [Section](#formality-ssa) | 9 | 3 | 4 | 4 |
+| STA | [Section](#formality-sta) | 11 | 5 | 7 | 3 |
+| STD | [Section](#formality-std) | 11 | 5 | 7 | 3 |
+| VID | [Section](#formality-vid) | 18 | 10 | 8 | 9 |
 | WAR | [Section](#formality-war) | 23 | 10 | 17 | 5 |
 | WAS | [Section](#formality-was) | 51 | 11 | 26 | 24 |
 
@@ -55,7 +58,7 @@
 ## CGA
 
 - All elements: 180
-- Narrow (Suppeat): 19
+- Narrow (Suppeat): 18
 - Required: 31
 - Optional: 148
 
@@ -63,7 +66,7 @@
 ## CGD
 
 - All elements: 148
-- Narrow (Suppeat): 21
+- Narrow (Suppeat): 18
 - Required: 31
 - Optional: 116
 
@@ -71,7 +74,7 @@
 ## COA
 
 - All elements: 3
-- Narrow (Suppeat): 0
+- Narrow (Suppeat): 1
 - Required: 1
 - Optional: 1
 
@@ -107,6 +110,14 @@
 - Required: 7
 - Optional: 27
 
+<a id="formality-eff"></a>
+## EFF
+
+- All elements: 14
+- Narrow (Suppeat): 7
+- Required: 9
+- Optional: 4
+
 <a id="formality-frm"></a>
 ## FRM
 
@@ -119,7 +130,7 @@
 ## HZA
 
 - All elements: 177
-- Narrow (Suppeat): 41
+- Narrow (Suppeat): 36
 - Required: 47
 - Optional: 129
 
@@ -127,7 +138,7 @@
 ## HZD
 
 - All elements: 148
-- Narrow (Suppeat): 39
+- Narrow (Suppeat): 32
 - Required: 42
 - Optional: 105
 
@@ -183,7 +194,7 @@
 ## PXA
 
 - All elements: 72
-- Narrow (Suppeat): 22
+- Narrow (Suppeat): 23
 - Required: 29
 - Optional: 42
 
@@ -219,19 +230,35 @@
 - Required: 3
 - Optional: 8
 
-<a id="formality-srv"></a>
-## SRV
+<a id="formality-ssa"></a>
+## SSA
 
-- All elements: 145
-- Narrow (Suppeat): 34
-- Required: 25
-- Optional: 119
+- All elements: 9
+- Narrow (Suppeat): 3
+- Required: 4
+- Optional: 4
+
+<a id="formality-sta"></a>
+## STA
+
+- All elements: 11
+- Narrow (Suppeat): 5
+- Required: 7
+- Optional: 3
+
+<a id="formality-std"></a>
+## STD
+
+- All elements: 11
+- Narrow (Suppeat): 5
+- Required: 7
+- Optional: 3
 
 <a id="formality-vid"></a>
 ## VID
 
 - All elements: 18
-- Narrow (Suppeat): 9
+- Narrow (Suppeat): 10
 - Required: 8
 - Optional: 9
 

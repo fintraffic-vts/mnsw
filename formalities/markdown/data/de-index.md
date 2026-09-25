@@ -16,6 +16,7 @@
 | CWA | [Section](#formality-cwa) | 33 |
 | CWD | [Section](#formality-cwd) | 33 |
 | DUE | [Section](#formality-due) | 24 |
+| EFF | [Section](#formality-eff) | 0 |
 | FRM | [Section](#formality-frm) | 0 |
 | HZA | [Section](#formality-hza) | 125 |
 | HZD | [Section](#formality-hzd) | 104 |
@@ -30,7 +31,9 @@
 | SEC | [Section](#formality-sec) | 43 |
 | SHP | [Section](#formality-shp) | 98 |
 | SID | [Section](#formality-sid) | 9 |
-| SRV | [Section](#formality-srv) | 106 |
+| SSA | [Section](#formality-ssa) | 0 |
+| STA | [Section](#formality-sta) | 0 |
+| STD | [Section](#formality-std) | 0 |
 | VID | [Section](#formality-vid) | 12 |
 | WAR | [Section](#formality-war) | 11 |
 | WAS | [Section](#formality-was) | 30 |
@@ -456,6 +459,11 @@
 | due:DUE > due:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:ApplicableSpecifiedFairwayPortDues > ram:NoDeclarationReasonCode | DE-077-02 | No fairway dues declaration reason, coded |
 | due:DUE > due:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:ApplicableSpecifiedFairwayPortDues > ram:PartyJointLiabilityIndicator | DE-077-21 | Fairway due liable party indicator |
 | due:DUE > due:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:ApplicableSpecifiedFairwayPortDues > ram:PeriodicDeclarationIndicator | DE-077-03 | Periodic fairway dues declaration indicator |
+
+<a id="formality-eff"></a>
+## EFF
+
+- Mapping count: 0
 
 <a id="formality-frm"></a>
 ## FRM
@@ -1419,119 +1427,20 @@
 | sid:SID > sid:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:Name | DE-005-01 | Ship name |
 | sid:SID > sid:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:OtherID | DE-005-08 | Other ship identifier |
 
-<a id="formality-srv"></a>
-## SRV
+<a id="formality-ssa"></a>
+## SSA
 
-- Mapping count: 106
+- Mapping count: 0
 
-| Tree path | DE ID | DE name |
-| --- | --- | --- |
-| srv:SRV > srv:ExchangedDeclaration > ram:PreviousID | DE-002-12 | Previous formality LRN |
-| srv:SRV > srv:ExchangedDeclaration > ram:StatementTypeCode | DE-003-07 | Declarant statement, coded |
-| srv:SRV > srv:ExchangedDocument > ram:AttachedSpecifiedBinaryFile > [items] > ram:Description | DE-003-03 | Attachment description |
-| srv:SRV > srv:ExchangedDocument > ram:AttachedSpecifiedBinaryFile > [items] > ram:FileName | DE-003-05 | Attachment file name |
-| srv:SRV > srv:ExchangedDocument > ram:AttachedSpecifiedBinaryFile > [items] > ram:MIMECode | DE-003-06 | Attachment MIME type |
-| srv:SRV > srv:ExchangedDocument > ram:AttachedSpecifiedBinaryFile > [items] > ram:TypeCode | DE-003-02 | Attachment type, coded |
-| srv:SRV > srv:ExchangedDocument > ram:Remarks | DE-003-01 | Remarks |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:ArrivalTransportEvent > ram:OccupiedSpecifiedBerth > ram:ExpectedMooringOrientationCode | DE-019-04 | Expected mooring orientation, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:PortMovementTypeCode | DE-014-51 | Ship movement type, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:CustomerID | DE-079-04 | Service invoice customer number |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RecipientInformation | DE-079-11 | Service beneficiary name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:Remarks | DE-079-09 | Service invoice remarks |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequestedInEnglishIndicator | DE-079-01 | Service invoice requested in English indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterMarkings | DE-079-10 | Service requester invoice markings |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterTradeParty > ram:ID | DE-079-03 | Service invoice organization identifier |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterTradeParty > ram:Name | DE-079-02 | Service invoice company name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterTradeParty > ram:PostalTradeAddress > ram:CityName | DE-079-07 | Service invoice address city name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterTradeParty > ram:PostalTradeAddress > ram:CountryID | DE-079-08 | Service invoice country, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterTradeParty > ram:PostalTradeAddress > ram:LineOne | DE-079-05 | Service invoice address street and number |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ApplicableSpecifiedServiceInvoice > ram:RequesterTradeParty > ram:PostalTradeAddress > ram:PostcodeCode | DE-079-06 | Service invoice address postal code |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ConfirmationIndicator | DE-078-18 | Service request confirmation indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:EndPosition | DE-078-12 | End position for the service |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:EstimatedPerformanceSpecifiedPeriod > ram:FormattedEndDateTime | DE-078-07 | ETA end position for the service |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:EstimatedPerformanceSpecifiedPeriod > ram:FormattedStartDateTime | DE-078-05 | ETA start position for the service |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:Name | DE-078-09 | Position for the service |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:RequestedPerformanceSpecifiedPeriod > ram:FormattedEndDateTime | DE-078-08 | Date and time of service completion - requested |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:RequestedPerformanceSpecifiedPeriod > ram:FormattedStartDateTime | DE-078-06 | Date and time of service start - requested |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:DeliverySpecifiedLogisticsLocation > ram:StartPosition | DE-078-11 | Start position for the service |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ID | DE-078-01 | Service, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:OtherShipDependencyIndicator | DE-078-19 | Dependency on other ship indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:PreplannedIndicator | DE-078-04 | Planned service indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RelatedSpecifiedLogisticsLocation > ram:Name | DE-078-10 | Other position reference |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:Description | DE-072-09 | Bunker description |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:FlashPointTemperatureMeasure | DE-072-05 | Bunker flash point |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:ProductTypeCode | DE-072-04 | Bunker product type, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:RetainedVolumeMeasure | DE-072-10 | Bunker retained quantity |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:SulphurContentPercent | DE-072-06 | Bunker sulphur content percent |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:TransferVolumeMeasure | DE-072-11 | Bunker transfer quantity |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:IncludedSpecifiedBunkerFuel > [items] > ram:TypeCode | DE-072-01 | Bunker type, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:LengthUnitMeasure | DE-087-03 | Bunkering unit length |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:ProviderIdentificationID | DE-087-02 | Bunkering unit identification |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:RateMeasure | DE-086-01 | Bunkering rate measure |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:TypeCode | DE-087-01 | Bunker provision type, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedBunkeringService > ram:WidthUnitMeasure | DE-087-04 | Bunkering unit width |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedCargoHandlingService > ram:DangerousGoodsIndicator | DE-092-03 | Hazmat indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedCargoHandlingService > ram:InstructionsCode | DE-092-01 | Handling instructions, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedCargoHandlingService > ram:InstructionsRemark | DE-092-02 | Handling instructions remarks |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedElectricitySupplyService > ram:FrequencyMeasure | DE-089-04 | Electrical supply frequency |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedElectricitySupplyService > ram:PowerMeasure | DE-089-03 | Electrical supply power value |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedElectricitySupplyService > ram:ShipConnectingCableSuitableIndicator | DE-089-05 | Electricity confirmation indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedElectricitySupplyService > ram:VoltageMeasure | DE-089-01 | Electrical supply pressure value |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedIceBreakingService > ram:ConvoyDraftMeasure | DE-080-01 | Draft under ice breaking convoy |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedIceBreakingService > ram:DisplacementMeasure | DE-080-02 | Ship weight plus cargo displacement measure |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedIceBreakingService > ram:ShipBallastStatusCode | DE-080-03 | Ship ballast status, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedLighteringService > ram:OtherShipName | DE-088-01 | Lightering activity other ship name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedLighteringService > ram:SupervisorTransportPerson > [items] > ram:FamilyName | DE-088-05 | Lightering supervisor family name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedLighteringService > ram:SupervisorTransportPerson > [items] > ram:GivenName | DE-088-04 | Lightering supervisor given name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedLighteringService > ram:TransferredSpecifiedTransferProduct > [items] > ram:Description | DE-088-03 | Lightering procedure product type description |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedLighteringService > ram:TransferredSpecifiedTransferProduct > [items] > ram:GrossVolumeMeasure | DE-088-02 | Lightering to be transferred volume |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedMooringService > ram:GangwayArrangementsDescription | DE-085-02 | Gangway arrangements description |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedMooringService > ram:GangwayArrangementsIndicator | DE-085-01 | Gangway arrangements indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedMooringService > ram:PersonRequiredQuantity | DE-085-03 | Mooring service men required quantity |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:ActualFreeboardHeightMeasure | DE-082-10 | Actual freeboard height |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:ElevatorIndicator | DE-082-03 | Pilot elevator indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:FenderingIndicator | DE-082-13 | Fendering indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:HelicopterHoistingPossibilityIndicator | DE-082-06 | Pilot helicopter hoisting possible indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:HelicopterPossibilityIndicator | DE-082-05 | Pilot helicopter possible indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:HelicopterRequestIndicator | DE-082-04 | Pilot helicopter request indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:LowFreeboardIndicator | DE-082-09 | Pilot boarding low freeboard indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:PilotDoorAboveKeelHeightMeasure | DE-082-12 | Pilot door height above keel |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:PilotDoorIndicator | DE-082-11 | Pilot door indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:RemotePilotageMasterPermittedIndicator | DE-082-08 | Remote pilotage ship allowed indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:RemotePilotagePermittedIndicator | DE-082-07 | Remote pilotage allowed indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:RequestedDateTime | DE-082-01 | Pilot time of boarding - requested |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:ApplicableSpecifiedPilotBoarding > ram:SideCode | DE-082-02 | Pilot boarding side, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:LateBookingRemarks | DE-081-04 | Pilotage late booking remarks |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:PilotQuantity | DE-081-02 | The number of pilots required |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:SpecialRemarks | DE-081-06 | Pilotage important details description |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:TowageRelatedIndicator | DE-081-03 | Towing pilotage indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:TugName | DE-081-07 | Accompanying tug name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:TugTypeDescription | DE-081-08 | Accompanying tug type |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedPilotageService > ram:TypeCode | DE-081-01 | Pilotage type, coded |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedTowageTugService > ram:PullingForceMeasure | DE-084-03 | Towage pulling force |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedTowageTugService > ram:TypeDescription | DE-084-01 | Required tug type description |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedTowageTugService > ram:UnitQuantity | DE-084-02 | Number of tugs |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWasteService > ram:HoldingTankResidueMeasure | DE-090-04 | Holding tank residues quantity |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWasteService > ram:NonEUFoodWasteIndicator | DE-090-01 | Food waste non-EU indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWasteService > ram:PumpRateIndicator | DE-090-02 | Pump rate indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWasteService > ram:ScrubberHoldingTankCapacityMeasure | DE-090-03 | Scrubber or holding tank capacity |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWasteService > ram:SlopFlashPointBelowLimitIndicator | DE-090-06 | Slop flash point indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWasteService > ram:VesselOnlySlopIndicator | DE-090-05 | Vessels own slop indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:RequestedSpecifiedWaterSupplyService > ram:FreshWaterVolumeMeasure | DE-091-01 | Requested fresh water volume |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:DefinedTradeContact > ram:EmailURIUniversalCommunication > ram:URIID | DE-078-14 | Service contact email |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:DefinedTradeContact > ram:MobileTelephoneUniversalCommunication > ram:CompleteNumber | DE-078-16 | Service contact mobile number |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:DefinedTradeContact > ram:SpecifiedContactPerson > ram:FamilyName | DE-078-13 | Service provider contact family name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:DefinedTradeContact > ram:SpecifiedContactPerson > ram:GivenName | DE-078-20 | Service provider contact given name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:DefinedTradeContact > ram:TelephoneUniversalCommunication > ram:CompleteNumber | DE-078-15 | Service contact landline number |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:Name | DE-078-03 | Service provider name |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:CallTransportEvent > ram:RequestedRelatedReferencedTransportService > ram:ResponsibleTradeParty > ram:URIUniversalCommunication > ram:URIID | DE-078-17 | Service URL |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:ActualMaximumDraughtLevelMeasure | DE-017-03 | Actual maximum draught |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:AftDraughtLevelMeasure | DE-017-02 | Draught aft |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:AirDraughtLevelMeasure | DE-017-06 | Air draught |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:ConstructionSpecifiedTransportMeansCharacteristic > ram:MaximumDraughtLevelMeasure | DE-008-22 | Maximum draught |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:ConstructionSpecifiedTransportMeansCharacteristic > ram:OnboardShorePowerConnectionIndicator | DE-010-25 | Shore power connection indicator |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:ForwardDraughtLevelMeasure | DE-017-01 | Draught forward |
-| srv:SRV > srv:SpecifiedLogisticsTransportMovement > ram:UsedLogisticsTransportMeans > ram:MidShipDraughtLevelMeasure | DE-017-05 | Mid-ship draught |
+<a id="formality-sta"></a>
+## STA
+
+- Mapping count: 0
+
+<a id="formality-std"></a>
+## STD
+
+- Mapping count: 0
 
 <a id="formality-vid"></a>
 ## VID

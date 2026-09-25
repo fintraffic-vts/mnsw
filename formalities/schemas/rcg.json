@@ -1106,20 +1106,6 @@
     "backend": true
   },
   {
-    "id": "R-HZA-008",
-    "type": "Rule",
-    "formality": "HZA",
-    "seq": "008",
-    "description": "Use value SF if Regulation Code =\r\nIMD – IMO IMDG code,\r\nADZ – IGC Code or\r\nAEA – IMSBC Code.",
-    "fi": "Käytä arvoa SF, jos Säännön koodi =\r\nIMD – IMDG-säännöstö,\r\nADZ – IGC-säännöstö tai\r\nAEA – IMSBC-säännöstö.",
-    "sv": "Använd värdena SF om Förordningskod =\r\nIMD – IMDG-kod,\r\nADZ – IGC-kod eller\r\nAEA – IMSBC-kod.",
-    "notes": " ",
-    "ui": "",
-    "source": "Unspecified",
-    "national": false,
-    "backend": true
-  },
-  {
     "id": "R-HZA-010",
     "type": "Rule",
     "formality": "HZA",
@@ -5712,6 +5698,20 @@
     "backend": true
   },
   {
+    "id": "NR-CGA-011",
+    "type": "Rule",
+    "formality": "CGA",
+    "seq": "011",
+    "description": "CGA cannot be submitted without transport equipment.",
+    "fi": "CGA-ilmoitusta ei voi lähettää ilman kuljetuskalustoa.",
+    "sv": "CGA kan inte lämnas in utan transportutrustning.",
+    "notes": "",
+    "ui": "",
+    "source": "National",
+    "national": true,
+    "backend": true
+  },
+  {
     "id": "NR-CGD-001",
     "type": "Rule",
     "formality": "CGD",
@@ -5791,6 +5791,20 @@
     "sv": "En Varupost får kopplas till en eller flera Transportmedel, förutsatt att all kopplad transportutrustning är av samma typ. Transportutrustningens typ definieras av kombinationen av transportutrustningskategori (DE-051-22) och containerns storlek och typ (DE-051-17).",
     "notes": "",
     "ui": "x",
+    "source": "National",
+    "national": true,
+    "backend": true
+  },
+  {
+    "id": "NR-CGD-011",
+    "type": "Rule",
+    "formality": "CGD",
+    "seq": "011",
+    "description": "CGD cannot be submitted without transport equipment.",
+    "fi": "CGD-ilmoitusta ei voi lähettää ilman kuljetuskalustoa.",
+    "sv": "CGD kan inte lämnas in utan transportutrustning.",
+    "notes": "",
+    "ui": "",
     "source": "National",
     "national": true,
     "backend": true
