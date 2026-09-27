@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.2 Notifications</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="3-2-ilmoitukset.html">Suomi</a> | <a href="3-2-ilmoitukset.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">3.2 Notifications</h1>
+</header>
+<p class="heading" id="ilmoitukset">3.2 Notifications</p>
+<p>Once a Port call has been established by the reporting organisation, it shall include:
+the information is provided by means of notification formalities, i.e. notifications. One
+the declaration corresponds to a single set of data, such as arrival, departure, cargo,
+or crew records.</p>
+<p>Review notifications related to port operations
+<strong>Notification</strong> view. View opens when you select
+your port or port area Port call
+<strong>Port calls</strong> view.</p>
+<p>The port organisation does not normally add or send a Port call
+notifications. However, the notifying organisation may delegate to the port:
+processing of the following declarations:</p>
+<ul>
+<li><p><strong>WAR</strong>- Waste delivery receipt on arrival</p></li>
+<li><p><strong>ATA</strong> - Actual Time of Arrival</p></li>
+<li><p><strong>ATD</strong> - Actual Time of Departure.</p></li>
+</ul>
+<blockquote>
+<p>The delegation shall concern only a specific Port call and its delegated
+notification. For other notifications, the port shall consider:
+information sent by the reporting organisation.</p>
+</blockquote>
+<p class="heading" id="satamakäynnin-ilmoitukset-näkymä">Port call
+Notifications View</p>
+<p>In the notification view you can view the basic information about the Port call and
+related notifications. If a port has a delegated WAR, ATA or
+ATD notification, you can also process the delegated notification here
+In view.</p>
+<p class="heading" id="satamakäynnin-tiedot">Port call information</p>
+<p>The following are shown on the left side of the Notifications View:
+basic port call information, if provided:</p>
+<ul>
+<li><p>Port call identifier, i.e. Visit ID</p></li>
+<li><p>vessel name</p></li>
+<li><p>ice class established in Finland</p></li>
+<li><p>port or UN/LOCODE code</p></li>
+<li><p>part of the port</p></li>
+<li><p>berth</p></li>
+<li><p>ETA</p></li>
+<li><p>ETD</p></li>
+<li><p>previous port</p></li>
+<li><p>Next port</p></li>
+<li><p>A reporting organisation that has delegated WAR, ATA or ATD to the port.</p></li>
+</ul>
+<p>There may also be a comment about port operations, such as:
+an indication of the missing or obsolete ship certificate.</p>
+<p class="heading" id="ilmoituskortti-ja-ilmoituksen-tila">Notification card and declaration
+mode</p>
+<p>Each notification is presented in its own card. Notification card
+visible:</p>
+<ul>
+<li><p>abbreviation of the declaration</p></li>
+<li><p>name of declaration</p></li>
+<li><p>state of the declaration</p></li>
+<li><p>Time or dispatch information</p></li>
+<li><p>the time of dispatch of the notification sent or the latest;
+update time</p></li>
+<li><p>the organisation which sent the notification.</p></li>
+</ul>
+<p>The port normally reviews the notifications sent by the reporting organisation
+notifications. A delegated WAR, ATA or ATD notification can be used as a card:
+show also the following spaces:</p>
+<ul>
+<li><p><strong>Late</strong>- the time limit for the notification shall be:
+Ended</p></li>
+<li><p><strong>Draft</strong>- the notification is:
+on Port call as a draft but not yet sent</p></li>
+<li><p><strong>Sent</strong>- The announcement has been sent.</p></li>
+</ul>
+<p>The text displayed on the notification card indicates when the notification should:
+send or when it was sent.</p>
+<p class="heading" id="satamakäynnillä-tarkasteltavat-ja-delegoitavat-ilmoitukset">Port call
+Notifications to be considered and delegated</p>
+<p>Part of the notification of a Port call is given for all Port calls and
+Part only where the information, function or condition concerned:
+Port call.</p>
+<p>The port organisation can view its own port or port area
+for port services
+notifications. Notification is normally provided by:
+the reporting organisation.</p>
+<p>All Port calls shall include at least the following:
+declarations:</p>
+<ul>
+<li><p><strong>NOA</strong> - Notice of pre-arrival</p></li>
+<li><p><strong>DUE</strong>- Ship's master or
+fairway fee declaration</p></li>
+<li><p><strong>ATA</strong> - Actual Time of Arrival</p></li>
+<li><p><strong>NOD</strong> - Notice of pre-departure</p></li>
+<li><p><strong>ATD</strong> - Actual Time of Departure.</p></li>
+</ul>
+<p>The port does not normally add, modify or send notifications.
+However, the notifying organisation may delegate to the port the following:
+processing of notifications:</p>
+<ul>
+<li><p><strong>WAR</strong>- Waste delivery receipt on arrival</p></li>
+<li><p><strong>ATA</strong> - Actual Time of Arrival</p></li>
+<li><p><strong>ATD</strong> - Actual Time of Departure.</p></li>
+</ul>
+<p>The delegation shall concern only a specific Port call and its delegated
+notification. The port cannot handle other reporting organisations
+declarations of responsibility.</p>
+<p class="heading" id="delegoidun-ata--ja-atd-ilmoituksen-edellytykset">Delegated ATA and
+Conditions for ATD notification</p>
+<p>Before sending a Delegated ATA notification, check that:
+the reporting organisation has sent to the Port call:</p>
+<ul>
+<li><p>NOA notification</p></li>
+<li><p>A DUE ad.</p></li>
+</ul>
+<p>Before sending a Delegated ATD notification, check that:
+the reporting organisation has sent a Port call;
+NOD notification.</p>
+<p>The notifying organisation shall be responsible for confirming the arrival.
+NOA notification and confirmation of departure with NOD notification. ATA or
+The delegation of the ATD notification does not transfer validation to the port.</p>
+<p>When a port sends a notification, the port shall respond:
+the accuracy of the information added to the declaration. Check information
+carefully prior to dispatch. Do not add personal data other than
+the fields where they are requested separately.</p>
+<p>After sending the notification, the NEMO shall consist of:
+the response. No separate acknowledgement of receipt by the Authority
+necessarily send.</p>
+<p>Detailed instructions for filling in the delegated declarations can be found in WAR, ATA
+and ATD notifications.</p>
+<p class="heading" id="saapumisen-ja-lähdön-vahvistuksen-tarkistaminen">Entry into force
+verification of departure confirmation</p>
+<p>The notification organisation shall confirm arrival when all other:
+the arrival declarations required for the Port call concerned;
+Sent. Confirmation is given by NOA prior to ATA notification
+This is the case.</p>
+<p>Similarly, the reporting organisation confirms the departure when all other
+the necessary departure declarations have been sent. Confirmation
+is given by NOD prior to sending ATD.</p>
+<p>Delegation of ATA or ATD does not transfer NOA or
+The confirmation of the port with the NOD notification.</p>
+<p>If ATA notification is delegated to port, check before it
+sending that NOA and DUE notifications have been sent. If
+ATD notification is delegated to port, check before sending it,
+that the NOD notification has been sent.</p>
+<p class="heading" id="delegoidun-ilmoituksen-täyttäminen-lähettäminen-ja-päivittäminen">Delegated
+filling, sending and updating the notification</p>
+<p>The delegated WAR, ATA or ATD notification is shown in the Port call
+<strong>Notification</strong> view.</p>
+<p>Your organisation will not add a delegated notification to the Port call itself.
+Handle the delegated notification shown in the Notifications View.</p>
+<p>This is how you open the notification:</p>
+<ul>
+<li><p>Open<strong>Port calls</strong>- The view.</p></li>
+<li><p>Pick a port call.</p></li>
+<li><p>Open a notification to the port of delegated WAR, ATA or ATD
+card.</p></li>
+</ul>
+<p>The status of the delegated declaration and the available functions are shown
+in the report-specific view.</p>
+<p>There may be several WAR notifications at the same Port call. Each
+the declaration has its own reference number (LRN),
+which distinguishes notifications from each other.</p>
+<p class="heading" id="delegoidun-ilmoituksen-määräaika">Delegated
+notification deadline</p>
+<p>Follow the sending of the Delegated WAR, ATA or ATD
+time limit. The deadline varies according to the type of notification and the situation.</p>
+<p>Check the deadline and possible derogations from the authorities
+the provisions and the instructions of that notice.</p>
+<p class="heading" id="delegoidun-ilmoituksen-täyttäminen-lähettäminen-ja-päivittäminen-1">Delegated
+filling, sending and updating the notification</p>
+<p>Part of the data in the delegated declaration is mandatory and part is completed
+only as appropriate. New fields may appear on the form or
+sections based on your choices.</p>
+<p>Data are recorded automatically during filling
+the draft notification.</p>
+<p>This is how you fill out and send a notification:</p>
+<ul>
+<li><p>Open to port a delegated WAR, ATA or ATD notification
+<strong>Notification</strong>- In the view.</p></li>
+<li><p>Please fill out the missing information on the form.</p></li>
+<li><p>If necessary, go to different sections of the form
+the list of contents.</p></li>
+<li><p>Check warning messages indicating missing or missing
+data to be corrected. The warning arrow will give you direct access to that
+at the field.</p></li>
+<li><p>Check and correct pre-filled information.</p></li>
+<li><p>Check the MAI section.</p></li>
+<li><p>Press<strong>Send</strong>.</p></li>
+</ul>
+<p>The status of the notification sent changes in the notification view
+<strong>Sent</strong>.</p>
+<p>If the information in the delegated declaration needs to be corrected and the declaration
+updating is allowed, open the sent notification, correct the information; and
+Please re-send the notification.</p>
+<p class="heading" id="delegoidun-ilmoituksen-kentät-taulukot-ja-liitteet">Delegated
+fields, tables and annexes to the declaration;</p>
+<p>If necessary, add a new field or section to the delegated notification
+by pressing <strong>Add</strong>.</p>
+<p>Remove unnecessary field or partition by pressing <strong>Remove</strong>
+It's a trash can.</p>
+<p>In the table you can:</p>
+<ul>
+<li><p>add a new row with the <strong>Add</strong> button</p></li>
+<li><p>open a row for editing with the <strong>Edit</strong> button (pen icon)</p></li>
+<li><p>remove an incorrect row with the <strong>Remove</strong> button (trash icon).</p></li>
+</ul>
+<p>If necessary, press the attachment file to add to the notification
+<strong>Download File</strong>. Select a file from your device and
+confirm the download.</p>
+<p class="heading" id="ilmoitusten-lomakeasetukset"><strong>Notification
+form settings</strong></p>
+<p>You can change <strong>Reporting formalities</strong> settings,
+the extent to which the information contained in the declaration is shown on the form.</p>
+<p>Open the main menu profile <strong>Menu</strong> and select
+<strong>Settings</strong>. The following options are available:</p>
+<ul>
+<li><p><strong>Only relevant fields</strong>- form shows
+Data fields required in Finland only</p></li>
+<li><p><strong>Only filled fields</strong>- form shows
+only those fields with information</p></li>
+<li><p><strong>Show instructions</strong>- form shows
+field-specific guidance and description texts.</p></li>
+</ul>
+<p>The settings change the way the information is presented. They do not change the declaration
+content.</p>
+<p class="heading" id="lomakkeen-kentät-taulukot-ja-liitteet"><strong>Form fields,
+tables and annexes;</strong></p>
+<p>If necessary, insert a new field or section by pressing
+<strong>Add</strong>.</p>
+<p>Remove unnecessary field or partition by pressing <strong>Remove</strong>
+It's a trash can.</p>
+<p>In the table you can:</p>
+<ul>
+<li><p>add a new row with the <strong>Add</strong> button</p></li>
+<li><p>open a row for editing with the <strong>Edit</strong> button (pen icon)</p></li>
+<li><p>remove an incorrect row with the <strong>Remove</strong> button (trash icon).</p></li>
+</ul>
+<p>If necessary, press the attachment file to add to the notification
+<strong>Download File</strong>. Select a file from your device and
+confirm the download.</p>
+<p class="heading" id="ilmoituksen-otsikkotiedot-mai-ja-vastaustiedot-resfrm"><strong>Notification
+header and answer information (RES + FRM)</strong></p>
+<p>Each notification shall relate to its identification, transmission and
+the title and answer information required for processing.</p>
+<p><strong>MAI</strong> contains the title of the notification to be sent.
+After sending the notification, it shall consist of:
+<strong>RES + FRM section</strong> containing notification processing
+.</p>
+<p>Information:</p>
+<ul>
+<li><p>the notification is linked to the correct port operation; and
+to the notifier</p></li>
+<li><p>initial notification and subsequent updates;
+identified</p></li>
+<li><p>the notice is transmitted to the hearing in the correct form;</p></li>
+<li><p>the response to the hearing is linked to the right
+notification</p></li>
+<li><p>Show whether the declaration is accepted or required
+measures.</p></li>
+</ul>
+<p>MAI, RES + FRM sections appear as part of the notification form
+the specific view.</p>
+<p class="heading" id="mai-ilmoituksen-otsikkotiedot"><strong>MAI -
+Title of declaration</strong></p>
+<p>The MAI section contains a declaration for identification, transmission and
+information necessary for monitoring. These include:</p>
+<ul>
+<li><p>identification of the declaration and Port call;</p></li>
+<li><p>type of declaration</p></li>
+<li><p>information on the notifier.</p></li>
+</ul>
+<p>NEMO automatically forms a Port call for the MAI section,
+on the basis of the declaration and the organisational information of the user. MAI section
+the information cannot be changed by means of a notification form.</p>
+<p class="heading" id="section"></p>
+<p class="heading" id="res-vastauksen-otsikkotiedot"><strong>RES -
+Title of reply</strong></p>
+<p>The RES section includes a response to identification and original
+the information necessary to link the declaration. These include:
+For example:</p>
+<ul>
+<li><p>response identifier</p></li>
+<li><p>response type</p></li>
+<li><p>authority that issued the response</p></li>
+<li><p>a reference to the declaration to which the reply relates.</p></li>
+</ul>
+<p>The information in the RESS section cannot be changed.</p>
+<p class="heading" id="frm-vastaus-ilmoitukseen"><strong>FRM - Answer
+notification</strong></p>
+<p>The FRM section contains the outcome of the notification process. It shows:</p>
+<ul>
+<li><p>state of the handling of the declaration;</p></li>
+<li><p>any additional information;</p></li>
+<li><p>virheet</p></li>
+<li><p>varoitukset.</p></li>
+</ul>
+<p>Error information may also indicate the field or row of tables of the declaration,
+to which the feedback relates.</p>
+<p>The data for RES and FRM sections cannot be changed.</p>
+<p class="heading" id="delegoidun-ilmoituksen-käsittelyvastauksen-tarkistaminen"><strong>Delegated
+verification of the response to the notification</strong></p>
+<p>Once you have sent a notification, check it
+a response from the reporting perspective.</p>
+<p>On the basis of the answer, the following action:</p>
+<ul>
+<li><p>If the declaration is:<strong>approved</strong>, answer
+no changes need to be made.</p></li>
+<li><p>If the declaration is:<strong>was given conditional approval</strong>,
+check the additional information and any follow-up to the reply.</p></li>
+<li><p>If the declaration is:<strong>rejected or incomplete</strong>,
+check the reported errors, correct the notification and send it
+Again.</p></li>
+<li><p>Also check the warnings and assess whether they require data
+repair.</p></li>
+</ul>
+<p>The accepted FRM reply confirms that the notification has been accepted
+to be discussed. This does not, as such, mean a decision on the ship's liquidation,
+a permit of departure or any other separate decision of the authority.</p>
+<p class="heading" id="lähetetyn-ilmoituksen-yhteenveto-pdf-tallentaminen"><strong>Sent
+notification summary PDF storage</strong></p>
+<p>You can save the sent notification for the data summary PDF.
+The summary shall contain and present the information transmitted by the notification
+the structure corresponding to the notification form.</p>
+<p>This way you save your PDF file:</p>
+<ul>
+<li><p>Select<strong>Notification</strong>-sent from view
+the statement you want to record.</p></li>
+<li><p>Press<strong>Print PDF</strong>.</p></li>
+<li><p>In print dialog select target<strong>Save
+PDF format</strong>or equivalent to your operating system
+Option.</p></li>
+<li><p>Vahvista tallennus.</p></li>
+</ul>
+<blockquote>
+<p>The notification may appear in the preview as small size, and not preview
+scale correctly in all operating systems. Recorded
+In PDF, the ad appears in the right size.</p>
+</blockquote>
+<p>Your PDF file will be stored on your device and contains a notification sent
+information.</p>
+<p class="heading" id="delegoidun-ilmoituksen-poistaminen">Delegated
+deletion of the notification;</p>
+<p>Delete WAR notification if no longer needed or added
+incorrectly, and if <strong>Remove</strong> is:
+available.</p>
+<p>ATA and ATD notifications cannot be removed from Port calls.</p>
+<p>In this way, you delete a transferable notification:</p>
+<ul>
+<li><p>Open<strong>Port calls</strong>- The view.</p></li>
+<li><p>Open the port call you want.</p></li>
+<li><p>Open a delegated declaration to be deleted.</p></li>
+<li><p>Press<strong>Remove</strong>.</p></li>
+</ul>
+<p>You will see that the deleted notification is no longer visible during the Port call.</p>
+</main>
+</body>
+</html>

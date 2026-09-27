@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.3 Vessel details</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .de-chip {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid #c6d6ea;
+      background: #f3f8ff;
+      color: #16385f;
+      font-size: 0.9em;
+      line-height: 1.4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: nowrap;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="3-3-aluksen-tiedot.html">Suomi</a> | <a href="3-3-aluksen-tiedot.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">3.3 Vessel details</h1>
+</header>
+<p class="heading" id="aluksen-tiedot">3.3 Vessel details</p>
+<p>In the <strong>Ships</strong> view you can search and view NEMO
+vessels stored in the vessel information service and their data.</p>
+<p class="heading" id="alustietopalvelun-tietojen-päivittyminen"><strong>Vessel Information Service
+Data update</strong></p>
+<p>The vessel information service shall record permanent vessel data,
+such as:</p>
+<ul>
+<li><p>vessel identifiers</p></li>
+<li><p>General and technical information</p></li>
+<li><p>Ice class information</p></li>
+<li><p>certificates</p></li>
+<li><p>active exemptions.</p></li>
+</ul>
+<p>Data are provided for Port calls of the NEMO vessel
+notifications. The vessel's data shall be maintained in NEMO, in particular by SID,
+SHP, CRT and NOA notifications.</p>
+<p>The port organisation examines vessel data as a user of information.
+No more ships at the port. NEMO and does not update their data
+In the ship view or with SID, SHP, CRT and NOA notifications.</p>
+<p class="heading" id="aluksen-hakeminen"><strong>Ship
+application</strong></p>
+<p>Go to the Ship view by selecting the main menu
+<strong>Ships</strong>.</p>
+<p>Search for one or more of the following information:</p>
+<ul>
+<li><p>vessel name</p></li>
+<li><p>IMO number</p></li>
+<li><p>MMSI number</p></li>
+<li><p>call sign</p></li>
+<li><p>other platform identifier (Traficom ID).</p></li>
+</ul>
+<blockquote>
+<p>In the case of a barge, use another platform identifier for the search:
+Traficom ID.</p>
+</blockquote>
+<p>Select a vessel from the search results to view it
+information.</p>
+<p class="heading" id="jos-alusta-ei-löydy"><strong>If the vessel is not:
+found</strong></p>
+<p>If the vessel is not found in NEMO's vessel information service, you can notify
+the notifying organisation responsible for the ship's Port call.</p>
+<p>The notifying organisation will add a new vessel to NEMO Port call
+In the context of the creation. The port organization will not increase the ship or create it.
+Port call.</p>
+<p>If the ship was supposed to be in NEMO by now, but it's not on the right.
+with search information, contact NEMO's support if necessary at <a href="mailto:NEMO.support@fintraffic.fi">NEMO.support @ fintraffic.fi</a>.</p>
+<p class="heading" id="aluksen-tietonäkymä"><strong>Ship
+data view</strong></p>
+<p>In the ship's view you can view the stored
+information and assessment of its timeliness.</p>
+<p>The outlook data are made up of a number of data sources and the ship
+notifications sent to Port calls.</p>
+<table style="width:95%;">
+<colgroup>
+<col style="width: 52%"/>
+<col style="width: 42%"/>
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Vessel information</strong></td>
+<td style="text-align: center;"><strong>Maintain</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">Vessel identifiers such as name, IMO number, MMSI number, call sign, ENI number and CFR number</td>
+<td>SID notification</td>
+</tr>
+<tr>
+<td style="text-align: center;">General and technical details of the vessel</td>
+<td>SHP and NOA notification</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ice class established in Finland</td>
+<td>Credit certificate with CRT notification + Traficom confirmation</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ice class of the vessel, i.e.:
+Classification mark</td>
+<td>SHP notification</td>
+</tr>
+<tr>
+<td style="text-align: center;">Aktiiviset poikkeukset</td>
+<td><p>-</p>
+<p>Active exceptions are not maintained by NEMO's announcements. Information
+Transferred to NEMO under EU schemes issued by public authorities
+by derogation.</p>
+<p>Read more In the active exceptions section.</p></td>
+</tr>
+<tr>
+<td style="text-align: center;">Todistukset</td>
+<td>CRT notification</td>
+</tr>
+</tbody>
+</table>
+<p>The port cannot change the data directly in the ship's view. If
+you notice an error or a lack of information, report the Port call
+to the corresponding reporting organisation. The notifying organisation shall update:
+the information required.</p>
+<p class="heading" id="jääluokkatiedot"><strong>Ice class information</strong></p>
+<p>Two different ice class data can be displayed in NEMO:</p>
+<ol type="1">
+<li><p><strong>Ice class established in Finland</strong></p></li>
+<li><p><strong>Ice class of vessel</strong>.</p></li>
+</ol>
+<p>Even if the data show the same ice class code, e.g. IA or IA
+Super, it's different information.</p>
+<p class="heading" id="suomessa-vahvistettu-jääluokka"><strong>Finland
+established ice class</strong></p>
+<p>The ice class established in Finland is the Finnish Transport and Communications Agency
+Information confirmed by Traficom. Traficom confirms the ice class delivered
+on the basis of documents and the ship's classification marking.</p>
+<p>The ice class established in Finland and the net tonnage of the vessel affect:
+the amount of the fairway fee. The vessel's right to an icebreaking grant is determined by:
+by ice class and load capacity.</p>
+<p><a href="https://www.traficom.fi/fi/kauppamerenkulku/alukset/alusten-jaaluokat">Read
+more about vessel ice classes on Traficom's website</a></p>
+<p>If the Finnish ice class is missing or not up to date,
+submit a classification certificate with a CRT notification and request an ice class
+The Committee of the Regions adopted the following opinion:</p>
+<p class="heading" id="aluksen-jääluokka"><strong>Ship
+Ice class</strong></p>
+<p>The ice class of the vessel shall be the ice class granted by the ship classification society or
+the classification mark. The notification shall be notified by the notifying organisation by means of the SHP notification.
+field <strong>Ice class (<code class="de-chip">DE-009-03</code>)</strong>.</p>
+<p>The data can be used for determining the Finnish ice class
+data. However, the ice category given by the SHP declaration is not alone
+be a Finnish ice class established by Traficom.</p>
+<p>Both ice class data are visible in the ship's data view.
+The data for the Port call show the ice class established in Finland.</p>
+<p class="heading" id="aluksen-todistukset"><strong>Ship
+certificates</strong></p>
+<p>In the <strong>Certificates</strong> section stored on board
+the certificates are shown as cards.</p>
+<p>For example, the following categories of certificates may appear:</p>
+<ul>
+<li><p>Tonnage certificate</p></li>
+<li><p>Certificate of nationality</p></li>
+<li><p>Classification certificate</p></li>
+<li><p>Load line certificate</p></li>
+<li><p>Safety certificate</p></li>
+<li><p>Other certificate</p></li>
+</ul>
+<p>The view shows only essential for Finland
+certificates.</p>
+<p>Use Type "Other Certificate" if you give someone else over
+on the said certificates</p>
+<p>The NEMO certificate type code also contains other types of certificate.
+The certificates to be shown in the view shall be determined by the number of vessels stored on board:
+on the basis of the information and the classification of evidence used by NEMO.</p>
+<p>The certificate information shall be maintained on a ship's Port call:
+CRT ad.</p>
+<p>If no information has been stored in NEMO's vessel information service
+or the information on the certificate has not been provided by the CRT notification;
+the certificate appears empty.</p>
+<p>The certificate card may show, for example:</p>
+<ul>
+<li><p>Date of issue</p></li>
+<li><p>expiry date</p></li>
+<li><p>Issuer</p></li>
+<li><p>Issuer's flag State</p></li>
+<li><p>Issuer name</p></li>
+<li><p>kuvaus.</p></li>
+</ul>
+<p>Open the certificate card to check its details
+information.</p>
+<p>The port cannot add or modify the certificate information. Where the certificate:
+missing or not up-to-date information, notify
+the notifying organisation responsible for the Port call.</p>
+<p class="heading" id="aluksen-aktiiviset-poikkeukset"><strong>Ship
+active derogations;</strong></p>
+<p>The <strong>Active derogations</strong> section contains:
+existing derogations granted by the authorities.</p>
+<p>Exceptions may include:</p>
+<ul>
+<li><p>on waste reporting obligations</p></li>
+<li><p>turvallisuusilmoituksiin</p></li>
+<li><p>muihin viranomaisvelvoitteisiin.</p></li>
+</ul>
+<p>Derogations shall not be maintained by notification of a Port call. Information
+are based on derogations granted by the authorities.</p>
+<p>The derogation is shown:</p>
+<ul>
+<li><p><strong>Deviation identifier</strong>- individual exemption
+identifier</p></li>
+<li><p><strong>Type of derogation</strong> – esimerkiksi <em>Waste
+Notification</em></p>
+<ul>
+<li><p><strong>From</strong>- the date from which:
+the derogation is valid;</p></li>
+<li><p><strong>Until</strong>- the date until which the derogation
+is valid</p></li>
+</ul></li>
+<li><p><strong>Route</strong>- relating to:
+Route information</p></li>
+<li><p><strong>Issued authority</strong>, kuten:</p>
+<ul>
+<li><p>maa</p></li>
+<li><p>viranomaisen tyyppi</p></li>
+<li><p>viranomaisen nimi</p></li>
+</ul></li>
+<li><p><strong>Contact (24 / 7 contact)</strong>- contact details,
+where additional information is available,</p></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>ATA - Actual Time of Arrival</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+
+    .de-chip {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid #c6d6ea;
+      background: #f3f8ff;
+      color: #16385f;
+      font-size: 0.9em;
+      line-height: 1.4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="ata-ilmoitus-tosiasiallisesta-saapumisesta.html">Suomi</a> | <a href="ata-ilmoitus-tosiasiallisesta-saapumisesta.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">ATA - Actual Time of Arrival</h1>
+</header>
+<h1 id="ata---ilmoitus-tosiasiallisesta-saapumisesta"><strong>ATA -
+Actual Time of Arrival</strong></h1>
+<p>Complete ATA notification only when the vessel has arrived
+actually port, and all necessary entry related
+notifications have been sent.</p>
+<p>The DUE and NOA notifications shall be sent before the ATA notification.</p>
+<p>The NOA notification shall provide official entry pre-arrival information
+confirmation in field Confirm arrival declaration (<code class="de-chip">DE-003-07</code>).</p>
+<p>After sending the ATA notification:</p>
+<ul>
+<li><p>the Port call can no longer be cancelled;</p></li>
+<li><p>notifications sent previously cannot be deleted</p></li>
+</ul>
+<h1 id="täytettävät-tiedot"><strong>Information to be completed</strong></h1>
+<p><strong>Further information on notification</strong> <code class="de-chip">DE-003-01</code></p>
+<blockquote>
+<p>Fill in the field if you want to provide additional information related to the notification,
+which cannot be reported in other fields. You can write for example
+specific information related to the actual arrival of the vessel,
+attention related to anchoring or attachment, Port call;
+other additional information related to the operational situation.</p>
+<p>If you do not have a special report, leave the field empty. Do not
+repeat in this field information already provided in other fields.</p>
+</blockquote>
+<p><strong>Date and time of arrival - real</strong> <code class="de-chip">DE-022-01</code></p>
+<blockquote>
+<p>Fill in the actual date and time of arrival of the vessel:
+fully attached to the dock (All fast) or anchored
+outside anchor.</p>
+<p>If the actual arrival time differs from the previously reported ETA above
+for two hours, update the information without delay with NOA notification.</p>
+</blockquote>
+<p><strong>Visit to anchor place</strong> <code class="de-chip">DE-014-15</code></p>
+<blockquote>
+<p>Select yes if the port operation is under anchoring or
+commercial activities in Finnish territorial waters.</p>
+</blockquote>
+</main>
+</body>
+</html>

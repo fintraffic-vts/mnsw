@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>2.3 System och gränssnittsversionshantering</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="2-3-jarjestelman-ja-rajapintojen-versiohallinta.html">Suomi</a> | <strong>Svenska</strong> | <a href="2-3-jarjestelman-ja-rajapintojen-versiohallinta.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">2.3 System och gränssnittsversionshantering</h1>
+</header>
+<p class="heading" id="järjestelmän-ja-rajapintojen-versiohallinta">2.3.
+System och gränssnitt version manager</p>
+<p>Nemo har en lista över stödda versioner. Nemo stöder alltid strömmen
+produktionsversion och två (2) den tidigare versionen.</p>
+<p>Stödet för de gamla versionerna slutar efter en övergångsperiod av:
+definierad i EMSA version management policy. Nemo kan visa
+information som tidigare överförts, även om den versionen inte längre existerar.
+stöds.</p>
+<p class="heading" id="yhteensopivuuden-varmistus">Kompatibilitet
+Bekräftelse</p>
+<ul>
+<li><p>Nemo-systemet har schema och logisk validering som:
+säkerställa MIG-överensstämmelse.</p></li>
+<li><p>Stöd för flera versioner baseras på identifiering av versionen på metadatanivå (till exempel versionsnumret i meddelandet eller API-anropet).</p></li>
+<li><p>Historiska data kan också granskas för äldre versioner, men endast den senaste versionen garanterar full funktionalitet.</p></li>
+</ul>
+<h1 id="versiopäivitykset-ja-muutosilmoitukset"><strong>Version uppdateringar och
+Ändra meddelanden</strong></h1>
+<p>När Finland blir medveten om en ny uppdatering av MIG-versionen,
+Ett pressmeddelande publiceras av Fintraffic. Bulletin säger att:
+En ny MIG-version kommer och en inledande bedömning av dess
+datum för publicering.</p>
+<p>Den faktiska MIG-versionen implementeras i etapper och
+kommuniceras separat på följande kanaler:</p>
+<ul>
+<li><p><a href="https://www.emsw.fi/">Fintraffic
+Utvecklarportal</a></p></li>
+<li><p><a href="https://fintraffic-vts.github.io/mnsw/">National
+Meddelande guide</a></p></li>
+<li><p>via e-post till medlemmar i organisationen</p></li>
+</ul>
+<blockquote>
+<p>Organisationens kontaktpersons e-post hanteras av:
+underhållsvy. Läs om organisationens kontakt i kapitlet<a href="../1-nemon-kayttoonotto/1-3-organisaation-yllapito.sv.html">1,3
+Organisationsunderhåll</a>och Organisation Liaison Officer
+-point.</p>
+</blockquote>
+<p>Versionsinformation - Ny versionsbeskrivning, meddelandestruktur och gränssnittsbeskrivning
+- publicerad i GitHubrepository of Fintraffic (JSON Schema, OpenAPI,
+MIGs). En changelog upprättas för varje version:
+förklara relevanta ändringar jämfört med den tidigare versionen.</p>
+<p>Syftet med kommunikationen är att säkerställa att alla tredje parter:
+parterna har tillräckligt med tid för att förbereda sig för versionsuppdateringen, och
+Testa deras implementering innan du byter till produktion.</p>
+<h1 id="toimenpiteet-versiopäivityksen-yhteydessä"><strong>Mätningar
+med versionsuppdatering</strong></h1>
+<p>I samband med översynen av dig eller din organisations tekniska
+Kontaktpersonen bör ta hänsyn till följande:</p>
+<ul>
+<li><p><strong>Kompatibilitetstestning</strong>Se till att din
+ditt system stöder den nya MIG-versionen och producerar giltiga data
+Som gränssnitt.</p></li>
+<li><p><strong>Interface förändringar</strong>Kontrollera publicerade scheman
+och eventuella ändringar i obligatoriska fält eller strukturer.</p></li>
+<li><p><strong>Avbrott</strong>- överväga möjligt
+bryter i produktion eller uppdateringar i tid
+underhållsavbrott.</p></li>
+<li><p><strong>Version Management</strong>- dokumentera din egen
+utvecklingsprocessen version du använder och följa Fintraffic
+de övergångsperioder som anges.</p></li>
+<li><p><strong>Godkännande testning</strong>- testa hela vågen
+(sändning, kompensation, eventuella felmeddelanden)
+Staging miljö.</p></li>
+</ul>
+</main>
+</body>
+</html>

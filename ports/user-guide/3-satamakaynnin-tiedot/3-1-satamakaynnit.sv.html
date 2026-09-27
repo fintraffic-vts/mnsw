@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.1 Anlöp</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+
+    .icon-legend {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.75rem 0 0;
+    }
+    .icon-legend li {
+      margin: 0.8rem 0;
+    }
+    .icon-legend li p {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .icon-legend li img {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+      flex: 0 0 1.5rem;
+      object-fit: contain;
+      margin-top: 0.1rem;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="3-1-satamakaynnit.html">Suomi</a> | <strong>Svenska</strong> | <a href="3-1-satamakaynnit.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">3.1 Anlöp</h1>
+</header>
+<p class="heading" id="satamakäynnit"><strong>3.1
+Anlöp</strong></p>
+<p>Anlöp samlar Finlands hamn eller ankarplats
+information om inkommande fartygs ankomst,
+Att vara och lämna.</p>
+<p>Visa din port (UN / LOCODE-kod)
+anlöp. Anlöp visas
+<strong>Anlöp</strong>i den vy där du flyttar till huvudmenyn
+<strong>Anlöp</strong>Valet.</p>
+<p class="heading" id="satamakäyntien-tarkastelu">Anlöp
+Granska</p>
+<p>Du kan se anlöpen i din hamn antingen:
+<strong>kort</strong>eller<strong>listade</strong>Förändring
+sätt att visa<strong>Anlöp</strong>-Övre delen av utsikten
+knappar.</p>
+<p>Listan visar samma period av anlöp
+Tabellformat. Listan visar samma grundläggande information som:
+i kortvyn och även anlöpsidentifieraren,<strong>Besök
+ID</strong>och anlöp status.</p>
+<p>Öppna dina anlöpsuppgifter genom att trycka på kort eller lista
+linjer.</p>
+<p class="heading" id="satamakäynnistä-näytettävät-tiedot">visas i hamnen
+Information om information</p>
+<p>Anlöpet visar:</p>
+<ul>
+<li><p>Namn på fartyg och IMO-nummer som ska visas efter namn
+lås</p></li>
+<li><p>Port som FN/LOCODE-kod</p></li>
+<li><p>den del av hamnen och/eller björnen, om den anges;</p></li>
+<li><p>ETA - beräknad ankomsttid</p></li>
+<li><p>ETD - beräknad avgångstid</p></li>
+<li><p>till vem den delegerade visas om rapporteringsansvaret för ett anlöp visas
+överförs till en annan organisation</p></li>
+<li><p>vissa meddelanden om anlöp och förhandsinformation.
+Bekräftelse i ikoner. Ikonerna anger följande meddelanden:
+För att stärka:</p>
+<ul class="icon-legend">
+<li><p><img alt="" src="media/image.png" style="width:0.40625in;height:0.40625in"/>– HZA – Anmälan om farligt gods vid ankomst.</p></li>
+<li><p><img alt="" src="media/image2.png" style="width:0.40625in;height:0.40625in"/>SEC, vilket innebär att anlöp är
+SEC-deklaration (säkerhetsdeklaration).</p></li>
+<li><p><img alt="" src="media/image3.png" style="width:0.42708in;height:0.42708in"/>- MDH, vilket betyder att porten är
+MDH-deklaration utfärdad (ship health declaration).</p></li>
+<li><p><img alt="" src="media/image4.png" style="width:0.36458in;height:0.36458in"/>- SSA, hamnen är
+SSA-deklaration utfärdad (Ship to ship operation).</p></li>
+<li><p><img alt="" src="media/image5.png" style="width:0.40625in;height:0.40625in"/>- pilen ikon för ankomst -
+rapporter om bekräftelse av ankomst. När Icon Background
+är grönt, Deklaranten (den organisation som skapade anlöpet) har
+bekräftade att all känd information om fartygets ankomst:
+förhandsinformation och meddelanden har lämnats;</p></li>
+<li><p><img alt="" src="media/image6.png" style="width:0.39583in;height:0.39583in"/>pil ikon av avgång - berättar
+Bekräftelse av avgången. När ikonen har en grön bakgrund,
+Deklarantn (den organisation som skapade anlöpet) har bekräftat att
+alla kända förhandsdata; och
+anmälningar har gjorts.</p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Om pilikonen är grå bekräftas inte denna bekräftelse av preliminära data.
+Ännu inte gjort.</p>
+</blockquote>
+<p class="heading" id="satamakäynnin-tila">Anlöp status</p>
+<p>Anlöpets status indikerar stadiet för anlöpet:</p>
+<ul>
+<li><p><strong>Unconfirmed ankomst</strong>skeppet har skapats
+anlöp.</p></li>
+<li><p><strong>Beräknad ankomst</strong>- fartygets ankomst;
+tidigare information har lämnats.</p></li>
+<li><p><strong>I hamn</strong> – fartygets faktiska ankomsttid har anmälts.</p></li>
+<li><p><strong>Vänster</strong>fartygets faktiska avgång skall vara:
+meddelas.</p></li>
+<li><p><strong>Avbokad</strong>- hamnanropet har avbrutits.</p></li>
+</ul>
+<blockquote>
+<p><strong>Avbokad</strong>- Anlöp i rymden är inte synliga
+standard i sikte. Du kan se dem genom filtrering.</p>
+</blockquote>
+<p class="heading" id="erityistapaus-proomut-hinaajat-ja-puskijat">Särskilt fall: pråmar,
+Tugs och buskar</p>
+<p>pråmar, lådor och buffertar rapporteras separat i Nemo
+fartyg. Följaktligen kan flera separata transporter kopplas till samma transport.
+anlöp.</p>
+<p>Kontrollera informationen på varje fartyg från sitt eget anlöp. Barnbarn
+lasten som transporteras visas på pråmens anlöp, inte genom prylar eller buggy
+i hamnen.</p>
+<p class="heading" id="satamakäyntien-suodattaminen">Anlöp
+filtrering</p>
+<p>Du kan begränsa anlöp genom att byta perioder eller använda
+mer detaljerade sökförhållanden.</p>
+<p>Om anlöp inte visas som förväntat, kontrollera den valda tidsperioden och
+i använda filter.</p>
+<p class="heading" id="ajanjakson-valitseminen"><strong>Period
+urval</strong></p>
+<p>Som standard visas anlöp från dag 6
+dagar framåt. Om det inte finns några portsamtal ser du meddelandet.
+Din organisation har inga anlöp.</p>
+<p>Om du väljer en lång tid kan nedladdning av anlöp:
+Varar längre än vanligt.</p>
+<p class="heading" id="tarkemmat-hakuehdot"><strong>ytterligare detaljer
+Tillämpningsvillkor</strong></p>
+<p>Det mer detaljerade filtret öppnas på den övre högra vinkelknappen av vyn.</p>
+<p>I öppningsfiltervyn kan du:</p>
+<ul>
+<li><p>byta till en viss port genom att ange ett anlöp;
+ID eller Visit ID</p></li>
+<li><p>begränsa anlöp som ska visas med olika data som:</p>
+<ul>
+<li><p>namn eller identifierare för fartyget, dvs. IMO-nummer, samtalsskylt eller
+MMSI Nej</p></li>
+<li><p>hamn, dvs FN/LOCODE eller stadsnamn</p></li>
+<li><p>start eller slut på anlöp;</p></li>
+<li><p>anlöpsstatus;</p></li>
+<li><p>Bekräftelse av ankomst- eller avgångsdata;</p></li>
+<li><p>anmälan som skickas till hamn</p></li>
+<li><p>ankomst- eller avgångstrafik, dvs. inhemsk eller utländsk
+Transporter</p></li>
+</ul></li>
+</ul>
+</main>
+</body>
+</html>

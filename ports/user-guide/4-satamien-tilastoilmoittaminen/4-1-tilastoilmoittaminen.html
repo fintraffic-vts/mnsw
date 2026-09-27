@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>4.1 Tilastoilmoittaminen</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="4-1-tilastoilmoittaminen.sv.html">Svenska</a> | <a href="4-1-tilastoilmoittaminen.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">4.1 Tilastoilmoittaminen</h1>
+</header>
+<p class="heading" id="tilastoilmoittaminen"><strong>4.1
+Tilastoilmoittaminen</strong></p>
+<p>Satamat toimittavat kuukausittaiset satamaliikennetilastot Liikenne-
+ja viestintävirastolle. Uusi määrämuotoinen satamatilastojen
+ilmoittaminen otetaan käyttöön 1.1.2027 alkaen.</p>
+<p class="heading" id="satama-tilastotietojen-toimittaminen-nemoon">Satama tilastotietojen
+toimittaminen Nemoon</p>
+<p>Toimita tilastotiedot kuukausittain. Satama voi valita
+ilmoitustavaksi Excel-tiedoston tai Kansallinen Satama API
+-rajapinnan.</p>
+<p class="heading" id="excel-tiedoston-käyttäminen">Excel-tiedoston
+käyttäminen</p>
+<p>Muodosta raportointikuukauden tilastotiedot määritellyn tietosisällön
+mukaisesti, tarkista tiedot ja lähetä valmis Excel-tiedosto osoitteeseen
+<a href="mailto:Tiedonhankinta@traficom.fi">Tiedonhankinta@traficom.fi</a>.</p>
+<p>Lue tarkempi ohjeistus ja tiedostovaatimukset <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">satamatilastojen ohjeesta</a>.</p>
+<p class="heading" id="rajapintailmoittamisen-käyttöönotto">Rajapintailmoittamisen
+käyttöönotto</p>
+<p>Rajapintailmoittaminen edellyttää, että:</p>
+<ul>
+<li><p>satama on rekisteröitynyt Nemoon</p></li>
+<li><p>satama organisaatio on generoinut <strong>client-id</strong>- ja
+<strong>client-secret</strong>-tiedot rajapinnan käyttöä varten Nemon
+käyttöliittymällä</p></li>
+<li><p>rajapintaa käyttävä järjestelmä käyttää organisaatiolle
+myönnettyjä tunnuksia tilastotietojen toimittamiseen.</p></li>
+</ul>
+<p>Rajapinnan kautta toimitettavien tietojen sisältö vastaa
+satamatilastojen ohjeistuksessa määriteltyä tietosisältöä. Rajapinnan
+tekniset tiedot, sanomarakenteet ja vastaukset löytyvät Kansallinen
+Satama API -dokumentaatiosta.</p>
+<p>Rajapinnan tekninen kuvaus: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics">https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics</a></p>
+<p class="heading" id="dsp-palveluntarjoajan-käyttäminen">DSP-palveluntarjoajan
+käyttäminen</p>
+<p>Jos organisaatio käyttää DSP:tä (Data Service Provider)
+tilastotietojen välittämiseen, DSP käyttää rajapintailmoittamisessa
+kyseisen organisaation client-id- ja client-secret-tietoja.</p>
+<p>Jokainen organisaatio vastaa omien client-id- ja
+client-secret-tietojensa sekä niiden päivitysten välittämisestä
+käyttämälleen DSP:lle. Tunnusten muuttuessa organisaation tulee
+toimittaa päivitetyt tiedot DSP:lle.</p>
+<p class="heading" id="ilmoitettavat-tiedot">Ilmoitettavat tiedot</p>
+<p>Tilastoilmoitus sisältää satamakäyntiä, alusta ja lastia koskevat
+tiedot. Ilmoita vähintään ohjeistuksessa vaaditut tiedot.</p>
+<p>Tilastoilmoituksessa ilmoitetaan esimerkiksi:</p>
+<ul>
+<li><p>aluksen saapumis- ja lähtöpäivät</p></li>
+<li><p>aluksen yksilöintitiedot</p></li>
+<li><p>onko alus ulkomaan vai kotimaan liikenteessä</p></li>
+<li><p>onko lasti kauttakulkuliikenteessä (transito)</p></li>
+<li><p>aluksen kuljettamat tavaralajit ja määrät</p></li>
+<li><p>kuljetusvälineiden tyyppi ja koko</p></li>
+<li><p>Satamakäynnin tunniste (VisitID)</p></li>
+<li><p>lastin suunta, eli tuonti tai vienti</p></li>
+<li><p>aluksen edellinen ja seuraava satama</p></li>
+</ul>
+<blockquote>
+<p>Tarkista ajantasainen tietosisältö ja tiedostovaatimukset: <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">Fintraffic
+– Satamien tilastotiedot</a></p>
+</blockquote>
+<p class="heading" id="tavaralajin-ilmoittaminen-hs-koodilla">Tavaralajin ilmoittaminen
+HS-koodilla</p>
+<p>Tavaran laatu ilmoitetaan 1.1.2027 alkaen kansainvälisen
+tullinimikkeistön mukaisella HS-koodilla. Tämä poikkeaa aikaisemmasta
+satamatilastoinnin tavaraluokituksesta.</p>
+<p>Jos käytössä oleva järjestelmä tai lähtöaineisto käyttää nykyisiä
+tilastollisia tavararyhmiä, tarkista oikea HS-koodi
+vastaavuustaulukosta. Yhdellä nykyisellä tavararyhmällä voi olla useampi
+sitä vastaava HS-koodi, joten valitse tavaraa vastaava tarkennus.</p>
+<p>Tarkista tilastoryhmien ja HS-koodien vastaavuudet: <a href="https://fintraffic-vts.github.io/mnsw/hs-map.html">Fintraffic –
+HS-koodien vastaavuustaulukko</a></p>
+<p class="heading" id="lisätiedot-ja-tekninen-dokumentaatio">Lisätiedot
+ja tekninen dokumentaatio</p>
+<p>Fintrafficin verkkodokumentaatiossa on tarkemmat tiedot ilmoituksen
+tietosisällöstä, tiedostomuodosta, koodistoista ja National Port API
+-rajapinnasta.</p>
+<p>Satamatilastojen ohjeistus: <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">Fintraffic
+– Satamien tilastotiedot</a></p>
+<p>HS-koodien vastaavuustaulukko: <a href="https://fintraffic-vts.github.io/mnsw/hs-map.html">Fintraffic – HS
+Map</a></p>
+<p>National Port API:n tekninen kuvaus: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics">Fintraffic
+– National Port API</a></p>
+</main>
+</body>
+</html>

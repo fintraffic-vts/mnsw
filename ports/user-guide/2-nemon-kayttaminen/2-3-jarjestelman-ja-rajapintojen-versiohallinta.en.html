@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>2.3 System and interface version management</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="2-3-jarjestelman-ja-rajapintojen-versiohallinta.html">Suomi</a> | <a href="2-3-jarjestelman-ja-rajapintojen-versiohallinta.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">2.3 System and interface version management</h1>
+</header>
+<p class="heading" id="järjestelmän-ja-rajapintojen-versiohallinta">2.3
+System and interfaces version manager</p>
+<p>NEMO maintains a list of supported versions. NEMO always supports current
+production version and two (2) the previous version.</p>
+<p>The aid for the old versions ends after a transitional period of:
+defined in EMSA version management policy. NEMO can show
+information previously transmitted, even if that version no longer exists;
+supported.</p>
+<p class="heading" id="yhteensopivuuden-varmistus">Compatibility
+confirmation</p>
+<ul>
+<li><p>The NEMO system has schema and logic validation which:
+ensure MIG compliance.</p></li>
+<li><p>Support for several versions is based on the identification of the version
+on a metadata level (e.g. version number in message or API interface
+(see section 4.4).</p></li>
+<li><p>Retrospective data review is also possible for parents
+versions, but only the latest version guarantees full functionality.</p></li>
+</ul>
+<h1 id="versiopäivitykset-ja-muutosilmoitukset"><strong>Version updates and
+Change notifications</strong></h1>
+<p>When Finland becomes aware of a new update of the MIG version,
+A press release will be published by Fintraffic. The Bulletin states that:
+a new MIG version is coming and an initial assessment of its
+the date of publication.</p>
+<p>The actual MIG version is implemented in stages, and
+be communicated separately on the following channels:</p>
+<ul>
+<li><p><a href="https://www.emsw.fi/">Fintraffic
+developer portal</a></p></li>
+<li><p><a href="https://fintraffic-vts.github.io/mnsw/">National
+Message Guide</a></p></li>
+<li><p>By e-mail to members of the organisation</p></li>
+</ul>
+<blockquote>
+<p>The organisation's contact person's email is managed by:
+maintenance view. Read about the organisation's contact person in chapter <a href="../1-nemon-kayttoonotto/1-3-organisaation-yllapito.en.html">1.3
+Organisation maintenance</a> and Organisation contact person
+-point.</p>
+</blockquote>
+<p>Version information - New version description, message structure and interface description
+- published in the GitHubrepository of Fintraffic (JSON Schema, OpenAPI,
+MIGs). A changelog is drawn up for each version:
+explain the relevant changes compared to the previous version.</p>
+<p>The aim of the communication is to ensure that all third parties:
+the parties have sufficient time to prepare for the version update; and
+test their implementation before switching to production.</p>
+<h1 id="toimenpiteet-versiopäivityksen-yhteydessä"><strong>Measures
+with version update</strong></h1>
+<p>In connection with the revision you or your organization's technical
+the contact person should take into account the following:</p>
+<ul>
+<li><p><strong>Compatibility testing</strong>- make sure your
+your system supports the new MIG version and produces valid data
+by interfaces.</p></li>
+<li><p><strong>Interface changes</strong> — review the published schemas
+and any changes to required fields or structures.</p></li>
+<li><p><strong>Interruptions</strong>- consider possible
+breaks in production or updates in time
+maintenance breaks.</p></li>
+<li><p><strong>Version Management</strong>- document your own
+the development process version you are using, and follow Fintraffic
+the transitional periods indicated.</p></li>
+<li><p><strong>Approval testing</strong>- test the entire wave
+(consignment, offsetting, any error messages)
+Staging environment.</p></li>
+</ul>
+</main>
+</body>
+</html>

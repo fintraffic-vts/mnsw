@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>2.1 Use of NEMO</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="2-1-nemon-kayttotavat.html">Suomi</a> | <a href="2-1-nemon-kayttotavat.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">2.1 Use of NEMO</h1>
+</header>
+<p class="heading" id="nemon-käyttökanavat">2.1 NEMO channels</p>
+<p>NEMO can be used for organisational needs and technical environment
+via one or more channels. Available are:</p>
+<ul>
+<li><p><strong>National Port API</strong>- Port calls,
+to search for information and vessel data in Finland</p></li>
+<li><p><strong>Browser interface</strong>- NEMO graphic
+user interface without system integration.</p></li>
+</ul>
+<p>The channels are based on the same data model and the same codes.
+However, available data and activities may vary:
+by channel and access rights.</p>
+<p class="heading" id="valitse-organisaatiollesi-sopiva-kanava">Select
+a channel suitable for your organisation</p>
+<p><strong>National Port API</strong></p>
+<p>Select a national port API when your port wants to receive and
+make direct use of NEMO's data in their own systems. Interface
+with port services
+vessel data can be integrated into port operations, for example
+systems.</p>
+<p>The port organisation may carry out the interface integration itself, or
+use the Data Service Provider (DSP) service provider. DSP works
+on behalf of the port organisation.</p>
+<p>DSP does not have automatic access to the port organisation's data and cannot create the organisation's interface credentials. The port organisation must be registered in NEMO and activate the API connection. The port organisation is responsible for secure handling of Client ID and Client Secret and for securely providing them to the DSP in use.</p>
+<p>Go to the Technical Port API of the Notifier's newsletters: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html">Integrate
+Suomen Maritime Single Window (NEMO) - National API - Port
+API</a></p>
+<p class="heading" id="selainkäyttöliittymä"><strong>Browser interface</strong></p>
+<p>Select browser interface if your organisation does not need
+integration into their own systems.</p>
+<p>In the browser interface, port organisation users can:
+review Port calls to and from their ports;
+notifications and use the information provided in them.</p>
+<p>The port organisation shall not be responsible for reporting port calls.
+Port can send <strong>WAR, ATA or ATD notification</strong>
+only if the transmission of that notification is delegated to the port.</p>
+<p>Go to the browser interface at <a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a>.</p>
+<p class="heading" id="nemon-käyttöliittymä"><strong>Nemon
+interface</strong></p>
+<p>NEMO interface has common navigation elements, settings
+and system messages. Activity-specific work phases are described:
+separate instructions.</p>
+<p>Go to the user interface at <a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a>.</p>
+<p class="heading" id="navigointi"><strong>Navigation</strong></p>
+<p>After you log in, you'll see NEMO's front page. Go to different views
+from the main menu. Change of organisation, settings, support site and
+check-out can be found in the <strong>Menu</strong> menu.</p>
+<p class="heading" id="päävalikko"><strong>Main menu</strong></p>
+<p>The main menu contains:</p>
+<ul>
+<li><p><strong>Home</strong></p></li>
+<li><p><strong>Port calls</strong></p></li>
+<li><p><strong>Ships</strong></p></li>
+</ul>
+<p>Go to the view by pressing its name.</p>
+<p>In the desktop view the main menu is located at the top of the page.
+In the mobile view it is located at the bottom of the screen.</p>
+<p class="heading" id="menu-valikko"><strong>Menu menu</strong></p>
+<p>Open the <strong>Menu</strong> menu at the right hand side of the main menu
+button. The menu opens on the rest of the contents.</p>
+<p>In the Menu menu, you can use your permissions:</p>
+<ul>
+<li><p>exchange between the organisations where you are
+as user</p></li>
+<li><p>join an existing organisation or add a new
+Organisation for NEMO</p></li>
+<li><p>move<strong>Organisation management</strong></p></li>
+<li><p>move<strong>Management of delegated acts</strong></p></li>
+<li><p>change system language: Finnish (<strong>EN</strong>), ruotsi
+(<strong>SV</strong>) tai englanti (<strong>EN</strong>)</p></li>
+</ul>
+<blockquote>
+<p>The interface language affects views, announcements and so on
+the language to be used in the PDF.</p>
+</blockquote>
+<ul>
+<li><p>change system color theme: automatic, light or
+dark</p></li>
+</ul>
+<blockquote>
+<p>In automatic mode the theme is determined by the operating system settings
+with.</p>
+</blockquote>
+<ul>
+<li><p>change <strong>Reporting formalities</strong> settings</p></li>
+</ul>
+<blockquote>
+<p>Notification formalities are dealt with in Chapter <a href="../3-satamakaynnin-tiedot/3-2-ilmoitukset.en.html"><strong>3.2
+Notification</strong></a>, section
+<strong>Notification formalities Regulations</strong>.</p>
+</blockquote>
+<ul>
+<li><p>go to NEMO support site</p></li>
+<li><p>log out.</p></li>
+</ul>
+<p class="heading" id="päivämäärä--ja-kellonaikakentät"><strong>Date
+Time fields</strong></p>
+<p>The presentation of dates and times can vary from one you use
+by browser, operating system and language settings.</p>
+<p>For example, the date may be presented in form
+<strong>DD-MM-YYYY</strong> or <strong>YYYY-MM-DD</strong> and
+Time format <strong>13:45</strong> or <strong>1: 45 PM</strong>.
+The layout of the date and time dialog windows may also vary
+by browser.</p>
+<p>The differences are usually due to browser or device settings, not Nemon
+Action.</p>
+<p>If the function you have at your disposal has to modify the date
+or the time field, you can select the value of the calendar or clock icon
+With help. Using the icon reduces the effect of the wrong format
+errors.</p>
+<p class="heading" id="pikaviestit"><strong>Quick Messages</strong></p>
+<p>The user interface may show short instant messages from the action made
+result or situation requiring attention. Quick message may be related
+e.g. search, amendment of the regulation, processing of data, or
+the operation of the system.</p>
+<p>One of the most common quick notifications:</p>
+<ul>
+<li><p><strong>Missing information</strong>- a mandatory field is
+not filled. Complete information before saving or
+This is the case.</p></li>
+<li><p><strong>Invalid information</strong>- the field is invalid
+or conflicting information that needs to be corrected.</p></li>
+<li><p><strong>Success</strong>- confirmation that:
+for example, the recording or transmission went through.</p></li>
+<li><p><strong>Reminder</strong>- invitation to verify the data, confirm
+measure or move to the next stage.</p></li>
+</ul>
+<p>Read the instant message and follow the instructions.</p>
+<p class="heading" id="sähköpostiviestit"><strong>Email messages</strong></p>
+<p>NEMO can send e-mails for example on Port calls
+Notifications, delegation, organisation management, system
+incidents, service breaks and disruptions.</p>
+<p>The messages you receive are determined by your permissions,
+your organisational role and existing notification regulations;
+(i)</p>
+<p>Email messages may include:</p>
+<ul>
+<li><p><strong>Timed messages</strong>dispatched:
+automatically based on a specified date or condition, such as:
+on expiry of the ship's certificate</p></li>
+<li><p><strong>operational messages;</strong>dispatched:
+as a result of the operator or system function, for example:
+the organisation invitation or delegation.</p></li>
+</ul>
+<p>Read the message and follow the instructions.</p>
+<p class="heading" id="järjestelmäviestit-ja-päivitykset"><strong>System messages and
+updates</strong></p>
+<p>NEMO can display the user interface for system operation,
+messages related to service breaks, incidents or changes.
+Read the messages and work the instructions in them
+in accordance with the procedure.</p>
+<p>NEMO's browser interface will be centrally updated, and not your
+need to install updates. Future outages and outages
+the impact changes are reported separately, by email or Nemon
+system messages.</p>
+<p>Because NEMO is used on a browser, browser cache or expired
+the session can sometimes affect the operation of the user interface. If not
+updated, shows outdated information or works after update
+abnormal:</p>
+<ul>
+<li><p>first update browser window</p></li>
+<li><p>if problem continues, log out of NEMO and back
+in</p></li>
+<li><p>clear the browser cache if necessary and open NEMO
+Again.</p></li>
+</ul>
+<p>The cache need not be emptied regularly. Just do it.
+if there is a problem or if NEMO's support is given. Note that browsing data
+or removing cookies can record you also out of other browsers
+the services you use.</p>
+<p>If problem continues, please contact NEMO support via email
+to <a href="mailto:NEMO-support@fintraffic.fi">NEMO-support@fintraffic.fi</a></p>
+</main>
+</body>
+</html>

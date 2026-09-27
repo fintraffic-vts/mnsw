@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>ATD - Actual Time of Departure</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+
+    .de-chip {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid #c6d6ea;
+      background: #f3f8ff;
+      color: #16385f;
+      font-size: 0.9em;
+      line-height: 1.4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="atd-ilmoitus-tosiasiallisesta-lahdosta.html">Suomi</a> | <a href="atd-ilmoitus-tosiasiallisesta-lahdosta.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">ATD - Actual Time of Departure</h1>
+</header>
+<h1 id="atd---ilmoitus-tosiasiallisesta-lähdöstä"><strong>ATD - Notification
+of actual departure</strong></h1>
+<p>Send an ATD notification only when the vessel has actually departed
+the port or anchorage, and all required
+departure-related notifications have been submitted.</p>
+<p>The NOD notification shall be sent before the ATD notification.</p>
+<p>The NOD notification shall provide official pre-departure information
+in the field Confirm departure notification (<code class="de-chip">DE-003-07</code>).</p>
+<p>After sending the ATD notification:</p>
+<ul>
+<li><p>the Port call can no longer be cancelled</p></li>
+<li><p>previously submitted notifications can no longer be deleted</p></li>
+</ul>
+<p>After the ATD notification is submitted, the Port call is considered
+closed.</p>
+<h1 id="täytettävät-tiedot"><strong>Information to be completed</strong></h1>
+<p><strong>Further information on notification</strong> <code class="de-chip">DE-003-01</code></p>
+<blockquote>
+<p>Fill in the field if you want to provide additional information related to the notification,
+which cannot be reported in other fields. For example, you can provide
+clarifying details related to the vessel's actual departure, berth
+departure, anchor aweigh event, or other information related to closing
+the Port call.</p>
+<p>If you do not have a special report, leave the field empty. Do not
+repeat in this field information already provided in other fields.</p>
+</blockquote>
+<p><strong>Actual departure date and time</strong> <code class="de-chip">DE-023-04</code></p>
+<blockquote>
+<p>Provide the vessel's actual departure date and time when the vessel
+has released the last line from the berth (Last line) or has raised
+anchor from the outer anchorage (Anchor aweigh).</p>
+<p>If the actual departure time differs from the previously reported ETD
+by more than two hours, update the information without delay using a
+NOD notification.</p>
+</blockquote>
+</main>
+</body>
+</html>

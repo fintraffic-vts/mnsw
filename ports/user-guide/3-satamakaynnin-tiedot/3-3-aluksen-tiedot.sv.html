@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.3 Fartygsdetaljer</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .de-chip {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid #c6d6ea;
+      background: #f3f8ff;
+      color: #16385f;
+      font-size: 0.9em;
+      line-height: 1.4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: nowrap;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="3-3-aluksen-tiedot.html">Suomi</a> | <strong>Svenska</strong> | <a href="3-3-aluksen-tiedot.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">3.3 Fartygsdetaljer</h1>
+</header>
+<p class="heading" id="aluksen-tiedot">3.3 Fartygsdetaljer</p>
+<p><strong>Fartyg</strong>-Visa att du kan söka och visa Nemo
+fartyg som lagras i fartygets informationstjänst och deras uppgifter.</p>
+<p class="heading" id="alustietopalvelun-tietojen-päivittyminen"><strong>Fartygsinformationstjänst
+Datauppdatering</strong></p>
+<p>Fartygsinformationstjänsten ska registrera permanenta fartygsuppgifter,
+som:</p>
+<ul>
+<li><p>Vessel identifiering</p></li>
+<li><p>Allmän och teknisk information</p></li>
+<li><p>Isklassinformation</p></li>
+<li><p>Intyg</p></li>
+<li><p>aktiva undantag.</p></li>
+</ul>
+<p>Data tillhandahålls för anlöp av Nemo-fartyget
+anmälningar. Fartygets uppgifter ska bibehållas i Nemo, särskilt genom SID,
+SHP, CRT och NOA-meddelanden.</p>
+<p>Hamnorganisationen undersöker fartygsdata som användare av information.
+Inga fler fartyg i hamnen. Nemo och uppdaterar inte sina data
+I skeppsvyn eller med SID, SHP, CRT och NOA-meddelanden.</p>
+<p class="heading" id="aluksen-hakeminen"><strong>Fartyg
+Ansökan</strong></p>
+<p>Gå till Fartygsvyn genom att välja huvudmenyn
+<strong>Fartyg</strong>.</p>
+<p>Sök efter en eller flera av följande information:</p>
+<ul>
+<li><p>Namn på fartyg</p></li>
+<li><p>IMO-nummer</p></li>
+<li><p>MMSI Nej</p></li>
+<li><p>Call Sign</p></li>
+<li><p>annan plattformsidentifierare (Traficom ID).</p></li>
+</ul>
+<blockquote>
+<p>Vid en pråm, använd en annan plattformsidentifierare för sökningen:
+Traficom ID.</p>
+</blockquote>
+<p>Välj ett fartyg från sökresultaten för att se det
+information.</p>
+<p class="heading" id="jos-alusta-ei-löydy"><strong>Om fartyget inte är:
+hittade</strong></p>
+<p>Om fartyget inte finns i Nemos fartygsinformationstjänst kan du meddela
+den anmälande organisation som ansvarar för fartygets anlöp.</p>
+<p>Meddelandeorganisationen kommer att lägga till ett nytt fartyg till Nemo anlöp
+i skapelsens sammanhang. Hamnorganisationen kommer inte att öka fartyget eller skapa det.
+anlöp.</p>
+<p>Om fartyget redan borde finnas i Nemo men inte hittas med korrekta sökuppgifter, kontakta Nemos support på <a href="mailto:nemo.support@fintraffic.fi">nemo.support@fintraffic.fi</a>.</p>
+<p class="heading" id="aluksen-tietonäkymä"><strong>Fartyg
+Data view</strong></p>
+<p>I fartygets syn kan du se den lagrade
+information och bedömning av tidsfristen.</p>
+<p>Utsiktsdata består av ett antal datakällor och fartyget
+anmälningar som skickas till anlöp.</p>
+<table style="width:95%;">
+<colgroup>
+<col style="width: 52%"/>
+<col style="width: 42%"/>
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Fartygsinformation</strong></td>
+<td style="text-align: center;"><strong>Behåll</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">Fartygsidentifierare, såsom namn,
+IMO-nummer, MMSI-nummer, samtalsskylt, ENI-nummer och CFR-nummer</td>
+<td>SID-meddelande</td>
+</tr>
+<tr>
+<td style="text-align: center;">Allmänna och tekniska detaljer om fartyget</td>
+<td>SHP och NOA-meddelande</td>
+</tr>
+<tr>
+<td style="text-align: center;">Isklass etablerad i Finland</td>
+<td>Kreditcertifikat med CRT-meddelande + Traficom-bekräftelse</td>
+</tr>
+<tr>
+<td style="text-align: center;">Isklass av fartyget, dvs:
+Klassificeringsmärke</td>
+<td>SHP-förklaring</td>
+</tr>
+<tr>
+<td style="text-align: center;">Aktiva undantag</td>
+<td><p>-</p>
+<p>Aktiva undantag upprätthålls inte av Nemos meddelanden. Information om information
+Överförs till Nemo enligt EU-system som utfärdats av myndigheter
+av undantag.</p>
+<p>Läs mer I avsnittet aktiva undantag.</p></td>
+</tr>
+<tr>
+<td style="text-align: center;">certifikat</td>
+<td>CRT-meddelande</td>
+</tr>
+</tbody>
+</table>
+<p>Hamnen kan inte ändra data direkt i fartygets syn. Om
+du märker ett fel eller brist på information, rapportera anlöpet
+till motsvarande rapporteringsorganisation. Den anmälande organisationen ska uppdatera:
+den information som krävs.</p>
+<p class="heading" id="jääluokkatiedot"><strong>Isklassinformation</strong></p>
+<p>Två olika isklassdata kan visas i Nemo:</p>
+<ol type="1">
+<li><p><strong>Isklass etablerad i Finland</strong></p></li>
+<li><p><strong>Isklass av fartyg</strong>.</p></li>
+</ol>
+<p>Även om data visar samma isklasskod, t.ex. IA eller IA
+Super, det är annorlunda information.</p>
+<p class="heading" id="suomessa-vahvistettu-jääluokka"><strong>Finland Finland Finland
+etablerad isklass</strong></p>
+<p>Isklassen i Finland är Finlands transport- och kommunikationsbyrå
+Information som bekräftas av Traficom. Traficom bekräftar isklassen levererad
+på grundval av dokument och fartygets klassificeringsmärkning.</p>
+<p>Isklassen i Finland och fartygets nettotonnage påverkar
+mängden fairway avgift. Fartygets rätt till ett isbrytande bidrag bestäms av:
+av isklass och lastkapacitet.</p>
+<p><a href="https://www.traficom.fi/fi/kauppamerenkulku/alukset/alusten-jaaluokat">Läs mer
+mer om fartygets isklasser på Traficoms webbplats</a></p>
+<p>Om den finska isklassen saknas eller inte är aktuell,
+lämna in ett klassificeringsintyg med en CRT-meddelande och begära en isklass
+Regionkommittén antog följande yttrande:</p>
+<p class="heading" id="aluksen-jääluokka"><strong>Fartyg
+Isklass</strong></p>
+<p>Fartygets isklass skall vara den isklass som beviljats av fartygsklassificeringssamhället eller
+klassificeringsmärket. Meddelandet ska anmälas av den anmälande organisationen genom SHP-meddelandet.
+inom området<strong>Isklass (<code class="de-chip">DE-009-03</code>)</strong>.</p>
+<p>Uppgifterna kan användas för att bestämma den finska isklassen
+data. Iskategorin som ges av SHP-deklarationen är dock inte ensam
+vara en finländsk isklass etablerad av Traficom.</p>
+<p>Både isklassdata syns i fartygets datavy.
+Uppgifterna för anlöpet visar isklassen i Finland.</p>
+<p class="heading" id="aluksen-todistukset"><strong>Fartyg
+Intyg</strong></p>
+<p><strong>certifikat</strong>lagras ombord
+Intygen visas som kort.</p>
+<p>Till exempel kan följande kategorier av certifikat visas:</p>
+<ul>
+<li><p>Mätbok</p></li>
+<li><p>stadga om nationalitet</p></li>
+<li><p>Betygscertifikat</p></li>
+<li><p>Cargo line certifikat</p></li>
+<li><p>Säkerhetscertifikat</p></li>
+<li><p>Övriga certifikat</p></li>
+</ul>
+<p>Utsikten visar endast väsentlig för Finland
+Intyg.</p>
+<p>Använd typ "Övrigt certifikat" om du ger någon annan över
+på nämnda certifikat</p>
+<p>Nemo-certifikattypkoden innehåller också andra typer av certifikat.
+De intyg som ska visas i vyn ska fastställas av antalet fartyg som lagras ombord:
+på grundval av informationen och klassificeringen av bevis som används av Nemo.</p>
+<p>Intygsinformationen ska bibehållas på ett fartygs anlöp:
+CRT annons.</p>
+<p>Om ingen information har lagrats i Nemos fartygsinformationstjänst
+eller informationen om certifikatet inte har lämnats av CRT-meddelandet.
+Intyget visas tomt.</p>
+<p>Intygskortet kan visa till exempel:</p>
+<ul>
+<li><p>Datum för utfärdande</p></li>
+<li><p>Utgångsdatum</p></li>
+<li><p>Issuer</p></li>
+<li><p>Issuers flaggstat</p></li>
+<li><p>Issuer namn</p></li>
+<li><p>Beskrivning.</p></li>
+</ul>
+<p>Öppna certifikatkortet för att kontrollera dess detaljer
+information.</p>
+<p>Hamnen kan inte lägga till eller ändra certifikatinformationen. Där certifikatet:
+saknas eller inte uppdaterad information, meddela
+den anmälande organisation som ansvarar för anlöpet.</p>
+<p class="heading" id="aluksen-aktiiviset-poikkeukset"><strong>Fartyg
+aktiva undantag;</strong></p>
+<p><strong>Aktiva undantag</strong>Avsnittet innehåller:
+befintliga undantag från myndigheterna.</p>
+<p>Undantag kan omfatta:</p>
+<ul>
+<li><p>om avfallsrapporteringsskyldigheter</p></li>
+<li><p>säkerhetsdeklarationer;</p></li>
+<li><p>andra lagstadgade skyldigheter.</p></li>
+</ul>
+<p>Undantag ska inte bibehållas genom anmälan av ett anlöp. Information om information
+grundar sig på undantag från myndigheterna.</p>
+<p>Undantaget visas:</p>
+<ul>
+<li><p><strong>Avvikelse identifierare</strong>individuella undantag
+identifiera</p></li>
+<li><p><strong>Typ av undantag</strong>Till exempel:<em>Avfall
+Anmälan</em></p>
+<ul>
+<li><p><strong>Från</strong>- det datum från vilket:
+undantaget är giltigt;</p></li>
+<li><p><strong>Fram till</strong>datum till vilket undantaget
+är giltigt</p></li>
+</ul></li>
+<li><p><strong>Route</strong>- Förhållande till:
+Route Information</p></li>
+<li><p><strong>Utfärdad myndighet</strong>Till exempel:</p>
+<ul>
+<li><p>land</p></li>
+<li><p>Typ av myndighet</p></li>
+<li><p>Namn på myndighet</p></li>
+</ul></li>
+<li><p><strong>Kontakt (24/7 kontakt)</strong>- kontaktuppgifter,
+där ytterligare information finns tillgänglig,</p></li>
+</ul>
+</main>
+</body>
+</html>

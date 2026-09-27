@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>4.1 Statistical reporting</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="4-1-tilastoilmoittaminen.html">Suomi</a> | <a href="4-1-tilastoilmoittaminen.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">4.1 Statistical reporting</h1>
+</header>
+<p class="heading" id="tilastoilmoittaminen"><strong>4.1
+Statistical reporting</strong></p>
+<p>The ports provide monthly port transport statistics
+and the Agency. New quantitative format for port statistics
+the notification shall take effect from 1.1.2027.</p>
+<p class="heading" id="satama-tilastotietojen-toimittaminen-nemoon">Port statistics
+delivery to NEMO</p>
+<p>Deliver the statistics monthly. The port can choose
+announced by Excel file or National Port API
+- the interface.</p>
+<p class="heading" id="excel-tiedoston-käyttäminen">Excel file
+use</p>
+<p>Construct statistical data for the reporting month with defined data content
+Please check the information and send the complete Excel file to:
+<a href="mailto:Tiedonhankinta@traficom.fi">Data acquisition @ traficom.fi</a>.</p>
+<p>Read more detailed instructions and file requirements:
+https: / / fintraffic.vts.github.io / mnsw / ports / port- stattics.html</p>
+<p class="heading" id="rajapintailmoittamisen-käyttöönotto">For the purposes of cross-border reporting:
+Introduction</p>
+<p>The interface notification shall require:</p>
+<ul>
+<li><p>the port is registered with NEMO</p></li>
+<li><p>the port organisation has generated <strong>client-id</strong> and
+<strong>client-secret</strong> credentials in the NEMO user interface for use with the API</p></li>
+<li><p>the interface system uses the organisation;
+assigned codes for the transmission of statistical information.</p></li>
+</ul>
+<p>The content of the information transmitted through the interface corresponds to:
+data content as defined in the guidance for port statistics. Interface
+technical information, message structures and responses can be found in the National
+Port API documentation.</p>
+<p>Technical description of the interface: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics">https: / / fintraffic.vts.github.io / mnsw / port / openapi.html # tag / Ports / operation / postStatistics</a></p>
+<p class="heading" id="dsp-palveluntarjoajan-käyttäminen">DSP provider
+use</p>
+<p>If the organisation uses DSP (Data Service Provider)
+statistical transmission, DSP uses for interface reporting
+the client- id and client- secret information of the organisation concerned.</p>
+<p>Each organisation corresponds to its own client- id and
+on the transmission of its client- secret data and their updates
+the DSP it uses. In the event of a change in symbols, the organisation shall:
+provide the DSP with updated information.</p>
+<p class="heading" id="ilmoitettavat-tiedot">Information to be reported</p>
+<p>The statistical declaration shall include:
+information. Please provide at least the information required by the instructions.</p>
+<p>The statistical report shall include, for example:</p>
+<ul>
+<li><p>arrival and departure days of the vessel;</p></li>
+<li><p>Vessel identification data</p></li>
+<li><p>whether the ship is in foreign or domestic traffic;</p></li>
+<li><p>if the cargo is in transit (transito)</p></li>
+<li><p>the types and quantities of goods transported by the vessel;</p></li>
+<li><p>type and size of means of transport;</p></li>
+<li><p>Port call identifier (VisitID)</p></li>
+<li><p>cargo direction, i.e. import or export</p></li>
+<li><p>previous and next port of ship</p></li>
+</ul>
+<blockquote>
+<p>Check current data content and file requirements: <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">Final
+- Port statistics</a></p>
+</blockquote>
+<p class="heading" id="tavaralajin-ilmoittaminen-hs-koodilla">Declaration of the type of goods
+With HS code</p>
+<p>The quality of the goods shall be indicated from 1.1.2027 on the international
+the HS code according to the customs nomenclature. This differs from the previous
+the classification of goods in port statistics.</p>
+<p>If the existing system or source material uses the current
+statistical commodity groups, check the correct HS code
+the correlation table. One current group of goods may have several
+the corresponding HS code, so select the corresponding specification.</p>
+<p>Check equivalence between statistical groups and HS codes: <a href="https://fintraffic-vts.github.io/mnsw/hs-map.html">Final
+HS Code Correlation Table</a></p>
+<p class="heading" id="lisätiedot-ja-tekninen-dokumentaatio">Additional information
+and technical documentation</p>
+<p>Fintraffic web documentation contains details of the notification
+Data content, file format, codes and National Port API
+- from the interface.</p>
+<p>Port statistics guidelines: <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">Final
+- Port statistics</a></p>
+<p>HS correlation table: <a href="https://fintraffic-vts.github.io/mnsw/hs-map.html">Final - HS
+Map</a></p>
+<p>Technical description of National Port API: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics">Final
+National Port API</a></p>
+</main>
+</body>
+</html>

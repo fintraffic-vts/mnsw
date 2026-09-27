@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.3 Aluksen tiedot</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .de-chip {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid #c6d6ea;
+      background: #f3f8ff;
+      color: #16385f;
+      font-size: 0.9em;
+      line-height: 1.4;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      white-space: nowrap;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="3-3-aluksen-tiedot.sv.html">Svenska</a> | <a href="3-3-aluksen-tiedot.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">3.3 Aluksen tiedot</h1>
+</header>
+<p class="heading" id="aluksen-tiedot">3.3 Aluksen tiedot</p>
+<p><strong>Alukset</strong>-näkymässä voit hakea ja tarkastella Nemon
+alustietopalveluun tallennettuja aluksia ja niiden tietoja.</p>
+<p class="heading" id="alustietopalvelun-tietojen-päivittyminen"><strong>Alustietopalvelun
+tietojen päivittyminen</strong></p>
+<p>Alustietopalveluun tallennetaan aluksen pysyväisluonteisia tietoja,
+kuten:</p>
+<ul>
+<li><p>aluksen tunnisteet</p></li>
+<li><p>yleiset ja tekniset tiedot</p></li>
+<li><p>jääluokkatiedot</p></li>
+<li><p>todistukset</p></li>
+<li><p>aktiiviset poikkeukset.</p></li>
+</ul>
+<p>Tiedot muodostuvat Nemon aluksen satamakäynneille lähetetyistä
+ilmoituksista. Aluksen tietoja ylläpidetään Nemossa erityisesti SID-,
+SHP-, CRT- ja NOA-ilmoituksilla.</p>
+<p>Satamaorganisaatio tarkastelee alustietoja tiedon hyödyntäjänä.
+Satama ei lisää aluksia Nemoon eikä päivitä niiden tietoja
+Alukset-näkymässä tai SID-, SHP-, CRT- ja NOA-ilmoituksilla.</p>
+<p class="heading" id="aluksen-hakeminen"><strong>Aluksen
+hakeminen</strong></p>
+<p>Siirry Alukset-näkymään valitsemalla päävalikosta
+<strong>Alukset</strong>.</p>
+<p>Hae alus yhdellä tai useammalla seuraavista tiedoista:</p>
+<ul>
+<li><p>aluksen nimi</p></li>
+<li><p>IMO-numero</p></li>
+<li><p>MMSI-numero</p></li>
+<li><p>kutsutunniste eli Call sign</p></li>
+<li><p>muu alustunniste eli Traficom ID.</p></li>
+</ul>
+<blockquote>
+<p>Jos kyseessä on proomu, käytä haussa muuta alustunnistetta eli
+Traficom IDä.</p>
+</blockquote>
+<p>Valitse alus hakutuloksista, jotta pääset tarkastelemaan sen
+tietoja.</p>
+<p class="heading" id="jos-alusta-ei-löydy"><strong>Jos alusta ei
+löydy</strong></p>
+<p>Jos alusta ei löydy Nemon alustietopalvelusta, voit ilmoittaa asiasta
+aluksen satamakäynnistä vastaavalle ilmoittajaorganisaatiolle.</p>
+<p>Ilmoittajaorganisaatio lisää uuden aluksen Nemoon satamakäynnin
+luomisen yhteydessä. Satamaorganisaatio ei lisää alusta eikä luo sille
+satamakäyntiä.</p>
+<p>Jos aluksen pitäisi jo olla Nemossa mutta sitä ei löydy oikeilla
+hakutiedoilla, ota tarvittaessa yhteyttä Nemon tukeen osoitteeseen <a href="mailto:nemo.support@fintraffic.fi">nemo.support@fintraffic.fi</a>.</p>
+<p class="heading" id="aluksen-tietonäkymä"><strong>Aluksen
+tietonäkymä</strong></p>
+<p>Aluksen tietonäkymässä voit tarkastella aluksesta tallennettuja
+tietoja ja arvioida niiden ajantasaisuutta.</p>
+<p>Näkymän tiedot muodostuvat useista tietolähteistä ja aluksen
+satamakäynneille lähetetyistä ilmoituksista.</p>
+<table style="width:95%;">
+<colgroup>
+<col style="width: 52%"/>
+<col style="width: 42%"/>
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Aluksen tieto</strong></td>
+<td style="text-align: center;"><strong>Ylläpidetään</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">Aluksen tunnisteet, kuten nimi,
+IMO-numero, MMSI-numero, kutsutunniste, ENI-numero ja CFR-numero</td>
+<td>SID-ilmoituksella</td>
+</tr>
+<tr>
+<td style="text-align: center;">Aluksen yleiset ja tekniset tiedot</td>
+<td>SHP- ja NOA-ilmoituksella</td>
+</tr>
+<tr>
+<td style="text-align: center;">Suomessa vahvistettu jääluokka</td>
+<td>Luokitustodistus CRT-ilmoituksella + Traficomin vahvistus</td>
+</tr>
+<tr>
+<td style="text-align: center;">Aluksen jääluokka eli
+luokitusmerkintä</td>
+<td>SHP-ilmoitus</td>
+</tr>
+<tr>
+<td style="text-align: center;">Aktiiviset poikkeukset</td>
+<td><p>-</p>
+<p>Aktiivisia poikkeuksia ei ylläpidetä Nemon ilmoituksilla. Tiedot
+välittyvät Nemoon EU:n järjestelmistä viranomaisten myöntämien
+poikkeusten perusteella.</p>
+<p>Lue lisää Aktiiviset poikkeukset –osiossa.</p></td>
+</tr>
+<tr>
+<td style="text-align: center;">Todistukset</td>
+<td>CRT-ilmoituksella</td>
+</tr>
+</tbody>
+</table>
+<p>Satama ei voi muuttaa tietoja suoraan aluksen tietonäkymässä. Jos
+huomaat tiedoissa virheen tai puutteen, ilmoita siitä satamakäynnistä
+vastaavalle ilmoittajaorganisaatiolle. Ilmoittajaorganisaatio päivittää
+tiedon tarvittavalla ilmoituksella.</p>
+<p class="heading" id="jääluokkatiedot"><strong>Jääluokkatiedot</strong></p>
+<p>Nemossa voidaan näyttää kaksi eri jääluokkatietoa:</p>
+<ol type="1">
+<li><p><strong>Suomessa vahvistettu jääluokka</strong></p></li>
+<li><p><strong>Aluksen jääluokka</strong>.</p></li>
+</ol>
+<p>Vaikka tiedoissa näkyisi sama jääluokkakoodi, esimerkiksi IA tai IA
+Super, kyse on eri tiedoista.</p>
+<p class="heading" id="suomessa-vahvistettu-jääluokka"><strong>Suomessa
+vahvistettu jääluokka</strong></p>
+<p>Suomessa vahvistettu jääluokka on Liikenne- ja viestintävirasto
+Traficomin vahvistama tieto. Traficom vahvistaa jääluokan toimitettujen
+asiakirjojen ja aluksen luokitusmerkinnän perusteella.</p>
+<p>Suomessa vahvistettu jääluokka ja aluksen nettovetoisuus vaikuttavat
+väylämaksun suuruuteen. Aluksen oikeus jäänmurtoavustukseen määräytyy
+jääluokan ja kantavuuden perusteella.</p>
+<p><a href="https://www.traficom.fi/fi/kauppamerenkulku/alukset/alusten-jaaluokat">Lue
+lisää alusten jääluokista Traficomin sivuilta</a></p>
+<p>Jos Suomessa vahvistettu jääluokka puuttuu tai ei ole ajan tasalla,
+toimita luokitustodistus CRT-ilmoituksella ja pyydä jääluokan
+vahvistamista.</p>
+<p class="heading" id="aluksen-jääluokka"><strong>Aluksen
+jääluokka</strong></p>
+<p>Aluksen jääluokka on aluksen luokituslaitoksen myöntämä jääluokka tai
+luokitusmerkintä. Ilmoittajaorganisaatio ilmoittaa sen SHP-ilmoituksella
+kentässä <strong>Jääluokka (<code class="de-chip">DE-009-03</code>)</strong>.</p>
+<p>Tietoa voidaan käyttää Suomessa vahvistetun jääluokan määrittämisen
+lähtötietona. SHP-ilmoituksella annettu jääluokka ei kuitenkaan yksin
+ole Traficomin vahvistama suomalainen jääluokka.</p>
+<p>Molemmat jääluokkatiedot ovat nähtävissä aluksen tietonäkymässä.
+Satamakäynnin tiedoissa näytetään Suomessa vahvistettu jääluokka.</p>
+<p class="heading" id="aluksen-todistukset"><strong>Aluksen
+todistukset</strong></p>
+<p><strong>Todistukset</strong>-osiossa alukselle tallennetut
+todistukset näytetään kortteina.</p>
+<p>Näkymässä voi näkyä esimerkiksi seuraavia todistusryhmiä:</p>
+<ul>
+<li><p>Mittakirja</p></li>
+<li><p>Kansallisuuskirja</p></li>
+<li><p>Luokitustodistus</p></li>
+<li><p>Lastiviivatodistus</p></li>
+<li><p>Turvatodistus</p></li>
+<li><p>Muu todistus</p></li>
+</ul>
+<p>Näkymässä näytetään ainoastaan Suomen kannalta olennaiset
+todistukset.</p>
+<p>Käytä tyyppiä "Muu todistus" mikäli annat jonkun muun yllä
+mainituista todistuksista</p>
+<p>Nemon todistustyyppikoodisto sisältää myös muita todistustyyppejä.
+Näkymässä näytettävät todistukset määräytyvät aluksesta tallennettujen
+tietojen ja Nemon käyttämän todistusluokittelun perusteella.</p>
+<p>Todistustietoja ylläpidetään aluksen satamakäynnille lähetettävällä
+CRT-ilmoituksella.</p>
+<p>Jos todistuksesta ei ole tallennettu tietoja Nemon alustietopalveluun
+tai todistuksen tietoja ei ole ilmoitettu CRT-ilmoituksella,
+todistuskortti näkyy tyhjänä.</p>
+<p>Todistuskortilla voidaan näyttää esimerkiksi:</p>
+<ul>
+<li><p>myöntämispäivä</p></li>
+<li><p>voimassaolon päättymispäivä</p></li>
+<li><p>myöntäjä</p></li>
+<li><p>myöntäjän lippuvaltio</p></li>
+<li><p>myöntäjän nimi</p></li>
+<li><p>kuvaus.</p></li>
+</ul>
+<p>Avaa todistuskortti tarkastellaksesi sen yksityiskohtaisia
+tietoja.</p>
+<p>Satama ei voi lisätä tai muuttaa todistustietoja. Jos todistuksen
+tiedot puuttuvat tai eivät ole ajan tasalla, ilmoita asiasta
+satamakäynnistä vastaavalle ilmoittajaorganisaatiolle.</p>
+<p class="heading" id="aluksen-aktiiviset-poikkeukset"><strong>Aluksen
+aktiiviset poikkeukset</strong></p>
+<p><strong>Aktiiviset poikkeukset</strong> -osiossa ovat alukselle
+voimassa olevat viranomaisten myöntämät poikkeukset.</p>
+<p>Poikkeukset voivat liittyä esimerkiksi:</p>
+<ul>
+<li><p>jätteitä koskeviin ilmoitusvelvollisuuksiin</p></li>
+<li><p>turvallisuusilmoituksiin</p></li>
+<li><p>muihin viranomaisvelvoitteisiin.</p></li>
+</ul>
+<p>Poikkeuksia ei ylläpidetä satamakäynnin ilmoituksilla. Niiden tiedot
+perustuvat viranomaisten myöntämiin poikkeuksiin.</p>
+<p>Poikkeuksesta näytetään:</p>
+<ul>
+<li><p><strong>Poikkeuksen tunniste</strong> – poikkeuksen yksilöivä
+tunniste</p></li>
+<li><p><strong>Poikkeuksen tyyppi</strong> – esimerkiksi <em>Waste
+Notification</em></p>
+<ul>
+<li><p><strong>Voimassa alkaen</strong> – päivämäärä, josta alkaen
+poikkeus on voimassa</p></li>
+<li><p><strong>Voimassa asti</strong> – päivämäärä, johon asti poikkeus
+on voimassa</p></li>
+</ul></li>
+<li><p><strong>Reitit</strong> – poikkeukseen liittyvät
+reittitiedot</p></li>
+<li><p><strong>Myöntänyt viranomainen</strong>, kuten:</p>
+<ul>
+<li><p>maa</p></li>
+<li><p>viranomaisen tyyppi</p></li>
+<li><p>viranomaisen nimi</p></li>
+</ul></li>
+<li><p><strong>Yhteystiedot (24/7 contact)</strong> – yhteystiedot,
+joista lisätietoja voidaan tarvittaessa saada</p></li>
+</ul>
+</main>
+</body>
+</html>

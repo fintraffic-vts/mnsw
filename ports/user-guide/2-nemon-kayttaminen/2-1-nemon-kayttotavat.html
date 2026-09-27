@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>2.1 Nemon käyttötavat</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="2-1-nemon-kayttotavat.sv.html">Svenska</a> | <a href="2-1-nemon-kayttotavat.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">2.1 Nemon käyttötavat</h1>
+</header>
+<p class="heading" id="nemon-käyttökanavat">2.1 Nemon käyttökanavat</p>
+<p>Nemoa voidaan käyttää organisaation tarpeiden ja teknisen ympäristön
+mukaan yhden tai useamman kanavan kautta. Käytettävissä ovat:</p>
+<ul>
+<li><p><strong>Kansallinen satama-API</strong> – satamakäynti-,
+ilmoitus- ja alustietojen hakemiseen ja hyödyntämiseen Suomessa</p></li>
+<li><p><strong>Selainkäyttöliittymä</strong> – Nemon graafinen
+käyttöliittymä ilman järjestelmäintegraatiota.</p></li>
+</ul>
+<p>Kanavat perustuvat samaan tietomalliin ja samoihin koodistoihin.
+Käytettävissä olevat tiedot ja toiminnot voivat kuitenkin vaihdella
+kanavan ja käyttöoikeuksien mukaan.</p>
+<p class="heading" id="valitse-organisaatiollesi-sopiva-kanava">Valitse
+organisaatiollesi sopiva kanava</p>
+<p><strong>Kansallinen satama-API</strong></p>
+<p>Valitse kansallinen satama-API, kun satamasi haluaa vastaanottaa ja
+hyödyntää Nemon tietoja suoraan omissa järjestelmissään. Rajapinnan
+avulla sataman toimintaan liittyviä satamakäynti-, ilmoitus- ja
+alustietoja voidaan integroida esimerkiksi sataman operatiivisiin
+järjestelmiin.</p>
+<p>Satamaorganisaatio voi toteuttaa rajapintaintegraation itse tai
+käyttää Data Service Provideria eli DSP-palveluntarjoajaa. DSP toimii
+tällöin satamaorganisaation puolesta.</p>
+<p>DSP ei saa automaattisesti pääsyä satamaorganisaation tietoihin eikä
+voi itse muodostaa organisaation rajapintatunnuksia. Satamaorganisaation
+tulee olla rekisteröitynä Nemoon ja ottaa API-yhteys käyttöön.
+Satamaorganisaatio vastaa Client ID- ja Client Secret -tunnusten
+asianmukaisesta käsittelystä ja turvallisesta toimittamisesta
+käyttämälleen DSP.</p>
+<p>Siirry Ilmoittajan sanomaoppaan teknisiin Port API -ohjeisiin: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html">Integroi
+Suomen Maritime Single Window -palveluun (NEMO) – National API - Port
+API</a></p>
+<p class="heading" id="selainkäyttöliittymä"><strong>Selainkäyttöliittymä</strong></p>
+<p>Valitse selainkäyttöliittymä, jos organisaatiosi ei tarvitse
+integraatiota omiin järjestelmiinsä.</p>
+<p>Selainkäyttöliittymässä satamaorganisaation käyttäjät voivat
+tarkastella oman satamansa satamakäyntejä ja niille lähetettyjä
+ilmoituksia sekä hyödyntää niissä annettuja tietoja.</p>
+<p>Satamaorganisaatio ei vastaa satamakäynnin ilmoitusten antamisesta.
+Satama voi lähettää <strong>WAR-, ATA- tai ATD-ilmoituksen</strong>
+vain, jos kyseisen ilmoituksen lähettäminen on delegoitu sille.</p>
+<p>Siirry selainkäyttöliittymään osoitteessa <a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a>.</p>
+<p class="heading" id="nemon-käyttöliittymä"><strong>Nemon
+käyttöliittymä</strong></p>
+<p>Nemon käyttöliittymässä on yhteisiä navigointielementtejä, asetuksia
+ja järjestelmän viestejä. Toimintokohtaiset työvaiheet kuvataan
+erillisissä ohjeissa.</p>
+<p>Siirry käyttöliittymään osoitteessa <a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a>.</p>
+<p class="heading" id="navigointi"><strong>Navigointi</strong></p>
+<p>Kirjautumisen jälkeen näet Nemon etusivun. Siirry eri näkymiin
+päävalikosta. Organisaation vaihtaminen, asetukset, tukisivusto ja
+uloskirjautuminen löytyvät <strong>Menu</strong>-valikosta.</p>
+<p class="heading" id="päävalikko"><strong>Päävalikko</strong></p>
+<p>Päävalikossa ovat:</p>
+<ul>
+<li><p><strong>Etusivu</strong></p></li>
+<li><p><strong>Satamakäynnit</strong></p></li>
+<li><p><strong>Alukset</strong></p></li>
+</ul>
+<p>Siirry näkymään painamalla sen nimeä.</p>
+<p>Työpöytänäkymässä päävalikko sijaitsee sivun yläreunassa.
+Mobiilinäkymässä se sijaitsee näytön alareunassa.</p>
+<p class="heading" id="menu-valikko"><strong>Menu-valikko</strong></p>
+<p>Avaa <strong>Menu</strong>-valikko päävalikon oikeanpuoleisimmasta
+painikkeesta. Valikko avautuu muun sisällön päälle.</p>
+<p>Menu-valikossa voit käyttöoikeuksiesi mukaan:</p>
+<ul>
+<li><p>vaihtaa niiden organisaatioiden välillä, joissa olet
+käyttäjänä</p></li>
+<li><p>liittyä olemassa olevaan organisaatioon tai lisätä uuden
+organisaation Nemoon</p></li>
+<li><p>siirtyä <strong>Organisaation hallinnointiin</strong></p></li>
+<li><p>siirtyä <strong>Delegointien hallintaan</strong></p></li>
+<li><p>vaihtaa järjestelmän kielen: suomi (<strong>FI</strong>), ruotsi
+(<strong>SV</strong>) tai englanti (<strong>EN</strong>)</p></li>
+</ul>
+<blockquote>
+<p>Käyttöliittymän kieli vaikuttaa näkymissä, ilmoituksissa ja niistä
+muodostettavissa PDF-tiedostoissa käytettävään kieleen.</p>
+</blockquote>
+<ul>
+<li><p>vaihtaa järjestelmän väriteeman: automaattinen, vaalea tai
+tumma</p></li>
+</ul>
+<blockquote>
+<p>Automaattisessa tilassa teema määräytyy käyttöjärjestelmän asetusten
+mukaan.</p>
+</blockquote>
+<ul>
+<li><p>muuttaa
+<strong>Ilmoitusmuodollisuudet</strong>-asetuksia</p></li>
+</ul>
+<blockquote>
+<p>Ilmoitusmuodollisuudet käsitellään luvussa <a href="../3-satamakaynnin-tiedot/3-2-ilmoitukset.html"><strong>3.2
+Ilmoitukset</strong></a>, kohdassa
+<strong>Ilmoitusmuodollisuudet-asetukset</strong>.</p>
+</blockquote>
+<ul>
+<li><p>siirtyä Nemon tukisivustolle</p></li>
+<li><p>kirjautua ulos.</p></li>
+</ul>
+<p class="heading" id="päivämäärä--ja-kellonaikakentät"><strong>Päivämäärä- ja
+kellonaikakentät</strong></p>
+<p>Päivämäärien ja kellonaikojen esitystapa voi vaihdella käyttämäsi
+selaimen, käyttöjärjestelmän ja kieliasetusten mukaan.</p>
+<p>Päivämäärä voidaan esimerkiksi esittää muodossa
+<strong>DD-MM-YYYY</strong> tai <strong>YYYY-MM-DD</strong> ja
+kellonaika muodossa <strong>13:45</strong> tai <strong>1:45 PM</strong>.
+Myös päivämäärän ja kellonajan valintaikkunoiden ulkoasu voi vaihdella
+selaimittain.</p>
+<p>Erot johtuvat yleensä selaimen tai laitteen asetuksista, eivät Nemon
+toiminnasta.</p>
+<p>Jos käytettävissäsi olevassa toiminnossa on muokattava päivämäärä-
+tai kellonaikakenttä, voit valita arvon kalenteri- tai kellokuvakkeen
+avulla. Kuvakkeen käyttäminen vähentää väärästä esitysmuodosta johtuvia
+virheitä.</p>
+<p class="heading" id="pikaviestit"><strong>Pikaviestit</strong></p>
+<p>Käyttöliittymässä voi näkyä lyhyitä pikaviestejä tehdyn toiminnon
+tuloksesta tai tilanteesta, joka vaatii huomiota. Pikaviesti voi liittyä
+esimerkiksi hakuun, asetuksen muuttamiseen, tietojen käsittelyyn tai
+järjestelmän toimintaan.</p>
+<p>Tavallisimpia pikailmoituksia:</p>
+<ul>
+<li><p><strong>Puuttuva tieto</strong> — jokin pakollinen kenttä on
+täyttämättä. Täydennä tiedot ennen tallentamista tai
+lähettämistä.</p></li>
+<li><p><strong>Virheellinen tieto</strong> — kentässä on virheellinen
+tai ristiriitainen tieto, joka pitää korjata.</p></li>
+<li><p><strong>Toiminto onnistui</strong> — vahvistus siitä, että
+esimerkiksi tallennus tai lähetys meni läpi.</p></li>
+<li><p><strong>Muistutus</strong> — kehotus tarkistaa tiedot, vahvistaa
+toimenpide tai siirtyä seuraavaan vaiheeseen.</p></li>
+</ul>
+<p>Lue pikaviesti ja toimi siinä annettujen ohjeiden mukaisesti.</p>
+<p class="heading" id="sähköpostiviestit"><strong>Sähköpostiviestit</strong></p>
+<p>Nemo voi lähettää sähköpostiviestejä esimerkiksi satamakäyntien
+ilmoituksista, delegoinneista, organisaation hallinnasta, järjestelmän
+tapahtumista, huoltokatkoista ja häiriötilanteista.</p>
+<p>Vastaanottamasi viestit määräytyvät käyttöoikeuksiesi,
+organisaatioroolisi ja käytössä olevien ilmoitusasetusten
+perusteella.</p>
+<p>Sähköpostiviestit voivat olla:</p>
+<ul>
+<li><p><strong>ajastettuja viestejä</strong>, jotka lähetetään
+automaattisesti määritetyn ajankohdan tai ehdon perusteella, esimerkiksi
+aluksen todistuksen voimassaolon päättyessä</p></li>
+<li><p><strong>toimintoon liittyviä viestejä</strong>, jotka lähetetään
+käyttäjän tai järjestelmän tekemän toiminnon seurauksena, esimerkiksi
+organisaatiokutsusta tai delegoinnista.</p></li>
+</ul>
+<p>Lue viesti ja toimi siinä annettujen ohjeiden mukaisesti.</p>
+<p class="heading" id="järjestelmäviestit-ja-päivitykset"><strong>Järjestelmäviestit ja
+päivitykset</strong></p>
+<p>Nemo voi näyttää käyttöliittymässä järjestelmän käyttöön,
+huoltokatkoihin, häiriötilanteisiin tai muutoksiin liittyviä viestejä.
+Lue näkyviin tulevat viestit ja toimi niissä annettujen ohjeiden
+mukaisesti.</p>
+<p>Nemon selainkäyttöliittymää päivitetään keskitetysti, eikä sinun
+tarvitse asentaa päivityksiä. Tulevista käyttökatkoista ja käyttöön
+vaikuttavista muutoksista ilmoitetaan erikseen, sähköpostitse tai Nemon
+järjestelmäviesteissä.</p>
+<p>Koska Nemoa käytetään selaimella, selaimen välimuisti tai vanhentunut
+istunto voi joskus vaikuttaa käyttöliittymän toimintaan. Jos näkymä ei
+päivity, näyttää vanhentuneita tietoja tai toimii päivityksen jälkeen
+poikkeavasti:</p>
+<ul>
+<li><p>päivitä ensin selainikkuna</p></li>
+<li><p>jos ongelma jatkuu, kirjaudu ulos Nemosta ja takaisin
+sisään</p></li>
+<li><p>tyhjennä tarvittaessa selaimen välimuisti ja avaa Nemo
+uudelleen.</p></li>
+</ul>
+<p>Välimuistia ei tarvitse tyhjentää säännöllisesti. Tee se vain
+ongelmatilanteessa tai Nemon tuen ohjeesta. Huomaa, että selaustietojen
+tai evästeiden poistaminen voi kirjata sinut ulos myös muista selaimessa
+käyttämistäsi palveluista.</p>
+<p>Jos ongelma jatkuu, ota yhteyttä Nemon tukeen sähköpostilla
+osoitteeseen <a href="mailto:nemo-support@fintraffic.fi">nemo-support@fintraffic.fi.</a></p>
+</main>
+</body>
+</html>

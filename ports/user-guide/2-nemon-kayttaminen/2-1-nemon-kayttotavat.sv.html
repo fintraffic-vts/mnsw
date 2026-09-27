@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>2.1 Användning av Nemo</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="2-1-nemon-kayttotavat.html">Suomi</a> | <strong>Svenska</strong> | <a href="2-1-nemon-kayttotavat.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">2.1 Användning av Nemo</h1>
+</header>
+<p class="heading" id="nemon-käyttökanavat">2.1 Nemo-kanaler</p>
+<p>Nemo kan användas för organisatoriska behov och teknisk miljö
+via en eller flera kanaler. Tillgängliga är:</p>
+<ul>
+<li><p><strong>National Port API</strong>- anlöp,
+söka information och fartygsuppgifter i Finland</p></li>
+<li><p><strong>Browser Interface</strong>Nemo grafik
+användargränssnitt utan systemintegration.</p></li>
+</ul>
+<p>Kanalerna är baserade på samma datamodell och samma koder.
+Tillgängliga data och aktiviteter kan dock variera:
+kanal och åtkomsträttigheter.</p>
+<p class="heading" id="valitse-organisaatiollesi-sopiva-kanava">Välj Välj
+En kanal som passar din organisation</p>
+<p><strong>National Port API</strong></p>
+<p>Välj en nationell port API när din hamn vill ta emot och
+Använd direkt Nemos data i sina egna system. Interface
+med hamntjänster
+fartygsdata kan integreras i hamnverksamheten, till exempel
+system.</p>
+<p>hamnorganisationen kan utföra gränssnittsintegrationen själv, eller
+Använd Data Service Provider (DSP) tjänsteleverantör. DSP fungerar
+på uppdrag av hamnorganisationen.</p>
+<p>DSP får inte ha automatisk tillgång till hamnorganisationens uppgifter och
+kan utgöra själva organisationens gränssnittskoder. Hamnorganisation
+bör registreras i Nemo och API bör aktiveras.
+Port organisation motsvarar kund-ID och kundhemlighet
+på lämplig hantering och säker leverans
+DSP används.</p>
+<p>Gå till Tekniska Port API Instruktioner för Meddelarens Meddelande Guide:<a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html">Integrera
+Finlands sjöfartsfönster (NEMO) - National API - Port
+API</a></p>
+<p class="heading" id="selainkäyttöliittymä"><strong>Browser Interface</strong></p>
+<p>Välj webbläsargränssnitt om din organisation inte behöver
+integration i sina egna system.</p>
+<p>I webbläsargränssnittet kan användare av portorganisationer:
+granska anlöp till och från deras hamnar;
+meddelanden och använda den information som lämnas i dem.</p>
+<p>Hamnorganisationen ska inte ansvara för rapportering av hamnanrop.
+Hamnen kan skicka<strong>WAR, ATA eller ATD-deklaration</strong>endast om överföringen av anmälan delegeras till hamnen.</p>
+<p>Gå till webbläsargränssnittet på<a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a>.</p>
+<p class="heading" id="nemon-käyttöliittymä"><strong>Nemon
+Interface</strong></p>
+<p>Nemo gränssnitt har gemensamma navigeringselement, inställningar
+och systemmeddelanden. Aktivitetsspecifika arbetsfaser beskrivs:
+separata instruktioner.</p>
+<p>Gå till användargränssnittet på<a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a>.</p>
+<p class="heading" id="navigointi"><strong>Navigation</strong></p>
+<p>När du loggar in ser du Nemos första sida. Gå till olika vyer
+från huvudmenyn. Förändring av organisation, inställningar, supportwebbplats och
+check out<strong>Menyn</strong>- från menyn.</p>
+<p class="heading" id="päävalikko"><strong>Huvudmenyn</strong></p>
+<p>Huvudmenyn innehåller:</p>
+<ul>
+<li><p><strong>Hem</strong></p></li>
+<li><p><strong>Anlöp</strong></p></li>
+<li><p><strong>Fartyg</strong></p></li>
+</ul>
+<p>Gå till utsikten genom att trycka på dess namn.</p>
+<p>I skrivbordsvyn ligger huvudmenyn högst upp på sidan.
+I mobilvyn ligger den längst ner på skärmen.</p>
+<p class="heading" id="menu-valikko"><strong>Menymenyn</strong></p>
+<p>Öppet Öppet Öppet<strong>Menyn</strong>-meny på höger sida av huvudmenyn
+knappen. Menyn öppnas på resten av innehållet.</p>
+<p>I menyn Meny kan du använda dina behörigheter:</p>
+<ul>
+<li><p>utbyte mellan de organisationer där du är
+som användare</p></li>
+<li><p>gå med i en befintlig organisation eller lägga till en ny
+Organisation för Nemo</p></li>
+<li><p>flytta<strong>Organisationsledning</strong></p></li>
+<li><p>flytta<strong>Hantering av delegerade akter</strong></p></li>
+<li><p>förändringssystemspråk: finska (<strong>FI</strong>), Svenska
+(b)<strong>SV</strong>) eller engelska (<strong>EN</strong>) )</p></li>
+</ul>
+<blockquote>
+<p>Gränssnittsspråket påverkar åsikter, tillkännagivanden och så vidare
+det språk som ska användas i PDF.</p>
+</blockquote>
+<ul>
+<li><p>ändra system färg tema: automatisk, ljus eller
+mörkt mörkt</p></li>
+</ul>
+<blockquote>
+<p>I automatiskt läge bestäms temat av operativsysteminställningarna
+med.</p>
+</blockquote>
+<ul>
+<li><p>förändring
+<strong>Rapportera formaliteter</strong>Inställningar</p></li>
+</ul>
+<blockquote>
+<p>Rapporteringsformaliteter behandlas i <a href="../3-satamakaynnin-tiedot/3-2-ilmoitukset.sv.html"><strong>kapitel 3.2
+Anmälningar</strong></a> under
+<strong>Inställningar för rapporteringsformaliteter</strong>.</p>
+</blockquote>
+<ul>
+<li><p>Gå till Nemo Support Site</p></li>
+<li><p>Logga ut.</p></li>
+</ul>
+<p class="heading" id="päivämäärä--ja-kellonaikakentät"><strong>Datum
+Tidsfält</strong></p>
+<p>Presentationen av datum och tider kan variera från en du använder
+genom webbläsare, operativsystem och språkinställningar.</p>
+<p>Till exempel kan datumet presenteras i form
+<strong>DD-MM-YYYY</strong>eller<strong>YYY-MMM-DD</strong>och
+Time format<strong>13: 45.</strong>eller<strong>1:45 PM</strong>.
+Layouten för datum- och tidsdialogfönster kan också variera
+av webbläsare.</p>
+<p>Skillnaderna beror vanligtvis på webbläsare eller enhetsinställningar, inte Nemon
+Action.</p>
+<p>Om funktionen du har till ditt förfogande måste ändra datumet
+eller tidsfältet kan du välja värdet av kalendern eller klockikonen
+Med hjälp. Använda ikonen minskar effekten av fel format
+fel.</p>
+<p class="heading" id="pikaviestit"><strong>Snabbmeddelanden</strong></p>
+<p>Användargränssnittet kan visa korta snabbmeddelanden från den åtgärd som gjorts
+resultat eller situation som kräver uppmärksamhet. Snabbmeddelande kan vara relaterat
+t.ex. sök, ändring av reglering, behandling av data eller
+driften av systemet.</p>
+<p>En av de vanligaste snabbmeddelandena:</p>
+<ul>
+<li><p><strong>Missing information</strong>- Ett obligatoriskt område är
+Inte fylld. Fullständig information innan du sparar eller
+Detta är fallet.</p></li>
+<li><p><strong>Ogiltig information</strong>fältet är ogiltigt
+eller motstridiga uppgifter som måste korrigeras.</p></li>
+<li><p><strong>Framgång</strong>Bekräftelse på att:
+Till exempel gick inspelningen eller överföringen igenom.</p></li>
+<li><p><strong>Påminnelse</strong>- inbjudan att verifiera data, bekräfta
+mäta eller flytta till nästa steg.</p></li>
+</ul>
+<p>Läs snabbmeddelandet och följ instruktionerna.</p>
+<p class="heading" id="sähköpostiviestit"><strong>E-postmeddelanden</strong></p>
+<p>Nemo kan skicka e-post till exempel på anlöp
+Meddelanden, delegation, organisationsledning, system
+incidenter, serviceavbrott och störningar.</p>
+<p>De meddelanden du får bestäms av dina behörigheter,
+din organisationsroll och befintliga anmälningsbestämmelser;
+i)</p>
+<p>E-postmeddelanden kan innehålla:</p>
+<ul>
+<li><p><strong>Tidiga meddelanden</strong>Dispatched:
+automatiskt baserat på ett visst datum eller tillstånd, till exempel:
+vid utgången av fartygets certifikat</p></li>
+<li><p><strong>operativa meddelanden;</strong>Dispatched:
+till följd av operatörs- eller systemfunktionen, till exempel:
+organisationens inbjudan eller delegation.</p></li>
+</ul>
+<p>Läs meddelandet och följ instruktionerna.</p>
+<p class="heading" id="järjestelmäviestit-ja-päivitykset"><strong>Systemmeddelanden och
+uppdateringar</strong></p>
+<p>Nemo kan visa användargränssnittet för systemdrift,
+meddelanden relaterade till tjänsteavbrott, incidenter eller ändringar.
+Läs meddelandena och arbeta instruktionerna i dem
+i enlighet med förfarandet.</p>
+<p>Nemos webbläsargränssnitt kommer att uppdateras centralt och inte ditt
+måste installera uppdateringar. Framtida avbrott och avbrott
+effekterna förändringar rapporteras separat, via e-post eller Nemon
+systemmeddelanden.</p>
+<p>Eftersom Nemo används på en webbläsare, webbläsare cache eller löpt ut
+sessionen kan ibland påverka driften av användargränssnittet. Om inte
+uppdaterad, visar föråldrad information eller fungerar efter uppdatering
+onormal:</p>
+<ul>
+<li><p>Första uppdateringen webbläsare fönster</p></li>
+<li><p>Om problemet fortsätter, logga ut från Nemo och tillbaka
+in i</p></li>
+<li><p>rensa din webbläsare cache om det behövs och öppna Nemo
+Återigen.</p></li>
+</ul>
+<p>Cache behöver inte tömmas regelbundet. Gör det bara.
+om det finns ett problem eller om Nemos stöd ges. Observera att surfa data
+eller ta bort cookies kan registrera dig också från andra webbläsare
+de tjänster du använder.</p>
+<p>Om problemet fortsätter, vänligen kontakta Nemo support via e-post
+via <a href="mailto:nemo-support@fintraffic.fi">nemo-support@fintraffic.fi</a>.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>1.5 Delegationer mottagna</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="1-5-vastaanotetut-delegoinnit.html">Suomi</a> | <strong>Svenska</strong> | <a href="1-5-vastaanotetut-delegoinnit.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">1.5 Delegationer mottagna</h1>
+</header>
+<h1 id="vastaanotetut-delegoinnit"><strong>1.5 Mottagna
+delegationer</strong></h1>
+<p>En hamnorganisation kan ta emot delegerade anmälningar från
+deklarantorganisationen för ett visst anlöp. En mottagen delegering
+innebär att din organisation behandlar och skickar den delegerade
+anmälan på deklarantorganisationens vägnar.</p>
+<p>Information om anlöp lämnas till Nemo som anmälningar. Varje
+anmälan innehåller en uppsättning uppgifter, till exempel om ankomst,
+avgång, last eller besättning.</p>
+<p>Anlöp och anmälningar behandlas i kapitel 3.1 Anlöp
+3.2 Meddelanden</p>
+<p>Innan en deklarantorganisation delegerar anmälningar för anlöp till
+din organisation ska den komma överens med din hamnorganisation om
+delegeringen och ansvarsfördelningen.</p>
+<p>Följande meddelanden kan delegeras till hamnorganisationen:</p>
+<ul>
+<li><p><strong>WAR</strong> – Avfallskvitto vid ankomst</p></li>
+<li><p><strong>ATA</strong> – Faktisk ankomsttid</p></li>
+<li><p><strong>ATD</strong> – Faktisk avgångstid</p></li>
+</ul>
+<p>Som ägare av anlöpet är den anmälande organisationen ansvarig för:
+anlöpet och dess deklarationer som helhet.</p>
+<p>Notera:</p>
+<ul>
+<li><p>Flera delegerade akter kan antas för samma hamnverksamhet.</p></li>
+<li><p>Adressaten till delegationen ska endast behandla delegerade akter:
+anmälningar.</p></li>
+<li><p>Delegerad anmälan kan inte fortsätta att delegeras till en annan
+organisationen.</p></li>
+</ul>
+<h2 id="yhteenveto-vastaanotetuista-delegoinneista"><strong>Sammanfattning
+om delegerade akter som mottagits</strong></h2>
+<p>Du kan se de delegeringar som organisationen har tagit emot i vyn
+<strong>Delegeringar</strong>.</p>
+<ul>
+<li><p>öppnar från huvudmenyn<strong>Menyn</strong></p></li>
+<li><p>Välj välja<strong>Hantering av delegerade akter</strong></p></li>
+</ul>
+<p><strong>Delegation mottagen</strong>-Tabell en rad
+motsvarar en delegation per anlöp. Tabellen visar:</p>
+<ul>
+<li><p>Port Visit Ident (Visit ID)</p></li>
+<li><p>namnet på den organisation som utfärdade delegationen.</p></li>
+<li><p>Delegerade meddelanden (WAR, ATA, ATD)</p></li>
+</ul>
+<blockquote>
+<p>Notera:</p>
+</blockquote>
+<ul>
+<li><p>Delegationer som mottagits kan övervägas men får inte:
+edit.</p></li>
+<li><p>Om den anmälande organisationen ändrar delegationen, din organisation
+e-post skickas till kontaktpersonen.</p></li>
+</ul>
+<h3 id="näin-poistat-delegoinnin">Detta tar bort delegationen</h3>
+<ul>
+<li><p>Välj delegation för att radera och trycka på
+<strong>Ta bort</strong></p></li>
+<li><p>bekräfta borttagning</p></li>
+<li><p>få en anmälan som bekräftar raderingen av delegationen</p></li>
+</ul>
+<blockquote>
+<p>Innan du tar bort delegationen, vänligen kontakta och godkänna
+den anmälande organisationen som äger anlöpet.</p>
+</blockquote>
+<h2 id="delegoidun-ilmoituksen-käsittely"><strong>Delegerad deklaration
+Förfarandeförfarande</strong></h2>
+<p>Huvudmenyn<strong>Anlöp</strong>-Visning du kan visa
+anlöp som din organisation har anmälts till.</p>
+<p>Välj anlöp och flytta<strong>Anmälan</strong>- utsikten.
+Du kommer att se de meddelanden som delegeras till din organisation och
+namnet på den delegerande organisationen.</p>
+<p>Välj den anmälan du vill bearbeta.</p>
+<p>Läs mer detaljerade instruktioner för hantering av meddelanden i kapitel 3.2
+Meddelanden.</p>
+</main>
+</body>
+</html>

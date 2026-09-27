@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>4.1 Statistikrapportering</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="4-1-tilastoilmoittaminen.html">Suomi</a> | <strong>Svenska</strong> | <a href="4-1-tilastoilmoittaminen.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">4.1 Statistikrapportering</h1>
+</header>
+<p class="heading" id="tilastoilmoittaminen"><strong>4.1 Statistikrapportering</strong></p>
+<p>Hamnar lämnar månadsvisa hamntrafikstatistikuppgifter till Transport- och kommunikationsverket. Det nya strukturerade formatet för statistikrapportering införs från och med 1.1.2027.</p>
+<p class="heading" id="satama-tilastotietojen-toimittaminen-nemoon">Inlämning av hamnstatistikuppgifter i Nemo</p>
+<p>Lämna statistikuppgifterna månadsvis. Hamnen kan välja att lämna uppgifterna antingen med en Excel-fil eller via gränssnittet National Port API.</p>
+<p class="heading" id="excel-tiedoston-käyttäminen">Användning av Excel-fil</p>
+<p>Sammanställ statistikuppgifterna för rapporteringsmånaden enligt det definierade datainnehållet, kontrollera uppgifterna och skicka den färdiga Excel-filen till <a href="mailto:Tiedonhankinta@traficom.fi">Tiedonhankinta@traficom.fi</a>.</p>
+<p>Läs närmare anvisningar och filkrav i <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">guiden för hamnstatistik</a>.</p>
+<p class="heading" id="rajapintailmoittamisen-käyttöönotto">Införande av gränssnittsrapportering</p>
+<p>Gränssnittsrapportering förutsätter att:</p>
+<ul>
+<li><p>hamnen är registrerad i Nemo</p></li>
+<li><p>hamnorganisationen har genererat <strong>client-id</strong>- och <strong>client-secret</strong>-uppgifter i Nemos användargränssnitt för användning av gränssnittet</p></li>
+<li><p>systemet som använder gränssnittet använder de uppgifter som har tilldelats organisationen för att skicka statistikuppgifter.</p></li>
+</ul>
+<p>Innehållet i uppgifter som skickas via gränssnittet motsvarar det datainnehåll som definieras i anvisningen för hamnstatistik. Tekniska uppgifter om gränssnittet, meddelandestrukturer och svar finns i dokumentationen för National Port API.</p>
+<p>Teknisk beskrivning av gränssnittet: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics">https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics</a></p>
+<p class="heading" id="dsp-palveluntarjoajan-käyttäminen">Användning av DSP-tjänsteleverantör</p>
+<p>Om organisationen använder en DSP (Data Service Provider) för att förmedla statistikuppgifter använder DSP:n organisationens client-id- och client-secret-uppgifter i gränssnittsrapporteringen.</p>
+<p>Varje organisation ansvarar för att förmedla sina egna client-id- och client-secret-uppgifter samt uppdateringar av dem till den DSP som organisationen använder. Om uppgifterna ändras ska organisationen lämna de uppdaterade uppgifterna till DSP:n.</p>
+<p class="heading" id="ilmoitettavat-tiedot">Uppgifter som ska rapporteras</p>
+<p>Statistikrapporten innehåller uppgifter om hamnanlöpet, fartyget och lasten. Rapportera åtminstone de uppgifter som krävs i anvisningen.</p>
+<p>I statistikrapporten rapporteras till exempel:</p>
+<ul>
+<li><p>fartygets ankomst- och avgångsdatum</p></li>
+<li><p>fartygets identifieringsuppgifter</p></li>
+<li><p>om fartyget går i utrikes- eller inrikestrafik</p></li>
+<li><p>om lasten är i transittrafik (transito)</p></li>
+<li><p>varuslag och mängder som fartyget transporterar</p></li>
+<li><p>transportmedlens typ och storlek</p></li>
+<li><p>Hamnanlöpets identifierare (VisitID)</p></li>
+<li><p>lastens riktning, det vill säga import eller export</p></li>
+<li><p>fartygets föregående och nästa hamn</p></li>
+</ul>
+<blockquote>
+<p>Kontrollera aktuellt datainnehåll och filkrav: <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">Fintraffic – Hamnstatistikuppgifter</a></p>
+</blockquote>
+<p class="heading" id="tavaralajin-ilmoittaminen-hs-koodilla">Rapportering av varuslag med HS-kod</p>
+<p>Varornas art rapporteras från och med 1.1.2027 med HS-kod enligt den internationella tullnomenklaturen. Detta avviker från den tidigare varuklassificeringen i hamnstatistiken.</p>
+<p>Om det system eller källmaterial som används bygger på nuvarande statistiska varugrupper, kontrollera rätt HS-kod i motsvarighetstabellen. En nuvarande varugrupp kan motsvara flera HS-koder, så välj den precisering som motsvarar varan.</p>
+<p>Kontrollera motsvarigheterna mellan statistikgrupper och HS-koder: <a href="https://fintraffic-vts.github.io/mnsw/hs-map.html">Fintraffic – HS-kodernas motsvarighetstabell</a></p>
+<p class="heading" id="lisätiedot-ja-tekninen-dokumentaatio">Ytterligare information och teknisk dokumentation</p>
+<p>I Fintraffics webbdokumentation finns mer detaljerad information om anmälans datainnehåll, filformat, kodverk och gränssnittet National Port API.</p>
+<p>Anvisning för hamnstatistik: <a href="https://fintraffic-vts.github.io/mnsw/ports/port-statistics.html">Fintraffic – Hamnstatistikuppgifter</a></p>
+<p>Motsvarighetstabell för HS-koder: <a href="https://fintraffic-vts.github.io/mnsw/hs-map.html">Fintraffic – HS Map</a></p>
+<p>Teknisk beskrivning av National Port API: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html#tag/Ports/operation/postStatistics">Fintraffic – National Port API</a></p>
+</main>
+</body>
+</html>

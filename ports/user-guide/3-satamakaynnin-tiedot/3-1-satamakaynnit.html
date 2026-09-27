@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.1 Satamakäynnit</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+
+    .icon-legend {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.75rem 0 0;
+    }
+    .icon-legend li {
+      margin: 0.8rem 0;
+    }
+    .icon-legend li p {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .icon-legend li img {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+      flex: 0 0 1.5rem;
+      object-fit: contain;
+      margin-top: 0.1rem;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="3-1-satamakaynnit.sv.html">Svenska</a> | <a href="3-1-satamakaynnit.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">3.1 Satamakäynnit</h1>
+</header>
+<p class="heading" id="satamakäynnit"><strong>3.1
+Satamakäynnit</strong></p>
+<p>Satamakäynti kokoaa yhteen Suomen satamaan tai ankkuripaikalle
+saapuvan aluksen käyntiin liittyvät tiedot sen saapumisesta, siellä
+olosta ja lähdöstä.</p>
+<p>Tarkastele omaan satamaasi (UN/LOCODE-koodiin) liittyviä
+satamakäyntejä. Satamakäynnit näkyvät
+<strong>Satamakäynnit</strong>-näkymässä, johon siirryt päävalikon
+<strong>Satamakäynnit</strong>-valinnasta.</p>
+<p class="heading" id="satamakäyntien-tarkastelu">Satamakäyntien
+tarkastelu</p>
+<p>Voit tarkastella oman satamasi satamakäyntejä joko
+<strong>kortteina</strong> tai <strong>listana</strong>. Vaihda
+näyttötapaa <strong>Satamakäynnit</strong>-näkymän yläosan
+painikkeilla.</p>
+<p>Listanäkymässä saman ajanjakson satamakäynnit esitetään
+taulukkomuodossa. Listanäkymässä näkyvät samat perustiedot kuin
+korttinäkymässä sekä lisäksi satamakäynnin tunniste eli <strong>Visit
+ID</strong> ja satamakäynnin tila.</p>
+<p>Avaa satamakäynnin tarkemmat tiedot painamalla korttia tai listan
+riviä.</p>
+<p class="heading" id="satamakäynnistä-näytettävät-tiedot">Satamakäynnistä näytettävät
+tiedot</p>
+<p>Satamakäynnistä näytetään:</p>
+<ul>
+<li><p>aluksen nimi ja IMO-numero, joka näytetään nimen jälkeen
+sulkeissa</p></li>
+<li><p>satama UN/LOCODE-koodina</p></li>
+<li><p>sataman osa ja/tai laituripaikka, jos ilmoitettu</p></li>
+<li><p>ETA — arvioitu saapumisaika</p></li>
+<li><p>ETD — arvioitu lähtöaika</p></li>
+<li><p>kenelle delegoitu — näkyy, jos satamakäynnin ilmoitusvastuu on
+siirretty toiselle organisaatiolle</p></li>
+<li><p>satamakäynnille annetut tietyt ilmoitukset ja ennakkotietojen
+vahvistukset kuvakkeina. Kuvakkeet kertovat seuraavista ilmoituksista ja
+vahvistuksista:</p>
+<ul class="icon-legend">
+<li><p><img alt="" src="media/image.png" style="width:0.40625in;height:0.40625in"/>– HZA – Vaarallisten aineiden ilmoitus saapuessa.</p></li>
+<li><p><img alt="" src="media/image2.png" style="width:0.40625in;height:0.40625in"/>– SEC eli satamakäynnille on
+annettu SEC-ilmoitus (Ilmoitus turvatoimista).</p></li>
+<li><p><img alt="" src="media/image3.png" style="width:0.42708in;height:0.42708in"/>– MDH eli satamakäynnille on
+annettu MDH-ilmoitus (Aluksen terveysilmoitus).</p></li>
+<li><p><img alt="" src="media/image4.png" style="width:0.36458in;height:0.36458in"/> – SSA eli satamakäynnille on
+annettu SSA-ilmoitus (Aluksesta alukseen -toiminta).</p></li>
+<li><p><img alt="" src="media/image5.png" style="width:0.40625in;height:0.40625in"/>– saapumisen nuolikuvake —
+kertoo saapumisen ennakkotietojen vahvistamisesta. Kun kuvakkeen tausta
+on vihreä, ilmoittaja (satamakäynnin luonut organisaatio) on
+vahvistanut, että kaikki tiedossa olevat aluksen saapumiseen liittyvät
+ennakkotiedot ja ilmoitukset on annettu</p></li>
+<li><p><img alt="" src="media/image6.png" style="width:0.39583in;height:0.39583in"/>– lähdön nuolikuvake — kertoo
+lähdön ennakkotietojen vahvistamisesta. Kun kuvakkeen tausta on vihreä,
+ilmoittaja (satamakäynnin luonut organisaatio) on vahvistanut, että
+kaikki tiedossa olevat aluksen lähtöön liittyvät ennakkotiedot ja
+ilmoitukset on annettu.</p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Jos nuolikuvake on harmaa, kyseistä ennakkotietojen vahvistusta ei
+ole vielä tehty.</p>
+</blockquote>
+<p class="heading" id="satamakäynnin-tila">Satamakäynnin tila</p>
+<p>Satamakäynnin tila kertoo missä vaiheessa satamakäynti on:</p>
+<ul>
+<li><p><strong>Vahvistamaton saapuminen</strong> — alukselle on luotu
+satamakäynti.</p></li>
+<li><p><strong>Arvioitu saapuminen</strong> — aluksen saapumisen
+ennakkotiedot on ilmoitettu.</p></li>
+<li><p><strong>Satamassa</strong> — aluksen tosiasiallinen saapuminen on
+ilmoitettu.</p></li>
+<li><p><strong>Lähtenyt</strong> — aluksen tosiasiallinen lähteminen on
+ilmoitettu.</p></li>
+<li><p><strong>Peruttu</strong> — satamakäynti on peruttu.</p></li>
+</ul>
+<blockquote>
+<p><strong>Peruttu</strong>-tilassa olevat satamakäynnit eivät näy
+oletuksena näkymässä. Saat ne näkyviin suodatuksen avulla.</p>
+</blockquote>
+<p class="heading" id="erityistapaus-proomut-hinaajat-ja-puskijat">Erityistapaus: proomut,
+hinaajat ja puskijat</p>
+<p>Proomut, hinaajat ja puskijat ilmoitetaan Nemossa erillisinä
+aluksina. Tämän vuoksi samaan kuljetukseen voi liittyä useita erillisiä
+satamakäyntejä.</p>
+<p>Tarkastele kunkin aluksen tietoja sen omalta satamakäynniltä. Proomun
+kuljettama lasti näkyy proomun satamakäynnillä, ei hinaajan tai puskijan
+satamakäynnillä.</p>
+<p class="heading" id="satamakäyntien-suodattaminen">Satamakäyntien
+suodattaminen</p>
+<p>Voit rajata satamakäyntejä vaihtamalla ajanjaksoa tai käyttämällä
+tarkempia hakuehtoja.</p>
+<p>Jos satamakäyntejä ei näy odotetusti, tarkista valittu ajanjakso ja
+käytössä olevat suodatukset.</p>
+<p class="heading" id="ajanjakson-valitseminen"><strong>Ajanjakson
+valitseminen</strong></p>
+<p>Oletuksena satamakäynnit näytetään kuluvasta päivästä kuusi
+vuorokautta eteenpäin. Jos satamakäyntejä ei ole, näet ilmoituksen,
+ettei organisaatiollasi ole yhtään satamakäyntiä.</p>
+<p>Jos valitset pitkän ajanjakson, satamakäyntien latautuminen voi
+kestää tavallista kauemmin.</p>
+<p class="heading" id="tarkemmat-hakuehdot"><strong>Tarkemmat
+hakuehdot</strong></p>
+<p>Tarkempi suodatin avautuu näkymän oikean yläkulman painikkeesta.</p>
+<p>Avautuvassa suodatusnäkymässä voit:</p>
+<ul>
+<li><p>siirtyä tiettyyn satamakäyntiin syöttämällä satamakäynnin
+tunnisteen eli Visit ID:n</p></li>
+<li><p>rajata näytettäviä satamakäyntejä eri tiedoilla, kuten:</p>
+<ul>
+<li><p>aluksen nimi tai tunniste eli IMO-numero, Call sign tai
+MMSI-numero</p></li>
+<li><p>satama eli UN/LOCODE tai kaupungin nimi</p></li>
+<li><p>satamakäynnin alkamis- tai päättymisaika</p></li>
+<li><p>satamakäynnin tila</p></li>
+<li><p>saapumisen tai lähdön tietojen vahvistaminen</p></li>
+<li><p>satamakäynnille lähetetty ilmoitus</p></li>
+<li><p>saapumisen tai lähtemisen liikenne eli kotimaan tai ulkomaan
+liikenne</p></li>
+</ul></li>
+</ul>
+</main>
+</body>
+</html>

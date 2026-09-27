@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>1.3 Organisation maintenance</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="1-3-organisaation-yllapito.html">Suomi</a> | <a href="1-3-organisaation-yllapito.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">1.3 Organisation maintenance</h1>
+</header>
+<h1 id="organisaation-ylläpito">1.3 Organisation maintenance</h1>
+<p>The maintenance of the organisation is a centralised view of the browser interface,
+managing organisational information, users, rights;
+and technical and operational contacts with other actors; and
+systems.</p>
+<p>The main user (admin) can view and update the following information and
+settings:</p>
+<table>
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Tab</strong></td>
+<td><strong>Activities</strong></td>
+</tr>
+<tr>
+<td><strong>Organisation</strong></td>
+<td>Update basic information: name, contact details and identifiers</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td>Invite new users and manage access rights.</td>
+</tr>
+<tr>
+<td><strong>Access Groups</strong></td>
+<td>Create and manage rights by group.</td>
+</tr>
+<tr>
+<td><strong>National Port API</strong></td>
+<td>Configure and manage interface between systems.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="käyttöedellytykset">Conditions of use</h2>
+<p>Maintenance of the organisation is available when you are logged into NEMO
+and selected an organisational account (if multiple) and you have an organization
+access rights to the main user (admin).</p>
+<p>The main users of the organisation shall be responsible for the organisation's information:
+and access rights are always up to date. NEMO not automatically
+identify incorrect or outdated information and do not report it;
+user.</p>
+<p>Organisational information included in port call notifications (MAI)
+title information. Incorrect or incomplete information may cause:
+problems in receiving or processing notifications from authorities
+action.</p>
+<h2 id="section"></h2>
+<h2 id="näin-siirryt-organisaation-ylläpitoon">This is how you move
+maintenance of the organisation;</h2>
+<ul>
+<li><p>opens from the main menu<strong>Menu menu</strong> <em>(in desktops)
+upper right corner, lower right angle on mobile) j</em>a Select
+<strong>Organisation maintenance</strong></p></li>
+<li><p>see as default<strong>Organisation</strong>- The view. Go to Different
+between maintenance scenarios to review the organisation's data,
+users, access groups and interfaces;</p></li>
+</ul>
+<h1 id="muokkaa-organisaation-tietoja">Edit Organisation
+information</h1>
+<p>Data support user identification and rights management,
+contacts and communication between authorities and organisations;
+reporting and monitoring.</p>
+<h2 id="organisaation-yhteyshenkilö">Organisation contact person</h2>
+<p>A contact person has been selected for the organisation, acting on an official basis:
+As contact with the authorities. Contact:</p>
+<ul>
+<li><p>receive NEMO e-mails, for example, when:
+the ship's certificate has expired or Port call;
+the notice indicates a deviation requiring action;</p></li>
+<li><p>the contact person's records are recorded on the transmitted notification;
+header data (MAI)</p></li>
+</ul>
+<h2 id="näin-muokkaat-organisaation-tietoja">This is how you edit the organization
+information</h2>
+<ul>
+<li><p>opens from the main menu<strong>Menu menu</strong>and select
+<strong>Business Maintenance</strong></p></li>
+<li><p>review and edit the required information in the
+<strong>Organisation tab</strong></p></li>
+<li><p>press <strong>Save</strong> when the changes have been made</p></li>
+<li><p>see that the organisation's data have been recorded</p></li>
+</ul>
+<h1 id="käyttäjien-ylläpito">Maintenance of users</h1>
+<p>Main user can add and remove users, change their roles
+and its categories of access and determine who acts in the organisation
+as a liaison. Contact person information is automatically stored
+the heading of the port call declarations (MAI) sent as part of the operation. Keep
+user and contact details always up-to-date before notifications
+This is the case.</p>
+<h2 id="käyttäjätyypit">Type of user</h2>
+<p>Each operator of an organisation shall be selected from one of two:
+type of user:</p>
+<ul>
+<li><p><strong>Main user (admin)</strong>- maintain an organisation
+information, users, access groups and interface links. Yeah.
+add, edit and delete information in accordance with its access group.
+It is recommended that the organisation has at least two main users
+ensure continuity of operations.</p></li>
+<li><p><strong>Member (basic)</strong>- see, add, edit and remove
+information in accordance with its access group.</p></li>
+</ul>
+<h2 id="käyttäjätiedot">User information</h2>
+<p>The following information is recorded for each user:</p>
+<table>
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Information</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Automatically comes from the Suomi.fi authentication service of the user
+accession. The name cannot be modified in NEMO.</td>
+</tr>
+<tr>
+<td><strong>Email</strong></td>
+<td>Corresponding to the email address given by the user at the time of accession.
+Used to send invitations and notifications.</td>
+</tr>
+<tr>
+<td><strong>Type of user</strong></td>
+<td><p><strong>Admin</strong> = Main user with rights
+management of the organisation. You can be chosen as the contact person.</p>
+<p><strong>Basic</strong> = Normal user who can view and
+process the data in accordance with its access group.</p></td>
+</tr>
+<tr>
+<td><strong>Access Group</strong></td>
+<td><p><strong>ReadWriteAll</strong> = Full reading and editing rights
+any information managed by the organisation.</p>
+<p><strong>PUBLIC</strong> = Only public information is visible, no
+editing rights.</p>
+<p><strong>Own groups</strong> = Organisational teams which:
+the operator can determine as appropriate. Recommended for each
+the organisation creates its own user-specific access groups;
+in accordance with the rights of access.</p></td>
+</tr>
+<tr>
+<td><strong>Waiting for processing</strong></td>
+<td>User has been invited to the organization but has not yet approved
+invite or finalized accession.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="käyttäjän-kutsuminen-organisaatioon">Invitation of a user
+organisation</h2>
+<p>The main user may invite a new user to the organisation by giving:
+the type of user, e-mail address and access group. Call
+After posting the user receives an email link
+for membership of the organisation.</p>
+<p>The user has access only to organisations for which:
+He's been invited separately even if he's already a user in NEMO.</p>
+<h3 id="näin-kutsut-käyttäjän-organisaatioon">This is how you invite a user
+organisation</h3>
+<ul>
+<li><p>select<strong>Call User</strong></p></li>
+<li><p>fill in the type of user, access group and email address (or
+addresses)</p></li>
+<li><p>press<strong>Invitation</strong></p></li>
+<li><p>you receive a notice confirming that the invitation has been sent</p></li>
+</ul>
+<h2 id="käyttäjätyypin-muuttaminen">Change of type of user</h2>
+<p>The main user can change your own or other user type.
+The type of user cannot be changed in the case of the organisation's sole
+main user.</p>
+<p>When the user type changes, access rights also change. If you move
+as a member of your type, you can no longer maintain an organisation.</p>
+<h3 id="näin-muutat-käyttäjätyyppiä">This is how you change the user type</h3>
+<ul>
+<li><p>select user and other type of user
+from the bottom pull menu</p></li>
+<li><p>receive a notification confirming the type of user
+update</p></li>
+</ul>
+<h2 id="käyttöoikeusryhmän-muuttaminen">Access group
+Amendment</h2>
+<p>Main user can change your own or other users
+access group. The Access Group shall determine which information:
+the user has access.</p>
+<h3 id="näin-muutat-käyttäjän-käyttöoikeusryhmää">This will change the user
+Access group</h3>
+<ul>
+<li><p>select user and other access group
+from the bottom pull menu</p></li>
+<li><p>receive a message confirming user information
+update</p></li>
+</ul>
+<h2 id="käyttäjän-poistaminen-organisaatiosta">Removal of the user
+organisation</h2>
+<p>The main user can remove the user from the organisation. Deleted
+the user's access to the account of the organisation ends immediately.</p>
+<h3 id="näin-poistat-käyttäjän">This will remove the user</h3>
+<ul>
+<li><p>select the user and press the removal button</p></li>
+<li><p>confirm the deletion</p></li>
+<li><p>receive a message confirming the removal of the user</p></li>
+</ul>
+<h2 id="poistuminen-organisaatiosta">Exclusion</h2>
+<p>The main user can remove himself from the organisation. This removes all
+rights to that organisation, including maintenance rights.
+<strong>You can't leave if you're the only one in the organization.
+main user.</strong></p>
+<p>Removal takes place in the same way as other users
+deletion: select your name from the user list and follow instructions
+under <strong>Removal of the user from the organisation</strong>.</p>
+<h1 id="käyttöoikeusryhmien-ylläpito">Maintenance of access teams</h1>
+<p>The Access Group determines what information and activities the user can use
+use in NEMO and to what extent. For each user select
+a right of use group when invited to an organisation.</p>
+<p>There are two types of access groups:</p>
+<ul>
+<li><p><strong>Own access groups</strong>- organisation
+the main user can create, edit and remove these groups necessary
+with.</p></li>
+<li><p><strong>General Access Groups</strong>- predefined
+Groups that are immediately available and can be connected directly
+users. Cannot be removed.</p></li>
+</ul>
+<p>Go to <strong>Access Groups</strong> tab Company
+maintenance.</p>
+<h2 id="yleiset-käyttöoikeusryhmät">General Access Groups</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 46%"/>
+<col style="width: 53%"/>
+</colgroup>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Contains</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public port information</td>
+<td>The user may apply for and view vessels for their arrival and
+Based on departure times, the public port call information view.</td>
+</tr>
+<tr>
+<td>Read notifications, send delegated notifications</td>
+<td style="text-align: left;"><p>The user may:</p>
+<ul>
+<li><p>review information on ship Port calls (notifications and
+vessel data).</p></li>
+<li><p>send delegated acts received from the notifying organisation;
+notifications (WAR, ATA, ATD).</p></li>
+<li><p>send port statistics through the API interface.</p></li>
+</ul>
+<blockquote>
+<p>The transmission of statistics is covered in Chapter <a href="../4-satamien-tilastoilmoittaminen/4-1-tilastoilmoittaminen.en.html">4.1
+Statistical reporting</a></p>
+</blockquote></td>
+</tr>
+<tr>
+<td>Read notifications</td>
+<td style="text-align: left;"><p>The user may:</p>
+<ul>
+<li><p>review information on ship Port calls (notifications and
+vessel data).</p></li>
+<li><p>send port statistics through the API interface.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="näin-luot-oman-käyttöoikeusryhmän">This is how you create your own
+access group</h2>
+<ul>
+<li><p>press<strong>Create Access Group</strong></p></li>
+<li><p>fill in the group name and select access rights</p></li>
+<li><p>press<strong>Save</strong></p></li>
+<li><p>You can see the created access group</p></li>
+</ul>
+<h2 id="näin-muokkaat-omaa-käyttöoikeusryhmää">This is how you edit your own
+Access group</h2>
+<ul>
+<li><p>select your own access group</p></li>
+<li><p>edit the group name and / or selected access rights</p></li>
+<li><p>press<strong>Save</strong></p></li>
+<li><p>see that the access group has been updated</p></li>
+</ul>
+<h2 id="näin-poistat-oman-käyttöoikeusryhmän">This will remove your own
+access group</h2>
+<ul>
+<li><p>select your own access group to delete</p></li>
+<li><p>press the removal button</p></li>
+<li><p>confirm deletion</p></li>
+<li><p>you see that the access group has been deleted and is no longer visible
+list</p></li>
+<li><p>check the user access group if recently deleted
+the group has left the user</p></li>
+</ul>
+<h1 id="kansallisen-satama-api-rajapinnan-käyttö">National port
+Use of API interface</h1>
+<p>National Port API interface allows Port calls
+review of notifications relating to, dispatch to NEMO, notifications
+the transmission of reception and port statistics to the authorities.
+The interface uses the REST protocol and the JSON format.</p>
+<p>You need:</p>
+<ul>
+<li><p><strong>Organisation account in NEMO</strong></p></li>
+<li><p><strong>Main User Rights</strong>so you can
+API tab</p></li>
+<li><p>API data for identification</p></li>
+</ul>
+<p><strong>Port API</strong></p>
+<p>Select port API when your organisation is a port operator that controls
+and manage the operation of the port area. The interface allows you to download
+statistics, arrival, departure and vessel data
+Using the REST protocol.</p>
+<p>Go to the technical Port API instructions for the guide: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html">Integrate
+Suomen Maritime Single Window (NEMO) - National API - Port
+API</a></p>
+<h2 id="data-service-providerin-dsp-käyttö"><strong>Data Service
+Use of Provider (DSP)</strong></h2>
+<p>The port organisation can use external Data Service Provider
+(DSP) implementing technical interface integration and NEMO data
+apply on behalf of the organisation.</p>
+<blockquote>
+<p>DSP will always act as a service provider authorised by the port organisation.
+The DSP will not automatically have its own access to the port organisation
+data in NEMO, and DSP cannot request or form itself
+port organisation API symbols.</p>
+</blockquote>
+<p>If a port organisation uses the DSP, the port organisation shall:</p>
+<ul>
+<li><p>be registered in NEMO</p></li>
+<li><p>establish the necessary API for its organisation; and
+To that end, form a Client ID and a Client Secret (Client)
+Secret)</p></li>
+<li><p>provide the appropriate API codes to the DSP it uses;
+safe</p></li>
+<li><p>ensure that the symbols are maintained, renewed and, if necessary,
+their removal;</p></li>
+</ul>
+<p>DSP uses the interface with the port organisation codes
+acting on behalf of that organisation. Responsibility for API connection
+and the management of associated symbols remains:
+the port organisation.</p>
+<blockquote>
+<p>If Client Secret disappears, is discovered or DSP is terminated,
+the port organisation must renew or remove the API connection codes;
+NEMO.</p>
+</blockquote>
+<h2 id="asiakastunniste-ja-salausavain">Client ID and
+Client Secret</h2>
+<p><strong>Client ID</strong> identifies an organisation that:
+use API. Press <strong>Create
+Connection.</strong> to connect The connection cannot be changed manually.</p>
+<p><strong>Client Secret</strong> works like a secret key couple
+alongside the Client ID. It is used for API invitations
+for authenticity.</p>
+<p>If the Client Secret is lost, leaked or compromised,
+The API link must be removed and reestablished, creating a new
+The Client Secret.</p>
+<h3 id="milloin-tarvitaan-uusi-salausavain">When new
+The Client Secret?</h3>
+<p>A new Client Secret shall be created for example in the following situations:</p>
+<ul>
+<li><p>change the integration system or server within the organisation;
+using API connection</p></li>
+<li><p>the current Client Secret has disappeared or is no longer found
+system</p></li>
+<li><p>suspected that the Client Secret has been discovered or
+abuse;</p></li>
+<li><p>API-yhteys poistetaan ja luodaan uudelleen (esim. konfiguraation
+muutosten vuoksi)</p></li>
+</ul>
+<h2 id="näin-otat-käyttöön-kansallisen-api-ilmoittajarajapinnan">Like this
+Enable national API reporting boundary</h2>
+<ul>
+<li><p>opens from the main menu<strong>Menu menu</strong>and select
+<strong>Business Maintenance</strong></p></li>
+<li><p>open<strong>API tab</strong></p></li>
+<li><p>press<strong>Create a connection</strong></p></li>
+<li><p>API connection created and information (Client ID and Client Secret)
+visible</p></li>
+</ul>
+<h2 id="näin-uusit-salausavaimen-kansalliselle-api-rajapinnalle">Like this
+new Client Secret to the national API interface</h2>
+<ul>
+<li><p>open<strong>API tab</strong>.</p></li>
+<li><p>select<strong>Create a new Client Secret</strong></p></li>
+<li><p>press <strong>Save</strong> when the changes have been made.</p></li>
+</ul>
+<h2 id="kansallisen-api-rajapinnan-poistaminen">National
+Removing API interface</h2>
+<p>If a national API interface is no longer necessary,
+it can be removed by the main user of the organisation. After removal
+sending notifications via API is not successful, so the organisation must:
+introduce another mode (interface or
+RIM interface).</p>
+<h3 id="näin-poistat-kansallisen-api-rajapinnan">Remove
+National API interface</h3>
+<ul>
+<li><p>open<strong>API tab</strong></p></li>
+<li><p>press<strong>Remove interface</strong></p></li>
+<li><p>confirm API removal</p></li>
+</ul>
+</main>
+</body>
+</html>

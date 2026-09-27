@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.2 Ilmoitukset</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="3-2-ilmoitukset.sv.html">Svenska</a> | <a href="3-2-ilmoitukset.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">3.2 Ilmoitukset</h1>
+</header>
+<p class="heading" id="ilmoitukset">3.2 Ilmoitukset</p>
+<p>Kun ilmoittajaorganisaatio on luonut satamakäynnin, siihen liittyvät
+tiedot annetaan ilmoitusmuodollisuuksilla eli ilmoituksilla. Yksi
+ilmoitus vastaa yhtä tietokokonaisuutta, kuten saapumis-, lähtö-, lasti-
+tai miehistötietoja.</p>
+<p>Tarkastele satamakäyntiin liittyviä ilmoituksia
+<strong>Ilmoitukset</strong>-näkymässä. Näkymä avautuu, kun valitset
+oman satamasi tai satama-alueesi satamakäynnin
+<strong>Satamakäynnit</strong>-näkymässä.</p>
+<p>Satamaorganisaatio ei tavallisesti lisää tai lähetä satamakäynnin
+ilmoituksia. Ilmoittajaorganisaatio voi kuitenkin delegoida satamalle
+seuraavien ilmoitusten käsittelyn:</p>
+<ul>
+<li><p><strong>WAR</strong> — Jätekuitti saapumisen yhteydessä</p></li>
+<li><p><strong>ATA</strong> — Todellinen saapumisaika</p></li>
+<li><p><strong>ATD</strong> — Todellinen lähtöaika</p></li>
+</ul>
+<blockquote>
+<p>Delegointi koskee vain tiettyä satamakäyntiä ja sille delegoitua
+ilmoitusta. Muiden ilmoitusten osalta satama tarkastelee
+ilmoittajaorganisaation lähettämiä tietoja.</p>
+</blockquote>
+<p class="heading" id="satamakäynnin-ilmoitukset-näkymä">Satamakäynnin
+Ilmoitukset-näkymä</p>
+<p>Ilmoitukset-näkymässä voit tarkastella satamakäynnin perustietoja ja
+siihen liittyviä ilmoituksia. Jos satamalle on delegoitu WAR-, ATA- tai
+ATD-ilmoitus, voit myös käsitellä delegoitua ilmoitusta tässä
+näkymässä.</p>
+<p class="heading" id="satamakäynnin-tiedot">Satamakäynnin tiedot</p>
+<p>Ilmoitukset-näkymän vasemmassa reunassa näkyvät seuraavat
+satamakäynnin perustiedot, jos ne on annettu:</p>
+<ul>
+<li><p>satamakäynnin tunniste eli Visit ID</p></li>
+<li><p>aluksen nimi</p></li>
+<li><p>Suomessa vahvistettu jääluokka</p></li>
+<li><p>satama eli UN/LOCODE-koodi</p></li>
+<li><p>sataman osa</p></li>
+<li><p>laituripaikka</p></li>
+<li><p>ETA</p></li>
+<li><p>ETD</p></li>
+<li><p>edellinen satama</p></li>
+<li><p>seuraava satama</p></li>
+<li><p>ilmoittajaorganisaatio, joka on delegoinut satamalle WAR-, ATA-
+tai ATD-ilmoituksen.</p></li>
+</ul>
+<p>Näkymässä voi näkyä myös satamakäyntiin liittyvä huomautus, kuten
+tieto puuttuvasta tai vanhentuneesta alustodistuksesta.</p>
+<p class="heading" id="ilmoituskortti-ja-ilmoituksen-tila">Ilmoituskortti ja ilmoituksen
+tila</p>
+<p>Jokainen ilmoitus esitetään omana korttinaan. Ilmoituskortilla
+näkyvät:</p>
+<ul>
+<li><p>ilmoituksen lyhenne</p></li>
+<li><p>ilmoituksen nimi</p></li>
+<li><p>ilmoituksen tila</p></li>
+<li><p>määräaikaan tai lähettämiseen liittyvä tieto</p></li>
+<li><p>lähetetyn ilmoituksen lähetysaika tai viimeisin
+päivitysaika</p></li>
+<li><p>ilmoituksen lähettänyt organisaatio.</p></li>
+</ul>
+<p>Satama tarkastelee tavallisesti ilmoittajaorganisaation lähettämiä
+ilmoituksia. Delegoidun WAR-, ATA- tai ATD-ilmoituksen kortilla voi
+näkyä myös seuraavia tiloja:</p>
+<ul>
+<li><p><strong>Myöhässä</strong> — delegoidun ilmoituksen määräaika on
+umpeutunut</p></li>
+<li><p><strong>Luonnokset</strong> — delegoitu ilmoitus on
+satamakäynnillä luonnoksena, mutta sitä ei ole vielä lähetetty</p></li>
+<li><p><strong>Lähetetty</strong> — ilmoitus on lähetetty.</p></li>
+</ul>
+<p>Ilmoituskortilla näkyvä teksti kertoo, milloin ilmoitus tulisi
+lähettää tai milloin se on lähetetty.</p>
+<p class="heading" id="satamakäynnillä-tarkasteltavat-ja-delegoitavat-ilmoitukset">Satamakäynnillä
+tarkasteltavat ja delegoitavat ilmoitukset</p>
+<p>Osa satamakäynnin ilmoituksista annetaan kaikissa satamakäynneissä ja
+osa vain silloin, kun kyseinen tieto, toiminto tai olosuhde koskee
+satamakäyntiä.</p>
+<p>Satamaorganisaatio voi tarkastella oman satamansa tai satama-alueensa
+satamakäynneille lähetettyjä, sataman käyttöön tarkoitettuja
+ilmoituksia. Ilmoitusten antamisesta vastaa tavallisesti
+ilmoittajaorganisaatio.</p>
+<p>Kaikissa satamakäynneissä tulee olla lähetetty vähintään seuraavat
+ilmoitukset:</p>
+<ul>
+<li><p><strong>NOA</strong> — Saapumisedeltäilmoitus</p></li>
+<li><p><strong>DUE</strong> — Laivanisäntä- tai
+väylämaksuilmoitus</p></li>
+<li><p><strong>ATA</strong> — Todellinen saapumisaika</p></li>
+<li><p><strong>NOD</strong> — Lähtöedeltäilmoitus</p></li>
+<li><p><strong>ATD</strong> — Todellinen lähtöaika</p></li>
+</ul>
+<p>Satama ei tavallisesti lisää, muokkaa tai lähetä ilmoituksia.
+Ilmoittajaorganisaatio voi kuitenkin delegoida satamalle seuraavien
+ilmoitusten käsittelyn:</p>
+<ul>
+<li><p><strong>WAR</strong> — Jätekuitti saapumisen yhteydessä</p></li>
+<li><p><strong>ATA</strong> — Todellinen saapumisaika</p></li>
+<li><p><strong>ATD</strong> — Todellinen lähtöaika</p></li>
+</ul>
+<p>Delegointi koskee vain tiettyä satamakäyntiä ja sille delegoitua
+ilmoitusta. Satama ei voi käsitellä muita ilmoittajaorganisaation
+vastuulle kuuluvia ilmoituksia.</p>
+<p class="heading" id="delegoidun-ata--ja-atd-ilmoituksen-edellytykset">Delegoidun ATA- ja
+ATD-ilmoituksen edellytykset</p>
+<p>Ennen delegoidun ATA-ilmoituksen lähettämistä tarkista, että
+ilmoittajaorganisaatio on lähettänyt satamakäynnille:</p>
+<ul>
+<li><p>NOA-ilmoituksen</p></li>
+<li><p>DUE-ilmoituksen.</p></li>
+</ul>
+<p>Ennen delegoidun ATD-ilmoituksen lähettämistä tarkista, että
+ilmoittajaorganisaatio on lähettänyt satamakäynnille
+NOD-ilmoituksen.</p>
+<p>Ilmoittajaorganisaatio vastaa saapumisen vahvistamisesta
+NOA-ilmoituksella ja lähdön vahvistamisesta NOD-ilmoituksella. ATA- tai
+ATD-ilmoituksen delegointi ei siirrä vahvistamista satamalle.</p>
+<p>Kun satama lähettää delegoidun ilmoituksen, satama vastaa
+ilmoitukseen lisäämiensä tietojen oikeellisuudesta. Tarkista tiedot
+huolellisesti ennen lähettämistä. Älä lisää henkilötietoja muihin kuin
+niihin kenttiin, joissa niitä pyydetään erikseen.</p>
+<p>Ilmoituksen lähettämisen jälkeen Nemo muodostaa ilmoitukselle
+käsittelyvastauksen. Erillistä viranomaisen kuittausta vastaanotosta ei
+välttämättä lähetetä.</p>
+<p>Delegoitujen ilmoitusten tarkemmat täyttöohjeet löytyvät WAR-, ATA-
+ja ATD-ilmoitusten omista ohjeista.</p>
+<p class="heading" id="saapumisen-ja-lähdön-vahvistuksen-tarkistaminen">Saapumisen ja
+lähdön vahvistuksen tarkistaminen</p>
+<p>Ilmoittajaorganisaatio vahvistaa saapumisen, kun kaikki muut
+kyseiseen satamakäyntiin tarvittavat saapumiseen liittyvät ilmoitukset
+on lähetetty. Vahvistus annetaan NOA-ilmoituksella ennen ATA-ilmoituksen
+lähettämistä.</p>
+<p>Vastaavasti ilmoittajaorganisaatio vahvistaa lähdön, kun kaikki muut
+tarvittavat lähtöön liittyvät ilmoitukset on lähetetty. Vahvistus
+annetaan NOD-ilmoituksella ennen ATD-ilmoituksen lähettämistä.</p>
+<p>ATA- tai ATD-ilmoituksen delegointi ei siirrä NOA- tai
+NOD-ilmoituksella tehtävää vahvistamista satamalle.</p>
+<p>Jos ATA-ilmoitus on delegoitu satamalle, tarkista ennen sen
+lähettämistä, että NOA- ja DUE-ilmoitukset on lähetetty. Jos
+ATD-ilmoitus on delegoitu satamalle, tarkista ennen sen lähettämistä,
+että NOD-ilmoitus on lähetetty.</p>
+<p class="heading" id="delegoidun-ilmoituksen-täyttäminen-lähettäminen-ja-päivittäminen">Delegoidun
+ilmoituksen täyttäminen, lähettäminen ja päivittäminen</p>
+<p>Delegoitu WAR-, ATA- tai ATD-ilmoitus näkyy kyseisen satamakäynnin
+<strong>Ilmoitukset</strong>-näkymässä.</p>
+<p>Organisaatiosi ei lisää delegoitua ilmoitusta itse satamakäynnille.
+Käsittele Ilmoitukset-näkymässä näkyvää delegoitua ilmoitusta.</p>
+<p>Näin avaat delegoidun ilmoituksen:</p>
+<ul>
+<li><p>Avaa <strong>Satamakäynnit</strong>-näkymä.</p></li>
+<li><p>Valitse satamakäynti.</p></li>
+<li><p>Avaa satamalle delegoitu WAR-, ATA- tai ATD-ilmoitus sen
+kortista.</p></li>
+</ul>
+<p>Delegoidun ilmoituksen tila ja käytettävissä olevat toiminnot näkyvät
+ilmoituskohtaisessa näkymässä.</p>
+<p>WAR-ilmoituksia voi olla samalla satamakäynnillä useita. Jokaisella
+ilmoituksella on oma viitenumeronsa eli LRN (Local Reference Number),
+jonka avulla ilmoitukset erotetaan toisistaan.</p>
+<p class="heading" id="delegoidun-ilmoituksen-määräaika">Delegoidun
+ilmoituksen määräaika</p>
+<p>Noudata delegoidun WAR-, ATA- tai ATD-ilmoituksen lähettämisen
+määräaikaa. Määräaika vaihtelee ilmoitustyypin ja tilanteen mukaan.</p>
+<p>Tarkista määräaika ja mahdolliset poikkeukset viranomaisten
+määräyksistä ja kyseisen ilmoituksen omasta ohjeesta.</p>
+<p class="heading" id="delegoidun-ilmoituksen-täyttäminen-lähettäminen-ja-päivittäminen-1">Delegoidun
+ilmoituksen täyttäminen, lähettäminen ja päivittäminen</p>
+<p>Delegoidun ilmoituksen tiedoista osa on pakollisia ja osa täytetään
+vain tilanteen mukaan. Lomakkeelle voi tulla näkyviin uusia kenttiä tai
+osioita tekemiesi valintojen perusteella.</p>
+<p>Tiedot tallentuvat täyttämisen aikana automaattisesti
+ilmoitusluonnokselle.</p>
+<p>Näin täytät ja lähetät delegoidun ilmoituksen:</p>
+<ul>
+<li><p>Avaa satamalle delegoitu WAR-, ATA- tai ATD-ilmoitus
+<strong>Ilmoitukset</strong>-näkymässä.</p></li>
+<li><p>Täytä lomakkeelta puuttuvat tiedot.</p></li>
+<li><p>Siirry tarvittaessa lomakkeen eri osioihin
+sisällysluettelosta.</p></li>
+<li><p>Tarkista varoitusviestit, jotka kertovat puuttuvista tai
+korjattavista tiedoista. Varoituksen nuolesta pääset suoraan kyseisen
+kentän kohdalle.</p></li>
+<li><p>Tarkista ja korjaa myös esitäytetyt tiedot.</p></li>
+<li><p>Tarkista MAI-osion tiedot.</p></li>
+<li><p>Paina <strong>Lähetä</strong>.</p></li>
+</ul>
+<p>Lähetetyn ilmoituksen tila muuttuu Ilmoitukset-näkymässä
+<strong>Lähetetyksi</strong>.</p>
+<p>Jos delegoidun ilmoituksen tietoja täytyy korjata ja ilmoituksen
+päivittäminen on sallittu, avaa lähetetty ilmoitus, korjaa tiedot ja
+lähetä ilmoitus uudelleen.</p>
+<p class="heading" id="delegoidun-ilmoituksen-kentät-taulukot-ja-liitteet">Delegoidun
+ilmoituksen kentät, taulukot ja liitteet</p>
+<p>Lisää delegoituun ilmoitukseen tarvittaessa uusi kenttä tai osio
+painamalla <strong>Lisää</strong>.</p>
+<p>Poista tarpeeton kenttä tai osio painamalla <strong>Poista</strong>
+eli roskakorikuvaketta.</p>
+<p>Taulukossa voit:</p>
+<ul>
+<li><p>lisätä uuden rivin <strong>Lisää</strong>-painikkeella</p></li>
+<li><p>avata rivin muokattavaksi <strong>Muokkaa</strong>-painikkeella
+eli kynäkuvakkeella</p></li>
+<li><p>poistaa virheellisen rivin <strong>Poista</strong>-painikkeella
+eli roskakorikuvakkeella.</p></li>
+</ul>
+<p>Lisää ilmoitukseen tarvittaessa liitetiedosto painamalla
+<strong>Lataa tiedosto</strong>. Valitse tiedosto laitteeltasi ja
+vahvista lataus.</p>
+<p class="heading" id="ilmoitusten-lomakeasetukset"><strong>Ilmoitusten
+lomakeasetukset</strong></p>
+<p>Voit muuttaa <strong>Ilmoitusmuodollisuudet</strong>-asetuksista,
+missä laajuudessa ilmoituksen tietoja näytetään lomakkeella.</p>
+<p>Avaa päävalikon profiilista <strong>Menu</strong> ja valitse
+<strong>Asetukset</strong>. Käytettävissä ovat seuraavat valinnat:</p>
+<ul>
+<li><p><strong>Vain olennaiset kentät</strong> — lomakkeella näytetään
+vain Suomessa kansallisesti vaaditut tietokentät</p></li>
+<li><p><strong>Vain täytetyt kentät</strong> — lomakkeella näytetään
+vain ne kentät, joihin on annettu tietoa</p></li>
+<li><p><strong>Näytä ohjeistukset</strong> — lomakkeella näytetään
+kenttäkohtaiset ohje- ja kuvaustekstit.</p></li>
+</ul>
+<p>Asetukset muuttavat tietojen esitystapaa. Ne eivät muuta ilmoituksen
+sisältöä.</p>
+<p class="heading" id="lomakkeen-kentät-taulukot-ja-liitteet"><strong>Lomakkeen kentät,
+taulukot ja liitteet</strong></p>
+<p>Lisää ilmoitukseen tarvittaessa uusi kenttä tai osio painamalla
+<strong>Lisää</strong>.</p>
+<p>Poista tarpeeton kenttä tai osio painamalla <strong>Poista</strong>
+eli roskakorikuvaketta.</p>
+<p>Taulukossa voit:</p>
+<ul>
+<li><p>lisätä uuden rivin <strong>Lisää</strong>-painikkeella</p></li>
+<li><p>avata rivin muokattavaksi <strong>Muokkaa</strong>-painikkeella
+eli kynäkuvakkeella</p></li>
+<li><p>poistaa virheellisen rivin <strong>Poista</strong>-painikkeella
+eli roskakorikuvakkeella.</p></li>
+</ul>
+<p>Lisää ilmoitukseen tarvittaessa liitetiedosto painamalla
+<strong>Lataa tiedosto</strong>. Valitse tiedosto laitteeltasi ja
+vahvista lataus.</p>
+<p class="heading" id="ilmoituksen-otsikkotiedot-mai-ja-vastaustiedot-resfrm"><strong>Ilmoituksen
+otsikkotiedot (MAI) ja vastaustiedot (RES+FRM)</strong></p>
+<p>Jokaiseen ilmoitukseen liittyy sen yksilöimiseen, välittämiseen ja
+käsittelyyn tarvittavia otsikko- ja vastaustietoja.</p>
+<p><strong>MAI</strong> sisältää lähetettävän ilmoituksen otsikkotiedot.
+Ilmoituksen lähettämisen jälkeen sille muodostuvat
+<strong>RES+FRM-osio</strong>, jotka sisältävät ilmoituksen käsittelyä
+koskevan vastauksen.</p>
+<p>Tietojen avulla:</p>
+<ul>
+<li><p>ilmoitus yhdistetään oikeaan satamakäyntiin ja
+ilmoittajaan</p></li>
+<li><p>alkuperäinen ilmoitus ja sen myöhemmät päivitykset
+tunnistetaan</p></li>
+<li><p>ilmoitus välitetään käsiteltäväksi oikeassa muodossa</p></li>
+<li><p>käsittelyä koskeva vastaus yhdistetään oikeaan
+ilmoitukseen</p></li>
+<li><p>näytetään, onko ilmoitus hyväksytty vai edellyttääkö se
+toimenpiteitä.</p></li>
+</ul>
+<p>MAI-, RES+FRM-osiot näkyvät ilmoituslomakkeella osana
+ilmoituskohtaista näkymää.</p>
+<p class="heading" id="mai-ilmoituksen-otsikkotiedot"><strong>MAI —
+Ilmoituksen otsikkotiedot</strong></p>
+<p>MAI-osio sisältää ilmoituksen tunnistamiseen, välittämiseen ja
+seurantaan tarvittavat tiedot. Tällaisia ovat esimerkiksi:</p>
+<ul>
+<li><p>ilmoituksen ja satamakäynnin tunnisteet</p></li>
+<li><p>ilmoitustyyppi</p></li>
+<li><p>ilmoittajaa koskevat tiedot.</p></li>
+</ul>
+<p>Nemo muodostaa MAI-osion tiedot automaattisesti satamakäynnin,
+ilmoituksen ja käyttäjän organisaatiotietojen perusteella. MAI-osion
+tietoja ei voi muuttaa ilmoituslomakkeella.</p>
+<p class="heading" id="section"></p>
+<p class="heading" id="res-vastauksen-otsikkotiedot"><strong>RES —
+Vastauksen otsikkotiedot</strong></p>
+<p>RES-osio sisältää vastauksen tunnistamiseen ja alkuperäiseen
+ilmoitukseen yhdistämiseen tarvittavat tiedot. Tällaisia ovat
+esimerkiksi:</p>
+<ul>
+<li><p>vastauksen tunniste</p></li>
+<li><p>vastaustyyppi</p></li>
+<li><p>vastauksen antanut viranomainen</p></li>
+<li><p>viittaus ilmoitukseen, jota vastaus koskee.</p></li>
+</ul>
+<p>RES-osion tietoja ei voi muuttaa.</p>
+<p class="heading" id="frm-vastaus-ilmoitukseen"><strong>FRM — Vastaus
+ilmoitukseen</strong></p>
+<p>FRM-osio sisältää ilmoituksen käsittelyn tuloksen. Siinä näkyvät:</p>
+<ul>
+<li><p>ilmoituksen käsittelyn tila</p></li>
+<li><p>mahdolliset lisätiedot</p></li>
+<li><p>virheet</p></li>
+<li><p>varoitukset.</p></li>
+</ul>
+<p>Virhetieto voi osoittaa myös ilmoituksen kentän tai taulukkorivin,
+jota palaute koskee.</p>
+<p>RES- ja FRM-osioiden tietoja ei voi muuttaa.</p>
+<p class="heading" id="delegoidun-ilmoituksen-käsittelyvastauksen-tarkistaminen"><strong>Delegoidun
+ilmoituksen käsittelyvastauksen tarkistaminen</strong></p>
+<p>Kun olet lähettänyt delegoidun ilmoituksen, tarkista sille
+muodostunut vastaus ilmoituskohtaisesta näkymästä.</p>
+<p>Toimi vastauksen perusteella seuraavasti:</p>
+<ul>
+<li><p>Jos ilmoitus on <strong>hyväksytty</strong>, vastauksen
+perusteella ei tarvitse tehdä muutoksia.</p></li>
+<li><p>Jos ilmoitus on <strong>hyväksytty ehdollisesti</strong>,
+tarkista vastauksen lisätiedot ja mahdolliset jatkotoimet.</p></li>
+<li><p>Jos ilmoitus on <strong>hylätty tai puutteellinen</strong>,
+tarkista ilmoitetut virheet, korjaa ilmoitus ja lähetä se
+uudelleen.</p></li>
+<li><p>Tarkista myös varoitukset ja arvioi, edellyttävätkö ne tietojen
+korjaamista.</p></li>
+</ul>
+<p>Hyväksytty FRM-vastaus vahvistaa, että ilmoitus on hyväksytty
+käsiteltäväksi. Se ei sellaisenaan tarkoita aluksen selvityspäätöstä,
+lähtölupaa tai muuta erillistä viranomaispäätöstä.</p>
+<p class="heading" id="lähetetyn-ilmoituksen-yhteenveto-pdf-tallentaminen"><strong>Lähetetyn
+ilmoituksen yhteenveto-PDF tallentaminen</strong></p>
+<p>Voit tallentaa lähetetyn ilmoituksen tiedoista yhteenveto-PDF.
+Yhteenveto sisältää ilmoituksen lähetetyt tiedot ja esittää ne
+ilmoituslomaketta vastaavassa rakenteessa.</p>
+<p>Näin tallennat PDF-tiedoston:</p>
+<ul>
+<li><p>Valitse <strong>Ilmoitukset</strong>-näkymästä lähetetty
+ilmoitus, jonka yhteenvedon haluat tallentaa.</p></li>
+<li><p>Paina <strong>Tulosta PDF</strong>.</p></li>
+<li><p>Valitse tulostusikkunassa kohteeksi <strong>Tallenna
+PDF-muodossa</strong> tai käyttöjärjestelmäsi vastaava
+vaihtoehto.</p></li>
+<li><p>Vahvista tallennus.</p></li>
+</ul>
+<blockquote>
+<p>Ilmoitus voi näkyä esikatselussa pienikokoisena, eikä esikatselu
+skaalaudu oikein kaikissa käyttöjärjestelmissä. Tallennetussa
+PDF-tiedostossa ilmoitus näkyy oikeassa koossa.</p>
+</blockquote>
+<p>PDF-tiedosto tallentuu laitteellesi ja sisältää ilmoituksen lähetetyt
+tiedot.</p>
+<p class="heading" id="delegoidun-ilmoituksen-poistaminen">Delegoidun
+ilmoituksen poistaminen</p>
+<p>Poista WAR-ilmoitus, jos sitä ei enää tarvita tai jos se on lisätty
+virheellisesti, ja jos <strong>Poista</strong>-toiminto on
+käytettävissä.</p>
+<p>ATA- ja ATD-ilmoituksia ei voi poistaa satamakäynniltä.</p>
+<p>Näin poistat poistettavissa olevan delegoidun ilmoituksen:</p>
+<ul>
+<li><p>Avaa <strong>Satamakäynnit</strong>-näkymä.</p></li>
+<li><p>Avaa haluamasi satamakäynti.</p></li>
+<li><p>Avaa poistettava delegoitu ilmoitus.</p></li>
+<li><p>Paina <strong>Poista</strong>.</p></li>
+</ul>
+<p>Näet, että poistettua ilmoitusta ei näy enää satamakäynnillä.</p>
+</main>
+</body>
+</html>

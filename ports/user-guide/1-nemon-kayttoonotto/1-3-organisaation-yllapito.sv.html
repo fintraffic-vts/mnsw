@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>1.3 Organisationsunderhåll</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="1-3-organisaation-yllapito.html">Suomi</a> | <strong>Svenska</strong> | <a href="1-3-organisaation-yllapito.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">1.3 Organisationsunderhåll</h1>
+</header>
+<h1 id="organisaation-ylläpito">1.3 Organisationsunderhåll</h1>
+<p>Underhållet av organisationen är en centraliserad bild av webbläsargränssnittet,
+hantera organisatorisk information, användare, rättigheter;
+tekniska och operativa kontakter med andra aktörer, och
+system.</p>
+<p>Huvudanvändaren (admin) kan visa och uppdatera följande information och
+Inställningar:</p>
+<table>
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Tab</strong></td>
+<td><strong>Verksamhet</strong></td>
+</tr>
+<tr>
+<td><strong>Organisation</strong></td>
+<td>Uppdatera grundläggande information: namn, kontaktuppgifter och identifierare</td>
+</tr>
+<tr>
+<td><strong>Användare</strong></td>
+<td>Inbjuda nya användare och hantera åtkomsträttigheter.</td>
+</tr>
+<tr>
+<td><strong>Access Groups</strong></td>
+<td>Skapa och hantera rättigheter per grupp.</td>
+</tr>
+<tr>
+<td><strong>National Port API</strong></td>
+<td>Konfigurera och hantera gränssnitt mellan system.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="käyttöedellytykset">Villkor för användning</h2>
+<p>Underhåll av organisationen är tillgänglig när du är inloggad i Nemo
+och valt ett organisationskonto (om flera) och du har en organisation
+åtkomsträttigheter till huvudanvändaren (admin).</p>
+<p>Organisationens huvudsakliga användare ska ansvara för organisationens information:
+och åtkomsträttigheter är alltid uppdaterade. Nemo inte automatiskt
+identifiera felaktig eller föråldrad information och rapportera den inte;
+användaren.</p>
+<p>Organisationsinformation som ingår i meddelanden om hamnanrop (MAI)
+titelinformation. Felaktig eller ofullständig information kan orsaka:
+problem vid mottagande eller behandling av anmälningar från myndigheter
+handling.</p>
+<h2 id="section"></h2>
+<h2 id="näin-siirryt-organisaation-ylläpitoon">Så här flyttar du
+underhåll av organisationen;</h2>
+<ul>
+<li><p>öppnar från huvudmenyn<strong>Menymenyn</strong> <em>(i skrivbord)
+övre högra hörnet, nedre högervinkel på mobilen) j</em>Ett Välj
+<strong>Organisationsunderhåll</strong></p></li>
+<li><p>se som standard<strong>Organisation</strong>- utsikten. Gå till olika
+mellan underhållsscenarier för att granska organisationens data,
+användare, åtkomstgrupper och gränssnitt;</p></li>
+</ul>
+<h1 id="muokkaa-organisaation-tietoja">Redigera organisation
+Information om information</h1>
+<p>Datastöd användaridentifiering och rättighetshantering,
+kontakter och kommunikation mellan myndigheter och organisationer.
+rapportering och övervakning.</p>
+<h2 id="organisaation-yhteyshenkilö">Organisationskontaktperson</h2>
+<p>En kontaktperson har valts ut för organisationen och agerar officiellt:
+Som kontakt med myndigheterna. Kontakt:</p>
+<ul>
+<li><p>Få Nemo e-post, till exempel när:
+fartygets certifikat har löpt ut eller anlöp;
+meddelandet anger en avvikelse som kräver åtgärder;</p></li>
+<li><p>kontaktpersonens register registreras på den överförda anmälan;
+header data (MAI)</p></li>
+</ul>
+<h2 id="näin-muokkaat-organisaation-tietoja">Så här redigerar du organisationen
+Information om information</h2>
+<ul>
+<li><p>öppnar från huvudmenyn<strong>Menymenyn</strong>och välja
+<strong>Business Maintenance</strong></p></li>
+<li><p>Granska och redigera nödvändig information
+<strong>Organisationsflik</strong></p></li>
+<li><p>Presspress<strong>Spara</strong>när förändringar har gjorts</p></li>
+<li><p>se att organisationens uppgifter har registrerats</p></li>
+</ul>
+<h1 id="käyttäjien-ylläpito">Underhåll för användare</h1>
+<p>Huvudanvändare kan lägga till och ta bort användare, ändra sina roller
+och dess kategorier av tillgång och bestämma vem som agerar i organisationen
+som en förbindelse. Kontaktuppgifter lagras automatiskt
+rubriken för hamnanropsdeklarationer (MAI) som skickas som en del av operationen. Håll
+användar- och kontaktuppgifter uppdateras alltid före meddelanden
+Detta är fallet.</p>
+<h2 id="käyttäjätyypit">Typ av användare</h2>
+<p>Varje verksamhetsutövare ska väljas från en av två:
+Typ av användare:</p>
+<ul>
+<li><p><strong>Huvudanvändare (admin)</strong>- upprätthålla en organisation
+information, användare, åtkomstgrupper och gränssnittslänkar. Ja.
+lägga till, redigera och radera information i enlighet med dess åtkomstgrupp.
+Det rekommenderas att organisationen har minst två huvudanvändare.
+säkerställa kontinuitet i verksamheten.</p></li>
+<li><p><strong>Medlem (grundläggande)</strong>- se, lägga till, redigera och ta bort
+information i enlighet med sin åtkomstgrupp.</p></li>
+</ul>
+<h2 id="käyttäjätiedot">Användarinformation</h2>
+<p>Följande information registreras för varje användare:</p>
+<table>
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Information om information</strong></td>
+<td><strong>Beskrivning</strong></td>
+</tr>
+<tr>
+<td><strong>Namnnamn</strong></td>
+<td>Automatiskt kommer från användarens Suomi.fi-autentiseringstjänst
+Anslutning. Namnet kan inte ändras i Nemo.</td>
+</tr>
+<tr>
+<td><strong>E-post</strong></td>
+<td>Motsvarande till den e-postadress som användaren har gett vid anslutningen.
+Används för att skicka inbjudningar och meddelanden.</td>
+</tr>
+<tr>
+<td><strong>Typ av användare</strong></td>
+<td><p><strong>Admin</strong>= Huvudanvändare med rättigheter
+förvaltning av organisationen. Du kan väljas som kontaktperson.</p>
+<p><strong>Grundläggande</strong>= Normal användare som kan visa och
+behandla data i enlighet med sin åtkomstgrupp.</p></td>
+</tr>
+<tr>
+<td><strong>Access Group</strong></td>
+<td><p><strong>ReadWriteAll</strong>= Full läs- och redigeringsrättigheter
+all information som hanteras av organisationen.</p>
+<p><strong>PUBLIC</strong>= Endast allmänt tillgänglig information tillgänglig, ingen
+redigera rättigheter.</p>
+<p><strong>Egna grupper</strong>= Organisationsgrupper som:
+Operatören kan när så är lämpligt bestämma. Rekommenderas för varje
+Organisationen skapar egna användarspecifika åtkomstgrupper.
+i enlighet med tillgångens rättigheter.</p></td>
+</tr>
+<tr>
+<td><strong>Väntar på bearbetning</strong></td>
+<td>Användaren har blivit inbjuden till organisationen men har ännu inte godkänts
+Inbjudan eller slutförd anslutning.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="käyttäjän-kutsuminen-organisaatioon">Inbjudan till en användare
+Organisation</h2>
+<p>Huvudanvändaren kan bjuda in en ny användare till organisationen genom att ge:
+typ av användare, e-postadress och åtkomstgrupp. Ring samtal
+Efter att ha publicerat användaren får en e-postlänk
+För medlemskap i organisationen.</p>
+<p>Användaren har endast tillgång till organisationer för vilka:
+Han har blivit inbjuden separat även om han redan är användare i Nemo.</p>
+<h3 id="näin-kutsut-käyttäjän-organisaatioon">Så här bjuder du in en användare
+Organisation</h3>
+<ul>
+<li><p>Välj välja<strong>Ring användaren</strong></p></li>
+<li><p>fylla i typen av användare, åtkomstgrupp och e-postadress (eller
+adresser)</p></li>
+<li><p>Presspress<strong>Inbjudan</strong></p></li>
+<li><p>du får ett meddelande som bekräftar att inbjudan har skickats</p></li>
+</ul>
+<h2 id="käyttäjätyypin-muuttaminen">Ändra typ av användare</h2>
+<p>Huvudanvändaren kan ändra din egen eller annan användartyp.
+Användaren kan inte ändras när det gäller organisationens enda
+huvudanvändare.</p>
+<p>När användartypen ändras ändras även åtkomsträttigheterna. Om du flyttar
+Som medlem av din typ kan du inte längre behålla en organisation.</p>
+<h3 id="näin-muutat-käyttäjätyyppiä">Så här ändrar du användartypen</h3>
+<ul>
+<li><p>Välj användare och annan typ av användare
+från botten pull menyn</p></li>
+<li><p>motta en anmälan som bekräftar användartypen
+uppdatera</p></li>
+</ul>
+<h2 id="käyttöoikeusryhmän-muuttaminen">Access grupp
+Ändring</h2>
+<p>Huvudanvändare kan ändra dina egna eller andra användare
+åtkomstgrupp. Tillgångsgruppen ska fastställa vilken information:
+användaren har åtkomst.</p>
+<h3 id="näin-muutat-käyttäjän-käyttöoikeusryhmää">Detta kommer att ändra användaren
+Access grupp</h3>
+<ul>
+<li><p>Välj användare och annan åtkomstgrupp
+från botten pull menyn</p></li>
+<li><p>Få ett meddelande som bekräftar användarinformation
+uppdatera</p></li>
+</ul>
+<h2 id="käyttäjän-poistaminen-organisaatiosta">Borttagning av användaren
+Organisation</h2>
+<p>Huvudanvändaren kan ta bort användaren från organisationen. Raderad
+Användarens åtkomst till organisationens konto slutar omedelbart.</p>
+<h3 id="näin-poistat-käyttäjän">Detta tar bort användaren</h3>
+<ul>
+<li><p>Välj användaren och tryck på borttagningsknappen</p></li>
+<li><p>bekräfta borttagning</p></li>
+<li><p>Få ett meddelande som bekräftar borttagningen av användaren</p></li>
+</ul>
+<h2 id="poistuminen-organisaatiosta">Exkludering</h2>
+<p>Huvudanvändaren kan ta bort sig från organisationen. Detta tar bort alla
+rättigheter till denna organisation, inklusive underhållsrättigheter.
+<strong>Du kan inte lämna om du är den enda i organisationen.
+huvudanvändare.</strong></p>
+<p>Borttagning sker på samma sätt som andra användare
+radering: Välj ditt namn från användarlistan och följ instruktionerna
+på<strong>Avlägsnande av användaren från organisationen</strong>.</p>
+<h1 id="käyttöoikeusryhmien-ylläpito">Underhåll av åtkomstteam</h1>
+<p>Access-gruppen avgör vilken information och aktiviteter användaren kan använda
+Använd i Nemo och i vilken utsträckning. För varje användare väljer
+Användargruppens rätt när den bjuds in till en organisation.</p>
+<p>Det finns två typer av åtkomstgrupper:</p>
+<ul>
+<li><p><strong>Egen åtkomstgrupp</strong>- Organisation
+huvudanvändaren kan skapa, redigera och ta bort dessa grupper som behövs
+med.</p></li>
+<li><p><strong>General Access Groups</strong>- Fördefinierad
+Grupper som är direkt tillgängliga och kan anslutas direkt
+användare. Kan inte tas bort.</p></li>
+</ul>
+<p>Go Go Go Go<strong>Access Groups</strong>- till fliken Company
+underhåll.</p>
+<h2 id="yleiset-käyttöoikeusryhmät">General Access Groups</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 46%"/>
+<col style="width: 53%"/>
+</colgroup>
+<thead>
+<tr>
+<th><strong>Namnnamn</strong></th>
+<th><strong>Innehåll</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Offentlig hamninformation</td>
+<td>Användaren kan ansöka om och visa fartyg för deras ankomst och
+Baserat på avgångstider, den offentliga hamnen kallar informationsvy.</td>
+</tr>
+<tr>
+<td>Läs meddelanden, skicka delegerade meddelanden</td>
+<td style="text-align: left;"><p>Användaren kan:</p>
+<ul>
+<li><p>granska information om skeppsanlöp (meddelanden och
+fartygsdata).</p></li>
+<li><p>skicka delegerade akter som mottagits från den anmälande organisationen,
+meddelanden (WAR, ATA, ATD).</p></li>
+<li><p>skicka portstatistik via API-gränssnittet.</p></li>
+</ul>
+<blockquote>
+<p>Överföring av statistik behandlas i kapitel<a href="../4-satamien-tilastoilmoittaminen/4-1-tilastoilmoittaminen.sv.html">4.1
+Statistisk rapportering</a></p>
+</blockquote></td>
+</tr>
+<tr>
+<td>Läs meddelanden</td>
+<td style="text-align: left;"><p>Användaren kan:</p>
+<ul>
+<li><p>granska information om skeppsanlöp (meddelanden och
+fartygsdata).</p></li>
+<li><p>skicka portstatistik via API-gränssnittet.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="näin-luot-oman-käyttöoikeusryhmän">Så här skapar du din egen
+Access grupp</h2>
+<ul>
+<li><p>Presspress<strong>Skapa Access Group</strong></p></li>
+<li><p>fylla i gruppnamnet och välja åtkomsträttigheter</p></li>
+<li><p>Presspress<strong>Spara</strong></p></li>
+<li><p>Du kan se den skapade åtkomstgruppen</p></li>
+</ul>
+<h2 id="näin-muokkaat-omaa-käyttöoikeusryhmää">Så här redigerar du din egen
+Access grupp</h2>
+<ul>
+<li><p>Välj din egen åtkomstgrupp</p></li>
+<li><p>redigera gruppnamnet och/eller valda åtkomsträttigheter</p></li>
+<li><p>Presspress<strong>Spara</strong></p></li>
+<li><p>se att åtkomstgruppen har uppdaterats</p></li>
+</ul>
+<h2 id="näin-poistat-oman-käyttöoikeusryhmän">Detta kommer att ta bort din egen
+Access grupp</h2>
+<ul>
+<li><p>Välj din egen åtkomstgrupp för att radera</p></li>
+<li><p>tryck på knappen borttagning</p></li>
+<li><p>bekräfta borttagning</p></li>
+<li><p>du ser att åtkomstgruppen har raderats och inte längre är synlig
+lista</p></li>
+<li><p>Kontrollera användaråtkomstgruppen om den nyligen raderats
+gruppen har lämnat användaren</p></li>
+</ul>
+<h1 id="kansallisen-satama-api-rajapinnan-käyttö">Nationell hamn
+Användning av API-gränssnitt</h1>
+<p>National Port API-gränssnittet tillåter anlöp
+översyn av meddelanden om, avsändande till Nemo, meddelanden
+överföring av mottagnings- och hamnstatistik till myndigheterna.
+Gränssnittet använder REST-protokollet och JSON-formatet.</p>
+<p>Du behöver:</p>
+<ul>
+<li><p><strong>Organisationskonto i Nemo</strong></p></li>
+<li><p><strong>Huvudanvändarrättigheter</strong>Så du kan
+API tab</p></li>
+<li><p>API-data för identifiering</p></li>
+</ul>
+<p><strong>Port API</strong></p>
+<p>Välj port API när din organisation är en portoperatör som styr
+och hantera driften av hamnområdet. Gränssnittet låter dig ladda ner
+Statistik, ankomst, avgång och fartygsdata
+Använda REST-protokollet.</p>
+<p>Gå till Port API tekniska instruktioner för guiden:<a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html">Integrera
+Finlands sjöfartsfönster (NEMO) - National API - Port
+API</a></p>
+<h2 id="data-service-providerin-dsp-käyttö"><strong>Datatjänst
+Användning av leverantör (DSP)</strong></h2>
+<p>Hamnorganisationen kan använda extern datatjänstleverantör
+(DSP) implementering av teknisk gränssnittsintegration och NEMO-data
+tillämpas på organisationens vägnar.</p>
+<blockquote>
+<p>DSP kommer alltid att fungera som en tjänsteleverantör som godkänts av hamnorganisationen.
+DSP har inte automatiskt tillgång till hamnorganisationen
+data i Nemo och DSP kan inte begära eller bilda sig själv
+Portorganisation API symboler.</p>
+</blockquote>
+<p>Om en hamnorganisation använder DSP ska hamnorganisationen</p>
+<ul>
+<li><p>registreras i Nemo</p></li>
+<li><p>fastställa nödvändig API för dess organisation, och
+För detta ändamål, bilda ett klient-ID och en krypteringsnyckel (klient)
+Hemlighet)</p></li>
+<li><p>tillhandahålla lämpliga API-koder till den DSP som den använder.
+Säkert</p></li>
+<li><p>säkerställa att symbolerna upprätthålls, förnyas och vid behov
+deras borttagning;</p></li>
+</ul>
+<p>DSP använder gränssnittet med portorganisationskoderna
+agera på uppdrag av denna organisation. Ansvar för API-anslutning
+och hanteringen av associerade symboler kvarstår:
+hamnorganisationen.</p>
+<blockquote>
+<p>Om Kundhemligheten försvinner, upptäcks eller DSP avslutas,
+hamnorganisationen måste förnya eller ta bort API-anslutningskoderna.
+Nemo.</p>
+</blockquote>
+<h2 id="asiakastunniste-ja-salausavain">Kund-ID och
+kryptering nyckel</h2>
+<p><strong>Kund-ID</strong>identifiera en organisation som:
+Använd API. Tryck för att ansluta<strong>Skapa
+Anslutning.</strong>Anslutningen kan inte ändras manuellt.</p>
+<p><strong>Krypteringsnyckel</strong>som ett hemligt nyckelpar
+tillsammans med kund-ID. Den används för API inbjudningar
+för autenticitet.</p>
+<p>Om krypteringsnyckeln går förlorad, läckt eller kompromissat,
+API-länken måste tas bort och återupprättas och skapa en ny
+Krypteringsnyckeln.</p>
+<h3 id="milloin-tarvitaan-uusi-salausavain">När nya
+Krypteringsnyckeln?</h3>
+<p>En ny krypteringsnyckel ska skapas till exempel i följande situationer:</p>
+<ul>
+<li><p>ändra integrationssystemet eller servern inom organisationen,
+Använda API-anslutning</p></li>
+<li><p>den nuvarande krypteringsnyckeln har försvunnit eller inte längre finns
+Systemsystem</p></li>
+<li><p>misstänkt att krypteringsnyckeln har upptäckts eller
+missbruk;</p></li>
+<li><p>API-anslutning tas bort och återskapas (t.ex. konfiguration
+(Se avsnitt 4.4)</p></li>
+</ul>
+<h2 id="näin-otat-käyttöön-kansallisen-api-ilmoittajarajapinnan">Som detta
+Möjliggöra nationella API-rapporteringsgränser</h2>
+<ul>
+<li><p>öppnar från huvudmenyn<strong>Menymenyn</strong>och välja
+<strong>Business Maintenance</strong></p></li>
+<li><p>Öppet öppet<strong>API tab</strong></p></li>
+<li><p>Presspress<strong>Skapa en anslutning</strong></p></li>
+<li><p>API-anslutning skapad och information (Kund ID och krypteringsnyckel)
+synlig synlig</p></li>
+</ul>
+<h2 id="näin-uusit-salausavaimen-kansalliselle-api-rajapinnalle">Som detta
+ny krypteringsnyckel till det nationella API-gränssnittet</h2>
+<ul>
+<li><p>Öppet öppet<strong>API tab</strong>.</p></li>
+<li><p>Välj välja<strong>Skapa en ny krypteringsnyckel</strong></p></li>
+<li><p>Presspress<strong>Spara</strong>när förändringar har gjorts.</p></li>
+</ul>
+<h2 id="kansallisen-api-rajapinnan-poistaminen">National
+Ta bort API-gränssnitt</h2>
+<p>Om ett nationellt API-gränssnitt inte längre är nödvändigt,
+Den kan tas bort av organisationens huvudanvändare. Efter borttagning
+Att skicka meddelanden via API är inte framgångsrikt, så organisationen måste:
+införa ett annat läge (gränssnitt eller
+RIM-gränssnitt).</p>
+<h3 id="näin-poistat-kansallisen-api-rajapinnan">Ta bort
+National API-gränssnitt</h3>
+<ul>
+<li><p>Öppet öppet<strong>API tab</strong></p></li>
+<li><p>Presspress<strong>Ta bort gränssnitt</strong></p></li>
+<li><p>bekräfta borttagning av API</p></li>
+</ul>
+</main>
+</body>
+</html>

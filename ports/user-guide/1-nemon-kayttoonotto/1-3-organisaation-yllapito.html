@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>1.3 Organisaation ylläpito</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="1-3-organisaation-yllapito.sv.html">Svenska</a> | <a href="1-3-organisaation-yllapito.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">1.3 Organisaation ylläpito</h1>
+</header>
+<h1 id="organisaation-ylläpito">1.3 Organisaation ylläpito</h1>
+<p>Organisaation ylläpito on keskitetty näkymä selainkäyttöliittymässä,
+jossa hallitaan organisaatioon liittyviä tietoja, käyttäjiä, oikeuksia
+sekä teknisiä ja operatiivisia yhteyksiä muihin toimijoihin ja
+järjestelmiin.</p>
+<p>Pääkäyttäjä (admin) voi tarkastella ja päivittää seuraavia tietoja ja
+asetuksia:</p>
+<table>
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Välilehti</strong></td>
+<td><strong>Toiminnot</strong></td>
+</tr>
+<tr>
+<td><strong>Organisaatio</strong></td>
+<td>Päivitä perustiedot: nimi, yhteystiedot ja tunnisteet</td>
+</tr>
+<tr>
+<td><strong>Käyttäjät</strong></td>
+<td>Kutsu uusia käyttäjiä ja hallitse käyttöoikeuksia.</td>
+</tr>
+<tr>
+<td><strong>Käyttöoikeusryhmät</strong></td>
+<td>Luo ja hallitse oikeuksia ryhmäkohtaisesti.</td>
+</tr>
+<tr>
+<td><strong>Kansallinen satama-API</strong></td>
+<td>Määritä ja hallitse rajapintayhteyttä järjestelmien välillä.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="käyttöedellytykset">Käyttöedellytykset</h2>
+<p>Organisaation ylläpito on käytettävissä, kun olet kirjautunut Nemoon
+ja valinnut organisaatiotilin (jos useita) ja sinulla on organisaation
+pääkäyttäjän (admin) käyttöoikeudet.</p>
+<p>Organisaation pääkäyttäjät vastaavat siitä, että organisaation tiedot
+ja käyttöoikeudet ovat aina ajantasaisia. Nemo ei automaattisesti
+tunnista virheellisiä tai vanhentuneita tietoja eikä ilmoita niistä
+käyttäjälle.</p>
+<p>Organisaatiotiedot sisältyvät osaksi satamakäynnin ilmoitusten (MAI)
+otsikkotietoja. Virheelliset tai puutteelliset tiedot voivat aiheuttaa
+ongelmia ilmoitusten vastaanotossa tai käsittelyssä viranomaisten
+toimesta.</p>
+<h2 id="section"></h2>
+<h2 id="näin-siirryt-organisaation-ylläpitoon">Näin siirryt
+organisaation ylläpitoon</h2>
+<ul>
+<li><p>avaa päävalikosta <strong>Menu-valikko</strong> <em>(desktopissa
+oikea yläkulma, mobiilissa oikea alakulma) j</em>a valitse
+<strong>Organisaation ylläpito</strong></p></li>
+<li><p>näet oletuksena <strong>Organisaatio</strong>-näkymän. Siirry eri
+ylläpitonäkymien välillä tarkastellaksesi organisaation tietoja,
+käyttäjiä, käyttöoikeusryhmiä ja rajapintayhteyksiä</p></li>
+</ul>
+<h1 id="muokkaa-organisaation-tietoja">Muokkaa organisaation
+tietoja</h1>
+<p>Tiedot tukevat käyttäjien tunnistamista ja oikeuksien hallintaa,
+yhteydenpitoa ja viranomaisviestintää sekä organisaatiokohtaista
+raportointia ja seurantaa.</p>
+<h2 id="organisaation-yhteyshenkilö">Organisaation yhteyshenkilö</h2>
+<p>Organisaatiolle on valittu yhteyshenkilö, joka toimii virallisena
+kontaktina viranomaisasioinnissa. Yhteyshenkilö:</p>
+<ul>
+<li><p>vastaanottaa Nemosta sähköpostiviestejä esimerkiksi silloin, kun
+aluksen todistuksen voimassaolo on päättynyt tai satamakäynnin
+ilmoituksessa ilmenee poikkeama, joka vaatii toimenpiteitä</p></li>
+<li><p>yhteyshenkilön tiedot tallentuvat lähetetylle ilmoitukselle
+otsikkotietona (MAI)</p></li>
+</ul>
+<h2 id="näin-muokkaat-organisaation-tietoja">Näin muokkaat organisaation
+tietoja</h2>
+<ul>
+<li><p>avaa päävalikosta <strong>Menu-valikko</strong> ja valitse
+<strong>Yrityksen ylläpito</strong></p></li>
+<li><p>tarkastele ja muokkaa tarvittavia tietoja
+<strong>Organisaatio-välilehdellä</strong></p></li>
+<li><p>paina <strong>Tallenna</strong>, kun muutokset on tehty</p></li>
+<li><p>näet, että organisaation tiedot ovat tallentuneet</p></li>
+</ul>
+<h1 id="käyttäjien-ylläpito">Käyttäjien ylläpito</h1>
+<p>Pääkäyttäjä voi lisätä ja poistaa käyttäjiä, muuttaa heidän roolejaan
+ja käyttöoikeusryhmiään sekä määrittää, kuka toimii organisaation
+yhteyshenkilönä. Yhteyshenkilön tiedot tallentuvat automaattisesti
+osaksi lähetettyjen satamakäynti-ilmoitusten (MAI) otsikkotietoja. Pidä
+käyttäjä- ja yhteyshenkilötiedot aina ajan tasalla ennen ilmoitusten
+lähettämistä.</p>
+<h2 id="käyttäjätyypit">Käyttäjätyypit</h2>
+<p>Jokaiselle organisaation käyttäjälle valitaan jompikumpi kahdesta
+käyttäjätyypistä:</p>
+<ul>
+<li><p><strong>Pääkäyttäjä (admin)</strong> — ylläpitää organisaation
+tietoja, käyttäjiä, käyttöoikeusryhmiä ja rajapintayhteyksiä. Näkee,
+lisää, muokkaa ja poistaa tietoa käyttöoikeusryhmänsä mukaisesti.
+Suositeltavaa on, että organisaatiossa on vähintään kaksi pääkäyttäjää
+toiminnan jatkuvuuden varmistamiseksi.</p></li>
+<li><p><strong>Jäsen (basic)</strong> — näkee, lisää, muokkaa ja poistaa
+tietoa käyttöoikeusryhmänsä mukaisesti.</p></li>
+</ul>
+<h2 id="käyttäjätiedot">Käyttäjätiedot</h2>
+<p>Jokaisesta käyttäjästä tallennetaan seuraavat tiedot:</p>
+<table>
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Tieto</strong></td>
+<td><strong>Kuvaus</strong></td>
+</tr>
+<tr>
+<td><strong>Nimi</strong></td>
+<td>Tulee automaattisesti Suomi.fi-tunnistautumispalvelusta käyttäjän
+liittymisen yhteydessä. Nimeä ei voi muokata Nemossa.</td>
+</tr>
+<tr>
+<td><strong>Sähköposti</strong></td>
+<td>Vastaa käyttäjän liittymisen yhteydessä antamaa sähköpostiosoitetta.
+Käytetään kutsujen ja ilmoitusviestien lähettämiseen.</td>
+</tr>
+<tr>
+<td><strong>Käyttäjätyyppi</strong></td>
+<td><p><strong>Admin</strong> = Pääkäyttäjä, jolla on oikeudet
+organisaation hallintaan. Voidaan valita yhteyshenkilöksi.</p>
+<p><strong>Basic</strong> = Tavallinen käyttäjä, joka voi tarkastella ja
+käsitellä tietoja käyttöoikeusryhmänsä mukaisesti.</p></td>
+</tr>
+<tr>
+<td><strong>Käyttöoikeusryhmä</strong></td>
+<td><p><strong>ReadWriteAll</strong> = Täydet luku- ja muokkausoikeudet
+kaikkiin organisaation hallinnoimiin tietoihin.</p>
+<p><strong>PUBLIC</strong> = Vain julkiset tiedot nähtävissä, ei
+muokkausoikeuksia.</p>
+<p><strong>Omat ryhmät</strong> = Organisaatiokohtaiset ryhmät, jotka
+ylläpitäjä voi määrittää tarpeen mukaan. Suositeltavaa, että jokainen
+organisaatio luo omat käyttöoikeusryhmiä käyttäjäkohtaisten
+tiedonsaantioikeuksien mukaisesti.</p></td>
+</tr>
+<tr>
+<td><strong>Odottaa käsittelyä</strong></td>
+<td>Käyttäjä on kutsuttu organisaatioon, mutta ei ole vielä hyväksynyt
+kutsua tai viimeistellyt liittymistä.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="käyttäjän-kutsuminen-organisaatioon">Käyttäjän kutsuminen
+organisaatioon</h2>
+<p>Pääkäyttäjä voi kutsua uuden käyttäjän organisaatioon antamalla
+käyttäjätyypin, sähköpostiosoitteen ja käyttöoikeusryhmän. Kutsun
+lähettämisen jälkeen käyttäjä vastaanottaa sähköpostiin linkin
+organisaatioon liittymistä varten.</p>
+<p>Käyttäjällä on käyttöoikeus vain niihin organisaatioihin, joihin
+hänet on erikseen kutsuttu — vaikka hän olisi jo käyttäjänä Nemossa.</p>
+<h3 id="näin-kutsut-käyttäjän-organisaatioon">Näin kutsut käyttäjän
+organisaatioon</h3>
+<ul>
+<li><p>valitse <strong>Kutsu käyttäjä</strong></p></li>
+<li><p>täytä käyttäjätyyppi, käyttöoikeusryhmä ja sähköpostiosoite (tai
+osoitteet)</p></li>
+<li><p>paina <strong>Kutsu</strong></p></li>
+<li><p>saat ilmoituksen, joka vahvistaa kutsun lähettämisen</p></li>
+</ul>
+<h2 id="käyttäjätyypin-muuttaminen">Käyttäjätyypin muuttaminen</h2>
+<p>Pääkäyttäjä voi muuttaa omaa tai muiden käyttäjien käyttäjätyyppiä.
+Käyttäjätyyppiä ei voida muuttaa, jos kyseessä on organisaation ainoa
+pääkäyttäjä.</p>
+<p>Käyttäjätyypin muuttuessa myös käyttöoikeudet muuttuvat. Jos muutat
+oman tyyppisi jäseneksi, et voi enää ylläpitää organisaatiota.</p>
+<h3 id="näin-muutat-käyttäjätyyppiä">Näin muutat käyttäjätyyppiä</h3>
+<ul>
+<li><p>valitse käyttäjä ja muuta käyttäjätyyppiä
+alasvetovalikosta</p></li>
+<li><p>saat ilmoituksen, joka vahvistaa käyttäjätyypin
+päivityksen</p></li>
+</ul>
+<h2 id="käyttöoikeusryhmän-muuttaminen">Käyttöoikeusryhmän
+muuttaminen</h2>
+<p>Pääkäyttäjä voi muuttaa omaa tai muiden käyttäjien
+käyttöoikeusryhmää. Käyttöoikeusryhmä määrittää, mihin tietoihin
+käyttäjällä on pääsy.</p>
+<h3 id="näin-muutat-käyttäjän-käyttöoikeusryhmää">Näin muutat käyttäjän
+käyttöoikeusryhmää</h3>
+<ul>
+<li><p>valitse käyttäjä ja muuta käyttöoikeusryhmä
+alasvetovalikosta</p></li>
+<li><p>saat viestin, joka vahvistaa käyttäjätietojen
+päivityksen</p></li>
+</ul>
+<h2 id="käyttäjän-poistaminen-organisaatiosta">Käyttäjän poistaminen
+organisaatiosta</h2>
+<p>Pääkäyttäjä voi poistaa käyttäjän organisaatiosta. Poistetun
+käyttäjän pääsy organisaation tilille päättyy välittömästi.</p>
+<h3 id="näin-poistat-käyttäjän">Näin poistat käyttäjän</h3>
+<ul>
+<li><p>valitse käyttäjä ja paina poistamispainiketta</p></li>
+<li><p>vahvista poisto</p></li>
+<li><p>saat viestin, joka vahvistaa käyttäjän poistamisen</p></li>
+</ul>
+<h2 id="poistuminen-organisaatiosta">Poistuminen organisaatiosta</h2>
+<p>Pääkäyttäjä voi poistaa itsensä organisaatiosta. Tämä poistaa kaikki
+oikeudet kyseiseen organisaatioon, mukaan lukien ylläpito-oikeudet.
+<strong>Poistuminen ei onnistu, jos olet organisaation ainoa
+pääkäyttäjä.</strong></p>
+<p>Poistuminen tapahtuu samalla tavalla kuin muiden käyttäjien
+poistaminen: valitse oma nimesi käyttäjälistalta ja seuraa ohjeita
+kohdassa <strong>Käyttäjän poistaminen organisaatiosta</strong>.</p>
+<h1 id="käyttöoikeusryhmien-ylläpito">Käyttöoikeusryhmien ylläpito</h1>
+<p>Käyttöoikeusryhmä määrittää, mitä tietoja ja toimintoja käyttäjä voi
+käyttää Nemossa ja millä laajuudella. Jokaiselle käyttäjälle valitaan
+käyttöoikeusryhmä, kun hänet kutsutaan organisaatioon.</p>
+<p>Käyttöoikeusryhmiä on kahdenlaisia:</p>
+<ul>
+<li><p><strong>Omat käyttöoikeusryhmät</strong> — organisaation
+pääkäyttäjä voi luoda, muokata ja poistaa näitä ryhmiä tarpeen
+mukaan.</p></li>
+<li><p><strong>Yleiset käyttöoikeusryhmät</strong> — esimääritellyt
+ryhmät, jotka ovat heti käytettävissä ja voidaan liittää suoraan
+käyttäjille. Ei voida poistaa.</p></li>
+</ul>
+<p>Siirry <strong>Käyttöoikeusryhmät</strong>-välilehdelle Yrityksen
+ylläpidossa.</p>
+<h2 id="yleiset-käyttöoikeusryhmät">Yleiset käyttöoikeusryhmät</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 46%"/>
+<col style="width: 53%"/>
+</colgroup>
+<thead>
+<tr>
+<th><strong>Nimi</strong></th>
+<th><strong>Sisältää</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Julkiset satamakäyntitiedot</td>
+<td>Käyttäjä voi hakea ja tarkastella aluksia niiden saapumis- ja
+lähtöaikojen perusteella Julkiset satamakäyntitiedot -näkymässä.</td>
+</tr>
+<tr>
+<td>Lue ilmoituksia, lähetä delegoidut ilmoitukset</td>
+<td style="text-align: left;"><p>Käyttäjä voi:</p>
+<ul>
+<li><p>tarkastella alusten satamakäyntien tietoja (ilmoituksia ja
+alusten tietoja).</p></li>
+<li><p>lähettää ilmoittajaorganisaatiolta vastaanottamiaan delegoituja
+ilmoituksia (WAR, ATA, ATD).</p></li>
+<li><p>lähettää sataman tilastotietoja API-rajapinnan kautta.</p></li>
+</ul>
+<blockquote>
+<p>Tilastojen lähettäminen käsitellään luvussa <a href="../4-satamien-tilastoilmoittaminen/4-1-tilastoilmoittaminen.html">4.1
+Tilastoilmoittaminen</a></p>
+</blockquote></td>
+</tr>
+<tr>
+<td>Lue ilmoituksia</td>
+<td style="text-align: left;"><p>Käyttäjä voi:</p>
+<ul>
+<li><p>tarkastella alusten satamakäyntien tietoja (ilmoituksia ja
+alusten tietoja).</p></li>
+<li><p>lähettää sataman tilastotietoja API-rajapinnan kautta.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="näin-luot-oman-käyttöoikeusryhmän">Näin luot oman
+käyttöoikeusryhmän</h2>
+<ul>
+<li><p>paina <strong>Luo käyttöoikeusryhmä</strong></p></li>
+<li><p>täytä ryhmän nimi ja valitse käyttöoikeudet</p></li>
+<li><p>paina <strong>Tallenna</strong></p></li>
+<li><p>Näet luodun käyttöoikeusryhmän</p></li>
+</ul>
+<h2 id="näin-muokkaat-omaa-käyttöoikeusryhmää">Näin muokkaat omaa
+käyttöoikeusryhmää</h2>
+<ul>
+<li><p>valitse oma käyttöoikeusryhmä</p></li>
+<li><p>muokkaa ryhmän nimeä ja/tai valittuja käyttöoikeuksia</p></li>
+<li><p>paina <strong>Tallenna</strong></p></li>
+<li><p>näet, että käyttöoikeusryhmä on päivitetty</p></li>
+</ul>
+<h2 id="näin-poistat-oman-käyttöoikeusryhmän">Näin poistat oman
+käyttöoikeusryhmän</h2>
+<ul>
+<li><p>valitse poistettava oma käyttöoikeusryhmä</p></li>
+<li><p>paina poistamispainiketta</p></li>
+<li><p>vahvista poisto</p></li>
+<li><p>näet, että käyttöoikeusryhmä on poistettu eikä se enää näy
+listassa</p></li>
+<li><p>tarkasta käyttäjien käyttöoikeusryhmä, mikäli juuri poistettu
+ryhmä on poistunut käyttäjältä</p></li>
+</ul>
+<h1 id="kansallisen-satama-api-rajapinnan-käyttö">Kansallisen satama
+API-rajapinnan käyttö</h1>
+<p>Kansallinen satama API-rajapinta mahdollistaa satamakäynteihin
+liittyvien ilmoitusten tarkastelun, lähettämisen Nemoon, ilmoitusten
+vastaanottamisen sekä satama statistiikan välittämiseen viranomaisille.
+Rajapinta hyödyntää REST-protokollaa ja JSON-formaattia.</p>
+<p>Käyttöönottoon tarvitset:</p>
+<ul>
+<li><p><strong>Organisaatiotilin Nemossa</strong></p></li>
+<li><p><strong>Pääkäyttäjän oikeudet</strong>, jotta pääset
+API-välilehdelle</p></li>
+<li><p>API tiedot, tunnistautumista varten</p></li>
+</ul>
+<p><strong>Satama-API</strong></p>
+<p>Valitse satama-API, kun organisaatiosi on satamatoimija, joka valvoo
+ja hallinnoi satama-alueen toimintaa. Rajapinnan avulla voit ladata
+tilastotietoja sekä hakea saapumis-, lähtemis- sekä alustietoja
+REST-protokollaa hyödyntäen.</p>
+<p>Siirry sanomaoppaan teknisiin Port API -ohjeisiin: <a href="https://fintraffic-vts.github.io/mnsw/port/openapi.html">Integroi
+Suomen Maritime Single Window -palveluun (NEMO) – National API - Port
+API</a></p>
+<h2 id="data-service-providerin-dsp-käyttö"><strong>Data Service
+Providerin (DSP) käyttö</strong></h2>
+<p>Satamaorganisaatio voi käyttää ulkopuolista Data Service Provideria
+(DSP) teknisen rajapintaintegraation toteuttamiseen ja NEMOn tietojen
+hakemiseen organisaation puolesta.</p>
+<blockquote>
+<p>DSP toimii aina satamaorganisaation valtuuttamana palveluntarjoajana.
+DSP:lle ei muodosteta automaattisesti omaa pääsyä satamaorganisaation
+tietoihin Nemossa, eikä DSP voi itse pyytää tai muodostaa
+satamaorganisaation API-tunnuksia.</p>
+</blockquote>
+<p>Jos satamaorganisaatio käyttää DSP:tä, satamaorganisaation tulee:</p>
+<ul>
+<li><p>olla rekisteröitynä Nemoon</p></li>
+<li><p>ottaa käyttöön organisaatiolleen tarvittava API-yhteys ja
+muodostaa sitä varten asiakastunniste (Client ID) ja salausavain (Client
+Secret)</p></li>
+<li><p>toimittaa tarvittavat API-tunnukset käyttämälleen DSP:lle
+turvallisella tavalla</p></li>
+<li><p>huolehtia tunnusten ylläpidosta, uusimisesta ja tarvittaessa
+niiden poistamisesta</p></li>
+</ul>
+<p>DSP käyttää rajapintaa satamaorganisaatiolle myönnetyillä tunnuksilla
+ja toimii tällöin kyseisen organisaation puolesta. Vastuu API-yhteyden
+ja siihen liittyvien tunnusten hallinnasta säilyy
+satamaorganisaatiolla.</p>
+<blockquote>
+<p>Jos Client Secret katoaa, paljastuu tai DSP:n käyttö päättyy,
+satamaorganisaation tulee uusia tai poistaa API-yhteyden tunnukset
+Nemossa.</p>
+</blockquote>
+<h2 id="asiakastunniste-ja-salausavain">Asiakastunniste ja
+salausavain</h2>
+<p><strong>Asiakastunniste</strong> tunnistaa organisaation, joka
+käyttää API-yhteyttä. Muodosta yhteys painamalla <strong>Luo
+yhteys.</strong> Yhteyttä ei voi muuttaa manuaalisesti.</p>
+<p><strong>Salausavain</strong> toimii kuten salainen avainpari
+asiakastunnisteen rinnalla. Sitä käytetään API-kutsujen
+autentikointiin.</p>
+<p>Jos salausavain katoaa, vuotaa tai sen turvallisuus vaarantuu,
+API-yhteys on poistettava ja luotava uudelleen, jolloin muodostuu uusi
+salausavain.</p>
+<h3 id="milloin-tarvitaan-uusi-salausavain">Milloin tarvitaan uusi
+salausavain?</h3>
+<p>Uusi salausavain on luotava esimerkiksi seuraavissa tilanteissa:</p>
+<ul>
+<li><p>organisaatiossa vaihdetaan integraatiojärjestelmä tai palvelin,
+joka käyttää API-yhteyttä</p></li>
+<li><p>nykyinen salausavain on kadonnut tai sitä ei enää löydy
+järjestelmästä</p></li>
+<li><p>epäillään, että salausavain on paljastunut tai
+väärinkäytös</p></li>
+<li><p>API-yhteys poistetaan ja luodaan uudelleen (esim. konfiguraation
+muutosten vuoksi)</p></li>
+</ul>
+<h2 id="näin-otat-käyttöön-kansallisen-api-ilmoittajarajapinnan">Näin
+otat käyttöön kansallisen API-ilmoittajarajapinnan</h2>
+<ul>
+<li><p>avaa päävalikosta <strong>Menu-valikko</strong> ja valitse
+<strong>Yrityksen ylläpito</strong></p></li>
+<li><p>avaa <strong>API-välilehti</strong></p></li>
+<li><p>paina <strong>Luo yhteys</strong></p></li>
+<li><p>API-yhteys luotu ja tiedot (Asiakastunniste ja Salausavain)
+näkyvät</p></li>
+</ul>
+<h2 id="näin-uusit-salausavaimen-kansalliselle-api-rajapinnalle">Näin
+uusit salausavaimen kansalliselle API-rajapinnalle</h2>
+<ul>
+<li><p>avaa <strong>API-välilehti</strong>.</p></li>
+<li><p>valitse <strong>Luo uusi salausavain</strong></p></li>
+<li><p>paina <strong>Tallenna</strong>, kun muutokset on tehty.</p></li>
+</ul>
+<h2 id="kansallisen-api-rajapinnan-poistaminen">Kansallisen
+API-rajapinnan poistaminen</h2>
+<p>Jos kansallinen API-rajapintayhteys ei ole enää tarpeen,
+organisaation pääkäyttäjä voi poistaa sen. Poistamisen jälkeen
+ilmoitusten lähettäminen API:n kautta ei onnistu, joten organisaation on
+otettava käyttöön jokin toinen käyttötapa (käyttöliittymä tai
+RIM-rajapinta).</p>
+<h3 id="näin-poistat-kansallisen-api-rajapinnan">Näin poistat
+kansallisen API-rajapinnan</h3>
+<ul>
+<li><p>avaa <strong>API-välilehti</strong></p></li>
+<li><p>paina <strong>Poista rajapintayhteys</strong></p></li>
+<li><p>vahvista API:n poistaminen</p></li>
+</ul>
+</main>
+</body>
+</html>

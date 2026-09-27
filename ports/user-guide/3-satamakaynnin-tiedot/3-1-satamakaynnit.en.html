@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.1 Port calls</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+
+    .icon-legend {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.75rem 0 0;
+    }
+    .icon-legend li {
+      margin: 0.8rem 0;
+    }
+    .icon-legend li p {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .icon-legend li img {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+      flex: 0 0 1.5rem;
+      object-fit: contain;
+      margin-top: 0.1rem;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Language: <a href="3-1-satamakaynnit.html">Suomi</a> | <a href="3-1-satamakaynnit.sv.html">Svenska</a> | <strong>English</strong></p>
+<p class="user-guide-back-link"><a href="../index-en.html">← Back to Port user guide table of contents</a></p>
+<header id="title-block-header">
+<h1 class="title">3.1 Port calls</h1>
+</header>
+<p class="heading" id="satamakäynnit"><strong>3.1
+Port calls</strong></p>
+<p>Port call brings together Finland's port or anchorage
+information on the arrival of the incoming vessel,
+Being and leaving.</p>
+<p>View your port (UN / LOCODE code)
+Port calls. Port calls appear
+In the <strong>Port calls</strong> view where you move to the main menu
+<strong>Port calls</strong> selection.</p>
+<p class="heading" id="satamakäyntien-tarkastelu">Port calls
+Review</p>
+<p>You can view the Port calls of your port either:
+<strong>cards</strong> or <strong>listed</strong>. Change
+display mode at the top of the <strong>Port calls</strong> view
+buttons.</p>
+<p>The list shows the same period of Port calls
+Table format. The list shows the same basic information as:
+in the card view as well as the port call identifier, namely <strong>Visit
+ID</strong> and the port call status.</p>
+<p>Open your Port call details by pressing card or list
+lines.</p>
+<p class="heading" id="satamakäynnistä-näytettävät-tiedot">To be shown at the port
+information</p>
+<p>The Port call shows:</p>
+<ul>
+<li><p>name of vessel and IMO number to be shown after name
+locks</p></li>
+<li><p>port as UN / LOCODE code</p></li>
+<li><p>the part of the port and / or berth, if indicated;</p></li>
+<li><p>ETA – Estimated Time of Arrival</p></li>
+<li><p>ETD – Estimated Time of Departure</p></li>
+<li><p>to whom the delegated - is displayed if the reporting responsibility for a Port call is
+transferred to another organisation</p></li>
+<li><p>certain notifications of Port calls and advance information;
+confirmation in icons. The icons indicate the following notifications:
+on strengthening:</p>
+<ul class="icon-legend">
+<li><p><img alt="" src="media/image.png" style="width:0.40625in;height:0.40625in"/>HZA - Dangerous goods declaration on arrival.</p></li>
+<li><p><img alt="" src="media/image2.png" style="width:0.40625in;height:0.40625in"/>- SEC, which means port call is
+SEC declaration (declaration of security).</p></li>
+<li><p><img alt="" src="media/image3.png" style="width:0.42708in;height:0.42708in"/>- MDH, which means the port call is
+MDH declaration issued (ship health declaration).</p></li>
+<li><p><img alt="" src="media/image4.png" style="width:0.36458in;height:0.36458in"/>- The SSA, the port call is
+SSA declaration issued (Ship to ship operation).</p></li>
+<li><p><img alt="" src="media/image5.png" style="width:0.40625in;height:0.40625in"/>- the arrow icon of arrival -
+reports on confirmation of arrival. When Icon Background
+is green, the Declarant (the organisation that created the Port call) is
+confirmed that all known information related to the arrival of the vessel:
+advance information and notifications have been provided;</p></li>
+<li><p><img alt="" src="media/image6.png" style="width:0.39583in;height:0.39583in"/>- arrow icon of departure - tells
+confirmation of the departure. When the icon has a green background,
+the Declarant (the organisation that created the Port call) has confirmed that:
+all known pre-departure data; and
+notifications have been made.</p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>If the arrow icon is grey, this confirmation of the preliminary data is not confirmed.
+has not yet been done.</p>
+</blockquote>
+<p class="heading" id="satamakäynnin-tila">Port call status</p>
+<p>The status of the Port call indicates the stage of the Port call:</p>
+<ul>
+<li><p><strong>Unconfirmed arrival</strong>- the ship has been created
+Port call.</p></li>
+<li><p><strong>Estimated arrival</strong>- the arrival of the vessel;
+prior information has been provided.</p></li>
+<li><p><strong>Port</strong>- the actual arrival of the vessel is:
+notified.</p></li>
+<li><p><strong>Left</strong>- the actual departure of the vessel shall be:
+notified.</p></li>
+<li><p><strong>Cancelled</strong>- the port call has been cancelled.</p></li>
+</ul>
+<blockquote>
+<p>Port calls in <strong>Cancelled</strong> mode are not visible
+default in view. You can see them through filtering.</p>
+</blockquote>
+<p class="heading" id="erityistapaus-proomut-hinaajat-ja-puskijat">Special case: barges,
+Tugs and bushes</p>
+<p>Barges, tugs and buffers are reported separately in NEMO
+vessels. Consequently, several separate transport operations may be linked to the same transport.
+Port calls.</p>
+<p>Check the information on each vessel from its own Port call. Barn
+the cargo transported is shown on the barge's Port call, not by the tug or buggy
+at the port.</p>
+<p class="heading" id="satamakäyntien-suodattaminen">Port calls
+filtration</p>
+<p>You can limit Port calls by switching periods or using
+more detailed search conditions.</p>
+<p>If Port calls do not show as expected, check the selected time period and
+in use filters.</p>
+<p class="heading" id="ajanjakson-valitseminen"><strong>Period
+selection</strong></p>
+<p>By default, Port calls are shown from day 6
+days ahead. If there are no port calls, you'll see the announcement.
+Your organization has no Port calls.</p>
+<p>If you choose a long period of time, downloading Port calls may:
+lasts longer than usual.</p>
+<p class="heading" id="tarkemmat-hakuehdot"><strong>Further details
+Application conditions</strong></p>
+<p>The more detailed filter opens at the top right angle button of the view.</p>
+<p>In the opening filter view you can:</p>
+<ul>
+<li><p>switch to a specific port operation by entering a Port call;
+ID or Visit ID</p></li>
+<li><p>limit Port calls to be displayed with different data such as:</p>
+<ul>
+<li><p>vessel name or identifier, i.e. IMO number, Call Sign or
+MMSI number</p></li>
+<li><p>port, i.e. UN / LOCODE or city name</p></li>
+<li><p>start or end of Port call;</p></li>
+<li><p>Port call status;</p></li>
+<li><p>confirmation of arrival or departure data;</p></li>
+<li><p>notification sent to port</p></li>
+<li><p>arrival or departure traffic, i.e. domestic or foreign
+Transport</p></li>
+</ul></li>
+</ul>
+</main>
+</body>
+</html>

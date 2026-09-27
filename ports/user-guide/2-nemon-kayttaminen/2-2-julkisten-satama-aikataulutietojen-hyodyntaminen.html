@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>2.2 Julkisten satama-aikataulutietojen hyödyntäminen</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    #title-block-header {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    main.user-guide-page table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page table,
+      main.user-guide-page table tbody,
+      main.user-guide-page table tr,
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main.user-guide-page table tr {
+        margin-bottom: 0.75rem;
+        border: 1px solid #d3dde8;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      main.user-guide-page table th,
+      main.user-guide-page table td {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        vertical-align: top;
+      }
+
+      main.user-guide-page table th:first-child,
+      main.user-guide-page table td:first-child {
+        font-weight: 600;
+        background: #f6f9fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Kieli / Språk / Language: <strong>Suomi</strong> | <a href="2-2-julkisten-satama-aikataulutietojen-hyodyntaminen.sv.html">Svenska</a> | <a href="2-2-julkisten-satama-aikataulutietojen-hyodyntaminen.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index.html">← Takaisin Sataman käyttöohjeen sisällysluetteloon</a></p>
+<header id="title-block-header">
+<h1 class="title">2.2 Julkisten satama-aikataulutietojen
+hyödyntäminen</h1>
+</header>
+<p class="heading" id="julkisten-satama-aikataulutietojen-hyödyntäminen"><strong>2.2
+Julkisten satama-aikataulutietojen hyödyntäminen</strong></p>
+<p>Suomen satamien julkiset aikataulutiedot ovat kaikkien saatavilla
+ilman sisäänkirjautumista Nemoon <strong>Siirry Saapumiset ja
+lähdöt</strong> -näkymässä.</p>
+<p>Satama-aikataulutiedot sisältävät tietoa alusten satamakäynneistä:
+arvioiduista ja toteutuneista saapumisista ja lähdöistä, alusten
+perustiedoista sekä satamakäynnin tilasta.</p>
+<p>Siirry julkisiin satama-aikataulutietoihin:</p>
+<ul>
+<li><p>avaa selain ja siirry osoitteeseen <a href="https://mnsw.mnsw.fi/home">mnsw.mnsw.fi</a></p></li>
+<li><p>Siirry päävalikosta Satamakäynnit-näkymään ja paina
+<strong>Siirry Saapumiset ja lähdöt -näkymään</strong></p></li>
+</ul>
+<p class="heading" id="suodata-listaa">Suodata listaa</p>
+<p>Aikataulunäkymässä on suodatintoiminto, jonka suodattimilla voit
+rajata näytettäviä satamakäyntejä:</p>
+<ul>
+<li><p><strong>Aluksen IMO-numero</strong> — kirjoitetaan
+syöttökenttään</p></li>
+<li><p><strong>Aluksen nimi</strong> — kirjoitetaan
+syöttökenttään</p></li>
+<li><p><strong>Satamakoodi</strong> — LOCODE-koodi</p></li>
+<li><p><strong>Satamakäynnin tila</strong> — valitaan ennalta
+määriteltyjen arvojen luettelosta</p>
+<ul>
+<li><p>Odotettu saapuvaksi</p></li>
+<li><p>Saapunut</p></li>
+<li><p>Lähtenyt</p></li>
+<li><p>Peruttu</p></li>
+</ul></li>
+<li><p><strong>ETA</strong> — Aluksen arvioitu saapumisaika, muodossa
+dd.mm.yyyy</p></li>
+<li><p><strong>ATA</strong> — Aluksen vahvistunut saapumisaika, muodossa
+dd.mm.yyyy</p></li>
+<li><p><strong>ETD</strong> — Aluksen arvioitu lähtöaika, muodossa
+dd.mm.yyyy</p></li>
+<li><p><strong>ATD</strong> — Aluksen vahvistunut lähtöaika, muodossa
+dd.mm.yyyy</p></li>
+</ul>
+<p class="heading" id="tulosten-lajittelu">Tulosten lajittelu</p>
+<p>Saapumis- ja lähtöluetteloissa on lajittelutoiminto. Tuloksia voi
+lajitella aakkosjärjestyksen, päivämäärien ja kellonaikojen mukaan
+nousevassa tai laskevassa järjestyksessä. Oletusarvoisesti luettelot
+järjestetään saapumis- tai lähtöajan mukaan nousevassa järjestyksessä —
+arvioitu tai todellinen, kumpi kulloinkin on voimassa.</p>
+<p class="heading" id="digitraffic-julkinen-rajapinta">Digitraffic
+julkinen rajapinta</p>
+<p>Meriliikenteen julkinen integraatiorajapinta (REST/JSON) julkaistaan
+Digitraffic-palvelun kautta. Rajapinta tarjoaa alla kuvatut tiedot
+Suomeen saapuvista ja lähtevistä aluksista, ja rajapinta on vapaasti
+hyödynnettävissä sidosryhmien erilaisiin käyttötarkoituksiin. Näin
+kaikilla toimijoilla on pääsy samoihin aikataulutietoihin riippumatta
+siitä, onko heillä käyttöoikeuksia Nemoon. Tämä tarkoittaa myös sitä,
+että oman organisaatiosi Nemoon ilmoittamat satamakäynnit välitetään
+Digitrafficille. Näin niistä tulee osa kaikille avointa satamaliikenteen
+aikataulutietoa.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 71%"/>
+</colgroup>
+<thead>
+<tr>
+<th><strong>Kategoria</strong></th>
+<th><strong>Tiedot</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alustiedot</strong></td>
+<td>IMO-numero, aluksen nimi</td>
+</tr>
+<tr>
+<td><strong>Satamakäyntitunnus</strong></td>
+<td>Yksilöivä satamakäyntitunnus (Visit ID)</td>
+</tr>
+<tr>
+<td><strong>Matkatiedot</strong></td>
+<td>Satamakoodi (LOCODE), arvioitu saapumisaika ETA (paikallinen),
+arvioitu lähtöaika ETD (paikallinen), todellinen saapumisaika ATA,
+todellinen lähtöaika ATD</td>
+</tr>
+<tr>
+<td><strong>Satamakäynnin tila</strong></td>
+<td>Odotettu saapuminen, saapunut, lähtenyt, peruttu</td>
+</tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>

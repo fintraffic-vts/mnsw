@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.11" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>3.2 Meddelanden</title>
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+<link href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" rel="stylesheet"/>
+<style>
+    body { margin: 0; }
+    main.user-guide-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      box-sizing: border-box;
+    }
+    .user-guide-lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .user-guide-back-link {
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+      font-weight: 600;
+    }
+
+    main.user-guide-page a:hover,
+    main.user-guide-page a:focus-visible {
+      text-decoration-thickness: 0.12em;
+    }
+
+    main.user-guide-page a:focus-visible {
+      outline: 2px solid #1d5fa7;
+      outline-offset: 2px;
+      border-radius: 0.15rem;
+    }
+
+    main.user-guide-page a[href^="http"]::after {
+      content: " ↗";
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      main.user-guide-page {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="user-guide-page">
+<p class="user-guide-lang-switch">Språk: <a href="3-2-ilmoitukset.html">Suomi</a> | <strong>Svenska</strong> | <a href="3-2-ilmoitukset.en.html">English</a></p>
+<p class="user-guide-back-link"><a href="../index-sv.html">← Tillbaka till hamnens användarguides innehållsförteckning</a></p>
+<header id="title-block-header">
+<h1 class="title">3.2 Meddelanden</h1>
+</header>
+<p class="heading" id="ilmoitukset">3.2 Meddelanden</p>
+<p>När ett anlöp har fastställts av rapporteringsorganisationen ska det omfatta:
+Informationen tillhandahålls genom anmälningsformaliteter, dvs. meddelanden. En
+deklarationen motsvarar en enda uppsättning data, såsom ankomst, avresa, last,
+eller besättningsregister.</p>
+<p>Granskningsmeddelanden relaterade till hamnverksamhet
+<strong>Anmälan</strong>- I utsikten. Visa öppnas när du väljer
+Din hamn eller hamnanlöp
+<strong>Anlöp</strong>- I utsikten.</p>
+<p>Hamnorganisationen lägger normalt inte till eller skickar ett anlöp
+anmälningar. Den anmälande organisationen får dock delegera till hamnen:
+Bearbetning av följande deklarationer:</p>
+<ul>
+<li><p><strong>WAR</strong> – Avfallskvitto vid ankomst</p></li>
+<li><p><strong>ATA</strong> – Faktisk ankomsttid</p></li>
+<li><p><strong>ATD</strong> – Faktisk avgångstid</p></li>
+</ul>
+<blockquote>
+<p>Delegationen ska endast gälla ett specifikt anlöp och dess delegerade
+anmälan. För andra anmälningar ska hamnen överväga:
+Information som skickas av rapporteringsorganisationen.</p>
+</blockquote>
+<p class="heading" id="satamakäynnin-ilmoitukset-näkymä">Anlöp
+Anmälningar Visa</p>
+<p>I meddelandevyn kan du se grundläggande information om anlöpet och
+relaterade meddelanden. Om en hamn har ett delegerat WAR, ATA eller
+ATD-meddelande, du kan också behandla den delegerade deklarationen här
+I sikte.</p>
+<p class="heading" id="satamakäynnin-tiedot">Anlöp information</p>
+<p>Följande visas på vänster sida av meddelandevyn:
+grundläggande information om hamnanrop, om så anges:</p>
+<ul>
+<li><p>anlöp identifierare, dvs. Besök ID</p></li>
+<li><p>Namn på fartyg</p></li>
+<li><p>Isklass etablerad i Finland</p></li>
+<li><p>Port eller UN / LOCODE-kod</p></li>
+<li><p>del av hamnen</p></li>
+<li><p>Kajplats</p></li>
+<li><p>ETA</p></li>
+<li><p>ETD</p></li>
+<li><p>tidigare hamn</p></li>
+<li><p>Nästa port</p></li>
+<li><p>En rapporteringsorganisation som har delegerat WAR, ATA eller ATD till hamnen.</p></li>
+</ul>
+<p>Det kan också finnas en kommentar om hamnverksamhet, till exempel:
+En indikation på det saknade eller föråldrade fartygscertifikatet.</p>
+<p class="heading" id="ilmoituskortti-ja-ilmoituksen-tila">Anmälningskort och deklaration
+läge</p>
+<p>Varje meddelande presenteras i sitt eget kort. Meddelandekort
+synlig:</p>
+<ul>
+<li><p>Förkortning av förklaringen</p></li>
+<li><p>namn på deklarationen</p></li>
+<li><p>Deklarationens tillstånd</p></li>
+<li><p>Tid eller skicka information</p></li>
+<li><p>tid för avsändande av den underrättelse som skickats eller den senaste;
+Uppdatera tid</p></li>
+<li><p>den organisation som skickade meddelandet.</p></li>
+</ul>
+<p>Hamnen granskar normalt de meddelanden som lämnats av rapporteringsorganisationen
+anmälningar. Ett delegerat WAR-, ATA- eller ATD-meddelandekort kan användas:
+Visa även följande utrymmen:</p>
+<ul>
+<li><p><strong>Sent</strong>Tidsfristen för anmälan ska vara:
+Avslutad</p></li>
+<li><p><strong>Draft</strong>anmälan är:
+på anlöp som utkast men ännu inte skickat</p></li>
+<li><p><strong>Sent</strong>Tillkännagivandet har skickats.</p></li>
+</ul>
+<p>Texten som visas på anmälningskortet anger när meddelandet ska:
+skicka eller när den skickades.</p>
+<p class="heading" id="satamakäynnillä-tarkasteltavat-ja-delegoitavat-ilmoitukset">Anlöp
+Anmälningar som ska beaktas och delegeras</p>
+<p>En del av anmälan av ett anlöp ges för alla anlöp och
+Del endast om den berörda informationen, funktionen eller villkoret:
+anlöp.</p>
+<p>Hamnorganisationen kan se sitt eget hamn- eller hamnområde
+för hamntjänster
+anmälningar. Anmälan tillhandahålls normalt av:
+rapporteringsorganisationen.</p>
+<p>Alla anlöp ska omfatta åtminstone följande:
+Förklaringar:</p>
+<ul>
+<li><p><strong>NOA</strong>Preliminära ankomstdata</p></li>
+<li><p><strong>DUE</strong>Fartygets mästare eller
+fairway avgift deklaration</p></li>
+<li><p><strong>ATA</strong> – Faktisk ankomsttid</p></li>
+<li><p><strong>NOD</strong> – Förhandsanmälan om avgång</p></li>
+<li><p><strong>ATD</strong> – Faktisk avgångstid</p></li>
+</ul>
+<p>Hamnen lägger normalt inte till, ändrar eller skickar meddelanden.
+Den anmälande organisationen får dock delegera till hamnen följande:
+Bearbetning av anmälningar:</p>
+<ul>
+<li><p><strong>WAR</strong>- Avfall kvitto vid ankomst</p></li>
+<li><p><strong>ATA</strong> – Faktisk ankomsttid</p></li>
+<li><p><strong>ATD</strong> – Faktisk avgångstid</p></li>
+</ul>
+<p>Delegationen ska endast gälla ett specifikt anlöp och dess delegerade
+anmälan. Hamnen kan inte hantera andra rapporteringsorganisationer
+ansvarsförklaringar.</p>
+<p class="heading" id="delegoidun-ata--ja-atd-ilmoituksen-edellytykset">DELEGATED ATA och
+Villkor för en ATD-deklaration</p>
+<p>Innan du skickar en delegerad ATA-meddelandekontroll som:
+Rapporteringsorganisationen har skickat till anlöpet:</p>
+<ul>
+<li><p>NOA-meddelande</p></li>
+<li><p>DUE Ad.</p></li>
+</ul>
+<p>Innan du skickar en delegerad ATD, kontrollera att:
+Rapporteringsorganisationen har skickat ett anlöp.
+En NOD annons.</p>
+<p>Den anmälande organisationen ska ansvara för att bekräfta ankomsten.
+NOA-meddelande och bekräftelse av avgång genom NOD-meddelande. ATA eller
+Delegationen av ATD överför inte validering till hamnen.</p>
+<p>När en hamn skickar ett meddelande ska hamnen svara:
+noggrannheten i den information som lagts till deklarationen. Kolla in information
+försiktigt före avsändning. Lägg inte till andra personuppgifter än
+de områden där de begärs separat.</p>
+<p>Efter att ha skickat meddelandet formar Nemo meddelandet
+Svaret. Inget separat erkännande av mottagande av myndigheten
+nödvändigtvis skicka.</p>
+<p>Mer detaljerade instruktioner för att fylla i de delegerade deklarationerna finns i WAR, ATA,
+och egna instruktioner för ATD.</p>
+<p class="heading" id="saapumisen-ja-lähdön-vahvistuksen-tarkistaminen">Inträde i kraft
+verifiering av avgångsbekräftelse</p>
+<p>Meddelandeorganisationen ska bekräfta ankomsten när alla andra:
+ankomstdeklarationer som krävs för det berörda anlöpet.
+Sent. Bekräftelse ges av NOA-meddelandet innan ATA-meddelandet
+Detta är fallet.</p>
+<p>På samma sätt bekräftar rapporteringsorganisationen avgången när alla andra
+nödvändiga avgångsdeklarationer har skickats. Bekräftelse
+lämnas in med ett NOD-meddelande innan du skickar en ATD.</p>
+<p>Delegationen av ATA eller ATD ska inte överföra NOA eller
+Anmälningsbekräftelse till hamn.</p>
+<p>Om ATA-meddelandet delegeras till hamnen, kontrollera innan det
+att NOA och DUE-meddelanden har skickats. Om
+ATD-meddelande delegeras till porten, kontrollera innan du skickar den,
+att NOD-meddelandet har skickats.</p>
+<p class="heading" id="delegoidun-ilmoituksen-täyttäminen-lähettäminen-ja-päivittäminen">Delegerad
+fylla, skicka och uppdatera meddelandet</p>
+<p>Det delegerade WAR, ATA eller ATD-meddelandet visas i det berörda anlöpet.
+<strong>Anmälan</strong>- I utsikten.</p>
+<p>Din organisation kommer inte att lägga till en delegerad anmälan till anlöpet själv.
+Hantera den delegerade anmälan som visas i meddelandevyn.</p>
+<p>Så här öppnar du meddelandet:</p>
+<ul>
+<li><p>Öppet Öppet Öppet<strong>Anlöp</strong>- utsikten.</p></li>
+<li><p>Välj ett port call.</p></li>
+<li><p>Öppna en anmälan till hamnen i delegerade WAR, ATA eller ATD
+kort.</p></li>
+</ul>
+<p>Den delegerade deklarationens status och de tillgängliga funktionerna visas
+i den rapportspecifika vyn.</p>
+<p>Det kan finnas flera WAR-meddelanden under samma anlöp. Varje
+deklarationen har ett eget referensnummer (LRN),
+som skiljer meddelanden från varandra.</p>
+<p class="heading" id="delegoidun-ilmoituksen-määräaika">Delegerad
+Anmälan deadline</p>
+<p>Följ sändningen av det delegerade WAR-, ATA- eller ATD-meddelandet
+Tidsgräns. Tidsfristen varierar beroende på typ av anmälan och situationen.</p>
+<p>Kontrollera tidsfristen och eventuella undantag från myndigheterna
+bestämmelserna och anvisningarna i detta meddelande.</p>
+<p class="heading" id="delegoidun-ilmoituksen-täyttäminen-lähettäminen-ja-päivittäminen-1">Delegerad
+fylla, skicka och uppdatera meddelandet</p>
+<p>En del av uppgifterna i den delegerade deklarationen är obligatorisk och del är slutförd
+endast i förekommande fall. Nya fält kan visas i formuläret eller
+sektioner baserade på dina val.</p>
+<p>Data registreras automatiskt vid fyllning
+utkastet till anmälan.</p>
+<p>Så här fyller du i och skickar ett meddelande:</p>
+<ul>
+<li><p>Öppna för att portera ett delegerat WAR, ATA eller ATD-meddelande
+<strong>Anmälan</strong>- I utsikten.</p></li>
+<li><p>Fyll i den saknade informationen i formuläret.</p></li>
+<li><p>Om det behövs, gå till olika delar av formuläret
+listan över innehåll.</p></li>
+<li><p>Kontrollera varningsmeddelanden som anger saknade eller saknade
+data som ska korrigeras. Varningspilen ger dig direkt tillgång till det
+på fältet.</p></li>
+<li><p>Kontrollera och korrigera förfylld information.</p></li>
+<li><p>Kontrollera MAI-delen.</p></li>
+<li><p>Presstryck<strong>Skicka</strong>.</p></li>
+</ul>
+<p>Anmälningens status skickade ändringar i anmälningsvyn
+<strong>Sent</strong>.</p>
+<p>Om informationen i den delegerade deklarationen måste korrigeras och deklarationen
+uppdatering är tillåten, öppna den skickade meddelandet, korrigera informationen; och
+Vänligen skicka om meddelandet.</p>
+<p class="heading" id="delegoidun-ilmoituksen-kentät-taulukot-ja-liitteet">Delegerad
+fält, tabeller och bilagor till deklarationen;</p>
+<p>Om det behövs, lägg till ett nytt fält eller avsnitt till den delegerade anmälan
+pressa<strong>Lägg till</strong>.</p>
+<p>Tryck för att ta bort onödigt fält eller avsnitt<strong>Ta bort</strong>Det är en skräp kan.</p>
+<p>I tabellen kan du:</p>
+<ul>
+<li><p>Lägg till en ny linje<strong>Lägg till</strong>-button</p></li>
+<li><p>öppna linjen för att redigera<strong>Edit</strong>-button
+dvs med penna ikon</p></li>
+<li><p>ta bort felaktig linje<strong>Ta bort</strong>-button
+Det är en skräp kan.</p></li>
+</ul>
+<p>Om det behövs, tryck på bifogad fil för att lägga till meddelandet
+<strong>Ladda ner fil</strong>Välj en fil från din enhet och
+bekräfta nedladdningen.</p>
+<p class="heading" id="ilmoitusten-lomakeasetukset"><strong>Anmälan
+Form Inställningar</strong></p>
+<p>Du kan ändra<strong>Rapportera formaliteter</strong>- Regler,
+i vilken utsträckning informationen i deklarationen visas i formuläret.</p>
+<p>Öppen från profilen för huvudmenyn<strong>Menyn</strong>och välja
+<strong>Inställningar</strong>Följande alternativ är tillgängliga:</p>
+<ul>
+<li><p><strong>Endast relevanta områden</strong>- Formvisningar
+Datafält som krävs i Finland endast</p></li>
+<li><p><strong>Endast fyllda fält</strong>- Formvisningar
+endast dessa fält med information</p></li>
+<li><p><strong>Visa instruktioner</strong>- Formvisningar
+fältspecifika riktlinjer och beskrivningstexter.</p></li>
+</ul>
+<p>Inställningarna ändrar hur informationen presenteras. De ändrar inte deklarationen
+innehåll.</p>
+<p class="heading" id="lomakkeen-kentät-taulukot-ja-liitteet"><strong>Formfält,
+tabeller och bilagor;</strong></p>
+<p>Om det behövs, infoga ett nytt fält eller avsnitt genom att trycka på
+<strong>Lägg till</strong>.</p>
+<p>Tryck för att ta bort onödigt fält eller avsnitt<strong>Ta bort</strong>Det är en skräp kan.</p>
+<p>I tabellen kan du:</p>
+<ul>
+<li><p>Lägg till en ny linje<strong>Lägg till</strong>-button</p></li>
+<li><p>öppna linjen för att redigera<strong>Edit</strong>-button
+dvs med penna ikon</p></li>
+<li><p>ta bort felaktig linje<strong>Ta bort</strong>-button
+Det är en skräp kan.</p></li>
+</ul>
+<p>Om det behövs, tryck på bifogad fil för att lägga till meddelandet
+<strong>Ladda ner fil</strong>Välj en fil från din enhet och
+bekräfta nedladdningen.</p>
+<p class="heading" id="ilmoituksen-otsikkotiedot-mai-ja-vastaustiedot-resfrm"><strong>Anmälan
+header och svarsinformation (RES + FRM)</strong></p>
+<p>Varje anmälan ska avse dess identifiering, överföring och
+titeln och svara på information som krävs för behandling.</p>
+<p><strong>MAI</strong>innehåller titeln på meddelandet som ska skickas.
+Efter att ha skickat meddelandet ska det bestå av:
+<strong>RES + FRM sektion</strong>innehållande bearbetning av deklarationen;
+.</p>
+<p>Information:</p>
+<ul>
+<li><p>anmälan är kopplad till rätt hamnverksamhet, och
+till Deklaranten</p></li>
+<li><p>första anmälan och efterföljande uppdateringar;
+identifiera</p></li>
+<li><p>meddelandet överförs till förhandlingen i rätt form;</p></li>
+<li><p>svaret på hörseln är kopplat till höger
+anmälan</p></li>
+<li><p>Visa om deklarationen accepteras eller krävs
+åtgärder.</p></li>
+</ul>
+<p>MAI, RES + FRM-sektioner visas som en del av anmälningsformuläret
+den specifika vyn.</p>
+<p class="heading" id="mai-ilmoituksen-otsikkotiedot"><strong>MAI -
+Titel för deklaration</strong></p>
+<p>MAI-sektionen innehåller en deklaration för identifiering, överföring och
+information som är nödvändig för övervakning. Dessa inkluderar:</p>
+<ul>
+<li><p>identifiering av deklarationen och anlöpet,</p></li>
+<li><p>Typ av deklaration</p></li>
+<li><p>information om Deklarantn.</p></li>
+</ul>
+<p>Nemo bildar automatiskt ett anlöp i MAI-sektionen.
+på grundval av användarens deklaration och organisationsinformation. MAI sektion
+Informationen kan inte ändras med hjälp av ett meddelandeformulär.</p>
+<p class="heading" id="section"></p>
+<p class="heading" id="res-vastauksen-otsikkotiedot"><strong>RES -
+Titel av svar</strong></p>
+<p>I avsnittet RES ingår ett svar på identifiering och original
+den information som krävs för att länka deklarationen. Dessa inkluderar:
+Till exempel:</p>
+<ul>
+<li><p>Svara identifierare</p></li>
+<li><p>Typ av svar</p></li>
+<li><p>den myndighet som utfärdar svaret,</p></li>
+<li><p>en hänvisning till den förklaring som svaret avser.</p></li>
+</ul>
+<p>Informationen i RESS-delen kan inte ändras.</p>
+<p class="heading" id="frm-vastaus-ilmoitukseen"><strong>FRM - Svar
+anmälan</strong></p>
+<p>FRM-sektionen innehåller resultatet av anmälningsprocessen. Det visar:</p>
+<ul>
+<li><p>hantering av deklarationen;</p></li>
+<li><p>all ytterligare information;</p></li>
+<li><p>fel</p></li>
+<li><p>varningar.</p></li>
+</ul>
+<p>Felinformation kan också ange fältet eller raden av tabeller i deklarationen,
+som återkopplingen avser.</p>
+<p>Uppgifterna för RES och FRM-sektioner kan inte ändras.</p>
+<p class="heading" id="delegoidun-ilmoituksen-käsittelyvastauksen-tarkistaminen"><strong>Delegerad
+verifiering av svaret på anmälan</strong></p>
+<p>När du har skickat ett meddelande, kontrollera det
+ett svar från rapporteringsperspektivet.</p>
+<p>På grundval av svaret, följande åtgärder:</p>
+<ul>
+<li><p>Om förklaringen är:<strong>Godkänd</strong>Svara
+Inga förändringar behöver göras.</p></li>
+<li><p>Om förklaringen är:<strong>gavs villkorligt godkännande</strong>,
+kontrollera ytterligare information och eventuell uppföljning av svaret.</p></li>
+<li><p>Om förklaringen är:<strong>förkastade eller ofullständiga</strong>,
+kontrollera de rapporterade felen, korrigera meddelandet och skicka det
+Återigen.</p></li>
+<li><p>Kontrollera också varningarna och bedöma om de behöver data
+reparation.</p></li>
+</ul>
+<p>Det accepterade FRM-svaret bekräftar att meddelandet har godkänts
+att diskuteras. Detta innebär inte, som sådant, ett beslut om fartygets likvidation,
+tillstånd för avresa eller något annat separat beslut av myndigheten.</p>
+<p class="heading" id="lähetetyn-ilmoituksen-yhteenveto-pdf-tallentaminen"><strong>Sent
+Anmälan sammanfattande PDF-lagring</strong></p>
+<p>Du kan spara den skickade meddelandet för datasammanfattningen PDF.
+Sammanfattningen ska innehålla och presentera den information som överförs genom anmälan
+den struktur som motsvarar anmälningsformuläret.</p>
+<p>På så sätt sparar du din PDF-fil:</p>
+<ul>
+<li><p>Välj Välj<strong>Anmälan</strong>Sänd från view
+uttalandet du vill spela in.</p></li>
+<li><p>Presstryck<strong>Print PDF</strong>.</p></li>
+<li><p>I utskriftsdialog välj mål<strong>Spara
+PDF-format</strong>eller motsvarande ditt operativsystem
+Alternativ.</p></li>
+<li><p>Bekräfta inspelningen.</p></li>
+</ul>
+<blockquote>
+<p>Meddelandet kan visas i förhandsvisningen som liten storlek och inte förhandsgranskning
+skala korrekt i alla operativsystem. Inspelad
+I PDF visas annonsen i rätt storlek.</p>
+</blockquote>
+<p>Din PDF-fil kommer att lagras på din enhet och innehåller ett meddelande som skickas
+information.</p>
+<p class="heading" id="delegoidun-ilmoituksen-poistaminen">Delegerad
+radering av anmälan;</p>
+<p>Ta bort WAR-meddelande om det inte längre behövs eller läggs till
+felaktigt, och om<strong>Ta bort</strong>-funktion är
+tillgängliga.</p>
+<p>ATA och ATD-meddelanden kan inte tas bort från anlöp.</p>
+<p>På detta sätt raderar du en överförbar anmälan:</p>
+<ul>
+<li><p>Öppet Öppet Öppet<strong>Anlöp</strong>- utsikten.</p></li>
+<li><p>Öppna portanropet du vill ha.</p></li>
+<li><p>Öppna en delegerad deklaration som ska raderas.</p></li>
+<li><p>Presstryck<strong>Ta bort</strong>.</p></li>
+</ul>
+<p>Du kommer att se att den borttagna anmälan inte längre är synlig under anlöpet.</p>
+</main>
+</body>
+</html>
