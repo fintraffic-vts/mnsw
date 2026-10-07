@@ -1,233 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>EMSWe RIM Sender Integration – Access Point Setup Guide</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sender-side setup overview for integrating with Finland EMSWe RIM using AS4 and Domibus." />
-  <link rel="stylesheet" href="nemo-dev.css" />
-  <style>
-    .guide-nav { display:flex; flex-wrap:wrap; gap:.65rem; margin:1rem 0 1.5rem; padding:.8rem 1rem; border:1px solid var(--background-gray40); border-radius:var(--border-radius); background:var(--surface); }
-    .guide-nav a { font-weight:700; }
-    .guide-nav a[aria-current="page"] { text-decoration:none; color:var(--text); }
-    .guide-overview { margin:1.5rem 0 2rem; }
-    .guide-overview .card h3 { margin-top:.25rem; }
-    .guide-overview .card p:last-child { margin-bottom:0; }
-    .guide-overview .active-guide { border-left:5px solid var(--primary-brand); }
-    .guide-overview .eyebrow { font-weight:700; text-transform:uppercase; letter-spacing:.04em; font-size:.78rem; }
-    .guide-link { display:inline-block; margin-top:.4rem; font-weight:700; }
-    .pmode-callout { margin:1rem 0; padding:1rem 1.2rem; border-left:5px solid var(--primary-brand); border-radius:var(--border-radius); background:var(--background-brand10); }
-  </style>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
-  </script>
+    <meta charset="UTF-8" />
+    <title>EMSWe RIM Sender Integration – Access Point Setup Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How senders connect their own AS4 Access Point to the Finnish MNSW RIM: test environments, URAM registration, certificates, AS4 parameters and a sample UserMessage." />
+    <link rel="stylesheet" href="nemo-dev.css" />
+    <style>
+        /* Page-specific additions. Base styling comes from nemo-dev.css. */
+        .doc { max-width: 1000px; margin: 0 auto; color: var(--muted); }
+        .doc h1, .doc h2, .doc h3 { color: var(--text); }
+        .doc h2 { margin-top: 2.75rem; scroll-margin-top: 1rem; }
+        .doc h3 { margin-top: 1.75rem; scroll-margin-top: 1rem; }
+        .doc a { color: var(--primary-brand); text-decoration: underline; text-underline-offset: 2px; }
+        .doc a:hover { color: var(--secondary-hover); }
+        .doc blockquote { margin: 1.5rem 0; padding: 1rem 1.2rem; border-left: 4px solid var(--primary-brand); background: var(--background-brand10); color: var(--foreground); }
+        .doc code { background: var(--code-inline-bg); padding: 0.1rem 0.3rem; border-radius: 0.25rem; overflow-wrap: anywhere; }
+        .guide-nav { display:flex; flex-wrap:wrap; gap:.65rem; margin:1rem 0 1.5rem; padding:.8rem 1rem; border:1px solid var(--background-gray40); border-radius:var(--border-radius); background:var(--surface); }
+        .guide-nav a { font-weight:700; }
+        .guide-nav a[aria-current="page"] { text-decoration:none; color:var(--text); }
+        .toc { margin: 1.5rem 0; }
+        .toc ol { columns: 2; column-gap: 2rem; }
+        .table-wrap { overflow-x: auto; border: 1px solid var(--background-gray40); border-radius: var(--border-radius); margin: 1rem 0; }
+        .table-wrap table { margin: 0; }
+        .callout { margin: 1rem 0; padding: 1rem 1.2rem; border: 1px solid var(--background-gray40); border-radius: var(--border-radius); background: var(--surface); color: var(--foreground); }
+        .callout.info { border-left: 5px solid var(--primary-brand); background: var(--background-brand10); }
+        .callout.warning { border-left: 5px solid var(--warn); background: var(--feedback-attention); }
+        .callout.success { border-left: 5px solid var(--ok); background: var(--feedback-success10); }
+        .exchange { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 1rem 0; }
+        .exchange .card h3 { margin-top: 0; }
+        .exchange ul { margin-bottom: 0; }
+        .code-panel { margin: 1rem 0 2rem; border: 1px solid var(--code-border); border-radius: var(--border-radius); overflow: hidden; background: var(--surface); }
+        .code-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.7rem 0.9rem; background: var(--background-gray20); border-bottom: 1px solid var(--code-border); }
+        .code-toolbar strong { color: var(--text); }
+        .copy-button { border: 1px solid var(--primary-brand); border-radius: var(--border-radius); background: var(--surface); color: var(--primary-brand); padding: 0.4rem 0.75rem; font-weight: 700; cursor: pointer; }
+        .copy-button:hover { background: var(--background-brand10); }
+        .copy-button:focus-visible, .doc a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        pre.xml { margin: 0; padding: 1rem; overflow: auto; max-height: 70vh; background: var(--code-bg); color: var(--foreground); line-height: 1.45; tab-size: 4; }
+        pre.xml code { padding: 0; background: transparent; white-space: pre; }
+        pre.mermaid { background: var(--surface); border: 1px solid var(--background-gray40); border-radius: var(--border-radius); padding: 1rem; overflow-x: auto; text-align: center; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li { position: relative; padding-left: 1.8rem; margin: 0.55rem 0; }
+        .checklist li::before { content: "□"; position: absolute; left: 0; color: var(--primary-brand); font-weight: 800; }
+        .ref { font-size: .88rem; color: var(--muted); }
+        @media (max-width: 760px) { .toc ol { columns: 1; } }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'strict' });
+    </script>
 </head>
 <body>
 <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
-  <article class="doc">
-    <header class="section-title">
-      <h1 id="emswe-rim-sender-integration--access-point-setup-guide">EMSWe RIM Sender Integration – Access Point Setup Guide</h1>
-      <div class="sub">Sender-side overview for integrating via AS4 / RIM</div>
-    </header>
+    <article class="doc">
+        <header class="section-title">
+            <h1 id="top">EMSWe RIM Sender Integration – Access Point Setup Guide</h1>
+            <div class="sub">How to connect your own AS4 Access Point to the Finnish MNSW RIM</div>
+        </header>
 
-    <nav class="guide-nav" aria-label="Sender Access Point documentation">
-      <a href="sender-access-point-setup-guide.html" aria-current="page">Setup Guide</a>
-      <span aria-hidden="true">|</span>
-      <a href="domibus-pmode-configuration-guide.html">PMode Configuration Guide</a>
-    </nav>
+        <nav class="guide-nav" aria-label="Sender Access Point documentation">
+            <a href="sender-access-point-setup-guide.html" aria-current="page">Setup Guide</a>
+            <span aria-hidden="true">|</span>
+            <a href="domibus-pmode-configuration-guide.html">PMode Configuration Guide</a>
+        </nav>
 
-    <section class="guide-overview" aria-labelledby="documentation-overview">
-      <h2 id="documentation-overview">Sender Access Point Documentation</h2>
-      <p>Use these guides together when preparing a sender-side Domibus Access Point for EMSWe RIM messaging.</p>
-      <div class="grid">
-        <div class="card active-guide">
-          <div class="eyebrow">Current guide</div>
-          <h3>Access Point Setup Guide</h3>
-          <p>Architecture, responsibilities, message preparation, certificates, authentication and operational prerequisites.</p>
-        </div>
-        <div class="card">
-          <div class="eyebrow">Configuration guide</div>
-          <h3>Domibus PMode Configuration</h3>
-          <p>Sender-side PMode example, Finland C3 environment values, import guidance and readiness checks.</p>
-          <a class="guide-link" href="domibus-pmode-configuration-guide.html">Open the PMode Configuration Guide →</a>
-        </div>
-      </div>
-    </section>
+        <blockquote>
+            <p><strong>Who this is for.</strong> Declarants and Data Service Providers who want to submit EMSWe formalities to the Finnish Maritime National Single Window (MNSW) through the Reporting Interface Module (RIM) over eDelivery AS4.</p>
+            <p style="margin-bottom:0">This page gives the Finland-specific values you need to get started. The authoritative EU-level specification is EMSA's <a href="https://webgate.ec.europa.eu/fpfis/wikis/spaces/EMSWE/pages/2249951047/RIM+v3.3.0+Integration+Guidance" target="_blank" rel="noopener noreferrer">RIM v3.3.0 Integration Guidance</a>. Finland's detailed requirements are in the <a href="FinlandEMSWeDomibusSenderIntegrationGuide.pdf">Finland EMSWe Domibus Sender Integration Guide (PDF)</a>.</p>
+        </blockquote>
 
-    <blockquote>
-      <p><strong>Reference document</strong><br />
-      This document is a <strong>concise technical overview</strong> for senders.<br />
-      For authoritative requirements, detailed field definitions, validation rules, certificate policies, and legal references, always refer to:<br />
-      <strong><a href="FinlandEMSWeDomibusSenderIntegrationGuide.pdf"><em>Finland EMSWe Domibus Sender Integration Guide.pdf</em></a></strong></p>
-    </blockquote>
+        <nav class="toc card" aria-labelledby="toc-title">
+            <h2 id="toc-title" style="margin-top:0">On this page</h2>
+            <ol>
+                <li><a href="#onboarding">Onboarding at a glance</a></li>
+                <li><a href="#architecture">Architecture and responsibilities</a></li>
+                <li><a href="#environments">Test environments: DEV first, then STG</a></li>
+                <li><a href="#uram">Access and URAM registration</a></li>
+                <li><a href="#certificates">Certificates and security</a></li>
+                <li><a href="#as4-parameters">AS4 collaboration parameters</a></li>
+                <li><a href="#message">Building the AS4 UserMessage</a></li>
+                <li><a href="#message-flow">Message flow and responses</a></li>
+                <li><a href="#pmode">PMode reference</a></li>
+                <li><a href="#production">Moving to production and changes</a></li>
+                <li><a href="#checklist">What to send us</a></li>
+                <li><a href="#references">References</a></li>
+            </ol>
+        </nav>
 
-    <h2 id="purpose">Purpose</h2>
-    <p>This document provides quick, practical guidance for <strong>senders</strong> integrating with a <strong>Member State backend</strong> through the <strong>Reporting Interface Module (RIM)</strong> using <strong>AS4 (Domibus)</strong> within the <strong>European Maritime Single Window environment (EMSWe)</strong>.</p>
-    <p>It focuses on:</p>
-    <ul>
-      <li>Sender-side architecture and responsibilities</li>
-      <li>AS4 Access Point (C2) setup and ownership</li>
-      <li>Message preparation and metadata expectations</li>
-      <li>Security, certificates, and authentication prerequisites</li>
-    </ul>
-    <p>This guidance applies to both:</p>
-    <ul>
-      <li><strong>Declarants (DECL)</strong></li>
-      <li><strong>Data Service Providers (DSP)</strong></li>
-    </ul>
-    <p>as defined by EMSWe and the RIM architecture.</p>
-
-    <h2 id="architecture-overview-four-corner-model">Architecture Overview (Four-Corner Model)</h2>
-    <pre class="mermaid">flowchart LR
-        C1["Sender Backend (C1)"]
-        C2["Sender AS4 Access Point – Domibus (C2)"]
-        C3["Member State RIM – Domibus (C3)"]
-        C4["Member State MNSW Backend (C4)"]
-        C1 -->|ASiC-E payload| C2
-        C2 -->|AS4 UserMessage| C3
-        C3 -->|Validated payload| C4
+        <!-- 1 -->
+        <h2 id="onboarding">1. Onboarding at a glance</h2>
+        <p>Connectivity is established step by step. You first connect to our <strong>DEV</strong> RIM. Once the AS4 message exchange works there, end-to-end testing continues in <strong>Staging (STG)</strong>, and only after that in production.</p>
+        <pre class="mermaid">
+flowchart LR
+    A["1. Exchange details<br/>Party ID, endpoint, DNS,<br/>IP addresses, AS4 certificates"] --> B["2. URAM registration<br/>MNSW registers your<br/>organisation"]
+    B --> C["3. DEV connectivity<br/>AS4 request, receipt<br/>and response work"]
+    C --> D["4. STG end-to-end<br/>Real formalities,<br/>business validation"]
+    D --> E["5. Production<br/>Own eIDAS certificate,<br/>PRD values"]
     </pre>
-    <table>
-      <thead><tr><th>Corner</th><th>Role</th><th>Responsibility</th></tr></thead>
-      <tbody>
-        <tr><td>C1</td><td>Sender backend</td><td>Generates EMSWe formalities and signs ASiC-E</td></tr>
-        <tr><td>C2</td><td>Sender Access Point</td><td>AS4 messaging, WS-Security, TLS</td></tr>
-        <tr><td>C3</td><td>Member State RIM</td><td>Authentication, validation, routing</td></tr>
-        <tr><td>C4</td><td>Member State backend</td><td>Business processing</td></tr>
-      </tbody>
-    </table>
-    <p>The sender <strong>fully controls C1 and C2 only</strong>. All communication beyond C2 takes place via secure AS4 exchange.</p>
+        <div class="exchange">
+            <div class="card">
+                <h3>You send us</h3>
+                <ul>
+                    <li>Party ID and AS4 endpoint URL</li>
+                    <li>Public AS4 certificate</li>
+                    <li>DNS name of your Access Point</li>
+                    <li>Source IP addresses of your Access Point</li>
+                    <li>Organisation details for URAM registration</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>We provide you</h3>
+                <ul>
+                    <li>MNSW party details for each environment</li>
+                    <li>MNSW public AS4 certificate for your truststore</li>
+                    <li>Shared test eIDAS certificate (testing only)</li>
+                    <li>Registration of your organisation in the Finnish URAM sub-domain</li>
+                    <li>Firewall openings towards your Access Point</li>
+                </ul>
+            </div>
+        </div>
+        <p>Contact the MNSW team to start onboarding. The full list of what we need is in <a href="#checklist">section 11</a>.</p>
 
-    <h2 id="as4-access-point-requirement-key-rule">AS4 Access Point Requirement (Key Rule)</h2>
-    <p><strong>There is NO shared or Member State–provided AS4 Access Point.</strong></p>
-    <ul>
-      <li>The Member State does <strong>not</strong> provide an AS4 Access Point for senders</li>
-      <li>All AS4 Access Points (<strong>C2</strong>) are <strong>self-hosted</strong></li>
-      <li>Responsibility for setting up, configuring, and operating C2 lies entirely with the <strong>sender side</strong></li>
-    </ul>
-    <p>The <strong>Domibus AS4 Access Point software</strong> is publicly available and can be downloaded from the <strong>EU DIGIT eDelivery website</strong>. Each sender must install and operate its own Domibus instance and configure communication between:</p>
-    <ul>
-      <li>its backend system (C1), and</li>
-      <li>its AS4 Access Point (C2)</li>
-    </ul>
-    <p>This applies regardless of whether the sender submits messages directly or via a service provider.</p>
+        <!-- 2 -->
+        <h2 id="architecture">2. Architecture and responsibilities</h2>
+        <p>EMSWe RIM messaging follows the eDelivery four-corner model. You own and operate corners C1 and C2. MNSW operates C3 and C4.</p>
+        <pre class="mermaid">
+flowchart LR
+    subgraph Sender["Sender side (your responsibility)"]
+        C1["C1: Sender backend<br/>creates and signs<br/>ASiC-E container"]
+        C2["C2: Your AS4 Access Point<br/>e.g. Domibus + WS plugin"]
+    end
+    subgraph MNSW["Finnish MNSW"]
+        C3["C3: MNSW RIM<br/>Domibus 5.2.1"]
+        C4["C4: MNSW backend"]
+    end
+    C1 -->|ASiC-E + metadata| C2
+    C2 -->|"AS4 UserMessage<br/>emswe-formality-request"| C3
+    C3 -->|"AS4 UserMessage<br/>emswe-formality-response"| C2
+    C3 --> C4
+    </pre>
+        <div class="callout warning">
+            <strong>Senders do not use RIM as their Access Point.</strong> According to EMSA's guidance, RIM is the Member State's receiving component. Senders need their own eDelivery AS4 conformant Access Point. Any conformant solution can be used, for example Domibus with the default WS plugin, which is the setup used in chapter 6 of EMSA's guidance.
+            <div class="ref">Source: EMSA RIM v3.3.0 Integration Guidance, chapter 6.</div>
+        </div>
+        <p>A <strong>Data Service Provider (DSP)</strong> may operate C2 on behalf of one or more declarants. This is a commercial arrangement between the sender and the DSP. MNSW does not provide a shared Access Point.</p>
 
-    <h2 id="role-of-data-service-providers-dsp">Role of Data Service Providers (DSP)</h2>
-    <p>A <strong>Data Service Provider (DSP)</strong> can be characterized as a <strong>technical service</strong> that:</p>
-    <ul>
-      <li>Operates an <strong>AS4 Access Point (C2)</strong> on behalf of one or more Declarants (DECL)</li>
-      <li>Provides connectivity, AS4 messaging, and security configuration as a service</li>
-      <li>Integrates multiple Declarant backends (C1) with its own Access Point (C2)</li>
-    </ul>
-    <p>Important clarifications:</p>
-    <ul>
-      <li>DSPs are <strong>not provided by the Member State</strong></li>
-      <li>DSPs are <strong>not central or national shared services</strong></li>
-      <li>Use of a DSP is a <strong>commercial or contractual arrangement</strong> between senders and the DSP</li>
-    </ul>
-    <p>From the RIM and Member State perspective:</p>
-    <ul>
-      <li>Both DECL and DSP are treated as <strong>senders</strong></li>
-      <li>Both must be <strong>registered in URAM</strong></li>
-      <li>Both are responsible (directly or indirectly) for operating a compliant <strong>C2 (AS4 Access Point)</strong></li>
-    </ul>
+        <!-- 3 -->
+        <h2 id="environments">3. Test environments: DEV first, then STG</h2>
+        <p>Start by establishing AS4 connectivity with the MNSW <strong>DEV</strong> RIM. Use the party definition below in your Access Point configuration (in Domibus, the <code>parties</code> section of the PMode).</p>
+        <div class="code-panel">
+            <div class="code-toolbar"><strong>MNSW DEV party</strong><button class="copy-button" type="button" data-copy-target="dev-party">Copy XML</button></div>
+            <pre class="xml"><code id="dev-party">&lt;party name="mnsw-dev.mnsw.fi"
+       endpoint="https://rim.mnsw-dev.mnsw.fi/integrations/domibus/services/msh"&gt;
+    &lt;identifier partyId="mnsw-dev.mnsw.fi" partyIdType="rimParty"/&gt;
+&lt;/party&gt;</code></pre>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Value</th><th>DEV</th></tr></thead>
+                <tbody>
+                <tr><td>Receiver Party ID</td><td><code>mnsw-dev.mnsw.fi</code></td></tr>
+                <tr><td>Party ID type (in the message)</td><td><code>urn:oasis:names:tc:ebcore:partyid-type:unregistered</code></td></tr>
+                <tr><td>AS4 endpoint</td><td><code>https://rim.mnsw-dev.mnsw.fi/integrations/domibus/services/msh</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>STG and production party details are delivered once DEV connectivity works. See also the <a href="domibus-pmode-configuration-guide.html#finland-c3">Finland C3 environment table</a> in the PMode guide.</p>
 
-    <h2 id="message-preparation-sender-backend--c1">Message Preparation (Sender Backend – C1)</h2>
-    <p>Before transmission, the sender backend must create an <strong>ASiC-E container</strong> that includes:</p>
-    <ul>
-      <li>EMSWe formality XML</li>
-      <li><code>META-INF/signatures.p7b</code> (CAdES signature)</li>
-      <li><code>manifest.xml</code></li>
-      <li><code>mimetype</code> = <code>application/vnd.etsi.asic-e+zip</code></li>
-      <li>Optional signed attachments (PDF, XML, jpg or png)</li>
-    </ul>
-    <p>Signature requirements:</p>
-    <ul>
-      <li>eIDAS <strong>Qualified or Advanced Electronic Signature (QES / AdES)</strong></li>
-      <li>Hash algorithm: <strong>SHA-256</strong></li>
-    </ul>
-    <p>The ASiC-E container is handed over to the Access Point unchanged.</p>
-
-    <h2 id="as4-message-mapping-access-point--c2">AS4 Message Mapping (Access Point – C2)</h2>
-    <p>The Access Point (Domibus) wraps the ASiC-E container into an <strong>AS4 UserMessage</strong>.</p>
-    <p>Mandatory header metadata includes:</p>
-    <table>
-      <thead><tr><th>Field</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td>Sender</td><td>Sender Access Point identifier</td></tr>
-        <tr><td>Receiver</td><td>Member State RIM identifier</td></tr>
-        <tr><td>Authorization.Identifier</td><td>Sender EORI</td></tr>
-        <tr><td>Authorization.Type</td><td>DECL or DSP</td></tr>
-        <tr><td>Authorization.SubDomain</td><td>Country code</td></tr>
-        <tr><td>originalSender</td><td>Business identifier of C1</td></tr>
-        <tr><td>finalRecipient</td><td>Member State MNSW</td></tr>
-        <tr><td>Service</td><td><code>rim-messaging-service</code></td></tr>
-        <tr><td>Action</td><td><code>emswe-formality-request</code></td></tr>
-        <tr><td>MessageId</td><td>UUID</td></tr>
-        <tr><td>Timestamp</td><td>ISO 8601</td></tr>
-      </tbody>
-    </table>
-    <p><strong>Critical requirement:</strong> The EORI value must <strong>exactly match</strong> the value registered in URAM, otherwise the message is rejected.</p>
-
-    <h2 id="certificates-and-security">Certificates and Security</h2>
-    <table>
-      <thead><tr><th>Purpose</th><th>Used by</th><th>Certificate</th></tr></thead>
-      <tbody>
-        <tr><td>ASiC-E signing</td><td>C1</td><td>eIDAS QES / AdES</td></tr>
-        <tr><td>AS4 signing &amp; encryption</td><td>C2</td><td>X.509 (Domibus keystore)</td></tr>
-        <tr><td>TLS transport</td><td>C2 ↔ C3</td><td>X.509 TLS</td></tr>
-        <tr><td>Trust validation</td><td>All</td><td>CA certificates</td></tr>
-      </tbody>
-    </table>
-    <p>Minimum cryptographic requirements:</p>
-    <ul>
-      <li>RSA ≥ 2048 bits or ECDSA ≥ 256 bits</li>
-      <li>SHA-256</li>
-    </ul>
-
-    <h2 id="registration-and-authentication-uram">Registration and Authentication (URAM)</h2>
-    <p>Before sending any messages:</p>
-    <ul>
-      <li>The sender must be <strong>registered in URAM</strong> by Member State</li>
-      <li>Registration includes:
+        <!-- 4 -->
+        <h2 id="uram">4. Access and URAM registration</h2>
+        <p>Access to the platform is always granted at the <strong>organisation level</strong>. Individual user accounts are not used, so you do not need separate access for each developer or contact person.</p>
+        <p>MNSW registers your organisation in the <strong>Finnish URAM sub-domain</strong> on your behalf. In testing, the registration uses the shared test eIDAS certificate described in <a href="#eidas">section 5.2</a>. To complete the registration, send us:</p>
         <ul>
-          <li>EORI</li>
-          <li>Sender type (DECL or DSP)</li>
-          <li>Country subdomain</li>
-          <li>Certificate fingerprint</li>
+            <li>Organisation name</li>
+            <li>EORI number</li>
+            <li>Address and country</li>
+            <li>Contact person(s): name, email and phone number</li>
         </ul>
-      </li>
-    </ul>
-    <p>The RIM validates <strong>every incoming AS4 message</strong> against URAM.</p>
+        <div class="callout info">
+            <strong>The identifier must match exactly.</strong> RIM validates every incoming message against URAM. The value you send in <code>Authorization.Identifier</code> must be exactly the identifier registered in URAM, otherwise the message is rejected.
+        </div>
 
-    <h2 id="configure-domibus-pmode">Configure Domibus PMode</h2>
-    <p>After the Access Point, certificates and network connectivity have been prepared, configure Domibus with an EMSWe RIM-compatible PMode. The PMode binds the parties, endpoints, service, actions, payload profile, security policy, reliability settings and message retention into an executable AS4 process.</p>
-    <div class="pmode-callout">
-      <strong>Use the dedicated PMode guide.</strong>
-      It contains a complete sender-side example, Finland C3 values for DEV, STG and PRD, explanations of each PMode section, and import and readiness checklists.
-    </div>
-    <p><a class="guide-link" href="domibus-pmode-configuration-guide.html">Open Domibus PMode Configuration Guide →</a></p>
+        <!-- 5 -->
+        <h2 id="certificates">5. Certificates and security</h2>
+        <p>Three different certificates are involved, and they have different purposes.</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Certificate</th><th>Used by</th><th>Purpose</th><th>Testing</th><th>Production</th></tr></thead>
+                <tbody>
+                <tr><td>AS4 certificate</td><td>C2 ↔ C3</td><td>Signing and encryption of the AS4 message</td><td>Exchanged bilaterally with MNSW</td><td>Exchanged bilaterally with MNSW</td></tr>
+                <tr><td>eIDAS certificate</td><td>C1</td><td>Signing the ASiC-E container; URAM authentication</td><td>Shared Finnish test certificate <code>FI1059876543</code></td><td>Your own qualified or advanced eIDAS certificate</td></tr>
+                <tr><td>TLS certificate</td><td>C2 ↔ C3</td><td>HTTPS transport</td><td>Server certificate of each endpoint</td><td>Server certificate of each endpoint</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-    <h2 id="access-point-configuration-and-changes">Access Point Configuration and Changes</h2>
-    <p>A bilateral AS4 agreement between the sender and the Member State defines:</p>
-    <ul>
-      <li>AS4 endpoints</li>
-      <li>Party identifiers</li>
-      <li>Certificates</li>
-      <li>PMode configuration</li>
-      <li>Security policy</li>
-    </ul>
-    <p>Any change (certificate, endpoint, key) requires:</p>
-    <ul>
-      <li>Advance notification</li>
-      <li>Certificate exchange</li>
-      <li>PMode update</li>
-      <li>Staging tests</li>
-      <li>Production activation</li>
-      <li>Versioned documentation</li>
-    </ul>
-  </article>
+        <h3 id="as4-cert">5.1 AS4 certificate exchange</h3>
+        <ol>
+            <li>Add the MNSW DEV public certificate (<code>mnsw-dev.mnsw.fi.cer</code>, delivered by MNSW) to your Access Point truststore. If it was delivered with a <code>.txt</code> extension for email transport, remove the extension first.</li>
+            <li>Send us your public AS4 certificate so that we can add it to our truststore.</li>
+        </ol>
+        <p><strong>Encryption is mandatory.</strong> As specified in EMSA's guidance, RSA-based signing and encryption is used, with the security policy <code>eDeliveryAS4Policy_BST_PKIP_RIM</code> and profile <code>rsa</code>. MNSW uses Domibus 5.2.1.</p>
+
+        <h3 id="eidas">5.2 eIDAS certificate</h3>
+        <p>For testing, EMSA has provided Finland with a test eIDAS certificate that MNSW distributes to its test senders as a keystore (<code>FI1059876543.zip</code>). The keystore alias is <code>FI1059876543</code>; the passphrase is delivered together with the keystore.</p>
+        <div class="callout warning">
+            <strong>Testing only.</strong> The test certificate is shared among all test participants. Never use it in production. For production, the sending organisation chooses between a qualified and an advanced eIDAS certificate.
+        </div>
+        <p>EMSA's samples use the Belgian test certificate and EORI <code>BE01234567895</code>. When you use them, replace those with the Finnish test certificate <code>FI1059876543</code> and your own values.</p>
+
+        <!-- 6 -->
+        <h2 id="as4-parameters">6. AS4 collaboration parameters</h2>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                <tbody>
+                <tr><td>Sender role</td><td><code>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</code></td></tr>
+                <tr><td>Receiver role</td><td><code>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</code></td></tr>
+                <tr><td>AgreementRef / type</td><td>Not used</td></tr>
+                <tr><td>Service (type)</td><td><code>rim-messaging-service</code> (<code>rim-process-schema</code>)</td></tr>
+                <tr><td>Action, sender → MNSW</td><td><code>emswe-formality-request</code></td></tr>
+                <tr><td>Action, MNSW → sender</td><td><code>emswe-formality-response</code></td></tr>
+                <tr><td>MEP / binding</td><td>One-Way / Push in both directions</td></tr>
+                <tr><td>Security policy</td><td><code>eDeliveryAS4Policy_BST_PKIP_RIM</code>, profile <code>rsa</code> (from EMSA's RIM sample configuration)</td></tr>
+                <tr><td>Reliability</td><td>AS4 receipts returned synchronously in the HTTP response. Non-repudiation is not used.</td></tr>
+                <tr><td>Duplicate detection</td><td>Enabled. Use a unique <code>MessageId</code> for every message, also in testing.</td></tr>
+                <tr><td>Payloads</td><td>Main payload <code>cid:message</code> (mandatory), attachment <code>cid:attachment</code> (optional)</td></tr>
+                <tr><td>Maximum payload size</td><td>Approx. 39 MB (40,894,464 bytes)</td></tr>
+                <tr><td>Payload compression</td><td>Not used</td></tr>
+                <tr><td>MPC</td><td><code>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 7 -->
+        <h2 id="message">7. Building the AS4 UserMessage</h2>
+        <p>Creating the signed <strong>ASiC-E container</strong> is the responsibility of the declarant's backend (C1); the sender-side Access Point (C2), whether operated by the declarant or a DSP, creates the AS4 message. EMSA's guidance contains sample messages; chapter 6 has a complete AS4 UserMessage example using the Domibus WS plugin.</p>
+
+        <h3 id="message-levels">7.1 Three levels of metadata</h3>
+        <p>The UserMessage carries metadata on three levels. Keeping them apart avoids the most common configuration errors.</p>
+        <pre class="mermaid">
+flowchart TB
+    subgraph UM["AS4 UserMessage"]
+        L1["Level 1: PartyInfo<br/>Access Points C2 → C3<br/>From: your Party ID / To: mnsw-dev.mnsw.fi"]
+        L2["Level 2: MessageProperties<br/>Business sender C1 and recipient C4<br/>originalSender = your EORI / finalRecipient = FI"]
+        L3["Level 3: PartProperties of cid:message<br/>RIM metadata and URAM authentication<br/>Authorization.* / FormalityInfo.* / MimeType"]
+        P["Payload cid:message<br/>Signed ASiC-E container"]
+    end
+    L1 --- L2 --- L3 --- P
+    </pre>
+
+        <h3 id="message-values">7.2 Party and message properties</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Level</th><th>Element / property</th><th>Value</th></tr></thead>
+                <tbody>
+                <tr><td>1</td><td><code>From/PartyId</code></td><td>Your own Party ID</td></tr>
+                <tr><td>1</td><td><code>To/PartyId</code></td><td><code>mnsw-dev.mnsw.fi</code> (DEV)</td></tr>
+                <tr><td>1</td><td><code>PartyId/@type</code></td><td><code>urn:oasis:names:tc:ebcore:partyid-type:unregistered</code></td></tr>
+                <tr><td>2</td><td><code>originalSender</code></td><td>Your EORI number, type <code>emswe-sender-eori</code></td></tr>
+                <tr><td>2</td><td><code>finalRecipient</code></td><td><code>FI</code>, type <code>emswe-ms-rim</code></td></tr>
+                <tr><td>3</td><td><code>Authorization.Identifier</code></td><td>Your EORI, exactly as registered in URAM</td></tr>
+                <tr><td>3</td><td><code>Authorization.SubDomain</code></td><td><code>FI</code></td></tr>
+                <tr><td>3</td><td><code>Authorization.Type</code></td><td><code>DECL</code> for declarants, or the type agreed during onboarding</td></tr>
+                <tr><td>3</td><td><code>FormalityInfo.*</code>, <code>MimeType</code></td><td>As shown in chapter 6 of EMSA's guidance; MIME type <code>application/vnd.etsi.asic-e+zip</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 id="message-example">7.3 Example UserMessage (Domibus WS plugin)</h3>
+        <p>This illustrative example is based on chapter 6 of EMSA's guidance, adapted to the Finnish DEV environment. Values in <code>{curly brackets}</code> are placeholders to be replaced with your own values.</p>
+        <div class="code-panel">
+            <div class="code-toolbar"><strong>submitRequest – emswe-formality-request</strong><button class="copy-button" type="button" data-copy-target="sample-message">Copy XML</button></div>
+            <pre class="xml"><code id="sample-message">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+               xmlns:ns="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/"
+               xmlns:eu="http://eu.domibus.wsplugin/"&gt;
+  &lt;soap:Header&gt;
+    &lt;ns:Messaging&gt;
+      &lt;ns:UserMessage mpc="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC"&gt;
+        &lt;ns:MessageInfo&gt;
+          &lt;ns:Timestamp&gt;{yyyy-MM-ddTHH:mm:ss.SSSZ}&lt;/ns:Timestamp&gt;
+          &lt;!-- Must be unique for every message (duplicate detection is enabled) --&gt;
+          &lt;ns:MessageId&gt;{UNIQUE_MESSAGE_ID}&lt;/ns:MessageId&gt;
+        &lt;/ns:MessageInfo&gt;
+
+        &lt;!-- Level 1: PartyInfo = access points (C2 -&gt; C3) --&gt;
+        &lt;ns:PartyInfo&gt;
+          &lt;ns:From&gt;
+            &lt;ns:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered"&gt;{SENDER_PARTY_ID}&lt;/ns:PartyId&gt;
+            &lt;ns:Role&gt;http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator&lt;/ns:Role&gt;
+          &lt;/ns:From&gt;
+          &lt;ns:To&gt;
+            &lt;ns:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered"&gt;mnsw-dev.mnsw.fi&lt;/ns:PartyId&gt;
+            &lt;ns:Role&gt;http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder&lt;/ns:Role&gt;
+          &lt;/ns:To&gt;
+        &lt;/ns:PartyInfo&gt;
+
+        &lt;ns:CollaborationInfo&gt;
+          &lt;ns:Service type="rim-process-schema"&gt;rim-messaging-service&lt;/ns:Service&gt;
+          &lt;ns:Action&gt;emswe-formality-request&lt;/ns:Action&gt;
+          &lt;ns:ConversationId&gt;{CONVERSATION_ID}&lt;/ns:ConversationId&gt;
+        &lt;/ns:CollaborationInfo&gt;
+
+        &lt;!-- Level 2: MessageProperties = business sender (C1) and recipient (C4) --&gt;
+        &lt;ns:MessageProperties&gt;
+          &lt;ns:Property name="originalSender" type="emswe-sender-eori"&gt;{SENDER_EORI}&lt;/ns:Property&gt;
+          &lt;ns:Property name="finalRecipient" type="emswe-ms-rim"&gt;FI&lt;/ns:Property&gt;
+        &lt;/ns:MessageProperties&gt;
+
+        &lt;!-- Level 3: PartProperties = RIM metadata and URAM authentication --&gt;
+        &lt;ns:PayloadInfo&gt;
+          &lt;ns:PartInfo href="cid:message"&gt;
+            &lt;ns:PartProperties&gt;
+              &lt;ns:Property name="Authorization.Identifier"&gt;{IDENTIFIER_REGISTERED_IN_URAM}&lt;/ns:Property&gt;
+              &lt;ns:Property name="Authorization.SubDomain"&gt;FI&lt;/ns:Property&gt;
+              &lt;ns:Property name="Authorization.Type"&gt;{DECL_OR_OTHER}&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.Formality.TypeUrn"&gt;{FORMALITY_TYPE_URN}&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.Formality.FileName"&gt;{FORMALITY_FILE_NAME}.xml&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.FormalityVersion"&gt;{FORMALITY_VERSION}&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.CorrelationId"&gt;{CORRELATION_ID}&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.CreationDateAndTime"&gt;{yyyy-MM-ddTHH:mm:ss.SSSZ}&lt;/ns:Property&gt;
+              &lt;!-- Only if the container includes attachments --&gt;
+              &lt;ns:Property name="FormalityInfo.AttachmentCount"&gt;{N}&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.FormalityBody.Attachment1"&gt;{ATTACHMENT_1_FILE_NAME}&lt;/ns:Property&gt;
+              &lt;ns:Property name="MimeType"&gt;application/vnd.etsi.asic-e+zip&lt;/ns:Property&gt;
+              &lt;ns:Property name="FormalityInfo.MimeType"&gt;application/vnd.etsi.asic-e+zip&lt;/ns:Property&gt;
+            &lt;/ns:PartProperties&gt;
+          &lt;/ns:PartInfo&gt;
+        &lt;/ns:PayloadInfo&gt;
+      &lt;/ns:UserMessage&gt;
+    &lt;/ns:Messaging&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;eu:submitRequest&gt;
+      &lt;!-- Signed ASiC-E container, sent as an MTOM attachment --&gt;
+      &lt;payload payloadId="cid:message" contentType="application/vnd.etsi.asic-e+zip"&gt;
+        &lt;value&gt;cid:{ASIC_E_CONTAINER_FILE_NAME}&lt;/value&gt;
+      &lt;/payload&gt;
+    &lt;/eu:submitRequest&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</code></pre>
+        </div>
+        <p>The <code>FormalityInfo.AttachmentCount</code> and <code>FormalityInfo.FormalityBody.Attachment*</code> properties are only included when the ASiC-E container has attachments. Keep <code>MimeType</code>, <code>FormalityInfo.MimeType</code>, and the WS-plugin payload <code>contentType</code> aligned as <code>application/vnd.etsi.asic-e+zip</code> so Domibus resolves the message to the intended PMode leg.</p>
+
+        <!-- 8 -->
+        <h2 id="message-flow">8. Message flow and responses</h2>
+        <p>Both directions use One-Way / Push. MNSW <strong>pushes</strong> its responses to your AS4 endpoint, so your Access Point must also act as a receiver.</p>
+        <pre class="mermaid">
+sequenceDiagram
+    participant C1 as C1 Sender backend
+    participant C2 as C2 Your Access Point
+    participant C3 as C3 MNSW RIM
+    participant C4 as C4 MNSW backend
+    C1->>C2: Signed ASiC-E + metadata
+    C2->>C3: AS4 UserMessage (emswe-formality-request)
+    C3-->>C2: AS4 Receipt (synchronous, in HTTP response)
+    C3->>C4: Validated formality
+    C4->>C3: Result
+    C3->>C2: AS4 UserMessage (emswe-formality-response), HTTPS push
+    C2-->>C3: AS4 Receipt
+    C2->>C1: Response delivered to backend
+    </pre>
+        <div class="callout warning">
+            <strong>Your endpoint must be reachable from MNSW over HTTPS.</strong> Send us the source IP addresses your Access Point sends from and its DNS name, so that firewall openings can be arranged on both sides.
+        </div>
+
+        <!-- 9 -->
+        <h2 id="pmode">9. PMode reference</h2>
+        <p>The excerpt below shows the relevant parts of the MNSW PMode. Your own PMode must use matching values.</p>
+        <div class="code-panel">
+            <div class="code-toolbar"><strong>MNSW PMode excerpt</strong><button class="copy-button" type="button" data-copy-target="pmode-excerpt">Copy XML</button></div>
+            <pre class="xml"><code id="pmode-excerpt">&lt;roles&gt;
+    &lt;role name="senderRole" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator"/&gt;
+    &lt;role name="recipientRole" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder"/&gt;
+&lt;/roles&gt;
+&lt;partyIdTypes&gt;
+    &lt;partyIdType name="rimParty" value="urn:oasis:names:tc:ebcore:partyid-type:unregistered"/&gt;
+&lt;/partyIdTypes&gt;
+&lt;agreement name="agreementEmpty" value="" type=""/&gt;
+&lt;service name="rim-service" value="rim-messaging-service" type="rim-process-schema"/&gt;
+&lt;action name="b2sw-action" value="emswe-formality-request"/&gt;
+&lt;action name="sw2b-action" value="emswe-formality-response"/&gt;
+&lt;security name="eDeliveryAS4Policy_BST_PKIP_RIM" profile="rsa"/&gt;
+&lt;property name="originalSenderProperty" key="originalSender" datatype="string" required="true"/&gt;
+&lt;property name="finalRecipientProperty" key="finalRecipient" datatype="string" required="true"/&gt;</code></pre>
+        </div>
+        <p>For a complete sender-side PMode with explanations, see the <a href="domibus-pmode-configuration-guide.html">Domibus PMode Configuration Guide</a>.</p>
+
+        <!-- 10 -->
+        <h2 id="production">10. Moving to production and changes</h2>
+        <p>Before production, replace the shared test eIDAS certificate with your organisation's own qualified or advanced eIDAS certificate, and switch to the production party details delivered by MNSW.</p>
+        <p>Any later change to your Access Point (certificate, endpoint, key or IP addresses) requires advance notification, certificate exchange, a PMode update, testing in STG and a coordinated production activation.</p>
+
+        <!-- 11 -->
+        <h2 id="checklist">11. What to send us</h2>
+        <ul class="checklist">
+            <li>Party ID and AS4 endpoint URL</li>
+            <li>Public AS4 certificate</li>
+            <li>DNS name of your Access Point</li>
+            <li>Source IP addresses of your Access Point</li>
+            <li>Organisation details for URAM registration (<a href="#uram">section 4</a>)</li>
+        </ul>
+
+        <!-- 12 -->
+        <h2 id="references">12. References</h2>
+        <ul>
+            <li><a href="https://webgate.ec.europa.eu/fpfis/wikis/spaces/EMSWE/pages/2249951047/RIM+v3.3.0+Integration+Guidance" target="_blank" rel="noopener noreferrer">EMSA – RIM v3.3.0 Integration Guidance</a> (chapter 6: AS4 UserMessage example with the Domibus WS plugin)</li>
+            <li><a href="FinlandEMSWeDomibusSenderIntegrationGuide.pdf">Finland EMSWe Domibus Sender Integration Guide (PDF)</a></li>
+            <li><a href="domibus-pmode-configuration-guide.html">Domibus PMode Configuration Guide</a></li>
+            <li><a href="https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus" target="_blank" rel="noopener noreferrer">European Commission – Domibus</a></li>
+            <li><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/AS4-profile/v1.0/os/AS4-profile-v1.0-os.html" target="_blank" rel="noopener noreferrer">OASIS AS4 Profile of ebMS 3.0 v1.0</a></li>
+            <li><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html" target="_blank" rel="noopener noreferrer">OASIS ebMS 3.0 Core Specification</a></li>
+        </ul>
+    </article>
 </main>
+
+<script>
+    document.querySelectorAll('[data-copy-target]').forEach((button) => {
+        button.addEventListener('click', async () => {
+            const target = document.getElementById(button.dataset.copyTarget);
+            if (!target) return;
+            try {
+                await navigator.clipboard.writeText(target.textContent);
+                const oldText = button.textContent;
+                button.textContent = 'Copied';
+                window.setTimeout(() => { button.textContent = oldText; }, 1600);
+            } catch (error) {
+                button.textContent = 'Copy failed';
+            }
+        });
+    });
+</script>
 </body>
 </html>
