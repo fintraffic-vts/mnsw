@@ -1,0 +1,969 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>NEMO Port Call 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: full-bleed 3D stage (port diorama + floating digital layer with NEMO); title top-left, message log top-right, step caption and transport bottom-left. One light look, matching the Route Exchange 3D series. */
+:root{
+  color-scheme: light;
+  --sky:#EEF4F9; --paper:#FFFFFF; --ink:#14283C; --muted:#56687A; --rule:#D3DEE8;
+  --navy:#0B4F8A; --teal:#00A99D; --teal-ink:#05756C; --plum:#8E4A8C; --amber:#E8A400; --amber-ink:#9A6B00; --slate:#56687A; --ok:#2E9E5B;
+  --f-display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow","Segoe UI",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gl:max(16px, env(safe-area-inset-left, 0px)); --gr:max(16px, env(safe-area-inset-right, 0px));
+}
+html,body{height:100%}
+body{background:var(--sky);color:var(--ink);font-family:var(--f-body);font-size:15px}
+.app{position:relative;height:100%;min-height:560px;overflow:hidden;background:var(--sky)}
+#stage{position:absolute;inset:0;width:100%;height:100%;display:block;outline:none;touch-action:none;cursor:grab}
+#stage:active{cursor:grabbing}
+.labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+.head{position:absolute;top:16px;left:var(--gl);max-width:min(560px,calc(100% - 32px));pointer-events:none}
+.eyebrow{margin:0 0 4px;font:500 12px/1.35 var(--f-mono);letter-spacing:.03em;color:var(--muted)}
+h1{margin:0;font:700 32px/1.02 var(--f-display);color:var(--navy);text-wrap:balance}
+.key{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.key li{display:flex;align-items:center;gap:6px}
+.sw{flex:none;width:18px;height:5px;border-radius:3px}
+.hint{margin:6px 0 0;font:400 11px/1.4 var(--f-mono);color:var(--muted)}
+
+.log{position:absolute;top:16px;right:var(--gr);width:330px;background:rgba(255,255,255,.94);border:1px solid var(--rule);border-radius:10px;padding:8px 12px 10px}
+.log-head{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:8px;cursor:pointer}
+.log-head:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
+.log-head .lh-t{font:600 12px var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.log-head .mono{margin-left:auto;font:500 12px var(--f-mono);color:var(--navy);font-variant-numeric:tabular-nums}
+.log-head svg{width:14px;height:14px;color:var(--muted);transition:transform .2s}
+.log-head[aria-expanded="true"] svg{transform:rotate(180deg)}
+.log-last{margin-top:4px;font-size:13px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log-last b{font-weight:600}.log-last span{color:var(--muted)}
+.log ol{list-style:none;margin:8px 0 0;padding:8px 0 0;border-top:1px solid var(--rule);display:grid;gap:7px}
+.log li{display:grid;grid-template-columns:100px 1fr;column-gap:8px;font-size:13px;line-height:1.25}
+.log time{grid-row:span 2;font:400 11px/1.5 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.log .who{font-weight:600}
+.log .what{color:var(--muted)}
+.log li.fresh,.log-last.fresh{animation:fresh .6s ease-out}
+.log .empty{display:block;color:var(--muted);font-size:13px}
+@keyframes fresh{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+.dock{position:absolute;left:var(--gl);bottom:max(16px, env(safe-area-inset-bottom, 0px));box-sizing:border-box;width:min(620px,calc(100% - 32px));background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 16px 12px;box-shadow:0 8px 28px rgba(20,40,60,.10);display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.cap-meta{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;font:500 12px/1.3 var(--f-mono);color:var(--muted)}
+#stepNo{color:var(--navy);font-variant-numeric:tabular-nums}
+.cap-ref{text-align:right}
+h2{margin:2px 0 4px;font:700 23px/1.12 var(--f-display);text-wrap:balance}
+#stepBody{margin:0;font-size:15px;line-height:1.45;max-width:64ch;min-height:4.35em}
+.transport{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.chips{display:flex;gap:4px;flex:1 1 220px;min-width:0}
+.chip{flex:1;min-width:0;height:24px;border:0;background:none;padding:10px 0;cursor:pointer}
+.chip span{display:block;height:4px;border-radius:2px;background:var(--rule);overflow:hidden;position:relative}
+.chip span i{position:absolute;inset:0 auto 0 0;width:0;background:var(--navy)}
+.chip:hover span{background:#BCCDDD}
+.buttons{display:flex;gap:6px;align-items:center}
+.ic{width:38px;height:38px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0}
+.ic:hover{border-color:#A9BCCF}
+.ic.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.ic svg{width:18px;height:18px}
+.txt{height:38px;padding:0 12px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);font:600 13px var(--f-body);color:var(--ink);cursor:pointer}
+.txt:hover{border-color:#A9BCCF}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+.lbl{position:absolute;left:0;top:0;will-change:transform;white-space:nowrap;background:rgba(255,255,255,.95);border:1px solid var(--rule);border-radius:6px;padding:3px 8px 4px;font:600 13px/1.2 var(--f-display);color:var(--ink);box-shadow:0 1px 3px rgba(20,40,60,.14);transition:opacity .3s}
+.lbl small{display:block;font:500 10.5px/1.3 var(--f-mono);color:var(--muted)}
+.lbl.k-teal{border-color:#86D5CE}.lbl.k-navy{border-color:#9DBBD8}.lbl.k-plum{border-color:#D3AFD2}.lbl.k-slate{border-color:#B8C4CF}.lbl.k-amber{border-color:#EBCB78}
+.lbl.big{font-size:16px;padding:5px 10px 6px;border-color:#9DBBD8}
+.lbl.big b{color:var(--navy)}
+.lbl.pk{font:600 11px/1 var(--f-mono);padding:4px 6px;border:0;color:#fff;background:var(--teal-ink);box-shadow:0 2px 6px rgba(20,40,60,.18)}
+.lbl.pk.navy{background:var(--navy)}.lbl.pk.plum{background:var(--plum)}.lbl.pk.slate{background:var(--slate)}.lbl.pk.amber{background:var(--amber-ink)}
+.lbl.area{font:600 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:none;border:0;box-shadow:none;padding:0}
+.lbl.note{font:600 12px/1.2 var(--f-display);color:var(--ok);border-color:#9FD3B4}
+.lbl.note.plum{color:var(--plum);border-color:#D3AFD2}
+.lbl.check{white-space:normal;width:226px;padding:10px 12px;font-family:var(--f-body);font-weight:400}
+.ck-h{display:flex;justify-content:space-between;align-items:baseline;font:700 14px var(--f-display);margin-bottom:6px}
+.ck-h em{font:600 11px var(--f-mono);font-style:normal;color:var(--navy)}
+.ck-h em.ok{color:var(--ok)}
+.lbl.check ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.lbl.check li{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.lbl.check li::before{content:"";flex:none;width:12px;height:12px;border-radius:50%;border:1.5px solid #B8C4CF;box-sizing:border-box}
+.lbl.check li.ok{color:var(--ink)}
+.lbl.check li.ok::before{border:0;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 6.2l2 2 4-4.4' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.ck-f{margin-top:7px;padding-top:6px;border-top:1px solid var(--rule);font:500 10.5px var(--f-mono);color:var(--muted)}
+
+.scr{position:absolute;left:0;top:0;z-index:3;width:300px;height:188px;will-change:transform;filter:drop-shadow(0 6px 14px rgba(20,40,60,.18));transition:opacity .35s;opacity:0}
+.leaders{position:absolute;inset:0;z-index:2;width:100%;height:100%;overflow:visible}
+.leaders line{stroke:#7F93A8;stroke-width:1.2;stroke-dasharray:4 3;transition:opacity .35s}
+.leaders circle{fill:#7F93A8;transition:opacity .35s}
+.fallback{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--muted)}
+
+@media (max-width:1100px){.head{max-width:calc(100% - 380px)}}
+@media (max-width:900px){.log{display:none}.head{max-width:calc(100% - 32px)}}
+@media (max-width:640px){
+  h1{font-size:23px}.eyebrow{font-size:11px}.key,.hint{display:none}
+  .dock{padding:12px 12px 10px}
+  h2{font-size:19px}#stepBody{font-size:14px;min-height:0}
+  .cap-ref{display:none}
+  .txt{display:none}
+  .lbl{font-size:11.5px;padding:2px 6px 3px}.lbl small{display:none}
+  .lbl.check{width:176px;padding:8px 10px}
+  .scr{width:172px;height:108px}
+}
+@media (prefers-reduced-motion:reduce){.lbl,.log li.fresh{transition:none;animation:none}}
+</style>
+
+<main class="app" id="app">
+  <canvas id="stage" aria-label="3D animation of one port call reported through NEMO: the ship, the ship agent, NEMO and the authorities"></canvas>
+  <div class="labels" id="labels" aria-hidden="true">
+    <svg class="leaders" id="leaders"><line id="ldA" x1="0" y1="0" x2="0" y2="0" opacity="0"/><circle id="ldAc" r="2.5" opacity="0"/><line id="ldP" x1="0" y1="0" x2="0" y2="0" opacity="0"/><circle id="ldPc" r="2.5" opacity="0"/></svg>
+    <canvas class="scr" id="scrA" width="640" height="400"></canvas>
+    <canvas class="scr" id="scrP" width="640" height="400"></canvas>
+  </div>
+
+  <header class="head" id="head">
+    <p class="eyebrow">NEMO · Finland’s Maritime National Single Window</p>
+    <h1>A port call through NEMO</h1>
+    <ul class="key" aria-label="Legend">
+      <li><span class="sw" style="background:var(--teal)"></span>Formalities from the agent</li>
+      <li><span class="sw" style="background:var(--navy)"></span>NEMO responses</li>
+      <li><span class="sw" style="background:var(--plum)"></span>Authorities</li>
+      <li><span class="sw" style="background:var(--amber)"></span>Port</li>
+      <li><span class="sw" style="background:var(--slate)"></span>Open data</li>
+    </ul>
+    <p class="hint">Illustrative scene, simulated times · drag to orbit, scroll to zoom, arrow keys to step</p>
+  </header>
+
+  <aside class="log" aria-label="Message log">
+    <button class="log-head" id="logToggle" type="button" aria-expanded="false" aria-controls="logList"><span class="lh-t">Message log</span><span class="mono" id="clock">13 Oct 05:40:00</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="log-last" id="logLast"><span>No messages yet. The ship is still at sea.</span></div>
+    <ol id="logList" hidden></ol>
+  </aside>
+
+  <section class="dock" id="dock" aria-live="polite">
+    <div>
+      <div class="cap-meta"><span id="stepNo">Step 1 of 10</span><span class="cap-ref" id="stepRef"></span></div>
+      <h2 id="stepTitle">The setting</h2>
+      <p id="stepBody"></p>
+    </div>
+    <div class="transport">
+      <div class="chips" id="chips"></div>
+      <div class="buttons">
+        <button class="ic" id="prev" type="button" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="ic primary" id="play" type="button" aria-label="Pause"><svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+        <button class="ic" id="next" type="button" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button class="txt" id="view" type="button">Reset view</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="fallback" id="fallback" hidden>
+    <p>This animation needs WebGL, which this browser or view doesn't provide. Open the page in a desktop browser to see it.</p>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+"use strict";
+const $ = (id) => document.getElementById(id);
+function fail(){ $('fallback').hidden = false; $('stage').hidden = true; }
+if (typeof THREE === 'undefined' || !THREE.OrbitControls) { fail(); return; }
+
+const REDUCE = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const V3 = THREE.Vector3;
+const clamp = (x,a,b) => Math.max(a, Math.min(b, x));
+const lerp = (a,b,k) => a + (b-a)*k;
+const seg = (t,a,b) => clamp((t-a)/(b-a), 0, 1);
+const ease = (x) => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x+2, 3)/2;
+const easeOut = (x) => 1 - Math.pow(1-x, 3);
+const env = (t,a,b,f) => Math.min(seg(t,a,a+f), 1 - seg(t,b-f,b));
+function rng(seed){ return function(){ seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+const COL = { sea:0x9FCBEB, seaSide:0x7FB0D8, seaBase:0x5F93C2, shallow:0xC4E3F6, land:0xD2E0C2, landSide:0xACC09A, tree:0x6F9E7C,
+  navy:0x0B4F8A, teal:0x00A99D, tealInk:0x05756C, plum:0x8E4A8C, amber:0xE8A400, amberInk:0x9A6B00, ok:0x2E9E5B, slate:0x56687A, white:0xFFFFFF, ink:0x14283C, concrete:0xDCE1E6 };
+const DIG_Y = 8;
+
+/* ---------------- renderer, scene, camera ---------------- */
+const canvas = $('stage');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias:true }); } catch(e) { fail(); return; }
+if (!renderer.getContext()) { fail(); return; }
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.setClearColor(0xEEF4F9, 1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0xEEF4F9, 100, 230);
+const BASE_FOV = 40;
+const camera = new THREE.PerspectiveCamera(BASE_FOV, 1, 0.1, 400);
+camera.position.set(-6, 22, 28);
+const controls = new THREE.OrbitControls(camera, canvas);
+controls.target.set(1, 3.5, -1);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.maxPolarAngle = Math.PI * 0.48; controls.minDistance = 5; controls.maxDistance = 90;
+
+scene.add(new THREE.HemisphereLight(0xFFFFFF, 0xB8CFE2, 0.58));
+scene.add(new THREE.AmbientLight(0xFFFFFF, 0.1));
+const sun = new THREE.DirectionalLight(0xFFFFFF, 0.6);
+sun.position.set(-14, 30, 18); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-30, right:30, top:22, bottom:-22, near:1, far:95 });
+sun.shadow.bias = -0.0006;
+scene.add(sun);
+
+const mat = (c, o) => new THREE.MeshStandardMaterial(Object.assign({ color:c, roughness:0.78, metalness:0 }, o || {}));
+const basic = (c, op, o) => new THREE.MeshBasicMaterial(Object.assign({ color:c, transparent:true, opacity:op, depthWrite:false }, o || {}));
+function add(mesh, x, y, z, shadow){ mesh.position.set(x||0, y||0, z||0); if (shadow !== false) { mesh.castShadow = true; mesh.receiveShadow = true; } scene.add(mesh); return mesh; }
+const box = (w,h,d,c,o) => new THREE.Mesh(new THREE.BoxGeometry(w,h,d), mat(c,o));
+
+/* ---------------- sea diorama ---------------- */
+const slabSide = mat(COL.seaSide), slabTop = mat(COL.sea);
+add(new THREE.Mesh(new THREE.BoxGeometry(40, 1.4, 26), [slabSide, slabSide, slabTop, slabSide, slabSide, slabSide]), 0, -0.72, 0, false);
+add(new THREE.Mesh(new THREE.BoxGeometry(40.6, 0.25, 26.6), mat(COL.seaBase)), 0, -1.5, 0, false);
+
+const wGeo = new THREE.PlaneGeometry(40, 26, 80, 52); wGeo.rotateX(-Math.PI/2);
+const wPos = wGeo.attributes.position, wBase = Float32Array.from(wPos.array);
+const water = new THREE.Mesh(wGeo, mat(COL.sea, { flatShading:true, roughness:0.4, metalness:0.04 }));
+water.receiveShadow = true; scene.add(water);
+function updateWater(time){
+  for (let i = 0; i < wPos.count; i++) {
+    const x = wBase[i*3], z = wBase[i*3+2];
+    wPos.array[i*3+1] = 0.045*Math.sin(x*0.55 + time*0.9) + 0.035*Math.sin(z*0.8 - time*1.1 + x*0.2);
+  }
+  wPos.needsUpdate = true;
+}
+updateWater(0);
+
+(function(){
+  const pts = [];
+  for (let x = -20; x <= 8; x += 4) pts.push(x,0.1,-13, x,0.1,13);
+  for (let z = -12; z <= 12; z += 4) pts.push(-20,0.1,z, 11.2,0.1,z);
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+  scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color:COL.navy, transparent:true, opacity:0.08 })));
+  const cm = new THREE.LineBasicMaterial({ color:0x7EAED6, transparent:true, opacity:0.6 });
+  [[[-20,-9.6],[-12,-8.4],[-4,-9.8],[4,-8.8],[11,-10.2]], [[-20,9.4],[-11,8.6],[-3,10],[5,9.2],[11,10.2]], [[-20,-1.6],[-17,-0.6],[-13.5,-1.8],[-10,-1.0]]].forEach(c => {
+    const curve = new THREE.CatmullRomCurve3(c.map(([x,z]) => new V3(x, 0.09, z)));
+    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(80)), cm));
+  });
+})();
+
+const COAST = [[12.4,-13],[11.6,-10.2],[12.6,-7.6],[11.5,-5.4],[12.3,-3.2],[11.9,-1.4],[12.3,-0.1],[12.2,1.5],[11.4,3.2],[12.5,5.3],[11.7,7.6],[12.6,10.1],[12.0,13]];
+(function(){
+  const sh = new THREE.Shape();
+  sh.moveTo(COAST[0][0], -COAST[0][1]);
+  COAST.slice(1).forEach(([x,z]) => sh.lineTo(x, -z));
+  sh.lineTo(20, -13); sh.lineTo(20, 13); sh.closePath();
+  const g = new THREE.ExtrudeGeometry(sh, { depth:0.75, bevelEnabled:false }); g.rotateX(-Math.PI/2);
+  const land = new THREE.Mesh(g, [mat(COL.land), mat(COL.landSide)]); land.position.y = -0.25; land.receiveShadow = true; scene.add(land);
+  const band = new THREE.Shape();
+  band.moveTo(COAST[0][0] - 0.9, -COAST[0][1]);
+  COAST.slice(1).forEach(([x,z]) => band.lineTo(x - 0.9, -z));
+  for (let i = COAST.length - 1; i >= 0; i--) band.lineTo(COAST[i][0] + 0.1, -COAST[i][1]);
+  const bg = new THREE.ShapeGeometry(band); bg.rotateX(-Math.PI/2);
+  const bm = new THREE.Mesh(bg, basic(COL.shallow, 0.9)); bm.position.y = 0.075; scene.add(bm);
+})();
+
+const ISLANDS = [[-1.5,-3.9,0.9],[2.6,-5.4,0.7],[5.6,-3.2,0.85],[8.4,-5.8,0.6],[1.2,5.3,0.95],[4.8,5.7,0.7],[7.9,4.3,0.65],[-6.8,-5.6,0.65],[-9.5,6.8,0.55],[-12.5,-8.2,0.8],[-3.5,7.1,0.5],[-14.6,6.4,0.6],[-16.5,-4.4,0.5]];
+(function(){
+  const r = rng(21), top = mat(COL.land, { flatShading:true }), side = mat(COL.landSide, { flatShading:true });
+  ISLANDS.forEach(([cx, cz, rad]) => {
+    const sh = new THREE.Shape(), n = 11;
+    for (let k = 0; k < n; k++) {
+      const a = k / n * Math.PI * 2, rr = rad * (0.72 + r()*0.45);
+      const x = cx + Math.cos(a) * rr * 1.25, y = -(cz + Math.sin(a) * rr);
+      k ? sh.lineTo(x, y) : sh.moveTo(x, y);
+    }
+    sh.closePath();
+    const g = new THREE.ExtrudeGeometry(sh, { depth:0.18 + r()*0.22, bevelEnabled:true, bevelThickness:0.08, bevelSize:0.14, bevelSegments:2 });
+    g.rotateX(-Math.PI/2);
+    const m = new THREE.Mesh(g, [top, side]); m.position.y = -0.1; m.castShadow = true; m.receiveShadow = true; scene.add(m);
+    const halo = new THREE.Mesh(new THREE.CircleGeometry(rad * 1.95, 28), basic(COL.shallow, 0.75));
+    halo.rotation.x = -Math.PI/2; halo.scale.set(1.25, 1, 1); halo.position.set(cx, 0.07, cz); scene.add(halo);
+  });
+})();
+
+/* ---------------- fairway ---------------- */
+const ROUTE = [[-18,2.2],[-9,3.0],[-2,1.3],[4.2,0.6],[9.4,0.55]];
+function cumOf(pts){ const c = [0]; for (let k = 1; k < pts.length; k++) c.push(c[k-1] + Math.hypot(pts[k][0]-pts[k-1][0], pts[k][1]-pts[k-1][1])); return c; }
+const RCUM = cumOf(ROUTE), RLEN = RCUM[RCUM.length-1];
+function pointAt(s){
+  let k = 1; while (k < ROUTE.length - 1 && RCUM[k] < s) k++;
+  const [x0,z0] = ROUTE[k-1], [x1,z1] = ROUTE[k], L = RCUM[k] - RCUM[k-1];
+  const f = (s - RCUM[k-1]) / L;
+  return { x: x0 + (x1-x0)*f, z: z0 + (z1-z0)*f, dx: (x1-x0)/L, dz: (z1-z0)/L };
+}
+const SP = (s) => { const p = pointAt(clamp(s, 0, RLEN)); return new V3(p.x, 0, p.z); };
+(function(){
+  const red = mat(0xD0453A), green = mat(COL.ok), post = mat(0x3E5568);
+  [4.5, 10.5, 16.5, 21.5].forEach(s => {
+    const p = pointAt(s), rx = -p.dz, rz = p.dx;
+    [[1.15, green, 'cone'], [-1.15, red, 'can']].forEach(([o, m, kind]) => {
+      const x = p.x + rx*o, z = p.z + rz*o;
+      add(new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.15, 0.36, 12), m), x, 0.18, z);
+      add(new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.3, 6), post), x, 0.5, z);
+      add(kind === 'cone' ? new THREE.Mesh(new THREE.ConeGeometry(0.09, 0.16, 10), m) : new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.14, 10), m), x, 0.7, z);
+    });
+  });
+})();
+
+/* ---------------- shore: port, customs, agent, border guard ---------------- */
+const PIER = { x0:7.2, x1:12.1, z:-0.35, w:1.0 };
+add(box(PIER.x1 - PIER.x0, 0.5, PIER.w, COL.concrete), (PIER.x0 + PIER.x1)/2, 0.05, PIER.z);
+[[8.2],[10.3]].forEach(([x]) => {
+  const am = mat(COL.amber), cz0 = PIER.z - 0.4, cz1 = PIER.z + 0.4;
+  [[-0.35,cz0],[0.35,cz0],[-0.35,cz1],[0.35,cz1]].forEach(([dx,z]) => add(new THREE.Mesh(new THREE.BoxGeometry(0.09, 1.95, 0.09), am), x+dx, 1.27, z));
+  add(new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.14, 0.95), am), x, 2.25, PIER.z);
+  add(new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.14, 3.1), am), x, 2.4, PIER.z + 0.25);
+  add(box(0.5, 0.32, 0.5, 0xF4F6F8), x, 2.55, PIER.z - 0.55);
+});
+(function(){
+  const r = rng(5), cols = [COL.navy, 0x2B7A8C, COL.amber, COL.plum, 0x7D8C9A, 0xE9EDF1, 0x3E6E9E], cg = new THREE.BoxGeometry(0.5, 0.22, 0.36);
+  for (let x = 13.0; x <= 14.9; x += 0.58) for (let z = -0.6; z <= 1.3; z += 0.45) {
+    const h = 1 + Math.floor(r()*3);
+    for (let k = 0; k < h; k++) add(new THREE.Mesh(cg, mat(cols[Math.floor(r()*cols.length)])), x, 0.61 + k*0.225, z);
+  }
+})();
+const PORTB = new V3(16.5, 0.5, 2.3);
+add(box(1.7, 0.9, 1.2, 0xF7F4EA), PORTB.x, 0.95, PORTB.z);
+add(box(1.74, 0.18, 1.24, COL.amber), PORTB.x, 1.18, PORTB.z);
+add(box(1.85, 0.08, 1.35, 0xEFE3BF), PORTB.x, 1.44, PORTB.z);
+
+const CUS = new V3(14.9, 0.5, -3.7);
+add(box(1.9, 0.9, 1.25, 0xFAF6FA), CUS.x, 0.95, CUS.z);
+add(box(1.94, 0.18, 1.29, COL.plum), CUS.x, 1.18, CUS.z);
+add(box(2.05, 0.08, 1.4, 0xE7DCE9), CUS.x, 1.44, CUS.z);
+add(new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 1.2, 6), mat(0x9AA8B5)), CUS.x - 1.2, 1.1, CUS.z + 0.75);
+add(box(0.36, 0.22, 0.02, 0xFFFFFF), CUS.x - 1.0, 1.55, CUS.z + 0.75);
+add(box(0.36, 0.06, 0.025, 0x1F4E9C), CUS.x - 1.0, 1.55, CUS.z + 0.75);
+
+const AG = new V3(15.7, 0.5, -7.9);
+add(box(1.7, 1.5, 1.2, 0xF6FAF9), AG.x, 1.25, AG.z);
+add(box(1.74, 0.16, 1.24, COL.teal), AG.x, 1.25, AG.z);
+add(box(1.8, 0.08, 1.3, 0xD9EFEC), AG.x, 2.04, AG.z);
+add(box(1.72, 0.1, 1.22, 0x1C3346), AG.x, 1.62, AG.z);
+add(box(1.72, 0.1, 1.22, 0x1C3346), AG.x, 0.88, AG.z);
+const AG_ROOF = new V3(AG.x + 0.45, 2.55, AG.z);
+add(new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.45, 6), mat(0x9AA8B5)), AG_ROOF.x, 2.3, AG_ROOF.z);
+(function(){ const d = new THREE.Mesh(new THREE.SphereGeometry(0.22, 16, 10, 0, Math.PI*2, 0, Math.PI/2), mat(0xFFFFFF)); d.rotation.z = 0.9; add(d, AG_ROOF.x, 2.5, AG_ROOF.z); })();
+const agentUp = new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.02, 6, 24), mat(COL.teal, { emissive:COL.teal, emissiveIntensity:0.6 }));
+agentUp.rotation.x = Math.PI/2; add(agentUp, AG_ROOF.x, 2.62, AG_ROOF.z, false);
+
+const BG = new V3(14.3, 0.5, 6.7);
+add(box(1.6, 0.85, 1.15, 0xF4F6F8), BG.x, 0.92, BG.z);
+add(box(1.64, 0.16, 1.19, COL.plum), BG.x, 1.12, BG.z);
+add(box(1.72, 0.08, 1.27, 0xE7DCE9), BG.x, 1.39, BG.z);
+add(new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.2, 1.7, 10), mat(0xE9EDF1)), BG.x + 1.1, 1.35, BG.z - 0.2);
+add(new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.22, 10), mat(COL.plum)), BG.x + 1.1, 2.3, BG.z - 0.2);
+add(box(1.6, 0.3, 0.4, COL.concrete), 11.6, 0.05, 7.05);
+(function(){
+  const s = new THREE.Shape();
+  s.moveTo(-0.7, -0.2); s.lineTo(0.45, -0.2); s.quadraticCurveTo(0.75, -0.15, 0.85, 0); s.quadraticCurveTo(0.75, 0.15, 0.45, 0.2); s.lineTo(-0.7, 0.2); s.closePath();
+  const g = new THREE.ExtrudeGeometry(s, { depth:0.24, bevelEnabled:false }); g.rotateX(-Math.PI/2);
+  const boat = new THREE.Group();
+  boat.add(new THREE.Mesh(g, [mat(0x4A5966), mat(0xF4F6F8)]));
+  const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.05, 0.42), mat(COL.plum)); stripe.position.set(0.2, 0.13, 0); boat.add(stripe);
+  const cab = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.22, 0.3), mat(0xF4F6F8)); cab.position.set(-0.15, 0.32, 0); boat.add(cab);
+  boat.traverse(o => { if (o.isMesh) o.castShadow = true; });
+  boat.position.set(11.4, -0.05, 7.55); boat.rotation.y = Math.PI; scene.add(boat);
+})();
+
+(function(){
+  const r = rng(7), treeGeo = new THREE.ConeGeometry(0.22, 0.65, 6), treeMat = mat(COL.tree, { flatShading:true });
+  const keep = [[12.4,16.0,-1.1,1.7],[15.5,17.6,1.4,3.2],[13.7,16.1,-4.6,-2.8],[13.9,17.0,-8.8,-7.0],[12.1,15.7,5.8,7.6],[16.4,19.6,-8.6,3.6]];
+  for (let n = 0, k = 0; n < 40 && k < 500; k++) {
+    const x = 13 + r()*6.6, z = -12.4 + r()*24.8;
+    if (keep.some(([a,b,c,d]) => x > a && x < b && z > c && z < d)) continue;
+    const t = add(new THREE.Mesh(treeGeo, treeMat), x, 0.82, z); t.scale.setScalar(0.7 + r()*0.6); n++;
+  }
+})();
+
+/* ---------------- digital layer ---------------- */
+const DL = { x0:-13, x1:19.5, z0:-9.8, z1:8.8 };
+(function(){
+  const w = DL.x1 - DL.x0, d = DL.z1 - DL.z0;
+  const plane = new THREE.Mesh(new THREE.PlaneGeometry(w, d), basic(0xFFFFFF, 0.14, { side:THREE.DoubleSide }));
+  plane.rotation.x = -Math.PI/2; plane.position.set((DL.x0+DL.x1)/2, DIG_Y, (DL.z0+DL.z1)/2); scene.add(plane);
+  const y = DIG_Y, p = [DL.x0,y,DL.z0, DL.x1,y,DL.z0, DL.x1,y,DL.z1, DL.x0,y,DL.z1, DL.x0,y,DL.z0];
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3));
+  scene.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color:COL.navy, transparent:true, opacity:0.4 })));
+  const dots = [];
+  for (let x = DL.x0 + 1; x < DL.x1; x += 1) for (let z = DL.z0 + 1; z < DL.z1; z += 1) dots.push(x, y, z);
+  const dg = new THREE.BufferGeometry(); dg.setAttribute('position', new THREE.Float32BufferAttribute(dots, 3));
+  scene.add(new THREE.Points(dg, new THREE.PointsMaterial({ color:0x7FA3C4, size:0.07, transparent:true, opacity:0.8 })));
+})();
+
+const NEMO = new V3(2.6, DIG_Y, -2.2);
+const CUSN = new V3(CUS.x, DIG_Y, CUS.z), BGN = new V3(BG.x, DIG_Y, BG.z), PORTN = new V3(PORTB.x, DIG_Y, PORTB.z);
+const TRAN = new V3(8.8, DIG_Y, -7.7), DTN = new V3(-8.4, DIG_Y, -5.4);
+
+add(new THREE.Mesh(new THREE.CylinderGeometry(2.0, 2.2, 0.65, 48), mat(COL.navy, { roughness:0.5 })), NEMO.x, DIG_Y + 0.33, NEMO.z);
+const nemoCap = mat(0xD8E8F6, { emissive:COL.teal, emissiveIntensity:0.12 });
+add(new THREE.Mesh(new THREE.CylinderGeometry(1.75, 1.75, 0.05, 48), nemoCap), NEMO.x, DIG_Y + 0.68, NEMO.z);
+const nemoCore = add(new THREE.Mesh(new THREE.IcosahedronGeometry(0.5, 0), mat(0x2E7BC4, { flatShading:true, roughness:0.4 })), NEMO.x, DIG_Y + 1.3, NEMO.z);
+const nemoRing = new THREE.Group(); nemoRing.position.set(NEMO.x, DIG_Y + 0.35, NEMO.z); scene.add(nemoRing);
+(function(){ const t = new THREE.Mesh(new THREE.TorusGeometry(2.65, 0.045, 8, 120), mat(0x5E95C9)); t.rotation.x = Math.PI/2; nemoRing.add(t);
+  [COL.teal, COL.plum, COL.amber, COL.slate].forEach((c, k) => { const b = new THREE.Mesh(new THREE.SphereGeometry(0.1, 12, 8), mat(c, { emissive:c, emissiveIntensity:0.4 })); const a = k/4*Math.PI*2; b.position.set(Math.cos(a)*2.65, 0, Math.sin(a)*2.65); nemoRing.add(b); }); })();
+
+function node(pos, color, light, w, d){
+  add(new THREE.Mesh(new THREE.BoxGeometry(w || 2.0, 0.55, d || 1.4), mat(color, { roughness:0.5 })), pos.x, DIG_Y + 0.28, pos.z);
+  const cap = mat(light, { emissive:color, emissiveIntensity:0 });
+  add(new THREE.Mesh(new THREE.BoxGeometry((w || 2.0) - 0.3, 0.05, (d || 1.4) - 0.3), cap), pos.x, DIG_Y + 0.57, pos.z);
+  return cap;
+}
+const cusCap = node(CUSN, COL.plum, 0xF1E4F1), bgCap = node(BGN, COL.plum, 0xF1E4F1), traCap = node(TRAN, COL.plum, 0xF1E4F1);
+const portCap = node(PORTN, COL.amber, 0xFFF1C8);
+add(new THREE.Mesh(new THREE.CylinderGeometry(1.0, 1.1, 0.45, 6), mat(COL.slate, { flatShading:true })), DTN.x, DIG_Y + 0.23, DTN.z);
+const dtCap = mat(0xDDE6EE, { emissive:COL.slate, emissiveIntensity:0 });
+add(new THREE.Mesh(new THREE.CylinderGeometry(0.86, 0.86, 0.06, 6), dtCap), DTN.x, DIG_Y + 0.48, DTN.z);
+const dtOrbit = new THREE.Group(); dtOrbit.position.set(DTN.x, DIG_Y + 0.35, DTN.z); scene.add(dtOrbit);
+[0,1,2,3,4].forEach(k => { const s = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 8), mat(0xB8C6D4)); const a = k/5*Math.PI*2; s.position.set(Math.cos(a)*1.5, 0, Math.sin(a)*1.5); dtOrbit.add(s); });
+
+function dashed(a, b, color, op){ const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute([a.x,a.y,a.z, b.x,b.y,b.z], 3));
+  const l = new THREE.Line(g, new THREE.LineDashedMaterial({ color, dashSize:0.25, gapSize:0.18, transparent:true, opacity:op })); l.computeLineDistances(); scene.add(l); return l; }
+dashed(new V3(CUSN.x, DIG_Y - 0.02, CUSN.z), new V3(CUS.x, 1.5, CUS.z), COL.plum, 0.7);
+dashed(new V3(BGN.x, DIG_Y - 0.02, BGN.z), new V3(BG.x, 1.45, BG.z), COL.plum, 0.7);
+dashed(new V3(PORTN.x, DIG_Y - 0.02, PORTN.z), new V3(PORTB.x, 1.5, PORTB.z), COL.amberInk, 0.7);
+
+/* ---------------- vessel ---------------- */
+const ship = new THREE.Group(); scene.add(ship);
+const shipBody = new THREE.Group(); ship.add(shipBody);
+const MAST_LOCAL = new V3(-1.25, 1.5, 0);
+(function(){
+  const s = new THREE.Shape();
+  s.moveTo(-1.7, -0.32); s.lineTo(1.05, -0.32); s.quadraticCurveTo(1.55, -0.28, 1.78, 0); s.quadraticCurveTo(1.55, 0.28, 1.05, 0.32); s.lineTo(-1.7, 0.32); s.quadraticCurveTo(-1.8, 0, -1.7, -0.32);
+  const hg = new THREE.ExtrudeGeometry(s, { depth:0.42, bevelEnabled:false }); hg.rotateX(-Math.PI/2);
+  const hull = new THREE.Mesh(hg, [mat(0x2F5560), mat(COL.teal, { roughness:0.55 })]); hull.position.y = -0.15; shipBody.add(hull);
+  const bg = new THREE.ExtrudeGeometry(s, { depth:0.12, bevelEnabled:false }); bg.rotateX(-Math.PI/2);
+  const boot = new THREE.Mesh(bg, mat(0x1C3346)); boot.scale.set(1.012, 1, 1.04); boot.position.y = -0.17; shipBody.add(boot);
+  const r = rng(3), cols = [COL.navy, 0x2B7A8C, COL.amber, COL.plum, 0x7D8C9A, 0xE9EDF1, 0x3E6E9E];
+  const cg = new THREE.BoxGeometry(0.25, 0.14, 0.28);
+  for (let x = -0.92; x <= 1.0; x += 0.27) for (const z of [-0.15, 0.15]) {
+    const h = 1 + Math.floor(r()*3);
+    for (let k = 0; k < h; k++) { const b = new THREE.Mesh(cg, mat(cols[Math.floor(r()*cols.length)])); b.position.set(x, 0.34 + k*0.145, z); shipBody.add(b); }
+  }
+  const bridge = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.58, 0.62), mat(0xF4F6F8)); bridge.position.set(-1.32, 0.56, 0); shipBody.add(bridge);
+  const win = new THREE.Mesh(new THREE.BoxGeometry(0.41, 0.08, 0.63), mat(0x1C3346)); win.position.set(-1.32, 0.76, 0); shipBody.add(win);
+  const wing = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.05, 0.88), mat(0xF4F6F8)); wing.position.set(-1.22, 0.82, 0); shipBody.add(wing);
+  const fun = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.32, 0.2), mat(COL.navy)); fun.position.set(-1.58, 0.62, 0); shipBody.add(fun);
+  const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.025, 0.65, 6), mat(0x9AA8B5)); mast.position.set(-1.25, 1.17, 0); shipBody.add(mast);
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), mat(0xFFFFFF)); dome.position.copy(MAST_LOCAL); shipBody.add(dome);
+  const up = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.018, 6, 24), mat(COL.teal, { emissive:COL.teal, emissiveIntensity:0.6 })); up.rotation.x = Math.PI/2; up.position.copy(MAST_LOCAL); shipBody.add(up);
+  shipBody.traverse(o => { if (o.isMesh) o.castShadow = true; });
+})();
+const wakeMat = basic(0xFFFFFF, 0, { side:THREE.DoubleSide });
+(function(){
+  const p = [-1.7,0,0.3, -5.2,0,1.3, -5.2,0,1.08,  -1.7,0,-0.3, -5.2,0,-1.3, -5.2,0,-1.08,  -1.75,0,0.16, -1.75,0,-0.16, -4.0,0,0];
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3));
+  const w = new THREE.Mesh(g, wakeMat); w.position.y = 0.1; ship.add(w);
+})();
+function placeShip(x, z, heading, time, moving){
+  ship.position.set(x, REDUCE ? 0 : 0.03*Math.sin(time*1.3), z);
+  ship.rotation.y = heading;
+  shipBody.rotation.x = REDUCE ? 0 : 0.025*Math.sin(time*0.9);
+  wakeMat.opacity = 0.55 * moving;
+}
+const mastWorld = () => { ship.updateMatrixWorld(); return MAST_LOCAL.clone().applyMatrix4(shipBody.matrixWorld); };
+
+/* ---------------- links ---------------- */
+function Tube(color, radius){
+  const m = basic(color, 0); const mesh = new THREE.Mesh(new THREE.BufferGeometry(), m); mesh.visible = false; scene.add(mesh);
+  return { m, mesh, curve:null, r:radius || 0.05, key:'',
+    set(curve){ this.curve = curve; mesh.geometry.dispose(); mesh.geometry = new THREE.TubeGeometry(curve, 48, this.r, 6, false); },
+    setFrom(key, make){ if (key !== this.key) { this.key = key; this.set(make()); } },
+    op(o){ m.opacity = o; mesh.visible = o > 0.01; } };
+}
+class Rev extends THREE.Curve { constructor(c){ super(); this.c = c; } getPoint(t, o){ return this.c.getPoint(1 - t, o); } }
+const up = (n, h) => n.clone().add(new V3(0, h == null ? 0.85 : h, 0));
+const CR = (pts) => new THREE.CatmullRomCurve3(pts);
+const C_AG = CR([AG_ROOF.clone().setY(2.7), new V3(AG_ROOF.x, 5.4, AG_ROOF.z), new V3(10.2, DIG_Y + 2.6, -6.6), new V3(5.4, DIG_Y + 2.2, -3.9), up(NEMO, 1.0)]);
+const C_CUS = CR([up(NEMO), new V3(8.8, DIG_Y + 1.8, -3.4), up(CUSN, 0.7)]);
+const C_BG = CR([up(NEMO), new V3(8.6, DIG_Y + 1.9, 2.6), up(BGN, 0.7)]);
+const C_TRA = CR([up(NEMO), new V3(5.8, DIG_Y + 1.6, -5.9), up(TRAN, 0.7)]);
+const C_PORT = CR([up(NEMO), new V3(9.6, DIG_Y + 2.1, 0.3), up(PORTN, 0.7)]);
+const C_DT = CR([up(NEMO), new V3(-2.8, DIG_Y + 1.7, -4.6), up(DTN, 0.7)]);
+const C_CUS_D = new THREE.LineCurve3(new V3(CUS.x, DIG_Y, CUS.z), new V3(CUS.x, 1.7, CUS.z));
+const C_BG_D = new THREE.LineCurve3(new V3(BG.x, DIG_Y, BG.z), new V3(BG.x, 1.65, BG.z));
+const C_PORT_D = new THREE.LineCurve3(new V3(PORTB.x, DIG_Y, PORTB.z), new V3(PORTB.x, 1.7, PORTB.z));
+const PUB = [[-15.5, DIG_Y + 4.2, -10.5], [-17.5, DIG_Y + 2.0, -3.5], [-14.5, DIG_Y + 4.8, 1.5]].map(([x,y,z]) => CR([up(DTN, 0.6), new V3(lerp(DTN.x, x, 0.5), y - 0.6, lerp(DTN.z, z, 0.5)), new V3(x, y, z)]));
+function shipToAgent(){
+  const a = mastWorld(), b = AG_ROOF.clone().setY(2.75);
+  return CR([a, new V3(a.x, 3.6, a.z), new V3(lerp(a.x, b.x, 0.5), 6.0, lerp(a.z, b.z, 0.5) - 1.5), new V3(b.x - 1.0, 4.2, b.z + 0.4), b]);
+}
+const tAg = Tube(COL.teal), tShip = Tube(COL.teal, 0.045), tCus = Tube(COL.plum), tBg = Tube(COL.plum), tTra = Tube(COL.plum), tPort = Tube(COL.amber), tDt = Tube(COL.slate);
+tAg.set(C_AG); tCus.set(C_CUS); tBg.set(C_BG); tTra.set(C_TRA); tPort.set(C_PORT); tDt.set(C_DT);
+const pubTubes = PUB.map(c => { const t = Tube(COL.slate, 0.03); t.set(c); return t; });
+
+/* ---------------- labels ---------------- */
+const labelsEl = $('labels'), labels = [];
+function addLabel(html, cls, get, anchor){ const el = document.createElement('div'); el.className = 'lbl ' + (cls || ''); el.innerHTML = html; el.style.opacity = 0; labelsEl.appendChild(el); const L = { el, get, anchor: anchor || 'above', op: 1, html }; labels.push(L); return L; }
+function setText(L, html){ if (L.html !== html) { L.html = html; L.el.innerHTML = html; } }
+
+/* ---------------- packets ---------------- */
+function Packet(kind, color, cls){
+  const g = new THREE.Group(); scene.add(g); g.visible = false;
+  if (kind === 'doc') {
+    const card = new THREE.Mesh(new THREE.BoxGeometry(0.72, 0.07, 0.9), mat(0xFFFFFF, { emissive:0xFFFFFF, emissiveIntensity:0.2 })); g.add(card);
+    const band = new THREE.Mesh(new THREE.BoxGeometry(0.74, 0.09, 0.22), mat(color, { emissive:color, emissiveIntensity:0.35 })); band.position.z = -0.34; g.add(band);
+    [-0.08, 0.08, 0.24].forEach((z, k) => { const l = new THREE.Mesh(new THREE.BoxGeometry(k === 2 ? 0.3 : 0.48, 0.075, 0.05), mat(0xB8C6D4)); l.position.set(k === 2 ? -0.09 : 0, 0.01, z); g.add(l); });
+  } else if (kind === 'ring') {
+    g.add(new THREE.Mesh(new THREE.TorusGeometry(0.38, 0.085, 12, 36), mat(color, { emissive:color, emissiveIntensity:0.35 })));
+  } else {
+    g.add(new THREE.Mesh(new THREE.OctahedronGeometry(0.32), mat(color, { flatShading:true, emissive:color, emissiveIntensity:0.25 })));
+  }
+  g.traverse(o => { if (o.isMesh) o.castShadow = true; });
+  const trail = [0,1,2,3,4].map(k => { const m = new THREE.Mesh(new THREE.SphereGeometry(0.09 - k*0.012, 10, 8), basic(color, 0.5 - k*0.08)); m.visible = false; scene.add(m); return m; });
+  const label = addLabel('', 'pk ' + (cls || ''), () => g.position.clone().add(new V3(0, kind === 'doc' ? 0.95 : 0.7, 0)));
+  label.op = 0;
+  return { g, trail, label, kind, active:false,
+    hide(){ this.active = false; },
+    at(pos, text, time){
+      this.active = true; g.visible = true; g.position.copy(pos); setText(label, text);
+      g.rotation.set(kind === 'ring' ? Math.PI/2 : 0.35, (time || 0) * 1.4, 0);
+      trail.forEach(m => m.visible = false); label.op = text ? 1 : 0;
+    },
+    along(curve, p, text, time){
+      const e = ease(p); this.at(curve.getPoint(e), text, time);
+      trail.forEach((m, k) => { const q = e - (k+1)*0.022; m.visible = p > 0 && p < 1 && q > 0; if (m.visible) m.position.copy(curve.getPoint(q)); });
+    },
+    finish(){ if (!this.active) { g.visible = false; trail.forEach(m => m.visible = false); label.op = 0; } }
+  };
+}
+const pool = (n, kind, color, cls) => Array.from({ length:n }, () => Packet(kind, color, cls));
+const P = { doc: pool(10, 'doc', COL.teal, ''), info: pool(4, 'oct', COL.teal, ''), resp: pool(2, 'ring', COL.navy, 'navy'),
+  auth: pool(2, 'doc', COL.plum, 'plum'), port: pool(2, 'doc', COL.amber, 'amber'), pub: pool(4, 'ring', COL.slate, 'slate') };
+const allPackets = [].concat(P.doc, P.info, P.resp, P.auth, P.port, P.pub);
+// run a packet over a chain of [curve, t0, t1] legs
+function chain(pk, legs, text, t, time){
+  for (const [c, a, b] of legs) if (t >= a && t < b) { pk.along(c, seg(t, a, b), text, time); return; }
+}
+
+function Pulse(color, grow){
+  const g = new THREE.RingGeometry(0.85, 1.0, 64); g.rotateX(-Math.PI/2);
+  const m = new THREE.Mesh(g, basic(color, 0)); m.visible = false; scene.add(m);
+  return { set(pos, p){ if (p <= 0 || p >= 1) { m.visible = false; return; } m.visible = true; m.position.copy(pos); m.scale.setScalar(1 + p*grow); m.material.opacity = 0.8*(1-p); } };
+}
+const pulseShip = Pulse(COL.ok, 2.4), pulseAg = Pulse(COL.teal, 2.2), pulseCus = Pulse(COL.plum, 2.6), pulseBg = Pulse(COL.plum, 2.6), pulsePort = Pulse(COL.amber, 2.6), pulseDt = Pulse(COL.slate, 3), pulseTra = Pulse(COL.plum, 2.4), pulseNemo = Pulse(COL.navy, 2.2);
+
+/* ---------------- screens (agent's NEMO view, port system) ---------------- */
+const tmpV = new V3();
+let DOCK_BOX = { l:0, r:0, t:1e9 };
+function Screen(id, lineId, side){
+  const cv = $(id);
+  return { cv, ctx: cv.getContext('2d'), key:'', line: $(lineId), dot: $(lineId + 'c'), side,
+    place(world, op, w, h){
+      this.cv.style.opacity = op.toFixed(2); this.line.setAttribute('opacity', (op * 0.9).toFixed(2)); this.dot.setAttribute('opacity', op.toFixed(2));
+      if (op <= 0.01) return;
+      tmpV.copy(world).project(camera);
+      const ax = (tmpV.x * 0.5 + 0.5) * w, ay = (-tmpV.y * 0.5 + 0.5) * h;
+      const dk = DOCK_BOX;
+      if (tmpV.z > 1 || ax < 0 || ax > w || ay < 0 || ay > h || (ax > dk.l && ax < dk.r && ay > dk.t)) { this.cv.style.opacity = 0; this.line.setAttribute('opacity', 0); this.dot.setAttribute('opacity', 0); return; }
+      const pw = this.cv.offsetWidth, ph = this.cv.offsetHeight, gap = 34;
+      let x, y, lx, ly;
+      if (this.side === 'left') { x = ax - gap - pw; if (x < 8) x = ax + gap; y = ay - ph - 18; }
+      else { x = ax + gap; if (x + pw > w - 8) x = ax - gap - pw; y = ay + 14; }
+      x = clamp(x, 8, w - pw - 8); y = clamp(y, 8, h - ph - 8);
+      lx = clamp(ax, x, x + pw); ly = clamp(ay, y, y + ph);
+      if (ax >= x && ax <= x + pw) ly = ay < y ? y : y + ph; else lx = ax < x ? x : x + pw;
+      this.cv.style.transform = 'translate(' + Math.round(x) + 'px,' + Math.round(y) + 'px)';
+      this.line.setAttribute('x1', ax.toFixed(1)); this.line.setAttribute('y1', ay.toFixed(1)); this.line.setAttribute('x2', lx.toFixed(1)); this.line.setAttribute('y2', ly.toFixed(1));
+      this.dot.setAttribute('cx', ax.toFixed(1)); this.dot.setAttribute('cy', ay.toFixed(1));
+    } };
+}
+const scrA = Screen('scrA', 'ldA', 'left'), scrP = Screen('scrP', 'ldP', 'right');
+function rr(c, x, y, w, h, r){ c.beginPath(); c.moveTo(x+r, y); c.arcTo(x+w, y, x+w, y+h, r); c.arcTo(x+w, y+h, x, y+h, r); c.arcTo(x, y+h, x, y, r); c.arcTo(x, y, x+w, y, r); c.closePath(); }
+const FD = '"Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif', FM = '"JetBrains Mono", Menlo, Consolas, monospace';
+function frameScreen(c, edge, title, status, sc){
+  const W = 640, H = 400; c.clearRect(0, 0, W, H);
+  rr(c, 4, 4, W-8, H-8, 22); c.fillStyle = '#FFFFFF'; c.fill();
+  c.save(); rr(c, 4, 4, W-8, H-8, 22); c.clip(); c.fillStyle = edge; c.fillRect(0, 0, W, 66); c.restore();
+  rr(c, 4, 4, W-8, H-8, 22); c.lineWidth = 6; c.strokeStyle = edge; c.stroke();
+  c.textBaseline = 'middle'; c.textAlign = 'left'; c.fillStyle = '#FFFFFF'; c.font = '700 29px ' + FD; c.fillText(title, 26, 36);
+  c.font = '700 22px ' + FD; const tw = c.measureText(status).width, pw = tw + 30, px = W - 20 - pw;
+  rr(c, px, 15, pw, 40, 20); c.fillStyle = '#FFFFFF'; c.fill(); c.fillStyle = sc; c.fillText(status, px + 15, 36);
+}
+const ARR1 = ['NOA','DUE','CRT','CWA','PXA','CGA'], ARR2 = ['HZA','STA','WAS','SEC','ATA'], DEPR = ['NOD','CWD','CGD','STD','ATD'];
+function drawAgent(S, o){
+  const key = JSON.stringify(o); if (key === S.key) return; S.key = key;
+  const c = S.ctx, W = 640;
+  frameScreen(c, '#05756C', 'NEMO · PORT CALL', o.status, o.sc);
+  c.textBaseline = 'middle'; c.textAlign = 'left';
+  c.fillStyle = '#14283C'; c.font = '500 25px ' + FM; c.fillText(o.vid, 26, 94);
+  c.fillStyle = '#56687A'; c.font = '600 20px ' + FD; c.fillText(o.sub, 26, 124);
+  const chipRow = (codes, y) => codes.forEach((code, k) => {
+    const x = 26 + k * 100, s = o.ch[code] || 0;
+    rr(c, x, y, 90, 36, 7);
+    c.fillStyle = s === 2 ? '#2E9E5B' : s === 1 ? '#E3EEF8' : '#F3F6F9'; c.fill();
+    c.lineWidth = 2; c.strokeStyle = s === 2 ? '#2E9E5B' : s === 1 ? '#0B4F8A' : '#D3DEE8'; c.stroke();
+    c.fillStyle = s === 2 ? '#FFFFFF' : s === 1 ? '#0B4F8A' : '#9AA9B7'; c.font = '500 19px ' + FM; c.textAlign = 'center'; c.fillText(code, x + 45, y + 19); c.textAlign = 'left';
+  });
+  c.fillStyle = '#56687A'; c.font = '500 15px ' + FM; c.fillText('ARRIVAL', 26, 158); c.fillText('DEPARTURE', 26, 278);
+  chipRow(ARR1, 170); chipRow(ARR2, 214); chipRow(DEPR, 290);
+  c.strokeStyle = '#D3DEE8'; c.lineWidth = 2; c.beginPath(); c.moveTo(26, 344); c.lineTo(W - 26, 344); c.stroke();
+  c.font = '600 19px ' + FD; c.fillStyle = o.custOk ? '#2E9E5B' : '#56687A'; c.fillText(o.cust, 26, 370);
+  c.textAlign = 'right'; c.fillStyle = o.duesOk ? '#2E9E5B' : '#56687A'; c.fillText(o.dues, W - 26, 370); c.textAlign = 'left';
+}
+function drawPort(S, o){
+  const key = JSON.stringify(o); if (key === S.key) return; S.key = key;
+  const c = S.ctx, W = 640;
+  frameScreen(c, '#9A6B00', 'PORT SYSTEM · ARRIVALS', 'PORT API', '#9A6B00');
+  c.textBaseline = 'middle'; c.textAlign = 'left';
+  c.fillStyle = '#56687A'; c.font = '500 15px ' + FM;
+  c.fillText('SHIP', 26, 100); c.fillText('ETA', 290, 100); c.fillText('BERTH', 380, 100); c.fillText('STATUS', 470, 100);
+  const rows = [['EXAMPLE STAR', '06:00', 'B2', o.st, o.stc, true], ['SAMPLE BREEZE', '08:30', 'B4', 'EXPECTED', '#0B4F8A', false], ['DEMO CARRIER', '11:15', 'B1', 'EXPECTED', '#0B4F8A', false]];
+  rows.forEach(([n, eta, b, st, stc, hi], k) => {
+    const y = 140 + k * 56;
+    if (hi) { rr(c, 16, y - 24, W - 32, 48, 10); c.fillStyle = '#FFF4D6'; c.fill(); }
+    c.fillStyle = '#14283C'; c.font = '500 21px ' + FM; c.fillText(n, 26, y); c.fillText(eta, 290, y); c.fillText(b, 380, y);
+    c.font = '700 19px ' + FD; const tw = c.measureText(st).width; rr(c, 466, y - 16, tw + 22, 32, 16); c.fillStyle = stc; c.fill(); c.fillStyle = '#FFFFFF'; c.fillText(st, 477, y + 1);
+  });
+  c.strokeStyle = '#D3DEE8'; c.lineWidth = 2; c.beginPath(); c.moveTo(26, 344); c.lineTo(W - 26, 344); c.stroke();
+  c.font = '500 16px ' + FM; c.fillStyle = '#56687A'; c.fillText('Example data', 26, 370);
+  c.textAlign = 'right'; c.fillText('Schedule also open via Digitraffic', W - 26, 370); c.textAlign = 'left';
+}
+
+/* ---------------- fixed labels ---------------- */
+const L = {
+  nemo: addLabel('<b>NEMO</b><small>Maritime National Single Window</small>', 'big', () => NEMO.clone().add(new V3(-2.4, 1.9, 0))),
+  cus: addLabel('Finnish Customs<small>Authority system</small>', 'k-plum', () => CUSN.clone().add(new V3(0, 0.75, 0))),
+  bg: addLabel('Border Guard<small>Authority system</small>', 'k-plum', () => BGN.clone().add(new V3(0, 0.75, 0))),
+  tra: addLabel('Traficom<small>Authority system</small>', 'k-plum', () => TRAN.clone().add(new V3(0, 0.75, 0))),
+  portn: addLabel('Port system<small>National Port API</small>', 'k-amber', () => PORTN.clone().add(new V3(0.2, 0.75, 0.3))),
+  dt: addLabel('Digitraffic<small>Open data API</small>', 'k-slate', () => DTN.clone().add(new V3(0, 0.9, 0))),
+  ship: addLabel('Vessel<small>M/V Example Star</small>', 'k-teal', () => ship.position.clone().add(new V3(0, -0.1, 0.9)), 'below'),
+  agent: addLabel('Ship agent<small>Declarant · NEMO user</small>', 'k-teal', () => AG.clone().add(new V3(0.2, 0, 0.75)), 'below'),
+  port: addLabel('Port', 'k-amber', () => new V3(14.0, 0.5, 1.6), 'below'),
+  dig: addLabel('Digital layer', 'area', () => new V3(DL.x0 + 0.4, DIG_Y, DL.z1 - 0.2), 'right-up'),
+  check: addLabel('<div class="ck-h"><span>Formality check</span><em id="ckState">Checking</em></div><ul><li>Message structure</li><li>EMSA rules</li><li>Finnish rules</li><li>Message order</li></ul><div class="ck-f">Response returned as RES + FRM</div>', 'check k-navy', () => NEMO.clone().add(new V3(3.0, 1.4, 0.4)), 'right'),
+  conf: addLabel('Arrival confirmed', 'note', () => CUSN.clone().add(new V3(0, 2.0, 0))),
+  conf2: addLabel('Departure confirmed', 'note', () => CUSN.clone().add(new V3(0, 2.0, 0))),
+  fast: addLabel('All fast · ATA', 'note', () => ship.position.clone().add(new V3(0, 1.9, 0))),
+  dues: addLabel('Fairway dues decision', 'note plum', () => CUSN.clone().add(new V3(0, 2.0, 0))),
+  pub: addLabel('Open schedule data', 'note', () => new V3(-15.2, DIG_Y + 3.4, -4.4)),
+};
+const ckItems = () => L.check.el.querySelectorAll('li');
+
+function updateLabels(w, h){
+  for (const lb of labels) {
+    if (lb.op <= 0.01) { if (lb.el.style.opacity !== '0') lb.el.style.opacity = 0; continue; }
+    tmpV.copy(lb.get()).project(camera);
+    if (tmpV.z > 1 || tmpV.z < -1) { lb.el.style.opacity = 0; continue; }
+    const x = Math.round((tmpV.x * 0.5 + 0.5) * w), y = Math.round((-tmpV.y * 0.5 + 0.5) * h);
+    const off = lb.anchor === 'below' ? 'translate(-50%, 8px)' : lb.anchor === 'right' ? 'translate(10px, -50%)' : lb.anchor === 'right-up' ? 'translate(4px, -100%)' : 'translate(-50%, calc(-100% - 8px))';
+    lb.el.style.transform = 'translate(' + x + 'px,' + y + 'px) ' + off;
+    lb.el.style.opacity = lb.op.toFixed(2);
+  }
+}
+
+/* ---------------- story ---------------- */
+const BERTH = SP(RLEN);
+const agBox = (b) => [AG.clone().add(b.right.clone().multiplyScalar(-6.5)).add(new V3(0, 3.2, 0))];
+const portBox = (b) => [PORTB.clone().add(b.right.clone().multiplyScalar(-6)).add(new V3(0, -0.5, 0))];
+const SHIP_S = [[-1.5, 1.5], [1.5, 3.5], [3.5, 6.5], [6.5, 9], [9, 11], [11, 13.5], [13.5, 18], [18, RLEN]];
+const STEPS = [
+  { title:'The setting', dur:7, ref:'Illustrative scene',
+    body:'A cargo ship is bound for a Finnish port. Ashore are the ship agent, the port, Finnish Customs and the Border Guard. Above them is NEMO, the national Maritime Single Window, linked to each authority.',
+    view:{ az:-0.30, el:0.50, pts:() => [new V3(-19,0,2.5), new V3(-18,0,-8), new V3(19,0,-9), new V3(19,0,8.5), up(NEMO, 2), up(TRAN, 1.4), up(DTN, 1.4), up(BGN, 1.4), new V3(-6,0,8)] } },
+  { title:'Create the port call', dur:6.5, ref:'Port call · VID → Visit ID',
+    body:'The ship agent creates the port call in NEMO. NEMO returns a Visit ID that every later formality refers to. A ship new to NEMO is first identified with SID, SHP and CRT.',
+    view:{ az:-0.50, el:0.40, pts:(b) => [AG, AG.clone().setY(3), up(NEMO, 2.2), NEMO.clone().add(new V3(-2.8,0,0)), ...agBox(b), up(CUSN, 1), new V3(17.2,0,-6.6)] } },
+  { title:'The ship briefs its agent', dur:6.5, ref:'Before arrival',
+    body:'The master sends the agent what the call needs: ETA, crew and passenger lists, cargo, dangerous goods, stores, waste and health details.',
+    view:{ az:-0.42, el:0.42, pts:(b) => [SP(5), SP(5).add(new V3(0,1.5,0)), SP(2), AG, AG.clone().setY(3), ...agBox(b), new V3(3.5, 6.2, -3.5)] } },
+  { title:'Report once', dur:7.5, ref:'NOA and DUE always · others when they apply',
+    body:'The agent sends the arrival formalities to NEMO, through the browser interface, the National Declarant API or AS4/RIM. Each piece of information is entered once.',
+    view:{ az:-0.40, el:0.40, pts:(b) => [AG, AG.clone().setY(3), up(NEMO, 2.4), NEMO.clone().add(new V3(-2.9,0,0)), ...agBox(b), new V3(10.2, DIG_Y + 2.6, -6.6)] } },
+  { title:'Check and respond', dur:6.5, ref:'RES + FRM response',
+    body:'NEMO checks each formality against the message structure, the EMSA and Finnish rules and the message order, and returns a response. Errors point to the field to correct.',
+    view:{ az:-0.22, el:0.46, pts:(b) => [NEMO.clone().add(new V3(-3.2,0,0)), NEMO.clone().add(new V3(3,0,2)), up(NEMO, 3.8), NEMO.clone().add(new V3(9.5,1,0)), AG.clone().setY(2.6), ...agBox(b)] } },
+  { title:'One window, many recipients', dur:7, ref:'Report once, shared automatically',
+    body:'NEMO passes the information on to the authorities and the port that need it: cargo to Customs, crew lists to the Border Guard, certificates to Traficom, arrival and waste details to the port.',
+    view:{ az:-0.16, el:0.50, pts:() => [NEMO.clone().add(new V3(-2.8,0,0)), up(CUSN, 1.2), up(BGN, 1.2), up(TRAN, 1.2), up(PORTN, 1.2), CUS, BG, PORTB, new V3(10,0,-0.4)] } },
+  { title:'Confirm arrival to Customs', dur:7, ref:'NOA · ST-FI-01 · Customs regulation 3/2018',
+    body:'With every other arrival formality sent, the agent confirms the arrival by sending the NOA with code ST-FI-01. NEMO also shows a preliminary fairway dues calculation.',
+    view:{ az:-0.38, el:0.42, pts:(b) => [AG, AG.clone().setY(3), up(NEMO, 2), up(CUSN, 2.4), CUS, ...agBox(b)] } },
+  { title:'Arrival', dur:9, ref:'ATA · fairway dues decision',
+    body:'The ship berths and the agent reports the actual time of arrival. Finnish Customs processes the fairway dues, and the decision and any invoice appear in NEMO.',
+    view:{ az:-0.42, el:0.36, pts:(b) => [BERTH, BERTH.clone().add(new V3(0,2.2,0)), new V3(7.2,0,-0.4), new V3(12,0,-0.4), AG.clone().setY(2.6), up(CUSN, 2.4), ...agBox(b), up(NEMO, 1.5)] } },
+  { title:'The port and the public', dur:8, ref:'National Port API · Digitraffic open data',
+    body:'The port sees the call and its formalities in its own system through the Port API. The port schedule is also published as open data through Digitraffic.',
+    view:{ az:0.02, el:0.44, pts:(b) => [PORTB, up(PORTN, 1.2), up(NEMO, 1.5), DTN.clone().add(new V3(-2,1,0)), new V3(-15.5, DIG_Y + 4.2, -10.5), new V3(-14.5, DIG_Y + 4.8, 1.5), ...portBox(b), BERTH] } },
+  { title:'Departure', dur:10.5, ref:'NOD · ST-FI-02 · ATD',
+    body:'The agent sends NOD and the departure lists, confirms the departure with ST-FI-02 and reports ATD as the ship sails. Later the port sends its statistics for the call.',
+    view:{ az:-0.36, el:0.40, pts:(b) => [BERTH, SP(RLEN - 13), AG.clone().setY(2.6), up(NEMO, 1.5), ...agBox(b), up(CUSN, 2.4), up(PORTN, 1)] } },
+];
+const N = STEPS.length;
+const EVENTS = [
+  [0,4.5,'Vessel','Bound for the port, ETA 14 Oct 06:00'],
+  [1,0.6,'Agent → NEMO','Create port call'],[1,4.4,'NEMO → Agent','Visit ID FI20261014-001'],
+  [2,0.6,'Ship → Agent','ETA, crew and passenger lists'],[2,2.0,'Ship → Agent','Cargo, dangerous goods, stores, waste'],
+  [3,0.5,'Agent → NEMO','NOA, DUE'],[3,1.4,'Agent → NEMO','CRT, CWA, PXA, CGA'],[3,3.2,'Agent → NEMO','HZA, STA, WAS, SEC'],
+  [4,2.4,'NEMO','Formalities checked'],[4,4.8,'NEMO → Agent','Response: accepted'],
+  [5,2.6,'NEMO → Customs','Cargo (CGA)'],[5,2.9,'NEMO → Border Guard','Crew list (CWA)'],[5,3.2,'NEMO → Traficom','Certificates (CRT)'],[5,3.5,'NEMO → Port','Arrival and waste (NOA, WAS)'],
+  [6,0.6,'Agent → NEMO','NOA with ST-FI-01'],[6,4.4,'Customs','Arrival confirmed'],[6,5.2,'NEMO','Fairway dues estimate'],
+  [7,3.4,'Vessel','All fast at the berth'],[7,3.9,'Agent → NEMO','ATA'],[7,6.8,'Customs → NEMO','Fairway dues decision and invoice'],
+  [8,2.4,'NEMO → Port','Port call and formalities'],[8,4.6,'NEMO → Digitraffic','Port schedule, open data'],
+  [9,0.5,'Agent → NEMO','NOD with ST-FI-02, departure lists'],[9,3.8,'Customs','Departure confirmed'],[9,5.4,'Agent → NEMO','ATD'],[9,9.6,'Port → NEMO','Port statistics for the call'],
+];
+const STEP_START = []; { let acc = 0; STEPS.forEach((s, k) => { STEP_START[k] = acc; acc += s.dur; }); }
+const CLOCK0 = [[13,5,40,0],[13,6,0,0],[13,9,20,0],[13,10,5,0],[13,10,6,30],[13,10,7,40],[14,4,30,0],[14,5,58,40],[14,6,5,0],[14,17,58,10]];
+const simClock = (i, t) => { const [d,h,m,s0] = CLOCK0[i]; const s = h*3600 + m*60 + s0 + Math.round(t * 20); const p = (n) => String(n).padStart(2, '0');
+  return d + ' Oct ' + p(Math.floor(s/3600) % 24) + ':' + p(Math.floor(s/60) % 60) + ':' + p(s % 60); };
+
+const ARR_STREAM = ['NOA','DUE','CRT','CWA','PXA','CGA','HZA','STA','WAS','SEC'];
+const DEP_STREAM = ['NOD · ST-FI-02','CWD','CGD','STD'];
+function agentState(i, t){
+  const ch = {};
+  ARR_STREAM.forEach((c, k) => { ch[c] = i > 4 || (i === 4 && t > 4.8) ? 2 : (i === 4 || (i === 3 && t > 2.5 + k*0.45)) ? 1 : 0; });
+  ch.ATA = i > 7 || (i === 7 && t > 5.6) ? 2 : (i === 7 && t > 5.4) ? 1 : 0;
+  ['NOD','CWD','CGD','STD'].forEach((c, k) => { ch[c] = i === 9 ? (t > 3.6 ? 2 : t > 2.2 + k*0.4 ? 1 : 0) : 0; });
+  ch.ATD = i === 9 && t > 5.5 ? 2 : 0;
+  let status = 'UNCONFIRMED', sc = '#56687A';
+  if (i === 1 && t < 4.4) { status = 'CREATING'; }
+  if ((i === 3 && t > 2.5) || (i > 3 && i < 7) || (i === 7 && t <= 5.4)) { status = 'EXPECTED'; sc = '#0B4F8A'; }
+  if ((i === 7 && t > 5.4) || i === 8 || (i === 9 && t <= 5.5)) { status = 'IN PORT'; sc = '#2E9E5B'; }
+  if (i === 9 && t > 5.5) { status = 'DEPARTED'; sc = '#56687A'; }
+  const vid = i === 1 && t < 4.4 ? 'Creating port call…' : 'FI20261014-001';
+  let sub = 'M/V EXAMPLE STAR · ETA 14 Oct 06:00';
+  if ((i === 7 && t > 5.4) || i === 8 || (i === 9 && t <= 5.5)) sub = 'M/V EXAMPLE STAR · ATA 14 Oct 06:00';
+  if (i === 9 && t > 5.5) sub = 'M/V EXAMPLE STAR · ATD 14 Oct 18:00';
+  let cust = 'Customs · not yet confirmed', custOk = false;
+  if ((i === 6 && t > 4.4) || i === 7 || i === 8 || (i === 9 && t <= 3.8)) { cust = 'Customs · arrival confirmed ✓'; custOk = true; }
+  if (i === 9 && t > 3.8) { cust = 'Customs · departure confirmed ✓'; custOk = true; }
+  let dues = '', duesOk = false;
+  if ((i === 6 && t > 5.2) || (i === 7 && t <= 7.6)) dues = 'Fairway dues · estimate';
+  if ((i === 7 && t > 7.6) || i > 7) { dues = 'Dues · decision and invoice ✓'; duesOk = true; }
+  return { status, sc, vid, sub, ch, cust, custOk, dues, duesOk };
+}
+
+let cur = 0, stepT = 0, playing = !REDUCE, camTween = null;
+const SCR = { a:0, p:0 };
+
+function frame(i, t, time){
+  allPackets.forEach(p => p.hide());
+
+  // ship
+  let x, z, hd, moving = 0.35;
+  if (i < 8) {
+    const [a, b] = SHIP_S[i];
+    const k = i === 7 ? ease(seg(t, 0, 3.4)) : i === 0 ? easeOut(seg(t, 0, 6.5)) : seg(t, 0, STEPS[i].dur);
+    const s = lerp(a, b, k), p = pointAt(clamp(s, 0, RLEN));
+    x = s < 0 ? ROUTE[0][0] + p.dx * s : p.x; z = s < 0 ? ROUTE[0][1] + p.dz * s : p.z; hd = Math.atan2(-p.dz, p.dx);
+    moving = i === 7 ? 1 - seg(t, 2.4, 3.4) : i === 0 ? 1 - 0.6*k : 0.6;
+  } else if (i === 8) { x = BERTH.x; z = BERTH.z; hd = Math.atan2(-pointAt(RLEN).dz, pointAt(RLEN).dx); moving = 0; }
+  else {
+    const off = ease(seg(t, 1.2, 2.4)), turn = ease(seg(t, 2.2, 3.6)), go = ease(seg(t, 3.6, 10.2));
+    if (go <= 0) { x = BERTH.x; z = BERTH.z + 2.0*off; hd = lerp(Math.atan2(-pointAt(RLEN).dz, pointAt(RLEN).dx), Math.PI, turn); moving = 0.3*off; }
+    else { const s = RLEN - go * 13, p = pointAt(s); x = p.x; z = p.z + 2.0*(1 - ease(seg(go, 0, 0.3))); hd = Math.atan2(p.dz, -p.dx); if (hd < 0) hd += Math.PI*2; moving = 1; }
+  }
+  placeShip(x, z, hd, time, moving);
+  const mast = mastWorld();
+
+  // persistent links
+  tAg.op(i >= 1 ? 0.28 : 0); tCus.op(0.22); tBg.op(0.22); tTra.op(0.22); tPort.op(0.22); tDt.op(0.22);
+  const hiAg = (i === 1 && t < 5) || (i === 3 && t < 6.2) || (i === 4 && t > 3.2) || (i === 6 && t < 2.6) || (i === 7 && t > 3.6 && t < 5.6) || (i === 7 && t > 7.2) || (i === 9 && (t < 2.4 || (t > 3.6 && t < 5.6)));
+  if (hiAg) tAg.op(0.85);
+  if ((i === 5 && t < 3) || (i === 6 && t > 2.4 && t < 4.4) || (i === 7 && t > 6 && t < 7.4) || (i === 9 && t > 2 && t < 3.8)) tCus.op(0.85);
+  if (i === 5 && t < 3.3) { tBg.op(0.85); tTra.op(0.85); }
+  if ((i === 5 && t < 3.6) || (i === 8 && t < 2.6) || (i === 9 && t > 8)) tPort.op(0.85);
+  if (i === 8 && t > 2.4 && t < 7) tDt.op(0.85);
+  pubTubes.forEach(tb => tb.op(i === 8 ? 0.5*seg(t, 4.4, 5.0) : 0));
+  const shipOp = i === 2 ? 0.85*env(t, 0.3, 5.6, 0.4) : 0;
+  tShip.op(shipOp);
+  if (shipOp > 0.01) tShip.setFrom(mast.x.toFixed(2) + ',' + mast.z.toFixed(2), shipToAgent);
+
+  // packets
+  const hover = up(NEMO, 2.6 + (REDUCE ? 0 : 0.08*Math.sin(time*2)));
+  if (i === 1) { chain(P.doc[0], [[C_AG, 0.6, 2.6]], 'VID', t, time); chain(P.resp[0], [[new Rev(C_AG), 2.8, 4.4]], 'Visit ID', t, time); }
+  if (i === 2 && tShip.curve) {
+    ['ETA','Crew lists','Cargo','Waste'].forEach((txt, k) => chain(P.info[k], [[tShip.curve, 0.6 + k*0.55, 2.8 + k*0.55]], txt, t, time));
+  }
+  if (i === 3) ARR_STREAM.forEach((c, k) => chain(P.doc[k], [[C_AG, 0.5 + k*0.45, 2.5 + k*0.45]], c, t, time));
+  if (i === 4) { if (t < 4.8) P.doc[0].at(hover, 'NOA', time); chain(P.resp[0], [[new Rev(C_AG), 3.2, 4.8]], 'FRM · accepted', t, time); }
+  if (i === 5) {
+    chain(P.doc[0], [[C_CUS, 0.5, 2.3], [C_CUS_D, 2.3, 3.0]], 'CGA', t, time);
+    chain(P.doc[1], [[C_BG, 0.8, 2.6], [C_BG_D, 2.6, 3.3]], 'CWA', t, time);
+    chain(P.doc[2], [[C_TRA, 1.1, 2.9]], 'CRT', t, time);
+    chain(P.doc[3], [[C_PORT, 1.4, 3.2], [C_PORT_D, 3.2, 3.9]], 'NOA · WAS', t, time);
+  }
+  if (i === 6) chain(P.doc[0], [[C_AG, 0.6, 2.4], [C_CUS, 2.5, 3.9], [C_CUS_D, 3.9, 4.5]], 'NOA · ST-FI-01', t, time);
+  if (i === 7) {
+    chain(P.doc[0], [[C_AG, 3.8, 5.4]], 'ATA', t, time);
+    chain(P.auth[0], [[new Rev(C_CUS_D), 5.8, 6.3], [new Rev(C_CUS), 6.3, 7.4], [new Rev(C_AG), 7.4, 8.6]], 'Dues decision', t, time);
+  }
+  if (i === 8) {
+    chain(P.port[0], [[C_PORT, 0.6, 2.2], [C_PORT_D, 2.2, 2.8]], 'Port call', t, time);
+    chain(P.pub[0], [[C_DT, 2.8, 4.6]], 'Schedule', t, time);
+    PUB.forEach((c, k) => chain(P.pub[k + 1], [[c, 4.8 + k*0.3, 6.6 + k*0.3]], k === 0 ? 'Open API' : '', t, time));
+  }
+  if (i === 9) {
+    DEP_STREAM.forEach((c, k) => chain(P.doc[k], [[C_AG, 0.4 + k*0.4, 2.2 + k*0.4]], c, t, time));
+    chain(P.doc[4], [[C_CUS, 2.3, 3.3], [C_CUS_D, 3.3, 3.8]], 'ST-FI-02', t, time);
+    chain(P.doc[5], [[C_AG, 3.9, 5.5]], 'ATD', t, time);
+    chain(P.port[0], [[new Rev(C_PORT_D), 8.0, 8.5], [new Rev(C_PORT), 8.5, 9.8]], 'Port statistics', t, time);
+  }
+  allPackets.forEach(p => p.finish());
+
+  // node activity
+  const glow = (on) => on ? 0.35 + (REDUCE ? 0 : 0.15*Math.sin(time*5)) : 0;
+  nemoCap.emissiveIntensity = 0.12 + glow((i === 3 && t > 2.4) || (i === 4 && t < 4.8) || (i === 1 && t > 2.4 && t < 3.2));
+  cusCap.emissiveIntensity = glow((i === 5 && t > 2.2 && t < 3.4) || (i === 6 && t > 3.8) || (i === 7 && t > 5.4 && t < 6.6) || (i === 9 && t > 3.2 && t < 4.4));
+  bgCap.emissiveIntensity = glow(i === 5 && t > 2.5 && t < 3.6);
+  traCap.emissiveIntensity = glow(i === 5 && t > 2.8 && t < 4.2);
+  portCap.emissiveIntensity = glow((i === 5 && t > 3.1 && t < 4.2) || (i === 8 && t > 2.1 && t < 3.2) || (i === 9 && t > 8 && t < 8.8));
+  dtCap.emissiveIntensity = glow(i === 8 && t > 4.4);
+
+  // pulses
+  const g = (v, y) => v.clone().setY(y);
+  pulseAg.set(g(AG, 0.32), i === 1 ? seg(t, 4.4, 5.6) : i === 2 ? seg(t, 4.5, 5.7) : i === 4 ? seg(t, 4.8, 6.0) : i === 7 ? seg(t, 8.6, 8.99) : 0);
+  pulseNemo.set(up(NEMO, 0.72), i === 1 ? seg(t, 2.6, 3.8) : i === 3 ? seg(t, 6.6, 7.4) : 0);
+  pulseCus.set(g(CUS, 0.32), i === 5 ? seg(t, 3.0, 4.2) : i === 6 ? seg(t, 4.5, 5.7) : i === 9 ? seg(t, 3.8, 5.0) : 0);
+  pulseBg.set(g(BG, 0.32), i === 5 ? seg(t, 3.3, 4.5) : 0);
+  pulseTra.set(up(TRAN, 0.6), i === 5 ? seg(t, 2.9, 4.1) : 0);
+  pulsePort.set(g(PORTB, 0.32), i === 5 ? seg(t, 3.9, 5.1) : i === 8 ? seg(t, 2.8, 4.0) : 0);
+  pulseDt.set(up(DTN, 0.5), i === 8 ? seg(t, 4.6, 6.0) : 0);
+  pulseShip.set(ship.position.clone().setY(0.18), i === 7 ? seg(t, 3.4, 4.6) : 0);
+
+  // screens
+  const aOp = i === 0 || i === 5 || i === 8 ? 0 : i === 1 ? seg(t, 0.2, 0.8) : i === 4 ? seg(t, 4.4, 4.9) : i === 6 ? seg(t, 0, 0.5) : 1;
+  if (aOp > 0.01) drawAgent(scrA, agentState(i, t));
+  SCR.a = aOp;
+  const pOp = i === 8 ? seg(t, 2.6, 3.2) : 0;
+  if (pOp > 0.01) drawPort(scrP, { st:'IN PORT', stc:'#2E9E5B' });
+  SCR.p = pOp;
+
+  // labels
+  L.check.op = i === 4 ? env(t, 0.2, 4.7, 0.4) : 0;
+  if (i === 4) {
+    ckItems().forEach((li, k) => li.classList.toggle('ok', t > 0.9 + k*0.45));
+    const st = document.getElementById('ckState'); const ok = t > 2.8;
+    if (st) { st.textContent = ok ? 'Accepted' : 'Checking'; st.classList.toggle('ok', ok); }
+  }
+  L.conf.op = i === 6 ? seg(t, 4.4, 4.9) : 0;
+  L.dues.op = i === 7 ? env(t, 5.5, 9, 0.4) : 0;
+  L.conf2.op = i === 9 ? env(t, 3.8, 7.6, 0.4) : 0;
+  L.fast.op = i === 7 ? env(t, 3.4, 6.0, 0.4) : 0;
+  L.pub.op = i === 8 ? seg(t, 5.0, 5.6) : 0;
+}
+
+/* ---------------- UI ---------------- */
+const app = $('app');
+const chipsEl = $('chips');
+const chipFills = STEPS.map((s, k) => {
+  const b = document.createElement('button'); b.className = 'chip'; b.type = 'button'; b.setAttribute('aria-label', 'Step ' + (k+1) + ': ' + s.title);
+  b.innerHTML = '<span><i></i></span>'; b.addEventListener('click', () => { setStep(k); }); chipsEl.appendChild(b); return b.querySelector('i');
+});
+let W = 0, H = 0, FREE = { tx: 0.5, ty: 0.3 };
+function applyView(){
+  const a = app.getBoundingClientRect(), hd = $('head').getBoundingClientRect(), dk = $('dock').getBoundingClientRect();
+  const top = Math.max(0, hd.bottom - a.top) + 6, bottom = Math.min(H, dk.top - a.top) - 6;
+  DOCK_BOX = { l: dk.left - a.left, r: dk.right - a.left, t: dk.top - a.top };
+  const fh = Math.max(140, bottom - top), py = clamp((top + bottom) / 2, H * 0.25, H * 0.75);
+  const Fw = W, Fh = 2 * Math.max(py, H - py), rad = THREE.MathUtils.degToRad(BASE_FOV / 2);
+  camera.aspect = Fw / Fh;
+  camera.fov = 2 * THREE.MathUtils.radToDeg(Math.atan(Math.tan(rad) * Fh / H));
+  camera.setViewOffset(Fw, Fh, 0, Fh / 2 - py, W, H);
+  camera.updateProjectionMatrix();
+  const focal = H / (2 * Math.tan(rad));
+  FREE = { tx: (W / 2 - 20) / focal, ty: (fh / 2) / focal };
+}
+function fitView(f, dAz, kDist){
+  const az = f.az + (dAz || 0);
+  const back = new V3(Math.cos(f.el) * Math.sin(az), Math.sin(f.el), Math.cos(f.el) * Math.cos(az));
+  const right = new V3().crossVectors(new V3(0, 1, 0), back).normalize(), upv = new V3().crossVectors(back, right).normalize();
+  const pts = f.pts({ right, up:upv, back });
+  const c = new THREE.Box3().setFromPoints(pts).getCenter(new V3());
+  let d = 8;
+  for (const p of pts) { const v = p.clone().sub(c); const z = v.dot(back); d = Math.max(d, z + Math.abs(v.dot(right)) * 1.06 / FREE.tx, z + Math.abs(v.dot(upv)) * 1.16 / FREE.ty); }
+  return { pos: c.clone().add(back.multiplyScalar(d * (kDist || 1))), target: c };
+}
+function goCamera(i, instant){
+  const v = fitView(STEPS[i].view, 0, 1.1);
+  camTween = { fp: camera.position.clone(), ft: controls.target.clone(), tp: v.pos, tt: v.target, t: 0, d: instant || REDUCE ? 0 : 2.4 };
+}
+function showStep(i){
+  cur = (i + N) % N;
+  const s = STEPS[cur];
+  $('stepNo').textContent = 'Step ' + (cur + 1) + ' of ' + N;
+  $('stepRef').textContent = s.ref; $('stepTitle').textContent = s.title; $('stepBody').textContent = s.body;
+  applyView();
+}
+function setStep(i){ showStep(i); stepT = 0; goCamera(cur); }
+function setPlaying(p){
+  playing = p;
+  $('play').setAttribute('aria-label', p ? 'Pause' : 'Play');
+  $('playIcon').innerHTML = p ? '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>' : '<path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/>';
+}
+$('prev').addEventListener('click', () => setStep(cur - 1));
+$('next').addEventListener('click', () => setStep(cur + 1));
+$('play').addEventListener('click', () => { if (!playing && cur === N - 1 && stepT >= STEPS[cur].dur) setStep(0); setPlaying(!playing); });
+$('view').addEventListener('click', () => goCamera(cur));
+document.addEventListener('keydown', (e) => {
+  if (e.target && e.target.tagName === 'BUTTON' && (e.key === ' ' || e.key === 'Enter')) return;
+  if (e.key === 'ArrowRight') { setStep(cur + 1); e.preventDefault(); }
+  else if (e.key === 'ArrowLeft') { setStep(cur - 1); e.preventDefault(); }
+  else if (e.key === ' ') { $('play').click(); e.preventDefault(); }
+});
+controls.addEventListener('start', () => { camTween = null; });
+
+let logCount = -1;
+function renderLog(){
+  const list = EVENTS.filter(e => e[0] < cur || (e[0] === cur && e[1] <= stepT));
+  if (list.length === logCount) return;
+  const grew = list.length > logCount; logCount = list.length;
+  const shown = list.slice(-10), ol = $('logList'), last = $('logLast');
+  if (!shown.length) { ol.innerHTML = '<li class="empty">No messages yet. The ship is still at sea.</li>'; last.innerHTML = '<span>No messages yet. The ship is still at sea.</span>'; return; }
+  const e = shown[shown.length - 1];
+  last.innerHTML = '<b>' + e[2] + '</b> <span>· ' + e[3] + '</span>';
+  if (grew) { last.classList.remove('fresh'); void last.offsetWidth; last.classList.add('fresh'); }
+  ol.innerHTML = shown.map((e, k) => '<li' + (grew && k === shown.length - 1 ? ' class="fresh"' : '') + '><time>' + simClock(e[0], e[1]) + '</time><span class="who">' + e[2] + '</span><span class="what">' + e[3] + '</span></li>').join('');
+}
+$('logToggle').addEventListener('click', () => { const open = $('logToggle').getAttribute('aria-expanded') !== 'true'; $('logToggle').setAttribute('aria-expanded', String(open)); $('logList').hidden = !open; $('logLast').hidden = open; });
+
+function resize(){
+  const r = app.getBoundingClientRect(); W = Math.max(1, Math.round(r.width)); H = Math.max(1, Math.round(r.height));
+  renderer.setSize(W, H, false); applyView();
+}
+if (window.ResizeObserver) new ResizeObserver(() => { resize(); }).observe(app); else window.addEventListener('resize', resize);
+resize();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { scrA.key = ''; scrP.key = ''; });
+
+const clock = new THREE.Clock(); let time = 0, lastClock = '';
+function loop(){
+  const dt = Math.min(clock.getDelta(), 0.1); time += dt;
+  if (playing) {
+    stepT += dt;
+    if (stepT >= STEPS[cur].dur) { if (cur < N - 1) setStep(cur + 1); else { stepT = STEPS[cur].dur; setPlaying(false); } }
+  }
+  if (camTween) {
+    camTween.t += dt; const k = camTween.d ? ease(Math.min(1, camTween.t / camTween.d)) : 1;
+    camera.position.lerpVectors(camTween.fp, camTween.tp, k); controls.target.lerpVectors(camTween.ft, camTween.tt, k);
+    if (k >= 1) camTween = null;
+  }
+  controls.update();
+  if (!REDUCE) { updateWater(time); nemoRing.rotation.y = -time * 0.4; nemoCore.rotation.set(time*0.6, time*0.8, 0); dtOrbit.rotation.y = time * 0.5; }
+  frame(cur, Math.min(stepT, STEPS[cur].dur), time);
+  chipFills.forEach((f, k) => { const v = k < cur ? 1 : k > cur ? 0 : stepT / STEPS[cur].dur; f.style.width = (v * 100).toFixed(1) + '%'; });
+  renderLog();
+  const c = simClock(cur, Math.min(stepT, STEPS[cur].dur)); if (c !== lastClock) { lastClock = c; $('clock').textContent = c; }
+  renderer.render(scene, camera);
+  updateLabels(W, H);
+  scrA.place(AG.clone().add(new V3(0, 2.4, 0)), SCR.a, W, H);
+  scrP.place(PORTB.clone().add(new V3(0, 1.6, 0)), SCR.p, W, H);
+  requestAnimationFrame(loop);
+}
+function start(data){
+  data = data || {};
+  const i = Number.isInteger(data.cur) ? clamp(data.cur, 0, N - 1) : 0;
+  setStep(i); goCamera(i, true);
+  if (typeof data.t === 'number') stepT = clamp(data.t, 0, STEPS[i].dur);
+  setPlaying(typeof data.playing === 'boolean' ? data.playing : playing);
+  requestAnimationFrame(loop);
+}
+window.__nemo3d = { setStep, setPlaying, seek(i, t){ setStep(i); stepT = t; goCamera(i, true); } };
+window.claude?.hot?.snapshot?.(() => ({ cur, t: stepT, playing }));
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+})();
+</script>
+
+</body></html>

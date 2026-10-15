@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T05:40:44.838514+00:00",
+  "generatedAt": "2026-10-15T10:12:19.361678+00:00",
   "source": "tools/Formalities v2.0.0/docs/excel",
   "description": "Element-level config generated from legacy Formalities v2.0.0 Excel sheets",
   "formalities": {
@@ -26682,145 +26682,6 @@
             "XSD path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthplaceName"
           }
         },
-        "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime": {
-          "formality": "CWA",
-          "path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime",
-          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
-          "level": "3",
-          "objectType": "BBIE",
-          "baseName": "Embarkation Date Time",
-          "emsweDataElementId": "DE-035-10",
-          "imoCompendiumId": "IMO0219",
-          "name": "Person embarkation date and time",
-          "labels": {
-            "en": "Person embarkation date and time",
-            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
-            "sv": "Datum och tid f\u00f6r ombordstigning"
-          },
-          "descriptions": {
-            "en": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
-            "fi": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
-            "sv": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
-            "base": "Date and time when the person embarked the ship by invitation or boarded without invitation."
-          },
-          "type": "DateTime",
-          "format": "an..35",
-          "codeList": "",
-          "status": "O",
-          "occurrence": "0..1",
-          "rulesConditionsGuidelinesRaw": "R-GENERAL-001",
-          "ruleRefs": [
-            "R-GENERAL-001"
-          ],
-          "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
-          "flags": {
-            "partAB": false,
-            "fiPartC": false,
-            "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
-            "hiddenData": false,
-            "msSpecificReq": false
-          },
-          "comments": {
-            "comments": "",
-            "usageGuidanceComments": "",
-            "migChangeNotes": "",
-            "msSpecificReq": ""
-          },
-          "raw": {
-            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
-            "Level": "3",
-            "Object type": "BBIE",
-            "Formality type": "CWA",
-            "MMT base": "Embarkation Date Time",
-            "EMSWe ID": "DE-035-10",
-            "IMO Compendium": "IMO0219",
-            "EMSWe name": "Person embarkation date and time",
-            "en": "Person embarkation date and time",
-            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
-            "sv": "Datum och tid f\u00f6r ombordstigning",
-            "Description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
-            "en description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
-            "fi description": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
-            "sv description": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
-            "Type": "DateTime",
-            "Format": "an..35",
-            "Status": "O",
-            "Occurrence": "0..1",
-            "Rules, Conditions, Guidelines": "R-GENERAL-001",
-            "XSD path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime"
-          }
-        },
-        "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode": {
-          "formality": "CWA",
-          "path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode",
-          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
-          "level": "3",
-          "objectType": "BBIE",
-          "baseName": "Movement Type Code",
-          "emsweDataElementId": "DE-035-26",
-          "imoCompendiumId": "",
-          "name": "Person movement type, coded",
-          "labels": {
-            "en": "Person movement type",
-            "fi": "Henkil\u00f6n liikkumisen tyyppi",
-            "sv": "Typ av personr\u00f6relse"
-          },
-          "descriptions": {
-            "en": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
-            "fi": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
-            "sv": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
-            "base": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call."
-          },
-          "type": "Code",
-          "format": "a1",
-          "codeList": "Refer to code list Person movement type",
-          "status": "O",
-          "occurrence": "0..1",
-          "rulesConditionsGuidelinesRaw": "",
-          "ruleRefs": [],
-          "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
-          "flags": {
-            "partAB": false,
-            "fiPartC": false,
-            "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
-            "hiddenData": false,
-            "msSpecificReq": true
-          },
-          "comments": {
-            "comments": "",
-            "usageGuidanceComments": "",
-            "migChangeNotes": "",
-            "msSpecificReq": "CY, NO"
-          },
-          "raw": {
-            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
-            "Level": "3",
-            "Object type": "BBIE",
-            "Formality type": "CWA",
-            "MMT base": "Movement Type Code",
-            "CR type": "ADD",
-            "EMSWe ID": "DE-035-26",
-            "EMSWe name": "Person movement type, coded",
-            "en": "Person movement type",
-            "fi": "Henkil\u00f6n liikkumisen tyyppi",
-            "sv": "Typ av personr\u00f6relse",
-            "Description": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
-            "en description": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
-            "fi description": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
-            "sv description": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
-            "Type": "Code",
-            "Format": "a1",
-            "Code list": "Refer to code list Person movement type",
-            "Status": "O",
-            "Occurrence": "0..1",
-            "MS specific req": "CY, NO",
-            "XSD path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode"
-          }
-        },
         "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:AshoreLicenceIndicator": {
           "formality": "CWA",
           "path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:AshoreLicenceIndicator",
@@ -27175,6 +27036,146 @@
             "Taulukon sarake": "x",
             "Muutokset v2.0 draft:sta 2.0. final draft:iin": "J\u00e4rjestys dataosion sis\u00e4ll\u00e4 muuttunut.",
             "XSD path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthDate"
+          }
+        },
+        "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode": {
+          "formality": "CWA",
+          "path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode",
+          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
+          "level": "3",
+          "objectType": "BBIE",
+          "baseName": "Movement Type Code",
+          "emsweDataElementId": "DE-035-26",
+          "imoCompendiumId": "",
+          "name": "Person movement type, coded",
+          "labels": {
+            "en": "Person movement type",
+            "fi": "Henkil\u00f6n liikkumisen tyyppi",
+            "sv": "Typ av personr\u00f6relse"
+          },
+          "descriptions": {
+            "en": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
+            "fi": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
+            "sv": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
+            "base": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call."
+          },
+          "type": "Code",
+          "format": "a1",
+          "codeList": "Refer to code list Person movement type",
+          "status": "O",
+          "occurrence": "0..1",
+          "rulesConditionsGuidelinesRaw": "",
+          "ruleRefs": [],
+          "nationalBusinessRuleRefs": [],
+          "finlandWanted": true,
+          "flags": {
+            "partAB": false,
+            "fiPartC": false,
+            "useCaseNoLegalBasis": false,
+            "narrowInfoFilter": true,
+            "hiddenData": false,
+            "msSpecificReq": true
+          },
+          "comments": {
+            "comments": "",
+            "usageGuidanceComments": "",
+            "migChangeNotes": "",
+            "msSpecificReq": "CY, NO"
+          },
+          "raw": {
+            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
+            "Level": "3",
+            "Object type": "BBIE",
+            "Formality type": "CWA",
+            "MMT base": "Movement Type Code",
+            "CR type": "ADD",
+            "EMSWe ID": "DE-035-26",
+            "EMSWe name": "Person movement type, coded",
+            "en": "Person movement type",
+            "fi": "Henkil\u00f6n liikkumisen tyyppi",
+            "sv": "Typ av personr\u00f6relse",
+            "Description": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
+            "en description": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
+            "fi description": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
+            "sv description": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
+            "Type": "Code",
+            "Format": "a1",
+            "Code list": "Refer to code list Person movement type",
+            "Status": "O",
+            "Occurrence": "0..1",
+            "Suppeat tiedot -suodatus": "x",
+            "MS specific req": "CY, NO",
+            "XSD path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode"
+          }
+        },
+        "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime": {
+          "formality": "CWA",
+          "path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime",
+          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
+          "level": "3",
+          "objectType": "BBIE",
+          "baseName": "Embarkation Date Time",
+          "emsweDataElementId": "DE-035-10",
+          "imoCompendiumId": "IMO0219",
+          "name": "Person embarkation date and time",
+          "labels": {
+            "en": "Person embarkation date and time",
+            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
+            "sv": "Datum och tid f\u00f6r ombordstigning"
+          },
+          "descriptions": {
+            "en": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
+            "fi": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
+            "sv": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
+            "base": "Date and time when the person embarked the ship by invitation or boarded without invitation."
+          },
+          "type": "DateTime",
+          "format": "an..35",
+          "codeList": "",
+          "status": "O",
+          "occurrence": "0..1",
+          "rulesConditionsGuidelinesRaw": "R-GENERAL-001",
+          "ruleRefs": [
+            "R-GENERAL-001"
+          ],
+          "nationalBusinessRuleRefs": [],
+          "finlandWanted": false,
+          "flags": {
+            "partAB": false,
+            "fiPartC": false,
+            "useCaseNoLegalBasis": false,
+            "narrowInfoFilter": false,
+            "hiddenData": false,
+            "msSpecificReq": false
+          },
+          "comments": {
+            "comments": "",
+            "usageGuidanceComments": "",
+            "migChangeNotes": "",
+            "msSpecificReq": ""
+          },
+          "raw": {
+            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
+            "Level": "3",
+            "Object type": "BBIE",
+            "Formality type": "CWA",
+            "MMT base": "Embarkation Date Time",
+            "EMSWe ID": "DE-035-10",
+            "IMO Compendium": "IMO0219",
+            "EMSWe name": "Person embarkation date and time",
+            "en": "Person embarkation date and time",
+            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
+            "sv": "Datum och tid f\u00f6r ombordstigning",
+            "Description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
+            "en description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
+            "fi description": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
+            "sv description": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
+            "Type": "DateTime",
+            "Format": "an..35",
+            "Status": "O",
+            "Occurrence": "0..1",
+            "Rules, Conditions, Guidelines": "R-GENERAL-001",
+            "XSD path": "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime"
           }
         },
         "/env:Envelope/cwa:CWA/cwa:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:DisembarkationDate": {
@@ -30094,145 +30095,6 @@
             "XSD path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthplaceName"
           }
         },
-        "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime": {
-          "formality": "CWD",
-          "path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime",
-          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
-          "level": "3",
-          "objectType": "BBIE",
-          "baseName": "Embarkation Date Time",
-          "emsweDataElementId": "DE-035-10",
-          "imoCompendiumId": "IMO0219",
-          "name": "Person embarkation date and time",
-          "labels": {
-            "en": "Person embarkation date and time",
-            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
-            "sv": "Personens datum och tid f\u00f6r ombordstigning"
-          },
-          "descriptions": {
-            "en": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
-            "fi": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
-            "sv": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
-            "base": "Date and time when the person embarked the ship by invitation or boarded without invitation."
-          },
-          "type": "DateTime",
-          "format": "an..35",
-          "codeList": "",
-          "status": "O",
-          "occurrence": "0..1",
-          "rulesConditionsGuidelinesRaw": "R-GENERAL-001",
-          "ruleRefs": [
-            "R-GENERAL-001"
-          ],
-          "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
-          "flags": {
-            "partAB": false,
-            "fiPartC": false,
-            "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
-            "hiddenData": false,
-            "msSpecificReq": false
-          },
-          "comments": {
-            "comments": "",
-            "usageGuidanceComments": "",
-            "migChangeNotes": "",
-            "msSpecificReq": ""
-          },
-          "raw": {
-            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
-            "Level": "3",
-            "Object type": "BBIE",
-            "Formality type": "CWD",
-            "MMT base": "Embarkation Date Time",
-            "EMSWe ID": "DE-035-10",
-            "IMO Compendium": "IMO0219",
-            "EMSWe name": "Person embarkation date and time",
-            "en": "Person embarkation date and time",
-            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
-            "sv": "Personens datum och tid f\u00f6r ombordstigning",
-            "Description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
-            "en description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
-            "fi description": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
-            "sv description": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
-            "Type": "DateTime",
-            "Format": "an..35",
-            "Status": "O",
-            "Occurrence": "0..1",
-            "Rules, Conditions, Guidelines": "R-GENERAL-001",
-            "XSD path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime"
-          }
-        },
-        "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode": {
-          "formality": "CWD",
-          "path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode",
-          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
-          "level": "3",
-          "objectType": "BBIE",
-          "baseName": "Movement Type Code",
-          "emsweDataElementId": "DE-035-26",
-          "imoCompendiumId": "",
-          "name": "Person movement type, coded",
-          "labels": {
-            "en": "Person movement type",
-            "fi": "Henkil\u00f6n liikkumisen tyyppi",
-            "sv": "Typ av personr\u00f6relse"
-          },
-          "descriptions": {
-            "en": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
-            "fi": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
-            "sv": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
-            "base": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call."
-          },
-          "type": "Code",
-          "format": "a1",
-          "codeList": "Refer to code list Person movement type",
-          "status": "O",
-          "occurrence": "0..1",
-          "rulesConditionsGuidelinesRaw": "",
-          "ruleRefs": [],
-          "nationalBusinessRuleRefs": [],
-          "finlandWanted": false,
-          "flags": {
-            "partAB": false,
-            "fiPartC": false,
-            "useCaseNoLegalBasis": false,
-            "narrowInfoFilter": false,
-            "hiddenData": false,
-            "msSpecificReq": true
-          },
-          "comments": {
-            "comments": "",
-            "usageGuidanceComments": "",
-            "migChangeNotes": "",
-            "msSpecificReq": "CY, NO"
-          },
-          "raw": {
-            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
-            "Level": "3",
-            "Object type": "BBIE",
-            "Formality type": "CWD",
-            "MMT base": "Movement Type Code",
-            "CR type": "ADD",
-            "EMSWe ID": "DE-035-26",
-            "EMSWe name": "Person movement type, coded",
-            "en": "Person movement type",
-            "fi": "Henkil\u00f6n liikkumisen tyyppi",
-            "sv": "Typ av personr\u00f6relse",
-            "Description": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
-            "en description": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
-            "fi description": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
-            "sv description": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
-            "Type": "Code",
-            "Format": "a1",
-            "Code list": "Refer to code list Person movement type",
-            "Status": "O",
-            "Occurrence": "0..1",
-            "MS specific req": "CY, NO",
-            "XSD path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode"
-          }
-        },
         "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:AshoreLicenceIndicator": {
           "formality": "CWD",
           "path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:AshoreLicenceIndicator",
@@ -30587,6 +30449,146 @@
             "Taulukon sarake": "x",
             "Muutokset v2.0 draft:sta 2.0. final draft:iin": "J\u00e4rjestys dataosion sis\u00e4ll\u00e4 muuttunut.",
             "XSD path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:BirthDate"
+          }
+        },
+        "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode": {
+          "formality": "CWD",
+          "path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode",
+          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
+          "level": "3",
+          "objectType": "BBIE",
+          "baseName": "Movement Type Code",
+          "emsweDataElementId": "DE-035-26",
+          "imoCompendiumId": "",
+          "name": "Person movement type, coded",
+          "labels": {
+            "en": "Person movement type",
+            "fi": "Henkil\u00f6n liikkumisen tyyppi",
+            "sv": "Typ av personr\u00f6relse"
+          },
+          "descriptions": {
+            "en": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
+            "fi": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
+            "sv": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
+            "base": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call."
+          },
+          "type": "Code",
+          "format": "a1",
+          "codeList": "Refer to code list Person movement type",
+          "status": "O",
+          "occurrence": "0..1",
+          "rulesConditionsGuidelinesRaw": "",
+          "ruleRefs": [],
+          "nationalBusinessRuleRefs": [],
+          "finlandWanted": true,
+          "flags": {
+            "partAB": false,
+            "fiPartC": false,
+            "useCaseNoLegalBasis": false,
+            "narrowInfoFilter": true,
+            "hiddenData": false,
+            "msSpecificReq": true
+          },
+          "comments": {
+            "comments": "",
+            "usageGuidanceComments": "",
+            "migChangeNotes": "",
+            "msSpecificReq": "CY, NO"
+          },
+          "raw": {
+            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Movement Type. Code",
+            "Level": "3",
+            "Object type": "BBIE",
+            "Formality type": "CWD",
+            "MMT base": "Movement Type Code",
+            "CR type": "ADD",
+            "EMSWe ID": "DE-035-26",
+            "EMSWe name": "Person movement type, coded",
+            "en": "Person movement type",
+            "fi": "Henkil\u00f6n liikkumisen tyyppi",
+            "sv": "Typ av personr\u00f6relse",
+            "Description": "A code representing whether the person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
+            "en description": "The person will embark or has embarked, will disembark or has disembarked, will remain or has remained in transit at the port of call.",
+            "fi description": "Henkil\u00f6 nousee alukseen tai on noussut alukseen, poistuu alukselta tai on poistunut alukselta, tai j\u00e4\u00e4 alukseen tai on j\u00e4\u00e4nyt alukseen k\u00e4yntisatamassa.",
+            "sv description": "Personen kommer att stiga ombord eller har stigit ombord, kommer att landstiga eller har landstigit, kommer att stanna eller har stannat kvar ombord p\u00e5 fartyget i anl\u00f6pshamnen.",
+            "Type": "Code",
+            "Format": "a1",
+            "Code list": "Refer to code list Person movement type",
+            "Status": "O",
+            "Occurrence": "0..1",
+            "Suppeat tiedot -suodatus": "x",
+            "MS specific req": "CY, NO",
+            "XSD path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:MovementTypeCode"
+          }
+        },
+        "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime": {
+          "formality": "CWD",
+          "path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime",
+          "mmtPath": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
+          "level": "3",
+          "objectType": "BBIE",
+          "baseName": "Embarkation Date Time",
+          "emsweDataElementId": "DE-035-10",
+          "imoCompendiumId": "IMO0219",
+          "name": "Person embarkation date and time",
+          "labels": {
+            "en": "Person embarkation date and time",
+            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
+            "sv": "Personens datum och tid f\u00f6r ombordstigning"
+          },
+          "descriptions": {
+            "en": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
+            "fi": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
+            "sv": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
+            "base": "Date and time when the person embarked the ship by invitation or boarded without invitation."
+          },
+          "type": "DateTime",
+          "format": "an..35",
+          "codeList": "",
+          "status": "O",
+          "occurrence": "0..1",
+          "rulesConditionsGuidelinesRaw": "R-GENERAL-001",
+          "ruleRefs": [
+            "R-GENERAL-001"
+          ],
+          "nationalBusinessRuleRefs": [],
+          "finlandWanted": false,
+          "flags": {
+            "partAB": false,
+            "fiPartC": false,
+            "useCaseNoLegalBasis": false,
+            "narrowInfoFilter": false,
+            "hiddenData": false,
+            "msSpecificReq": false
+          },
+          "comments": {
+            "comments": "",
+            "usageGuidanceComments": "",
+            "migChangeNotes": "",
+            "msSpecificReq": ""
+          },
+          "raw": {
+            "MMT path": "BSP Master. Details/BSP Master. Specified. Logistics_ Transport Movement/Logistics_ Transport Movement. Onboard. Transport_ Person/Transport_ Person. Embarkation. Date Time",
+            "Level": "3",
+            "Object type": "BBIE",
+            "Formality type": "CWD",
+            "MMT base": "Embarkation Date Time",
+            "EMSWe ID": "DE-035-10",
+            "IMO Compendium": "IMO0219",
+            "EMSWe name": "Person embarkation date and time",
+            "en": "Person embarkation date and time",
+            "fi": "Henkil\u00f6n alukseen nousun p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika",
+            "sv": "Personens datum och tid f\u00f6r ombordstigning",
+            "Description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
+            "en description": "Date and time when the person embarked the ship by invitation or boarded without invitation.",
+            "fi description": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja kellonaika, jolloin henkil\u00f6 on noussut alukseen kutsusta tai ilman kutsua.",
+            "sv description": "Datum och klockslag d\u00e5 personen steg ombord p\u00e5 fartyget, med eller utan inbjudan.",
+            "Type": "DateTime",
+            "Format": "an..35",
+            "Status": "O",
+            "Occurrence": "0..1",
+            "Rules, Conditions, Guidelines": "R-GENERAL-001",
+            "XSD path": "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:EmbarkationDateTime"
           }
         },
         "/env:Envelope/cwd:CWD/cwd:SpecifiedLogisticsTransportMovement/ram:OnboardTransportPerson/ram:DisembarkationDate": {
