@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fi">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title data-i18n="pageTitle">NEMO-tukipyyntö</title>
+    <meta name="description" content="Luo NEMO-tukipyynnön sähköpostiluonnos."/>
+    <meta name="theme-color" content="#005f8f"/>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+    <link rel="stylesheet" href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css"/>
+    <link rel="stylesheet" href="./support.css"/>
+    <script src="./support.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="container nav">
+        <a class="logo" id="hub-home" href="/mnsw/" aria-label="NEMO Developer Hub">
+            <span>EMSWe · NEMO <span class="muted">Developer Hub</span></span>
+        </a>
+        <div class="header-actions">
+            <a class="link" href="/mnsw/" data-i18n="backToGuide">Takaisin oppaaseen</a>
+            <label for="lang-switch" class="visually-hidden" data-i18n="language">Kieli</label>
+            <select id="lang-switch" aria-label="Valitse kieli">
+                <option value="fi">Suomi</option>
+                <option value="sv">Svenska</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div>
+                <span class="badge" data-i18n="supportBadge">NEMO-tuki</span>
+                <h1 data-i18n="pageHeading">Tukipyyntö</h1>
+                <p class="lead" data-i18n="intro">Kuvaa ongelma mahdollisimman tarkasti. Lomake avaa sähköpostiluonnoksen.</p>
+                <p><a href="mailto:nemo.support@emsw.fi">nemo.support@emsw.fi</a></p>
+                <p data-i18n="sendInstruction">Tarkista viesti ja lähetä se sähköpostiohjelmastasi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="form-title">
+        <div class="container support-container">
+            <form id="support-form" class="card" novalidate>
+                <fieldset id="support-fields" disabled>
+                    <h2 id="form-title" data-i18n="formHeading">Ilmoituksen tiedot</h2>
+                    <p class="form-intro" data-i18n="formNotice">Tähdellä (*) merkityt kentät ovat pakollisia. Älä lisää salasanoja,
+                        tunnuksia tai muita salassa pidettäviä tietoja.</p>
+
+                    <div class="form-grid">
+                    <div class="form-field">
+                        <label for="reporter-name" data-i18n="reporterName">Nimi *</label>
+                        <input id="reporter-name" name="reporterName" autocomplete="name" maxlength="120" required/>
+                    </div>
+                    <div class="form-field">
+                        <label for="reporter-email" data-i18n="reporterEmail">Sähköpostiosoite *</label>
+                        <input id="reporter-email" name="reporterEmail" type="email" autocomplete="email"
+                               maxlength="254" required/>
+                    </div>
+                    <div class="form-field">
+                        <label for="organization" data-i18n="organization">Organisaatio</label>
+                        <input id="organization" name="organization" autocomplete="organization" maxlength="160"/>
+                    </div>
+                    <div class="form-field">
+                        <label for="category" data-i18n="category">Aihealue *</label>
+                        <select id="category" name="category" required>
+                            <option value="" data-i18n="chooseCategory">Valitse aihealue</option>
+                            <option value="technical_issue" data-i18n="categoryTechnical">Tekninen ongelma</option>
+                            <option value="access" data-i18n="categoryAccess">Käyttöoikeudet tai kirjautuminen</option>
+                            <option value="reporting" data-i18n="categoryReporting">Ilmoittaminen tai ilmoituksen tiedot</option>
+                            <option value="onboarding" data-i18n="categoryOnboarding">Käyttöönotto tai neuvonta</option>
+                            <option value="other" data-i18n="categoryOther">Muu asia</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="environment" data-i18n="environment">Ympäristö *</label>
+                        <select id="environment" name="environment" required>
+                            <option value="" data-i18n="chooseEnvironment">Valitse ympäristö</option>
+                            <option value="STG" data-i18n="environmentStg">Testiympäristö (STG)</option>
+                            <option value="PRD" data-i18n="environmentPrd">Tuotantoympäristö (PRD)</option>
+                            <option value="NOT_APPLICABLE" data-i18n="environmentNotApplicable">Ei koske ympäristöä</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="reference" data-i18n="reference">Viite, esimerkiksi request-id tai satamakäynnin tunniste</label>
+                        <input id="reference" name="reference" maxlength="200"/>
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="summary" data-i18n="summary">Lyhyt kuvaus *</label>
+                        <input id="summary" name="summary" maxlength="160" required/>
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="description" data-i18n="description">Ongelman kuvaus *</label>
+                        <div class="markdown-toolbar" role="group" aria-label="Muotoilutyökalut"
+                             data-i18n-aria="markdownToolbar">
+                            <button class="format-button" type="button" data-markdown="bold"
+                                    data-i18n-aria="formatBold" aria-label="Lihavointi" title="Lihavointi"><strong>B</strong></button>
+                            <button class="format-button" type="button" data-markdown="italic"
+                                    data-i18n-aria="formatItalic" aria-label="Kursivointi" title="Kursivointi"><em>I</em></button>
+                            <button class="format-button" type="button" data-markdown="code"
+                                    data-i18n-aria="formatCode" aria-label="Koodi" title="Koodi">&lt;/&gt;</button>
+                            <button class="format-button" type="button" data-markdown="list"
+                                    data-i18n-aria="formatList" aria-label="Luettelo" title="Luettelo">•</button>
+                        </div>
+                        <textarea id="description" name="description" rows="7" maxlength="4000" required
+                                  aria-describedby="description-help markdown-help"></textarea>
+                        <small id="description-help" data-i18n="descriptionHelp">Kerro mitä olit tekemässä, mitä tapahtui ja mitä odotit tapahtuvan.</small>
+                        <small id="markdown-help" data-i18n="markdownHelp">Kuvauskenttä tulkitaan Markdown-muodossa. Voit käyttää esimerkiksi lihavointia, listoja ja koodia.</small>
+                    </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn primary" type="submit" data-i18n="createEmail">Luo sähköpostiluonnos</button>
+                        <a class="btn" href="/mnsw/" data-i18n="cancel">Peruuta</a>
+                    </div>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                </fieldset>
+                <p class="mail-fallback"><span data-i18n="fallback">Jos sähköpostiluonnos ei avaudu, lähetä viesti osoitteeseen</span>
+                    <a href="mailto:nemo.support@emsw.fi">nemo.support@emsw.fi</a>.</p>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
+</html>
