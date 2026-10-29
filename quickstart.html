@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>NEMO / MNSW — S2S Quickstart</title>
     <link rel="stylesheet" href="/mnsw/nemo-dev.css"/>
-    <!-- Mermaid for sequence/flow diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad: true, theme: 'neutral'});</script>
 <link rel="icon" type="image/svg+xml" href="https://fintraffic-vts.github.io/mnsw/favicon.svg">
+  <link rel="stylesheet" href="/mnsw/nemo-site-nav.css">
 </head>
 <body>
+<header class="nemo-site-header" data-nemo-site-nav>
+  <div class="nemo-site-header__inner">
+    <a class="nemo-site-header__brand" href="/mnsw/" aria-label="EMSWe · NEMO Developer Hub">
+      <img src="/mnsw/favicon.svg" alt="" width="32" height="32">
+      <span>EMSWe · NEMO <small>Developer Hub</small></span>
+    </a>
+    <nav class="nemo-site-header__links" aria-label="Main navigation">
+      <a href="/mnsw/">Home</a>
+      <a href="/mnsw/quickstart.html" aria-current="page">Guides</a>
+      <a href="/mnsw/ports/user-guide/index-en.html">Port user guide</a>
+      <a href="/mnsw/support/">Support</a>
+    </nav>
+  </div>
+</header>
 <header class="container">
     <nav class="breadcrumbs">
         <a href="/mnsw/">EMSWe · NEMO</a>
@@ -30,7 +42,7 @@
                     validate a payload against EMSA MIG, and submit their first formality to Finland’s Maritime Single
                     Window (MNSW/NEMO).</p>
                 <p>You’ll use <strong>OAuth2 client credentials</strong>, the <strong>National Declarant API</strong>, and the
-                    <strong>MIG 2.0.0.0</strong> schemas.</p>
+                    <strong>MIG 2.0.1.0</strong> schemas.</p>
                 <div class="actions">
                     <a class="btn primary" href="#steps">Start now</a>
                     <a class="btn" href="#references">Docs & References</a>
@@ -47,7 +59,8 @@
         <div class="section-title"><h2>Prerequisites</h2></div>
         <ul>
             <li>Issued <strong>client_id</strong> and <strong>client_secret</strong> (request via <a
-                    href="/mnsw/#get-access">Get access</a>), and your <code class="mono">organizationBusinessId</code>.
+                    href="/mnsw/#contact">onboarding and access</a>), and your
+                <code class="mono">organizationBusinessId</code>.
             </li>
             <li>Network egress to the selected environment and token endpoint (provided during onboarding).</li>
             <li>Tooling: <code class="mono">curl</code> or Postman, and a JSON editor/validator.</li>
@@ -98,23 +111,35 @@
 
     <section id="overview">
         <div class="section-title"><h2>Architecture at a glance</h2></div>
-        <pre class="mermaid">
-sequenceDiagram
-  autonumber
-  participant SYS as Your System
-  participant IMS as Keycloak (Auth)
-  participant NEMO as National declarant API
-  participant MIG as MIG Schema
-
-  SYS->>IMS: Client Credentials (client_id, client_secret)
-  IMS-->>SYS: access_token (JWT)
-  SYS->>NEMO: GET /portcalls (Authorization: Bearer)
-  NEMO-->>SYS: 200 OK (portcalls)
-  SYS->>SYS: Build Form.
-  SYS->>MIG: Validate JSON against MIG 2.0.0.0 schema
-  SYS->>NEMO: POST/PUT formality with MAI header + payload
-  NEMO-->>SYS: 201/200 (+ validation errors if any)
-      </pre>
+        <svg viewBox="0 0 760 340" role="img" aria-labelledby="api-flow-title api-flow-desc" style="display:block;width:100%;height:auto">
+            <title id="api-flow-title">National API integration flow</title>
+            <desc id="api-flow-desc">Your system requests an OAuth2 access token from Keycloak, builds and validates the formality against the MIG schema, submits it to the National Declarant API, and receives a response with any validation errors.</desc>
+            <defs><marker id="api-flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="currentColor"/></marker></defs>
+            <g fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="10" y="10" width="300" height="55" rx="8"/>
+                <rect x="450" y="10" width="300" height="55" rx="8"/>
+                <path d="M310 28H450" marker-end="url(#api-flow-arrow)"/>
+                <path d="M450 50H310" marker-end="url(#api-flow-arrow)"/>
+                <path d="M160 65V115" marker-end="url(#api-flow-arrow)"/>
+                <rect x="10" y="115" width="300" height="55" rx="8"/>
+                <rect x="450" y="115" width="300" height="55" rx="8"/>
+                <path d="M310 142H450" marker-end="url(#api-flow-arrow)"/>
+                <path d="M160 170V225" marker-end="url(#api-flow-arrow)"/>
+                <rect x="10" y="225" width="300" height="55" rx="8"/>
+                <rect x="450" y="225" width="300" height="55" rx="8"/>
+                <path d="M310 242H450" marker-end="url(#api-flow-arrow)"/>
+                <path d="M450 265H310" marker-end="url(#api-flow-arrow)"/>
+            </g>
+            <g fill="currentColor" text-anchor="middle" font-family="sans-serif" font-size="16">
+                <text x="160" y="44">1. Your system: authenticate</text>
+                <text x="600" y="44">Keycloak: access token (JWT)</text>
+                <text x="160" y="149">2. Build formality payload</text>
+                <text x="600" y="149">Validate against MIG schema</text>
+                <text x="160" y="259">3. Submit formality</text>
+                <text x="600" y="259">National Declarant API</text>
+                <text x="380" y="320">Response: success or validation errors</text>
+            </g>
+        </svg>
     </section>
 
     <section id="api-cards">
@@ -129,7 +154,7 @@ sequenceDiagram
                         class="mono">ATA</span>, <span class="mono">ATD</span>, <span class="mono">CRT</span>). Payloads
                     are validated against EMSA MIG plus national rules. Supports presigned file uploads for attachments.
                     Auth: OAuth2 client credentials + <span class="mono">organizationBusinessId</span> header.</p>
-                <div class="links"><a class="chip" href="/mnsw/declarant-api/openapi.html">National Declarant API</a><a
+                <div class="links"><a class="chip" href="/mnsw/declarant/openapi.html">National Declarant API</a><a
                         class="chip" href="#steps">Quickstart</a></div>
             </div>
             <div class="card">
@@ -177,18 +202,16 @@ TOKEN_URL="https://$IDP_HOST/realms/nemo/protocol/openid-connect/token"
 CLIENT_ID=&lt;client_id&gt;
 CLIENT_SECRET=&lt;secret&gt;
 
-ACCESS_TOKEN=$(curl -sS -X POST "$TOKEN_URL" \
+ACCESS_TOKEN=$(curl --fail-with-body -sS -X POST "$TOKEN_URL" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "grant_type=client_credentials" \
   -d "client_id=$CLIENT_ID" \
-  -d "client_secret=$CLIENT_SECRET" | jq -r .access_token)
-
-echo "Token prefix:" $(echo "$ACCESS_TOKEN" | cut -c1-20)"…"
+  -d "client_secret=$CLIENT_SECRET" | jq -er '.access_token // empty')
 </code></pre>
             </div>
         </div>
         <p>When calling NEMO APIs, include the header <code class="mono">organizationBusinessId:
-            &lt;your_org_id&gt;</code> along with <code class="mono">Authorization: Bearer &lt;token&gt;</code>.</p>
+            &lt;your_org_id&gt;</code> along with an OAuth2 bearer token. Do not log tokens or client secrets.</p>
         <h3>2) Smoke test your token</h3>
         <p>Call a simple authorized endpoint like codelist names to verify headers and scopes:</p>
         <pre class="code-section" data-lang="bash"><code>export BASE=https://mnsw-stg.mnsw.fi
@@ -196,67 +219,41 @@ export ACCESS_TOKEN=&lt;paste_token_here&gt;
 export ORG_BID=&lt;your_organizationBusinessId&gt;
 
 curl -i "$BASE/nemo-ui/api/v1/codelists/names" \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  --oauth2-bearer "$ACCESS_TOKEN" \
   -H "organizationBusinessId: $ORG_BID"
 </code></pre>
 
         <h3>3) Build a minimal formality payload</h3>
         <p>Start from EMSA MIG JSON Schemas (e.g., <em>NOA</em>, <em>NOD</em>, <em>CGD</em>) and populate required
             fields. Follow national rules where applicable.</p>
-        <details>
-            <summary>Example: skeleton for <code>NOA</code> (arrival notification)</summary>
-            <pre class="code-section" data-lang="json"><code class="language-json">{
-  "MAI": {
-    "msgFunction": "9",  // original
-    "msgId": "&lt;uuid&gt;",
-    "msgSender": "&lt;EORI/BusinessId&gt;",
-    "msgRecipient": "MNSW-FI",
-    "msgType": "NOA",
-    "msgDateTime": "&lt;ISO 8601&gt;"
-  },
-  "NOA": {
-    "voyage": {
-      "imoNumber": "&lt;string&gt;",
-      "vesselName": "&lt;string&gt;",
-      "callSign": "&lt;string&gt;"
-    },
-    "port": {
-      "unLoCode": "FIHEL",
-      "eta": "&lt;ISO 8601&gt;"
-    }
-  }
-}
-</code></pre>
-            <p><span class="pill warn">Rule</span> <strong>MIG‑P33 — Unknown data:</strong> if a value for an <em>optional</em>
-                element is unknown, omit the element. Do not send empty strings, 0 or null.</p>
-        </details>
-
+        <p>Use the exact envelope, element names, and namespaces from the
+            <a href="/mnsw/schema/2010/NOA_2.0.1.0.json">NOA JSON Schema</a>.
+            Save the complete, validated document as <code>payload.json</code>; a simplified
+            illustrative object is not a valid submission.</p>
+        <p><span class="pill warn">Rule</span> <strong>MIG‑P33 — Unknown data:</strong> if a value for an <em>optional</em>
+            element is unknown, omit the element. Do not send empty strings, 0 or null.</p>
         <h3>4) Submit the formality</h3>
-        <p>Submit using the National API endpoint for a port call. Use a stable <code class="mono">formalityId</code>
-            (UUID) to enable updates (idempotency):</p>
+        <p>Submit using the National API endpoint for a port call, with the JSON document in the
+            <code>formalityData</code> multipart field. Use the existing <code>formalityId</code> when updating:</p>
         <pre class="code-section" data-lang="bash"><code>export VISIT_ID=&lt;portcall-visitId&gt;
 export FORM_TYPE=NOA  # e.g., NOA, NOD, CGA, CGD, ATA, ATD…
-export FORM_ID=$(uuidgen)  # or your own stable UUID
+export FORM_ID=&lt;existing-formality-uuid&gt;
 
-curl -i -X POST "$BASE/declarant-api/portcalls/$VISIT_ID/formalities/$FORM_TYPE" \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -H "Content-Type: application/json" \
+curl -i -X POST "$BASE/declarant-api/v1/portcalls/$VISIT_ID/formalities/$FORM_TYPE" \
+  --oauth2-bearer "$ACCESS_TOKEN" \
   -H "organizationBusinessId: $ORG_BID" \
-  --data-binary @payload.json
+  -F "formalityData=@payload.json;type=application/json"
 
 # Update the same formality later (PUT):
-curl -i -X PUT "$BASE/declarant-api/portcalls/$VISIT_ID/formalities/$FORM_TYPE/$FORM_ID" \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -H "Content-Type: application/json" \
+curl -i -X PUT "$BASE/declarant-api/v1/portcalls/$VISIT_ID/formalities/$FORM_TYPE/$FORM_ID" \
+  --oauth2-bearer "$ACCESS_TOKEN" \
   -H "organizationBusinessId: $ORG_BID" \
-  --data-binary @payload.json
+  -F "formalityData=@payload.json;type=application/json"
 </code></pre>
-
-        </details>
 
         <h3>5) Validate and troubleshoot</h3>
         <ul>
-            <li>Validate JSON against MIG 2.0.0.0 schema for the formality type.</li>
+            <li>Validate JSON against the MIG 2.0.1.0 schema for the formality type.</li>
             <li>On 4xx errors, check response body for rule violations (EMSA MIG vs. national).</li>
             <li>Use <kbd>request‑id</kbd> (if returned in headers/body) when contacting support.</li>
         </ul>
@@ -265,13 +262,25 @@ curl -i -X PUT "$BASE/declarant-api/portcalls/$VISIT_ID/formalities/$FORM_TYPE/$
             <summary>Alternative channel: AS4 (RIM/Domibus)</summary>
             <p>If you integrate via AS4, package the same MIG payload as the business document and send via Domibus/RIM.
                 Error semantics mirror REST responses.</p>
-            <pre class="mermaid">
-flowchart LR
-  A[Your Backoffice] -- AS4 Msg --> B(Domibus/RIM)
-  B -- RIM Msg --> C[MNSW Core]
-  C -- Ack / Business Response --> B
-  B -- Status/Errors --> A
-        </pre>
+            <svg viewBox="0 0 760 160" role="img" aria-labelledby="as4-flow-title as4-flow-desc" style="display:block;width:100%;height:auto">
+                <title id="as4-flow-title">AS4 message and response flow</title>
+                <desc id="as4-flow-desc">Your back office sends an AS4 message through Domibus/RIM to MNSW Core. Acknowledgements and business responses return through Domibus/RIM as status information or errors.</desc>
+                <defs><marker id="as4-flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="currentColor"/></marker></defs>
+                <g fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="10" y="45" width="190" height="55" rx="8"/>
+                    <rect x="285" y="45" width="190" height="55" rx="8"/>
+                    <rect x="560" y="45" width="190" height="55" rx="8"/>
+                    <path d="M200 60H285M475 60H560" marker-end="url(#as4-flow-arrow)"/>
+                    <path d="M285 88H200M560 88H475" marker-end="url(#as4-flow-arrow)"/>
+                </g>
+                <g fill="currentColor" text-anchor="middle" font-family="sans-serif" font-size="16">
+                    <text x="105" y="79">Your back office</text>
+                    <text x="380" y="79">Domibus/RIM</text>
+                    <text x="655" y="79">MNSW Core</text>
+                    <text x="380" y="25">AS4 / RIM message</text>
+                    <text x="380" y="135">Acknowledgements, business responses, status and errors</text>
+                </g>
+            </svg>
         </details>
     </section>
 
@@ -284,7 +293,7 @@ flowchart LR
         </details>
         <details>
             <summary>How do I find the right schema version?</summary>
-            <p>Use MIG 2.0.0.0 unless instructed otherwise in release notes. For breaking changes, see the <a
+            <p>Use MIG 2.0.1.0 schemas published by the NEMO Developer Hub. For breaking changes, see the <a
                     href="/mnsw/#changelog">Changelog</a>.</p>
         </details>
     </section>
@@ -292,7 +301,7 @@ flowchart LR
     <section id="references">
         <div class="section-title"><h2>References</h2></div>
         <ul class="list">
-            <li><a href="/mnsw/declarant-api/openapi.html">National Declarant API</a></li>
+            <li><a href="/mnsw/declarant/openapi.html">National Declarant API</a></li>
             <li>
                 <a href="https://www.emsa.europa.eu/emsw/emswe-documents/item/5513-emswe-message-implementation-guide-mig.html"
                    target="_blank" rel="noopener">EMSA — EMSWe Message Implementation Guide (MIG)</a></li>

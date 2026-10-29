@@ -1,0 +1,93 @@
+.nemo-site-header {
+    position: relative;
+    z-index: 40;
+    background: var(--background, #ffffff);
+    border-bottom: 1px solid var(--background-gray40, #d6dde5);
+    box-shadow: var(--effect-header, 0 2px 8px rgba(10, 35, 55, 0.08));
+    color: var(--foreground, #152737);
+    font: 500 0.95rem/1.4 Arial, Helvetica, sans-serif;
+}
+
+.nemo-site-header__inner {
+    width: min(1200px, 92%);
+    min-height: 4.25rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+}
+
+.nemo-site-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nemo-site-header a:focus-visible {
+    outline: 3px solid var(--primary-brand, #005f8f);
+    outline-offset: 3px;
+    border-radius: 0.2rem;
+}
+
+.nemo-site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 0 0 auto;
+    font-weight: 700;
+}
+
+.nemo-site-header__brand img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+.nemo-site-header__brand small {
+    display: block;
+    color: var(--secondary-gray, #5b6b79);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.nemo-site-header__links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+}
+
+.nemo-site-header__links a {
+    padding: 0.45rem 0.6rem;
+    border-radius: var(--border-radius, 0.5rem);
+    font-weight: 600;
+}
+
+.nemo-site-header__links a:hover {
+    background: var(--background-gray20, #edf1f5);
+    color: var(--primary-brand, #005f8f);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.nemo-site-header__links a[aria-current] {
+    background: var(--background-brand10, #eef6fc);
+    color: var(--primary-brand, #005f8f);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+@media (max-width: 700px) {
+    .nemo-site-header__inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .nemo-site-header__links {
+        justify-content: flex-start;
+        margin-left: -0.6rem;
+    }
+}

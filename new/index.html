@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="fi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kansallinen sanomaopas – keskitetty näkymä EMSWe- ja NEMO-tietoihin.">
+    <meta name="theme-color" content="#005f8f">
+    <title>Kansallinen sanomaopas – NEMO</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./nemo-dev.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+</head>
+<body>
+<a class="spa-skip-link" href="#main-content" data-i18n="accessibility.skip">Siirry sisältöön</a>
+<header class="spa-header">
+    <div class="container spa-header__inner">
+        <a class="spa-brand" href="#/home" aria-label="NEMO – etusivu">
+            <img src="./favicon.svg" alt="" width="36" height="36">
+            <span>EMSWe · NEMO<small data-i18n="brand.subtitle">Kansallinen sanomaopas</small></span>
+        </a>
+        <nav class="spa-nav" aria-label="Päänavigaatio">
+            <button type="button" data-route="home" data-i18n="nav.home">Etusivu</button>
+            <button type="button" data-route="formalities" data-i18n="nav.formalities">Ilmoitusmuodollisuudet</button>
+            <button type="button" data-route="codelists" data-i18n="nav.codelists">Koodilistat</button>
+            <button type="button" data-route="locations" data-i18n="nav.locations">Sijainnit</button>
+            <button type="button" data-route="integration" data-i18n="nav.integration">Integraatiot</button>
+            <button type="button" data-route="webinars" data-i18n="nav.webinars">Webinaarit</button>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content" class="spa-main" tabindex="-1">
+    <p id="app-status" class="status" role="status" aria-live="polite" hidden></p>
+
+    <section id="view-home" class="spa-view spa-home" aria-labelledby="home-title">
+        <div class="spa-hero">
+            <div class="spa-hero__inner container">
+                <div class="spa-hero__copy">
+                    <span class="spa-kicker"><span class="spa-kicker__dot"></span><span data-i18n="home.badge">Kansallinen sanomaopas · kehittäjille</span></span>
+                    <h1 id="home-title" data-i18n="home.title">Sujuvampaa merenkulun tiedonvaihtoa</h1>
+                    <p class="spa-hero__lead" data-i18n="home.lead">NEMO kokoaa merenkulun ilmoitukset yhteen. Täältä löydät ilmoitusten tietosisällöt, koodilistat ja tekniset aineistot integraatioiden rakentamiseen.</p>
+                    <label class="language-picker language-picker--hero">
+                        <span data-i18n="language.label">Valitse kieli</span>
+                        <select id="language-select" aria-label="Valitse kieli">
+                            <option value="fi">Suomi</option>
+                            <option value="sv">Svenska</option>
+                            <option value="en">English</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="spa-hero__art" aria-hidden="true">
+                    <svg viewBox="0 0 600 440" role="presentation" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#67c4cf"/>
+                                <stop offset="1" stop-color="#1477a2"/>
+                            </linearGradient>
+                            <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#f6fbff"/>
+                                <stop offset="1" stop-color="#b8d9e5"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="437" cy="110" r="48" fill="#f7d98a" opacity=".95"/>
+                        <path d="M42 300c51-22 86-22 137 0s86 22 137 0 86-22 137 0 86 22 137 0v140H42z" fill="url(#sea)" opacity=".8"/>
+                        <path d="M35 339c46-21 78-21 124 0s78 21 124 0 78-21 124 0 78 21 124 0 54-17 69-9" fill="none" stroke="#d7f4f1" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+                        <path d="M102 265h397l-48 74H162z" fill="url(#hull)"/>
+                        <path d="M148 257h310l-28 44H179z" fill="#0c5278"/>
+                        <path d="M235 170h166v88H235z" fill="#f3f8fc"/>
+                        <path d="M275 125h87v45h-87z" fill="#e0edf3"/>
+                        <path d="M297 92h44v33h-44z" fill="#f3f8fc"/>
+                        <path d="M241 190h30v25h-30zm47 0h30v25h-30zm47 0h30v25h-30zm47 0h30v25h-30z" fill="#78b9ca"/>
+                        <path d="M310 140h24v21h-24z" fill="#78b9ca"/>
+                        <path d="M123 370c60-14 93-14 153 0s93 14 153 0 93-14 153 0" fill="none" stroke="#e7fbf8" stroke-width="3" opacity=".7"/>
+                        <path d="M72 389c40-9 62-9 102 0m287-3c34-8 54-8 88 0" fill="none" stroke="#e7fbf8" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                    </svg>
+                    <span class="spa-hero__art-label" data-i18n="home.artLabel">Suomen kansallinen merenkulun palvelu</span>
+                </div>
+            </div>
+            <div class="spa-hero__wave" aria-hidden="true"></div>
+        </div>
+
+        <div class="container spa-home-content">
+            <section class="home-hot-topics" aria-labelledby="home-hot-topics-title">
+                <div class="spa-section-heading">
+                    <div>
+                        <span class="spa-eyebrow" data-i18n="home.hotTopics.eyebrow">Suomen kansalliset vaatimukset</span>
+                        <h2 id="home-hot-topics-title" data-i18n="home.hotTopics.title">Poikkeamat EMSWe MIG -vaatimuksiin</h2>
+                    </div>
+                    <p data-i18n="home.hotTopics.intro">Huomioi nämä Suomessa sovellettavat poikkeamat ilmoituksia toteuttaessasi. Luetteloa voidaan täydentää uusilla poikkeamilla.</p>
+                </div>
+                <div id="home-hot-topics-list" class="home-hot-topics__list"></div>
+            </section>
+
+            <div class="spa-section-heading">
+                <div>
+                    <span class="spa-eyebrow" data-i18n="home.section.eyebrow">Kehittäjän työpöytä</span>
+                    <h2 data-i18n="home.section.title">Kaikki tarvittava integraation tueksi</h2>
+                </div>
+                <p data-i18n="home.section.lead">Selaa ilmoitusten tietomalleja ja yhteisiä koodistoja yhdessä paikassa.</p>
+            </div>
+
+            <div class="spa-card-grid">
+                <button class="spa-card" type="button" data-route="formalities">
+                    <span class="spa-card__icon spa-card__icon--blue" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><path d="M9 5h10l5 5v17H9zM19 5v6h5M13 16h7M13 20h7M13 24h4"/></svg>
+                    </span>
+                    <span class="eyebrow" data-i18n="home.formalities.eyebrow">EMSWe MIG</span>
+                    <strong data-i18n="home.formalities.title">Ilmoitusmuodollisuudet ja skeemat</strong>
+                    <span data-i18n="home.formalities.body">Selaa MIG 2.0.1.0 -ilmoitusmuodollisuuksien JSON-skeemoja.</span>
+                    <span class="card-action"><span data-i18n="home.open">Tutustu aineistoon</span><span aria-hidden="true">→</span></span>
+                </button>
+                <button class="spa-card" type="button" data-route="codelists">
+                    <span class="spa-card__icon spa-card__icon--teal" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><path d="M7 8h18M7 16h18M7 24h18M11 6v4m10 4v4m-6 4v4"/></svg>
+                    </span>
+                    <span class="eyebrow" data-i18n="home.codelists.eyebrow">Viitetiedot</span>
+                    <strong data-i18n="home.codelists.title">Koodilistat</strong>
+                    <span data-i18n="home.codelists.body">Hae NEMOssa käytettäviä koodeja ja niiden kuvauksia.</span>
+                    <span class="card-action"><span data-i18n="home.open">Tutustu aineistoon</span><span aria-hidden="true">→</span></span>
+                </button>
+                <button class="spa-card" type="button" data-route="integration">
+                    <span class="spa-card__icon spa-card__icon--blue" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><path d="M6 8h8v8H6zm12 8h8v8h-8zM14 12h4m-8 4v4h10"/></svg>
+                    </span>
+                    <span class="eyebrow" data-i18n="home.integration.eyebrow">Integraation elinkaari</span>
+                    <strong data-i18n="home.integration.title">Yhdistä NEMOon</strong>
+                    <span data-i18n="home.integration.body">Vertaa API- ja AS4-polkuja sekä tutustu käyttöönottoon ja turvalliseen tiedonsiirtoon.</span>
+                    <span class="card-action"><span data-i18n="home.open">Tutustu aineistoon</span><span aria-hidden="true">→</span></span>
+                </button>
+                <button class="spa-card" type="button" data-route="webinars">
+                    <span class="spa-card__icon spa-card__icon--teal" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><path d="M5 8h22v15H5zM12 27h8m-4-4v4m-7-11 5-4 4 7 4-5 3 2"/></svg>
+                    </span>
+                    <span class="eyebrow" data-i18n="home.webinars.eyebrow">Koulutukset ja tallenteet</span>
+                    <strong data-i18n="home.webinars.title">Webinaarit</strong>
+                    <span data-i18n="home.webinars.body">Katso tulevat koulutukset ja löydä aiempien webinaarien tallenteet ja materiaalit.</span>
+                    <span class="card-action"><span data-i18n="home.open">Tutustu aineistoon</span><span aria-hidden="true">→</span></span>
+                </button>
+            </div>
+
+            <p class="home-changelog">
+                <span data-i18n="home.changelog.body">Katso viimeisimmät muutokset ohjeisiin ja rajapintoihin.</span>
+                <a href="./legacy.html#changelog" data-i18n="home.changelog.link">Avaa muutosloki</a>
+            </p>
+
+            <section class="spa-flow" aria-labelledby="flow-title">
+                <div class="spa-flow__intro">
+                    <span class="spa-eyebrow" data-i18n="home.flow.eyebrow">Yhteinen eurooppalainen malli</span>
+                    <h2 id="flow-title" data-i18n="home.flow.title">Yksi ilmoitus, selkeä tietovirta</h2>
+                    <p data-i18n="home.flow.lead">NEMO toteuttaa EU:n EMSW-asetusta ja kokoaa kansallisen asioinnin yhteiseen palveluun.</p>
+                </div>
+                <ol class="spa-flow__steps">
+                    <li><span>01</span><strong data-i18n="home.flow.step1.title">Yhteinen malli</strong><p data-i18n="home.flow.step1.body">EMSA MIG määrittää harmonisoidut ilmoitukset ja tietosisällöt.</p></li>
+                    <li><span>02</span><strong data-i18n="home.flow.step2.title">Suomen vaatimukset</strong><p data-i18n="home.flow.step2.body">Kansallinen profiili täsmentää, mitä Suomessa tarvitaan.</p></li>
+                    <li><span>03</span><strong data-i18n="home.flow.step3.title">Rajapinnat käyttöön</strong><p data-i18n="home.flow.step3.body">Toteuta integraatio skeemojen ja koodilistojen avulla.</p></li>
+                </ol>
+            </section>
+            <p class="site-note" data-i18n="home.note">Aiempi Developer Hub on edelleen käytettävissä rinnalla.</p>
+        </div>
+    </section>
+
+    <section id="view-data-elements" class="spa-view spa-view--wide" aria-labelledby="data-elements-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="dataElements.eyebrow">Suomen kansalliset tietovaatimukset</p>
+                <h1 id="data-elements-title" data-i18n="dataElements.title">Dataelementit Suomessa</h1>
+                <p data-i18n="dataElements.intro">Valitse suppea yleiskuva tai tekninen näkymä. Aineistot perustuvat muodollisuuksien lähdetietoihin.</p>
+            </div>
+            <a class="back-link" href="#/formalities" data-i18n="nav.formalities">Ilmoitusmuodollisuudet</a>
+        </div>
+        <nav class="section-nav" aria-label="Ilmoitusmuodollisuuksien sisältö">
+            <a href="#/formalities" data-i18n="formalities.schemasTab">JSON-skeemat</a>
+            <a href="#/formalities/data-elements" aria-current="page" data-i18n="dataElements.tabTitle">Suomen vaatimukset</a>
+        </nav>
+        <div class="data-elements-toolbar">
+            <label>
+                <span data-i18n="dataElements.view">Tietojen esitystapa</span>
+                <select id="data-elements-mode">
+                    <option value="narrow" data-i18n="dataElements.narrow">Suppeat tiedot</option>
+                    <option value="technical" data-i18n="dataElements.technical">Tekniset tiedot</option>
+                </select>
+            </label>
+            <label>
+                <span data-i18n="dataElements.formality">Ilmoitusmuodollisuus</span>
+                <select id="data-elements-formality"></select>
+            </label>
+            <label class="search-field">
+                <span data-i18n="dataElements.search">Hae dataelementtiä</span>
+                <input id="data-elements-search" type="search" autocomplete="off">
+            </label>
+        </div>
+        <p id="data-elements-summary" class="result-summary" aria-live="polite"></p>
+        <div id="data-elements-result" class="result-panel data-elements-result" aria-live="polite"></div>
+        <div class="data-elements-source">
+            <strong data-i18n="dataElements.source">Lisätiedot ja lähdeaineistot:</strong>
+            <div class="data-elements-source__links">
+                <a href="https://emsa.europa.eu/emswe-mig/index.htm" target="_blank" rel="noopener noreferrer" data-i18n="dataElements.emsaLink">EMSA MIG</a>
+                <a href="./NationalSpreadsheetV2.0.1-1.2.xlsx" data-i18n="dataElements.spreadsheetLink">Kansallinen taulukkomalli</a>
+                <a href="./hs-map.html" data-i18n="dataElements.hsMapLink">HS-koodien vastaavuustaulukko</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-locations" class="spa-view spa-view--wide" aria-labelledby="locations-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="locations.eyebrow">NEMO-viitetiedot</p>
+                <h1 id="locations-title" data-i18n="locations.title">Sijaintitiedot</h1>
+                <p data-i18n="locations.intro">Hae UN/LOCODE-sijainteja ja tarkastele niihin liitettyjä Suomen satama-alueita, laituripaikkoja, ankkuripaikkoja ja satamarakenteita.</p>
+            </div>
+            <a class="back-link" href="#/integration/integration-service-docs" data-i18n="locations.back">Palvelut ja viiteportaalit</a>
+        </div>
+        <div class="location-browser-toolbar">
+            <label class="search-field">
+                <span data-i18n="locations.search">Hae koodilla, nimellä tai satamatiedolla</span>
+                <input id="location-search" type="search" autocomplete="off">
+            </label>
+            <label class="location-national-filter">
+                <input id="location-national-only" type="checkbox" checked>
+                <span data-i18n="locations.nationalOnly">Näytä vain Suomen kansallisia satamatietoja sisältävät sijainnit</span>
+            </label>
+        </div>
+        <p id="location-summary" class="result-summary" aria-live="polite"></p>
+        <div id="location-results" class="location-results" aria-live="polite"></div>
+    </section>
+
+    <section id="view-api" class="spa-view spa-view--wide" aria-labelledby="api-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="apiDocs.eyebrow">Kansallinen API</p>
+                <h1 id="api-title"></h1>
+                <p id="api-intro"></p>
+            </div>
+            <a class="back-link" href="#/integration/integration-onboarding" data-i18n="apiDocs.back">Integraatio-ohjeisiin</a>
+        </div>
+        <details id="api-overview" class="api-overview">
+            <summary data-i18n="apiDocs.overview">API-kuvaus</summary>
+            <p id="api-description"></p>
+        </details>
+        <div class="api-docs-toolbar">
+            <label>
+                <span data-i18n="apiDocs.environment">Palvelinympäristö</span>
+                <select id="api-server-select"></select>
+            </label>
+            <label class="search-field">
+                <span data-i18n="apiDocs.search">Hae operaatiota</span>
+                <input id="api-search" type="search" autocomplete="off">
+            </label>
+            <span id="api-version" class="technical-badge"></span>
+        </div>
+        <p id="api-server-url" class="api-server-url"></p>
+        <p id="api-summary" class="result-summary" aria-live="polite"></p>
+        <div id="api-operations" class="api-operations"></div>
+        <section class="api-schemas" aria-labelledby="api-schemas-title">
+            <h2 id="api-schemas-title" data-i18n="apiDocs.schemas">Tietomallit</h2>
+            <div id="api-schema-list" class="api-schema-list"></div>
+        </section>
+    </section>
+
+    <section id="view-quickstart" class="spa-view spa-view--wide" aria-labelledby="quickstart-title" lang="en" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="quickstart.eyebrow">National API · integration guide</p>
+                <h1 id="quickstart-title" data-i18n="quickstart.title">S2S Quickstart: call the API in 5 minutes</h1>
+                <p data-i18n="quickstart.intro">Authenticate, validate a payload against EMSA MIG, and submit your first formality to Finland's Maritime Single Window.</p>
+            </div>
+            <a class="back-link" href="#/integration/integration-onboarding" data-i18n="apiDocs.back">Integraatio-ohjeisiin</a>
+        </div>
+        <div class="quickstart-actions">
+            <a class="integration-contact__form" href="#/quickstart/steps" data-i18n="quickstart.start">Start now</a>
+            <a class="quickstart-secondary-link" href="#/quickstart/references" data-i18n="quickstart.references">Docs &amp; References</a>
+        </div>
+        <nav class="integration-toc quickstart-toc" aria-label="Quickstart sections">
+            <a href="#/quickstart/prerequisites" data-i18n="quickstart.prerequisites">Prerequisites</a>
+            <a href="#/quickstart/environments" data-i18n="quickstart.environments">Environments</a>
+            <a href="#/quickstart/flow" data-i18n="quickstart.architecture">Architecture</a>
+            <a href="#/quickstart/steps" data-i18n="quickstart.steps">Step-by-step</a>
+            <a href="#/quickstart/faq" data-i18n="quickstart.faq">FAQ</a>
+            <a href="#/quickstart/references" data-i18n="quickstart.references">Docs &amp; References</a>
+        </nav>
+
+        <section id="quickstart-prerequisites" class="integration-section quickstart-section">
+            <h2 data-i18n="quickstart.prerequisites">Prerequisites</h2>
+            <ul>
+                <li>Issued <code>client_id</code> and <code>client_secret</code> (request via <a href="#/integration/integration-onboarding">onboarding and access</a>), and your <code>organizationBusinessId</code>.</li>
+                <li>Network egress to the selected environment and token endpoint (provided during onboarding).</li>
+                <li>Tooling: <code>curl</code> or Postman, and a JSON editor/validator.</li>
+            </ul>
+        </section>
+
+        <section id="quickstart-environments" class="integration-section quickstart-section">
+            <h2 data-i18n="quickstart.environments">Environments</h2>
+            <p>External users: <strong>STG</strong> and <strong>PRD</strong> only. DEV/TST are internal to the MNSW team.</p>
+            <div class="quickstart-table-wrap">
+                <table class="data-table">
+                    <thead><tr><th>Environment</th><th>Base URL</th><th>Authentication</th><th>Notes</th></tr></thead>
+                    <tbody>
+                    <tr><td>STG</td><td><code>https://mnsw-stg.mnsw.fi/</code></td><td>OAuth2 client credentials</td><td>Active</td></tr>
+                    <tr><td>PRD</td><td><code>https://mnsw.mnsw.fi/</code></td><td>OAuth2 client credentials</td><td>Onboarding required</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="integration-callout">The exact issuer and token URL are shared during onboarding. Replace <code>&lt;TOKEN_URL&gt;</code> in examples accordingly.</p>
+        </section>
+
+        <section id="quickstart-flow" class="integration-section quickstart-section">
+            <h2 data-i18n="quickstart.architecture">Architecture at a glance</h2>
+            <ol class="integration-flow">
+                <li><span>1</span><strong>Your system</strong><p>Requests a token with OAuth2 client credentials.</p></li>
+                <li><span>2</span><strong>Keycloak</strong><p>Returns an access token (JWT).</p></li>
+                <li><span>3</span><strong>National API</strong><p>Accepts authorized port-call and formality requests.</p></li>
+                <li><span>4</span><strong>MIG schema</strong><p>Validate the formality payload before sending it.</p></li>
+            </ol>
+        </section>
+
+        <section id="quickstart-steps" class="integration-section quickstart-section">
+            <h2 data-i18n="quickstart.steps">Step-by-step</h2>
+            <h3>1) Get an access token</h3>
+            <p>Use the client issued for your organization (declarant or port) with the OAuth2 Client Credentials grant. The flow is identical for both.</p>
+            <ul>
+                <li><strong>STG:</strong> <code>https://mnsw-stg.mnsw.fi/keycloak/realms/nemo/protocol/openid-connect/token</code></li>
+                <li><strong>PRD:</strong> <code>https://mnsw.mnsw.fi/keycloak/realms/nemo/protocol/openid-connect/token</code></li>
+            </ul>
+            <p>Only STG and PRD are supported for external integrators. DEV/TST are for the MNSW team only.</p>
+            <pre class="quickstart-code"><code>ENV=stg   # or prd
+case "$ENV" in
+  stg) IDP_HOST=mnsw-stg.mnsw.fi/keycloak ;;
+  prd) IDP_HOST=mnsw.mnsw.fi/keycloak ;;
+  *) echo "Use stg or prd (DEV/TST are internal)"; exit 1 ;;
+esac
+
+TOKEN_URL="https://$IDP_HOST/realms/nemo/protocol/openid-connect/token"
+CLIENT_ID=&lt;client_id&gt;
+CLIENT_SECRET=&lt;secret&gt;
+
+ACCESS_TOKEN=$(curl --fail-with-body -sS -X POST "$TOKEN_URL" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials" \
+  -d "client_id=$CLIENT_ID" \
+  -d "client_secret=$CLIENT_SECRET" | jq -er '.access_token // empty')</code></pre>
+            <p>Keep client secrets and access tokens out of source control, logs, and shared messages. Send the access token using the standard OAuth2 authorization scheme, together with the <code>organizationBusinessId</code> header.</p>
+
+            <h3>2) Smoke test your token</h3>
+            <p>Call an authorized endpoint to verify the token and organization header:</p>
+            <pre class="quickstart-code"><code>export BASE=https://mnsw-stg.mnsw.fi
+export ACCESS_TOKEN=&lt;access_token&gt;
+export ORG_BID=&lt;your_organizationBusinessId&gt;
+
+curl -i "$BASE/nemo-ui/api/v1/codelists/names" \
+  --oauth2-bearer "$ACCESS_TOKEN" \
+  -H "organizationBusinessId: $ORG_BID"</code></pre>
+
+            <h3>3) Build a minimal formality payload</h3>
+            <p>Start from the EMSA MIG JSON Schema for the formality type (for example NOA, NOD, or CGD), populate required fields, and follow national rules where applicable.</p>
+            <details class="quickstart-example">
+                <summary>Preparing a valid NOA payload</summary>
+                <p>Use the exact envelope, element names, and namespaces from the
+                    <a href="./schema/2010/NOA_2.0.1.0.json">NOA JSON Schema</a>.
+                    Save the complete, validated document as <code>payload.json</code>; a simplified
+                    illustrative object is not a valid submission.</p>
+                <p class="integration-callout"><strong>MIG-P33 — Unknown data:</strong> if an optional element's value is unknown, omit it. Do not send empty strings, 0, or null.</p>
+            </details>
+
+            <h3>4) Submit the formality</h3>
+            <p>Submit to the Declarant API endpoint for the port call. The API accepts <code>formalityData</code> as an <code>application/json</code> multipart field. Use the formality ID when updating an existing formality.</p>
+            <pre class="quickstart-code"><code>export VISIT_ID=&lt;portcall-visitId&gt;
+export FORM_TYPE=NOA  # e.g., NOA, NOD, CGA, CGD, ATA, ATD
+export FORM_ID=&lt;stable-formality-uuid&gt;
+
+curl -i -X POST "$BASE/declarant-api/v1/portcalls/$VISIT_ID/formalities/$FORM_TYPE" \
+  --oauth2-bearer "$ACCESS_TOKEN" \
+  -H "organizationBusinessId: $ORG_BID" \
+  -F "formalityData=@payload.json;type=application/json"
+
+# Update the same formality later:
+curl -i -X PUT "$BASE/declarant-api/v1/portcalls/$VISIT_ID/formalities/$FORM_TYPE/$FORM_ID" \
+  --oauth2-bearer "$ACCESS_TOKEN" \
+  -H "organizationBusinessId: $ORG_BID" \
+  -F "formalityData=@payload.json;type=application/json"</code></pre>
+
+            <h3>5) Validate and troubleshoot</h3>
+            <ul>
+                <li>Validate JSON against the MIG 2.0.1.0 schema for the formality type.</li>
+                <li>For 4xx errors, check the response body for EMSA MIG or national-rule validation errors.</li>
+                <li>Include the <code>request-id</code> (if returned in headers or body) when contacting support.</li>
+            </ul>
+            <details class="quickstart-example">
+                <summary>Alternative channel: AS4 (RIM/Domibus)</summary>
+                <p>If you integrate via AS4, package the same MIG payload as the business document and send it via Domibus/RIM. Error semantics mirror REST responses.</p>
+                <ol class="integration-flow">
+                    <li><span>1</span><strong>Your back office</strong><p>Packages the business document.</p></li>
+                    <li><span>2</span><strong>Domibus/RIM</strong><p>Delivers the AS4 message.</p></li>
+                    <li><span>3</span><strong>MNSW Core</strong><p>Processes the message and returns acknowledgements.</p></li>
+                </ol>
+            </details>
+        </section>
+
+        <section id="quickstart-faq" class="integration-section quickstart-section">
+            <h2 data-i18n="quickstart.faq">FAQ</h2>
+            <details class="quickstart-example">
+                <summary>What scopes or claims are required?</summary>
+                <p>Scopes are provisioned with your client during onboarding. Always include the <code>organizationBusinessId</code> header matching your organization.</p>
+            </details>
+            <details class="quickstart-example">
+                <summary>How do I find the right schema version?</summary>
+                <p>Use the MIG 2.0.1.0 schemas published by the NEMO Developer Hub. For breaking changes, see the <a href="./legacy.html#changelog">Changelog</a>.</p>
+            </details>
+        </section>
+
+        <section id="quickstart-references" class="integration-section quickstart-section">
+            <h2 data-i18n="quickstart.references">Docs &amp; References</h2>
+            <ul>
+                <li><a href="#/api/declarant">National Declarant API reference</a></li>
+                <li><a href="https://www.emsa.europa.eu/emsw/emswe-documents/item/5513-emswe-message-implementation-guide-mig.html" target="_blank" rel="noopener noreferrer">EMSA — EMSWe Message Implementation Guide (MIG)</a></li>
+                <li><a href="https://eur-lex.europa.eu/eli/reg/2019/1239/oj/eng" target="_blank" rel="noopener noreferrer">Regulation (EU) 2019/1239 — EMSWe</a></li>
+                <li><a href="https://docs.edelivery.tech.ec.europa.eu/domibus/5.1.7/" target="_blank" rel="noopener noreferrer">Domibus Technical Documentation</a></li>
+                <li><a href="https://datatracker.ietf.org/doc/html/rfc6749" target="_blank" rel="noopener noreferrer">OAuth 2.0 (RFC 6749)</a></li>
+            </ul>
+            <p>Need help? Email <a href="mailto:nemo.support@emsw.fi">nemo.support@emsw.fi</a>.</p>
+        </section>
+    </section>
+
+    <section id="view-integration" class="spa-view spa-view--wide" aria-labelledby="integration-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="integration.eyebrow">Rajapinnat ja tiedonsiirto</p>
+                <h1 id="integration-title" data-i18n="integration.title">Integraatiot NEMOon</h1>
+                <p data-i18n="integration.intro">Valitse järjestelmällesi sopiva tiedonsiirtotapa ja käy läpi käyttöönoton, tietoturvan ja operoinnin keskeiset asiat.</p>
+            </div>
+            <a class="back-link" href="#/home" data-i18n="nav.home">Etusivu</a>
+        </div>
+
+        <nav class="integration-toc" aria-label="Osion sisältö" data-i18n-aria="integration.toc">
+            <a href="#/integration/integration-onboarding" data-i18n="integration.toc.onboarding">Käyttöönotto ja pääsyn pyytäminen</a>
+            <a href="#/integration/integration-paths" data-i18n="integration.toc.paths">Tiedonsiirtotavat</a>
+            <a href="#/quickstart" data-i18n="quickstart.title">S2S Quickstart: call the API in 5 minutes</a>
+            <a href="#/integration/integration-service-docs" data-i18n="integration.toc.services">Palveluiden dokumentaatio</a>
+            <a href="#/integration/integration-port-call" data-i18n="integration.toc.portCall">Satamakäynnin kulku</a>
+            <a href="#/integration/integration-as4" data-i18n="integration.toc.as4">AS4-viestivirta</a>
+            <a href="#/integration/integration-setup" data-i18n="integration.toc.setup">Käyttöönotto</a>
+            <a href="#/integration/integration-environments" data-i18n="integration.toc.environments">Ympäristöt</a>
+            <a href="#/integration/integration-security" data-i18n="integration.toc.security">Tietoturva</a>
+            <a href="#/integration/integration-operations" data-i18n="integration.toc.operations">Seuranta ja tuki</a>
+        </nav>
+
+        <section id="integration-onboarding" class="integration-section" aria-labelledby="integration-onboarding-title">
+            <h2 id="integration-onboarding-title" data-i18n="integration.onboarding.title">Roolikohtainen käyttöönotto ja API-pääsyn pyytäminen</h2>
+            <p data-i18n="integration.onboarding.intro">Valitse organisaatiosi roolia ja käyttötapausta vastaava polku. API-pääsy, tarvittavat käyttöoikeudet ja käyttöönoton ohjeet sovitaan NEMO-tuen kanssa.</p>
+            <div class="integration-cards">
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.onboarding.declarant.eyebrow">Ilmoittaja</span>
+                    <h3 data-i18n="integration.onboarding.declarant.title">Ilmoittajan API</h3>
+                    <p data-i18n="integration.onboarding.declarant.body">Valitse tämä polku, jos järjestelmäsi luo ja ylläpitää satamakäyntejä sekä lähettää niihin liittyviä ilmoituksia.</p>
+                    <div class="integration-resource-links">
+                        <a href="#/api/declarant" data-i18n="integration.onboarding.declarant.api">Ilmoittajan API-kuvaus</a>
+                        <a href="#/quickstart" data-i18n="integration.onboarding.declarant.guide">API-käyttöönoton pika-aloitus</a>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.onboarding.port.eyebrow">Satama</span>
+                    <h3 data-i18n="integration.onboarding.port.title">Sataman API</h3>
+                    <p data-i18n="integration.onboarding.port.body">Valitse tämä polku, jos järjestelmäsi hakee sataman tietoja tai lähettää satamatilastoja.</p>
+                    <div class="integration-resource-links">
+                        <a href="#/api/port" data-i18n="integration.onboarding.port.api">Sataman API-kuvaus</a>
+                        <a href="./ports/user-guide/index.html" data-port-guide-link data-i18n="integration.onboarding.port.guide">Sataman käyttöohje</a>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.onboarding.as4.eyebrow">Ilmoittaja tai tiedonvälittäjä</span>
+                    <h3 data-i18n="integration.onboarding.as4.title">AS4 / RIM</h3>
+                    <p data-i18n="integration.onboarding.as4.body">Valitse tämä polku, jos lähetät ilmoituksia oman tai palveluntarjoajan AS4-yhteyspisteen kautta RIM-palveluun.</p>
+                    <div class="integration-resource-links">
+                        <a href="./sender-access-point-setup-guide.html" data-i18n="integration.onboarding.as4.guide">AS4-käyttöönotto-ohje</a>
+                        <a href="./domibus-pmode-configuration-guide.html" data-i18n="integration.onboarding.as4.pmode">Domibus PMode -ohje</a>
+                    </div>
+                </article>
+            </div>
+            <div class="integration-access-request">
+                <div>
+                    <h3 data-i18n="integration.onboarding.request.title">Pyydä pääsyä ja käyttöönoton tukea</h3>
+                    <p data-i18n="integration.onboarding.request.body">Kerro viestissä organisaatiosi, valitsemasi integraatiopolku ja tarvittava ympäristö. Älä lähetä salasanoja, client secret -arvoja tai yksityisiä avaimia.</p>
+                </div>
+                <div class="integration-resource-links">
+                    <a href="./support/index.html" data-i18n="integration.onboarding.request.form">Avaa käyttöoikeus- ja käyttöönottopyynnön lomake</a>
+                    <a href="mailto:nemo.support@emsw.fi" data-i18n="integration.onboarding.request.email">Lähetä sähköpostia NEMO-tuelle</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="integration-paths" class="integration-section" aria-labelledby="integration-paths-title">
+            <h2 id="integration-paths-title" data-i18n="integration.paths.title">Valitse tiedonsiirtotapa</h2>
+            <p data-i18n="integration.paths.intro">Valitse selainkäyttö, jos ilmoitat käsin. Järjestelmäintegraatioon käytetään kansallista API:a tai AS4/RIM-yhteyttä.</p>
+            <div class="integration-cards">
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.browser.eyebrow">Manuaalinen ilmoittaminen</span>
+                    <h3 data-i18n="integration.browser.title">NEMOn selainkäyttöliittymä</h3>
+                    <p data-i18n="integration.browser.body">Valitse selainkäyttö, jos organisaatiosi käyttäjät tekevät ilmoitukset suoraan Nemossa ilman järjestelmäintegraatiota. Ilmoitukset voi täyttää käyttöliittymässä, EMSA:n harmonisoidulla Excel-pohjalla tai Suomen kansallisella Excel-mallilla. Käyttäjätilit, käyttöoikeudet ja vaiheittaiset ilmoitusohjeet hallitaan virallisissa käyttöohjeissa.</p>
+                    <div class="integration-resource-links">
+                        <a href="./NationalSpreadsheetV2.0.1-1.2.xlsx" download data-i18n="integration.browser.nationalSpreadsheet">Lataa Suomen kansallinen Excel-malli</a>
+                        <a href="https://www.emsw.fi/fi/nemon-kayttotavat" target="_blank" rel="noopener noreferrer" data-i18n="integration.browser.methods">Vertaa NEMOn käyttötapoja</a>
+                        <a href="https://www.emsw.fi/fi/organisaation-lisaaminen-ja-kayttooikeuden-pyytaminen" target="_blank" rel="noopener noreferrer" data-i18n="integration.browser.access">Organisaation lisääminen ja käyttöoikeuden pyytäminen</a>
+                        <a href="https://www.emsw.fi/fi/organisaation-kayttajaksi-liittyminen" target="_blank" rel="noopener noreferrer" data-i18n="integration.browser.users">Organisaation käyttäjäksi liittyminen</a>
+                        <a href="https://www.emsw.fi/fi/satamakaynnit" target="_blank" rel="noopener noreferrer" data-i18n="integration.browser.portCalls">Satamakäynnin luominen ja hallinta</a>
+                        <a href="https://www.emsw.fi/fi/15-ilmoituksen-delegointi-ja-aluksen-satamakaynnin-edustajan-vaihto" target="_blank" rel="noopener noreferrer" data-i18n="integration.browser.delegation">Ilmoitusten delegointi</a>
+                        <a href="https://www.emsw.fi/fi/nemon-kayttoonotto" target="_blank" rel="noopener noreferrer" data-i18n="integration.browser.allGuides">Kaikki NEMOn käyttöohjeet</a>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.api.eyebrow">REST API</span>
+                    <h3 data-i18n="integration.api.title">Kansallinen API</h3>
+                    <p data-i18n="integration.api.body">Ilmoittajan ja sataman API:t tarjoavat järjestelmäintegraation HTTPS-rajapinnoilla. Käyttö valtuutetaan OAuth2 client credentials -tunnuksilla.</p>
+                    <div class="integration-resource-links">
+                        <a href="#/quickstart" data-i18n="integration.api.link">Avaa API-pika-aloitus</a>
+                        <a href="#/integration/integration-service-docs" data-i18n="integration.api.catalogLink">Palveluiden ja viiteportaalien dokumentaatio</a>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.as4.eyebrow">eDelivery AS4</span>
+                    <h3 data-i18n="integration.as4.title">AS4 / RIM</h3>
+                    <p data-i18n="integration.as4.body">Lähettäjän järjestelmä toimittaa ASiC-E-sanomasäiliön oman tai palveluntarjoajan AS4-yhteyspisteen kautta Suomen RIM-palveluun.</p>
+                    <div class="integration-resource-links">
+                        <a href="./sender-access-point-setup-guide.html" data-i18n="integration.as4.link">Avaa AS4-käyttöönotto-ohje</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="integration-service-docs" class="integration-section" aria-labelledby="integration-service-docs-title">
+            <h2 id="integration-service-docs-title" data-i18n="integration.serviceDocs.title">Palveluiden ja viiteportaalien dokumentaatio</h2>
+            <p data-i18n="integration.serviceDocs.intro">Avaa palveluiden rajapintakuvaukset ja niitä täydentävät viiteportaalit. Dokumentaatio avautuu nykyisillä, erillisillä sivuillaan.</p>
+            <div class="integration-cards">
+                <article class="integration-card">
+                    <h3 data-i18n="integration.serviceDocs.apis.title">Palveluiden rajapintakuvaukset</h3>
+                    <p data-i18n="integration.serviceDocs.apis.body">Redoclyllä tuotetut OpenAPI-kuvaukset esittelevät palveluiden operaatiot ja rajapintojen rakenteet.</p>
+                    <div class="service-api-details">
+                        <details class="service-api-details__item">
+                            <summary data-i18n="integration.serviceDocs.apis.declarant">Ilmoittajan API</summary>
+                            <p data-i18n="integration.serviceDocs.declarant.intro">API:n avulla ilmoittaja voi hallita satamakäyntejä ja niihin liittyviä ilmoituksia.</p>
+                            <a href="#/api/declarant" data-i18n="integration.serviceDocs.apis.openApiLink">Avaa täydellinen OpenAPI-dokumentaatio</a>
+                            <ul class="service-api-endpoints">
+                                <li><code>GET /v1/portcalls</code><span data-i18n="integration.serviceDocs.declarant.listPortCalls">Hae ilmoittajan satamakäyntejä.</span></li>
+                                <li><code>POST /v1/portcalls</code><span data-i18n="integration.serviceDocs.declarant.createPortCall">Luo uusi satamakäynti.</span></li>
+                                <li><code>GET /v1/portcalls/{visitId}/formalities</code><span data-i18n="integration.serviceDocs.declarant.listFormalities">Hae satamakäynnin ilmoitukset.</span></li>
+                                <li><code>POST /v1/portcalls/{visitId}/formalities/{formalityType}</code><span data-i18n="integration.serviceDocs.declarant.createFormality">Luo ilmoitus satamakäynnille.</span></li>
+                                <li><code>PUT /v1/portcalls/{visitId}/formalities/{formalityType}/{formalityId}</code><span data-i18n="integration.serviceDocs.declarant.updateFormality">Päivitä tai peruuta olemassa oleva ilmoitus.</span></li>
+                            </ul>
+                        </details>
+                        <details class="service-api-details__item">
+                            <summary data-i18n="integration.serviceDocs.apis.port">Sataman API</summary>
+                            <p data-i18n="integration.serviceDocs.portApi.intro">Sataman API tarjoaa satamatietoja ja alusten tietoja sekä vastaanottaa satamatilastoja.</p>
+                            <a href="#/api/port" data-i18n="integration.serviceDocs.apis.openApiLink">Avaa täydellinen OpenAPI-dokumentaatio</a>
+                            <ul class="service-api-endpoints">
+                                <li><code>GET /v1/ports/data</code><span data-i18n="integration.serviceDocs.portApi.portData">Hae satamatietoja.</span></li>
+                                <li><code>POST /v1/ports/statistics</code><span data-i18n="integration.serviceDocs.portApi.submitStatistics">Lähetä satamatilastoja.</span></li>
+                                <li><code>GET /v1/ships</code><span data-i18n="integration.serviceDocs.portApi.ships">Hae alusten tietoja ja niihin liittyviä todistuksia.</span></li>
+                                <li><code>GET /v1/ships/identifiers</code><span data-i18n="integration.serviceDocs.portApi.shipIdentifiers">Hae alusten tunnisteita.</span></li>
+                            </ul>
+                        </details>
+                        <details class="service-api-details__item">
+                            <summary data-i18n="integration.serviceDocs.apis.location">Sijaintitietopalvelun API</summary>
+                            <p data-i18n="integration.serviceDocs.locationApi.intro">OpenAPI-kuvauksen perusteella palvelusta voi hakea sijaintitietoja, Suomen satama-alueita ja laituripaikkoja sekä GISIS-koodeja.</p>
+                            <a href="./location/openapi.html" data-i18n="integration.serviceDocs.apis.openApiLink">Avaa täydellinen OpenAPI-dokumentaatio</a>
+                            <ul class="service-api-endpoints">
+                                <li><code>POST /api/v1/location</code><span data-i18n="integration.serviceDocs.locationApi.search">Hae sijainteja nimen tai LOCODE-tunnuksen perusteella.</span></li>
+                                <li><code>GET /api/v1/location/locodes</code><span data-i18n="integration.serviceDocs.locationApi.locodes">Hae saatavilla olevat LOCODE-tunnukset tai suodata niitä tunnuksella.</span></li>
+                                <li><code>GET /api/v1/location/locodeCheck</code><span data-i18n="integration.serviceDocs.locationApi.locodeCheck">Tarkista, löytyykö LOCODE palvelusta.</span></li>
+                                <li><code>GET /api/v1/nationalPortArea</code><span data-i18n="integration.serviceDocs.locationApi.portAreas">Hae Suomen satama-alueita LOCODE-tunnuksen perusteella.</span></li>
+                                <li><code>GET /api/v1/nationalBerth/listByPortAreaCode</code><span data-i18n="integration.serviceDocs.locationApi.berthsByArea">Hae laituripaikkoja satama-alueen koodilla.</span></li>
+                                <li><code>GET /api/v1/nationalBerth/listByGisisCode</code><span data-i18n="integration.serviceDocs.locationApi.berthsByGisis">Hae laituripaikkoja GISIS-koodilla.</span></li>
+                                <li><code>GET /api/v1/nationalBerth/{code}</code><span data-i18n="integration.serviceDocs.locationApi.berth">Hae laituripaikan tiedot sen koodilla.</span></li>
+                                <li><code>GET /api/v1/gisis</code><span data-i18n="integration.serviceDocs.locationApi.gisis">Hae GISIS-koodeja LOCODE-tunnuksella tai kaikki saatavilla olevat koodit.</span></li>
+                            </ul>
+                            <p class="service-api-auth" data-i18n="integration.serviceDocs.locationApi.auth">Tarkista tunnistautumisvaatimukset, osoitteet ja käyttöoikeudet palvelun OpenAPI-kuvauksesta.</p>
+                        </details>
+                        <div class="integration-resource-links">
+                            <a href="./hazmat/openapi.html" data-i18n="integration.serviceDocs.apis.hazmat">Vaarallisten aineiden palvelun API</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <h3 data-i18n="integration.serviceDocs.portals.title">Viiteportaalit ja koodistot</h3>
+                    <p data-i18n="integration.serviceDocs.portals.body">Tutustu palveluiden viitetietoihin, koodistoihin ja kansallisiin vastaavuustaulukoihin.</p>
+                    <div class="integration-resource-links">
+                        <a href="#/locations" data-i18n="integration.serviceDocs.portals.location">Sijaintitietojen viiteportaali</a>
+                        <a href="#/codelists" data-i18n="integration.serviceDocs.portals.codelists">NEMOn koodilistat</a>
+                        <a href="./hs-map.html" data-i18n="integration.serviceDocs.portals.hsMap">HS-koodien vastaavuustaulukko</a>
+                        <a href="./customs-vessel-type-linked.html" data-i18n="integration.serviceDocs.portals.vesselTypes">Tullin alustyyppien vastaavuustaulukko</a>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <h3 data-i18n="integration.serviceDocs.port.title">Satamien käyttö- ja tilastointiohjeet</h3>
+                    <p data-i18n="integration.serviceDocs.port.body">Satamille suunnatut ohjeet löytyvät nykyisestä käyttöohjeesta ja tilastotietojen lähettämisen dokumentaatiosta.</p>
+                    <div class="integration-resource-links">
+                        <a href="./ports/user-guide/index.html" data-port-guide-link data-i18n="integration.serviceDocs.port.userGuide">Sataman käyttöohje</a>
+                        <a href="./ports/port-statistics.html" data-i18n="integration.serviceDocs.port.statistics">Satamatilastojen ohje</a>
+                        <a href="./port/openapi.html#tag/Ports/operation/postStatistics" data-i18n="integration.serviceDocs.port.statisticsApi">Satamatilastojen API-operaatio</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="integration-port-call" class="integration-section" aria-labelledby="integration-port-call-title">
+            <h2 id="integration-port-call-title" data-i18n="integration.portCall.title">Satamakäynnin ilmoituspolku</h2>
+            <p data-i18n="integration.portCall.intro">Seuraa havainnollistuksesta, miten ilmoitukset ja niihin liittyvät tiedot kulkevat toimijoiden ja järjestelmien välillä.</p>
+            <div class="port-call-story">
+                <iframe
+                    src="./NEMO_Port_Call_3D.html"
+                    title="NEMO Port Call 3D — havainnollistava satamakäynnin ilmoituspolku"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                    sandbox="allow-scripts"
+                ></iframe>
+            </div>
+            <a href="./NEMO_Port_Call_3D.html" target="_blank" rel="noopener noreferrer" data-i18n="integration.portCall.open">Avaa visualisointi erilliselle sivulle</a>
+        </section>
+
+        <section id="integration-as4" class="integration-section" aria-labelledby="integration-as4-title">
+            <h2 id="integration-as4-title" data-i18n="integration.flow.title">AS4-viestivirta: neljän kulman malli</h2>
+            <p data-i18n="integration.flow.intro">Lähettäjä hallitsee omaa taustajärjestelmäänsä ja AS4-yhteyspistettään. RIM vastaanottaa viestin, tarkistaa lähettäjän rekisteröinnin ja välittää sen kansalliseen käsittelyyn.</p>
+            <ol class="integration-flow">
+                <li><span>1</span><strong data-i18n="integration.flow.c1.title">Lähettäjän järjestelmä · C1</strong><p data-i18n="integration.flow.c1.body">Muodostaa ilmoituksen ja ASiC-E-sanomasäiliön.</p></li>
+                <li><span>2</span><strong data-i18n="integration.flow.c2.title">Lähettäjän AS4-yhteyspiste · C2</strong><p data-i18n="integration.flow.c2.body">Allekirjoittaa ja salaa AS4-viestin sovitun profiilin mukaisesti.</p></li>
+                <li><span>3</span><strong data-i18n="integration.flow.c3.title">Suomen RIM · C3</strong><p data-i18n="integration.flow.c3.body">Vastaanottaa viestin, tarkistaa valtuutuksen ja reitittää aineiston.</p></li>
+                <li><span>4</span><strong data-i18n="integration.flow.c4.title">NEMO · C4</strong><p data-i18n="integration.flow.c4.body">Käsittelee ilmoituksen kansallisten sääntöjen mukaisesti.</p></li>
+            </ol>
+            <p class="integration-callout" data-i18n="integration.flow.response">Viestikuittaus palautuu AS4-vastauksena. RIM voi myös lähettää teknisen tai liiketoiminnallisen vastauksen lähettäjän AS4-yhteyspisteeseen.</p>
+            <a href="./domibus-pmode-configuration-guide.html" data-i18n="integration.flow.link">Avaa Domibus PMode -konfigurointiohje</a>
+        </section>
+
+        <section id="integration-setup" class="integration-section" aria-labelledby="integration-setup-title">
+            <h2 id="integration-setup-title" data-i18n="integration.setup.title">Käyttöönotto ja ympäristöt</h2>
+            <ol class="integration-checklist">
+                <li><strong data-i18n="integration.setup.step1.title">Sovi integraatiopolku</strong><p data-i18n="integration.setup.step1.body">Varmista, mitä API:a tai AS4/RIM-yhteyttä käyttötapauksesi edellyttää, ja pyydä tarvittavat tunnukset ja roolit.</p></li>
+                <li><strong data-i18n="integration.setup.step2.title">Valmistele lähettäjän tiedot</strong><p data-i18n="integration.setup.step2.body">AS4-polulla varmista lähettäjän tunnisteet, EORI, yhteyspiste, verkko-osoitteet ja varmenteiden vaihto. URAM-rekisteröinnin on vastattava viestin tietoja.</p></li>
+                <li><strong data-i18n="integration.setup.step3.title">Testaa vaiheittain</strong><p data-i18n="integration.setup.step3.body">Aloita sovitussa testiympäristössä, varmista tekninen viestinvaihto ja päästä päästä -toiminta ennen staging- ja tuotantosiirtymää.</p></li>
+                <li><strong data-i18n="integration.setup.step4.title">Koordinoi muutokset</strong><p data-i18n="integration.setup.step4.body">Ilmoita etukäteen endpoint-, avain-, varmenne- tai IP-osoitemuutoksista; päivitä asetukset ja testaa ennen tuotantoaktivointia.</p></li>
+            </ol>
+            <p class="integration-callout" data-i18n="integration.setup.note">Ympäristöjen osoitteet, tunnisteet, varmenteet ja muut sopimusarvot vahvistetaan käyttöönotossa. Älä kopioi esimerkkiasetuksia tuotantoon sellaisenaan.</p>
+        </section>
+
+        <section id="integration-environments" class="integration-section" aria-labelledby="integration-environments-title">
+            <h2 id="integration-environments-title" data-i18n="integration.environments.title">Ympäristöt integraatiopolun mukaan</h2>
+            <p data-i18n="integration.environments.intro">Ympäristöjen järjestys riippuu valitusta tiedonsiirtotavasta. Käytä aina kyseisen rajapinnan tai AS4-yhteyden ohjeissa vahvistettuja osoitteita ja tunnuksia.</p>
+            <div class="integration-cards">
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.environments.api.eyebrow">Kansallinen API</span>
+                    <h3 data-i18n="integration.environments.api.title">STG ja PRD ulkoisille integraatioille</h3>
+                    <p data-i18n="integration.environments.api.body">API-käytössä ulkoiset integraatiot käyttävät testiä varten STG- ja tuotantoa varten PRD-ympäristöä. DEV- ja TST-ympäristöt ovat sisäiseen käyttöön.</p>
+                    <div class="integration-resource-links">
+                        <a href="#/quickstart/environments" data-i18n="integration.environments.api.link">API-ympäristöt, osoitteet ja tunnistautuminen</a>
+                    </div>
+                </article>
+                <article class="integration-card">
+                    <span class="eyebrow" data-i18n="integration.environments.as4.eyebrow">AS4 / RIM</span>
+                    <h3 data-i18n="integration.environments.as4.title">DEVistä STG:n kautta tuotantoon</h3>
+                    <p data-i18n="integration.environments.as4.body">AS4-yhteyden tekninen viestinvaihto aloitetaan DEV-ympäristössä. Onnistuneen yhteystestin jälkeen päästä päähän -testaus jatkuu STG:ssä ennen tuotantoon siirtymistä.</p>
+                    <div class="integration-resource-links">
+                        <a href="./sender-access-point-setup-guide.html#environments" data-i18n="integration.environments.as4.setupLink">AS4-käyttöönoton ympäristövaiheet</a>
+                        <a href="./domibus-pmode-configuration-guide.html#finland-c3" data-i18n="integration.environments.as4.pmodeLink">RIM-ympäristöjen PMode-arvot</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="integration-security" class="integration-section" aria-labelledby="integration-security-title">
+            <h2 id="integration-security-title" data-i18n="integration.security.title">Tietoturva ja varmenteet</h2>
+            <div class="integration-cards">
+                <article class="integration-card">
+                    <h3 data-i18n="integration.security.payload.title">Ilmoituksen allekirjoitus</h3>
+                    <p data-i18n="integration.security.payload.body">AS4-polulla C1 allekirjoittaa ASiC-E-sanomasäiliön eIDAS QES- tai AdES-allekirjoituksella. Allekirjoitus on erillinen AS4-yhteyspisteen viestiallekirjoituksesta.</p>
+                </article>
+                <article class="integration-card">
+                    <h3 data-i18n="integration.security.transport.title">AS4 ja TLS</h3>
+                    <p data-i18n="integration.security.transport.body">C2:n X.509-varmenteita käytetään AS4-viestin allekirjoitukseen ja salaukseen. TLS suojaa verkkoyhteyden yhteyspisteiden välillä; luottamusketjut on asennettava sovitusti.</p>
+                </article>
+                <article class="integration-card">
+                    <h3 data-i18n="integration.security.identity.title">Tunnistaminen ja valtuutus</h3>
+                    <p data-i18n="integration.security.identity.body">AS4-viestien lähettäjän tiedot tarkistetaan URAM-rekisteröintiä vasten, mukaan lukien EORI. API-käytössä käytetään myönnettyjä OAuth2 client credentials -tunnuksia.</p>
+                </article>
+                <article class="integration-card">
+                    <h3 data-i18n="integration.security.secrets.title">Avainten käsittely</h3>
+                    <p data-i18n="integration.security.secrets.body">Säilytä yksityiset avaimet ja API-salaisuudet vain suojatuissa avain- ja salaisuusholveissa. Älä jaa niitä lokien, tikettien tai koodivarastojen kautta.</p>
+                </article>
+            </div>
+            <a href="./sender-access-point-setup-guide.html#certificates" data-i18n="integration.security.link">Lue AS4-varmenteiden ohje</a>
+        </section>
+
+        <section id="integration-operations" class="integration-section" aria-labelledby="integration-operations-title">
+            <h2 id="integration-operations-title" data-i18n="integration.operations.title">Seuranta, virhetilanteet ja tuki</h2>
+            <div class="integration-operations">
+                <div>
+                    <h3 data-i18n="integration.operations.monitor.title">Seuraa yhteyden toimintaa</h3>
+                    <ul>
+                        <li data-i18n="integration.operations.monitor.item1">Lähetettyjen ja epäonnistuneiden viestien määrä sekä käsittelyjonojen kasvu.</li>
+                        <li data-i18n="integration.operations.monitor.item2">AS4-kuittausten ja RIM-vastausten saapuminen sekä vastausten kohdistuminen alkuperäiseen viestiin.</li>
+                        <li data-i18n="integration.operations.monitor.item3">Yhteyspisteen HTTPS-saatavuus ja varmenteiden voimassaolo.</li>
+                        <li data-i18n="integration.operations.monitor.item4">Ympäristökohtaisten endpoint-, tunniste- ja tietoturva-asetusten vastaavuus.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 data-i18n="integration.operations.incident.title">Kun viesti epäonnistuu</h3>
+                    <p data-i18n="integration.operations.incident.body">Tarkista vastaanottokuittaus, vastaussanoma, MessageId, lähettäjän rekisteröintitiedot sekä käytössä olevan ympäristön PMode- ja varmenneasetukset.</p>
+                    <p data-i18n="integration.operations.incident.safety">Tukipyynnössä ilmoita ympäristö, ajankohta ja MessageId. Älä liitä pyyntöön salasanoja, yksityisiä avaimia tai tarpeettomia henkilötietoja.</p>
+                </div>
+            </div>
+            <a href="./sender-access-point-setup-guide.html" data-i18n="integration.operations.link">Avaa lähettäjän AS4-ohje ja tarkistuslista</a>
+            <article class="integration-contact" aria-labelledby="integration-contact-title">
+                <div>
+                    <h3 id="integration-contact-title" data-i18n="integration.contact.title">Ota yhteyttä NEMO-tukeen</h3>
+                    <p data-i18n="integration.contact.body">Käyttöönoton, teknisten ongelmien ja muiden kysymysten yhteydessä voit lähettää viestin sähköpostitse tai luoda tukipyyntöluonnoksen lomakkeella.</p>
+                </div>
+                <div class="integration-contact__actions">
+                    <a class="integration-contact__email" href="mailto:nemo.support@emsw.fi">nemo.support@emsw.fi</a>
+                    <a class="integration-contact__form" href="./support/index.html" data-i18n="integration.contact.form">Avaa yhteydenottolomake</a>
+                </div>
+            </article>
+        </section>
+    </section>
+
+    <section id="view-webinars" class="spa-view spa-view--wide" aria-labelledby="webinars-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="webinars.eyebrow">Koulutukset ja tallenteet</p>
+                <h1 id="webinars-title" data-i18n="webinars.title">Webinaarit</h1>
+                <p data-i18n="webinars.intro">Selaa tulevia koulutuksia ja menneiden webinaarien tallenteita sekä aineistoja.</p>
+            </div>
+            <a class="back-link" href="#/home" data-i18n="nav.home">Etusivu</a>
+        </div>
+        <div class="toolbar webinars-toolbar">
+            <label class="search-field">
+                <span data-i18n="webinars.search">Hae aihetta tai kohderyhmää</span>
+                <input id="webinar-search" type="search" autocomplete="off">
+            </label>
+            <label>
+                <span data-i18n="webinars.year">Vuosi</span>
+                <select id="webinar-year">
+                    <option value="" data-i18n="webinars.allYears">Kaikki vuodet</option>
+                </select>
+            </label>
+            <label>
+                <span data-i18n="webinars.audience">Kohderyhmä</span>
+                <select id="webinar-audience">
+                    <option value="" data-i18n="webinars.allAudiences">Kaikki kohderyhmät</option>
+                </select>
+            </label>
+            <button id="webinar-clear" class="back-link webinar-clear" type="button" data-i18n="webinars.clear">Tyhjennä rajaukset</button>
+        </div>
+        <section class="webinar-group" aria-labelledby="webinar-upcoming-title">
+            <div class="webinar-group__heading">
+                <h2 id="webinar-upcoming-title" data-i18n="webinars.upcoming">Tulevat webinaarit</h2>
+                <span id="webinar-upcoming-count" class="webinar-count"></span>
+            </div>
+            <div id="webinar-upcoming" class="webinar-grid" aria-live="polite"></div>
+        </section>
+        <section class="webinar-group" aria-labelledby="webinar-past-title">
+            <div class="webinar-group__heading">
+                <h2 id="webinar-past-title" data-i18n="webinars.past">Menneet webinaarit</h2>
+                <span id="webinar-past-count" class="webinar-count"></span>
+            </div>
+            <div id="webinar-past" class="webinar-grid" aria-live="polite"></div>
+        </section>
+        <p class="webinar-registration">
+            <span data-i18n="webinars.registration.prompt">Tulevien webinaarien ilmoittautumistiedot:</span>
+            <a href="https://www.emsw.fi/blog/nemo-koulutustilaisuudet" target="_blank" rel="noopener noreferrer" data-i18n="webinars.registration.link">NEMO-koulutustilaisuudet</a>
+        </p>
+    </section>
+
+    <section id="view-formalities" class="spa-view spa-view--wide" aria-labelledby="formalities-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="formalities.eyebrow">EMSWe MIG 2.0.1.0</p>
+                <h1 id="formalities-title" data-i18n="formalities.title">Ilmoitusmuodollisuuksien skeemat</h1>
+                <p data-i18n="formalities.intro">Valitse ilmoitusmuodollisuus ja tarkastele sen JSON-skeeman rakennetta.</p>
+            </div>
+            <a class="back-link" href="#/home" data-i18n="nav.home">Etusivu</a>
+        </div>
+        <nav class="section-nav" aria-label="Ilmoitusmuodollisuuksien sisältö">
+            <a href="#/formalities" aria-current="page" data-i18n="formalities.schemasTab">JSON-skeemat</a>
+            <a href="#/formalities/data-elements" data-i18n="dataElements.tabTitle">Suomen vaatimukset</a>
+        </nav>
+        <div class="toolbar">
+            <label>
+                <span data-i18n="formalities.select">Ilmoitusmuodollisuus</span>
+                <select id="formality-select"></select>
+            </label>
+            <a id="schema-download" class="button-link" target="_blank" rel="noopener noreferrer" data-i18n="formalities.download">Avaa JSON-skeema</a>
+        </div>
+        <div id="schema-result" class="result-panel" aria-live="polite"></div>
+    </section>
+
+    <section id="view-codelists" class="spa-view spa-view--wide" aria-labelledby="codelists-title" hidden>
+        <div class="view-heading">
+            <div>
+                <p class="eyebrow" data-i18n="codelists.eyebrow">NEMO-viitetiedot</p>
+                <h1 id="codelists-title" data-i18n="codelists.title">Koodilistat</h1>
+                <p data-i18n="codelists.intro">Valitse koodilista ja hae koodia tai kuvausta.</p>
+            </div>
+            <a class="back-link" href="#/home" data-i18n="nav.home">Etusivu</a>
+        </div>
+        <div class="toolbar">
+            <label>
+                <span data-i18n="codelists.select">Koodilista</span>
+                <select id="codelist-select"></select>
+            </label>
+            <label class="search-field">
+                <span data-i18n="codelists.search">Hae koodia tai kuvausta</span>
+                <input id="codelist-search" type="search" autocomplete="off">
+            </label>
+        </div>
+        <div id="codelist-result" class="result-panel" aria-live="polite"></div>
+    </section>
+</main>
+
+<dialog id="technical-code-list-modal" class="technical-code-list-modal" aria-labelledby="technical-code-list-title">
+    <div class="technical-code-list-modal__header">
+        <h2 id="technical-code-list-title">Koodilistan arvot</h2>
+        <button id="technical-code-list-close" class="button-link" type="button" data-i18n="dataElements.close">Sulje</button>
+    </div>
+    <label class="search-field">
+        <span data-i18n="dataElements.codeListSearch">Hae koodia tai kuvausta</span>
+        <input id="technical-code-list-search" type="search" autocomplete="off">
+    </label>
+    <div class="technical-code-list-results"></div>
+</dialog>
+
+<dialog id="data-element-rules-modal" class="technical-code-list-modal" aria-labelledby="data-element-rules-title">
+    <div class="technical-code-list-modal__header">
+        <h2 id="data-element-rules-title" data-i18n="dataElements.rulesTitle">Säännöt, ehdot ja ohjeet</h2>
+        <button id="data-element-rules-close" class="button-link" type="button" data-i18n="dataElements.close">Sulje</button>
+    </div>
+    <div id="data-element-rules-body" class="data-element-rules-body"></div>
+</dialog>
+
+<footer class="spa-footer">
+    <div class="container">
+        <a href="/mnsw/" data-legacy-link data-i18n="footer.legacy">Nykyinen Developer Hub</a>
+        <span data-i18n="footer.note">Kansallinen sanomaopas</span>
+    </div>
+</footer>
+</body>
+</html>

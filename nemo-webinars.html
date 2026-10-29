@@ -37,8 +37,23 @@
     <!-- Site stylesheet: use the official MNSW theme -->
     <link rel="stylesheet" href="https://fintraffic-vts.github.io/mnsw/nemo-dev.css" />
 <link rel="icon" type="image/svg+xml" href="https://fintraffic-vts.github.io/mnsw/favicon.svg">
+  <link rel="stylesheet" href="/mnsw/nemo-site-nav.css">
 </head>
 <body>
+<header class="nemo-site-header" data-nemo-site-nav>
+  <div class="nemo-site-header__inner">
+    <a class="nemo-site-header__brand" href="/mnsw/" aria-label="EMSWe · NEMO Developer Hub">
+      <img src="/mnsw/favicon.svg" alt="" width="32" height="32">
+      <span>EMSWe · NEMO <small>Developer Hub</small></span>
+    </a>
+    <nav class="nemo-site-header__links" aria-label="Main navigation">
+      <a href="/mnsw/">Home</a>
+      <a href="/mnsw/quickstart.html">Guides</a>
+      <a href="/mnsw/ports/user-guide/index-en.html">Port user guide</a>
+      <a href="/mnsw/support/">Support</a>
+    </nav>
+  </div>
+</header>
 <header>
     <h1>NEMO trainings & webinars</h1>
     <p class="muted">This page collects <strong>all materials for NEMO trainings and webinars</strong> (recordings, slides, guides). Share this page with stakeholders; it will update as we add new sessions.</p>
@@ -89,28 +104,32 @@
 
 <!-- ===================== DATA LOADER ===================== -->
 <script>
-    // Try to load an external JSON file so we can maintain the list without touching HTML.
-    // Preferred path in this repo: /mnsw/data/webinars.json (same-origin).
     window.__loadWebinars = (async function loadWebinars() {
-        const candidates = [
-            "/mnsw/data/webinars.json",
-            "./webinars.json",
-            "/webinars.json"
-        ];
-        for (const url of candidates) {
-            try {
-                const res = await fetch(url, { cache: "no-store" });
-                if (res.ok) { return await res.json(); }
-            } catch (_) { /* ignore and try next */ }
+        try {
+            const response = await fetch("./webinars.json", { cache: "no-store" });
+            if (!response.ok) {
+                throw new Error(`Webinar data: HTTP ${response.status}`);
+            }
+            const data = await response.json();
+            if (!Array.isArray(data)) {
+                throw new Error("Webinar data must be an array.");
+            }
+            return data;
+        } catch (error) {
+            console.error("Unable to load webinar data.", error);
+            const message = document.createElement("p");
+            message.setAttribute("role", "alert");
+            message.textContent = "Webinar data could not be loaded. Please reload the page.";
+            document.getElementById("app").before(message);
+            throw error;
         }
-        return null; // No external file found
     })();
 </script>
 
 <script>
     /**
      * Inline fallback data. Keep this minimal — we'll merge any external JSON
-     * we find on load so you can manage everything via /mnsw/data/webinars.json.
+     * we find on load so you can manage everything via ./webinars.json.
      *
      * Schema for each item:
      * {
@@ -153,7 +172,10 @@
                 for (const w of ext) if (w && w.id) byId.set(w.id, w);
                 webinars = Array.from(byId.values());
             }
-        } catch (_) { /* ignore */ }
+        } catch (error) {
+            console.error("Webinar rendering stopped because data is unavailable.", error);
+            return;
+        }
 
         // Helpers
         function asDate(d) {
